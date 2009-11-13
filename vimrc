@@ -170,3 +170,22 @@ if has("autocmd")
             \ set ts=2 sw=2 et
 endif
 " }}}
+
+" Fancy status bar {{{
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n
+if winwidth(0) > 90 " Full file name in wide windows
+   set statusline+=%F
+else
+   set statusline+=%f
+endif
+set statusline+=%h%m%r%w " Flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'}, " Filetype
+set statusline+=%{&encoding}, " Encoding
+set statusline+=%{&fileformat}] " File format
+"set statusline+=\ %{VimBuddy()} " vim buddy
+set statusline+=%= " Align to right
+set statusline+=0x%B/%-8b\ " Current character
+set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
+" }}}
