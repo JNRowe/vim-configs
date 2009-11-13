@@ -169,12 +169,12 @@ if has("autocmd")
         \ endif
 
     autocmd BufNewFile,BufRead /tmp/*-sup.*
-            \ set ft=mail |
-            \ set ts=2 sw=2 et
+        \ set ft=mail |
+        \ set ts=2 sw=2 et
 
     autocmd BufNewFile,BufRead /tmp/ditz*
-            \ set ft=rest |
-            \ set ts=2 sw=2 et
+        \ set ft=rest |
+        \ set ts=2 sw=2 et
 endif
 " }}}
 
