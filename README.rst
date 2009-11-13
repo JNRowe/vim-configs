@@ -16,6 +16,17 @@ Installation
 Do not install these files!!  They'll likely break your current set up
 and *may* even eat your dog.
 
+That being said if your dog doesn't mean that much to you::
+
+    git clone git://github.com/JNRowe/vim-configs.git ~/.vim
+    cd ~/.vim
+    git submodule update --init
+    make
+
+Scan over the ``vimrc`` file and figure out what you wish to do with it.
+The choices are link it to ``~/.vimrc``, ``source`` it in your own
+``~/.vimrc`` or simply cherrypick the parts of it you like.
+
 .. [#] If you're using Gentoo_ you can find an ebuild for ditz_, in my
        overlay_.
 
