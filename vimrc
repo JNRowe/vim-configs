@@ -153,3 +153,9 @@ if has("autocmd")
         \ if glob('Makefile') == ""
         \   let &makeprg = "gcc -o %< %"
         \ endif
+
+    " Mark lines longer than 80 chars as an error, taken from the wiki
+    autocmd BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
+    autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+" }}}
