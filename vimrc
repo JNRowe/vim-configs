@@ -189,3 +189,11 @@ set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
 set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
 " }}}
+
+" Fancy window titles where possible {{{
+if has('title') && (has('gui_running') || &title)
+    set titlestring=
+    set titlestring+=%F\ " File name
+    set titlestring+=%h%m%r%w " Flags
+    set titlestring+=\ -\ %{v:progname} " Program name
+endif " }}}
