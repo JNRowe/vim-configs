@@ -40,3 +40,6 @@
 [submodule "external/gist-vim/plugin"]
 	path = external/gist-vim/plugin
 	url = gh:mattn/gist-vim.git
+[submodule "external/vim-fugitive"]
+	path = external/vim-fugitive
+	url = gh:tpope/vim-fugitive.git
