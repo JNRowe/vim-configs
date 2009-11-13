@@ -28,3 +28,6 @@
 [submodule "external/windowlayout"]
 	path = external/windowlayout
 	url = gh:godlygeek/windowlayout.git
+[submodule "external/syntastic"]
+	path = external/syntastic
+	url = gh:scrooloose/syntastic.git
