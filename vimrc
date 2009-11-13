@@ -355,3 +355,23 @@ vmap <F12> :s/\s\+$//<CR>
 " Jump to buffer with single click
 let g:miniBufExplUseSingleClick = 1
 
+" Automatic session management {{{
+autocmd VimEnter * call LoadSession()
+autocmd VimLeave * call SaveSession()
+function! SaveSession()
+    if g:load_sessions == 1
+        execute "mksession! ~/.vim/view/auto_session.vim"
+    endif
+endfunction
+
+function! LoadSession()
+    if argc() == 0
+        let g:load_sessions = 1
+        if filereadable(expand("~/.vim/view/auto_session.vim"))
+            execute "source ~/.vim/view/auto_session.vim"
+        endif
+    else
+        let g:load_sessions = 0
+    endif
+endfunction
+" }}}
