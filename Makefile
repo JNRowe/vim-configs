@@ -21,6 +21,10 @@ stow-packages: $(PACKAGES)
 	$(info - Stowing $(PACKAGE_NAMES))
 	$(STOW) $(STOW_FLAGS) $(PACKAGE_NAMES)
 
+stow-%: external/%
+	$(info - Stowing $(notdir $<))
+	$(STOW) $(STOW_FLAGS) $(notdir $<)
+
 tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
 	$(CTAGS) --exclude=test_* --exclude=tests.py --exclude=test.py \
