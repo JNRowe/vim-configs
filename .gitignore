@@ -1,5 +1,6 @@
 doc/tags
 tags/*.ctags
+tmp/*.swp
 viminfo
 
 after/ftplugin/python/makerelease.py
