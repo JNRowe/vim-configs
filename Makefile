@@ -1,13 +1,25 @@
 CTAGS := exuberant-ctags
+STOW := stow
+STOW_FLAGS := --ignore=".git(|ignore)" -d external -t .
+ifdef STOW_DEBUG
+STOW_FLAGS += -n -v
+endif
 
 TARGETS := doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
 		$(wildcard /usr/lib/ruby/[0-9]*))
 
-.PHONY: clean update-external
+PACKAGES = $(wildcard external/*)
+PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
-all: $(TARGETS)
+.PHONY: clean update-external stow-packages
+
+all: $(TARGETS) stow-packages
+
+stow-packages: $(PACKAGES)
+	$(info - Stowing $(PACKAGE_NAMES))
+	$(STOW) $(STOW_FLAGS) $(PACKAGE_NAMES)
 
 tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
