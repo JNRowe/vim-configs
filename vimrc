@@ -225,3 +225,6 @@ function! Switch_background()
 endfunction
 map <S-F12> :call Switch_background()<CR>
 
+" Toggle line numbering
+map <C-F12> :set number!<CR>
+
