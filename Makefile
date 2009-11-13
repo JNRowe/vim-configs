@@ -1,14 +1,21 @@
 CTAGS := exuberant-ctags
 
 TARGETS := doc/tags tags/libc.ctags \
-	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*))
+	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
+	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
+		$(wildcard /usr/lib/ruby/[0-9]*))
 
 all: $(TARGETS)
 
-tags/%.ctags: /usr/lib/%
+tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
 	$(CTAGS) --exclude=test_* --exclude=tests.py --exclude=test.py \
 		--exclude=*/test/* --exclude=*/tests/* --languages=python \
+		-R -f $@ $<
+
+tags/ruby%.ctags: /usr/lib/ruby/%
+	$(info - Updating ruby v$(notdir $<) tags)
+	$(CTAGS) --languages=ruby \
 		-R -f $@ $<
 
 LIBC_INCS := $(shell qlist glibc | grep include)
