@@ -16,3 +16,6 @@
 [submodule "external/vtreeexplorer"]
 	path = external/vtreeexplorer
 	url = gh:jk3us/vtreeexplorer.git
+[submodule "external/snipmate.vim"]
+	path = external/snipmate.vim
+	url = gh:msanders/snipmate.vim.git
