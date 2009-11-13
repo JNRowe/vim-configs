@@ -181,6 +181,11 @@ if has("autocmd")
     " Toggle tab/wrap settings when editing Makefiles
     autocmd BufEnter Makefile set wrap noexpandtab nosmarttab
     autocmd BufLeave Makefile set nowrap expandtab smarttab
+
+    " Turn off search highlighting when entering a buffer
+    autocmd VimEnter * nohls
+    " Turn off search highlighting when idle
+    autocmd CursorHold * nohls | redraw
 endif
 " }}}
 
