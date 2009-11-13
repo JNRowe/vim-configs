@@ -273,6 +273,11 @@ nnoremap  <c-up> {
 nnoremap  <c-down> }
 " }}}
 
+" Shift + left/right to select text {{{
+nnoremap <s-left> vh
+nnoremap <s-right> vl
+" }}}
+
 " Custom menu items {{{
 if has("menu")
     amenu L&ocations.&Awesome.rc :e ~/.xdg/config/awesome/rc.lua<CR>
