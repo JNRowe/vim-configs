@@ -46,3 +46,6 @@
 [submodule "external/vim-abolish"]
 	path = external/vim-abolish
 	url = gh:tpope/vim-abolish.git
+[submodule "external/vim-surround"]
+	path = external/vim-surround
+	url = gh:tpope/vim-surround.git
