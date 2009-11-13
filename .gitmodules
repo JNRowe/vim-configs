@@ -31,3 +31,6 @@
 [submodule "external/syntastic"]
 	path = external/syntastic
 	url = gh:scrooloose/syntastic.git
+[submodule "external/pyflakes/after/ftplugin/python/pyflakes"]
+	path = external/pyflakes/after/ftplugin/python/pyflakes
+	url = gh:kevinw/pyflakes.git
