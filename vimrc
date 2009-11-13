@@ -146,6 +146,10 @@ if has("autocmd")
 
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
-    autocmd! BufWritePost .vimrc source %
-endif
-" }}}
+    autocmd BufWritePost .vimrc source %
+
+    " Use :make to compile C/C++, even without a Makefile
+    autocmd FileType c,cpp
+        \ if glob('Makefile') == ""
+        \   let &makeprg = "gcc -o %< %"
+        \ endif
