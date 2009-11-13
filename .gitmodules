@@ -49,3 +49,6 @@
 [submodule "external/vim-surround"]
 	path = external/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "external/nerdtree"]
+	path = external/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
