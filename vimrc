@@ -375,3 +375,10 @@ function! LoadSession()
     endif
 endfunction
 " }}}
+
+" Don't attempt to load csapprox if gui isn't supported
+if !has("gui")
+    let g:CSApprox_loaded = 1
+endif
+
+
