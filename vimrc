@@ -64,12 +64,6 @@ set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~
 set wildmenu
 set wildmode=longest,full
 
-syntax on
-filetype plugin indent on
-
-" Fancy fancy % matching
-runtime! macros/matchit.vim
-
 " Use securemodelines.vim
 set nomodeline
 let g:secure_modelines_verbose = 0
@@ -143,6 +137,12 @@ endif
 if has("autocmd")
     " Scrub all autocommands
     autocmd!
+
+    syntax on
+    filetype plugin indent on
+
+    " Fancy fancy % matching
+    runtime! macros/matchit.vim
 
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
