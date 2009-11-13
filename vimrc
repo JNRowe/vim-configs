@@ -199,6 +199,19 @@ if has("autocmd")
 
     " Open quickfix window, if there are any entries
     autocmd QuickFixCmdPost * belowright cwindow 5
+
+    " Simple status for minibufexpl/quickfix windows {{{
+    fun! <SID>FixBufferTitles()
+        if "-MiniBufExplorer-" == bufname("%")
+            setlocal statusline=\[Buffers\]
+        endif
+    endfun
+    autocmd BufWinEnter *
+        \ let oldwinnr=winnr() |
+        \ windo call <SID>FixBufferTitles() |
+        \ exec oldwinnr . " wincmd w"
+    autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
+    " }}}
 endif
 " }}}
 
