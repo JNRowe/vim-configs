@@ -7,3 +7,6 @@
 [submodule "external/securemodelines"]
 	path = external/securemodelines
 	url = gh:ciaranm/securemodelines.git
+[submodule "external/vim-speeddating"]
+	path = external/vim-speeddating
+	url = gh:tpope/vim-speeddating.git
