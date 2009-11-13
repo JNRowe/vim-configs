@@ -178,6 +178,11 @@ if has("autocmd")
         \ set ft=rest |
         \ set ts=2 sw=2 et
 
+    autocmd FileType rst setlocal makeprg=rst2html.py\ %\ /dev/null
+    " Map UU and Uu to add = and - underlining for headings
+    autocmd FileType rst map UU yyp<c-v>$r=i<ESC>
+    autocmd FileType rst map Uu yyp<c-v>$r-i<ESC>
+
     " Toggle tab/wrap settings when editing Makefiles
     autocmd BufEnter Makefile set wrap noexpandtab nosmarttab
     autocmd BufLeave Makefile set nowrap expandtab smarttab
