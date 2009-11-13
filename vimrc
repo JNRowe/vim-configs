@@ -155,6 +155,10 @@ if has("autocmd")
         \   let &makeprg = "gcc -o %< %"
         \ endif
 
+    " Toggle tab/wrap settings when editing Makefiles
+    autocmd BufEnter *.py set tags+=$HOME/.vim/tags/python2.6.ctags
+    autocmd BufLeave *.py set tags-=$HOME/.vim/tags/python2.6.ctags
+
     " Mark lines longer than 80 chars as an error, taken from the wiki
     autocmd BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
     autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
