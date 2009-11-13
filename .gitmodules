@@ -61,3 +61,6 @@
 [submodule "external/inkpot"]
 	path = external/inkpot
 	url = git://github.com/ciaranm/inkpot.git
+[submodule "external/vim-markdown/syntax"]
+	path = external/vim-markdown/syntax
+	url = git://github.com/plasticboy/vim-markdown.git

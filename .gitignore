@@ -51,5 +51,6 @@ plugin/surround.vim
 plugin/syntastic.vim
 plugin/taglist.vim
 plugin/vtreeexplorer.vim
+syntax/mkd.vim
 syntax/snippet.vim
 syntax_checkers
