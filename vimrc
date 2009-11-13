@@ -301,6 +301,12 @@ noremap <s-down> gj
 " Make c-g verbose by default
 nnoremap <c-g> 2<c-g>
 
+" Wrap current word in brackets {{{
+nmap ,( mpwbi(<Esc>ea)<Esc>`pl
+nmap ,[ mpwbi[<Esc>ea]<Esc>`pl
+nmap ,{ mpwbi{<Esc>ea}<Esc>`pl
+" }}}
+
 " Shift + left/right to select text {{{
 nnoremap <s-left> vh
 nnoremap <s-right> vl
