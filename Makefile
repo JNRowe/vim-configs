@@ -1,7 +1,7 @@
 CTAGS := exuberant-ctags
 STOW := stow
-STOW_FLAGS := --ignore=".git(|attributes|ignore)" \
-	--ignore="(Rakefile|snippets|test)" -d external -t .
+STOW_IGNORE := Rakefile .git(|attributes|ignore) snippets test \.jax$$
+STOW_FLAGS := $(patsubst %, --ignore='%', $(STOW_IGNORE)) -d external -t .
 ifdef STOW_DEBUG
 STOW_FLAGS += -n -v
 endif
