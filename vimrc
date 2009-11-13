@@ -278,6 +278,13 @@ nnoremap <s-left> vh
 nnoremap <s-right> vl
 " }}}
 
+" Remove nasty page skipping mappings {{{
+inoremap <s-up> <c-o>gk
+inoremap <s-down> <c-o>gj
+noremap <s-up> gk
+noremap <s-down> gj
+" }}}
+
 " Custom menu items {{{
 if has("menu")
     amenu L&ocations.&Awesome.rc :e ~/.xdg/config/awesome/rc.lua<CR>
