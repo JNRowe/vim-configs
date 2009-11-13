@@ -298,6 +298,9 @@ noremap <s-up> gk
 noremap <s-down> gj
 " }}}
 
+" Make c-g verbose by default
+nnoremap <c-g> 2<c-g>
+
 " Shift + left/right to select text {{{
 nnoremap <s-left> vh
 nnoremap <s-right> vl
