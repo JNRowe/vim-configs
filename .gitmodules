@@ -43,3 +43,6 @@
 [submodule "external/vim-fugitive"]
 	path = external/vim-fugitive
 	url = gh:tpope/vim-fugitive.git
+[submodule "external/vim-abolish"]
+	path = external/vim-abolish
+	url = gh:tpope/vim-abolish.git
