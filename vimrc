@@ -190,6 +190,12 @@ if has("autocmd")
     " Always do a full syntax refresh, this is still fast enough on
     " a netbook
     autocmd BufEnter * syntax sync fromstart
+
+    " Current directory follows the file being edited for local files
+    autocmd BufEnter *
+        \ if bufname("") !~ '^[[:alnum:]]*://' |
+        \   silent! lcd %:p:h |
+        \ endif
 endif
 " }}}
 
