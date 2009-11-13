@@ -86,4 +86,11 @@ nnoremap <silent> <F8> :Tlist<CR>
 nnoremap <silent> <F9> :TlistSync<CR>
 " }}}
 
+" Syntax files settings {{{
+let b:nroff_is_groff=1 " Default to groff
+let g:sh_fold_enabled=1 " Fold here-doc chunks
+let is_bash=1 " Default to bash for sh syntax
+let python_highlight_all=1 " Highlight everything possible for python
+" }}}
+
 
