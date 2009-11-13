@@ -93,4 +93,35 @@ let is_bash=1 " Default to bash for sh syntax
 let python_highlight_all=1 " Highlight everything possible for python
 " }}}
 
+if has("gui_running")
+    " GUI specific settings {{{
+    set cmdheight=2
+
+    set mousemodel=popup_setpos
+
+    " Always display line number in the GUI
+    set number
+
+    " Shift insert works the same as in a terminal
+    map <S-Insert> <MiddleMouse>
+    map! <S-Insert> <MiddleMouse>
+
+    set guifont=Inconsolata\ Bold\ 14
+    colorscheme darklooks
+    " }}}
+else
+    " Terminal specific settings {{{
+    if &t_Co >= 88
+        colorscheme inkpot
+    else
+        colorscheme taqua
+    endif
+    if $TERM == "linux" || split($COLORFGBG, ";")[0] == 15
+        set background=dark
+    else
+        set background=light
+    endif
+    " }}}
+endif " }}}
+
 
