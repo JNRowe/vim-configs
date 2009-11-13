@@ -161,6 +161,13 @@ if has("autocmd")
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
 
+    " Jump to the last known cursor position if possible, taken from the
+    " wiki
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \   exe "normal g`\"" |
+        \ endif
+
     autocmd BufNewFile,BufRead /tmp/*-sup.*
             \ set ft=mail |
             \ set ts=2 sw=2 et
