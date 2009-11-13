@@ -175,6 +175,10 @@ if has("autocmd")
     autocmd BufNewFile,BufRead /tmp/ditz*
         \ set ft=rest |
         \ set ts=2 sw=2 et
+
+    " Toggle tab/wrap settings when editing Makefiles
+    autocmd BufEnter Makefile set wrap noexpandtab nosmarttab
+    autocmd BufLeave Makefile set nowrap expandtab smarttab
 endif
 " }}}
 
