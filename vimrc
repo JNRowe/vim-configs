@@ -25,6 +25,7 @@ set foldmethod=syntax
 set formatoptions+=tcrqn2l1
 set formatoptions-=wvb
 set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
+set guioptions+=c
 set hidden
 set history=1000
 set ignorecase
