@@ -1,51 +1,51 @@
 [submodule "external/csapprox"]
 	path = external/csapprox
-	url = gh:godlygeek/csapprox.git
+	url = git://github.com/godlygeek/csapprox.git
 [submodule "external/detectindent"]
 	path = external/detectindent
-	url = gh:ciaranm/detectindent.git
+	url = git://github.com/ciaranm/detectindent.git
 [submodule "external/securemodelines"]
 	path = external/securemodelines
-	url = gh:ciaranm/securemodelines.git
+	url = git://github.com/ciaranm/securemodelines.git
 [submodule "external/vim-speeddating"]
 	path = external/vim-speeddating
-	url = gh:tpope/vim-speeddating.git
+	url = git://github.com/tpope/vim-speeddating.git
 [submodule "external/taglist"]
 	path = external/taglist
-	url = gh:esukram/taglist.vim.git
+	url = git://github.com/esukram/taglist.vim.git
 [submodule "external/vtreeexplorer"]
 	path = external/vtreeexplorer
-	url = gh:jk3us/vtreeexplorer.git
+	url = git://github.com/jk3us/vtreeexplorer.git
 [submodule "external/snipmate.vim"]
 	path = external/snipmate.vim
-	url = gh:msanders/snipmate.vim.git
+	url = git://github.com/msanders/snipmate.vim.git
 [submodule "external/autocomplpop.vim"]
 	path = external/autocomplpop.vim
-	url = gh:esukram/autocomplpop.vim.git
+	url = git://github.com/esukram/autocomplpop.vim.git
 [submodule "external/vim-space"]
 	path = external/vim-space
-	url = gh:spiiph/vim-space.git
+	url = git://github.com/spiiph/vim-space.git
 [submodule "external/windowlayout"]
 	path = external/windowlayout
-	url = gh:godlygeek/windowlayout.git
+	url = git://github.com/godlygeek/windowlayout.git
 [submodule "external/syntastic"]
 	path = external/syntastic
-	url = gh:scrooloose/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "external/pyflakes/after/ftplugin/python/pyflakes"]
 	path = external/pyflakes/after/ftplugin/python/pyflakes
-	url = gh:kevinw/pyflakes.git
+	url = git://github.com/kevinw/pyflakes.git
 [submodule "external/pyflakes-vim/after/ftplugin/python"]
 	path = external/pyflakes-vim/after/ftplugin/python
-	url = gh:kevinw/pyflakes-vim.git
+	url = git://github.com/kevinw/pyflakes-vim.git
 [submodule "external/gist-vim/plugin"]
 	path = external/gist-vim/plugin
-	url = gh:mattn/gist-vim.git
+	url = git://github.com/mattn/gist-vim.git
 [submodule "external/vim-fugitive"]
 	path = external/vim-fugitive
-	url = gh:tpope/vim-fugitive.git
+	url = git://github.com/tpope/vim-fugitive.git
 [submodule "external/vim-abolish"]
 	path = external/vim-abolish
-	url = gh:tpope/vim-abolish.git
+	url = git://github.com/tpope/vim-abolish.git
 [submodule "external/vim-surround"]
 	path = external/vim-surround
-	url = gh:tpope/vim-surround.git
+	url = git://github.com/tpope/vim-surround.git
