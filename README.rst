@@ -23,6 +23,10 @@ That being said if your dog doesn't mean that much to you::
     git submodule update --init
     make
 
+`GNU stow`_ v2 is required to manage plugins, the current v1 stable
+releases will **not** work.  You may have to install `stow` from the
+`git repository`_ as v2 has not been released at the time I wrote this
+
 Scan over the ``vimrc`` file and figure out what you wish to do with it.
 The choices are link it to ``~/.vimrc``, ``source`` it in your own
 ``~/.vimrc`` or simply cherrypick the parts of it you like.
@@ -36,4 +40,6 @@ The choices are link it to ``~/.vimrc``, ``source`` it in your own
 .. _ditz: http://ditz.rubyforge.org/
 .. _Gentoo: http://www.gentoo.org/
 .. _overlay: http://github.com/JNRowe/misc-overlay
+.. _GNU stow: http://savannah.gnu.org/projects/stow
+.. _git repository: http://savannah.gnu.org/git/?group=stow
 
