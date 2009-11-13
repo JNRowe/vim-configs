@@ -215,3 +215,13 @@ else
     set list listchars=tab:>-,trail:.,extends:>,nbsp:_
 endif " }}}
 
+" Map Shift-F12 to switch between light and dark
+function! Switch_background()
+    if &background == "light"
+        set background=dark
+    else
+        set background=light
+    endif
+endfunction
+map <S-F12> :call Switch_background()<CR>
+
