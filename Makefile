@@ -1,7 +1,7 @@
 CTAGS := exuberant-ctags
 STOW := stow
 STOW_FLAGS := --ignore=".git(|attributes|ignore)" \
-	--ignore="(Rakefile|snippets)" -d external -t .
+	--ignore="(Rakefile|snippets|test)" -d external -t .
 ifdef STOW_DEBUG
 STOW_FLAGS += -n -v
 endif
