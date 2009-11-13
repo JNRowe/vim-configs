@@ -11,12 +11,17 @@ TARGETS := doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
 		$(wildcard /usr/lib/ruby/[0-9]*))
 
+HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
+
 PACKAGES = $(wildcard external/*)
 PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
 .PHONY: clean update-external stow-packages unstow-packages
 
-all: stow-packages $(TARGETS)
+all: stow-packages $(TARGETS) $(HTML)
+
+%.html: %.rst
+	rst2html.py $< $@
 
 stow-packages: $(PACKAGES)
 	$(info - Stowing $(PACKAGE_NAMES))
