@@ -1,0 +1,25 @@
+" Abbreviations
+iab AFAICR as far as I can remember
+iab AFAIK as far as I know
+iab AKA also known as
+iab ASAP as soon as possible
+iab FAF fire 'n' forget
+iab FINR fixed in the next release
+iab FWIW for what it's worth
+iab FYI for your information
+iab HTH hope that helps
+iab IIRC if I remember correctly
+iab IMHO in my humble opinion
+iab IMNSHO in my not so humble opinion
+iab IMO in my opinion
+iab OTOH on the other hand
+iab RTFM read the friendly manual
+iab WDYT what do you think?
+iab WIBNI wouldn't it be nice if
+iab YMMV your mileage may vary
+
+" Date
+iabbr _t  <C-R>=strftime("%H:%M:%S")<CR>
+iabbr _d  <C-R>=strftime("%Y-%m-%d")<CR>
+iabbr _dt <C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>
+
