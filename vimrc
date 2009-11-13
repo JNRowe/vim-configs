@@ -157,5 +157,8 @@ if has("autocmd")
     " Mark lines longer than 80 chars as an error, taken from the wiki
     autocmd BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
     autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+
+    " Make <Return> jump to tag in help files
+    autocmd FileType help nmap <buffer> <Return> <C-]>
 endif
 " }}}
