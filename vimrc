@@ -309,3 +309,6 @@ nmap <F12> :%s/\s\+$//<CR>
 vmap <F12> :s/\s\+$//<CR>
 " }}}
 
+" Jump to buffer with single click
+let g:miniBufExplUseSingleClick = 1
+
