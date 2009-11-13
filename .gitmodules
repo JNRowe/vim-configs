@@ -37,3 +37,6 @@
 [submodule "external/pyflakes-vim/after/ftplugin/python"]
 	path = external/pyflakes-vim/after/ftplugin/python
 	url = gh:kevinw/pyflakes-vim.git
+[submodule "external/gist-vim/plugin"]
+	path = external/gist-vim/plugin
+	url = gh:mattn/gist-vim.git
