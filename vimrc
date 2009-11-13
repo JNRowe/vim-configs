@@ -186,6 +186,10 @@ if has("autocmd")
     autocmd VimEnter * nohls
     " Turn off search highlighting when idle
     autocmd CursorHold * nohls | redraw
+
+    " Always do a full syntax refresh, this is still fast enough on
+    " a netbook
+    autocmd BufEnter * syntax sync fromstart
 endif
 " }}}
 
