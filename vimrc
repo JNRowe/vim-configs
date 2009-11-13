@@ -294,4 +294,18 @@ if has("menu")
     amenu L&ocations.&vimrc :e ~/.vimrc<CR>
 endif " }}}
 
+" Function keys {{{
+nmap <F1> :set hlsearch!<CR>
+nnoremap <F2> :set list!<CR>
+nmap <F3> :set expandtab!<CR>
+" F4 toggles paste
+" F7-F9 are used for taglist, and are defined above
+nmap <F10> :make check<CR>
+nmap <S-F10> :exec "make -C " . expand("%:p:h") . " check"<CR>
+nmap <F11> :make<CR>
+nmap <S-F11> :exec "make -C " . expand("%:p:h")<CR>
+" Delete trailing whitespace:
+nmap <F12> :%s/\s\+$//<CR>
+vmap <F12> :s/\s\+$//<CR>
+" }}}
 
