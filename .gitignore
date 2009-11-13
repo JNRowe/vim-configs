@@ -15,6 +15,7 @@ autoload/csapprox
 autoload/csapprox.vim
 autoload/snipMate.vim
 autoload/windowlayout.vim
+colors/inkpot.vim
 convertSnip.py
 doc/CSApprox.txt
 doc/NERD_commenter.txt
