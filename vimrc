@@ -70,3 +70,8 @@ filetype plugin indent on
 " Fancy fancy % matching
 runtime! macros/matchit.vim
 
+" Use securemodelines.vim
+set nomodeline
+let g:secure_modelines_verbose = 0
+let g:secure_modelines_modelines = 15
+
