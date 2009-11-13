@@ -1,8 +1,14 @@
 CTAGS := exuberant-ctags
 
-TARGETS := doc/tags tags/libc.ctags
+TARGETS := doc/tags tags/libc.ctags \
+	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*))
 
 all: $(TARGETS)
+
+tags/%.ctags: /usr/lib/%
+	$(CTAGS) --exclude=test_* --exclude=tests.py --exclude=test.py \
+		--exclude=*/test/* --exclude=*/tests/* --languages=python \
+		-R -f $@ $<
 
 LIBC_INCS := $(shell qlist glibc | grep include)
 ifndef LIBC_INCS
