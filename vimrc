@@ -55,7 +55,7 @@ set spelllang=en_gb
 set suffixes+=.pyc,.pyo
 set swapsync=
 set tabstop=4
-set tags+=$HOME/.vim/tags/python.ctags
+set tags+=ctags;tags;
 set textwidth=72
 set title
 set ttyfast
