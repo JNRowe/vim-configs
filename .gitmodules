@@ -22,3 +22,6 @@
 [submodule "external/autocomplpop.vim"]
 	path = external/autocomplpop.vim
 	url = gh:esukram/autocomplpop.vim.git
+[submodule "external/vim-space"]
+	path = external/vim-space
+	url = gh:spiiph/vim-space.git
