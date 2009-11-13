@@ -183,6 +183,13 @@ if has("autocmd")
     autocmd FileType rst map UU yyp<c-v>$r=i<ESC>
     autocmd FileType rst map Uu yyp<c-v>$r-i<ESC>
 
+    autocmd FileType html,liquid,xhtml,xml
+        \ imap <Leader>& &amp; |
+        \ imap <Leader>< &lt; |
+        \ imap <Leader>> &gt; |
+        \ imap <Leader>" &quot; |
+        \ imap <Leader><Space> &nbsp;
+
     " Toggle tab/wrap settings when editing Makefiles
     autocmd BufEnter Makefile set wrap noexpandtab nosmarttab
     autocmd BufLeave Makefile set nowrap expandtab smarttab
