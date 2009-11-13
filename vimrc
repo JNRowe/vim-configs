@@ -196,6 +196,9 @@ if has("autocmd")
         \ if bufname("") !~ '^[[:alnum:]]*://' |
         \   silent! lcd %:p:h |
         \ endif
+
+    " Open quickfix window, if there are any entries
+    autocmd QuickFixCmdPost * belowright cwindow 5
 endif
 " }}}
 
