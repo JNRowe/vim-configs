@@ -1,3 +1,6 @@
 [submodule "external/csapprox"]
 	path = external/csapprox
 	url = gh:godlygeek/csapprox.git
+[submodule "external/detectindent"]
+	path = external/detectindent
+	url = gh:ciaranm/detectindent.git
