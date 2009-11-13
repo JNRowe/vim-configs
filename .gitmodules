@@ -58,3 +58,6 @@
 [submodule "snippets"]
 	path = snippets
 	url = git://github.com/JNRowe/snipmate-snippets.git
+[submodule "external/inkpot"]
+	path = external/inkpot
+	url = git://github.com/ciaranm/inkpot.git
