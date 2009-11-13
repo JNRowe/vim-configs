@@ -139,3 +139,13 @@ if filereadable(expand("~/.vim/abbr-local"))
 endif
 " }}}
 
+" Autocommands {{{
+if has("autocmd")
+    " Scrub all autocommands
+    autocmd!
+
+    " Reread the vimrc after writing.
+    " Note: This *can* cause problems, so be careful!
+    autocmd! BufWritePost .vimrc source %
+endif
+" }}}
