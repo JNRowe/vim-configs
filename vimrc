@@ -197,3 +197,7 @@ if has('title') && (has('gui_running') || &title)
     set titlestring+=%h%m%r%w " Flags
     set titlestring+=\ -\ %{v:progname} " Program name
 endif " }}}
+
+" Gentoo bug summary browser
+let g:bugsummary_browser="opera -newpage '%s'"
+
