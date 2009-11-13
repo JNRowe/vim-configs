@@ -4,3 +4,6 @@
 [submodule "external/detectindent"]
 	path = external/detectindent
 	url = gh:ciaranm/detectindent.git
+[submodule "external/securemodelines"]
+	path = external/securemodelines
+	url = gh:ciaranm/securemodelines.git
