@@ -161,6 +161,8 @@ if has("autocmd")
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
 
+    autocmd FileType text setlocal textwidth=72
+
     " Jump to the last known cursor position if possible, taken from the
     " wiki
     autocmd BufReadPost *
