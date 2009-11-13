@@ -246,9 +246,12 @@ else
    set statusline+=%f
 endif
 set statusline+=%h%m%r%w " Flags
-set statusline+=\[%{strlen(&ft)?&ft:'none'}, " Filetype
-set statusline+=%{&encoding}, " Encoding
-set statusline+=%{&fileformat}] " File format
+set statusline+=\[%{strlen(&filetype)?&filetype:'none'} " Filetype
+" Include encoding if not UTF-8
+set statusline+=%{&encoding!='utf-8'?','.&encoding:''}
+" Include fileformat if not unix
+set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
+set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
 set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
