@@ -1,6 +1,7 @@
 doc/tags
 tags/*.ctags
 tmp/*.swp
+view/*.vim
 README.html
 viminfo
 
