@@ -270,3 +270,11 @@ nnoremap  <c-up> {
 nnoremap  <c-down> }
 " }}}
 
+" Custom menu items {{{
+if has("menu")
+    amenu L&ocations.&Awesome.rc :e ~/.xdg/config/awesome/rc.lua<CR>
+    amenu L&ocations.&Awesome.theme :e ~/.xdg/config/awesome/theme.lua<CR>
+    amenu L&ocations.&vimrc :e ~/.vimrc<CR>
+endif " }}}
+
+
