@@ -13,17 +13,23 @@ TARGETS := doc/tags tags/libc.ctags \
 PACKAGES = $(wildcard external/*)
 PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
-.PHONY: clean update-external stow-packages
+.PHONY: clean update-external stow-packages unstow-packages
 
 all: $(TARGETS) stow-packages
 
 stow-packages: $(PACKAGES)
 	$(info - Stowing $(PACKAGE_NAMES))
 	$(STOW) $(STOW_FLAGS) $(PACKAGE_NAMES)
+unstow-packages: $(PACKAGES)
+	$(info - Unstowing $(PACKAGE_NAMES))
+	$(STOW) $(STOW_FLAGS) -D $(PACKAGE_NAMES)
 
 stow-%: external/%
 	$(info - Stowing $(notdir $<))
 	$(STOW) $(STOW_FLAGS) $(notdir $<)
+unstow-%:
+	$(info - Unstowing $(subst unstow-,,$@))
+	$(STOW) $(STOW_FLAGS) -D $(subst unstow-,,$@)
 
 tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
