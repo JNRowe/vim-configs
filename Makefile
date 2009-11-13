@@ -16,7 +16,7 @@ PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
 .PHONY: clean update-external stow-packages unstow-packages
 
-all: $(TARGETS) stow-packages
+all: stow-packages $(TARGETS)
 
 stow-packages: $(PACKAGES)
 	$(info - Stowing $(PACKAGE_NAMES))
