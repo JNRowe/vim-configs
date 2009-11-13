@@ -130,4 +130,12 @@ if &term =~? '^rxvt-unicode' && exists('&t_SI')
     let &t_EI="\<Esc>]12;green\x7"
 endif " }}}
 
+" Load abbreviations {{{
+if filereadable(expand("~/.vim/abbr"))
+    source ~/.vim/abbr
+endif
+if filereadable(expand("~/.vim/abbr-local"))
+    source ~/.vim/abbr-local
+endif
+" }}}
 
