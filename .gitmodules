@@ -13,3 +13,6 @@
 [submodule "external/taglist"]
 	path = external/taglist
 	url = gh:esukram/taglist.vim.git
+[submodule "external/vtreeexplorer"]
+	path = external/vtreeexplorer
+	url = gh:jk3us/vtreeexplorer.git
