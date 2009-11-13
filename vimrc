@@ -201,3 +201,10 @@ endif " }}}
 " Gentoo bug summary browser
 let g:bugsummary_browser="opera -newpage '%s'"
 
+" Show tabs and trailing whitespace {{{
+if (&termencoding == "utf-8") || has("gui_running")
+    set list listchars=tab:»·,trail:·,extends:…,nbsp:‗
+else
+    set list listchars=tab:>-,trail:.,extends:>,nbsp:_
+endif " }}}
+
