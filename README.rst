@@ -26,6 +26,7 @@ That being said if your dog doesn't mean that much to you::
 `GNU stow`_ v2 is required to manage plugins, the current v1 stable
 releases will **not** work.  You may have to install `stow` from the
 `git repository`_ as v2 has not been released at the time I wrote this
+[#]_.
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.
 The choices are link it to ``~/.vimrc``, ``source`` it in your own
@@ -33,6 +34,9 @@ The choices are link it to ``~/.vimrc``, ``source`` it in your own
 
 .. [#] If you're using Gentoo_ you can find an ebuild for ditz_, in my
        overlay_.
+.. [#] Gentoo_ users can install `GNU stow`_ directly from the `git
+       repository`_ using the ``app-admin/stow-9999`` ebuild from my
+       overlay_
 
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
