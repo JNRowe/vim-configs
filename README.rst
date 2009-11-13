@@ -34,5 +34,6 @@ The choices are link it to ``~/.vimrc``, ``source`` it in your own
 .. _email: jnrowe@gmail.com
 .. _issue: http://github.com/JNRowe/vim-configs/issues
 .. _ditz: http://ditz.rubyforge.org/
+.. _Gentoo: http://www.gentoo.org/
 .. _overlay: http://github.com/JNRowe/misc-overlay
 
