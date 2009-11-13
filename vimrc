@@ -124,4 +124,10 @@ else
     " }}}
 endif " }}}
 
+" Change the cursor colour for insert mode {{{
+if &term =~? '^rxvt-unicode' && exists('&t_SI')
+    let &t_SI="\<Esc>]12;purple\x7"
+    let &t_EI="\<Esc>]12;green\x7"
+endif " }}}
+
 
