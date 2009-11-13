@@ -5,6 +5,8 @@ TARGETS := doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
 		$(wildcard /usr/lib/ruby/[0-9]*))
 
+.PHONY: clean update-external
+
 all: $(TARGETS)
 
 tags/python%.ctags: /usr/lib/python%
@@ -34,6 +36,10 @@ doc/tags: $(filter-out doc/tags, $(wildcard doc/*))
 	vim -X -u NONE -c 'helptags $(dir $@)' -c ':q' </dev/null &>/dev/null
 
 clean:
-	$(warn - Cleaning generated files)
+	$(info - Cleaning generated files)
 	rm -f $(TARGETS)
+
+update-external:
+	$(info - Updated git submodules)
+	git submodule update
 
