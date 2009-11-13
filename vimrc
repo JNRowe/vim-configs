@@ -248,3 +248,8 @@ map <Esc>9 :buffer 9<CR>
 map <Esc>0 :buffers<CR>
 " }}}
 
+" Ctrl + up/down to skip paragraphs {{{
+nnoremap  <c-up> {
+nnoremap  <c-down> }
+" }}}
+
