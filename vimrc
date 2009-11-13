@@ -273,16 +273,18 @@ nnoremap  <c-up> {
 nnoremap  <c-down> }
 " }}}
 
-" Shift + left/right to select text {{{
-nnoremap <s-left> vh
-nnoremap <s-right> vl
-" }}}
-
 " Remove nasty page skipping mappings {{{
 inoremap <s-up> <c-o>gk
 inoremap <s-down> <c-o>gj
 noremap <s-up> gk
 noremap <s-down> gj
+" }}}
+
+" Shift + left/right to select text {{{
+nnoremap <s-left> vh
+nnoremap <s-right> vl
+nnoremap <s-up> Vk
+nnoremap <s-down> Vj
 " }}}
 
 " Custom menu items {{{
