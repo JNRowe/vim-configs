@@ -160,5 +160,13 @@ if has("autocmd")
 
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
+
+    autocmd BufNewFile,BufRead /tmp/*-sup.*
+            \ set ft=mail |
+            \ set ts=2 sw=2 et
+
+    autocmd BufNewFile,BufRead /tmp/ditz*
+            \ set ft=rest |
+            \ set ts=2 sw=2 et
 endif
 " }}}
