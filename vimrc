@@ -1,4 +1,4 @@
-" vim: sw=4 sts=4 et tw=72 fdm=marker
+" vim: sw=4 sts=4 et tw=80 fdm=marker
 
 scriptencoding utf-8
 
@@ -56,7 +56,7 @@ set suffixes+=.pyc,.pyo
 set swapsync=
 set tabstop=4
 set tags+=ctags;tags;
-set textwidth=72
+set textwidth=80
 set title
 set ttyfast
 set viminfo=!,'1000,<1000,h,n~/.vim/viminfo
