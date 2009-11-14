@@ -160,8 +160,8 @@ if has("autocmd")
     autocmd BufLeave *.py set tags-=$HOME/.vim/tags/python2.6.ctags
 
     " Mark lines longer than 80 chars as an error, taken from the wiki
-    autocmd BufWinEnter * let w:m1=matchadd('Search', '\%<81v.\%>77v', -1)
-    autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    autocmd BufWinEnter * let w:HLL1=matchadd('Search', '\%<81v.\%>77v', -1)
+    autocmd BufWinEnter * let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
@@ -460,4 +460,19 @@ function! s:Median(nums)
     endif
 endfunction " }}}
 " }}}
+
+" Toggle long lines highlighting, adapted from the wiki
+nnoremap <silent> <Leader>l
+    \ :if exists('w:HLL1') <Bar>
+    \   silent! call matchdelete(w:HLL1) <Bar>
+    \   silent! call matchdelete(w:HLL2) <Bar>
+    \   unlet w:HLL1 <Bar>
+    \ elseif &textwidth > 0 <Bar>
+    \   let w:HLL1=matchadd('Search',
+    \       '\%<' . (&tw + 1) . 'v.\%>' . (&tw - 2) . 'v', -1) <Bar>
+    \   let w:HLL2=matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1) <Bar>
+    \ else <Bar>
+    \   let w:HLL1=matchadd('Search', '\%<81v.\%>78v', -1) <Bar>
+    \   let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
+    \ endif<CR>
 
