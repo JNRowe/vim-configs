@@ -345,9 +345,14 @@ if has("menu")
     amenu L&ocations.&vimrc :e ~/.vimrc<CR>
 endif " }}}
 
+" Don't use default keys for scratch plugin
+let no_scratch_maps = 1
+
 " Function keys {{{
 nmap <F1> :set hlsearch!<CR>
 nnoremap <F2> :set list!<CR>
+nmap <C-F2> <Plug>ShowScratchBuffer
+imap <S-F2> <Plug>InsShowScratchBuffer
 nmap <F3> :set expandtab!<CR>
 " F4 toggles paste
 " F7-F9 are used for taglist, and are defined above

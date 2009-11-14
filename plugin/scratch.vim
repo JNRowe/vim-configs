@@ -1,110 +1,134 @@
-" File: scratch.vim
-" Author: Yegappan Lakshmanan (yegappan AT yahoo DOT com)
-" Version: 1.0
-" Last Modified: June 3, 2003
+" scratch.vim
+" Author: Abhilash Koneri (abhilash_koneri at hotmail dot com)
+" Improved By: Hari Krishna Dara (hari_vim at yahoo dot com)
+" Last Change: 25-Feb-2004 @ 09:48
+" Created: 17-Aug-2002
+" Version: 1.0.0
+" Download From:
+"     http://www.vim.org/script.php?script_id=389
+"----------------------------------------------------------------------
+" This is a simple plugin that creates a scratch buffer for your
+" vim session and helps to access it when you need it.
 "
-" Overview
-" --------
-" You can use the scratch plugin to create a temporary scratch buffer to store
-" and edit text that will be discarded when you quit/exit vim. The contents
-" of the scratch buffer are not saved/stored in a file.
+" If you like the custom mappings provided in the script - hitting
+" <F8> should create a new scratch buffer. You can do your scribes
+" here and if you want to get rid of it, hit <F8> again inside scratch buffer
+" window. If you want to get back to the scratch buffer repeat <F8>. Use
+" <Plug>ShowScratchBuffer and <Plug>InsShowScratchBuffer to customize these
+" mappings.
 "
-" Installation
-" ------------
-" 1. Copy the scratch.vim plugin to the $HOME/.vim/plugin directory. Refer to
-"    the following Vim help topics for more information about Vim plugins:
+" If you want to designate a file into which the scratch buffer contents
+" should automatically be dumped to, when Vim exits, set its path to
+" g:scratchBackupFile global variable. This file can be accessed just in case
+" you happen to have some important information in the scratch buffer and quit
+" Vim (or shutdown the m/c) forgetting to copy it over. The target file is
+" force overwritten using the :write! command so make sure you set a file name
+" that can accidentally be used for other purposes (especially when you use
+" relative paths). I recommend a value of '/tmp/scratch.txt'.
+" CAUTION: This feature works only when Vim generates VimLeavePre autocommad.
 "
-"       :help add-plugin
-"       :help add-global-plugin
-"       :help runtimepath
-"
-" 2. Restart Vim.
-"
-" Usage
-" -----
-" You can use the following command to open/edit the scratch buffer:
-"
-"       :Scratch
-"
-" To open the scratch buffer in a new split window, use the following command:
-"
-"       :Sscratch
-"
-" When you close the scratch buffer window, the buffer will retain the
-" contents. You can again edit the scratch buffer by openeing it using one of
-" the above commands. There is no need to save the scatch buffer.
-"
-" When you quit/exit Vim, the contents of the scratch buffer will be lost.
-" You will not be prompted to save the contents of the modified scratch
-" buffer.
-"
-" You can have only one scratch buffer open in a single Vim instance. If the
-" current buffer has unsaved modifications, then the scratch buffer will be
-" opened in a new window
-"
-" ****************** Do not modify after this line ************************
-if exists('loaded_scratch') || &cp
-    finish
+" Custom mappings
+" ---------------
+" The ones defined below are not very ergonomic!
+"----------------------------------------------------------------------
+"Standard Inteface:  <F8> to make a new ScratchBuffer, <F8>-again to hide one
+
+if exists('loaded_scratch')
+  finish
 endif
-let loaded_scratch=1
+let loaded_scratch = 1
 
-" Scratch buffer name
-let ScratchBufferName = "__Scratch__"
+" Make sure line-continuations won't cause any problem. This will be restored
+"   at the end
+let s:save_cpo = &cpo
+set cpo&vim
 
-" ScratchBufferOpen
-" Open the scratch buffer
-function! s:ScratchBufferOpen(new_win)
-    let split_win = a:new_win
+if (! exists("no_plugin_maps") || ! no_plugin_maps) &&
+      \ (! exists("no_scratch_maps") || ! no_scratch_maps)
+  if !hasmapto('<Plug>ShowScratchBuffer',"n")
+    nmap <unique> <silent> <F8> <Plug>ShowScratchBuffer
+  endif
+  if !hasmapto('<Plug>InsShowScratchBuffer',"i")
+    imap <unique> <silent> <F8> <Plug>InsShowScratchBuffer
+  endif
+endif
 
-    " If the current buffer is modified then open the scratch buffer in a new
-    " window
-    if !split_win && &modified
-        let split_win = 1
-    endif
+" User Overrideable Plugin Interface
+nmap <script> <silent> <Plug>ShowScratchBuffer
+      \ :silent call <SID>ShowScratchBuffer()<cr>
+imap <script> <silent> <Plug>InsShowScratchBuffer
+      \ <c-o>:silent call <SID>ShowScratchBuffer()<cr>
 
-    " Check whether the scratch buffer is already created
-    let scr_bufnum = bufnr(g:ScratchBufferName)
-    if scr_bufnum == -1
-        " open a new scratch buffer
-        if split_win
-            exe "new " . g:ScratchBufferName
-        else
-            exe "edit " . g:ScratchBufferName
-        endif
+command! -nargs=0 Scratch :call <SID>ShowScratchBuffer()
+
+if !exists('g:scratchBackupFile')
+  let g:scratchBackupFile = '' " So that users can easily find this var.
+endif
+aug ScratchBackup
+  au!
+  au VimLeavePre * :call <SID>BackupScratchBuffer()
+aug END
+
+let s:SCRATCH_BUFFER_NAME="[Scratch]"
+if !exists('s:buffer_number') " Supports reloading.
+  let s:buffer_number = -1
+endif
+
+"----------------------------------------------------------------------
+" Diplays the scratch buffer. Creates one if it is an already
+" present
+"----------------------------------------------------------------------
+function! <SID>ShowScratchBuffer()
+  if(s:buffer_number == -1 || bufexists(s:buffer_number) == 0)
+    " Temporarily modify isfname to avoid treating the name as a pattern.
+    let _isf = &isfname
+    set isfname-=\
+    set isfname-=[
+    if exists('+shellslash')
+      exec "sp \\\\". s:SCRATCH_BUFFER_NAME
     else
-        " Scratch buffer is already created. Check whether it is open
-        " in one of the windows
-        let scr_winnum = bufwinnr(scr_bufnum)
-        if scr_winnum != -1
-            " Jump to the window which has the scratch buffer if we are not
-            " already in that window
-            if winnr() != scr_winnum
-                exe scr_winnum . "wincmd w"
-            endif
-        else
-            " Create a new scratch buffer
-            if split_win
-                exe "split +buffer" . scr_bufnum
-            else
-                exe "buffer " . scr_bufnum
-            endif
-        endif
+      exec "sp \\". s:SCRATCH_BUFFER_NAME
     endif
+    let &isfname = _isf
+    let s:buffer_number = bufnr('%')
+  else
+    let buffer_win=bufwinnr(s:buffer_number)
+    if(buffer_win == -1)
+      exec 'sb '. s:buffer_number
+    else
+      exec buffer_win.'wincmd w'
+    endif
+  endif
+  " Do setup always, just in case.
+  setlocal buftype=nofile
+  setlocal bufhidden=hide
+  setlocal nobuflisted
+  setlocal noswapfile
+  setlocal noro
+  nmap <buffer> <silent> <Plug>ShowScratchBuffer :hide<cr>
+  imap <buffer> <silent> <Plug>InsShowScratchBuffer <c-o>:hide<cr>
+  command! -buffer -nargs=0 Scratch :hide
 endfunction
 
-" ScratchMarkBuffer
-" Mark a buffer as scratch
-function! s:ScratchMarkBuffer()
-    setlocal buftype=nofile
-    setlocal bufhidden=hide
-    setlocal noswapfile
-    setlocal buflisted
+function! s:BackupScratchBuffer()
+  if s:buffer_number != -1 && exists('g:scratchBackupFile') &&
+        \ g:scratchBackupFile != ''
+    exec 'split #' . s:buffer_number
+    " Avoid writing empty scratch buffers.
+    if line('$') > 1 || getline(1) !~ '^\s*$'
+      let _cpo=&cpo
+      try
+        set cpo-=A
+        exec 'write!' g:scratchBackupFile
+      finally
+        let &cpo=_cpo
+      endtry
+    endif
+  endif
 endfunction
 
-autocmd BufNewFile __Scratch__ call s:ScratchMarkBuffer()
+" Restore cpo.
+let &cpo = s:save_cpo
+unlet s:save_cpo
 
-" Command to edit the scratch buffer in the current window
-command! -nargs=0 Scratch call s:ScratchBufferOpen(0)
-" Command to open the scratch buffer in a new split window
-command! -nargs=0 Sscratch call s:ScratchBufferOpen(1)
-
+" vim6: sw=2 et
