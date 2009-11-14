@@ -238,6 +238,10 @@ if has("autocmd")
         \ exec oldwinnr . " wincmd w"
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     " }}}
+
+    " Recalculate the long line warning when idle and after saving
+    " from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html
+    autocmd cursorhold,bufwritepost * unlet! b:statusline_long_line_warning
 endif
 " }}}
 
@@ -258,6 +262,7 @@ set statusline+=%{&encoding!='utf-8'?','.&encoding:''}
 set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
 set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
+set statusline+=%{StatuslineLongLineWarning()}
 set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
 set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
@@ -394,4 +399,65 @@ if !has("gui")
     let g:CSApprox_loaded = 1
 endif
 
+" from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html {{{
+"
+" Return a warning for "long lines" {{{
+"
+" where "long" is either &textwidth or 80 (if no &textwidth is set)
+"
+" Returns:
+"   ''
+"       if no long lines
+"   '[#x,my,$z]'
+"       if long lines are found, were x is the number of long lines,
+"       y is the median length of the long lines and z is the length of
+"       the longest line
+function! StatuslineLongLineWarning()
+    if !exists("b:statusline_long_line_warning")
+        let long_line_lens = s:LongLines()
+
+        if len(long_line_lens) > 0
+            let b:statusline_long_line_warning = "[" .
+                \ '#' . len(long_line_lens) . "," .
+                \ 'm' . s:Median(long_line_lens) . "," .
+                \ '$' . max(long_line_lens) . "]"
+        else
+            let b:statusline_long_line_warning = ""
+        endif
+    endif
+    return b:statusline_long_line_warning
+endfunction " }}}
+
+" Return a list containing the lengths of the long lines in this buffer {{{
+function! s:LongLines()
+    let threshold = (&tw ? &tw : 80)
+    let spaces = repeat(" ", &ts)
+
+    let long_line_lens = []
+
+    let i = 1
+    while i <= line("$")
+        let len = strlen(substitute(getline(i), '\t', spaces, 'g'))
+        if len > threshold
+            call add(long_line_lens, len)
+        endif
+        let i += 1
+    endwhile
+
+    return long_line_lens
+endfunction " }}}
+
+" Find the median of the given array of numbers {{{
+function! s:Median(nums)
+    let nums = sort(a:nums)
+    let l = len(nums)
+
+    if l % 2 == 1
+        let i = (l-1) / 2
+        return nums[i]
+    else
+        return (nums[l/2] + nums[(l/2)-1]) / 2
+    endif
+endfunction " }}}
+" }}}
 
