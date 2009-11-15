@@ -165,7 +165,7 @@ if has("autocmd")
     autocmd BufEnter *.py set tags+=$HOME/.vim/tags/python2.6.ctags
     autocmd BufLeave *.py set tags-=$HOME/.vim/tags/python2.6.ctags
 
-    " Mark lines longer than 80 chars as an error, taken from the wiki
+    " Mark lines longer than 80 chars as an error, taken from the Wiki
     autocmd BufWinEnter * let w:HLL1=matchadd('Search', '\%<81v.\%>77v', -1)
     autocmd BufWinEnter * let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
@@ -256,10 +256,10 @@ else
    set statusline+=%f
 endif
 set statusline+=%h%m%r%w " Flags
-set statusline+=\[%{strlen(&filetype)?&filetype:'none'} " Filetype
+set statusline+=\[%{strlen(&filetype)?&filetype:'none'}
 " Include encoding if not UTF-8
 set statusline+=%{&encoding!='utf-8'?','.&encoding:''}
-" Include fileformat if not unix
+" Include file format if not Unix
 set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
 set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
@@ -468,7 +468,7 @@ function! s:Median(nums)
 endfunction " }}}
 " }}}
 
-" Toggle long lines highlighting, adapted from the wiki
+" Toggle long lines highlighting, adapted from the Wiki
 nnoremap <silent> <Leader>l
     \ :if exists('w:HLL1') <Bar>
     \   silent! call matchdelete(w:HLL1) <Bar>
