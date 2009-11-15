@@ -301,6 +301,9 @@ map <S-F12> :call Switch_background()<CR>
 " Toggle line numbering
 map <C-F12> :set number!<CR>
 
+" Make C-s do something useful, after disabling term stop!
+map <C-S> :shell<CR>
+
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
 map <M-Right> :bnext<CR>
