@@ -170,12 +170,7 @@ if has("autocmd")
 
     autocmd FileType text setlocal textwidth=72
 
-    " Jump to the last known cursor position if possible, taken from the
-    " wiki
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
+    autocmd BufReadPost * if &ft =~ '^git' | exec "normal gg" | endif
 
     autocmd BufNewFile,BufRead /tmp/*-sup.*
         \ set ft=mail |
