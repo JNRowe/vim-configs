@@ -16,7 +16,7 @@ set completeopt=longest,menuone,preview
 set confirm
 set cursorline
 set dictionary+=/usr/share/dict/words
-set directory=~/.vim/tmp
+set directory=~/.vim/tmp//
 set encoding=utf-8
 set fileencoding=utf-8
 set foldcolumn=1
