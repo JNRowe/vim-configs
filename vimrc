@@ -34,6 +34,7 @@ set infercase
 set joinspaces
 set lazyredraw
 set matchpairs+=<:>
+set noautowriteall
 set nobackup
 set nofsync
 set nonumber
