@@ -108,6 +108,9 @@ if has("gui_running")
     colorscheme darklooks
     " }}}
 else
+    " Set up the menus so emenu works properly
+    source $VIMRUNTIME/menu.vim
+
     " Terminal specific settings {{{
     if &t_Co >= 88
         colorscheme inkpot
