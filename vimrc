@@ -347,6 +347,9 @@ nnoremap <s-up> Vk
 nnoremap <s-down> Vj
 " }}}
 
+" Toggle current fold
+nnoremap <space> za
+
 " Custom menu items {{{
 if has("menu")
     amenu L&ocations.&Awesome.rc :e ~/.xdg/config/awesome/rc.lua<CR>
