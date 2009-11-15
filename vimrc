@@ -508,3 +508,6 @@ if &diff
 endif
 " }}}
 
+" Delete vcscommand plugin's buffer when hiding
+let VCSCommandDeleteOnHide=1
+
