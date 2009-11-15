@@ -483,3 +483,17 @@ nnoremap <silent> <Leader>l
     \   let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1) <Bar>
     \ endif<CR>
 
+" From godlygeek's vimrc {{{
+"
+" Insert a modeline on the last line with <leader>ml
+nmap <silent> <leader>ml :call ModelineStub()<CR>
+
+function! ModelineStub()
+    let save_cursor = getpos('.')
+    let fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
+
+    let x = printf(&cms, printf(fmt, &ft, &ts, &sw, &tw, (&et?"et":"noet")))
+    $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
+    call setpos('.', save_cursor)
+endfunction
+" }}}
