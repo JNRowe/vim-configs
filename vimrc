@@ -52,6 +52,7 @@ set smartcase
 set smarttab
 set spell
 set spelllang=en_gb
+set splitright
 set suffixes+=.pyc,.pyo
 set swapsync=
 set tabstop=4
