@@ -62,6 +62,7 @@ set textwidth=80
 set title
 set ttyfast
 set viminfo=!,'1000,<1000,h,n~/.vim/viminfo
+set virtualedit=block
 set whichwrap=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~
 set wildmenu
