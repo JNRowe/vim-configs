@@ -497,3 +497,14 @@ function! ModelineStub()
     call setpos('.', save_cursor)
 endfunction
 " }}}
+
+" Vimdiff maps {{{
+if &diff
+    noremap ,dp :diffput<CR>
+    noremap ,dg :diffget<CR>
+    noremap ,du :diffupdate<CR>
+    vnoremap < :diffget<CR>
+    vnoremap > :diffput<CR>
+endif
+" }}}
+
