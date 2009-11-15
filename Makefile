@@ -25,7 +25,7 @@ all: stow-packages $(TARGETS) $(HTML)
 
 stow-packages: $(PACKAGES)
 	$(info - Stowing $(PACKAGE_NAMES))
-	$(STOW) $(STOW_FLAGS) $(PACKAGE_NAMES)
+	$(STOW) $(STOW_FLAGS) -R $(PACKAGE_NAMES)
 unstow-packages: $(PACKAGES)
 	$(info - Unstowing $(PACKAGE_NAMES))
 	$(STOW) $(STOW_FLAGS) -D $(PACKAGE_NAMES)
