@@ -1,10 +1,10 @@
 " Name: lbdbq.vim
 " Summary: functions and mode mappings for querying lbdb from Vim
 " Copyright: Copyright (C) 2007 Stefano Zacchiroli <zack@bononia.it>
-" License: GNU GPL version 2 or above
+" License: GNU GPL version 3 or above
 " Maintainer: Stefano Zacchiroli <zack@bononia.it>
 " URL: http://www.vim.org/scripts/script.php?script_id=1757
-" Version: 0.2
+" Version: 0.3
 
 if exists("loaded_lbdbq")
     finish
@@ -58,7 +58,7 @@ function! LbdbExpandContact(qstring)
     else  " len(contacts) == 1, i.e. one single match
       let contact = contacts[0]
     endif
-    return printf("%s <%s>", contact[0], contact[1])
+    return printf("\"%s\" <%s>", escape(contact[0], '"'), contact[1])
   endif
 endfunction
 
