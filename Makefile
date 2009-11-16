@@ -1,4 +1,5 @@
 CTAGS := exuberant-ctags
+CUPAGE := cupage
 STOW := stow
 STOW_IGNORE := Rakefile .git(|attributes|ignore) snippets test \.jax$$
 STOW_FLAGS := $(patsubst %, --ignore='%', $(STOW_IGNORE)) -d external -t .
@@ -16,7 +17,7 @@ HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
 PACKAGES = $(wildcard external/*)
 PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
-.PHONY: clean update-external stow-packages unstow-packages
+.PHONY: clean cupage-scan update-external stow-packages unstow-packages
 
 all: stow-packages $(TARGETS) $(HTML)
 
@@ -70,4 +71,8 @@ clean:
 update-external:
 	$(info - Updated git submodules)
 	git submodule update
+
+cupage-scan:
+	$(info - Checking for script updates)
+	$(CUPAGE) -f cupage.conf -d cupage.db -v
 
