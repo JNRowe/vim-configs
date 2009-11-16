@@ -1,7 +1,7 @@
 " -------------------------------------------
 " Commands for quoting URLs in emails
-" Copyright (c) 2001-2004 Hugo Haas
-" 2004-06-01 version
+" Copyright (c) 2001-2006 Hugo Haas
+" 2006-11-01 version
 " I hereby put this code in the public domain.
 " Documentation at: http://larve.net/people/hugo/2001/02/email-uri-refs/
 " --------------------------------------------
@@ -17,7 +17,7 @@ function InsertRef() abort
     execute "normal a[\<C-R>r]\<ESC>"
   endif
   normal G
-  "?^-- $
+  ?^-- $
   execute "normal O  " . @r . ". " . ref . "\<ESC>`rf]"
   set nopaste
   let l:a = col(".")
@@ -36,7 +36,7 @@ function ConvertToRef() abort
   call AskNumber()
   set paste
   execute "normal cf>[\<C-R>r]\<ESC>G"
-  "?^-- $
+  ?^-- $
   execute "normal O  \<ESC>"
   execute "normal a\<C-R>r. \<ESC>px0f.2 x`r"
   set nopaste
