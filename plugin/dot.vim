@@ -14,9 +14,6 @@
 "       - TaskPaper
 "       - dot-structured text (.. title)
 "
-" Last Change: 2008/08/24
-"-------------
-"
 " Maintainer: Shuhei Kubota <kubota.shuhei+vim@gmail.com>
 "------------
 "
@@ -333,7 +330,8 @@ endfunction
 "--------------------
 
 let s:DOT_BUFFER_PREFIX = 'DotOutlineTree'
-if !exists('g:DOT_types') | let g:DOT_types = [] | endif
+let s:DOT_DEFAULT_TYPE = 'base'
+if !exists('g:DOT_types') | let g:DOT_types = [s:DOT_DEFAULT_TYPE] | endif
 
 
 function! s:DOT_execute(dokozonoLineNum)
@@ -359,6 +357,9 @@ endfunction
 function! s:DOT__renderTree(node)
     setlocal modifiable
 
+    " stop the yank hijack
+    let old_yank = @"
+
     " clear
     %delete
 
@@ -367,6 +368,8 @@ function! s:DOT__renderTree(node)
 
     execute 0
     delete
+
+    let @" = old_yank
 
     setlocal nomodifiable
 endfunction
@@ -452,7 +455,8 @@ endfunction
 function! s:DOT_escape()
     if !s:DOT__inTreeBuffer(bufnr('%')) | return | endif
 
-    execute b:DOT_textBuffNum . 'wincmd w'
+    let textWinNum = bufwinnr(bufname(b:DOT_textBuffNum))
+    execute textWinNum . 'wincmd w'
 endfunction
 
 
@@ -1408,6 +1412,12 @@ function! g:DOT_restDetectHeading(buffNum, targetLine, targetLineIndex, entireLi
     if a:targetLineIndex == len(a:entireLines) - 1 | return 0 | endif
 
     let nextLine = s:DOT__restStripCommenterCharacters(a:buffNum, a:entireLines[a:targetLineIndex + 1])
+
+    " ignore an over line of a TITLE
+    if a:targetLineIndex + 3 < len(a:entireLines)
+        let nextLine3 = s:DOT__restStripCommenterCharacters(a:buffNum, a:entireLines[a:targetLineIndex + 3])
+        if nextLine == nextLine3 | return 0 | endif
+    endif
 
     if nextLine =~ '^[-=`:.''"~^_*+#]\{2,\}$' && a:targetLine !~ '^[-=`:.''"~^_*+#]\{2,\}$'
         let detected = 1
