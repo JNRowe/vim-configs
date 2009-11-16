@@ -3,6 +3,7 @@ tags/*.ctags
 tmp/*.swp
 view/*.vim
 README.html
+cupage.db
 viminfo
 
 after/ftplugin/python/makerelease.py
