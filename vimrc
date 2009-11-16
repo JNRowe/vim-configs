@@ -264,6 +264,7 @@ set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
 set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
 set statusline+=%{StatuslineLongLineWarning()}
+set statusline+=%{CapsLockStatusline()}
 set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
 set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
