@@ -30,6 +30,7 @@ doc/space.txt
 doc/surround.txt
 doc/syntastic.txt
 doc/taglist.txt
+doc/vcscommand.txt
 doc/vtreeexplorer.txt
 ftplugin/html_snip_helper.vim
 nerdtree_plugin
@@ -50,7 +51,19 @@ plugin/speeddating.vim
 plugin/surround.vim
 plugin/syntastic.vim
 plugin/taglist.vim
+plugin/vcsbzr.vim
+plugin/vcscommand.vim
+plugin/vcscvs.vim
+plugin/vcsgit.vim
+plugin/vcshg.vim
+plugin/vcssvk.vim
+plugin/vcssvn.vim
+syntax/vcscommit.vim
 plugin/vtreeexplorer.vim
 syntax/mkd.vim
 syntax/snippet.vim
+syntax/CVSAnnotate.vim
+syntax/SVKAnnotate.vim
+syntax/SVNAnnotate.vim
+syntax/gitAnnotate.vim
 syntax_checkers
