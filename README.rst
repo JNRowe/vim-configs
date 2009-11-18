@@ -23,18 +23,39 @@ That being said if your dog doesn't mean that much to you::
     git submodule update --init
     make
 
-`GNU stow`_ v2 is required to manage plugins, the current v1 stable
-releases will **not** work.  You may have to install `stow` from the
-`git repository`_ as v2 has not been released at the time I wrote this
-[#]_.
+Scan over the ``vimrc`` file and figure out what you wish to do with it.
+The choices are link it to ``~/.vimrc``, ``source`` it in your own
+``~/.vimrc`` or simply cherrypick the parts of it you like.
+
+GNU stow
+''''''''
+
+`GNU stow`_ v2 is required to manage plugins, the current v1 stable releases
+will **not** work.  You may have to install ``stow`` from the `git repository`_
+as v2 has not been released at the time I wrote this [#]_.
+
+If you wish to manually install a plugin with ``stow`` use ``make stow-<plugin
+name>``, this is also the command to issue when you've updated a plugin in
+``external/``.  If you wish to remove a particular plugin that has been stowed
+``make unstow-<plugin name>`` is available.
+
+The reason for using ``stow`` is simple; it means we don't have to continually
+mangle ``runtimepath``.  If for some reason you can't use ``stow`` you could
+include the output of the following snippet in your ``runtimepath`` setting::
+
+    join(split(glob(expand("~/.vim/external/*")), "\n"), ',')
+
+All it does is generate a comma separated list of paths in ``~/.vim/external``,
+which is the format ``runtimepath`` expects.  If you wish to include or exclude
+specific plugins with this method you'll need to change the globbing pattern, or
+move directories around.  (I did say ``stow`` was a nice way to manage this!)
+
+cupage
+''''''
 
 cupage_ is used to keep scripts that aren't managed via git_ in sync with their
 releases, see ``cupage.conf``.  ``cupage`` v0.3.0, or above, is required if you
 wish to make use of this functionality.
-
-Scan over the ``vimrc`` file and figure out what you wish to do with it.
-The choices are link it to ``~/.vimrc``, ``source`` it in your own
-``~/.vimrc`` or simply cherrypick the parts of it you like.
 
 .. [#] If you're using Gentoo_ you can find an ebuild for ditz_, in my
        overlay_.
