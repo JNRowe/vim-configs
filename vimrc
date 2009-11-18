@@ -201,7 +201,7 @@ if has("autocmd")
     autocmd BufLeave Makefile set nowrap expandtab smarttab
 
     " Turn off search highlighting when entering a buffer
-    autocmd VimEnter * nohls
+    autocmd BufEnter * nohls
     " Turn off search highlighting when idle
     autocmd CursorHold * nohls | redraw
 
