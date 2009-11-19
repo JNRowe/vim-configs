@@ -469,20 +469,24 @@ function! s:Median(nums)
 endfunction " }}}
 " }}}
 
-" Toggle long lines highlighting, adapted from the Wiki
-nnoremap <silent> <Leader>l
-    \ :if exists('w:HLL1') |
-    \   silent! call matchdelete(w:HLL1) |
-    \   silent! call matchdelete(w:HLL2) |
-    \   unlet w:HLL1 |
-    \ elseif &textwidth > 0 |
-    \   let w:HLL1=matchadd('Search',
-    \       '\%<' . (&tw + 1) . 'v.\%>' . (&tw - 2) . 'v', -1) |
-    \   let w:HLL2=matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1) |
-    \ else |
-    \   let w:HLL1=matchadd('Search', '\%<81v.\%>78v', -1) |
-    \   let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1) |
-    \ endif<CR>
+" Toggle long lines highlighting, adapted from the Wiki {{{
+nnoremap <silent> <Leader>l :call ToggleLongLineHL()<CR>
+
+function! ToggleLongLineHL()
+    if exists('w:HLL1')
+        silent! call matchdelete(w:HLL1)
+        silent! call matchdelete(w:HLL2)
+        unlet w:HLL1
+    elseif &textwidth > 0
+        let w:HLL1=matchadd('Search',
+            \ '\%<' . (&tw + 1) . 'v.\%>' . (&tw - 2) . 'v', -1)
+        let w:HLL2=matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1)
+    else
+        let w:HLL1=matchadd('Search', '\%<81v.\%>78v', -1)
+        let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    endif
+endfunction
+" }}}
 
 " From godlygeek's vimrc {{{
 "
