@@ -4,6 +4,7 @@ scriptencoding utf-8
 
 set nocompatible
 
+" General settings {{{
 set autoindent
 set autowrite
 set backspace=indent,eol,start
@@ -67,11 +68,13 @@ set whichwrap+=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~
 set wildmenu
 set wildmode=longest,full
+" }}}
 
-" Use securemodelines.vim
+" Use securemodelines.vim {{{
 set nomodeline
 let g:secure_modelines_verbose = 0
 let g:secure_modelines_modelines = 15
+" }}}
 
 " taglist settings {{{
 let Tlist_Exit_OnlyWindow = 1
@@ -108,10 +111,11 @@ if has("gui_running")
     colorscheme darklooks
     " }}}
 else
+    " Terminal specific settings {{{
+
     " Set up the menus so emenu works properly
     source $VIMRUNTIME/menu.vim
 
-    " Terminal specific settings {{{
     if &t_Co >= 88
         colorscheme inkpot
     else
@@ -184,10 +188,12 @@ if has("autocmd")
         \ set ft=rest |
         \ set ts=2 sw=2 et
 
+    " Options for reST editing {{{
     autocmd FileType rst setlocal makeprg=rst2html.py\ %\ /dev/null
     " Map UU and Uu to add = and - underlining for headings
     autocmd FileType rst map UU yyp<c-v>$r=i<ESC>
     autocmd FileType rst map Uu yyp<c-v>$r-i<ESC>
+    " }}}
 
     autocmd FileType html,liquid,xhtml,xml
         \ imap <Leader>& &amp; |
@@ -516,15 +522,16 @@ endif
 " Delete vcscommand plugin's buffer when hiding
 let VCSCommandDeleteOnHide=1
 
-" Maps for capslock plugin
+" Maps for capslock plugin {{{
 nmap <Leader>i i<Plug>CapsLockToggle
 imap <C-L> <Plug>CapsLockToggle
+" }}}
 
-" Quickfix maps
+" Quickfix maps {{{
 nmap <Leader>cwc :cclose<CR>
 nmap <Leader>cwo :copen 7<CR><c-w>p
 nmap <Leader>cn :cnext<CR>
 nmap <Leader>cp :cprevious<CR>
 nmap <Leader>cr :crewind<CR>
 nmap <Leader>cl :clast<CR>
-
+" }}}
