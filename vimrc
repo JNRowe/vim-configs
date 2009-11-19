@@ -326,8 +326,8 @@ map <Esc>0 :buffers<CR>
 " }}}
 
 " Ctrl + up/down to skip paragraphs {{{
-nnoremap  <c-up> {
-nnoremap  <c-down> }
+nnoremap <c-up> {
+nnoremap <c-down> }
 " }}}
 
 " Remove nasty page skipping mappings {{{
