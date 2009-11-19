@@ -8,7 +8,7 @@
 
 " Insert a reference at the cursor position
 function InsertRef() abort
-  let l:ref = input("Reference: ")
+  let l:ref = input("Reference: ", @*)
   call AskNumber()
   set paste
   if (col(".") == 1)
