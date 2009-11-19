@@ -516,3 +516,11 @@ let VCSCommandDeleteOnHide=1
 nmap <Leader>i i<Plug>CapsLockToggle
 imap <C-L> <Plug>CapsLockToggle
 
+" Quickfix maps
+nmap <Leader>cwc :cclose<CR>
+nmap <Leader>cwo :copen 7<CR><c-w>p
+nmap <Leader>cn :cnext<CR>
+nmap <Leader>cp :cprevious<CR>
+nmap <Leader>cr :crewind<CR>
+nmap <Leader>cl :clast<CR>
+
