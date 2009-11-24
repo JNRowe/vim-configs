@@ -121,7 +121,7 @@ else
     else
         colorscheme taqua
     endif
-    if $TERM == "linux" || split($COLORFGBG, ";")[0] == 15
+    if $TERM == "linux" || (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
         set background=dark
     else
         set background=light
