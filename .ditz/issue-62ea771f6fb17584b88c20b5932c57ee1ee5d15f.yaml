@@ -1,0 +1,20 @@
+--- !ditz.rubyforge.org,2008-03-06/issue 
+title: Document plugin usage/choices.
+desc: ""
+type: :task
+component: vim-configs
+release: 
+reporter: James Rowe <jnrowe@gmail.com>
+status: :unstarted
+disposition: 
+creation_time: 2009-11-25 19:52:50.599755 Z
+references: []
+
+id: 62ea771f6fb17584b88c20b5932c57ee1ee5d15f
+log_events: 
+- - 2009-11-25 19:52:51.471631 Z
+  - James Rowe <jnrowe@gmail.com>
+  - created
+  - ""
+claimer: 
+git_branch: 
