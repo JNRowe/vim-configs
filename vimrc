@@ -40,6 +40,7 @@ set nobackup
 set nofsync
 set nonumber
 set nostartofline
+set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F4>
 set report=0
 set scrolloff=5
