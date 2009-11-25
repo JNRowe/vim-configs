@@ -3,6 +3,7 @@ tags/*.ctags
 tmp/*.swp
 view/*.vim
 README.html
+.ditz-config
 cupage.db
 viminfo
 
