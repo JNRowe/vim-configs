@@ -374,6 +374,8 @@ nmap <C-F2> <Plug>ShowScratchBuffer
 imap <S-F2> <Plug>InsShowScratchBuffer
 nmap <F3> :set expandtab!<CR>
 " F4 toggles paste
+nmap <S-F4> :call ToggleFlag("guioptions","m")<CR>
+nmap <C-F4> :call ToggleFlag("guioptions","T")<CR>
 " F7-F9 are used for taglist, and are defined above
 nmap <F10> :make check<CR>
 nmap <S-F10> :exec "make -C " . expand("%:p:h") . " check"<CR>
@@ -386,6 +388,18 @@ vmap <F12> :s/\s\+$//<CR>
 
 " Jump to buffer with single click
 let g:miniBufExplUseSingleClick = 1
+
+" Flag toggling function {{{
+" From http://vim.wikia.com/wiki/Handy_option_flag_toggler
+function! ToggleFlag(option,flag)
+    exec ('let lopt = &' . a:option)
+    if lopt =~ (".*" . a:flag . ".*")
+        exec ('set ' . a:option . '-=' . a:flag)
+    else
+        exec ('set ' . a:option . '+=' . a:flag)
+    endif
+endfunction
+" }}}
 
 " Automatic session management {{{
 autocmd VimEnter * call LoadSession()
