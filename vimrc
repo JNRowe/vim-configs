@@ -185,7 +185,7 @@ if has("autocmd")
         \ set ts=2 sw=2 et
 
     autocmd BufNewFile,BufRead /tmp/ditz*
-        \ set ft=rest |
+        \ set ft=rst |
         \ set ts=2 sw=2 et
 
     " Options for reST editing {{{
