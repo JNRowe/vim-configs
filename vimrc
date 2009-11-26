@@ -166,7 +166,7 @@ if has("autocmd")
         \   let &makeprg = "gcc -o %< %" |
         \ endif
 
-    " Toggle tab/wrap settings when editing Makefiles
+    " Add/remove Python tags when editing Python files
     autocmd BufEnter *.py set tags+=$HOME/.vim/tags/python2.6.ctags
     autocmd BufLeave *.py set tags-=$HOME/.vim/tags/python2.6.ctags
 
