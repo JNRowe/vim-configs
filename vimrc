@@ -549,3 +549,7 @@ nmap <Leader>cp :cprevious<CR>
 nmap <Leader>cr :crewind<CR>
 nmap <Leader>cl :clast<CR>
 " }}}
+
+" Supertab settings {{{
+let g:SuperTabDefaultCompletionType='context'
+" }}}
