@@ -19,9 +19,6 @@
 [submodule "external/snipmate.vim"]
 	path = external/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule "external/autocomplpop.vim"]
-	path = external/autocomplpop.vim
-	url = git://github.com/esukram/autocomplpop.vim.git
 [submodule "external/vim-space"]
 	path = external/vim-space
 	url = git://github.com/spiiph/vim-space.git
