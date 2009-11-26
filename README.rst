@@ -50,6 +50,16 @@ which is the format ``runtimepath`` expects.  If you wish to include or exclude
 specific plugins with this method you'll need to change the globbing pattern, or
 move directories around.  (I did say ``stow`` was a nice way to manage this!)
 
+One of the biggest disadvantages to extending ``runtimepath`` as described above
+is that vim's ``helptags`` need to be generated in every ``external/*/doc``
+directory.  Where the ``stow`` approach means we only need to generate, and
+update, the ``helptags`` in ``doc``.
+
+If you wish to switch solely to extending ``runtimepath`` instead of using
+``stow`` for some reason you should take a look at pathogen.vim_.  It has the
+same problems as manually extending ``runtimepath``, but does make such usage
+easier.
+
 cupage
 ''''''
 
@@ -73,4 +83,5 @@ wish to make use of this functionality.
 .. _git repository: http://savannah.gnu.org/git/?group=stow
 .. _cupage: http://github.com/JNRowe/cupage
 .. _git: http://www.git-scm.com/
+.. _pathogen.vim: http://www.vim.org/scripts/script.php?script_id=2332
 
