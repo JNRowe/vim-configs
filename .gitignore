@@ -4,6 +4,7 @@ tmp/*.swp
 view/*.vim
 README.html
 .ditz-config
+abbr-local
 cupage.db
 viminfo
 
