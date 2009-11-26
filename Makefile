@@ -1,5 +1,5 @@
 CTAGS := exuberant-ctags
-CUPAGE := cupage
+CUPAGE := cupage.py
 STOW := stow
 STOW_IGNORE := Rakefile .git(|attributes|ignore) snippets test \.jax$$
 STOW_FLAGS := $(patsubst %, --ignore='%', $(STOW_IGNORE)) -d external -t .
