@@ -23,6 +23,7 @@ set fileencoding=utf-8
 set foldcolumn=1
 set foldlevelstart=99
 set foldmethod=syntax
+set foldtext=MyFoldText()
 set formatoptions+=tcrqn2l1
 set formatoptions-=wvb
 set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
@@ -520,6 +521,14 @@ function! ModelineStub()
     let x = printf(&cms, printf(fmt, &ft, &ts, &sw, &tw, (&et?"et":"noet")))
     $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
     call setpos('.', save_cursor)
+endfunction
+" }}}
+
+" Custom foldtext setting {{{
+function! MyFoldText()
+    let nlines = v:foldend - v:foldstart + 1
+    return v:folddashes . getline(v:foldstart)[:winwidth(0)-10] . ' ▼ ' .
+        \ nlines . ' lines '
 endfunction
 " }}}
 
