@@ -559,6 +559,15 @@ nmap <Leader>cr :crewind<CR>
 nmap <Leader>cl :clast<CR>
 " }}}
 
+" Folding support maps {{{
+" The following mappings may not be to your liking, but I never use +/- for line
+" movement.
+nmap - zc
+nmap + zo
+
+vmap - zf
+" }}}
+
 " Supertab settings {{{
 let g:SuperTabDefaultCompletionType='context'
 " }}}
