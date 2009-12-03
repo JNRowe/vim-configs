@@ -571,3 +571,8 @@ vmap - zf
 " Supertab settings {{{
 let g:SuperTabDefaultCompletionType='context'
 " }}}
+
+" Syntastic settings {{{
+let g:syntastic_enable_signs=1
+" }}}
+
