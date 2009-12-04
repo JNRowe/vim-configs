@@ -192,6 +192,8 @@ if has("autocmd")
     " Options for reST editing {{{
     autocmd FileType rst setlocal makeprg=rst2html.py\ %\ /dev/null
     " Map UU/Uu/U_ to add =/-/' underlining for headings respectively
+    " You may not like this as it overrides the standard U mapping, but I never
+    " use it.
     autocmd FileType rst map UU yyp<c-v>$r=i<ESC>
     autocmd FileType rst map Uu yyp<c-v>$r-i<ESC>
     autocmd FileType rst map U_ yyp<c-v>$r'i<ESC>
