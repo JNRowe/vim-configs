@@ -191,9 +191,10 @@ if has("autocmd")
 
     " Options for reST editing {{{
     autocmd FileType rst setlocal makeprg=rst2html.py\ %\ /dev/null
-    " Map UU and Uu to add = and - underlining for headings
+    " Map UU/Uu/U_ to add =/-/' underlining for headings respectively
     autocmd FileType rst map UU yyp<c-v>$r=i<ESC>
     autocmd FileType rst map Uu yyp<c-v>$r-i<ESC>
+    autocmd FileType rst map U_ yyp<c-v>$r'i<ESC>
     " }}}
 
     autocmd FileType html,liquid,xhtml,xml
