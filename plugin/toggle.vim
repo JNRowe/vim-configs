@@ -52,17 +52,17 @@ let loaded_toggle=1
 let s:save_cpo = &cpo
 set cpo&vim
 
-imap <C-T> <C-O>:call Toggle()<CR>
-nmap <C-T> :call Toggle()<CR>
-vmap <C-T> <ESC>:call Toggle()<CR>
+"imap <C-T> <C-O>:call Toggle()<CR>
+"nmap <C-T> :call Toggle()<CR>
+"vmap <C-T> <ESC>:call Toggle()<CR>
 
 "--------------------------------------------------
 " If you don't want to break the standard <C-T> assignments,
 " you could use these, or of course define your own ones...
 "
-" imap <C-M-T> <C-O>:call Toggle()<CR>
-" nmap <C-M-T> :call Toggle()<CR>
-" vmap <C-M-T> <ESC>:call Toggle()<CR>
+imap <C-M-T> <C-O>:call Toggle()<CR>
+nmap <C-M-T> :call Toggle()<CR>
+vmap <C-M-T> <ESC>:call Toggle()<CR>
 "-------------------------------------------------- 
 
 " some Helper functions {{{
