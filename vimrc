@@ -110,7 +110,7 @@ if has("gui_running")
     map! <S-Insert> <MiddleMouse>
 
     set guifont=Inconsolata\ Bold\ 14
-    colorscheme fruity
+    colorscheme spiderhawk
     " }}}
 else
     " Terminal specific settings {{{
@@ -591,5 +591,6 @@ endfunction
 map <silent> <Leader>si :call MakeSign("info")<CR>
 map <silent> <Leader>sw :call MakeSign("warning")<CR>
 map <silent> <Leader>se :call MakeSign("error")<CR>
+map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 " }}}
 
