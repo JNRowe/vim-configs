@@ -579,3 +579,17 @@ let g:SuperTabDefaultCompletionType='context'
 let g:syntastic_enable_signs=1
 " }}}
 
+" Sign support {{{
+sign define info text=II texthl=Todo icon=icons/info.svg
+sign define warning text=WW texthl=Warning icon=icons/warning.svg
+sign define error text=EE texthl=Error icon=icons/error.svg
+
+function! MakeSign(sign_type)
+    execute(":sign place " . line(".") . " line=" . line(".") .
+        \ " name=" . a:sign_type . " file=" . expand("%:p"))
+endfunction
+map <silent> <Leader>si :call MakeSign("info")<CR>
+map <silent> <Leader>sw :call MakeSign("warning")<CR>
+map <silent> <Leader>se :call MakeSign("error")<CR>
+" }}}
+
