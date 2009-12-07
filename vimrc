@@ -123,7 +123,8 @@ else
     else
         colorscheme taqua
     endif
-    if $TERM == "linux" || (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
+    if $TERM == "linux" ||
+        \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
         set background=dark
     else
         set background=light
@@ -179,7 +180,7 @@ if has("autocmd")
 
     autocmd FileType text setlocal textwidth=72
 
-    autocmd BufReadPost * if &ft =~ '^git' | exec "normal gg" | endif
+    autocmd BufReadPost * if &ft =~ '^git' | execute "normal gg" | endif
 
     autocmd BufNewFile,BufRead /tmp/*-sup.*
         \ set ft=mail |
@@ -194,9 +195,9 @@ if has("autocmd")
     " Map UU/Uu/U_ to add =/-/' underlining for headings respectively
     " You may not like this as it overrides the standard U mapping, but I never
     " use it.
-    autocmd FileType rst map UU yyp<c-v>$r=i<ESC>
-    autocmd FileType rst map Uu yyp<c-v>$r-i<ESC>
-    autocmd FileType rst map U_ yyp<c-v>$r'i<ESC>
+    autocmd FileType rst map UU yyp<C-v>$r=i<ESC>
+    autocmd FileType rst map Uu yyp<C-v>$r-i<ESC>
+    autocmd FileType rst map U_ yyp<C-v>$r'i<ESC>
     " }}}
 
     autocmd FileType html,liquid,xhtml,xml
@@ -246,7 +247,7 @@ if has("autocmd")
     autocmd BufWinEnter *
         \ let oldwinnr=winnr() |
         \ windo call <SID>FixBufferTitles() |
-        \ exec oldwinnr . " wincmd w"
+        \ execute oldwinnr . " wincmd w"
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     " }}}
 
@@ -331,19 +332,19 @@ map <Esc>0 :buffers<CR>
 " }}}
 
 " Ctrl + up/down to skip paragraphs {{{
-nnoremap <c-up> {
-nnoremap <c-down> }
+nnoremap <C-Up> {
+nnoremap <C-Down> }
 " }}}
 
 " Remove nasty page skipping mappings {{{
-inoremap <s-up> <c-o>gk
-inoremap <s-down> <c-o>gj
-noremap <s-up> gk
-noremap <s-down> gj
+inoremap <S-Up> <C-o>gk
+inoremap <S-Down> <C-o>gj
+noremap <S-Up> gk
+noremap <S-Down> gj
 " }}}
 
 " Make c-g verbose by default
-nnoremap <c-g> 2<c-g>
+nnoremap <C-g> 2<C-g>
 
 " Wrap current word in brackets {{{
 nmap ,( mpwbi(<Esc>ea)<Esc>`pl
@@ -352,14 +353,14 @@ nmap ,{ mpwbi{<Esc>ea}<Esc>`pl
 " }}}
 
 " Shift + left/right to select text {{{
-nnoremap <s-left> vh
-nnoremap <s-right> vl
-nnoremap <s-up> Vk
-nnoremap <s-down> Vj
+nnoremap <S-Left> vh
+nnoremap <S-Right> vl
+nnoremap <S-Up> Vk
+nnoremap <S-Down> Vj
 " }}}
 
 " Toggle current fold
-nnoremap <space> za
+nnoremap <Space> za
 
 " Custom menu items {{{
 if has("menu")
@@ -382,9 +383,9 @@ nmap <S-F4> :call ToggleFlag("guioptions","m")<CR>
 nmap <C-F4> :call ToggleFlag("guioptions","T")<CR>
 " F7-F9 are used for taglist, and are defined above
 nmap <F10> :make check<CR>
-nmap <S-F10> :exec "make -C " . expand("%:p:h") . " check"<CR>
+nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>
 nmap <F11> :make<CR>
-nmap <S-F11> :exec "make -C " . expand("%:p:h")<CR>
+nmap <S-F11> :execute "make -C " . expand("%:p:h")<CR>
 " Delete trailing whitespace:
 nmap <F12> :%s/\s\+$//<CR>
 vmap <F12> :s/\s\+$//<CR>
@@ -396,11 +397,11 @@ let g:miniBufExplUseSingleClick = 1
 " Flag toggling function {{{
 " From http://vim.wikia.com/wiki/Handy_option_flag_toggler
 function! ToggleFlag(option,flag)
-    exec ('let lopt = &' . a:option)
+    execute('let lopt = &' . a:option)
     if lopt =~ (".*" . a:flag . ".*")
-        exec ('set ' . a:option . '-=' . a:flag)
+        execute('set ' . a:option . '-=' . a:flag)
     else
-        exec ('set ' . a:option . '+=' . a:flag)
+        execute('set ' . a:option . '+=' . a:flag)
     endif
 endfunction
 " }}}
@@ -515,7 +516,7 @@ endfunction
 " From godlygeek's vimrc {{{
 "
 " Insert a modeline on the last line with <leader>ml
-nmap <silent> <leader>ml :call ModelineStub()<CR>
+nmap <silent> <Leader>ml :call ModelineStub()<CR>
 
 function! ModelineStub()
     let save_cursor = getpos('.')
@@ -555,7 +556,7 @@ imap <C-L> <Plug>CapsLockToggle
 
 " Quickfix maps {{{
 nmap <Leader>cwc :cclose<CR>
-nmap <Leader>cwo :copen 7<CR><c-w>p
+nmap <Leader>cwo :copen 7<CR><C-w>p
 nmap <Leader>cn :cnext<CR>
 nmap <Leader>cp :cprevious<CR>
 nmap <Leader>cr :crewind<CR>
