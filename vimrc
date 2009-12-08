@@ -583,9 +583,13 @@ let g:syntastic_enable_signs=1
 " }}}
 
 " Sign support {{{
-sign define info text=II texthl=Todo icon=icons/info.svg
-sign define warning text=WW texthl=Warning icon=icons/warning.svg
-sign define error text=EE texthl=Error icon=icons/error.svg
+" execute nastiness is used to so we can set paths for icons :/
+execute("sign define info text=II texthl=Todo icon=" .
+    \ expand("~/.vim/icons/info.svg"))
+execute("sign define warning text=WW texthl=Warning icon=" .
+    \ expand("~/.vim/icons/warning.svg"))
+execute("sign define error text=EE texthl=Error icon=" .
+    \ expand("~/.vim/icons/error.svg"))
 
 function! MakeSign(sign_type)
     execute(":sign place " . line(".") . " line=" . line(".") .
