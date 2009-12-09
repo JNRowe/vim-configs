@@ -169,9 +169,8 @@ if has("autocmd")
         \   let &makeprg = "gcc -o %< %" |
         \ endif
 
-    " Add/remove Python tags when editing Python files
-    autocmd BufEnter *.py set tags+=$HOME/.vim/tags/python2.6.ctags
-    autocmd BufLeave *.py set tags-=$HOME/.vim/tags/python2.6.ctags
+    " Add Python tags when editing Python files
+    autocmd FileType python setlocal tags+=$HOME/.vim/tags/python2.6.ctags
 
     " Mark lines longer than 80 chars as an error
     autocmd BufWinEnter * call ToggleLongLineHL()
