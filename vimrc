@@ -180,6 +180,8 @@ if has("autocmd")
 
     autocmd FileType text setlocal textwidth=72
 
+    " Don't restore saved position for git buffers.
+    " This is most useful in commit messages.
     autocmd BufReadPost * if &ft =~ '^git' | execute "normal gg" | endif
 
     autocmd BufNewFile,BufRead /tmp/*-sup.*
