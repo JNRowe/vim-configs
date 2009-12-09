@@ -109,8 +109,8 @@ if has("gui_running")
     map <S-Insert> <MiddleMouse>
     map! <S-Insert> <MiddleMouse>
 
-    set guifont=Inconsolata\ Bold\ 14
-    colorscheme spiderhawk
+    set guifont=Terminus\ Bold\ 14
+    colorscheme fruity
     " }}}
 else
     " Terminal specific settings {{{
