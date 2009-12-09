@@ -19,6 +19,7 @@ set cursorline
 set dictionary+=/usr/share/dict/words
 set directory=~/.vim/tmp//
 set encoding=utf-8
+set expandtab
 set fileencoding=utf-8
 set foldcolumn=1
 set foldlevelstart=99
@@ -54,12 +55,12 @@ set showmatch
 set showtabline=1
 set smartcase
 set smarttab
+set softtabstop=4
 set spell
 set spelllang=en_gb
 set splitright
 set suffixes+=.pyc,.pyo
 set swapsync=
-set tabstop=4
 set tags+=ctags;tags;
 set textwidth=80
 set title
