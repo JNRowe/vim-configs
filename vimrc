@@ -196,17 +196,18 @@ if has("autocmd")
     " Map UU/Uu/U_ to add =/-/' underlining for headings respectively
     " You may not like this as it overrides the standard U mapping, but I never
     " use it.
-    autocmd FileType rst map UU yyp<C-v>$r=i<ESC>
-    autocmd FileType rst map Uu yyp<C-v>$r-i<ESC>
-    autocmd FileType rst map U_ yyp<C-v>$r'i<ESC>
+    autocmd FileType rst
+        \ map <buffer> UU yyp<C-v>$r=i<ESC> |
+        \ map <buffer> Uu yyp<C-v>$r-i<ESC> |
+        \ map <buffer> U_ yyp<C-v>$r'i<ESC>
     " }}}
 
     autocmd FileType html,liquid,xhtml,xml
-        \ imap <Leader>& &amp; |
-        \ imap <Leader>< &lt; |
-        \ imap <Leader>> &gt; |
-        \ imap <Leader>" &quot; |
-        \ imap <Leader><Space> &nbsp;
+        \ imap <buffer> <Leader>& &amp; |
+        \ imap <buffer> <Leader>< &lt; |
+        \ imap <buffer> <Leader>> &gt; |
+        \ imap <buffer> <Leader>" &quot; |
+        \ imap <buffer> <Leader><Space> &nbsp;
 
     " Toggle tab/wrap settings when editing Makefiles
     autocmd BufEnter Makefile set wrap noexpandtab nosmarttab
