@@ -400,7 +400,7 @@ let g:miniBufExplUseSingleClick = 1
 " From http://vim.wikia.com/wiki/Handy_option_flag_toggler
 function! ToggleFlag(option,flag)
     execute('let lopt = &' . a:option)
-    if lopt =~ (".*" . a:flag . ".*")
+    if lopt =~# (".*" . a:flag . ".*")
         execute('set ' . a:option . '-=' . a:flag)
     else
         execute('set ' . a:option . '+=' . a:flag)
