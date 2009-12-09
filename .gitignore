@@ -13,7 +13,7 @@ after/ftplugin/python/makerelease.py
 after/ftplugin/python/pyflakes
 after/ftplugin/python/pyflakes.vim
 after/ftplugin/python/README.rst
-after/plugin
+after/plugin/snipMate.vim
 autoload/acp.vim
 autoload/csapprox
 autoload/csapprox.vim
