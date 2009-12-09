@@ -582,6 +582,10 @@ let g:SuperTabDefaultCompletionType='context'
 let g:syntastic_enable_signs=1
 " }}}
 
+" gist-vim settings {{{
+let g:gist_clip_command="xsel -b"
+" }}}
+
 " Sign support {{{
 " execute nastiness is used to so we can set paths for icons :/
 execute("sign define info text=II texthl=Todo icon=" .
