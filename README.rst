@@ -71,7 +71,7 @@ wish to make use of this functionality.
        overlay_.
 .. [#] Gentoo_ users can install `GNU stow`_ directly from the `git
        repository`_ using the ``app-admin/stow-9999`` ebuild from my
-       overlay_
+       overlay_.
 
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
