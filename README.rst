@@ -50,7 +50,7 @@ which is the format ``runtimepath`` expects.  If you wish to include or exclude
 specific plugins with this method you'll need to change the globbing pattern, or
 move directories around.  (I did say ``stow`` was a nice way to manage this!)
 
-One of the biggest disadvantages to extending ``runtimepath`` as described above
+One of the biggest disadvantages of extending ``runtimepath`` as described above
 is that vim's ``helptags`` need to be generated in every ``external/*/doc``
 directory.  Where the ``stow`` approach means we only need to generate, and
 update, the ``helptags`` in ``doc``.
