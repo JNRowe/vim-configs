@@ -21,7 +21,7 @@ set directory=~/.vim/tmp//
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
-set foldcolumn=1
+set foldcolumn=2
 set foldlevelstart=99
 set foldmethod=syntax
 set foldtext=MyFoldText()
