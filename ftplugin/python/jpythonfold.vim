@@ -129,7 +129,7 @@ function! GetPythonFold(lnum)
         endif
     " Case E***: empty lines fold with previous
     " (***) change '=' to -1 if you want empty lines/comment out of a fold
-    elseif line == '' | return '='
+    elseif line == '' | return '-1'
     endif
     " now we need the indent from previous
     let p = prevnonblank(a:lnum-1)
