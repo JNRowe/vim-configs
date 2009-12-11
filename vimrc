@@ -166,6 +166,9 @@ if has("autocmd")
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
 
+    " Attempt filetype detection after writing.
+    autocmd BufWritePost * if &ft == "" | filetype detect | endif
+
     " Use :make to compile C/C++, even without a Makefile
     autocmd FileType c,cpp
         \ if glob('Makefile') == "" |
