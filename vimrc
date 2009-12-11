@@ -37,6 +37,7 @@ set history=1000
 set ignorecase
 set incsearch
 set infercase
+set isfname-=\=
 set joinspaces
 set lazyredraw
 set matchpairs+=<:>
