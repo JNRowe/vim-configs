@@ -376,7 +376,10 @@ if has("menu")
         \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/rc.lua"))<CR>
     amenu L&ocations.&Awesome.theme
         \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
+    amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     amenu L&ocations.&vimrc :e ~/.vimrc<CR>
+    amenu L&ocations.&zsh.&functions :e ~/.zsh/functions-local<CR>
+    amenu L&ocations.&zsh.&zshrc :e ~/.zshrc<CR>
 endif " }}}
 
 " Don't use default keys for scratch plugin
