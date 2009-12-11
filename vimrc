@@ -372,8 +372,10 @@ nmap <leader>f <Plug>ZoomWin
 
 " Custom menu items {{{
 if has("menu")
-    amenu L&ocations.&Awesome.rc :e ~/.xdg/config/awesome/rc.lua<CR>
-    amenu L&ocations.&Awesome.theme :e ~/.xdg/config/awesome/theme.lua<CR>
+    amenu L&ocations.&Awesome.rc
+        \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/rc.lua"))<CR>
+    amenu L&ocations.&Awesome.theme
+        \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
     amenu L&ocations.&vimrc :e ~/.vimrc<CR>
 endif " }}}
 
