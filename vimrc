@@ -7,7 +7,9 @@ set nocompatible
 " General settings {{{
 set autoindent
 set autowrite
+set noautowriteall
 set backspace=indent,eol,start
+set nobackup
 set backupcopy=auto,breakhardlink
 if has("ballooneval")
     set ballooneval
@@ -27,6 +29,7 @@ set foldmethod=syntax
 set foldtext=MyFoldText()
 set formatoptions+=tcrqn2l1
 set formatoptions-=wvb
+set nofsync
 set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
 set guioptions+=c
 set hidden
@@ -37,11 +40,7 @@ set infercase
 set joinspaces
 set lazyredraw
 set matchpairs+=<:>
-set noautowriteall
-set nobackup
-set nofsync
 set nonumber
-set nostartofline
 set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F4>
 set report=0
@@ -58,6 +57,7 @@ set softtabstop=4
 set spell
 set spelllang=en_gb
 set splitright
+set nostartofline
 set suffixes+=.pyc,.pyo
 set swapsync=
 set tags+=ctags;tags;
