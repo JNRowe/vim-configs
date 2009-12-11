@@ -244,7 +244,7 @@ if has("autocmd")
         \   g:make_total_time % 60)
     " }}}
 
-    " Simple status for minibufexpl/quickfix windows {{{
+    " Simple status for minibufexpl/quickfix/help windows {{{
     fun! <SID>FixBufferTitles()
         if "-MiniBufExplorer-" == bufname("%")
             setlocal statusline=\[Buffers\]
@@ -255,6 +255,8 @@ if has("autocmd")
         \ windo call <SID>FixBufferTitles() |
         \ execute oldwinnr . " wincmd w"
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
+    autocmd FileType help setlocal statusline=%t%h%=%p%%
+
     " }}}
 
     " Recalculate the long line warning when idle and after saving
