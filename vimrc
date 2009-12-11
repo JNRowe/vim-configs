@@ -48,7 +48,6 @@ set report=0
 set scrolloff=5
 set shiftround
 set shiftwidth=4
-set showbreak="+ "
 set showcmd
 set showfulltag
 set showmatch
@@ -72,6 +71,9 @@ set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~
 set wildmenu
 set wildmode=longest,full
 " }}}
+
+" Characters to show for wrapped lines
+let &showbreak="» "
 
 " Use securemodelines.vim {{{
 set nomodeline
