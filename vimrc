@@ -394,7 +394,7 @@ nnoremap <S-Down> Vj
 " Toggle current fold
 nnoremap <Space> za
 
-nmap <leader>f <Plug>ZoomWin
+nmap <Leader>f <Plug>ZoomWin
 
 " Custom menu items {{{
 if has("menu")
@@ -533,7 +533,7 @@ endfunction
 
 " From godlygeek's vimrc {{{
 "
-" Insert a modeline on the last line with <leader>ml
+" Insert a modeline on the last line with <Leader>ml
 nmap <silent> <Leader>ml :call ModelineStub()<CR>
 
 function! ModelineStub()
