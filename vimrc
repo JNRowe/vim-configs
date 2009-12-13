@@ -608,29 +608,31 @@ let g:showmarks_ignore_type="phq"
 " }}}
 
 " Sign support {{{
-" execute nastiness is used to so we can set paths for icons :/
-execute("sign define info text=II texthl=Todo icon=" .
-    \ expand("~/.vim/icons/info.svg"))
-execute("sign define warning text=WW texthl=Warning icon=" .
-    \ expand("~/.vim/icons/warning.svg"))
-execute("sign define error text=EE texthl=Error icon=" .
-    \ expand("~/.vim/icons/error.svg"))
-
-function! MakeSign(sign_type)
-    execute(":sign place " . line(".") . " line=" . line(".") .
-        \ " name=" . a:sign_type . " file=" . expand("%:p"))
+" Waaaay too much execute nastiness :/
+function! SignDefine(type, ...)
+    let capped = toupper(a:type[0]) . a:type[1:]
+    let text = capped[0] . capped[0]
+    let hl_type = a:0 == 1 ? a:1 : capped
+    execute("sign define " . capped . " text=" . text . " texthl=" . hl_type .
+        \ " icon=" . expand("~/.vim/icons/" . a:type . ".svg"))
+    execute("map <silent> <Leader>s" . a:type[0] . " :call MakeSign('" .
+        \ capped . "')<CR>")
+    execute("amenu icon=~/.vim/icons/" . a:type . ".svg ToolBar." .
+        \ capped . " :call MakeSign('" . capped . "')<CR>")
+    execute("tmenu ToolBar." . a:type . " Insert a" .
+        \ (a:type[0] =~ "[aeiou]" ? "n" : "") . " " . a:type .
+        \ " sign")
 endfunction
-map <silent> <Leader>si :call MakeSign("info")<CR>
-map <silent> <Leader>sw :call MakeSign("warning")<CR>
-map <silent> <Leader>se :call MakeSign("error")<CR>
-map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 
 amenu ToolBar.-Sep- :
-amenu icon=~/.vim/icons/info.svg ToolBar.Info :call MakeSign("info")<CR>
-tmenu ToolBar.Info Insert an information sign
-amenu icon=~/.vim/icons/warning.svg ToolBar.Warning :call MakeSign("warning")<CR>
-tmenu ToolBar.Warning Insert a warning sign
-amenu icon=~/.vim/icons/error.svg ToolBar.Error :call MakeSign("error")<CR>
-tmenu ToolBar.Error Insert an error sign
+call SignDefine("info", "Todo")
+call SignDefine("warning")
+call SignDefine("error")
+
+function! MakeSign(type)
+    execute(":sign place " . line(".") . " line=" . line(".") .
+        \ " name=" . a:type . " file=" . expand("%:p"))
+endfunction
+map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 " }}}
 
