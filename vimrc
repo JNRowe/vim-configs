@@ -171,7 +171,7 @@ if has("autocmd")
 
     " Use :make to compile C/C++, even without a Makefile
     autocmd FileType c,cpp
-        \ if glob('Makefile') == "" |
+        \ if filereadable('Makefile') |
         \   let &makeprg = "gcc -o %< %" |
         \ endif
 
