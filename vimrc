@@ -297,7 +297,7 @@ if has("gui_running")
     map! <S-Insert> <MiddleMouse>
 
     set guifont=Terminus\ Bold\ 14
-    colorscheme fruity
+    colorscheme jnrowe
 
     if has('title')
         set titlestring+=%{v:servername!='GVIM'?' ['.v:servername.']':''}
