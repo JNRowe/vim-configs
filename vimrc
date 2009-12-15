@@ -178,6 +178,10 @@ if has("autocmd")
     " Add Python tags when editing Python files
     autocmd FileType python setlocal tags+=$HOME/.vim/tags/python2.6.ctags
 
+    " Set filetype specific commands for keyword lookup
+    autocmd FileType python setlocal keywordprg=pydoc
+    autocmd FileType vim setlocal keywordprg=:help
+
     " Mark lines longer than 80 chars as an error
     autocmd BufWinEnter * call ToggleLongLineHL()
 
