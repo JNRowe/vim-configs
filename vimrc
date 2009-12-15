@@ -386,6 +386,9 @@ noremap <S-Down> gj
 " Make c-g verbose by default
 nnoremap <C-g> 2<C-g>
 
+" Map Q to reformat paragraphs
+nmap Q gqap
+
 " Wrap current word in brackets {{{
 nmap ,( mpwbi(<Esc>ea)<Esc>`pl
 nmap ,[ mpwbi[<Esc>ea]<Esc>`pl
