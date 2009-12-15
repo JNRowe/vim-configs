@@ -187,6 +187,7 @@ if has("autocmd")
 
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
+    autocmd FileType help nmap <buffer> <Backspace> <C-T>
 
     autocmd FileType text setlocal textwidth=72
 
