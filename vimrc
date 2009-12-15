@@ -623,7 +623,7 @@ let g:showmarks_ignore_type="phq"
 function! SignDefine(type, ...)
     let capped = toupper(a:type[0]) . a:type[1:]
     let text = capped[0] . capped[0]
-    let hl_type = a:0 == 1 ? a:1 : capped
+    let hl_type = a:0 == 1 ? a:1 : capped . "MSG"
     execute("sign define " . capped . " text=" . text . " texthl=" . hl_type .
         \ " icon=" . expand("~/.vim/icons/" . a:type . ".svg"))
     execute("map <silent> <Leader>s" . a:type[0] . " :call MakeSign('" .
