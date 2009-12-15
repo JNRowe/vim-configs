@@ -127,7 +127,7 @@ else
     else
         colorscheme taqua
     endif
-    if $TERM == "linux" ||
+    if $TERM ==# "linux" ||
         \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
         set background=dark
     else
@@ -167,7 +167,7 @@ if has("autocmd")
     autocmd BufWritePost .vimrc source %
 
     " Attempt filetype detection after writing.
-    autocmd BufWritePost * if &ft == "" | filetype detect | endif
+    autocmd BufWritePost * if empty(&ft) | filetype detect | endif
 
     " Use :make to compile C/C++, even without a Makefile
     autocmd FileType c,cpp
@@ -188,7 +188,7 @@ if has("autocmd")
 
     " Don't restore saved position for git buffers.
     " This is most useful in commit messages.
-    autocmd BufReadPost * if &ft =~ '^git' | execute "normal gg" | endif
+    autocmd BufReadPost * if &ft =~# '^git' | execute "normal gg" | endif
 
     autocmd BufNewFile,BufRead /tmp/*-sup.*
         \ set ft=mail |
@@ -249,7 +249,7 @@ if has("autocmd")
 
     " Simple status for minibufexpl/quickfix/help windows {{{
     fun! <SID>FixBufferTitles()
-        if "-MiniBufExplorer-" == bufname("%")
+        if "-MiniBufExplorer-" ==# bufname("%")
             setlocal statusline=\[Buffers\]
         endif
     endfun
@@ -325,7 +325,7 @@ endif " }}}
 let g:bugsummary_browser="opera -newpage '%s'"
 
 " Show tabs and trailing whitespace {{{
-if (&termencoding == "utf-8") || has("gui_running")
+if (&termencoding ==# "utf-8") || has("gui_running")
     set list listchars=tab:»·,trail:·,extends:…,nbsp:‗
 else
     set list listchars=tab:>-,trail:.,extends:>,nbsp:_
@@ -333,7 +333,7 @@ endif " }}}
 
 " Map Shift-F12 to switch between light and dark
 function! Switch_background()
-    if &background == "light"
+    if &background ==# "light"
         set background=dark
     else
         set background=light
@@ -620,7 +620,7 @@ function! SignDefine(type, ...)
     execute("amenu icon=~/.vim/icons/" . a:type . ".svg ToolBar." .
         \ capped . " :call MakeSign('" . capped . "')<CR>")
     execute("tmenu ToolBar." . a:type . " Insert a" .
-        \ (a:type[0] =~ "[aeiou]" ? "n" : "") . " " . a:type .
+        \ (a:type[0] =~? "[aeiou]" ? "n" : "") . " " . a:type .
         \ " sign")
 endfunction
 
