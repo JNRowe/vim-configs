@@ -100,48 +100,6 @@ let is_bash=1 " Default to bash for sh syntax
 let python_highlight_all=1 " Highlight everything possible for python
 " }}}
 
-if has("gui_running")
-    " GUI specific settings {{{
-    set cmdheight=2
-
-    set mousemodel=popup_setpos
-
-    " Always display line number in the GUI
-    set number
-
-    " Shift insert works the same as in a terminal
-    map <S-Insert> <MiddleMouse>
-    map! <S-Insert> <MiddleMouse>
-
-    set guifont=Terminus\ Bold\ 14
-    colorscheme fruity
-    " }}}
-else
-    " Terminal specific settings {{{
-
-    " Set up the menus so emenu works properly
-    source $VIMRUNTIME/menu.vim
-
-    if &t_Co >= 88
-        colorscheme inkpot
-    else
-        colorscheme taqua
-    endif
-    if $TERM ==# "linux" ||
-        \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
-        set background=dark
-    else
-        set background=light
-    endif
-
-    " Change the cursor colour for insert mode {{{
-    if &term =~? '^rxvt' && exists('&t_SI')
-        let &t_SI="\<Esc>]12;purple\x7"
-        let &t_EI="\<Esc>]12;green\x7"
-    endif " }}}
-    " }}}
-endif
-
 " Load abbreviations {{{
 if filereadable(expand("~/.vim/abbr"))
     source ~/.vim/abbr
@@ -264,7 +222,6 @@ if has("autocmd")
         \ execute oldwinnr . " wincmd w"
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     autocmd FileType help setlocal statusline=%t%h%=%p%%
-
     " }}}
 
     " Recalculate the long line warning when idle and after saving
@@ -321,10 +278,56 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
 " Fancy window titles where possible {{{
 if has('title') && (has('gui_running') || &title)
     set titlestring=
-    set titlestring+=%F\ " File name
-    set titlestring+=%h%m%r%w " Flags
+    set titlestring+=%F " File name
     set titlestring+=\ -\ %{v:progname} " Program name
 endif " }}}
+
+
+if has("gui_running")
+    " GUI specific settings {{{
+    set cmdheight=2
+
+    set mousemodel=popup_setpos
+
+    " Always display line number in the GUI
+    set number
+
+    " Shift insert works the same as in a terminal
+    map <S-Insert> <MiddleMouse>
+    map! <S-Insert> <MiddleMouse>
+
+    set guifont=Terminus\ Bold\ 14
+    colorscheme fruity
+
+    if has('title')
+        set titlestring+=%{v:servername!='GVIM'?'['.v:servername.']':''}
+    endif
+    " }}}
+else
+    " Terminal specific settings {{{
+
+    " Set up the menus so emenu works properly
+    source $VIMRUNTIME/menu.vim
+
+    if &t_Co >= 88
+        colorscheme inkpot
+    else
+        colorscheme taqua
+    endif
+    if $TERM ==# "linux" ||
+        \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
+        set background=dark
+    else
+        set background=light
+    endif
+
+    " Change the cursor colour for insert mode {{{
+    if &term =~? '^rxvt' && exists('&t_SI')
+        let &t_SI="\<Esc>]12;purple\x7"
+        let &t_EI="\<Esc>]12;green\x7"
+    endif " }}}
+    " }}}
+endif
 
 " Gentoo bug summary browser
 let g:bugsummary_browser="opera -newpage '%s'"
