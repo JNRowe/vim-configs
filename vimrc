@@ -304,7 +304,7 @@ else
    set statusline+=%f
 endif
 set statusline+=%h%m%r%w " Flags
-set statusline+=\[%{strlen(&filetype)?&filetype:'none'}
+set statusline+=\[%{empty(&filetype)?'none':&filetype}
 " Include encoding if not UTF-8
 set statusline+=%{&encoding!='utf-8'?','.&encoding:''}
 " Include file format if not Unix
