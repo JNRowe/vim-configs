@@ -211,14 +211,16 @@ if has("autocmd")
     " }}}
 
     " Simple status for minibufexpl/quickfix/help windows {{{
-    fun! <SID>FixBufferTitles()
+    fun! <SID>FixBufferSettings()
         if "-MiniBufExplorer-" ==# bufname("%")
             setlocal statusline=\[Buffers\]
+            setlocal nospell
+            setlocal nohlsearch
         endif
     endfun
     autocmd BufWinEnter *
         \ let oldwinnr=winnr() |
-        \ windo call <SID>FixBufferTitles() |
+        \ windo call <SID>FixBufferSettings() |
         \ execute oldwinnr . " wincmd w"
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     autocmd FileType help setlocal statusline=%t%h%=%p%%
