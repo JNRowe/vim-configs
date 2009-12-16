@@ -300,7 +300,7 @@ if has("gui_running")
     colorscheme jnrowe
 
     if has('title')
-        set titlestring+=%{v:servername!='GVIM'?' ['.v:servername.']':''}
+        set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
     endif
     " }}}
 else
