@@ -10,9 +10,6 @@
 [submodule "external/vim-speeddating"]
 	path = external/vim-speeddating
 	url = git://github.com/tpope/vim-speeddating.git
-[submodule "external/taglist"]
-	path = external/taglist
-	url = git://github.com/esukram/taglist.vim.git
 [submodule "external/vtreeexplorer"]
 	path = external/vtreeexplorer
 	url = git://github.com/jk3us/vtreeexplorer.git
