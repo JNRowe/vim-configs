@@ -225,6 +225,8 @@ if has("autocmd")
         \ execute oldwinnr . " wincmd w"
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     autocmd FileType help setlocal statusline=%t%h%=%p%%
+    autocmd FileType taglist setlocal nospell |
+        \ setlocal statusline=%f
     " }}}
 
     " Recalculate the long line warning when idle and after saving
