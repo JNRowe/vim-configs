@@ -21,7 +21,7 @@ let colors_name = "jnrowe"
 " Base colours
 highlight Cursor        guibg=#d3d7cf
 highlight NonText       guibg=#555753  guifg=#555753
-highlight Normal        guibg=#2e3436  guifg=#ffffff
+highlight Normal        guibg=#454545  guifg=#f4f4f4
 highlight Visual        guibg=#555753                 gui=bold
 highlight lCursor       guibg=#eeeeec
 
