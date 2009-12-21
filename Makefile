@@ -74,5 +74,5 @@ update-external:
 
 cupage-scan:
 	$(info - Checking for script updates)
-	$(CUPAGE) -f cupage.conf -d cupage.db -v
+	$(CUPAGE) -f cupage.conf -d cupage.db
 
