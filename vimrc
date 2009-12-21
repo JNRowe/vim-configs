@@ -211,18 +211,7 @@ if has("autocmd")
         \   g:make_total_time % 60)
     " }}}
 
-    " Simple status for minibufexpl/quickfix/help windows {{{
-    fun! <SID>FixBufferSettings()
-        if "-MiniBufExplorer-" ==# bufname("%")
-            setlocal statusline=\[Buffers\]
-            setlocal nospell
-            setlocal nohlsearch
-        endif
-    endfun
-    autocmd BufWinEnter *
-        \ let oldwinnr=winnr() |
-        \ windo call <SID>FixBufferSettings() |
-        \ execute oldwinnr . " wincmd w"
+    " Simple status for quickfix/help windows {{{
     autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     autocmd FileType help setlocal statusline=%t%h%=%p%%
     autocmd FileType taglist setlocal nospell |
@@ -445,9 +434,6 @@ nmap <S-F11> :execute "make -C " . expand("%:p:h")<CR>
 nmap <F12> :%s/\s\+$//<CR>
 vmap <F12> :s/\s\+$//<CR>
 " }}}
-
-" Jump to buffer with single click
-let g:miniBufExplUseSingleClick = 1
 
 " Flag toggling function {{{
 " From http://vim.wikia.com/wiki/Handy_option_flag_toggler
