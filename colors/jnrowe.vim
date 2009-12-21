@@ -70,3 +70,13 @@ highlight String                       guifg=#edd400
 highlight Type                         guifg=#73d216
 highlight Warning                      guifg=#ef2929  gui=italic
 
+" Hooks
+" I realise people don't like this type of thing in colourschemes, but I don't
+" care as toggling this correctly is horrendous!
+if version >= 700
+    autocmd InsertEnter *
+        \ highlight StatusLine guibg=#73d216  guifg=#ffffff  gui=underline
+    autocmd InsertLeave *
+        \ highlight StatusLine guibg=#4d6884  guifg=#ffffff  gui=bold,underline
+endif
+
