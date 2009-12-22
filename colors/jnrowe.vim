@@ -74,7 +74,7 @@ highlight Warning                      guifg=#ef2929  gui=italic
 " I realise people don't like this type of thing in colourschemes, but I don't
 " care as toggling this correctly is horrendous!
 if version >= 700
-    function! InsertColour(mode)
+    function! s:InsertColour(mode)
         if a:mode == 'i'
             let bg_colour = "#73d216"
         elseif a:mode == 'r'
@@ -85,9 +85,20 @@ if version >= 700
         execute("highlight StatusLine guibg=" . bg_colour . " gui=underline")
     endfunction
 
-    autocmd InsertEnter,InsertChange * call InsertColour(v:insertmode)
+    augroup jnrowe_color
+    autocmd!
+    autocmd InsertEnter,InsertChange * call s:InsertColour(v:insertmode)
     autocmd InsertLeave *
         \ highlight StatusLine guibg=#4d6884  gui=bold,underline
+    " When we leave this colourscheme(but we won't!) drop our events so they
+    " don't interfere with other colourschemes
+    function! s:ScrubEvents()
+        if g:colors_name !=# "jnrowe" |
+            autocmd! jnrowe_color
+        endif
+    endfunction
+    autocmd ColorScheme * call s:ScrubEvents()
+    augroup END
 endif
 " }}}
 
