@@ -7,9 +7,6 @@
 [submodule "external/vim-speeddating"]
 	path = external/vim-speeddating
 	url = git://github.com/tpope/vim-speeddating.git
-[submodule "external/vtreeexplorer"]
-	path = external/vtreeexplorer
-	url = git://github.com/jk3us/vtreeexplorer.git
 [submodule "external/snipmate.vim"]
 	path = external/snipmate.vim
 	url = git://github.com/msanders/snipmate.vim.git
