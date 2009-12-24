@@ -609,6 +609,12 @@ let g:showmarks_enable=0
 let g:showmarks_ignore_type="phq"
 " }}}
 
+" toggle_words maps {{{
+imap <C-M-T> <C-O>:ToggleWord<CR>
+nmap <C-M-T> :ToggleWord<CR>
+vmap <C-M-T> <ESC>:ToggleWord<CR>
+" }}}
+
 " Sign support {{{
 " Waaaay too much execute nastiness :/
 function! SignDefine(type, ...)
