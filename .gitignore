@@ -24,6 +24,7 @@ convertSnip.py
 doc/CSApprox.txt
 doc/NERD_commenter.txt
 doc/NERD_tree.txt
+doc/SrchRplcHiGrp.txt
 doc/abolish.txt
 doc/acp.jax
 doc/acp.txt
@@ -41,6 +42,7 @@ nerdtree_plugin
 plugin/CSApprox.vim
 plugin/NERD_commenter.vim
 plugin/NERD_tree.vim
+plugin/SrchRplcHiGrp.vim
 plugin/ZoomWin.vim
 plugin/abolish.vim
 plugin/acp.vim
