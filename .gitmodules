@@ -1,6 +1,3 @@
-[submodule "external/csapprox"]
-	path = external/csapprox
-	url = git://github.com/godlygeek/csapprox.git
 [submodule "external/detectindent"]
 	path = external/detectindent
 	url = git://github.com/ciaranm/detectindent.git
