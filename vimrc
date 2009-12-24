@@ -40,6 +40,7 @@ set infercase
 set isfname-=\=
 set joinspaces
 set lazyredraw
+set linespace=1
 set matchpairs+=<:>
 set nonumber
 set omnifunc=syntaxcomplete#Complete
