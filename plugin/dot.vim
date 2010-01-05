@@ -1,7 +1,7 @@
 " DotOutlineTree
 "================
 "
-"   After sourcing this plugin, you can make outline of this document by
+"   After sourcing this plugin, you can make outline of your document by
 "   pressing ':DOT'.
 "
 " Description:
@@ -14,8 +14,10 @@
 "       - TaskPaper
 "       - dot-structured text (.. title)
 "
-" Maintainer: Shuhei Kubota <kubota.shuhei+vim@gmail.com>
+" Maintainer:
 "------------
+"
+"   Shuhei Kubota <kubota.shuhei+vim@gmail.com>
 "
 " Install Description:
 "---------------------
@@ -30,13 +32,10 @@
 "~~~~~~~~~~~~~~~
 "
 "   :DotOutlineTree (:DOT)
-"   :DOTUpdate
 "
-"       The former command constructs an outline tree, and shows an outline
-"       window.  In some cases, even if a buffer is modified, its outline tree
-"       is not refreshed. Use :DOTUpdate(the latter one). But it do scanning
-"       the buffer, structuring nodes, and outputting the data every time.
-"       This makes VIM slow at the moment.
+"       This command constructs an outline tree, and shows an outline window.
+"       But it does scanning the buffer, structuring nodes, and outputting the
+"       data every time. This makes VIM slow at the moment.
 "
 " Key Mappings (and Commands)
 "~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -46,7 +45,7 @@
 "           (:DOTJump)
 "
 "       r:
-"           refreshes the outline tree. Same as :RefreshDotOutlineTree.
+"           refreshes the outline tree.
 "           (:DOTUpdate)
 "
 "       <Esc>:
@@ -62,7 +61,7 @@
 "           (:DOTCreateUncleNode)
 "
 "       <C-J>, o:
-"           creates a (younger) sibling node.
+"           creates a next sibling node.
 "           (:DOTCreateSiblingNode)
 "
 "       <C-K>:
@@ -87,6 +86,9 @@
 "             .bar     .bar
 "           (:DOTFlipUpward)
 "
+"           This operation may break a structure of text.
+"           Then, press u to undo.
+"
 "       <C-D>:
 "           flips nodes downward.
 "           e.g. (<C-D>ing on a node `hoge')
@@ -95,6 +97,9 @@
 "             ..piyo   .hoge
 "             .bar     ..piyo
 "           (:DOTFlipDownward)
+"
+"           This operation may break a structure of text.
+"           Then, press u to undo.
 "
 "       <<:
 "           brings up the level of nodes.
@@ -125,6 +130,14 @@
 "       p, P:
 "           pastes text.
 "           (:DOTPaste, :DOTPasteP)
+"
+"       h:
+"           fold outline tree.
+"           (if g:DOT_foldTree==1)
+"
+"       l:
+"           unfold outline tree.
+"           (if g:DOT_foldTree==1)
 "
 " Formats
 "~~~~~~~~
@@ -180,10 +193,12 @@
 "       like below.
 "
 "       /* vim:set et tw=60: <type_name> */
+"       e.g. /* vim:set et tw=60: <rest> */
 "
 "   2. original 'outline' line
 "
 "       outline: <type_name>
+"       e.g. outline: <taskpaper>
 "
 "   In any way, you declare a format (type_name), or 'base' format is used to
 "   parse your document.
@@ -192,8 +207,9 @@
 " Variables
 "~~~~~~~~~~
 "
-"   (The right hand value is a default value.)
+"   (A right hand side value is a default value.)
 "
+"   b:DOT_newMethod = g:DOT_newMethod
 "   g:DOT_newMethod = 'vertical new'
 "
 "       Commands above creates a new window. This variable specifies the way the
@@ -201,10 +217,12 @@
 "
 "       e.g. 'new'
 "
+"   b:DOT_windowSize = g:DOT_windowSize
 "   g:DOT_windowSize = 30
 "
 "       The size of the new window.
 "
+"   b:DOT_closeOnJump = g:DOT_closeOnJump
 "   g:DOT_closeOnJump = 0
 "
 "       After you decided to jump to some node...
@@ -213,7 +231,8 @@
 "              (and a main text window is activated)
 "           1: the window will be closed
 "
-"   g:DOT_useNarrow =0
+"   b:DOT_useNarrow = g:DOT_useNarrow
+"   g:DOT_useNarrow = 0
 "
 "       With this option on, you can narrow to text of the node you chose.
 "       Other text is to be folded.
@@ -221,32 +240,52 @@
 "       To enable this feature, you have to get the "narrow" plugin.
 "       http://www.vim.org/scripts/script.php?script_id=2097
 "
-"====
+"   b:DOT_headingMark = g:DOT_headingMark
+"   g:DOT_headingMark = '.'
+"
+"       A heading mark. This is used only in dot-structured text mode.
+"       (<base> document type)
+"
+"   b:DOT_foldTree = g:DOT_foldTree
+"   g:DOT_foldTree = 0
+"
+"       Show outline trees ...
+"
+"           0: unfolded (expanded)
+"           1: folded
+"
 
-
-if !exists('g:DOT_newMethod')
+let s:DOT_OPTION_NEW_METHOD = 'DOT_newMethod'
+if !exists('g:'.s:DOT_OPTION_NEW_METHOD)
     let g:DOT_newMethod = 'vertical new'
 endif
 
-if !exists('g:DOT_windowSize')
+let s:DOT_OPTION_WINDOW_SIZE = 'DOT_windowSize'
+if !exists('g:'.s:DOT_OPTION_WINDOW_SIZE)
     let g:DOT_windowSize = '30'
 endif
 
-if !exists('g:DOT_closeOnJump')
+let s:DOT_OPTION_CLOSE_ON_JUMP = 'DOT_closeOnJump'
+if !exists('g:'.s:DOT_OPTION_CLOSE_ON_JUMP)
     let g:DOT_closeOnJump = 0
 endif
 
-if !exists('g:DOT_useNarrow')
+let s:DOT_OPTION_USE_NARROW = 'DOT_useNarrow'
+if !exists('g:'.s:DOT_OPTION_USE_NARROW)
     let g:DOT_useNarrow = 0
 endif
 
-" defer
-"if !exists('g:DOT_keyMapFunction')
-"    let g:DOT_keyMapFunction = function('g:DOT_setDefaultKeyMap')
-"endif
+let s:DOT_OPTION_HEADING_MARK = 'DOT_headingMark'
+if !exists('g:'.s:DOT_OPTION_HEADING_MARK)
+    let g:DOT_headingMark = '.'
+endif
+
+let s:DOT_OPTION_FOLD_TREE = 'DOT_foldTree'
+if !exists('g:'.s:DOT_OPTION_FOLD_TREE)
+    let g:DOT_foldTree = 0
+endif
 
 
-" a first step
 command!        DOT                     :call <SID>DOT_execute(<line1>)
 command!        DotOutlineTree          :call <SID>DOT_execute(<line1>)
 " updating
@@ -321,6 +360,14 @@ function! g:DOT_setDefaultKeyMap()
     noremap  <buffer> <silent>  y       :DOTCopy<CR>
     noremap  <buffer> <silent>  p       :DOTPaste<CR>
     noremap  <buffer> <silent>  P       :DOTPasteP<CR>
+
+    " folding
+    nnoremap <buffer> <silent>  l  zo
+    nnoremap <buffer> <silent>  h  zc
+
+    " cursor
+    nnoremap <buffer> <silent>  j  j0
+    nnoremap <buffer> <silent>  k  k0
 endfunction
 
 
@@ -331,6 +378,7 @@ endfunction
 
 let s:DOT_BUFFER_PREFIX = 'DotOutlineTree'
 let s:DOT_DEFAULT_TYPE = 'base'
+let s:DOT_INDENT_STRING = '  '
 if !exists('g:DOT_types') | let g:DOT_types = [s:DOT_DEFAULT_TYPE] | endif
 
 
@@ -339,7 +387,7 @@ function! s:DOT_execute(dokozonoLineNum)
 
     call s:DOT_update()
 
-    call s:DOT__openTreeBuffWindow(g:DOT_newMethod)
+    call s:DOT__openTreeBuffWindow(s:Util_getOption(s:DOT_OPTION_NEW_METHOD, 'vertical new'))
     call s:DOT__renderTree(b:DOT_rootNode.firstChild)
 
     " place the cursor
@@ -351,6 +399,34 @@ function! s:DOT_execute(dokozonoLineNum)
         let cursorPos = s:Node_getNodeIndex(b:DOT_rootNode, node)
     endif
     execute cursorPos
+
+    if s:Util_getOption('DOT_foldTree', 0)
+        setlocal foldmethod=manual
+        call s:DOT__fold()
+        if s:Util_getOption('DOT_foldTree', 0) == 1
+            silent execute 'normal zv'
+        else
+            silent execute 'normal zO'
+        endif
+    endif
+    silent execute 'normal 0'
+endfunction
+
+
+function! s:DOT__fold()
+    let i = len(getbufline('%', 1, '$'))
+    while i >= 1
+        let node = s:Node_getNthNode(b:DOT_rootNode, i)
+        let lastDescNode = s:Node_getLastDescendantNode(node)
+        let lastIdx = s:Node_getNodeIndex(b:DOT_rootNode, lastDescNode)
+
+        if i != lastIdx
+            "echom i.','.lastIdx.'fold (' . node.title . '=>' . lastDescNode.title . ')'
+            silent execute i.','.lastIdx.'fold'
+        endif
+
+        let i = i - 1
+    endwhile
 endfunction
 
 
@@ -379,7 +455,7 @@ function! s:DOT__renderTreeInner(node)
     if (a:node is s:Node_NULL) || s:DOT__nodeIsTerminator(a:node) | return | endif
     "if a:node.title == ':NULL:' | return | endif
 
-    call append(line('$'), repeat('  ', a:node.level - 1) . a:node.title)
+    call append(line('$'), repeat(s:DOT_INDENT_STRING, a:node.level - 1) . a:node.title)
 
     call s:DOT__renderTreeInner(a:node.firstChild)
     call s:DOT__renderTreeInner(a:node.nextSibling)
@@ -406,10 +482,11 @@ function! s:DOT__openTreeBuffWindow(openMethod)
         if listWinNum == -1
             " create window
             execute a:openMethod
+            let windowSize = s:Util_getOption(s:DOT_OPTION_WINDOW_SIZE, '30')
             if match(a:openMethod, '[vV]') != -1
-                execute g:DOT_windowSize . 'wincmd |'
+                execute windowSize . 'wincmd |'
             else
-                execute g:DOT_windowSize . 'wincmd _'
+                execute windowSize . 'wincmd _'
             endif
 
             execute 'buffer ' . treeBuffNum
@@ -421,6 +498,14 @@ function! s:DOT__openTreeBuffWindow(openMethod)
     "
     setlocal nowrap nonumber buftype=nofile bufhidden=delete noswapfile
     call g:DOT_keyMapFunction()
+
+    setlocal foldtext=g:DOT_foldtext()
+endfunction
+
+
+function! g:DOT_foldtext()
+    let node = s:Node_getNthNode(b:DOT_rootNode, v:foldstart)
+    return repeat(s:DOT_INDENT_STRING, node.level - 1) . node.title . ' [' . (v:foldend - v:foldstart) . ']'
 endfunction
 
 
@@ -440,13 +525,17 @@ function! s:DOT_update()
     call setbufvar(treeBuffNum, 'DOT_rootNode', getbufvar(textBuffNum, 'DOT_rootNode'))
     call setbufvar(treeBuffNum, 'DOT_textBuffNum', textBuffNum)
 
+    if !exists('b:DOT_foldTree')
+        call setbufvar(treeBuffNum, 'DOT_foldTree', g:DOT_foldTree)
+    endif
+
     if inTreeBuffer
         call s:DOT__renderTree(b:DOT_rootNode.firstChild)
         execute cursorPos
     endif
 
     " using Narrow
-    if g:DOT_useNarrow && exists(':Widen')
+    if s:Util_getOption(s:DOT_OPTION_USE_NARROW, 0) != 0 && exists(':Widen')
         silent! execute 'Widen'
     endif
 endfunction
@@ -487,14 +576,14 @@ function! s:DOT_jump(dokozonoLineNum)
     normal zt
 
     " using Narrow
-    if g:DOT_useNarrow && exists(':Narrow')
+    if s:Util_getOption(s:DOT_OPTION_USE_NARROW, 0) != 0 && exists(':Narrow')
         let outofNarrowNode = s:Node_getNextNode(s:Node_getLastDescendantNode(node))
 
         silent! execute 'Widen'
         silent! execute node.lineNum . ',' . (outofNarrowNode.lineNum - 1) . 'Narrow'
     endif
 
-    if g:DOT_closeOnJump | call s:DOT_quit() | endif
+    if s:Util_getOption(s:DOT_OPTION_CLOSE_ON_JUMP, 0) != 0 | call s:DOT_quit() | endif
 endfunction
 
 
@@ -1104,10 +1193,8 @@ function! s:DOT__dumpTree(node)
 endfunction
 
 
-let s:DOT_REGEXP = '^\(\.\+\)\s*\(.*\)$'
-
 function! g:DOT_baseDecorateHeading(buffNum, title, level)
-    return {'lines':[repeat('.', a:level) . ' ' . a:title, '', '', ''], 'cursorPos': [1, 0]}
+    return {'lines':[repeat(s:DOT_baseGetHeadingMark(a:buffNum), a:level) . ' ' . a:title, '', '', ''], 'cursorPos': [1, 0]}
 endfunction
 
 
@@ -1116,22 +1203,38 @@ endfunction
 
 
 function! g:DOT_baseDetectHeading(buffNum, targetLine, targetLineIndex, entireLines)
-    return (a:targetLine =~ s:DOT_REGEXP)
+    return (a:targetLine =~ s:DOT_baseGetRegExp(a:buffNum))
 endfunction
 
 
 function! g:DOT_baseExtractTitle(buffNum, targetLine, targetLineIndex, entireLines)
-    return substitute(a:targetLine, s:DOT_REGEXP, '\2', '')
+    return substitute(a:targetLine, s:DOT_baseGetRegExp(a:buffNum), '\2', '')
 endfunction
 
 
 function! g:DOT_baseExtractLevel(buffNum, targetLine, targetLineIndex, entireLines)
-    return strlen(substitute(a:targetLine, s:DOT_REGEXP, '\1', ''))
+    return strlen(substitute(a:targetLine, s:DOT_baseGetRegExp(a:buffNum), '\1', '')) / strlen(s:DOT_baseGetHeadingMark(a:buffNum))
 endfunction
 
 
 function! g:DOT_baseSetHeading(buffNum, title, level, lineNum)
-    call setline(a:lineNum, repeat('.', a:level) . ' ' . a:title)
+    call setline(a:lineNum, repeat(s:DOT_baseGetHeadingMark(a:buffNum), a:level) . ' ' . a:title)
+endfunction
+
+
+function! s:DOT_baseGetHeadingMark(buffNum)
+    return s:Util_getOption(s:DOT_OPTION_HEADING_MARK, '.')
+    let headingMark = getbufvar(a:buffNum, 'DOT_headingMark')
+    if strlen(headingMark) == 0
+        let headingMark = g:DOT_headingMark
+    endif
+    return headingMark
+endfunction
+
+
+function! s:DOT_baseGetRegExp(buffNum)
+    "return '^\(\.\+\)\s*\(.*\)$'
+    return '\V\^\(\%('.s:DOT_baseGetHeadingMark(a:buffNum).'\)\+\)\s\*\(\.\*\)\$'
 endfunction
 
 
@@ -1350,6 +1453,32 @@ endfunction
 " Misc
 "--------------------
 
+function! s:Util_getOption(optName, defaultValue)
+    let value = a:defaultValue
+
+    let nsPriority = ['b', 'w', 't', 'g']
+    for ns in nsPriority
+        if ns == 'b'
+            if s:DOT__inTreeBuffer(bufnr('%'))
+                let textBuffNum = b:DOT_textBuffNum
+            else
+                let textBuffNum = bufnr('%')
+            endif
+
+            let bvalue = getbufvar(textBuffNum, a:optName)
+            if len(bvalue) != 0
+                let value = bvalue
+                break
+            endif
+        elseif exists(ns.':'.a:optName)
+            let value = eval(ns.':'.a:optName)
+            break
+        endif
+    endfor
+
+    return value
+endfunction
+
 function! s:Util_switchCurrentBuffer(buffNum, newcmd)
     if bufnr('%') == a:buffNum | return a:buffNum | endif
 
@@ -1416,7 +1545,7 @@ function! g:DOT_restDetectHeading(buffNum, targetLine, targetLineIndex, entireLi
     " ignore an over line of a TITLE
     if a:targetLineIndex + 3 < len(a:entireLines)
         let nextLine3 = s:DOT__restStripCommenterCharacters(a:buffNum, a:entireLines[a:targetLineIndex + 3])
-        if nextLine == nextLine3 | return 0 | endif
+        if nextLine[0] == nextLine3[0] | return 0 | endif
     endif
 
     if nextLine =~ '^[-=`:.''"~^_*+#]\{2,\}$' && a:targetLine !~ '^[-=`:.''"~^_*+#]\{2,\}$'
