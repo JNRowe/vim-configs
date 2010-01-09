@@ -14,7 +14,6 @@ set backupcopy=auto,breakhardlink
 if has("ballooneval")
     set ballooneval
 endif
-set cmdheight=2
 set completeopt=longest,menuone,preview
 set confirm
 set cursorline
@@ -280,8 +279,6 @@ endif " }}}
 
 if has("gui_running")
     " GUI specific settings {{{
-    set cmdheight=2
-
     set mousemodel=popup_setpos
 
     " Always display line number in the GUI
