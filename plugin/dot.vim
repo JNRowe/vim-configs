@@ -1065,6 +1065,9 @@ function! s:DOT__detectType(buffNum)
     endwhile
     if index(g:DOT_types, type, 0, 1) != -1 | return type | endif
 
+    if &filetype == 'rst' || &filetype == 'rest' | return 'rest' | endif
+    if &filetype == 'taskpaper' | return 'taskpaper' | endif
+
     " auto detection
     let ranks = {}
     for sttype in g:DOT_types
@@ -1224,11 +1227,6 @@ endfunction
 
 function! s:DOT_baseGetHeadingMark(buffNum)
     return s:Util_getOption(s:DOT_OPTION_HEADING_MARK, '.')
-    let headingMark = getbufvar(a:buffNum, 'DOT_headingMark')
-    if strlen(headingMark) == 0
-        let headingMark = g:DOT_headingMark
-    endif
-    return headingMark
 endfunction
 
 
@@ -1528,6 +1526,8 @@ if index(g:DOT_types, 'rest') == -1
     call add(g:DOT_types, 'rest')
 endif
 
+let s:DOT_REST_REGEXP = '\m^[-=`:.''"~^_*+#]\{2,\}$'
+
 function! g:DOT_restInit(buffNum)
     call setbufvar(a:buffNum, 'DOT_restSectionMarks', [])
     "let b:DOT_restSectionMarks = []
@@ -1548,7 +1548,7 @@ function! g:DOT_restDetectHeading(buffNum, targetLine, targetLineIndex, entireLi
         if nextLine[0] == nextLine3[0] | return 0 | endif
     endif
 
-    if nextLine =~ '^[-=`:.''"~^_*+#]\{2,\}$' && a:targetLine !~ '^[-=`:.''"~^_*+#]\{2,\}$'
+    if nextLine =~ s:DOT_REST_REGEXP && a:targetLine !~ s:DOT_REST_REGEXP
         let detected = 1
 
         " add if no entry
@@ -1564,7 +1564,8 @@ endfunction
 
 
 function! g:DOT_restExtractTitle(buffNum, targetLine, targetLineIndex, entireLines)
-    return a:targetLine
+    " strip leading spaces
+    return substitute(a:targetLine, '\V\^\%(\s\*\)\(\.\*\)\$', '\1', '')
 endfunction
 
 
@@ -1616,7 +1617,7 @@ if index(g:DOT_types, 'taskpaper') == -1
     call add(g:DOT_types, 'taskpaper')
 endif
 
-let s:DOT_TASKPAPER_REGEXP = '^\(.\+\):\s*$'
+let s:DOT_TASKPAPER_REGEXP = '\m^\(.\+\):\s*$'
 
 function! g:DOT_taskpaperDecorateHeading(buffNum, title, level)
     return {'lines':[a:title . ':', '', '', ''], 'cursorPos': [1, 0]}
