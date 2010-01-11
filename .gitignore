@@ -8,6 +8,7 @@ README.html
 abbr-local
 cupage.db
 viminfo
+vimrc-local
 
 after/ftplugin/python/makerelease.py
 after/ftplugin/python/pyflakes

@@ -642,3 +642,9 @@ endfunction
 map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 " }}}
 
+" Pull in local settings, this is mostly for private stuff I don't share between
+" hosts.
+if filereadable(expand("~/.vim/vimrc-local"))
+    source ~/.vim/vimrc-local
+endif
+
