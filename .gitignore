@@ -57,6 +57,7 @@ plugin/vcsgit.vim
 plugin/vcshg.vim
 syntax/gitAnnotate.vim
 syntax/mkd.vim
+syntax/ooc.vim
 syntax/snippet.vim
 syntax/vcscommit.vim
 syntax_checkers
