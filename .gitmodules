@@ -55,3 +55,6 @@
 [submodule "external/vcscommand"]
 	path = external/vcscommand
 	url = git://repo.or.cz/vcscommand
+[submodule "external/ooc.vim/syntax"]
+	path = external/ooc.vim/syntax
+	url = git://github.com/thomaslee/ooc.vim.git
