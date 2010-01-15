@@ -63,6 +63,7 @@ set suffixes+=.pyc,.pyo
 set swapsync=
 set tags+=ctags;tags;
 set textwidth=80
+set tildeop
 set title
 set ttyfast
 set viminfo=!,'1000,<1000,h,n~/.vim/viminfo
