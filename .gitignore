@@ -25,6 +25,7 @@ doc/NERD_tree.txt
 doc/SrchRplcHiGrp.txt
 doc/abolish.txt
 doc/acp.txt
+doc/afterimage.txt
 doc/detectindent.txt
 doc/fugitive.txt
 doc/snipMate.txt
@@ -41,6 +42,7 @@ plugin/SrchRplcHiGrp.vim
 plugin/ZoomWin.vim
 plugin/abolish.vim
 plugin/acp.vim
+plugin/afterimage.vim
 plugin/detectindent.vim
 plugin/fugitive.vim
 plugin/gist.vim

@@ -58,3 +58,6 @@
 [submodule "external/ooc.vim/syntax"]
 	path = external/ooc.vim/syntax
 	url = git://github.com/thomaslee/ooc.vim.git
+[submodule "external/vim-afterimage"]
+	path = external/vim-afterimage
+	url = git://github.com/tpope/vim-afterimage.git
