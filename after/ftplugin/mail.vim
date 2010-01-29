@@ -16,3 +16,4 @@ imap <LocalLeader>_' <C-v>u2019
 imap <LocalLeader>`` <C-v>u201c
 imap <LocalLeader>'' <C-v>u201d
 
+setlocal tw=72
