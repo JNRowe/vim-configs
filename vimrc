@@ -431,6 +431,7 @@ nmap <F10> :make check<CR>
 nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>
 nmap <F11> :make<CR>
 nmap <S-F11> :execute "make -C " . expand("%:p:h")<CR>
+nmap <silent> <C-F11> :let @/ = ""<CR>
 " Delete trailing whitespace:
 nmap <F12> :%s/\s\+$//<CR>
 vmap <F12> :s/\s\+$//<CR>
