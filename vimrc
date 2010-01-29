@@ -123,6 +123,12 @@ if has("autocmd")
     " Fancy fancy % matching
     runtime! macros/matchit.vim
 
+    " Edit files in already open sessions.
+    " exists() is needed so that re-sourcing this file is possible.
+    if !exists("*EditExisting")
+        runtime! macros/editexisting.vim
+    endif
+
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
