@@ -14,6 +14,7 @@ set backupcopy=auto,breakhardlink
 if has("ballooneval")
     set ballooneval
 endif
+set clipboard=unnamed
 set completeopt=longest,menuone,preview
 set confirm
 set cursorline
