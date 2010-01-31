@@ -435,6 +435,7 @@ nmap <C-F4> :call ToggleFlag("guioptions","T")<CR>
 " F7-F9 are used for taglist, and are defined above
 nmap <F10> :make check<CR>
 nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>
+nmap <C-F10> :call VimCommanderToggle()<CR>
 nmap <F11> :make<CR>
 nmap <S-F11> :execute "make -C " . expand("%:p:h")<CR>
 nmap <silent> <C-F11> :let @/ = ""<CR>
