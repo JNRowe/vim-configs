@@ -3,8 +3,7 @@
 " Maintainer: James Rowe <jnrowe@gmail.com>
 " Homepage:   http://github.com/JNRowe/vim-configs/blob/master/colors/jnrowe.vim
 "
-" This theme is designed for the GUI, but should work reasonably well in 88/256
-" colour terminals.
+" This theme is designed for the GUI.
 "
 " The colours are based around the tango palette, but this isn't really a tango
 " theme.
@@ -27,7 +26,9 @@ highlight lCursor       guibg=#eeeeec
 
 " Search
 highlight IncSearch     guibg=#fce94f  guifg=#cc0000  gui=italic
-highlight Matchparen                   guifg=#8ae234  gui=bold
+if v:version >= 700
+    highlight Matchparen               guifg=#8ae234  gui=bold
+endif
 highlight Search        guibg=#fce94f  guifg=#a40000  gui=italic
 
 " Window stuff
@@ -36,7 +37,6 @@ highlight CursorLine    guibg=#555753
 highlight FoldColumn    guibg=#4a4a4a  guifg=#dedede
 highlight Folded        guibg=#8090a0  guifg=#111111
 highlight LineNr        guibg=#222222  guifg=#aaaaaa  gui=italic
-highlight Pmenu         guibg=#cb2f27  guifg=#ffffff
 highlight SignColumn    guibg=#2a2a2a
 highlight StatusLine    guibg=#4d6884  guifg=#ffffff  gui=bold,underline
 highlight StatusLineNC  guibg=#263442  guifg=#999999  gui=italic,underline
@@ -46,10 +46,12 @@ highlight VertSplit     guibg=#a0b0c0  guifg=#a0b0c0
 highlight ErrorMsg      guibg=#ef2929  guifg=#eeeeec  gui=undercurl
 highlight WarningMsg                   guifg=#ef2929  gui=italic
 
-" Popup menu
-highlight Pmenu         guibg=#555753  guifg=#d3d7cf
-highlight PmenuSbar     guibg=#888a85  guifg=#eeeeec
-highlight PmenuSel      guibg=#73d216  guifg=#2e3436  gui=italic
+if v:version >= 700
+    " Popup menu
+    highlight Pmenu     guibg=#555753  guifg=#d3d7cf
+    highlight PmenuSbar guibg=#888a85  guifg=#eeeeec
+    highlight PmenuSel  guibg=#73d216  guifg=#2e3436  gui=italic
+endif
 
 " Specials
 highlight Special       guifg=#fd8900
