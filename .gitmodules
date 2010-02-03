@@ -61,6 +61,3 @@
 [submodule "external/vim-afterimage"]
 	path = external/vim-afterimage
 	url = git://github.com/tpope/vim-afterimage.git
-[submodule "external/vimcommander/plugin"]
-	path = external/vimcommander/plugin
-	url = git://github.com/lpenz/vimcommander.git
