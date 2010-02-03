@@ -58,7 +58,6 @@ plugin/taglist.vim
 plugin/vcscommand.vim
 plugin/vcsgit.vim
 plugin/vcshg.vim
-plugin/vimcommander.vim
 syntax/gitAnnotate.vim
 syntax/HGAnnotate.vim
 syntax/mkd.vim
