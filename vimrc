@@ -230,9 +230,13 @@ if has("autocmd")
     " from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html
     autocmd cursorhold,bufwritepost * unlet! b:statusline_long_line_warning
 
-    " Automatic session management {{{
-    autocmd VimEnter * call LoadSession()
-    autocmd VimLeave * call SaveSession()
+    " Session management {{{
+
+    " Enable the following two autocmds if you wish session management to
+    " automatically.
+    "autocmd VimEnter * call LoadSession()
+    "autocmd VimLeave * call SaveSession()
+
     function! SaveSession()
         if g:load_sessions == 1
             execute "mksession! ~/.vim/view/auto_session.vim"
