@@ -7,6 +7,8 @@
 "
 " The colours are based around the tango palette, but this isn't really a tango
 " theme.
+"
+" To use a darker background, :let g:jnrowe_dark = 1
 
 set background=dark
 
@@ -15,12 +17,21 @@ if exists("syntax_on")
     syntax reset
 endif
 
+if !exists("g:jnrowe_dark")
+    let g:jnrowe_dark = 0
+endif
+
 let colors_name = "jnrowe"
 
 " Base colours
 highlight Cursor        guibg=#d3d7cf
-highlight NonText       guibg=#555753  guifg=#babdb6
-highlight Normal        guibg=#454545  guifg=#f4f4f4
+if !g:jnrowe_dark
+    highlight NonText   guibg=#555753  guifg=#babdb6
+    highlight Normal    guibg=#454545  guifg=#f4f4f4
+else
+    highlight NonText   guibg=#353733  guifg=#babdb6
+    highlight Normal    guibg=#252525  guifg=#f4f4f4
+endif
 highlight Visual        guibg=#555753                 gui=bold
 highlight lCursor       guibg=#eeeeec
 
