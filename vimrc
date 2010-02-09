@@ -4,6 +4,12 @@ scriptencoding utf-8
 
 set nocompatible
 
+" Pull in local settings.  This is only for local required while reading this
+" file.
+if filereadable(expand("~/.vim/vimrc-local.pre"))
+    source ~/.vim/vimrc-local
+endif
+
 " General settings {{{
 set autoindent
 set autowrite
@@ -656,9 +662,9 @@ endfunction
 map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 " }}}
 
-" Pull in local settings, this is mostly for private stuff I don't share between
-" hosts.
+" Pull in local settings.  This file is for all site specific settings.
 if filereadable(expand("~/.vim/vimrc-local"))
     source ~/.vim/vimrc-local
 endif
+
 
