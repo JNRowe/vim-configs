@@ -28,6 +28,7 @@ doc/acp.txt
 doc/afterimage.txt
 doc/detectindent.txt
 doc/fugitive.txt
+doc/ragtag.txt
 doc/snipMate.txt
 doc/space.txt
 doc/speeddating.txt
@@ -48,6 +49,7 @@ plugin/detectindent.vim
 plugin/fugitive.vim
 plugin/gist.vim
 plugin/gist.vim.vimup
+plugin/ragtag.vim
 plugin/securemodelines.vim
 plugin/snipMate.vim
 plugin/space.vim

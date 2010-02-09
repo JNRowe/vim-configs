@@ -61,3 +61,6 @@
 [submodule "external/vim-afterimage"]
 	path = external/vim-afterimage
 	url = git://github.com/tpope/vim-afterimage.git
+[submodule "external/vim-ragtag"]
+	path = external/vim-ragtag
+	url = git://github.com/tpope/vim-ragtag.git
