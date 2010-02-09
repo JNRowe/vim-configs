@@ -64,3 +64,6 @@
 [submodule "external/vim-ragtag"]
 	path = external/vim-ragtag
 	url = git://github.com/tpope/vim-ragtag.git
+[submodule "external/vim-unimpaired.git"]
+	path = external/vim-unimpaired.git
+	url = git://github.com/tpope/vim-unimpaired.git
