@@ -20,6 +20,7 @@ autoload/acp.vim
 autoload/snipMate.vim
 autoload/windowlayout.vim
 colors/inkpot.vim
+colors/jnrowe.vim
 convertSnip.py
 doc/NERD_commenter.txt
 doc/NERD_tree.txt
