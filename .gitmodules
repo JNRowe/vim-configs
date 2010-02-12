@@ -67,3 +67,6 @@
 [submodule "external/vim-unimpaired.git"]
 	path = external/vim-unimpaired.git
 	url = git://github.com/tpope/vim-unimpaired.git
+[submodule "external/vim-jnrowe"]
+	path = external/vim-jnrowe
+	url = git://github.com/JNRowe/vim-jnrowe.git
