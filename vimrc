@@ -76,7 +76,7 @@ set ttyfast
 set viminfo=!,'1000,<1000,h,n~/.vim/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
-set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~
+set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~,*.obj,*.db
 set wildmenu
 set wildmode=longest,full
 " }}}
