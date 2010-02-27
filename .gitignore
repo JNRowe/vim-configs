@@ -28,6 +28,7 @@ doc/SrchRplcHiGrp.txt
 doc/abolish.txt
 doc/acp.txt
 doc/afterimage.txt
+doc/colorchart.txt
 doc/detectindent.txt
 doc/fugitive.txt
 doc/ragtag.txt
@@ -40,6 +41,7 @@ doc/taglist.txt
 doc/unimpaired.txt
 doc/vcscommand.txt
 ftplugin/html_snip_helper.vim
+ftplugin/ledger.vim
 nerdtree_plugin
 plugin/NERD_commenter.vim
 plugin/NERD_tree.vim
@@ -48,6 +50,7 @@ plugin/ZoomWin.vim
 plugin/abolish.vim
 plugin/acp.vim
 plugin/afterimage.vim
+plugin/colorchart.vim
 plugin/detectindent.vim
 plugin/fugitive.vim
 plugin/gist.vim
@@ -67,9 +70,11 @@ plugin/vcshg.vim
 syntax/cvsannotate.vim
 syntax/gitannotate.vim
 syntax/hgannotate.vim
-syntax/sv[kn]annotate.vim
+syntax/ledger.vim
 syntax/mkd.vim
 syntax/ooc.vim
 syntax/snippet.vim
+syntax/sv[kn]annotate.vim
 syntax/vcscommit.vim
 syntax_checkers
+
