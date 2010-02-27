@@ -321,8 +321,10 @@ else
     " Set up the menus so emenu works properly
     source $VIMRUNTIME/menu.vim
 
-    if &t_Co >= 88
+    if &t_Co > 88
         colorscheme inkpot
+    elseif &t_Co == 88
+        colorscheme jnrowe
     else
         colorscheme taqua
     endif
