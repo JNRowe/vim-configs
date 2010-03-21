@@ -280,6 +280,8 @@ set statusline+=\[%{empty(&filetype)?'none':&filetype}
 set statusline+=%{&encoding!='utf-8'?','.&encoding:''}
 " Include file format if not Unix
 set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
+" Display formatoptions if non-default
+set statusline+=%{&formatoptions!='tcrqn2l1'?','.&formatoptions:''}
 set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
 set statusline+=%{StatuslineLongLineWarning()}
