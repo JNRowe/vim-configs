@@ -25,9 +25,6 @@
 [submodule "external/pyflakes-vim/after/ftplugin/python"]
 	path = external/pyflakes-vim/after/ftplugin/python
 	url = git://github.com/kevinw/pyflakes-vim.git
-[submodule "external/gist-vim/plugin"]
-	path = external/gist-vim/plugin
-	url = git://github.com/mattn/gist-vim.git
 [submodule "external/vim-fugitive"]
 	path = external/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
