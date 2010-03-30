@@ -2,8 +2,8 @@ CTAGS := exuberant-ctags
 CUPAGE := cupage.py
 STOW := stow
 STOW_IGNORE := Rakefile README(|.(mkd|markdown|rst)) \
-	.git(|attributes|ignore) makerelease.py snippets test \.jax$$ \
-	vcs(bzr|cvs|sv(k|n)).vim (CVS|SV(K|N))Annotate.vim
+	.git(|attributes|ignore) makerelease.py plugin-info.txt snippets test \
+	\.jax$$ vcs(bzr|cvs|sv(k|n)).vim (CVS|SV(K|N))Annotate.vim
 STOW_FLAGS := $(patsubst %, --ignore='%', $(STOW_IGNORE)) -d external -t .
 ifdef STOW_DEBUG
 STOW_FLAGS += -n -v
