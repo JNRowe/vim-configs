@@ -10,6 +10,9 @@ if filereadable(expand("~/.vim/vimrc-local.pre"))
     source ~/.vim/vimrc-local
 endif
 
+call pathogen#runtime_append_all_bundles("external")
+call pathogen#helptags()
+
 " General settings {{{
 set autoindent
 set autowrite
