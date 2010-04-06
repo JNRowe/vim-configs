@@ -433,8 +433,8 @@ if has("menu")
     amenu L&ocations.&Awesome.theme
         \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
     amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
-    amenu L&ocations.&vimrc :e ~/.vimrc<CR>
-    amenu L&ocations.vimrc-&local :e ~/.vim/vimrc-local<CR>
+    amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
+    amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
     amenu L&ocations.&zsh.&functions :e ~/.zsh/functions-local<CR>
     amenu L&ocations.&zsh.&zshrc :e ~/.zshrc<CR>
 endif " }}}
