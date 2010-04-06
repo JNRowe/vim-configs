@@ -1,13 +1,5 @@
 CTAGS := exuberant-ctags
 CUPAGE := cupage.py
-STOW := stow
-STOW_IGNORE := Rakefile README(|.(mkd|markdown|rst)) \
-	.git(|attributes|ignore) makerelease.py plugin-info.txt snippets test \
-	\.jax$$ vcs(bzr|cvs|sv(k|n)).vim (CVS|SV(K|N))Annotate.vim
-STOW_FLAGS := $(patsubst %, --ignore='%', $(STOW_IGNORE)) -d external -t .
-ifdef STOW_DEBUG
-STOW_FLAGS += -n -v
-endif
 
 TARGETS := doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
@@ -19,26 +11,12 @@ HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
 PACKAGES = $(wildcard external/*)
 PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
-.PHONY: clean cupage-scan update-external stow-packages unstow-packages
+.PHONY: clean cupage-scan update-external
 
-all: stow-packages $(TARGETS) $(HTML)
+all: $(TARGETS) $(HTML)
 
 %.html: %.rst
 	rst2html.py $< $@
-
-stow-packages: $(PACKAGES)
-	$(info - Stowing $(PACKAGE_NAMES))
-	$(STOW) $(STOW_FLAGS) -R $(PACKAGE_NAMES)
-unstow-packages: $(PACKAGES)
-	$(info - Unstowing $(PACKAGE_NAMES))
-	$(STOW) $(STOW_FLAGS) -D $(PACKAGE_NAMES)
-
-stow-%: external/%
-	$(info - Stowing $(notdir $<))
-	$(STOW) $(STOW_FLAGS) $(notdir $<)
-unstow-%:
-	$(info - Unstowing $(subst unstow-,,$@))
-	$(STOW) $(STOW_FLAGS) -D $(subst unstow-,,$@)
 
 tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
