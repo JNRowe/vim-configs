@@ -7,9 +7,6 @@
 [submodule "external/vim-speeddating"]
 	path = external/vim-speeddating
 	url = git://github.com/tpope/vim-speeddating.git
-[submodule "external/snipmate.vim"]
-	path = external/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "external/vim-space"]
 	path = external/vim-space
 	url = git://github.com/spiiph/vim-space.git
@@ -40,9 +37,6 @@
 [submodule "external/nerdcommenter"]
 	path = external/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "snippets"]
-	path = snippets
-	url = git://github.com/JNRowe/snipmate-snippets.git
 [submodule "external/inkpot"]
 	path = external/inkpot
 	url = git://github.com/ciaranm/inkpot.git
