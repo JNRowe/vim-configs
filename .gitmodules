@@ -73,3 +73,6 @@
 [submodule "external/colorchart"]
 	path = external/colorchart
 	url = git://github.com/godlygeek/colorchart.git
+[submodule "pathogen"]
+	path = pathogen
+	url = git://github.com/tpope/vim-pathogen.git
