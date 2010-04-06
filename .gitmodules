@@ -67,3 +67,6 @@
 [submodule "external/textile.vim"]
 	path = external/textile.vim
 	url = git://github.com/timcharper/textile.vim.git
+[submodule "external/vim-repeat"]
+	path = external/vim-repeat
+	url = git://github.com/tpope/vim-repeat.git
