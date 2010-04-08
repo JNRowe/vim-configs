@@ -1,77 +1,10 @@
-" Vim script
+" Vim autoload script
 " File: colorsel.vim
 " Summary: A simple interactive RGB/HSV color selector.
 " Authors: David Necas (Yeti) <yeti@physics.muni.cz>
 "          Ingo Karkat <swdev@ingo-karkat.de>
 " License: This Vim script is in the public domain.
 " Version: 2010-04-01
-" Usage: After sourcing, do
-"           :ColorSel [{rrbbgg}|{colorname}] [{rrbbgg}|{fgcolorname}]
-"        It accepts one or two optional {rrggbb} or {colorname} arguments.
-"        The second one will become the reference (alternate) or
-"        foreground/background color that is not currently being edited if
-"        specified. One can also keep an existing color by passing
-"        '.', '-' or '*' in its place, so use ":ColorSel . White" to set
-"        the foreground color to white.
-"
-"           :ColorSel {hlgroup-name}
-"        The "guifg" and "guibg" attributes of the existing Vim highlight group
-"        {hlgroup-name} will be used to initialize the foreground/background
-"        color selection. Editing will start with the foreground color if the
-"        highlight group has no "guibg" attribute. Use the "X" key to toggle
-"        between editing the foreground and background color, and "f" to change
-"        the "gui" attribute (bold and italic attributes are supported).
-"        Any changes are applied "live" to the highlight group, so you can
-"        easily preview your changes if you have another buffer opened which
-"        has the corresponding syntax highlightings.
-"        You can still update the colors via :ColorSel {colorname} commands; the
-"        link to the highlight group will only be broken when you close the
-"        color selector window (e.g. via "q").
-" Keys:
-"   j, k  switch between channels (also: <up>, <down>)
-"   0, $  sets value to zero, maximum (also: <home>, <end>)
-"   h, l  increment/decrement by 1 (also: <left>, <right>)
-"   w, b  increment/decrement by larger amount (also: <pageup>, <pagedown>)
-"   q     quits immediately
-"   y     yanks color in #rrggbb form to the unnamed register
-"   "xy   yanks color in #rrggbb form to register x and shows the color in
-"         palette entry x
-"   "xp   pastes the color from palette entry x into the color selector (and
-"         overrides the currently edited color)
-"   "xY   yanks the alternate color selector (if the swatch has been split via
-"         'x') or the foreground/background color that is not currently edited
-"         in #rrggbb form to register x and shows the color in palette entry x
-"   "xP   pastes the color from palette entry x into the alternate color
-"         selector (if the swatch has been split via 'x') or as the
-"         foreground/background color that is not currently edited
-"    x    keeps the current color as a reference in the lower half of the swatch
-"         and subsequently swaps the current with that alternate color
-"    X    toggles between editing the foreground text and background swatch color
-"    /    prompts for a new foreground text shown in the swatch; enter multiple
-"         lines of text through CTRL-V <Enter>
-"    f    formats the foreground text shown in the swatch in bold and/or italic
-" Parameters:
-"   colorsel_swatch_size [number]: vertical swatch size, do not set below 6
-"   colorsel_slider_size [number]: slider size, longer sliders a need faster
-"                                  computer
-"   colorsel_show_palette [0/1]:   flag whether to show palette
-"   colorsel_show_swatch_difference [0/1]:  flag whether to split the swatch
-"                                           into two parts; the alternate color
-"                                           can be swapped with the main one and
-"                                           can also be set from the palette to
-"                                           compare two colors side-by-side
-"   colorsel_swatch_text [string]:  text to display in the swatch; multiple
-"                                   lines can be included via "\n".
-" Bugs: Must reload script to change parameters
-" TODO: Mouse support
-
-if v:version < 602
-  finish
-endif
-if !has('gui_running')
-  "echoerr 'Color selector needs GUI'
-  finish
-endif
 
 let s:swatchSize = exists('colorsel_swatch_size') ? colorsel_swatch_size : 10
 let s:swatchSize = s:swatchSize < 6 ? 6 : s:swatchSize
@@ -88,13 +21,9 @@ let s:dashes = s:dashes . s:dashes
 let s:active = 'r'
 let s:guifg = 'ffffff'
 let s:isForegroundSwapped = 0
-if !exists('g:colorsel_swatch_text')
-  let g:colorsel_swatch_text = 'The quick brown fox jumps over the lazy dog.'
-  let g:colorsel_swatch_text = g:colorsel_swatch_text . "\n\n\n" . g:colorsel_swatch_text
-endif
-
+let s:isTextVisible = 1
 function! s:hasForegroundText()
-  return g:colorsel_swatch_text !~# '^\%(\_s\|\r\)*$'
+  return s:isTextVisible && g:colorsel_swatch_text !~# '^\%(\_s\|\r\)*$'
 endfun
 
 function! s:size2width(h)
@@ -103,7 +32,7 @@ endfun
 
 function! s:swatchTop()
   let width = s:size2width(s:swatchSize)
-  let curColor = s:currentcolor() . (exists('b:didDefineAltSwatchOverlay') || width < 13 ? '' : ' (' . (s:isForegroundSwapped ? 'fg' : 'bg') . ')')
+  let curColor = s:currentcolor() . (! s:isTextVisible || exists('b:didDefineAltSwatchOverlay') || width < 13 ? '' : ' (' . (s:isForegroundSwapped ? 'fg' : 'bg') . ')')
   return strpart(' -- ' . curColor . ' ' . strpart(s:dashes, 0, width - strlen(curColor) - 4) . ' ', 0, width + 2)
 endfun
 
@@ -112,7 +41,7 @@ function! s:swatchBottom()
   if s:altColor == ''
     return ' ' . strpart(s:dashes, 0, width - 7) . ' Yeti - '
   else
-    let secondColor = s:altColor . (exists('b:didDefineAltSwatchOverlay') || width < 13 ? '' : ' (' . (s:isForegroundSwapped ? 'bg' : 'fg') . ')')
+    let secondColor = s:altColor . (! s:isTextVisible || exists('b:didDefineAltSwatchOverlay') || width < 13 ? '' : ' (' . (s:isForegroundSwapped ? 'bg' : 'fg') . ')')
     return strpart(' -- ' . secondColor . ' ' . strpart(s:dashes, 0, width - strlen(secondColor) - 4) . ' ', 0, width + 2)
   else
   endif
@@ -123,17 +52,17 @@ function! s:drawSwatch()
   %delete _ " Clean the entire window first.
 
   " First render the swatch text, then draw the swatch border "over" it.
+  if s:hasForegroundText()
+    " The swatch text may consist of multiple lines. Make it vertically centered
+    " in the swatch, so that one can have a "mirrored text" effect (e.g. by
+    " choosing the text "Test\nTest") around the split swatch.
+    let textLineNum = strlen(substitute(g:colorsel_swatch_text, "[^\n\r]", '', 'g'))
+    let startLine = (s:swatchSize - textLineNum + 1) / 2
+    execute 'normal!' (startLine < 1 ? 1 : startLine) . 'o'
+    execute 'normal! i' . g:colorsel_swatch_text
+    execute 'silent %s/\%>' . width . 'v.*$//e' | " Cut away any text protruding into the control area.
+  endif
 
-  " The swatch text may consist of multiple lines. Make it vertically centered
-  " in the swatch, so that one can have a "mirrored text" effect (e.g. by
-  " choosing the text "Test\nTest") around the split swatch.
-  let textLineNum = strlen(substitute(g:colorsel_swatch_text, "[^\n\r]", '', 'g'))
-  let startLine = (s:swatchSize - textLineNum + 1) / 2
-  execute 'normal!' (startLine < 1 ? 1 : startLine) . 'o'
-  execute 'normal! i' . g:colorsel_swatch_text
-  execute 'silent %s/\%>' . width . 'v.*$//e' | " Cut away any text protruding into the control area.
-  let notYetRenderedLineNum = s:swatchSize - line('.') + 2 " Vim 6 cannot setline() on non-existing lines, so render them, too.
-  if notYetRenderedLineNum > 0 | execute 'normal!' notYetRenderedLineNum . 'o' | endif
   " The text is rendered, now park the cursor in the upper left corner.
   normal! gg0
 
@@ -173,6 +102,12 @@ function! s:drawLegend()
   call s:updateStatus(8 + shift, ' jk switch   0bjlw$ change values' . (s:showPalette ? '   "xp/P use palette entry x' : ''))
   call s:updateStatus(9 + shift, '  q quit  ' . (s:showSwatchDifference ? 'x swap up/dn  ' : '        ') . 'y yank #rrggbb ' . (s:showPalette ? '"xy/Y store in entry x' : ''))
   call s:updateStatus(10+ shift, '          ' . (s:hasForegroundText() ? 'X edit fg/bg  ' : '              ') . '/ enter swatch text  f format text')
+endfun
+
+function! s:redraw()
+  call s:drawSwatch()
+  call s:drawLegend()
+  call s:update()
 endfun
 
 function! s:sliderStr(val, max)
@@ -426,6 +361,8 @@ function! s:swapWithAlt()
 endfun
 
 function! s:toggleForegroundEditing()
+  if ! s:isTextVisible | return | endif
+
   let currentColor = s:currentcolor()
   call s:setColor(s:altColor == '' ? s:contrastcolor() : s:altColor)
   let s:altColor = currentColor
@@ -445,15 +382,21 @@ function! s:setText()
   let newtext = input('Text: ')
   if newtext != ''
     let g:colorsel_swatch_text = newtext
-    call s:drawSwatch()
-    call s:drawLegend()
-    call s:update()
+    let s:isTextVisible = 1
+    call s:redraw()
   endif
 endfun
 
 function! s:formatText()
   " Toggle format of the swatch text from normal -> bold -> italic -> bold &
-  " italic -> normal.
+  " italic -> no text -> normal.
+  if ! s:isTextVisible
+    let s:isTextVisible = 1
+    call s:redraw()
+    echo 'Text format changed to normal'
+    return
+  endif
+
   let synId = synIDtrans(hlID('colorselColor'))
   if ! synIDattr(synId, 'bold')
     if ! synIDattr(synId, 'italic')
@@ -466,6 +409,12 @@ function! s:formatText()
       let format = 'italic'
     else
       let format = 'NONE'
+      if s:isForegroundSwapped
+        " Stop editing the now invisible foreground color. 
+        call s:toggleForegroundEditing()
+      endif
+      let s:isTextVisible = 0
+      call s:redraw()
     endif
   endif
 
@@ -863,7 +812,7 @@ function! s:setColor(color)
   call s:updateHSV()
 endfun
 
-function! ColorSel(...)
+function! colorsel#ColorSel(...)
   " Initialize persistent variables on first run.
   if !exists('s:red')
     let s:red = 127
@@ -1040,5 +989,4 @@ function! ColorSel(...)
   call s:update()
 endfun
 
-command! -bar -nargs=* -complete=highlight ColorSel call ColorSel(<f-args>)
 " vim: set et ts=2 :
