@@ -175,6 +175,9 @@ if has("autocmd")
         \ set ft=mail |
         \ set ts=2 sw=2 et
 
+    autocmd BufRead,BufNewFile *.vala setfiletype vala
+    autocmd BufRead,BufNewFile *.vapi setfiletype vala
+
     autocmd BufNewFile,BufRead /tmp/ditz*
         \ set ft=rst |
         \ set ts=2 sw=2 et
@@ -635,6 +638,12 @@ let g:gist_clip_command="xsel -b"
 " showmarks settings {{{
 let g:showmarks_enable=0
 let g:showmarks_ignore_type="phq"
+" }}}
+
+" vala syntax settings {{{
+let vala_comment_strings = 1
+let vala_space_errors = 1
+let vala_no_tab_space_error = 1
 " }}}
 
 " toggle_words maps {{{
