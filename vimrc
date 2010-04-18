@@ -676,5 +676,3 @@ map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 if filereadable(expand("~/.vim/vimrc-local"))
     source ~/.vim/vimrc-local
 endif
-
-
