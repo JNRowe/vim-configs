@@ -29,6 +29,7 @@ set confirm
 set cursorline
 set dictionary+=/usr/share/dict/words
 set directory=~/.vim/tmp//
+set display=lastline
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
