@@ -428,8 +428,6 @@ nnoremap <S-Down> Vj
 " Toggle current fold
 nnoremap <Space> za
 
-nmap <Leader>f <Plug>ZoomWin
-
 " Custom menu items {{{
 if has("menu")
     amenu L&ocations.&Awesome.rc
