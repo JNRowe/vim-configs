@@ -16,12 +16,6 @@
 [submodule "external/syntastic"]
 	path = external/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "external/pyflakes/after/ftplugin/python/pyflakes"]
-	path = external/pyflakes/after/ftplugin/python/pyflakes
-	url = git://github.com/kevinw/pyflakes.git
-[submodule "external/pyflakes-vim/after/ftplugin/python"]
-	path = external/pyflakes-vim/after/ftplugin/python
-	url = git://github.com/kevinw/pyflakes-vim.git
 [submodule "external/vim-fugitive"]
 	path = external/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
