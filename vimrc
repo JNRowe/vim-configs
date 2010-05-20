@@ -609,6 +609,8 @@ nmap <Leader>cwc :cclose<CR>
 nmap <Leader>cwo :copen 7<CR><C-w>p
 nmap <Leader>cn :cnext<CR>
 nmap <Leader>cp :cprevious<CR>
+nmap <M-Down> :cnext<CR>
+nmap <M-Up> :cprevious<CR>
 nmap <Leader>cr :crewind<CR>
 nmap <Leader>cl :clast<CR>
 " }}}
