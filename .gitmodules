@@ -37,9 +37,6 @@
 [submodule "external/vim-markdown/syntax"]
 	path = external/vim-markdown/syntax
 	url = git://github.com/plasticboy/vim-markdown.git
-[submodule "external/vcscommand"]
-	path = external/vcscommand
-	url = git://repo.or.cz/vcscommand
 [submodule "external/vim-afterimage"]
 	path = external/vim-afterimage
 	url = git://github.com/tpope/vim-afterimage.git
