@@ -146,6 +146,9 @@ if has("autocmd")
     " Attempt filetype detection after writing.
     autocmd BufWritePost * if empty(&ft) | filetype detect | endif
 
+    " Automatically chmod +x shell scripts
+    autocmd BufWritePost *.sh !chmod +x %
+
     " Use :make to compile C/C++, even without a Makefile
     autocmd FileType c,cpp
         \ if filereadable('Makefile') |
