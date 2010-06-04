@@ -19,9 +19,6 @@
 [submodule "external/vim-fugitive"]
 	path = external/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "external/vim-abolish"]
-	path = external/vim-abolish
-	url = git://github.com/tpope/vim-abolish.git
 [submodule "external/vim-surround"]
 	path = external/vim-surround
 	url = git://github.com/tpope/vim-surround.git
