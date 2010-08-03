@@ -2,6 +2,7 @@ gh-pages/
 tags/*.ctags
 tmp/*.swp
 view/*.vim
+*.pyc
 
 .ditz-config
 README.html
