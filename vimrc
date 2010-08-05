@@ -301,6 +301,7 @@ set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
 set statusline+=%{StatuslineLongLineWarning()}
 set statusline+=%{CapsLockStatusline()}
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
 set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
