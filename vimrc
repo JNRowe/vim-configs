@@ -179,9 +179,6 @@ if has("autocmd")
         \ set ft=mail |
         \ set ts=2 sw=2 et
 
-    autocmd BufRead,BufNewFile *.vala setfiletype vala
-    autocmd BufRead,BufNewFile *.vapi setfiletype vala
-
     " Use filetype specific omnicompletion for certain filetypes
     autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
