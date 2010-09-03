@@ -52,3 +52,6 @@
 [submodule "external/textile.vim"]
 	path = external/textile.vim
 	url = git://github.com/timcharper/textile.vim.git
+[submodule "external/gsession.vim"]
+	path = external/gsession.vim
+	url = git://github.com/c9s/gsession.vim.git
