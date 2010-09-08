@@ -440,6 +440,12 @@ if has("menu")
         \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/rc.lua"))<CR>
     amenu L&ocations.&Awesome.theme
         \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
+    amenu L&ocations.&Openbox.autostart
+        \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/autostart.sh"))<CR>
+    amenu L&ocations.&Openbox.menu
+        \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/menu.xml"))<CR>
+    amenu L&ocations.&Openbox.rc
+        \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/rc.xml"))<CR>
     amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     amenu L&ocations.&ledger :e ~/.ledger.dat<CR>
     amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
