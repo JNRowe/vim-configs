@@ -24,6 +24,7 @@ if has("ballooneval")
     set ballooneval
 endif
 set clipboard=unnamed
+set colorcolumn=+1
 set completeopt=longest,menuone,preview
 set confirm
 set cryptmethod=blowfish
@@ -569,12 +570,15 @@ function! ToggleLongLineHL()
     if exists('w:HLL1')
         silent! call matchdelete(w:HLL1)
         silent! call matchdelete(w:HLL2)
+        set colorcolumn=0
         unlet w:HLL1
     elseif &textwidth > 0
+        set colorcolumn=+1
         let w:HLL1=matchadd('Search',
             \ '\%<' . (&tw + 1) . 'v.\%>' . (&tw - 2) . 'v', -1)
         let w:HLL2=matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1)
     else
+        set colorcolumn=81
         let w:HLL1=matchadd('Search', '\%<81v.\%>78v', -1)
         let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1)
     endif
