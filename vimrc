@@ -77,6 +77,8 @@ set textwidth=80
 set tildeop
 set title
 set ttyfast
+set undodir=~/.vim/undo/
+set undofile
 set viminfo=!,'1000,<1000,h,n~/.vim/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]

@@ -1,6 +1,7 @@
 gh-pages/
 tags/*.ctags
 tmp/*.swp
+undo/%*
 view/*.vim
 *.pyc
 
