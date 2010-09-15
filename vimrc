@@ -244,7 +244,6 @@ if has("autocmd")
     " }}}
 
     " Simple status for quickfix/help windows {{{
-    autocmd FileType qf setlocal statusline=\[Quickfix\ messages\]
     autocmd FileType help setlocal statusline=%t%h%=%p%%
     autocmd FileType taglist setlocal nospell |
         \ setlocal statusline=%f
