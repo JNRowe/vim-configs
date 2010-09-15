@@ -31,9 +31,6 @@
 [submodule "external/inkpot"]
 	path = external/inkpot
 	url = git://github.com/ciaranm/inkpot.git
-[submodule "external/vim-markdown/syntax"]
-	path = external/vim-markdown/syntax
-	url = git://github.com/plasticboy/vim-markdown.git
 [submodule "external/vim-ragtag"]
 	path = external/vim-ragtag
 	url = git://github.com/tpope/vim-ragtag.git
