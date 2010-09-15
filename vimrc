@@ -381,8 +381,11 @@ function! Switch_background()
 endfunction
 map <S-F12> :call Switch_background()<CR>
 
-" Toggle line numbering
+" Toggle line numbering, or re-enable numbering from line 0 if relative
+" numbering is enabled.
 map <C-F12> :set number!<CR>
+" Set relative numbering
+map <M-F12> :set relativenumber<CR>
 
 " Make C-s do something useful, after disabling term stop!
 map <C-S> :shell<CR>
