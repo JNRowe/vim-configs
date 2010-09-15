@@ -26,6 +26,7 @@ endif
 set clipboard=unnamed
 set completeopt=longest,menuone,preview
 set confirm
+set cryptmethod=blowfish
 set cursorline
 set dictionary+=/usr/share/dict/words
 set directory=~/.vim/tmp//
