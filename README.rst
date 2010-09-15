@@ -5,6 +5,9 @@ This is just my personal vim_ configuration files that are shared
 between hosts.  Maybe they're useful to you too, or better yet maybe
 you'll spot *and* fix a bug!
 
+It uses features introduced in version 7.3, but should work with later
+versions.
+
 If you find any problems with the configuration files in this repository
 either drop me an email_ or file an issue_.  Locally, bugs are managed
 with ditz_, so if you're working with a clone of the repository you can
