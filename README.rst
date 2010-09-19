@@ -27,8 +27,8 @@ Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are link it to ``~/.vimrc``, ``source`` it in your own ``~/.vimrc`` or
 simply cherrypick the parts of it you like.
 
-cupage
-''''''
+cupage support
+''''''''''''''
 
 cupage_ is used to keep scripts that aren't managed via git_ in sync with their
 releases, see ``cupage.conf``.  ``cupage`` v0.3.0, or above, is required if you
@@ -37,8 +37,6 @@ wish to make use of this functionality.
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
 .. _issue: http://github.com/JNRowe/vim-configs/issues
-.. _Gentoo: http://www.gentoo.org/
-.. _overlay: http://github.com/JNRowe/misc-overlay
 .. _cupage: http://github.com/JNRowe/cupage
 .. _git: http://www.git-scm.com/
 
