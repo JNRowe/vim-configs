@@ -41,3 +41,6 @@ wish to make use of this functionality.
 .. _overlay: http://github.com/JNRowe/misc-overlay
 .. _cupage: http://github.com/JNRowe/cupage
 .. _git: http://www.git-scm.com/
+
+..
+    :vim: set ft=rst ts=4 sw=4 et:
