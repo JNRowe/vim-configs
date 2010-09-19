@@ -5,7 +5,6 @@ undo/%*
 view/*.vim
 *.pyc
 
-.ditz-config
 README.html
 abbr-local
 cupage.db

@@ -9,9 +9,7 @@ It uses features introduced in version 7.3, but should work with later
 versions.
 
 If you find any problems with the configuration files in this repository
-either drop me an email_ or file an issue_.  Locally, bugs are managed
-with ditz_, so if you're working with a clone of the repository you can
-report, list and fix bugs directly in the repository [#]_.
+either file an issue_ or drop me an email_.
 
 Installation
 ------------
@@ -37,13 +35,9 @@ cupage_ is used to keep scripts that aren't managed via git_ in sync with their
 releases, see ``cupage.conf``.  ``cupage`` v0.3.0, or above, is required if you
 wish to make use of this functionality.
 
-.. [#] If you're using Gentoo_ you can find an ebuild for ditz_, in my
-       overlay_.
-
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
 .. _issue: http://github.com/JNRowe/vim-configs/issues
-.. _ditz: http://ditz.rubyforge.org/
 .. _Gentoo: http://www.gentoo.org/
 .. _overlay: http://github.com/JNRowe/misc-overlay
 .. _cupage: http://github.com/JNRowe/cupage
