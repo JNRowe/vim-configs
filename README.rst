@@ -1,21 +1,20 @@
 vim-configs
 ===========
 
-This is just my personal vim_ configuration files that are shared
-between hosts.  Maybe they're useful to you too, or better yet maybe
-you'll spot *and* fix a bug!
+This is just my personal vim_ configuration files that are shared between hosts.
+Maybe they're useful to you too, or better yet maybe you'll spot *and* fix
+a bug!
 
-It uses features introduced in version 7.3, but should work with later
-versions.
+It uses features introduced in version 7.3, but should work with later versions.
 
-If you find any problems with the configuration files in this repository
-either file an issue_ or drop me an email_.
+If you find any problems with the configuration files in this repository either
+file an issue_ or drop me an email_.
 
 Installation
 ------------
 
-Do not install these files!!  They'll likely break your current set up
-and *may* even eat your dog.
+Do not install these files!!  They'll likely break your current set up and *may*
+even eat your dog.
 
 That being said if your dog doesn't mean that much to you::
 
@@ -24,9 +23,9 @@ That being said if your dog doesn't mean that much to you::
     git submodule update --init
     make
 
-Scan over the ``vimrc`` file and figure out what you wish to do with it.
-The choices are link it to ``~/.vimrc``, ``source`` it in your own
-``~/.vimrc`` or simply cherrypick the parts of it you like.
+Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
+choices are link it to ``~/.vimrc``, ``source`` it in your own ``~/.vimrc`` or
+simply cherrypick the parts of it you like.
 
 cupage
 ''''''
