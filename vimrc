@@ -4,6 +4,14 @@ scriptencoding utf-8
 
 set nocompatible
 
+if v:version < 703
+    let v:warningmsg="Vim version 7.3 or higher is required for some of the " .
+        \ "functionality in this vimrc"
+    echohl WarningMsg
+    echomsg v:warningmsg
+    echohl none
+endif
+
 " Pull in local settings.  This is only for local required while reading this
 " file.
 if filereadable(expand("~/.vim/vimrc-local.pre"))
