@@ -630,6 +630,10 @@ endif
 " Delete vcscommand plugin's buffer when hiding
 let VCSCommandDeleteOnHide=1
 
+" Maps for gundo {{{
+nnoremap <LocalLeader># :GundoToggle<CR>
+" }}}
+
 " Maps for capslock plugin {{{
 nmap <Leader>i i<Plug>CapsLockToggle
 imap <C-L> <Plug>CapsLockToggle
