@@ -58,3 +58,6 @@
 [submodule "external/gundo.vim"]
 	path = external/gundo.vim
 	url = git://github.com/sjl/gundo.vim.git
+[submodule "external/vim-cute-python"]
+	path = external/vim-cute-python
+	url = git://github.com/ehamberg/vim-cute-python.git
