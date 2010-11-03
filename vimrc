@@ -170,7 +170,7 @@ if has("autocmd")
         \ endif
 
     " Add Python tags when editing Python files
-    autocmd FileType python setlocal tags+=$HOME/.vim/tags/python2.6.ctags
+    autocmd FileType python setlocal tags+=$HOME/.vim/tags/python2.7.ctags
 
     " Set filetype specific commands for keyword lookup
     autocmd FileType python setlocal keywordprg=pydoc
