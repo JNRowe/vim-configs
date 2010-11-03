@@ -699,6 +699,12 @@ nmap <C-M-T> :ToggleWord<CR>
 vmap <C-M-T> <ESC>:ToggleWord<CR>
 " }}}
 
+" tasklist settings {{{
+map <LocalLeader>v <Plug>TaskList
+let g:tlWindowPosition = 1
+let g:tlRememberPosition = 1
+" }}}
+
 " Sign support {{{
 " Waaaay too much execute nastiness :/
 function! SignDefine(type, ...)
