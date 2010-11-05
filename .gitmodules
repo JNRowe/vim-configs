@@ -61,3 +61,6 @@
 [submodule "external/vim-cute-python"]
 	path = external/vim-cute-python
 	url = git://github.com/ehamberg/vim-cute-python.git
+[submodule "external/Haskell-Conceal"]
+	path = external/Haskell-Conceal
+	url = git://github.com/vim-scripts/Haskell-Conceal.git
