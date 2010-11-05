@@ -85,3 +85,6 @@
 [submodule "external/capslock.vim"]
 	path = external/capslock.vim
 	url = git://github.com/vim-scripts/capslock.vim.git
+[submodule "external/DotOutlineTree"]
+	path = external/DotOutlineTree
+	url = git://github.com/vim-scripts/DotOutlineTree.git
