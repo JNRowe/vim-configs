@@ -103,3 +103,6 @@
 [submodule "external/Arduino-syntax-file"]
 	path = external/Arduino-syntax-file
 	url = git://github.com/vim-scripts/Arduino-syntax-file.git
+[submodule "external/doctest-syntax"]
+	path = external/doctest-syntax
+	url = git://github.com/vim-scripts/doctest-syntax.git
