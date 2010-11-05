@@ -100,3 +100,6 @@
 [submodule "external/Toggle"]
 	path = external/Toggle
 	url = git://github.com/vim-scripts/Toggle.git
+[submodule "external/Arduino-syntax-file"]
+	path = external/Arduino-syntax-file
+	url = git://github.com/vim-scripts/Arduino-syntax-file.git
