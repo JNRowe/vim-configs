@@ -91,3 +91,6 @@
 [submodule "external/lbdbq"]
 	path = external/lbdbq
 	url = git://github.com/vim-scripts/lbdbq.git
+[submodule "external/scratch-utility"]
+	path = external/scratch-utility
+	url = git://github.com/vim-scripts/scratch-utility.git
