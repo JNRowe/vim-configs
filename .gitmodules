@@ -97,3 +97,6 @@
 [submodule "external/TaskList.vim"]
 	path = external/TaskList.vim
 	url = git://github.com/vim-scripts/TaskList.vim.git
+[submodule "external/Toggle"]
+	path = external/Toggle
+	url = git://github.com/vim-scripts/Toggle.git
