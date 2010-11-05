@@ -88,3 +88,6 @@
 [submodule "external/DotOutlineTree"]
 	path = external/DotOutlineTree
 	url = git://github.com/vim-scripts/DotOutlineTree.git
+[submodule "external/lbdbq"]
+	path = external/lbdbq
+	url = git://github.com/vim-scripts/lbdbq.git
