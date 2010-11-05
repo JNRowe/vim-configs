@@ -82,3 +82,6 @@
 [submodule "external/AutoClose"]
 	path = external/AutoClose
 	url = git://github.com/vim-scripts/AutoClose--Alves.git
+[submodule "external/capslock.vim"]
+	path = external/capslock.vim
+	url = git://github.com/vim-scripts/capslock.vim.git
