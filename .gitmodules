@@ -79,3 +79,6 @@
 [submodule "external/indentgenie.vim"]
 	path = external/indentgenie.vim
 	url = git://github.com/vim-scripts/indentgenie.vim.git
+[submodule "external/AutoClose"]
+	path = external/AutoClose
+	url = git://github.com/vim-scripts/AutoClose--Alves.git
