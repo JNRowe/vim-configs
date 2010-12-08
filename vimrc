@@ -710,6 +710,12 @@ let vala_space_errors = 1
 let vala_no_tab_space_error = 1
 " }}}
 
+" conque settings {{{
+" I use the default for Tlist
+let g:ConqueTerm_ToggleKey = '<S-F9>'
+let g:ConqueTerm_PyVersion = 3
+" }}}
+
 " toggle_words maps {{{
 imap <C-M-T> <C-O>:ToggleWord<CR>
 nmap <C-M-T> :ToggleWord<CR>
