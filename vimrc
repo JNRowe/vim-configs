@@ -428,6 +428,11 @@ map <Esc>9 :buffer 9<CR>
 map <Esc>0 :buffers<CR>
 " }}}
 
+" Navigate tags with keys I find less annoying {{{
+map <C-S-Left> <C-T>
+map <C-S-Right> <C-]>
+" }}}
+
 " Ctrl + up/down to skip paragraphs {{{
 nnoremap <C-Up> {
 nnoremap <C-Down> }
