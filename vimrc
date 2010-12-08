@@ -737,7 +737,7 @@ endfunction
 map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
 " }}}
 
-" Show highlight group of the current text
+" Show highlight group of the current text {{{
 " From vim wiki
 command! ShowHighlightGroup
     \ echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name") .
