@@ -179,6 +179,9 @@ if has("autocmd")
     " Mark lines longer than 80 chars as an error
     autocmd BufWinEnter * call ToggleLongLineHL()
 
+    " List mode makes little sense in terminal windows
+    autocmd FileType conque_term setlocal nolist
+
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
     autocmd FileType help nmap <buffer> <Backspace> <C-T>
