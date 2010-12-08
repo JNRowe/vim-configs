@@ -403,6 +403,15 @@ map <M-F12> :set relativenumber<CR>
 " Make C-s do something useful, after disabling term stop!
 map <C-S> :shell<CR>
 
+" Omnicompletion rocks, but <C-x><C-o> doesn't. {{{
+if has("gui_running")
+    inoremap <C-Space> <C-x><C-o>
+else
+    inoremap <Nul> <C-x><C-o>
+endif
+" }}}
+
+
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
 map <M-Right> :bnext<CR>
