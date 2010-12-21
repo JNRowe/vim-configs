@@ -45,7 +45,7 @@
 	url = git://github.com/tpope/vim-pathogen.git
 [submodule "external/snipmate.vim"]
 	path = external/snipmate.vim
-	url = git@github.com:JNRowe/snipmate.vim.git
+	url = git://github.com/JNRowe/snipmate.vim.git
 [submodule "external/textile.vim"]
 	path = external/textile.vim
 	url = git://github.com/timcharper/textile.vim.git
