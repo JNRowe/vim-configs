@@ -64,9 +64,6 @@
 [submodule "external/Haskell-Conceal"]
 	path = external/Haskell-Conceal
 	url = git://github.com/vim-scripts/Haskell-Conceal.git
-[submodule "external/fruity.vim"]
-	path = external/fruity.vim
-	url = git://github.com/vim-scripts/fruity.vim.git
 [submodule "external/summerfruit.vim"]
 	path = external/summerfruit.vim
 	url = git://github.com/vim-scripts/summerfruit.vim.git
