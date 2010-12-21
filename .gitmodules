@@ -67,9 +67,6 @@
 [submodule "external/fruity.vim"]
 	path = external/fruity.vim
 	url = git://github.com/vim-scripts/fruity.vim.git
-[submodule "external/TaQua"]
-	path = external/TaQua
-	url = git://github.com/vim-scripts/TaQua.git
 [submodule "external/summerfruit.vim"]
 	path = external/summerfruit.vim
 	url = git://github.com/vim-scripts/summerfruit.vim.git
