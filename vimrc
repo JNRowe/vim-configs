@@ -150,9 +150,6 @@ if has("autocmd")
         runtime! macros/editexisting.vim
     endif
 
-    " Save files when shifting focus from vim
-    autocmd FocusLost * :wa
-
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
