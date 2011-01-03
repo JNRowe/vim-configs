@@ -354,7 +354,7 @@ else
     elseif &t_Co == 88
         colorscheme jnrowe
     else
-        colorscheme taqua
+        colorscheme elflord
     endif
     if $TERM ==# "linux" ||
         \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
