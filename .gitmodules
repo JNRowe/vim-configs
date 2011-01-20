@@ -97,3 +97,6 @@
 [submodule "external/doctest-syntax"]
 	path = external/doctest-syntax
 	url = git://github.com/vim-scripts/doctest-syntax.git
+[submodule "external/vim-orgmode"]
+	path = external/vim-orgmode
+	url = git://github.com/jceb/vim-orgmode.git
