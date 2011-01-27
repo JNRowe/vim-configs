@@ -100,3 +100,6 @@
 [submodule "external/spf13-snipmate.vim"]
 	path = external/spf13-snipmate.vim
 	url = git://github.com/spf13/snipmate.vim.git
+[submodule "external/snipmate-snippets/snippets"]
+	path = external/snipmate-snippets/snippets
+	url = git://github.com/JNRowe/snipmate-snippets.git
