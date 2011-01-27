@@ -97,3 +97,6 @@
 [submodule "external/vim-orgmode"]
 	path = external/vim-orgmode
 	url = git://github.com/jceb/vim-orgmode.git
+[submodule "external/spf13-snipmate.vim"]
+	path = external/spf13-snipmate.vim
+	url = git://github.com/spf13/snipmate.vim.git
