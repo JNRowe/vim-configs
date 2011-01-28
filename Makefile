@@ -4,7 +4,8 @@ CUPAGE := cupage.py
 TARGETS := doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
-		$(wildcard /usr/lib/ruby/[0-9]*))
+		$(wildcard /usr/lib/ruby/[0-9]*)) \
+	external/Command-T/ruby/command-t/ext.so
 
 HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
 
@@ -43,6 +44,14 @@ tags/libc.ctags: $(LIBC_INCS)
 doc/tags: $(filter-out doc/tags, $(wildcard doc/*))
 	$(info - Updating help tags)
 	vim -X -u NONE -c 'helptags $(dir $@)' -c ':q' </dev/null &>/dev/null
+
+external/Command-T/ruby/command-t/ext.so: external/Command-T/ruby/command-t/Makefile \
+    $(wildcard external/Command-T/ruby/command-t/*.c)
+	make -C external/Command-T/ruby/command-t/
+
+external/Command-T/ruby/command-t/Makefile: external/Command-T/ruby/command-t/extconf.rb
+	cd external/Command-T/ruby/command-t/; \
+	ruby extconf.rb
 
 clean:
 	$(info - Cleaning generated files)
