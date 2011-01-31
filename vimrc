@@ -478,6 +478,8 @@ if has("menu")
         \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/rc.xml"))<CR>
     amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     amenu L&ocations.&ledger :e ~/.ledger.dat<CR>
+    amenu L&ocations.&musca
+        \ :execute("e " . expand("$XDG_CONFIG_HOME/musca/start"))<CR>
     amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
     amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
     amenu L&ocations.&zsh.&functions :e ~/.zsh/functions-local<CR>
