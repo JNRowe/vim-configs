@@ -336,7 +336,7 @@ if has("gui_running")
     map <S-Insert> <MiddleMouse>
     map! <S-Insert> <MiddleMouse>
 
-    set guifont=Terminus\ Bold\ 14
+    set guifont=Monaco\ 13
     colorscheme jnrowe
 
     if has('title')
