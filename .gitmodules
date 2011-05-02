@@ -103,3 +103,6 @@
 [submodule "external/regex"]
 	path = external/regex
 	url = git://github.com/ervandew/regex.git
+[submodule "external/tabular"]
+	path = external/tabular
+	url = git://github.com/godlygeek/tabular.git
