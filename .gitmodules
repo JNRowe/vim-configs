@@ -100,3 +100,6 @@
 [submodule "external/snipmate-snippets/snippets"]
 	path = external/snipmate-snippets/snippets
 	url = git://github.com/JNRowe/snipmate-snippets.git
+[submodule "external/regex"]
+	path = external/regex
+	url = git://github.com/ervandew/regex.git
