@@ -219,7 +219,6 @@ set statusline+=%{&formatoptions!='tcrqn2l1'?','.&formatoptions:''}
 set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
 set statusline+=%{StatuslineLongLineWarning()}
-set statusline+=%{CapsLockStatusline()}
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
@@ -577,11 +576,6 @@ endif
 
 " Maps for gundo {{{
 nnoremap <LocalLeader># :GundoToggle<CR>
-" }}}
-
-" Maps for capslock plugin {{{
-nmap <Leader>i i<Plug>CapsLockToggle
-imap <C-L> <Plug>CapsLockToggle
 " }}}
 
 " Quickfix maps {{{
