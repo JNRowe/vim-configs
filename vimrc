@@ -176,9 +176,6 @@ if has("autocmd")
     " Mark lines longer than 80 chars as an error
     autocmd BufWinEnter * call ToggleLongLineHL()
 
-    " List mode makes little sense in terminal windows
-    autocmd FileType conque_term setlocal nolist
-
     " Make <Return> jump to tag in help files
     autocmd FileType help nmap <buffer> <Return> <C-]>
     autocmd FileType help nmap <buffer> <Backspace> <C-T>
@@ -701,12 +698,6 @@ let vala_no_tab_space_error = 1
 " nerdtree settings {{{
 map <LocalLeader>n :NERDTreeToggle<CR>
 let g:NERDTreeCaseSensitiveSort = 1
-" }}}
-
-" conque settings {{{
-" I use the default for Tlist
-let g:ConqueTerm_ToggleKey = '<S-F9>'
-let g:ConqueTerm_PyVersion = 3
 " }}}
 
 " toggle_words maps {{{
