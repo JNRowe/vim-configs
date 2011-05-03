@@ -635,9 +635,6 @@ if &diff
 endif
 " }}}
 
-" Delete vcscommand plugin's buffer when hiding
-let VCSCommandDeleteOnHide=1
-
 " Maps for gundo {{{
 nnoremap <LocalLeader># :GundoToggle<CR>
 " }}}
