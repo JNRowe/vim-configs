@@ -1,4 +1,4 @@
-" vim: sw=4 sts=4 et tw=80 fdm=marker
+" vim: sw=4 sts=4 et tw=80 fdm=marker:
 
 scriptencoding utf-8
 
