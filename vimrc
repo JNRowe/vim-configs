@@ -518,11 +518,6 @@ function! ToggleFlag(option,flag)
 endfunction
 " }}}
 
-" Don't attempt to load csapprox if gui isn't supported
-if !has("gui")
-    let g:CSApprox_loaded = 1
-endif
-
 " from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html {{{
 "
 " Return a warning for "long lines" {{{
