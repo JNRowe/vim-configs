@@ -672,10 +672,6 @@ let g:SuperTabDefaultCompletionType='context'
 let g:syntastic_enable_signs=1
 " }}}
 
-" gist-vim settings {{{
-let g:gist_clip_command="xsel -b"
-" }}}
-
 " vala syntax settings {{{
 let vala_comment_strings = 1
 let vala_space_errors = 1
