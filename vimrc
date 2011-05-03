@@ -262,8 +262,8 @@ if has("autocmd")
 
     " Session management {{{
 
-    " Enable the following two autocmds if you wish session management to
-    " automatically.
+    " Enable the following two autocmds if you wish session management to be
+    " enabled automatically.
     "autocmd VimEnter * call LoadSession()
     "autocmd VimLeave * call SaveSession()
 
