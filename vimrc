@@ -676,11 +676,6 @@ let g:syntastic_enable_signs=1
 let g:gist_clip_command="xsel -b"
 " }}}
 
-" showmarks settings {{{
-let g:showmarks_enable=0
-let g:showmarks_ignore_type="phq"
-" }}}
-
 " vala syntax settings {{{
 let vala_comment_strings = 1
 let vala_space_errors = 1
