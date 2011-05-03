@@ -321,7 +321,6 @@ if has('title') && (has('gui_running') || &title)
     set titlestring+=\ -\ %{v:progname} " Program name
 endif " }}}
 
-
 if has("gui_running")
     " GUI specific settings {{{
     set mousemodel=popup_setpos
@@ -404,7 +403,6 @@ else
     inoremap <Nul> <C-x><C-o>
 endif
 " }}}
-
 
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
