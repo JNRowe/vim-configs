@@ -462,25 +462,42 @@ nnoremap <S-Down> Vj
 nnoremap <Space> za
 
 " Custom menu items {{{
+" It checks for, what I consider to be, the most important file in a set and
+" only shows the menu if it is exists.  This allows us to list files for
+" different hosts without cluttering the menu too much.
 if has("menu")
-    amenu L&ocations.&Awesome.rc
-        \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/rc.lua"))<CR>
-    amenu L&ocations.&Awesome.theme
-        \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
-    amenu L&ocations.&Openbox.autostart
-        \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/autostart.sh"))<CR>
-    amenu L&ocations.&Openbox.menu
-        \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/menu.xml"))<CR>
-    amenu L&ocations.&Openbox.rc
-        \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/rc.xml"))<CR>
-    amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
-    amenu L&ocations.&ledger :e ~/.ledger.dat<CR>
-    amenu L&ocations.&musca
-        \ :execute("e " . expand("$XDG_CONFIG_HOME/musca/start"))<CR>
-    amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
-    amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
-    amenu L&ocations.&zsh.&functions :e ~/.zsh/functions-local<CR>
-    amenu L&ocations.&zsh.&zshrc :e ~/.zshrc<CR>
+    if filereadable(expand("$XDG_CONFIG_HOME/awesome/rc.lua"))
+        amenu L&ocations.&Awesome.rc
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/rc.lua"))<CR>
+        amenu L&ocations.&Awesome.theme
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
+    endif
+    if filereadable(expand("$XDG_CONFIG_HOME/openbox/rc.xml"))
+        amenu L&ocations.&Openbox.autostart
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/autostart.sh"))<CR>
+        amenu L&ocations.&Openbox.menu
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/menu.xml"))<CR>
+        amenu L&ocations.&Openbox.rc
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/rc.xml"))<CR>
+    endif
+    if filereadable(expand("~/.gitconfig"))
+        amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
+    endif
+    if filereadable(expand("~/.ledger.dat"))
+        amenu L&ocations.&ledger :e ~/.ledger.dat<CR>
+    endif
+    if filereadable(expand("$XDG_CONFIG_HOME/musca/start"))
+        amenu L&ocations.&musca
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/musca/start"))<CR>
+    endif
+    if filereadable(expand("~/.vimrc"))
+        amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
+        amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
+    endif
+    if filereadable(expand("~/.zshrc"))
+        amenu L&ocations.&zsh.&functions-local :e ~/.zsh/functions-local<CR>
+        amenu L&ocations.&zsh.&zshrc :e ~/.zshrc<CR>
+    endif
 endif " }}}
 
 " Don't use default keys for scratch plugin
