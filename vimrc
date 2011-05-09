@@ -50,6 +50,7 @@ set formatoptions+=tcrqn2l1
 set formatoptions-=wvb
 set nofsync
 set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
+set guiheadroom=0
 set guioptions+=chR
 set hidden
 set history=1000
