@@ -106,3 +106,6 @@
 [submodule "external/tabular"]
 	path = external/tabular
 	url = git://github.com/godlygeek/tabular.git
+[submodule "external/vim-css-color"]
+	path = external/vim-css-color
+	url = git://github.com/skammer/vim-css-color.git
