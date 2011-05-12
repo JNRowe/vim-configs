@@ -109,3 +109,6 @@
 [submodule "external/vim-css-color"]
 	path = external/vim-css-color
 	url = git://github.com/skammer/vim-css-color.git
+[submodule "external/gitv"]
+	path = external/gitv
+	url = git://github.com/gregsexton/gitv.git
