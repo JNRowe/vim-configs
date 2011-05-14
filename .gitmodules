@@ -112,3 +112,6 @@
 [submodule "external/gitv"]
 	path = external/gitv
 	url = git://github.com/gregsexton/gitv.git
+[submodule "external/ZoomWin"]
+	path = external/ZoomWin
+	url = git://github.com/vim-scripts/ZoomWin.git
