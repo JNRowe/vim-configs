@@ -1,15 +1,9 @@
-gh-pages/
-tags/*.ctags
-tmp/*.swp
-undo/%*
-view/*.vim
-*.pyc
+doc/tags
 
-README.html
-abbr-local
-cupage.db
-tags
-tags-ja
+tags/
+tmp/
+undo/
+
+*.html
+
 viminfo
-vimrc-local.pre
-vimrc-local
