@@ -1,5 +1,4 @@
 CTAGS := exuberant-ctags
-CUPAGE := cupage.py
 
 TARGETS := doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
@@ -11,7 +10,7 @@ HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
 PACKAGES = $(wildcard external/*)
 PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
-.PHONY: clean cupage-scan update-external
+.PHONY: clean update-external
 
 all: $(TARGETS) $(HTML)
 
@@ -51,8 +50,3 @@ clean:
 update-external:
 	$(info - Updating git submodules)
 	git submodule update
-
-cupage-scan:
-	$(info - Checking for script updates)
-	$(CUPAGE) -f cupage.conf -d cupage.db
-
