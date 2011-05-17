@@ -49,7 +49,7 @@ clean:
 	rm -f $(TARGETS)
 
 update-external:
-	$(info - Updated git submodules)
+	$(info - Updating git submodules)
 	git submodule update
 
 cupage-scan:
