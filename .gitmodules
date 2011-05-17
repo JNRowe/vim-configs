@@ -115,3 +115,6 @@
 [submodule "external/ZoomWin"]
 	path = external/ZoomWin
 	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "external/pep8"]
+	path = external/pep8
+	url = git://github.com/vim-scripts/pep8.git
