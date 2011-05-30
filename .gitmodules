@@ -121,3 +121,6 @@
 [submodule "external/vim-addon-mw-utils"]
 	path = external/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "external/vim-makegreen"]
+	path = external/vim-makegreen
+	url = git://github.com/reinh/vim-makegreen.git
