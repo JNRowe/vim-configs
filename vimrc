@@ -681,7 +681,8 @@ vmap - zf
 " }}}
 
 " Supertab settings {{{
-let g:SuperTabDefaultCompletionType='context'
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabLongestHighlight = 1
 " }}}
 
 " Syntastic settings {{{
