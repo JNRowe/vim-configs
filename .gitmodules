@@ -145,3 +145,6 @@
 [submodule "external/tagbar"]
 	path = external/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "external/utl.vim"]
+	path = external/utl.vim
+	url = git://github.com/vim-scripts/utl.vim.git
