@@ -139,3 +139,6 @@
 [submodule "external/vim-hier"]
 	path = external/vim-hier
 	url = git://github.com/jceb/vim-hier.git
+[submodule "external/NrrwRgn"]
+	path = external/NrrwRgn
+	url = git://github.com/chrisbra/NrrwRgn.git
