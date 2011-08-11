@@ -130,3 +130,6 @@
 [submodule "external/ColorV"]
 	path = external/ColorV
 	url = git://github.com/vim-scripts/ColorV.git
+[submodule "external/vim-editqf"]
+	path = external/vim-editqf
+	url = git://github.com/jceb/vim-editqf.git
