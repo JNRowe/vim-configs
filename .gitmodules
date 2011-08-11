@@ -124,3 +124,6 @@
 [submodule "external/vim-makegreen"]
 	path = external/vim-makegreen
 	url = git://github.com/reinh/vim-makegreen.git
+[submodule "external/csv.vim"]
+	path = external/csv.vim
+	url = git://github.com/chrisbra/csv.vim.git
