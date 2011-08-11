@@ -127,3 +127,6 @@
 [submodule "external/csv.vim"]
 	path = external/csv.vim
 	url = git://github.com/chrisbra/csv.vim.git
+[submodule "external/ColorV"]
+	path = external/ColorV
+	url = git://github.com/vim-scripts/ColorV.git
