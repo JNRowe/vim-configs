@@ -136,3 +136,6 @@
 [submodule "external/vim-fastwordcompleter"]
 	path = external/vim-fastwordcompleter
 	url = git://github.com/jceb/vim-fastwordcompleter.git
+[submodule "external/vim-hier"]
+	path = external/vim-hier
+	url = git://github.com/jceb/vim-hier.git
