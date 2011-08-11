@@ -142,3 +142,6 @@
 [submodule "external/NrrwRgn"]
 	path = external/NrrwRgn
 	url = git://github.com/chrisbra/NrrwRgn.git
+[submodule "external/tagbar"]
+	path = external/tagbar
+	url = git://github.com/majutsushi/tagbar.git
