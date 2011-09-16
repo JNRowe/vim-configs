@@ -15,7 +15,7 @@ endif
 " Pull in local settings.  This is only for local required while reading this
 " file.
 if filereadable(expand("~/.vim/vimrc-local.pre"))
-    source ~/.vim/vimrc-local
+    source ~/.vim/vimrc-local.pre
 endif
 
 call pathogen#runtime_append_all_bundles("external")
