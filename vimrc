@@ -721,6 +721,10 @@ let g:tlWindowPosition = 1
 let g:tlRememberPosition = 1
 " }}}
 
+" ColorV settings {{{
+let g:ColorV_cache_File = expand('$HOME') . '/.vim/tmp/ColorV_cache'
+" }}}
+
 " Sign support {{{
 " Waaaay too much execute nastiness :/
 function! SignDefine(type, ...)
