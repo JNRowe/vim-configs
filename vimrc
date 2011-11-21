@@ -148,12 +148,6 @@ if has("autocmd")
     " Automatically chmod +x shell scripts
     autocmd BufWritePost *.sh silent !chmod +x %
 
-    " Use :make to compile C/C++, even without a Makefile
-    autocmd FileType c,cpp
-        \ if filereadable('Makefile') |
-        \   let &makeprg = "gcc -o %< %" |
-        \ endif
-
     " Add Python tags when editing Python files
     autocmd FileType python setlocal tags+=$HOME/.vim/tags/python2.7.ctags
 
