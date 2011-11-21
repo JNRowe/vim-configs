@@ -665,15 +665,6 @@ nmap + zo
 vmap - zf
 " }}}
 
-" vim-orgmode settings {{{
-let g:org_headings_shade_leading_stars = 1
-let g:org_todo_keywords = [
-    \ "TODO(t)", "NEXT(n)", "STARTED(s)",
-    \ "|",
-    \ "DONE(d)", "CANCELLED(c)", "REJECTED(r)"
-    \]
-" }}}
-
 " nerdtree settings {{{
 map <LocalLeader>n :NERDTreeToggle<CR>
 let g:NERDTreeCaseSensitiveSort = 1
