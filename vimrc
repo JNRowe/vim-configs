@@ -151,12 +151,6 @@ if has("autocmd")
     " Mark lines longer than 80 chars as an error
     autocmd BufWinEnter * call ToggleLongLineHL()
 
-    " Make <Return> jump to tag in help files
-    autocmd FileType help nmap <buffer> <Return> <C-]>
-    autocmd FileType help nmap <buffer> <Backspace> <C-T>
-
-    autocmd FileType text setlocal textwidth=72
-
     " Don't restore saved position for git buffers.
     " This is most useful in commit messages.
     autocmd BufReadPost * if &ft =~# '^git' | execute "normal gg" | endif
@@ -220,12 +214,6 @@ if has("autocmd")
         \ let g:make_total_time=localtime() - g:make_start_time |
         \ echo printf("Time taken: %dm%2.2ds", g:make_total_time / 60,
         \   g:make_total_time % 60)
-    " }}}
-
-    " Simple status for quickfix/help windows {{{
-    autocmd FileType help setlocal statusline=%t%h%=%p%%
-    autocmd FileType taglist setlocal nospell |
-        \ setlocal statusline=%f
     " }}}
 
     " Recalculate the long line warning when idle and after saving
