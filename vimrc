@@ -185,8 +185,6 @@ if has("autocmd")
         \ set ft=rst |
         \ set ts=2 sw=2 et
 
-    autocmd BufNewFile,BufRead *.ldg set ft=ledger
-
     " Options for reST editing {{{
     autocmd FileType rst setlocal makeprg=rst2html.py\ %\ /dev/null
     " Map UU/Uu/U_ to add =/-/' underlining for headings respectively

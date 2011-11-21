@@ -7,3 +7,6 @@ autocmd BufRead,BufNewFile *.vapi setfiletype vala
 
 " org-mode
 autocmd BufNewFile,BufRead *.org setfiletype org
+
+" ledger
+autocmd BufNewFile,BufRead *.ldg setfiletype ledger
