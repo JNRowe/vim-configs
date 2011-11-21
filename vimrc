@@ -148,11 +148,7 @@ if has("autocmd")
     " Automatically chmod +x shell scripts
     autocmd BufWritePost *.sh silent !chmod +x %
 
-    " Add Python tags when editing Python files
-    autocmd FileType python setlocal tags+=$HOME/.vim/tags/python2.7.ctags
-
     " Set filetype specific commands for keyword lookup
-    autocmd FileType python setlocal keywordprg=pydoc
     autocmd FileType vim setlocal keywordprg=:help
 
     " Mark lines longer than 80 chars as an error
@@ -173,7 +169,6 @@ if has("autocmd")
         \ set ts=2 sw=2 et
 
     " Use filetype specific omnicompletion for certain filetypes
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
