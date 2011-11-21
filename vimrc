@@ -114,6 +114,8 @@ let python_highlight_all=1 " Highlight everything possible for python
 if filereadable(expand("~/.vim/abbr"))
     source ~/.vim/abbr
 endif
+" This file is meant for host specific abbreviations, for example terms that are
+" used specifically at the office
 if filereadable(expand("~/.vim/abbr-local"))
     source ~/.vim/abbr-local
 endif
