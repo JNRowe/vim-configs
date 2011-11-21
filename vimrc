@@ -148,9 +148,6 @@ if has("autocmd")
     " Automatically chmod +x shell scripts
     autocmd BufWritePost *.sh silent !chmod +x %
 
-    " Set filetype specific commands for keyword lookup
-    autocmd FileType vim setlocal keywordprg=:help
-
     " Mark lines longer than 80 chars as an error
     autocmd BufWinEnter * call ToggleLongLineHL()
 
