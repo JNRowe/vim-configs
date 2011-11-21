@@ -159,8 +159,6 @@ if has("autocmd")
         \ set ft=mail |
         \ set ts=2 sw=2 et
 
-    " Use filetype specific omnicompletion for certain filetypes
-    autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
     autocmd BufNewFile,BufRead /tmp/ditz*
