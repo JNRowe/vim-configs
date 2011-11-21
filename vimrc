@@ -193,31 +193,6 @@ if has("autocmd")
     " Recalculate the long line warning when idle and after saving
     " from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html
     autocmd cursorhold,bufwritepost * unlet! b:statusline_long_line_warning
-
-    " Session management {{{
-
-    " Enable the following two autocmds if you wish session management to be
-    " enabled automatically.
-    "autocmd VimEnter * call LoadSession()
-    "autocmd VimLeave * call SaveSession()
-
-    function! SaveSession()
-        if g:load_sessions == 1
-            execute "mksession! ~/.vim/view/auto_session.vim"
-        endif
-    endfunction
-
-    function! LoadSession()
-        if argc() == 0
-            let g:load_sessions = 1
-            if filereadable(expand("~/.vim/view/auto_session.vim"))
-                execute "source ~/.vim/view/auto_session.vim"
-            endif
-        else
-            let g:load_sessions = 0
-        endif
-    endfunction
-    " }}}
 endif
 " }}}
 
