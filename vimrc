@@ -574,10 +574,6 @@ if &diff
 endif
 " }}}
 
-" Maps for gundo {{{
-nnoremap <LocalLeader># :GundoToggle<CR>
-" }}}
-
 " Quickfix maps {{{
 nmap <Leader>cwc :cclose<CR>
 nmap <Leader>cwo :copen 7<CR><C-w>p

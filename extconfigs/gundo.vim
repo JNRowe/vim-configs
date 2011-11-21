@@ -1,0 +1,1 @@
+nnoremap <LocalLeader># :GundoToggle<CR>
