@@ -460,6 +460,9 @@ if has("menu")
         amenu L&ocations.&zsh.&functions-local :e ~/.zsh/functions-local<CR>
         amenu L&ocations.&zsh.&zshrc :e ~/.zshrc<CR>
     endif
+    amenu L&ocations.&xorg.X&modmap :e ~/.Xmodmap
+    amenu L&ocations.&xorg.X&resources :e ~/.Xresources
+    amenu L&ocations.&xorg.X&initrc :e ~/.xinitrc
 endif " }}}
 
 " Don't use default keys for scratch plugin
