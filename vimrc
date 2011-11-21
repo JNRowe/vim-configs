@@ -159,8 +159,6 @@ if has("autocmd")
         \ set ft=mail |
         \ set ts=2 sw=2 et
 
-    autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-
     autocmd BufNewFile,BufRead /tmp/ditz*
         \ set ft=rst |
         \ set ts=2 sw=2 et
