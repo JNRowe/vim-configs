@@ -674,12 +674,6 @@ let g:org_todo_keywords = [
     \]
 " }}}
 
-" vala syntax settings {{{
-let vala_comment_strings = 1
-let vala_space_errors = 1
-let vala_no_tab_space_error = 1
-" }}}
-
 " nerdtree settings {{{
 map <LocalLeader>n :NERDTreeToggle<CR>
 let g:NERDTreeCaseSensitiveSort = 1
