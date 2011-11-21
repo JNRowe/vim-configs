@@ -103,12 +103,6 @@ set wildmode=longest,full
 " Characters to show for wrapped lines
 let &showbreak="» "
 
-" Use securemodelines.vim {{{
-set nomodeline
-let g:secure_modelines_verbose = 0
-let g:secure_modelines_modelines = 15
-" }}}
-
 " Syntax files settings {{{
 let b:nroff_is_groff=1 " Default to groff
 let g:sh_fold_enabled=1 " Fold here-doc chunks
