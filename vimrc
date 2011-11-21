@@ -466,6 +466,9 @@ if has("menu")
     if filereadable(expand("~/.fonts.conf"))
         amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
     endif
+    if filereadable(expand("~/.gtkrc-2.0"))
+        amenu L&ocations.&gtk :e ~/.gtkrc-2.0<CR>
+    endif
 endif " }}}
 
 " Don't use default keys for scratch plugin
