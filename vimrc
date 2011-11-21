@@ -441,6 +441,10 @@ if has("menu")
     if filereadable(expand("~/.gitconfig"))
         amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     endif
+    if filereadable(expand("$XDG_CONFIG_HOME/python/rc"))
+        amenu L&ocations.&python
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/python/rc"))<CR>
+    endif
     if filereadable(expand("~/.ledger.dat"))
         amenu L&ocations.&ledger :e ~/.ledger.dat<CR>
     endif
