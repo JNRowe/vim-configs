@@ -463,6 +463,9 @@ if has("menu")
     amenu L&ocations.&xorg.X&modmap :e ~/.Xmodmap
     amenu L&ocations.&xorg.X&resources :e ~/.Xresources
     amenu L&ocations.&xorg.X&initrc :e ~/.xinitrc
+    if filereadable(expand("~/.fonts.conf"))
+        amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
+    endif
 endif " }}}
 
 " Don't use default keys for scratch plugin
