@@ -92,7 +92,7 @@ set title
 set ttyfast
 set undodir=~/.vim/undo/
 set undofile
-set viminfo=!,'1000,<1000,h,n~/.vim/viminfo
+set viminfo=!,'1000,<1000,h,n~/.vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~,*.obj,*.db
