@@ -670,10 +670,6 @@ let g:SuperTabDefaultCompletionType = 'context'
 let g:SuperTabLongestHighlight = 1
 " }}}
 
-" Syntastic settings {{{
-let g:syntastic_enable_signs=1
-" }}}
-
 " vim-orgmode settings {{{
 let g:org_headings_shade_leading_stars = 1
 let g:org_todo_keywords = [
