@@ -665,10 +665,6 @@ nmap + zo
 vmap - zf
 " }}}
 
-" ColorV settings {{{
-let g:ColorV_cache_File = expand('$HOME') . '/.vim/tmp/ColorV_cache'
-" }}}
-
 " Sign support {{{
 " Waaaay too much execute nastiness :/
 function! SignDefine(type, ...)
