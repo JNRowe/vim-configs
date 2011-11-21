@@ -181,10 +181,6 @@ if has("autocmd")
         \ imap <buffer> <Leader>" &quot; |
         \ imap <buffer> <Leader><Space> &nbsp;
 
-    " Toggle tab/wrap settings when editing Makefiles
-    autocmd BufEnter Makefile set wrap noexpandtab nosmarttab
-    autocmd BufLeave Makefile set nowrap expandtab smarttab
-
     " Turn off search highlighting when entering a buffer
     autocmd BufEnter * nohls
     " Turn off search highlighting when idle
