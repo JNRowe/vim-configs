@@ -163,13 +163,6 @@ if has("autocmd")
         \ set ft=rst |
         \ set ts=2 sw=2 et
 
-    autocmd FileType html,liquid,xhtml,xml
-        \ imap <buffer> <Leader>& &amp; |
-        \ imap <buffer> <Leader>< &lt; |
-        \ imap <buffer> <Leader>> &gt; |
-        \ imap <buffer> <Leader>" &quot; |
-        \ imap <buffer> <Leader><Space> &nbsp;
-
     " Turn off search highlighting when entering a buffer
     autocmd BufEnter * nohls
     " Turn off search highlighting when idle
