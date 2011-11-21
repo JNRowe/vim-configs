@@ -7,9 +7,6 @@
 [submodule "external/vim-speeddating"]
 	path = external/vim-speeddating
 	url = git://github.com/tpope/vim-speeddating.git
-[submodule "external/vim-space"]
-	path = external/vim-space
-	url = git://github.com/spiiph/vim-space.git
 [submodule "external/windowlayout"]
 	path = external/windowlayout
 	url = git://github.com/godlygeek/windowlayout.git
