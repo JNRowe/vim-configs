@@ -665,11 +665,6 @@ nmap + zo
 vmap - zf
 " }}}
 
-" nerdtree settings {{{
-map <LocalLeader>n :NERDTreeToggle<CR>
-let g:NERDTreeCaseSensitiveSort = 1
-" }}}
-
 " ColorV settings {{{
 let g:ColorV_cache_File = expand('$HOME') . '/.vim/tmp/ColorV_cache'
 " }}}
