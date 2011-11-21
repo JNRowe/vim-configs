@@ -766,6 +766,9 @@ command! ShowHighlightGroup
     \ ">"
 " }}}
 
+" Read all configs for external packages
+runtime! extconfigs/*.vim
+
 " Pull in local settings.  This file is for all site specific settings.
 if filereadable(expand("~/.vim/vimrc-local"))
     source ~/.vim/vimrc-local
