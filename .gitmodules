@@ -123,7 +123,7 @@
 	url = git://github.com/chrisbra/csv.vim.git
 [submodule "external/ColorV"]
 	path = external/ColorV
-	url = git://github.com/vim-scripts/ColorV.git
+	url = git://github.com/Rykka/ColorV.git
 [submodule "external/vim-editqf"]
 	path = external/vim-editqf
 	url = git://github.com/jceb/vim-editqf.git
