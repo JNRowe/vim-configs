@@ -145,3 +145,6 @@
 [submodule "external/ctrlp.vim"]
 	path = external/ctrlp.vim
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "external/delimitMate"]
+	path = external/delimitMate
+	url = git://github.com/Raimondi/delimitMate.git
