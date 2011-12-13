@@ -157,3 +157,6 @@
 [submodule "external/tlib_vim"]
 	path = external/tlib_vim
 	url = git://github.com/tomtom/tlib_vim.git
+[submodule "external/vim-gnupg"]
+	path = external/vim-gnupg
+	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
