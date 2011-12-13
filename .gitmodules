@@ -154,3 +154,6 @@
 [submodule "external/rainbow_parentheses.vim"]
 	path = external/rainbow_parentheses.vim
 	url = git://github.com/kien/rainbow_parentheses.vim.git
+[submodule "external/tlib_vim"]
+	path = external/tlib_vim
+	url = git://github.com/tomtom/tlib_vim.git
