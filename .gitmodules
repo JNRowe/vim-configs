@@ -151,3 +151,6 @@
 [submodule "external/pydoc.vim"]
 	path = external/pydoc.vim
 	url = git://github.com/fs111/pydoc.vim.git
+[submodule "external/rainbow_parentheses.vim"]
+	path = external/rainbow_parentheses.vim
+	url = git://github.com/kien/rainbow_parentheses.vim.git
