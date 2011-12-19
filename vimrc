@@ -151,9 +151,6 @@ if has("autocmd")
     " Automatically chmod +x shell scripts
     autocmd BufWritePost *.sh silent !chmod +x %
 
-    " Mark lines longer than 80 chars as an error
-    autocmd BufWinEnter * call ToggleLongLineHL()
-
     " Don't restore saved position for git buffers.
     " This is most useful in commit messages.
     autocmd BufReadPost * if &ft =~# '^git' | execute "normal gg" | endif
@@ -192,10 +189,6 @@ if has("autocmd")
         \ echo printf("Time taken: %dm%2.2ds", g:make_total_time / 60,
         \   g:make_total_time % 60)
     " }}}
-
-    " Recalculate the long line warning when idle and after saving
-    " from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html
-    autocmd cursorhold,bufwritepost * unlet! b:statusline_long_line_warning
 endif
 " }}}
 
@@ -218,7 +211,6 @@ set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
 set statusline+=%{&formatoptions!='tcrqn2l1'?','.&formatoptions:''}
 set statusline+=]
 "set statusline+=\ %{VimBuddy()} " vim buddy
-set statusline+=%{StatuslineLongLineWarning()}
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
 set statusline+=%= " Align to right
 set statusline+=0x%B/%-8b\ " Current character
@@ -453,90 +445,6 @@ function! ToggleFlag(option,flag)
         execute('set ' . a:option . '-=' . a:flag)
     else
         execute('set ' . a:option . '+=' . a:flag)
-    endif
-endfunction
-" }}}
-
-" from got-ravings.blogspot.com/2009/07/vim-pr0n-combating-long-lines.html {{{
-"
-" Return a warning for "long lines" {{{
-"
-" where "long" is either &textwidth or 80 (if no &textwidth is set)
-"
-" Returns:
-"   ''
-"       if no long lines
-"   '[#x,my,$z]'
-"       if long lines are found, were x is the number of long lines,
-"       y is the median length of the long lines and z is the length of
-"       the longest line
-function! StatuslineLongLineWarning()
-    if !exists("b:statusline_long_line_warning")
-        let long_line_lens = s:LongLines()
-
-        if len(long_line_lens) > 0
-            let b:statusline_long_line_warning = "[" .
-                \ '#' . len(long_line_lens) . "," .
-                \ 'm' . s:Median(long_line_lens) . "," .
-                \ '$' . max(long_line_lens) . "]"
-        else
-            let b:statusline_long_line_warning = ""
-        endif
-    endif
-    return b:statusline_long_line_warning
-endfunction " }}}
-
-" Return a list containing the lengths of the long lines in this buffer {{{
-function! s:LongLines()
-    let threshold = (&tw ? &tw : 80)
-    let spaces = repeat(" ", &ts)
-
-    let long_line_lens = []
-
-    let i = 1
-    while i <= line("$")
-        let len = strlen(substitute(getline(i), '\t', spaces, 'g'))
-        if len > threshold
-            call add(long_line_lens, len)
-        endif
-        let i += 1
-    endwhile
-
-    return long_line_lens
-endfunction " }}}
-
-" Find the median of the given array of numbers {{{
-function! s:Median(nums)
-    let nums = sort(a:nums)
-    let l = len(nums)
-
-    if l % 2 == 1
-        let i = (l-1) / 2
-        return nums[i]
-    else
-        return (nums[l/2] + nums[(l/2)-1]) / 2
-    endif
-endfunction " }}}
-" }}}
-
-" Toggle long lines highlighting, adapted from the Wiki {{{
-nnoremap <silent> <Leader>l :call ToggleLongLineHL()<CR>
-
-function! ToggleLongLineHL()
-    if exists('w:HLL1')
-        silent! call matchdelete(w:HLL1)
-        silent! call matchdelete(w:HLL2)
-        set colorcolumn=0
-        unlet w:HLL1
-    elseif &textwidth > 0
-        set colorcolumn=+1
-        let w:HLL1=matchadd('Search',
-            \ '\%<' . (&tw + 1) . 'v.\%>' . (&tw - 2) . 'v', -1)
-        let w:HLL2=matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1)
-    else
-        set colorcolumn=81
-        let w:HLL1=matchadd('Search', '\%<81v.\%>78v', -1)
-        let w:HLL2=matchadd('ErrorMsg', '\%>80v.\+', -1)
     endif
 endfunction
 " }}}
