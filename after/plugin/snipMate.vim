@@ -1,1 +1,1 @@
-../../external/spf13-snipmate.vim/after/plugin/snipMate.vim
+../../external/vim-snipmate/after/plugin/snipMate.vim
