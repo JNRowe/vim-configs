@@ -88,9 +88,9 @@
 [submodule "external/vim-orgmode"]
 	path = external/vim-orgmode
 	url = git://github.com/jceb/vim-orgmode.git
-[submodule "external/spf13-snipmate.vim"]
-	path = external/spf13-snipmate.vim
-	url = git://github.com/spf13/snipmate.vim.git
+[submodule "external/vim-snipmate"]
+	path = external/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
 [submodule "external/snipmate-snippets/snippets"]
 	path = external/snipmate-snippets/snippets
 	url = git://github.com/JNRowe/snipmate-snippets.git
