@@ -62,6 +62,7 @@ set incsearch
 set infercase
 set isfname-=\=
 set joinspaces
+set laststatus=2
 set lazyredraw
 set linespace=1
 set matchpairs+=<:>
@@ -190,31 +191,6 @@ if has("autocmd")
         \   g:make_total_time % 60)
     " }}}
 endif
-" }}}
-
-" Fancy status bar {{{
-set laststatus=2
-set statusline=
-set statusline+=%-3.3n
-if winwidth(0) > 90 " Full file name in wide windows
-   set statusline+=%F
-else
-   set statusline+=%f
-endif
-set statusline+=%h%m%r%w " Flags
-set statusline+=\[%{empty(&filetype)?'none':&filetype}
-" Include encoding if not UTF-8
-set statusline+=%{&encoding!='utf-8'?','.&encoding:''}
-" Include file format if not Unix
-set statusline+=%{&fileformat!='unix'?','.&fileformat:''}
-" Display formatoptions if non-default
-set statusline+=%{&formatoptions!='tcrqn2l1'?','.&formatoptions:''}
-set statusline+=]
-"set statusline+=\ %{VimBuddy()} " vim buddy
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}
-set statusline+=%= " Align to right
-set statusline+=0x%B/%-8b\ " Current character
-set statusline+=%-14.(%l,%c%V%)\ %<%P " Offset
 " }}}
 
 " Fancy window titles where possible {{{
