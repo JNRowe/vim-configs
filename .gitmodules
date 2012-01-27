@@ -160,3 +160,6 @@
 [submodule "external/vim-gnupg"]
 	path = external/vim-gnupg
 	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
+[submodule "external/vim-powerline"]
+	path = external/vim-powerline
+	url = git://github.com/Lokaltog/vim-powerline.git
