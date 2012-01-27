@@ -163,3 +163,6 @@
 [submodule "external/vim-powerline"]
 	path = external/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "external/vim-bad-whitespace"]
+	path = external/vim-bad-whitespace
+	url = git://github.com/bitc/vim-bad-whitespace.git
