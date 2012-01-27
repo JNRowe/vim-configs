@@ -65,6 +65,7 @@ set joinspaces
 set laststatus=2
 set lazyredraw
 set linespace=1
+set list
 set matchpairs+=<:>
 set nonumber
 set omnifunc=syntaxcomplete#Complete
@@ -251,9 +252,9 @@ let g:bugsummary_browser="opera -newpage '%s'"
 
 " Show tabs and trailing whitespace {{{
 if (&termencoding ==# "utf-8") || has("gui_running")
-    set list listchars=tab:»·,trail:·,extends:…,nbsp:‗
+    set listchars=tab:»·,extends:…,nbsp:‗
 else
-    set list listchars=tab:>-,trail:.,extends:>,nbsp:_
+    set listchars=tab:>-,extends:>,nbsp:_
 endif " }}}
 
 " Map Shift-F12 to switch between light and dark
@@ -408,10 +409,6 @@ nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>
 nmap <F11> :make<CR>
 nmap <S-F11> :execute "make -C " . expand("%:p:h")<CR>
 nmap <silent> <C-F11> :let @/ = ""<CR>
-" Delete trailing whitespace:
-nmap <F12> :%s/\s\+$//<CR>
-vmap <F12> :s/\s\+$//<CR>
-" }}}
 
 " Flag toggling function {{{
 " From http://vim.wikia.com/wiki/Handy_option_flag_toggler
