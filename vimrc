@@ -138,6 +138,9 @@ if has("autocmd")
         runtime! macros/editexisting.vim
     endif
 
+    " We don't want to edit patch backup files by accident
+    autocmd BufRead *.orig set readonly
+
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
