@@ -166,3 +166,6 @@
 [submodule "external/vim-bad-whitespace"]
 	path = external/vim-bad-whitespace
 	url = git://github.com/bitc/vim-bad-whitespace.git
+[submodule "external/MatchTag"]
+	path = external/MatchTag
+	url = git://github.com/gregsexton/MatchTag.git
