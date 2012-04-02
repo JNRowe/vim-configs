@@ -61,9 +61,6 @@
 [submodule "external/summerfruit.vim"]
 	path = external/summerfruit.vim
 	url = git://github.com/vim-scripts/summerfruit.vim.git
-[submodule "external/pylint.vim"]
-	path = external/pylint.vim
-	url = git://github.com/vim-scripts/pylint.vim.git
 [submodule "external/indentgenie.vim"]
 	path = external/indentgenie.vim
 	url = git://github.com/vim-scripts/indentgenie.vim.git
