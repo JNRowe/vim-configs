@@ -50,6 +50,7 @@ external/utl.vim
 external/vim-addon-mw-utils
 external/vim-bad-whitespace
 external/vim-css-color
+external/vim-commentary
 external/vim-cute-python
 external/vim-editqf
 external/vim-fastwordcompleter
