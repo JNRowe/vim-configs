@@ -22,6 +22,11 @@ endif
 " systems
 filetype off
 
+" Fire up the vundle, and setup plugins
+set rtp+=~/.vim/external/vundle/
+call vundle#rc(expand('$HOME/.vim/external', 1))
+source ~/.vim/vundle.vim
+
 " General settings {{{
 set autoindent
 set autowrite
