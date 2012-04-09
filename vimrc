@@ -24,6 +24,7 @@ filetype off
 
 " Fire up the vundle, and setup plugins
 set rtp+=~/.vim/external/vundle/
+let g:vundle_default_git_proto='git'
 call vundle#rc(expand('$HOME/.vim/external', 1))
 source ~/.vim/vundle.vim
 
