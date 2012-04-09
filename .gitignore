@@ -31,7 +31,6 @@ external/gsession.vim
 external/gundo.vim
 external/indentgenie.vim
 external/inkpot
-external/nerdcommenter
 external/nerdtree
 external/pydoc.vim
 external/python_match.vim
