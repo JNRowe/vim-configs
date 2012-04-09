@@ -21,8 +21,6 @@ endif
 " Force filetype detection off to workaround bug with system vimrc on broken
 " systems
 filetype off
-call pathogen#runtime_append_all_bundles("external")
-call pathogen#helptags()
 
 " General settings {{{
 set autoindent
