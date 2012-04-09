@@ -61,6 +61,7 @@ external/vim-makegreen
 external/vim-orgmode
 external/vim-powerline
 external/vim-ragtag
+external/vim-repeat
 external/vim-snipmate
 external/vim-speeddating
 external/vim-surround
