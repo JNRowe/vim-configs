@@ -8,6 +8,9 @@ undo/
 
 viminfo
 
+# vundle support bundles cache
+external/.vundle/
+
 # vundle managed plugins
 external/vundle
 
