@@ -47,4 +47,10 @@ clean:
 	$(info - Cleaning generated files)
 	rm -f $(TARGETS)
 
+init-external:
+	$(info - Initiating plugin bundles)
+	vim -c ':BundleInstall' -c ':qa'
+
 update-external:
+	$(info - Updating plugin bundles)
+	vim -c ':Bundle!' -c ':qa'
