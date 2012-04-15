@@ -55,3 +55,5 @@ Bundle 'vim-scripts/TaskList.vim'
 Bundle 'vim-scripts/Toggle'
 Bundle 'vim-scripts/utl.vim'
 Bundle 'vim-scripts/ZoomWin'
+
+Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'

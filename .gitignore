@@ -55,6 +55,7 @@ external/vim-cute-python
 external/vim-editqf
 external/vim-fastwordcompleter
 external/vim-fugitive
+external/vim-gnupg
 external/vim-hier
 external/vim-jnrowe
 external/vim-makegreen
