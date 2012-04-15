@@ -20,7 +20,6 @@ That being said if your dog doesn't mean that much to you::
 
     git clone git://github.com/JNRowe/vim-configs.git ~/.vim
     cd ~/.vim
-    git submodule update --init
     make
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The

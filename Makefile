@@ -48,5 +48,3 @@ clean:
 	rm -f $(TARGETS)
 
 update-external:
-	$(info - Updating git submodules)
-	git submodule update
