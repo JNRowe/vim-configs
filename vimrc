@@ -380,6 +380,7 @@ if has("menu")
     if filereadable(expand("~/.vimrc"))
         amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
         amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
+        amenu L&ocations.&vim.&vundle :e ~/.vim/vundle<CR>
     endif
     if filereadable(expand("~/.zshrc"))
         amenu L&ocations.&zsh.&functions-local :e ~/.zsh/functions-local<CR>
