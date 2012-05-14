@@ -519,6 +519,17 @@ command! ShowHighlightGroup
     \ ">"
 " }}}
 
+" Nasty bundled packages {{{
+" These packages are being removed, either by finding a usable remote location
+" or by deletion.
+for dir in split(glob('~/.vim/internal/*'))
+    if !isdirectory(dir)
+        continue
+    endif
+    exec 'set runtimepath+=' . dir
+endfor
+" }}}
+
 " Read all configs for external packages
 runtime! extconfigs/*.vim
 
