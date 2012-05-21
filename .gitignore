@@ -15,7 +15,6 @@ external/.vundle/
 external/vundle
 
 external/Arduino-syntax-file
-external/ColorV
 external/DotOutlineTree
 external/Haskell-Conceal
 external/MatchTag
@@ -24,6 +23,7 @@ external/RST-Tables
 external/TaskList.vim
 external/Toggle
 external/ZoomWin
+external/colorv.vim
 external/csv.vim
 external/ctrlp.vim
 external/delimitMate
