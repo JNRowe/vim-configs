@@ -49,6 +49,7 @@ external/tabular
 external/tagbar
 external/textile.vim
 external/tlib_vim
+external/unicode.vim
 external/utl.vim
 external/vim-addon-mw-utils
 external/vim-bad-whitespace
