@@ -62,6 +62,7 @@ external/vim-gnupg
 external/vim-hier
 external/vim-jnrowe
 external/vim-makegreen
+external/vim-ledger
 external/vim-orgmode
 external/vim-powerline
 external/vim-ragtag
