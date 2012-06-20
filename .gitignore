@@ -37,6 +37,7 @@ external/inkpot
 external/nerdtree
 external/pydoc.vim
 external/python_match.vim
+external/python-mode
 external/rainbow_parentheses.vim
 external/regex
 external/scratch-utility
