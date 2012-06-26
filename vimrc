@@ -454,10 +454,10 @@ endfunction
 
 " Vimdiff maps {{{
 if &diff
-    noremap ,do :diffoff!<CR>
-    noremap ,dp :diffput<CR>
-    noremap ,dg :diffget<CR>
-    noremap ,du :diffupdate<CR>
+    noremap <LocalLeader>do :diffoff!<CR>
+    noremap <LocalLeader>dp :diffput<CR>
+    noremap <LocalLeader>dg :diffget<CR>
+    noremap <LocalLeader>du :diffupdate<CR>
     vnoremap < :diffget<CR>
     vnoremap > :diffput<CR>
 endif
