@@ -3,3 +3,5 @@ if has("gui_running")
 else
     let g:Powerline_symbols="unicode"
 endif
+
+let g:Powerline_stl_path_style = 'relative'
