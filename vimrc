@@ -56,6 +56,7 @@ set foldtext=MyFoldText()
 set formatoptions+=tcrqn2l1
 set formatoptions-=wvb
 set nofsync
+set gdefault
 set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
 set guiheadroom=0
 set guioptions+=chR
