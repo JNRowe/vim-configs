@@ -454,6 +454,7 @@ endfunction
 
 " Vimdiff maps {{{
 if &diff
+    noremap ,do :diffoff!<CR>
     noremap ,dp :diffput<CR>
     noremap ,dg :diffget<CR>
     noremap ,du :diffupdate<CR>
