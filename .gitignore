@@ -58,6 +58,7 @@ external/vim-css-color
 external/vim-commentary
 external/vim-cute-python
 external/vim-editqf
+external/vim-extradite
 external/vim-fastwordcompleter
 external/vim-fugitive
 external/vim-gnupg
