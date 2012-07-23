@@ -4,3 +4,5 @@ let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_extensions = ['buffertag', 'line', 'tag', 'quickfix', 'undo']
 let g:ctrlp_mruf_exclude = '/tmp/.*'
 let g:ctrlp_follow_symlinks = 1
+
+nmap <C-M-p> :CtrlP<CR>
