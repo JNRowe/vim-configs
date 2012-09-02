@@ -34,4 +34,4 @@ simply cherrypick the parts of it you like.
 .. _git: http://www.git-scm.com/
 
 ..
-    :vim: set ft=rst ts=4 sw=4 et:
+    :vim: set ft=rst tw=80 ts=4 sw=4 et:
