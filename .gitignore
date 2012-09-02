@@ -52,6 +52,7 @@ external/vim-addon-mw-utils
 external/vim-bad-whitespace
 external/vim-commentary
 external/vim-cute-python
+external/vim-easymotion
 external/vim-editqf
 external/vim-extradite
 external/vim-fastwordcompleter
