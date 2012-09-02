@@ -34,7 +34,6 @@ external/gitv
 external/gsession.vim
 external/gundo.vim
 external/indentgenie.vim
-external/inkpot
 external/nerdtree
 external/pydoc.vim
 external/python_match.vim
