@@ -29,7 +29,6 @@ external/ctrlp.vim
 external/delimitMate
 external/detectindent
 external/doctest-syntax
-external/gist-vim
 external/gitv
 external/gsession.vim
 external/gundo.vim
