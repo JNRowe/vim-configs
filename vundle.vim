@@ -4,6 +4,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'JNRowe/vim-cute-python'
 Bundle 'JNRowe/vim-jnrowe'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'Raimondi/delimitMate'
