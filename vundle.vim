@@ -2,7 +2,6 @@ autocmd BufWritePost vundle.vim source vundle.vim
 
 Bundle 'gmarik/vundle'
 
-Bundle 'JNRowe/python-mode'
 Bundle 'JNRowe/vim-cute-python'
 Bundle 'JNRowe/vim-jnrowe'
 Bundle 'Lokaltog/vim-powerline'
