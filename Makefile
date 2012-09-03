@@ -10,23 +10,27 @@ HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
 PACKAGES = $(wildcard external/*)
 PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
 
+ifdef QUIET
+SILENT := @
+endif
+
 .PHONY: clean update-external
 
 all: $(TARGETS) $(HTML)
 
 %.html: %.rst
-	rst2html.py $< $@
+	$(info - Generating $@)
+	$(SILENT)rst2html.py $< $@
 
 tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
-	$(CTAGS) --exclude=test_* --exclude=tests.py --exclude=test.py \
+	$(SILENT)$(CTAGS) --exclude=test_* --exclude=tests.py --exclude=test.py \
 		--exclude=*/test/* --exclude=*/tests/* --languages=python \
 		-R -f $@ $<
 
 tags/ruby%.ctags: /usr/lib/ruby/%
 	$(info - Updating ruby v$(notdir $<) tags)
-	$(CTAGS) --languages=ruby \
-		-R -f $@ $<
+	$(SILENT)$(CTAGS) --languages=ruby -R -f $@ $<
 
 LIBC_INCS := $(shell qlist glibc | grep include)
 ifndef LIBC_INCS
@@ -37,15 +41,15 @@ endif
 endif
 tags/libc.ctags: $(LIBC_INCS)
 	$(info - Updating glibc tags)
-	$(CTAGS) -f $@ $^
+	$(SILENT)$(CTAGS) -f $@ $^
 
 doc/tags: $(filter-out doc/tags, $(wildcard doc/*))
 	$(info - Updating help tags)
-	vim -X -u NONE -c 'helptags $(dir $@)' -c ':q' </dev/null &>/dev/null
+	$(SILENT)vim -X -u NONE -c 'helptags $(dir $@)' -c ':q' </dev/null &>/dev/null
 
 clean:
 	$(info - Cleaning generated files)
-	rm -f $(TARGETS)
+	$(SILENT)rm -f $(TARGETS)
 
 init-external:
 	$(info - Initiating plugin bundles)
