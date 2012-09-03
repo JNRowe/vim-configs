@@ -53,4 +53,4 @@ init-external:
 
 update-external:
 	$(info - Updating plugin bundles)
-	vim -c ':Bundle!' -c ':qa'
+	vim -c ':BundleInstall!' -c ':qa'
