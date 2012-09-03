@@ -11,7 +11,7 @@ ifdef QUIET
 SILENT := @
 endif
 
-.PHONY: clean update-external
+.PHONY: clean init-external update-external
 
 all: $(TARGETS) $(HTML)
 
