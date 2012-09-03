@@ -7,9 +7,6 @@ TARGETS := doc/tags tags/libc.ctags \
 
 HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
 
-PACKAGES = $(wildcard external/*)
-PACKAGE_NAMES = $(foreach pkg, $(PACKAGES), $(notdir $(pkg)))
-
 ifdef QUIET
 SILENT := @
 endif
