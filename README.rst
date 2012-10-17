@@ -30,7 +30,7 @@ simply cherrypick the parts of it you like.
 
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
-.. _issue: http://github.com/JNRowe/vim-configs/issues
+.. _issue: https://github.com/JNRowe/vim-configs/issues
 .. _git: http://www.git-scm.com/
 
 ..
