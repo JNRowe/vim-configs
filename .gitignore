@@ -14,9 +14,7 @@ external/.vundle/
 # vundle managed plugins
 external/vundle
 
-external/Arduino-syntax-file
 external/DotOutlineTree
-external/Haskell-Conceal
 external/MatchTag
 external/NrrwRgn
 external/RST-Tables
@@ -32,14 +30,15 @@ external/doctest-syntax
 external/gitv
 external/gsession.vim
 external/gundo.vim
-external/indentgenie.vim
 external/nerdtree
+external/pycomplexity.vim
 external/pydoc.vim
 external/python_match.vim
 external/rainbow_parentheses.vim
 external/regex
 external/securemodelines
 external/snipmate-snippets
+external/splice.vim
 external/supertab
 external/syntastic
 external/tabular
@@ -59,6 +58,7 @@ external/vim-fastwordcompleter
 external/vim-fugitive
 external/vim-gnupg
 external/vim-hier
+external/vim-indent-object
 external/vim-jnrowe
 external/vim-ledger
 external/vim-powerline
