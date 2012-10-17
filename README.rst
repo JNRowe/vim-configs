@@ -6,8 +6,8 @@ Maybe they're useful to you too, or better yet you'll spot *and* fix a bug!
 
 It uses features introduced in version 7.3, but may work with later versions.
 
-If you find any problems with the configuration files in this repository either
-file an issue_, or drop me an email_.
+If you find any problems with the files in this repository either file an
+issue_, or drop me an email_.
 
 Installation
 ------------
