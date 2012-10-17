@@ -163,6 +163,8 @@ if has("autocmd")
     " This is most useful in commit messages.
     autocmd BufReadPost * if &ft =~# '^git' | execute "normal gg" | endif
 
+    autocmd BufNewFile,BufRead *.rb set sw=2
+
     autocmd BufNewFile,BufRead /tmp/*-sup.*
         \ set ft=mail |
         \ set ts=2 sw=2 et
