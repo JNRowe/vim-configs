@@ -32,6 +32,3 @@ simply cherrypick the parts of it you like.
 .. _email: jnrowe@gmail.com
 .. _issue: https://github.com/JNRowe/vim-configs/issues
 .. _git: http://www.git-scm.com/
-
-..
-    :vim: set ft=rst tw=80 ts=4 sw=4 et:
