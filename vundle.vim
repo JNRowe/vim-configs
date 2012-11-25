@@ -2,7 +2,6 @@ autocmd BufWritePost vundle.vim source vundle.vim
 
 Bundle 'gmarik/vundle'
 
-Bundle 'JNRowe/vim-cute-python'
 Bundle 'JNRowe/vim-jnrowe'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
@@ -17,6 +16,7 @@ Bundle 'chrisbra/unicode.vim'
 Bundle 'ciaranm/detectindent'
 Bundle 'ciaranm/securemodelines'
 Bundle 'cypok/vim-ledger'
+Bundle 'ehamberg/vim-cute-python'
 Bundle 'ervandew/regex'
 Bundle 'ervandew/supertab'
 Bundle 'fs111/pydoc.vim'
