@@ -51,6 +51,7 @@ Bundle 'vim-scripts/Toggle'
 Bundle 'vim-scripts/ZoomWin'
 Bundle 'vim-scripts/doctest-syntax'
 Bundle 'vim-scripts/indentgenie.vim'
+Bundle 'vim-scripts/projtags.vim'
 Bundle 'vim-scripts/python_match.vim'
 
 Bundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
