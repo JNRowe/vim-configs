@@ -109,16 +109,6 @@ Disturbingly cool editing for CSV files, 'nuff said.
 Be like me and annoy your co-workers/friends by littering your mails with
 Unicode.  It's Really Exciting ``U+2122<C-x><C-u>``
 
-``ciaranm/detectindent``
-------------------------
-
-:repo: https://github.com/ciaranm/detectindent
-
-    "Vim script for automatically detecting indent settings"
-
-A necessity if you frequently work in the source trees of people who can't
-follow coding standards.
-
 ``ciaranm/securemodelines``
 ---------------------------
 
