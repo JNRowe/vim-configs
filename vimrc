@@ -204,7 +204,7 @@ if has("gui_running")
     map <S-Insert> <MiddleMouse>
     map! <S-Insert> <MiddleMouse>
 
-    set guifont=Consolas\ 13
+    set guifont=Consolas\ for\ Powerline\ 13
     colorscheme jnrowe
 
     if has('title')
