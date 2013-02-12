@@ -485,16 +485,6 @@ Hide the fact you can't use your favourite tiling window manager everywhere you
 go, by mimicking the ``<Mod4-m>`` and ``<Mod4-t>`` commands you can't stop
 yourself hitting.
 
-``vim-scripts/indentgenie.vim``
--------------------------------
-
-:repo: https://github.com/vim-scripts/indentgenie.vim
-
-    "Indent script for the genie (vala flavour) language"
-
-Makes you feel like your *truly* favourite language has less love than
-a ``TinyFugue`` or ``Falcon``.
-
 ``vim-scripts/projtags.vim``
 ----------------------------
 
