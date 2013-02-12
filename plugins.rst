@@ -300,16 +300,6 @@ trying to impress their grandpa.
 The approaching zero value of your IDE feature envy drops significantly with
 this plugin.
 
-``rainux/vim-vala``
--------------------
-
-:repo: https://github.com/rainux/vim-vala
-
-    "Vala runtime files from http://live.gnome.org/Vala/Vim"
-
-Makes you feel like your favourite language has less love than a ``gnash``
-config file or Kix2001 oddity.
-
 ``scrooloose/nerdtree``
 -----------------------
 
