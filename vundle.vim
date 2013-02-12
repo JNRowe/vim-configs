@@ -1,4 +1,4 @@
-autocmd BufWritePost vundle.vim source vundle.vim
+autocmd BufWritePost vundle.vim source ~/.vim/vundle.vim
 
 Bundle 'gmarik/vundle'
 
