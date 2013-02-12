@@ -485,16 +485,6 @@ Hide the fact you can't use your favourite tiling window manager everywhere you
 go, by mimicking the ``<Mod4-m>`` and ``<Mod4-t>`` commands you can't stop
 yourself hitting.
 
-``vim-scripts/doctest-syntax``
-------------------------------
-
-:repo: https://github.com/vim-scripts/doctest-syntax
-
-    "Highlighting for Python doctest files"
-
-Pretend that docstrings are an appropriate place for long code examples with
-this great little plugin.
-
 ``vim-scripts/indentgenie.vim``
 -------------------------------
 
