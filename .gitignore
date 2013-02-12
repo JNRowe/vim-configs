@@ -1,12 +1,8 @@
 doc/tags
 
 tags/
-tmp/
-undo/
 
 *.html
-
-viminfo
 
 # vundle support bundles cache
 external/.vundle/
