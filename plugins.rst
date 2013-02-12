@@ -406,6 +406,16 @@ Pretend that the verbosity of the HTML in your templates is no longer a problem.
 Make ``.`` work how you think it works… once someone has hacked in support to
 your favourite plugin anyway.
 
+``tpope/vim-sensible``
+----------------------
+
+:repo: https://github.com/tpope/vim-sensible
+
+   "a universal set of defaults that (hopefully) everyone can agree on."
+
+Sane defaults for ``vim``, tracking this repo might make your ``vim`` experience
+a little more comfortable.
+
 ``tpope/vim-sleuth``
 --------------------
 
