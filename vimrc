@@ -29,10 +29,7 @@ call vundle#rc(expand('$HOME/.vim/external', 1))
 source ~/.vim/vundle.vim
 
 " General settings {{{
-set autoindent
-set autowrite
 set noautowriteall
-set backspace=indent,eol,start
 set nobackup
 set backupcopy=auto,breakhardlink
 if has("ballooneval")
@@ -44,8 +41,6 @@ set confirm
 set cryptmethod=blowfish
 set cursorline
 set dictionary+=/usr/share/dict/words
-set directory=~/.vim/tmp//
-set display=lastline
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
@@ -67,28 +62,20 @@ set guioptions-=r
 set hidden
 set history=1000
 set ignorecase
-set incsearch
 set infercase
 set isfname-=\=
 set joinspaces
-set laststatus=2
 set lazyredraw
 set linespace=1
-set list
 set matchpairs+=<:>
 set nonumber
 set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F4>
 set report=0
-set scrolloff=5
 set shiftround
 set shiftwidth=4
-set showcmd
 set showfulltag
-set showmatch
 set showtabline=1
-set smartcase
-set smarttab
 set softtabstop=4
 set spell
 set spellfile=~/.vim/spell/en.utf-8.add
@@ -102,13 +89,10 @@ set textwidth=80
 set tildeop
 set title
 set ttyfast
-set undodir=~/.vim/undo/
-set undofile
 set viminfo=!,'1000,<1000,h,n~/.vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~,*.obj,*.db
-set wildmenu
 set wildmode=longest,full
 " }}}
 
@@ -140,9 +124,6 @@ if has("autocmd")
 
     syntax on
     filetype plugin indent on
-
-    " Fancy fancy % matching
-    runtime! macros/matchit.vim
 
     " Edit files in already open sessions.
     " exists() is needed so that re-sourcing this file is possible.
