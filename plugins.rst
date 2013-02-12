@@ -357,6 +357,16 @@ Finally grasp the lack of complexity which is the ``vim`` undo tree.
 
 Excellent window management, it really does bring ``dwm`` simplicity to ``vim``!
 
+``tpope/vim-characterize``
+--------------------------
+
+:repo: https://github.com/tpope/vim-characterize
+
+   "Pressing ``ga`` on a character reveals its representation... Characterize.vim modernizes this"
+
+Discover the characters hidden by boxes in your broken font, and learn how to
+type all those fancy digraphs.
+
 ``tpope/vim-commentary``
 ------------------------
 
