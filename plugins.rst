@@ -485,17 +485,6 @@ Hide the fact you can't use your favourite tiling window manager everywhere you
 go, by mimicking the ``<Mod4-m>`` and ``<Mod4-t>`` commands you can't stop
 yourself hitting.
 
-``vim-scripts/projtags.vim``
-----------------------------
-
-:repo: https://github.com/vim-scripts/projtags.vim
-
-    "Set tags file for per project"
-
-Stop wasting time trying to omni-complete functions that don't exist in the
-five year old language runtime you're stick with for that one project you can't
-convince the admins to upgrade the box for.
-
 ``vim-scripts/python_match.vim``
 --------------------------------
 
