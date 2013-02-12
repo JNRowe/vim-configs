@@ -79,17 +79,6 @@ history.
 Highlights or deletes broken whitespace, and removes that ugly
 almost-kind-of-works solution from your ``.vimrc``.
 
-``c9s/gsession.vim``
---------------------
-
-:repo: https://github.com/c9s/gsession.vim
-
-    "gsession.vim saves your session files into the same directory
-    (~/.vim/session/) by default. and auto-detect your session file to load
-    session file when you are opening vim editor without arguments."
-
-Simple project management, does exactly what it says on the tin.
-
 ``chrisbra/NrrwRgn``
 --------------------
 
