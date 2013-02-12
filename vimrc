@@ -88,7 +88,7 @@ set textwidth=80
 set tildeop
 set title
 set ttyfast
-set viminfo=!,'1000,<1000,h,n~/.vim/tmp/viminfo
+set viminfo=!,'1000,<1000,h,n$XDG_CACHE_HOME/vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~,*.obj,*.db
