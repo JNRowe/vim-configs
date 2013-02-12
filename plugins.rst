@@ -348,17 +348,6 @@ The perfect companion for editing documentation that features shell sessions.
 
 Finally grasp the lack of complexity which is the ``vim`` undo tree.
 
-``timcharper/textile.vim``
---------------------------
-
-:repo: https://github.com/timcharper/textile.vim
-
-    "Textile for VIM"
-
-Makes editing textile a little more palatable, in the same way that a dash of
-a good quality extra virgin olive oil makes a ground concrete salad a touch more
-palatable.
-
 ``tpope/vim-commentary``
 ------------------------
 
