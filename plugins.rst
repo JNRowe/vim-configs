@@ -330,6 +330,15 @@ Removes the need to install ``mc`` just to fish out that file to open in
 Start your mind boggling every time someone moans about having to switch from
 WingIDE to a real editor when they edit files of different types.
 
+``sjl/clam.vim``
+----------------
+
+:repo: https://github.com/sjl/clam.vim
+
+   "Clam.vim is a lightweight Vim plugin to easily run shell commands"
+
+The perfect companion for editing documentation that features shell sessions.
+
 ``sjl/gundo.vim``
 -----------------
 
