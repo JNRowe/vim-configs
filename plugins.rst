@@ -300,6 +300,16 @@ trying to impress their grandpa.
 The approaching zero value of your IDE feature envy drops significantly with
 this plugin.
 
+``michaeljsmith/vim-indent-object``
+-----------------------------------
+
+:repo: https://github.com/michaeljsmith/vim-indent-object
+
+
+   "Text objects based on indent levels"
+
+Makes handling Python code far, far easier.
+
 ``scrooloose/nerdtree``
 -----------------------
 
