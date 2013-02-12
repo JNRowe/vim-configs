@@ -160,6 +160,16 @@ Removes the need to jump to your language's REPL when writing ugly, ugly REs
 
 Makes you feel more like a smart IDE user, how cool is that?
 
+``fishman/vim-vala``
+--------------------
+
+:repo: https://github.com/rainux/vim-vala
+
+    "Vala runtime files from http://live.gnome.org/Vala/Vim"
+
+Makes you feel like your favourite language has less love than a ``gnash``
+config file or Kix2001 oddity.
+
 ``fs111/pydoc.vim``
 -------------------
 
