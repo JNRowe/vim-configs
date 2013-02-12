@@ -406,6 +406,13 @@ Pretend that the verbosity of the HTML in your templates is no longer a problem.
 Make ``.`` work how you think it works… once someone has hacked in support to
 your favourite plugin anyway.
 
+``tpope/vim-sleuth``
+--------------------
+
+   "automatically adjusts ``'shiftwidth'`` and ``'expandtab'`` heuristically based on the current file"
+
+Automagic indentation configuration, that just works.
+
 ``tpope/vim-speeddating``
 -------------------------
 
