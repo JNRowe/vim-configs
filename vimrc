@@ -58,7 +58,6 @@ set guioptions+=chR
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
-
 set hidden
 set history=1000
 set ignorecase
