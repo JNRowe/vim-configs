@@ -119,16 +119,6 @@ Unicode.  It's Really Exciting ``U+2122<C-x><C-u>``
 This lightens the load of dealing with people who can't follow coding
 standards(see above) without allowing them free access to your vim session.
 
-``cypok/vim-ledger``
---------------------
-
-:repo: https://github.com/cypok/vim-ledger
-
-    "The ledger filetype for vim, extracted from ledger repository"
-
-Combine this with ``csv.vim``, and it makes importing and editing your
-accounts/expenses an almost nice-ish experience.
-
 ``ehamberg/vim-cute-python``
 ----------------------------
 
@@ -289,6 +279,16 @@ see ``vim`` + fuzzy find.
 
 Make your ``vim`` sessions feel like they have been painted by a three year old
 trying to impress their grandpa.
+
+``ledger/vim-ledger``
+---------------------
+
+:repo: https://github.com/ledger/vim-ledger
+
+    "The ledger filetype for vim, extracted from ledger repository"
+
+Combine this with ``csv.vim``, and it makes importing and editing your
+accounts/expenses an almost nice-ish experience.
 
 ``majutsushi/tagbar``
 ---------------------
