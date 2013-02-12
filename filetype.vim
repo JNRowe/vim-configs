@@ -1,6 +1,3 @@
-" Arduino
-autocmd BufNewFile,BufRead *.pde setfiletype arduino
-
 " Vala
 autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
