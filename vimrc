@@ -448,6 +448,13 @@ if &diff
 endif
 " }}}
 
+" Window management {{{
+nmap <C-w><Bar> <C-w>v
+nmap <C-w>- <C-w>s
+nmap <Tab> <C-w>w
+nmap <S-Tab> <C-w>W
+" }}}
+
 " Quickfix maps {{{
 nmap <Leader>cwc :cclose<CR>
 nmap <Leader>cwo :copen 7<CR><C-w>p
