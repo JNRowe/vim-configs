@@ -28,6 +28,7 @@ call neobundle#rc(expand('~/.vim/external/', 1))
 source ~/.vim/neobundle.vim
 
 " General settings {{{
+set autochdir
 set noautowriteall
 set nobackup
 set backupcopy=auto,breakhardlink
