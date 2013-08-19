@@ -4,11 +4,11 @@ tags/
 
 *.html
 
-# vundle support bundles cache
-external/.vundle/
+# neobundle support data
+external/.neobundle/
 
-# vundle managed plugins
-external/vundle
+# neobundle managed plugins
+external/neobundle.vim
 
 external/vim-jnrowe/
 external/vim-easymotion/
@@ -28,7 +28,6 @@ external/vim-vala/
 external/pydoc.vim/
 external/vim-snipmate/
 external/vim-gnupg/
-external/vundle/
 external/tabular/
 external/MatchTag/
 external/gitv/
