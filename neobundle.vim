@@ -7,7 +7,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'Rykka/colorv.vim'
+NeoBundle 'Rykka/colorv.vim', {'stay_same': 1}
 NeoBundle 'bitc/vim-bad-whitespace'
 NeoBundle 'chrisbra/NrrwRgn'
 NeoBundle 'chrisbra/csv.vim'
