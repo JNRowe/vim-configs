@@ -28,17 +28,6 @@ Makes applying multiple motions a joyous experience.  If you thought people were
 disturbed when they saw you jumping about in ``vim`` before then just wait until
 they see you using this.
 
-``Lokaltog/vim-powerline``
---------------------------
-
-:repo: https://github.com/Lokaltog/vim-powerline
-
-    "The ultimate vim statusline utility."
-
-The main reason to use this is not "simply because it is pretty", but mostly
-because you can dump heaps and heaps of custom code you've written in your
-``.vimrc`` and replace it with a heap of code that is better maintained.
-
 ``Raimondi/delimitMate``
 ------------------------
 
@@ -79,6 +68,17 @@ lost.
 
 Highlights or deletes broken whitespace, and removes that ugly
 almost-kind-of-works solution from your ``.vimrc``.
+
+``bling/vim-airline``
+---------------------
+
+:repo: https://github.com/bling/vim-airline
+
+    "Lean & mean statusline for vim that's light as air"
+
+The main reason to use this is not "simply because it is pretty", but mostly
+because you can dump heaps and heaps of custom code you've written in your
+``.vimrc`` and replace it with a heap of code that is better maintained.
 
 ``chrisbra/NrrwRgn``
 --------------------

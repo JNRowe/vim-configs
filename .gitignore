@@ -13,9 +13,9 @@ external/.neobundle/
 # neobundle managed plugins
 external/neobundle.vim
 
+external/vim-airline/
 external/vim-jnrowe/
 external/vim-easymotion/
-external/vim-powerline/
 external/vim-addon-mw-utils/
 external/delimitMate/
 external/colorv.vim/
