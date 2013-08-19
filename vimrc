@@ -79,6 +79,7 @@ set softtabstop=4
 set spell
 set spellfile=~/.vim/spell/en.utf-8.add
 set spelllang=en_gb
+set splitbelow
 set splitright
 set nostartofline
 set suffixes+=.pyc,.pyo
