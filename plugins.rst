@@ -4,15 +4,6 @@ Plugins I use
 These are all hosted on GitHub_ [#]_.  You should try at least a few of them,
 they make your life far simpler!
 
-``gmarik/vundle``
------------------
-
-:repo: https://github.com/gmarik/vundle
-
-    "Vundle, the plug-in manager for Vim"
-
-vundle is the plugin which makes my configuration work, without it I'd be lost.
-
 ``JNRowe/vim-jnrowe``
 ---------------------
 
@@ -68,6 +59,16 @@ language.
 
 Pretty cool colour wheel and colour previewer, just don't look at the repo
 history.
+
+``Shougo/neobundle.vim``
+------------------------
+
+:repo: https://github.com/Shougo/neobundle.vim
+
+    "a Vim plugin manager inspired by Vundle"
+
+neobundle is the plugin which makes my configuration work, without it I'd be
+lost.
 
 ``bitc/vim-bad-whitespace``
 ---------------------------

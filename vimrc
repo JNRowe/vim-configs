@@ -18,15 +18,14 @@ if filereadable(expand("~/.vim/vimrc-local.pre"))
     source ~/.vim/vimrc-local.pre
 endif
 
-" Force filetype detection off to workaround bug with system vimrc on broken
-" systems
-filetype off
+if has('vim_starting')
+    set runtimepath+=~/.vim/external/neobundle.vim/
+endif
 
-" Fire up the vundle, and setup plugins
-set runtimepath+=~/.vim/external/vundle/
-let g:vundle_default_git_proto='git'
-call vundle#rc(expand('$HOME/.vim/external', 1))
-source ~/.vim/vundle.vim
+" Fire up neobundle, and setup plugins
+let g:neobundle#types#git#default_protocol='git'
+call neobundle#rc(expand('~/.vim/external/', 1))
+source ~/.vim/neobundle.vim
 
 " General settings {{{
 set noautowriteall

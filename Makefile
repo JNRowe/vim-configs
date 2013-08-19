@@ -50,8 +50,8 @@ clean:
 
 init-external:
 	$(info - Initiating plugin bundles)
-	vim -c ':BundleInstall' -c ':qa'
+	vim -c ':NeoBundleInstall' -c ':qa'
 
 update-external:
 	$(info - Updating plugin bundles)
-	vim -c ':BundleInstall!' -c ':qa'
+	vim -c ':NeoBundleUpdate' -c ':qa'

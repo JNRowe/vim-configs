@@ -1,1 +1,1 @@
-The directory stores packages managed by vundle.
+The directory stores packages managed by neobundle.
