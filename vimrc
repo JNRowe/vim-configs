@@ -27,12 +27,16 @@ let g:neobundle#types#git#default_protocol='git'
 call neobundle#rc(expand('~/.vim/external/', 1))
 source ~/.vim/neobundle.vim
 
+" Find appropriate directory for data files, this used to be handled by
+" vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
+let g:xdg_data_dir = empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
+
 " General settings {{{
 set autochdir
 set noautowriteall
 set nobackup
 set backupcopy=auto,breakhardlink
-set backupdir=~/.xdg/local/vim/backup//,.,~/tmp,~/
+let &backupdir = expand(g:xdg_data_dir) . '/backup//,' . &backupdir
 if has("ballooneval")
     set ballooneval
 endif
@@ -42,6 +46,7 @@ set confirm
 set cryptmethod=blowfish
 set cursorline
 set dictionary+=/usr/share/dict/words
+let &directory = expand(g:xdg_data_dir) . '/swap//,' . &directory
 set directory=~/.xdg/local/vim/swap//,.,~/tmp,/var/tmp,/tmp
 set encoding=utf-8
 set expandtab
@@ -91,7 +96,7 @@ set textwidth=80
 set tildeop
 set title
 set ttyfast
-set undodir=~/.xdg/local/vim/undo//,.
+let &undodir = expand(g:xdg_data_dir) . '/undo//,' . &undodir
 set viminfo='1000,<1000,h,n$XDG_DATA_HOME/vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
