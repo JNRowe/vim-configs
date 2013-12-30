@@ -4,6 +4,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'JNRowe/vim-jnrowe'
 NeoBundle 'Lokaltog/vim-easymotion'
+" required by snipmate
 NeoBundle 'MarcWeber/vim-addon-mw-utils'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Rykka/colorv.vim', {'stay_same': 1}
@@ -44,6 +45,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'sjl/clam.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'spolu/dwm.vim'
+" remove if snipmate is removed
 NeoBundle 'tomtom/tlib_vim'
 NeoBundle 'tpope/vim-characterize'
 NeoBundle 'tpope/vim-commentary'
