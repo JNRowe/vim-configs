@@ -32,6 +32,7 @@ set autochdir
 set noautowriteall
 set nobackup
 set backupcopy=auto,breakhardlink
+set backupdir=~/.xdg/local/vim/backup//,.,~/tmp,~/
 if has("ballooneval")
     set ballooneval
 endif
@@ -41,6 +42,7 @@ set confirm
 set cryptmethod=blowfish
 set cursorline
 set dictionary+=/usr/share/dict/words
+set directory=~/.xdg/local/vim/swap//,.,~/tmp,/var/tmp,/tmp
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
@@ -89,6 +91,7 @@ set textwidth=80
 set tildeop
 set title
 set ttyfast
+set undodir=~/.xdg/local/vim/undo//,.
 set viminfo='1000,<1000,h,n$XDG_DATA_HOME/vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
