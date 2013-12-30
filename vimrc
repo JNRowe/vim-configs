@@ -352,7 +352,10 @@ if has("menu")
         amenu L&ocations.&Openbox.rc
             \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/rc.xml"))<CR>
     endif
-    if filereadable(expand("~/.gitconfig"))
+    if filereadable(expand("$XDG_CONFIG_HOME/git/config"))
+        amenu L&ocations.&gitconfig
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/git/config"))<CR>
+    elseif filereadable(expand("~/.gitconfig"))
         amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     endif
     if filereadable(expand("$XDG_CONFIG_HOME/python/rc"))
