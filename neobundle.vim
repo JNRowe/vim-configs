@@ -36,6 +36,7 @@ NeoBundle 'jceb/vim-hier'
 NeoBundle 'justincampbell/vim-eighties'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'leafo/moonscript-vim'
 NeoBundle 'ledger/vim-ledger'
 NeoBundle 'majutsushi/tagbar'
 " Required by vim-github-comment
