@@ -208,6 +208,7 @@ if has("gui_running")
 
     " Always display line number in the GUI
     set number
+    set relativenumber
 
     " Shift insert works the same as in a terminal
     map <S-Insert> <MiddleMouse>
