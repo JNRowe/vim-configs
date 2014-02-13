@@ -6,3 +6,6 @@ autocmd BufRead,BufNewFile *.vapi setfiletype vala
 
 " ledger
 autocmd BufNewFile,BufRead *.ldg setfiletype ledger
+
+" mutt
+autocmd BufRead,BufNewFile **/.mutt/*.rc setfiletype muttrc
