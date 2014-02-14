@@ -6,6 +6,7 @@ NeoBundle 'JNRowe/vim-jnrowe'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Rykka/colorv.vim', {'stay_same': 1}
+NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'airblade/vim-gitgutter'
