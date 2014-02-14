@@ -7,6 +7,7 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Rykka/colorv.vim', {'stay_same': 1}
 NeoBundle 'Shougo/vimproc'
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'bitc/vim-bad-whitespace'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'bling/vim-bufferline'
