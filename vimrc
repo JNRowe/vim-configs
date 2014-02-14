@@ -89,6 +89,7 @@ set spelllang=en_gb
 set splitbelow
 set splitright
 set nostartofline
+set showmatch
 set suffixes+=.pyc,.pyo
 set swapsync=
 set tags+=ctags;tags;
