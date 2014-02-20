@@ -40,6 +40,7 @@ NeoBundle 'majutsushi/tagbar'
 " Required by vim-github-comment
 NeoBundle 'mattn/webapi-vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'mihaifm/vimpanel'
 NeoBundle 'mmozuras/vim-github-comment'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
