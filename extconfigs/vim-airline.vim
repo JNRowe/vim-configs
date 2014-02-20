@@ -15,4 +15,4 @@ let g:airline_detect_whitespace=0
 
 let g:airline_powerline_fonts=1
 
-let g:airline_enable_hunks=1
+let g:airline#extensions#hunks#enabled = 1
