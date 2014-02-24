@@ -22,4 +22,3 @@ iab YMMV your mileage may vary
 iabbr _t  <C-R>=strftime("%H:%M:%S")<CR>
 iabbr _d  <C-R>=strftime("%Y-%m-%d")<CR>
 iabbr _dt <C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>
-
