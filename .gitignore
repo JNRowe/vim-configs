@@ -12,3 +12,4 @@ external/.neobundle/
 
 # neobundle managed plugins
 external/
+!external/neobundle.vim

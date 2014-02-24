@@ -17,7 +17,7 @@ even eat your dog.
 
 That being said if your dog doesn't mean that much to you::
 
-    git clone git://github.com/JNRowe/vim-configs.git ~/.vim
+    git clone --recursive git://github.com/JNRowe/vim-configs.git ~/.vim
     cd ~/.vim
     # This following fetches lots of remote resources, and may take some time
     make init-external
