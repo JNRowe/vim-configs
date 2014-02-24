@@ -215,7 +215,11 @@ if has("gui_running")
     map <S-Insert> <MiddleMouse>
     map! <S-Insert> <MiddleMouse>
 
-    set guifont=Consolas\ for\ Powerline\ 13
+    if has('gui_macvim')
+        set guifont=Menlo:h13
+    else
+        set guifont=Consolas\ for\ Powerline\ 13
+    endif
     colorscheme jnrowe
 
     if has('title')
