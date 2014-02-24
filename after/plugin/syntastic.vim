@@ -5,4 +5,3 @@ execute("sign define SyntasticWarning text=WW texthl=Warning icon=" .
     \ expand("~/.vim/icons/warning.svg"))
 execute("sign define SyntasticInfo text=II texthl=Error icon=" .
     \ expand("~/.vim/icons/info.svg"))
-
