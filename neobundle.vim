@@ -145,8 +145,6 @@ NeoBundleLazy 'majutsushi/tagbar', {
     \   'commands': 'TagbarToggle',
     \ }
 \ }
-" Required by vim-github-comment
-NeoBundle 'mattn/webapi-vim'
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'autoload': {
     \   'filetypes': 'python',
@@ -161,6 +159,7 @@ NeoBundleLazy 'mmozuras/vim-github-comment', {
     \ 'autoload': {
     \   'commands': 'GHComment',
     \ },
+    \ 'depends': 'mattn/webapi-vim',
 \ }
 NeoBundleLazy 'scrooloose/nerdtree', {
     \ 'autoload': {
