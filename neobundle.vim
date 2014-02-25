@@ -17,11 +17,21 @@ NeoBundleLazy 'Rykka/colorv.vim', {
     \ 'gui': 1,
     \ 'stay_same': 1,
 \ }
-NeoBundleLazy 'Shougo/neocomplete.vim', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ },
-\ }
+if has('lua')
+    NeoBundleLazy 'Shougo/neocomplete.vim', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ },
+        \ 'disabled': !has('lua'),
+    \ }
+else
+    NeoBundleLazy 'Shougo/neocomplcache', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ },
+        \ 'disabled': has('lua'),
+    \ }
+endif
 NeoBundleLazy 'Shougo/unite.vim', {
     \ 'autoload': {
     \   'commands': 'Unite',
