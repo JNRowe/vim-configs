@@ -37,7 +37,12 @@ NeoBundleLazy 'Shougo/unite.vim', {
     \   'commands': 'Unite',
     \ }
 \ }
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+    \ 'build': {
+    \   'mac' : 'make -f make_mac.mak',
+    \   'unix' : 'make -f make_unix.mak',
+    \ },
+\ }
 NeoBundleLazy 'airblade/vim-gitgutter', {
     \ 'autoload': {
     \   'insert': 1,
