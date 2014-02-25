@@ -93,6 +93,7 @@ NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
     \ 'autoload': {
     \   'filetypes': 'python',
     \ },
+    \ 'disabled': !has('conceal'),
 \ }
 NeoBundleLazy 'ervandew/regex', {
     \ 'autoload': {
