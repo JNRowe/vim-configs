@@ -125,6 +125,11 @@ NeoBundleLazy 'gregsexton/MatchTag', {
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'jceb/vim-editqf'
+NeoBundleLazy 'guns/xterm-color-table.vim', {
+    \ 'autoload': {
+    \   'commands': 'XtermColorTable',
+    \ }
+\ }
 NeoBundleLazy 'jceb/vim-fastwordcompleter', {
     \ 'autoload': {
     \   'insert': 1,
