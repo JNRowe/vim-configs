@@ -68,6 +68,7 @@ NeoBundleLazy 'airblade/vim-gitgutter', {
     \ 'autoload': {
     \   'insert': 1,
     \ },
+    \ 'disabled': !has('signs'),
     \ 'external_command': 'git',
 \ }
 NeoBundleLazy 'bitc/vim-bad-whitespace', {
