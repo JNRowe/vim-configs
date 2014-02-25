@@ -14,6 +14,7 @@ NeoBundleLazy 'Rykka/colorv.vim', {
     \   'commands': ['ColorV', 'ColorVPreview'],
     \   'filetypes': 'css',
     \ },
+    \ 'gui': 1,
     \ 'stay_same': 1,
 \ }
 NeoBundleLazy 'Shougo/neocomplete.vim', {
