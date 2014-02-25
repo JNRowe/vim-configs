@@ -7,5 +7,8 @@ autocmd BufRead,BufNewFile *.vapi setfiletype vala
 " ledger
 autocmd BufNewFile,BufRead *.ldg setfiletype ledger
 
+" moon
+autocmd BufNewFile,BufRead *.moon setfiletype moon
+
 " mutt
 autocmd BufRead,BufNewFile **/.mutt/*.rc setfiletype muttrc
