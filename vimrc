@@ -410,6 +410,9 @@ endif " }}}
 " Don't use default keys for scratch plugin
 let no_scratch_maps = 1
 
+" Logical Y mapping, like D
+map Y y$
+
 " Function keys {{{
 nmap <F1> :set hlsearch!<CR>
 nnoremap <F2> :set list!<CR>
