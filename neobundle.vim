@@ -237,6 +237,11 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-surround'
+NeoBundleLazy 'tsukkee/unite-tag', {
+    \ 'autoload': {
+    \   'unite_sources': ['tag', 'tag/file']
+    \ }
+\ }
 NeoBundleLazy 'ujihisa/unite-colorscheme', {
     \ 'autoload': {
     \   'unite_sources': 'colorscheme'
