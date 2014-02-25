@@ -217,7 +217,11 @@ NeoBundle 'vim-scripts/RST-Tables', {
 NeoBundleLazy 'vim-scripts/TaskList.vim', {
     \ 'mappings': '<Plug>TaskList',
 \ }
-NeoBundle 'vim-scripts/Toggle'
+NeoBundleLazy 'vim-scripts/Toggle', {
+    \ 'autoload': {
+    \   'functions': 'Toggle',
+    \ }
+\ }
 NeoBundle 'vim-scripts/ZoomWin'
 NeoBundle 'vim-scripts/python_match.vim', {
     \ 'autoload': {
