@@ -43,6 +43,11 @@ NeoBundleLazy 'Shougo/unite.vim', {
     \   'commands': 'Unite',
     \ }
 \ }
+NeoBundleLazy 'Shougo/unite-outline', {
+    \ 'autoload': {
+    \   'unite_sources': 'outline'
+    \ }
+\ }
 NeoBundle 'Shougo/vimproc', {
     \ 'build': {
     \   'mac' : 'make -f make_mac.mak',
