@@ -59,7 +59,11 @@ set formatoptions+=tcrqn2l1
 set formatoptions-=wvb
 set nofsync
 set gdefault
-set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+else
+    set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags
+endif
 set guiheadroom=0
 set guioptions+=chR
 set guioptions-=T
