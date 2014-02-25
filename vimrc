@@ -167,10 +167,6 @@ if has("autocmd")
         \ set ft=mail |
         \ set ts=2 sw=2 et
 
-    autocmd BufNewFile,BufRead /tmp/ditz*
-        \ set ft=rst |
-        \ set ts=2 sw=2 et
-
     " Turn off search highlighting when entering a buffer
     autocmd BufEnter * nohls
     " Turn off search highlighting when idle
