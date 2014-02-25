@@ -23,6 +23,7 @@ if has('lua')
         \   'insert': 1,
         \ },
         \ 'disabled': !has('lua'),
+        \ 'vim_version':'7.3.885',
     \ }
 else
     NeoBundleLazy 'Shougo/neocomplcache', {
