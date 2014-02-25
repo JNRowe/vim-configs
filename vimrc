@@ -329,6 +329,9 @@ noremap <S-Down> gj
 " Make c-g verbose by default
 nnoremap <C-g> 2<C-g>
 
+" Lazy typist write binding
+nnoremap <Leader>w :w<CR>
+
 " Map Q to reformat paragraphs
 nmap Q gqap
 
