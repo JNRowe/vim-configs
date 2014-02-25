@@ -119,7 +119,7 @@ NeoBundleLazy 'godlygeek/tabular', {
 \ }
 NeoBundleLazy 'gregsexton/MatchTag', {
     \ 'autoload': {
-    \   'filetypes': 'xml',
+    \   'filetypes': ['html', 'xml', 'xsl'],
     \ }
 \ }
 NeoBundle 'gregsexton/gitv'
@@ -199,7 +199,7 @@ NeoBundle 'tpope/vim-jdaddy', {
 \ }
 NeoBundle 'tpope/vim-ragtag', {
     \ 'autoload': {
-    \   'filetypes': 'xml',
+    \   'filetypes': ['html', 'xml', 'xsl'],
     \ }
 \ }
 NeoBundle 'tpope/vim-repeat'
