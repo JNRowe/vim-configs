@@ -4,18 +4,34 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'JNRowe/vim-jnrowe'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Raimondi/delimitMate'
+NeoBundleLazy 'Raimondi/delimitMate', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundleLazy 'Rykka/colorv.vim', {
     \ 'autoload': {
     \   'filetypes': 'css',
     \ },
     \ 'stay_same': 1,
 \ }
-NeoBundle 'Shougo/neocomplete.vim'
+NeoBundleLazy 'Shougo/neocomplete.vim', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ },
+\ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'bitc/vim-bad-whitespace'
+NeoBundleLazy 'airblade/vim-gitgutter', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
+NeoBundleLazy 'bitc/vim-bad-whitespace', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundle 'bling/vim-airline'
 NeoBundle 'bling/vim-bufferline'
 NeoBundle 'chrisbra/NrrwRgn'
@@ -31,21 +47,33 @@ NeoBundleLazy 'chrisbra/csv.vim', {
 \ }
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'chrisbra/unicode.vim'
-NeoBundle 'ciaranm/detectindent'
+NeoBundleLazy 'ciaranm/detectindent', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundle 'ciaranm/securemodelines'
 NeoBundleLazy 'davidhalter/jedi-vim', {
     \ 'autoload': {
     \   'filetypes': 'python',
     \ }
 \ }
-NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundleLazy 'editorconfig/editorconfig-vim', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
     \ 'autoload': {
     \   'filetypes': 'python',
     \ },
 \ }
 NeoBundle 'ervandew/regex'
-NeoBundle 'ervandew/supertab'
+NeoBundleLazy 'ervandew/supertab', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundle 'fs111/pydoc.vim', {
     \ 'autoload': {
     \   'filetypes': 'python',
@@ -60,8 +88,11 @@ NeoBundleLazy 'gregsexton/MatchTag', {
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'jceb/vim-editqf'
-NeoBundle 'jceb/vim-fastwordcompleter'
-NeoBundle 'jceb/vim-hier'
+NeoBundleLazy 'jceb/vim-fastwordcompleter', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundle 'justincampbell/vim-eighties'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'leafo/moonscript-vim', {
@@ -85,11 +116,19 @@ NeoBundleLazy 'michaeljsmith/vim-indent-object', {
 NeoBundle 'mihaifm/vimpanel'
 NeoBundle 'mmozuras/vim-github-comment'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
+NeoBundleLazy 'scrooloose/syntastic', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundle 'sjl/clam.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'spolu/dwm.vim'
-NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'terryma/vim-multiple-cursors' , {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ }
+\ }
 NeoBundle 'tpope/vim-characterize'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
