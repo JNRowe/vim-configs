@@ -189,6 +189,12 @@ NeoBundleLazy 'majutsushi/tagbar', {
     \   'commands': 'TagbarToggle',
     \ }
 \ }
+NeoBundleLazy 'mattn/gist-vim', {
+    \ 'autoload': {
+    \   'commands': 'Gist'
+    \ },
+    \ 'depends': 'mattn/webapi-vim',
+\ }
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'autoload': {
     \   'filetypes': 'python',
