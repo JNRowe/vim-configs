@@ -214,7 +214,9 @@ NeoBundle 'vim-scripts/RST-Tables', {
     \   'filetypes': 'rst',
     \ }
 \ }
-NeoBundle 'vim-scripts/TaskList.vim'
+NeoBundleLazy 'vim-scripts/TaskList.vim', {
+    \ 'mappings': '<Plug>TaskList',
+\ }
 NeoBundle 'vim-scripts/Toggle'
 NeoBundle 'vim-scripts/ZoomWin'
 NeoBundle 'vim-scripts/python_match.vim', {
