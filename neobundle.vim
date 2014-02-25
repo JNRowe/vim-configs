@@ -167,6 +167,11 @@ NeoBundleLazy 'jceb/vim-fastwordcompleter', {
     \   'insert': 1,
     \ }
 \ }
+NeoBundleLazy 'junkblocker/patchreview-vim', {
+    \ 'autoload': {
+    \   'commands': ['DiffReview', 'PatchReview'],
+    \ }
+\ }
 NeoBundle 'justincampbell/vim-eighties'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'leafo/moonscript-vim', {
