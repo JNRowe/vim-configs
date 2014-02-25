@@ -211,6 +211,14 @@ NeoBundleLazy 'mmozuras/vim-github-comment', {
     \ },
     \ 'depends': 'mattn/webapi-vim',
 \ }
+if executable('ag')
+    NeoBundleLazy 'rking/ag.vim', {
+        \ 'autoload': {
+        \   'commands': ['Ag', 'grep'],
+        \ },
+        \ 'external_command': 'ag',
+    \ }
+endif
 NeoBundleLazy 'scrooloose/nerdtree', {
     \ 'autoload': {
     \   'commands': ['NERDTreeFind', 'NERDTreeToggle'],
