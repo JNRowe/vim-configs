@@ -143,7 +143,13 @@ NeoBundleLazy 'gregsexton/MatchTag', {
     \   'filetypes': ['html', 'xml', 'xsl'],
     \ }
 \ }
-NeoBundle 'gregsexton/gitv'
+NeoBundle 'gregsexton/gitv', {
+    \ 'autoload':{
+    \   'commands': 'Gitv',
+    \ },
+    \ 'depends': ['tpope/vim-fugitive'],
+    \ 'external_command': 'git',
+\ }
 NeoBundle 'int3/vim-extradite'
 NeoBundle 'jceb/vim-editqf'
 NeoBundleLazy 'guns/xterm-color-table.vim', {
@@ -217,7 +223,6 @@ NeoBundle 'terryma/vim-multiple-cursors' , {
 \ }
 NeoBundle 'tpope/vim-characterize'
 NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-fugitive', {'external_command': 'git'}
 NeoBundle 'tpope/vim-jdaddy', {
     \ 'autoload': {
     \   'filetypes': 'json',
