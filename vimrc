@@ -193,6 +193,10 @@ if has("autocmd")
         \ echo printf("Time taken: %dm%2.2ds", g:make_total_time / 60,
         \   g:make_total_time % 60)
     " }}}
+
+    " Only highlight cursor line in active window
+    autocmd WinLeave * setlocal nocursorline
+    autocmd WinEnter * setlocal cursorline
 endif
 " }}}
 
