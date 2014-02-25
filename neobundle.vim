@@ -17,6 +17,11 @@ NeoBundleLazy 'Rykka/colorv.vim', {
     \ 'gui': 1,
     \ 'stay_same': 1,
 \ }
+NeoBundleLazy 'Shougo/junkfile.vim', {
+    \ 'autoload': {
+    \   'commands': 'JunkfileOpen',
+    \ }
+\ }
 if has('lua')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
         \ 'autoload': {
