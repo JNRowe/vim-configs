@@ -166,10 +166,6 @@ if has("autocmd")
 
     autocmd BufNewFile,BufRead *.rb set sw=2
 
-    autocmd BufNewFile,BufRead /tmp/*-sup.*
-        \ set ft=mail |
-        \ set ts=2 sw=2 et
-
     " Turn off search highlighting when entering a buffer
     autocmd BufEnter * nohls
     " Turn off search highlighting when idle
