@@ -118,6 +118,11 @@ NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
     \ },
     \ 'disabled': !has('conceal'),
 \ }
+NeoBundleLazy 'elzr/vim-json', {
+    \ 'autoload': {
+    \   'filetypes': 'json',
+    \ }
+\ }
 NeoBundleLazy 'ervandew/regex', {
     \ 'autoload': {
     \   'commands': 'Regex',
