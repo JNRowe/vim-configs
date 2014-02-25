@@ -484,6 +484,11 @@ nmap <Tab> <C-w>w
 nmap <S-Tab> <C-w>W
 " }}}
 
+" Display occurrences of current word in quickfix window
+nnoremap <Leader>sw :execute "vimgrep ".expand("<cword>")." %"<cr>:copen<cr>
+" … and last search
+nnoremap <Leader>ss :execute 'vimgrep /'.@/.'/g %'<cr>:copen<cr>
+
 " Quickfix maps {{{
 nmap <Leader>cwc :cclose<CR>
 nmap <Leader>cwo :copen 7<CR><C-w>p
