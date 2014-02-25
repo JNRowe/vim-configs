@@ -195,6 +195,7 @@ NeoBundleLazy 'mattn/gist-vim', {
     \ },
     \ 'depends': 'mattn/webapi-vim',
 \ }
+NeoBundle 'mhinz/vim-startify'
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'autoload': {
     \   'filetypes': 'python',
