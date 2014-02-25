@@ -1,3 +1,3 @@
-imap <C-M-T> <C-O>:ToggleWord<CR>
-nmap <C-M-T> :ToggleWord<CR>
-vmap <C-M-T> <ESC>:ToggleWord<CR>
+imap <C-M-T> <C-O>:call Toggle()<CR>
+nmap <C-M-T> :call Toggle()<CR>
+vmap <C-M-T> <ESC>:call Toggle()<CR>
