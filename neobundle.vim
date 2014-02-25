@@ -25,7 +25,8 @@ NeoBundle 'Shougo/vimproc'
 NeoBundleLazy 'airblade/vim-gitgutter', {
     \ 'autoload': {
     \   'insert': 1,
-    \ }
+    \ },
+    \ 'external_command': 'git',
 \ }
 NeoBundleLazy 'bitc/vim-bad-whitespace', {
     \ 'autoload': {
@@ -131,7 +132,7 @@ NeoBundle 'terryma/vim-multiple-cursors' , {
 \ }
 NeoBundle 'tpope/vim-characterize'
 NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive', {'external_command': 'git'}
 NeoBundle 'tpope/vim-jdaddy', {
     \ 'autoload': {
     \   'filetypes': 'json',
@@ -165,4 +166,6 @@ NeoBundle 'vim-scripts/python_match.vim', {
     \ }
 \ }
 
-NeoBundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git'
+NeoBundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git', {
+    \ 'external_command': 'gpg'
+\ }
