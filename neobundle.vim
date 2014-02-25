@@ -74,6 +74,7 @@ NeoBundleLazy 'chrisbra/csv.vim', {
 \ }
 NeoBundle 'chrisbra/Recover.vim'
 NeoBundle 'chrisbra/unicode.vim'
+NeoBundle 'chrisbra/vim_faq'
 NeoBundleLazy 'ciaranm/detectindent', {
     \ 'autoload': {
     \   'insert': 1,
