@@ -61,6 +61,9 @@ NeoBundle 'Shougo/vimproc', {
     \   'unix' : 'make -f make_unix.mak',
     \ },
 \ }
+NeoBundle 'Yggdroot/indentLine', {
+    \ 'disabled': !has('conceal'),
+\ }
 NeoBundleLazy 'airblade/vim-gitgutter', {
     \ 'autoload': {
     \   'insert': 1,
