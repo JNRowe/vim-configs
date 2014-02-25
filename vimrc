@@ -42,6 +42,9 @@ if has("ballooneval")
 endif
 set colorcolumn=+1
 set completeopt=longest,menuone,preview
+if has('conceal')
+    set conceallevel=1
+endif
 set confirm
 set cryptmethod=blowfish
 set cursorline
@@ -262,6 +265,9 @@ let g:bugsummary_browser="opera -newpage '%s'"
 " Show tabs and trailing whitespace {{{
 if (&termencoding ==# "utf-8") || has("gui_running")
     set listchars=tab:»·,extends:…,nbsp:‗
+    if has('conceal')
+        set listchars+=conceal:Δ
+    endif
 else
     set listchars=tab:>-,extends:>,nbsp:_
 endif " }}}
