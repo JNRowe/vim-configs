@@ -39,6 +39,12 @@ else
         \ 'disabled': has('lua'),
     \ }
 endif
+NeoBundleLazy 'Shougo/neosnippet', {
+    \ 'autoload': {
+    \   'insert': 1,
+    \ },
+    \ 'depends': ['Shougo/context_filetype.vim', 'Shougo/neosnippet-snippets'],
+\ }
 NeoBundleLazy 'Shougo/unite.vim', {
     \ 'autoload': {
     \   'commands': 'Unite',
