@@ -8,3 +8,5 @@ let g:startify_bookmarks = [
 \ ]
 let g:startify_enable_special = 0
 let g:startify_session_dir = expand('$XDG_DATA_HOME') . '/vim/sessions'
+
+nnoremap <S-F1> :Startify<cr>
