@@ -403,6 +403,9 @@ if has("menu")
     amenu L&ocations.&xorg.X&initrc :e ~/.xinitrc
     if filereadable(expand("~/.fonts.conf"))
         amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
+    elseif filereadable(expand("$XDG_CONFIG_HOME/fontconfig/fonts.conf"))
+        amenu L&ocations.&freetype
+            \ :execute("e " . expand("$XDG_CONFIG_HOME/fontconfig/fonts.conf"))<CR>
     endif
     if filereadable(expand("~/.gtkrc-2.0"))
         amenu L&ocations.&gtk :e ~/.gtkrc-2.0<CR>
