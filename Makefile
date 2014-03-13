@@ -1,6 +1,8 @@
 CTAGS ::= exuberant-ctags
 
 TARGETS ::= doc/tags tags/libc.ctags \
+	$(patsubst /usr/share/lua/%, tags/lua%.ctags, \
+		$(wildcard /usr/share/lua/*)) \
 	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python[0-9]*)) \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
 		$(wildcard /usr/lib/ruby/[0-9]*))
@@ -18,6 +20,10 @@ all: $(TARGETS) $(HTML)
 %.html: %.rst
 	$(info - Generating $@)
 	$(SILENT)rst2html.py $< $@
+
+tags/lua%.ctags: /usr/share/lua/%
+	$(info - Updating lua $(notdir $<) tags)
+	$(SILENT)$(CTAGS) --languages=lua -R -f $@ $<
 
 tags/python%.ctags: /usr/lib/python%
 	$(info - Updating $(notdir $<) tags)
