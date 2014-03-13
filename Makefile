@@ -33,7 +33,7 @@ tags/python%.ctags: /usr/lib/python%
 
 tags/ruby%.ctags: /usr/lib/ruby/%
 	$(info - Updating ruby v$(notdir $<) tags)
-	$(SILENT)$(CTAGS) --languages=ruby -R -f $@ $<
+	$(SILENT)$(CTAGS) --exclude=*/test/* --languages=ruby -R -f $@ $<
 
 LIBC_INCS ::= $(shell qlist glibc | grep include)
 ifndef LIBC_INCS
