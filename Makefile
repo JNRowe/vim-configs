@@ -1,7 +1,7 @@
 CTAGS ::= exuberant-ctags
 
 TARGETS ::= doc/tags tags/libc.ctags \
-	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
+	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python[0-9]*)) \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
 		$(wildcard /usr/lib/ruby/[0-9]*))
 
