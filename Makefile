@@ -1,14 +1,14 @@
-CTAGS := exuberant-ctags
+CTAGS ::= exuberant-ctags
 
-TARGETS := doc/tags tags/libc.ctags \
+TARGETS ::= doc/tags tags/libc.ctags \
 	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python*)) \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
 		$(wildcard /usr/lib/ruby/[0-9]*))
 
-HTML := $(patsubst %.rst, %.html, $(wildcard *.rst))
+HTML ::= $(patsubst %.rst, %.html, $(wildcard *.rst))
 
 ifdef QUIET
-SILENT := @
+SILENT ::= @
 endif
 
 .PHONY: clean init-external update-external
@@ -29,9 +29,9 @@ tags/ruby%.ctags: /usr/lib/ruby/%
 	$(info - Updating ruby v$(notdir $<) tags)
 	$(SILENT)$(CTAGS) --languages=ruby -R -f $@ $<
 
-LIBC_INCS := $(shell qlist glibc | grep include)
+LIBC_INCS ::= $(shell qlist glibc | grep include)
 ifndef LIBC_INCS
-LIBC_INCS := $(shell dpkg -L libc6-dev | grep include)
+LIBC_INCS ::= $(shell dpkg -L libc6-dev | grep include)
 ifndef LIBC_INCS
 $(error LIBC_INCS is undefined. Not on Gentoo or Debian?)
 endif
