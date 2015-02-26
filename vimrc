@@ -24,8 +24,9 @@ endif
 
 " Fire up neobundle, and setup plugins
 let g:neobundle#types#git#default_protocol='git'
-call neobundle#rc(expand('~/.vim/external/', 1))
+call neobundle#begin(expand('~/.vim/external/', 1))
 source ~/.vim/neobundle.vim
+call neobundle#end()
 
 " Find appropriate directory for data files, this used to be handled by
 " vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
