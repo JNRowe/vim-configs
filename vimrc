@@ -67,7 +67,7 @@ if executable('ag')
     set grepprg=ag\ --vimgrep\ $*
     set grepformat=%f:%l:%c:%m
 else
-    set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags
+    set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
 endif
 set guiheadroom=0
 set guioptions+=chR
