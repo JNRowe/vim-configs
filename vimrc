@@ -242,7 +242,7 @@ else
     else
         colorscheme elflord
     endif
-    if $TERM ==# "linux" ||
+    if $TERM ==# "linux" || $TERM == "xterm" ||
         \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
         set background=dark
     else
