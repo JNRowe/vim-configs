@@ -1,4 +1,8 @@
-autocmd BufWritePost neobundle.vim source ~/.vim/neobundle.vim
+autocmd BufWritePost ~/.vim/neobundle.vim source ~/.vim/neobundle.vim
+
+if neobundle#has_fresh_cache('~/.vim/neobundle.vim')
+    NeoBundleLoadCache
+else
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -300,3 +304,6 @@ NeoBundle 'vim-scripts/python_match.vim', {
 NeoBundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git', {
     \ 'external_command': 'gpg'
 \ }
+
+    NeoBundleSaveCache
+endif
