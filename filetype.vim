@@ -12,3 +12,5 @@ autocmd BufNewFile,BufRead *.moon setfiletype moon
 
 " mutt
 autocmd BufRead,BufNewFile **/.mutt/*.rc setfiletype muttrc
+
+autocmd BufNewFile,BufRead ~/.pypirc setfiletype dosini
