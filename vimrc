@@ -223,7 +223,7 @@ if has("gui_running")
     if has('gui_macvim')
         set guifont=Menlo:h13
     else
-        set guifont=Consolas\ for\ Powerline\ 13
+        set guifont=Consolas\ 13
     endif
     colorscheme jnrowe
 
