@@ -64,7 +64,8 @@ set formatoptions-=wvb
 set nofsync
 set gdefault
 if executable('ag')
-    set grepprg=ag\ --nogroup\ --column\ --smart-case\ --nocolor\ --follow
+    set grepprg=ag\ --vimgrep\ $*
+    set grepformat=%f:%l:%c:%m
 else
     set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags
 endif
