@@ -430,6 +430,17 @@ let no_scratch_maps = 1
 " Logical Y mapping, like D
 map Y y$
 
+" <home> darts between start of line and start of text
+inoremap <silent> <home> <C-o>:call HomeSkip()<CR>
+nnoremap <silent> <home> :call HomeSkip()<CR>
+function! HomeSkip()
+    if col('.') != 1
+        normal 0
+    else
+        normal ^
+    endif
+endfunction
+
 " Function keys {{{
 nmap <F1> :set hlsearch!<CR>
 nnoremap <F2> :set list!<CR>
