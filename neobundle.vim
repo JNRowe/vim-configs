@@ -295,6 +295,11 @@ NeoBundleLazy 'vim-scripts/Toggle', {
     \ }
 \ }
 NeoBundle 'vim-scripts/ZoomWin'
+NeoBundleLazy 'vim-scripts/dbext.vim', {
+    \ 'autoload': {
+    \   'commands': 'DBPromptForBufferParameters',
+    \ }
+\ }
 NeoBundle 'vim-scripts/python_match.vim', {
     \ 'autoload': {
     \   'filetypes': 'python',
