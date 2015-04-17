@@ -89,6 +89,7 @@ set nonumber
 set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F4>
 set report=0
+set shiftround
 set shiftwidth=4
 set showfulltag
 set showtabline=1
