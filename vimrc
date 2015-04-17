@@ -104,7 +104,6 @@ set nostartofline
 set showmatch
 set suffixes+=.pyc,.pyo
 set swapsync=
-set tags+=ctags;tags;
 set textwidth=80
 set tildeop
 set title
