@@ -305,6 +305,11 @@ NeoBundle 'vim-scripts/python_match.vim', {
     \   'filetypes': 'python',
     \ }
 \ }
+NeoBundleLazy 'vim-scripts/uptime.vim', {
+    \ 'autoload': {
+    \   'commands': 'Uptime',
+    \ }
+\ }
 NeoBundleLazy 'vim-scripts/uri-ref', {
     \ 'autoload': {
     \   'filetypes': 'mail',
