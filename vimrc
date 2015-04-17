@@ -166,9 +166,15 @@ if has("autocmd")
     " Automatically chmod +x shell scripts
     autocmd BufWritePost *.sh silent !chmod +x %
 
-    " Don't restore saved position for git buffers.
-    " This is most useful in commit messages.
-    autocmd BufReadPost * if &ft =~# '^git' | execute "normal gg" | endif
+    " Jump to the last known cursor position if possible.
+    " Note: Don't restore saved position for git buffers as it tends not to be
+    " useful.
+    autocmd BufReadPost *
+        \ if &filetype =~# '^git' |
+        \   execute "normal gg" |
+        \ elseif line("'\"") > 0 && line("'\"") <= line("$") |
+        \   execute "normal g`\"" |
+        \ endif
 
     autocmd BufNewFile,BufRead *.rb set sw=2
 
