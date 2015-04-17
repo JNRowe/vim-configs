@@ -179,9 +179,9 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.rb set sw=2
 
     " Turn off search highlighting when entering a buffer
-    autocmd BufEnter * nohls
+    autocmd BufEnter * nohlsearch
     " Turn off search highlighting when idle
-    autocmd CursorHold * nohls | redraw
+    autocmd CursorHold * nohlsearch | redraw
 
     " Always do a full syntax refresh, this is still fast enough on
     " a netbook
@@ -467,7 +467,8 @@ function! ModelineStub()
     let save_cursor = getpos('.')
     let fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
 
-    let x = printf(&cms, printf(fmt, &ft, &ts, &sw, &tw, (&et?"et":"noet")))
+    let x = printf(&cms, printf(fmt, &filetype, &tabstop, &shiftwidth, &textwidth,
+        \                       (&expandtab ? "et" : "noexpandtab")))
     $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
     call setpos('.', save_cursor)
 endfunction
