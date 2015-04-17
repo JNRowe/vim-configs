@@ -275,7 +275,7 @@ else
         \   'unite_sources': 'colorscheme'
         \ }
     \ }
-    NeoBundle 'vim-scripts/DotOutlineTree', {
+    NeoBundleLazy 'vim-scripts/DotOutlineTree', {
         \ 'autoload': {
         \   'filetypes': 'rst',
         \ }
