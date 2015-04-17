@@ -55,6 +55,9 @@ set directory=~/.xdg/local/vim/swap//,.,~/tmp,/var/tmp,/tmp
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
+if v:lang =~? 'utf8'
+    set fileencodings=utf-8,latin1,default
+endif
 set foldcolumn=2
 set foldlevelstart=99
 set foldmethod=syntax
