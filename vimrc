@@ -253,7 +253,7 @@ else
         colorscheme elflord
     endif
     if $TERM ==# "linux" || $TERM == "xterm" || $TERM == "st" ||
-        \ (exists("$COLORFGBG") && split($COLORFGBG, ";")[0] == 15)
+        \ split($COLORFGBG . ";padding", ";")[0] == 15
         set background=dark
     else
         set background=light
@@ -271,7 +271,7 @@ endif
 let g:bugsummary_browser="opera -newpage '%s'"
 
 " Show tabs and trailing whitespace {{{
-if (&termencoding ==# "utf-8") || has("gui_running")
+if &termencoding ==# "utf-8" || has("gui_running")
     set listchars=tab:»·,extends:…,nbsp:‗
     if has('conceal')
         set listchars+=conceal:Δ
