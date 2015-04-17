@@ -430,6 +430,9 @@ let no_scratch_maps = 1
 " Logical Y mapping, like D
 map Y y$
 
+" Insert literal tab, for that once a year when it makes sense
+inoremap <silent> <S-Tab> <C-v><Tab>
+
 " <home> darts between start of line and start of text
 inoremap <silent> <home> <C-o>:call HomeSkip()<CR>
 nnoremap <silent> <home> :call HomeSkip()<CR>
