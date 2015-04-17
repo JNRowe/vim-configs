@@ -112,7 +112,7 @@ let &undodir = expand(g:xdg_data_dir) . '/undo//,' . &undodir
 set viminfo='1000,<1000,h,n$XDG_DATA_HOME/vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
-set wildignore+=*.log,*.pdf,*.swp,*.o,*.pyc,*.pyo,*~,*.obj,*.db
+set wildignore+=*.log,*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
 set wildmode=longest,full
 " }}}
 
