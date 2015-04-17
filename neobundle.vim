@@ -3,322 +3,321 @@ autocmd BufWritePost ~/.vim/neobundle.vim source ~/.vim/neobundle.vim
 if neobundle#has_fresh_cache('~/.vim/neobundle.vim')
     NeoBundleLoadCache
 else
+    NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'JNRowe/vim-jnrowe'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundleLazy 'Raimondi/delimitMate', {
-    \ 'autoload': {
-    \   'insert': 1,
+    NeoBundle 'JNRowe/vim-jnrowe'
+    NeoBundle 'Lokaltog/vim-easymotion'
+    NeoBundleLazy 'Raimondi/delimitMate', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
     \ }
-\ }
-NeoBundleLazy 'Rykka/colorv.vim', {
-    \ 'autoload': {
-    \   'commands': ['ColorV', 'ColorVPreview'],
-    \   'filetypes': 'css',
-    \ },
-    \ 'gui': 1,
-    \ 'stay_same': 1,
-\ }
-NeoBundleLazy 'Shougo/junkfile.vim', {
-    \ 'autoload': {
-    \   'commands': 'JunkfileOpen',
-    \   'unite_sources': ['junkfile', 'junkfile/new']
+    NeoBundleLazy 'Rykka/colorv.vim', {
+        \ 'autoload': {
+        \   'commands': ['ColorV', 'ColorVPreview'],
+        \   'filetypes': 'css',
+        \ },
+        \ 'gui': 1,
+        \ 'stay_same': 1,
     \ }
-\ }
-if has('lua')
-    NeoBundleLazy 'Shougo/neocomplete.vim', {
+    NeoBundleLazy 'Shougo/junkfile.vim', {
+        \ 'autoload': {
+        \   'commands': 'JunkfileOpen',
+        \   'unite_sources': ['junkfile', 'junkfile/new']
+        \ }
+    \ }
+    if has('lua')
+        NeoBundleLazy 'Shougo/neocomplete.vim', {
+            \ 'autoload': {
+            \   'insert': 1,
+            \ },
+            \ 'disabled': !has('lua'),
+            \ 'vim_version':'7.3.885',
+        \ }
+    else
+        NeoBundleLazy 'Shougo/neocomplcache', {
+            \ 'autoload': {
+            \   'insert': 1,
+            \ },
+            \ 'disabled': has('lua'),
+        \ }
+    endif
+    NeoBundleLazy 'Shougo/neosnippet', {
         \ 'autoload': {
         \   'insert': 1,
         \ },
-        \ 'disabled': !has('lua'),
-        \ 'vim_version':'7.3.885',
+        \ 'depends': ['Shougo/context_filetype.vim', 'Shougo/neosnippet-snippets'],
     \ }
-else
-    NeoBundleLazy 'Shougo/neocomplcache', {
+    NeoBundleLazy 'Shougo/unite.vim', {
+        \ 'autoload': {
+        \   'commands': 'Unite',
+        \ }
+    \ }
+    NeoBundleLazy 'Shougo/unite-outline', {
+        \ 'autoload': {
+        \   'unite_sources': 'outline'
+        \ }
+    \ }
+    NeoBundle 'Shougo/vimproc', {
+        \ 'build': {
+        \   'mac': 'make -f make_mac.mak',
+        \   'linux': 'make',
+        \ },
+    \ }
+    NeoBundle 'Yggdroot/indentLine', {
+        \ 'disabled': !has('conceal'),
+    \ }
+    NeoBundleLazy 'airblade/vim-gitgutter', {
         \ 'autoload': {
         \   'insert': 1,
         \ },
-        \ 'disabled': has('lua'),
+        \ 'disabled': !has('signs'),
+        \ 'external_command': 'git',
     \ }
-endif
-NeoBundleLazy 'Shougo/neosnippet', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ },
-    \ 'depends': ['Shougo/context_filetype.vim', 'Shougo/neosnippet-snippets'],
-\ }
-NeoBundleLazy 'Shougo/unite.vim', {
-    \ 'autoload': {
-    \   'commands': 'Unite',
-    \ }
-\ }
-NeoBundleLazy 'Shougo/unite-outline', {
-    \ 'autoload': {
-    \   'unite_sources': 'outline'
-    \ }
-\ }
-NeoBundle 'Shougo/vimproc', {
-    \ 'build': {
-    \   'mac': 'make -f make_mac.mak',
-    \   'linux': 'make',
-    \ },
-\ }
-NeoBundle 'Yggdroot/indentLine', {
-    \ 'disabled': !has('conceal'),
-\ }
-NeoBundleLazy 'airblade/vim-gitgutter', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ },
-    \ 'disabled': !has('signs'),
-    \ 'external_command': 'git',
-\ }
-NeoBundleLazy 'bitc/vim-bad-whitespace', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
-NeoBundle 'bling/vim-airline'
-NeoBundle 'bling/vim-bufferline'
-NeoBundleLazy 'chrisbra/NrrwRgn', {
-    \ 'autoload': {
-    \   'commands': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
-    \ }
-\ }
-NeoBundleLazy 'chrisbra/CheckAttach', {
-    \ 'autoload': {
-    \   'filetypes': 'mail',
-    \ }
-\ }
-NeoBundleLazy 'chrisbra/csv.vim', {
-    \ 'autoload': {
-    \   'filetypes': 'csv',
-    \ }
-\ }
-NeoBundle 'chrisbra/Recover.vim'
-NeoBundle 'chrisbra/unicode.vim'
-NeoBundle 'chrisbra/vim_faq'
-NeoBundleLazy 'ciaranm/detectindent', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
-NeoBundle 'ciaranm/securemodelines'
-NeoBundleLazy 'davidhalter/jedi-vim', {
-    \ 'autoload': {
-    \   'filetypes': 'python',
-    \ }
-\ }
-NeoBundleLazy 'editorconfig/editorconfig-vim', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
-NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
-    \ 'autoload': {
-    \   'filetypes': 'python',
-    \ },
-    \ 'disabled': !has('conceal'),
-\ }
-NeoBundleLazy 'elzr/vim-json', {
-    \ 'autoload': {
-    \   'filetypes': 'json',
-    \ }
-\ }
-NeoBundleLazy 'ervandew/regex', {
-    \ 'autoload': {
-    \   'commands': 'Regex',
-    \ }
-\ }
-NeoBundleLazy 'ervandew/supertab', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
-NeoBundle 'fs111/pydoc.vim', {
-    \ 'autoload': {
-    \   'filetypes': 'python',
-    \ },
-\ }
-NeoBundleLazy 'godlygeek/tabular', {
-    \ 'autoload': {
-    \   'commands': ['Tabularize', 'AddTabularPipeline'],
-    \ }
-\ }
-NeoBundleLazy 'gregsexton/MatchTag', {
-    \ 'autoload': {
-    \   'filetypes': ['html', 'xml', 'xsl'],
-    \ }
-\ }
-NeoBundle 'gregsexton/gitv', {
-    \ 'autoload':{
-    \   'commands': 'Gitv',
-    \ },
-    \ 'depends': ['tpope/vim-fugitive'],
-    \ 'external_command': 'git',
-\ }
-NeoBundle 'int3/vim-extradite'
-NeoBundle 'jceb/vim-editqf'
-NeoBundleLazy 'guns/xterm-color-table.vim', {
-    \ 'autoload': {
-    \   'commands': 'XtermColorTable',
-    \ }
-\ }
-NeoBundleLazy 'jceb/vim-fastwordcompleter', {
-    \ 'autoload': {
-    \   'insert': 1,
-    \ }
-\ }
-NeoBundleLazy 'junkblocker/patchreview-vim', {
-    \ 'autoload': {
-    \   'commands': ['DiffReview', 'PatchReview'],
-    \ }
-\ }
-NeoBundle 'justincampbell/vim-eighties'
-NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundleLazy 'leafo/moonscript-vim', {
-    \ 'autoload': {
-    \   'filetypes': 'moon',
-    \ }
-\ }
-NeoBundleLazy 'ledger/vim-ledger', {
-    \ 'autoload': {
-    \   'filetypes': 'ledger',
-    \ }
-\ }
-NeoBundleLazy 'majutsushi/tagbar', {
-    \ 'autoload': {
-    \   'commands': 'TagbarToggle',
-    \ }
-\ }
-NeoBundleLazy 'mattn/gist-vim', {
-    \ 'autoload': {
-    \   'commands': 'Gist'
-    \ },
-    \ 'depends': 'mattn/webapi-vim',
-\ }
-NeoBundle 'mhinz/vim-startify'
-NeoBundleLazy 'michaeljsmith/vim-indent-object', {
-    \ 'autoload': {
-    \   'filetypes': 'python',
-    \ }
-\ }
-NeoBundleLazy 'mihaifm/vimpanel', {
-    \ 'autoload': {
-    \   'commands': ['VimpanelCreate', 'VimpanelLoad'],
-    \ }
-\ }
-NeoBundleLazy 'mmozuras/vim-github-comment', {
-    \ 'autoload': {
-    \   'commands': 'GHComment',
-    \ },
-    \ 'depends': 'mattn/webapi-vim',
-\ }
-if executable('ag')
-    NeoBundleLazy 'rking/ag.vim', {
+    NeoBundleLazy 'bitc/vim-bad-whitespace', {
         \ 'autoload': {
-        \   'commands': ['Ag', 'grep'],
+        \   'insert': 1,
+        \ }
+    \ }
+    NeoBundle 'bling/vim-airline'
+    NeoBundle 'bling/vim-bufferline'
+    NeoBundleLazy 'chrisbra/NrrwRgn', {
+        \ 'autoload': {
+        \   'commands': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
+        \ }
+    \ }
+    NeoBundleLazy 'chrisbra/CheckAttach', {
+        \ 'autoload': {
+        \   'filetypes': 'mail',
+        \ }
+    \ }
+    NeoBundleLazy 'chrisbra/csv.vim', {
+        \ 'autoload': {
+        \   'filetypes': 'csv',
+        \ }
+    \ }
+    NeoBundle 'chrisbra/Recover.vim'
+    NeoBundle 'chrisbra/unicode.vim'
+    NeoBundle 'chrisbra/vim_faq'
+    NeoBundleLazy 'ciaranm/detectindent', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
+    \ }
+    NeoBundle 'ciaranm/securemodelines'
+    NeoBundleLazy 'davidhalter/jedi-vim', {
+        \ 'autoload': {
+        \   'filetypes': 'python',
+        \ }
+    \ }
+    NeoBundleLazy 'editorconfig/editorconfig-vim', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
+    \ }
+    NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
+        \ 'autoload': {
+        \   'filetypes': 'python',
         \ },
-        \ 'external_command': 'ag',
+        \ 'disabled': !has('conceal'),
     \ }
-endif
-NeoBundleLazy 'scrooloose/nerdtree', {
-    \ 'autoload': {
-    \   'commands': ['NERDTreeFind', 'NERDTreeToggle'],
+    NeoBundleLazy 'elzr/vim-json', {
+        \ 'autoload': {
+        \   'filetypes': 'json',
+        \ }
     \ }
-\ }
-NeoBundleLazy 'scrooloose/syntastic', {
-    \ 'autoload': {
-    \   'insert': 1,
+    NeoBundleLazy 'ervandew/regex', {
+        \ 'autoload': {
+        \   'commands': 'Regex',
+        \ }
     \ }
-\ }
-NeoBundleLazy 'sjl/clam.vim', {
-    \ 'autoload': {
-    \   'commands': 'Clam',
+    NeoBundleLazy 'ervandew/supertab', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
     \ }
-\ }
-NeoBundle 'sjl/gundo.vim', {
-    \ 'autoload': {
-    \   'commands': 'GundoToggle',
+    NeoBundle 'fs111/pydoc.vim', {
+        \ 'autoload': {
+        \   'filetypes': 'python',
+        \ },
     \ }
-\ }
-NeoBundle 'spolu/dwm.vim'
-NeoBundle 'terryma/vim-multiple-cursors' , {
-    \ 'autoload': {
-    \   'insert': 1,
+    NeoBundleLazy 'godlygeek/tabular', {
+        \ 'autoload': {
+        \   'commands': ['Tabularize', 'AddTabularPipeline'],
+        \ }
     \ }
-\ }
-NeoBundle 'tpope/vim-characterize'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-jdaddy', {
-    \ 'autoload': {
-    \   'filetypes': 'json',
+    NeoBundleLazy 'gregsexton/MatchTag', {
+        \ 'autoload': {
+        \   'filetypes': ['html', 'xml', 'xsl'],
+        \ }
     \ }
-\ }
-NeoBundle 'tpope/vim-ragtag', {
-    \ 'autoload': {
-    \   'filetypes': ['html', 'xml', 'xsl'],
+    NeoBundle 'gregsexton/gitv', {
+        \ 'autoload':{
+        \   'commands': 'Gitv',
+        \ },
+        \ 'depends': ['tpope/vim-fugitive'],
+        \ 'external_command': 'git',
     \ }
-\ }
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-surround'
-NeoBundleLazy 'tsukkee/unite-tag', {
-    \ 'autoload': {
-    \   'unite_sources': ['tag', 'tag/file']
+    NeoBundle 'int3/vim-extradite'
+    NeoBundle 'jceb/vim-editqf'
+    NeoBundleLazy 'guns/xterm-color-table.vim', {
+        \ 'autoload': {
+        \   'commands': 'XtermColorTable',
+        \ }
     \ }
-\ }
-NeoBundleLazy 'ujihisa/unite-colorscheme', {
-    \ 'autoload': {
-    \   'unite_sources': 'colorscheme'
+    NeoBundleLazy 'jceb/vim-fastwordcompleter', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
     \ }
-\ }
-NeoBundle 'vim-scripts/DotOutlineTree', {
-    \ 'autoload': {
-    \   'filetypes': 'rst',
+    NeoBundleLazy 'junkblocker/patchreview-vim', {
+        \ 'autoload': {
+        \   'commands': ['DiffReview', 'PatchReview'],
+        \ }
     \ }
-\ }
-NeoBundle 'vim-scripts/RST-Tables', {
-    \ 'autoload': {
-    \   'filetypes': 'rst',
+    NeoBundle 'justincampbell/vim-eighties'
+    NeoBundle 'kien/rainbow_parentheses.vim'
+    NeoBundleLazy 'leafo/moonscript-vim', {
+        \ 'autoload': {
+        \   'filetypes': 'moon',
+        \ }
     \ }
-\ }
-NeoBundleLazy 'vim-scripts/TaskList.vim', {
-    \ 'mappings': '<Plug>TaskList',
-\ }
-NeoBundleLazy 'vim-scripts/Toggle', {
-    \ 'autoload': {
-    \   'functions': 'Toggle',
+    NeoBundleLazy 'ledger/vim-ledger', {
+        \ 'autoload': {
+        \   'filetypes': 'ledger',
+        \ }
     \ }
-\ }
-NeoBundle 'vim-scripts/ZoomWin'
-NeoBundleLazy 'vim-scripts/dbext.vim', {
-    \ 'autoload': {
-    \   'commands': 'DBPromptForBufferParameters',
+    NeoBundleLazy 'majutsushi/tagbar', {
+        \ 'autoload': {
+        \   'commands': 'TagbarToggle',
+        \ }
     \ }
-\ }
-NeoBundle 'vim-scripts/python_match.vim', {
-    \ 'autoload': {
-    \   'filetypes': 'python',
+    NeoBundleLazy 'mattn/gist-vim', {
+        \ 'autoload': {
+        \   'commands': 'Gist'
+        \ },
+        \ 'depends': 'mattn/webapi-vim',
     \ }
-\ }
-NeoBundleLazy 'vim-scripts/uptime.vim', {
-    \ 'autoload': {
-    \   'commands': 'Uptime',
+    NeoBundle 'mhinz/vim-startify'
+    NeoBundleLazy 'michaeljsmith/vim-indent-object', {
+        \ 'autoload': {
+        \   'filetypes': 'python',
+        \ }
     \ }
-\ }
-NeoBundleLazy 'vim-scripts/uri-ref', {
-    \ 'autoload': {
-    \   'filetypes': 'mail',
+    NeoBundleLazy 'mihaifm/vimpanel', {
+        \ 'autoload': {
+        \   'commands': ['VimpanelCreate', 'VimpanelLoad'],
+        \ }
     \ }
-\ }
+    NeoBundleLazy 'mmozuras/vim-github-comment', {
+        \ 'autoload': {
+        \   'commands': 'GHComment',
+        \ },
+        \ 'depends': 'mattn/webapi-vim',
+    \ }
+    if executable('ag')
+        NeoBundleLazy 'rking/ag.vim', {
+            \ 'autoload': {
+            \   'commands': ['Ag', 'grep'],
+            \ },
+            \ 'external_command': 'ag',
+        \ }
+    endif
+    NeoBundleLazy 'scrooloose/nerdtree', {
+        \ 'autoload': {
+        \   'commands': ['NERDTreeFind', 'NERDTreeToggle'],
+        \ }
+    \ }
+    NeoBundleLazy 'scrooloose/syntastic', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
+    \ }
+    NeoBundleLazy 'sjl/clam.vim', {
+        \ 'autoload': {
+        \   'commands': 'Clam',
+        \ }
+    \ }
+    NeoBundle 'sjl/gundo.vim', {
+        \ 'autoload': {
+        \   'commands': 'GundoToggle',
+        \ }
+    \ }
+    NeoBundle 'spolu/dwm.vim'
+    NeoBundle 'terryma/vim-multiple-cursors' , {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }
+    \ }
+    NeoBundle 'tpope/vim-characterize'
+    NeoBundle 'tpope/vim-commentary'
+    NeoBundle 'tpope/vim-jdaddy', {
+        \ 'autoload': {
+        \   'filetypes': 'json',
+        \ }
+    \ }
+    NeoBundle 'tpope/vim-ragtag', {
+        \ 'autoload': {
+        \   'filetypes': ['html', 'xml', 'xsl'],
+        \ }
+    \ }
+    NeoBundle 'tpope/vim-repeat'
+    NeoBundle 'tpope/vim-sensible'
+    NeoBundle 'tpope/vim-speeddating'
+    NeoBundle 'tpope/vim-surround'
+    NeoBundleLazy 'tsukkee/unite-tag', {
+        \ 'autoload': {
+        \   'unite_sources': ['tag', 'tag/file']
+        \ }
+    \ }
+    NeoBundleLazy 'ujihisa/unite-colorscheme', {
+        \ 'autoload': {
+        \   'unite_sources': 'colorscheme'
+        \ }
+    \ }
+    NeoBundle 'vim-scripts/DotOutlineTree', {
+        \ 'autoload': {
+        \   'filetypes': 'rst',
+        \ }
+    \ }
+    NeoBundle 'vim-scripts/RST-Tables', {
+        \ 'autoload': {
+        \   'filetypes': 'rst',
+        \ }
+    \ }
+    NeoBundleLazy 'vim-scripts/TaskList.vim', {
+        \ 'mappings': '<Plug>TaskList',
+    \ }
+    NeoBundleLazy 'vim-scripts/Toggle', {
+        \ 'autoload': {
+        \   'functions': 'Toggle',
+        \ }
+    \ }
+    NeoBundle 'vim-scripts/ZoomWin'
+    NeoBundleLazy 'vim-scripts/dbext.vim', {
+        \ 'autoload': {
+        \   'commands': 'DBPromptForBufferParameters',
+        \ }
+    \ }
+    NeoBundle 'vim-scripts/python_match.vim', {
+        \ 'autoload': {
+        \   'filetypes': 'python',
+        \ }
+    \ }
+    NeoBundleLazy 'vim-scripts/uptime.vim', {
+        \ 'autoload': {
+        \   'commands': 'Uptime',
+        \ }
+    \ }
+    NeoBundleLazy 'vim-scripts/uri-ref', {
+        \ 'autoload': {
+        \   'filetypes': 'mail',
+        \ }
+    \ }
 
-NeoBundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git', {
-    \ 'external_command': 'gpg'
-\ }
+    NeoBundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git', {
+        \ 'external_command': 'gpg'
+    \ }
 
     NeoBundleSaveCache
 endif
