@@ -259,8 +259,8 @@ else
     else
         colorscheme elflord
     endif
-    if $TERM ==# "linux" || $TERM == "xterm" || $TERM == "st" ||
-        \ split($COLORFGBG . ";padding", ";")[0] == 15
+    if $TERM ==# "linux" || $TERM =~ "^xterm" || $TERM == "st" ||
+        \ $TERM =~ "^st-" || split($COLORFGBG . ";padding", ";")[0] == 15
         set background=dark
     else
         set background=light
