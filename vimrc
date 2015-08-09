@@ -26,6 +26,13 @@ endif
 let g:neobundle#types#git#default_protocol='git'
 call neobundle#begin(expand('~/.vim/external/', 1))
 source ~/.vim/neobundle.vim
+
+" Nasty bundled packages {{{
+" These packages are being removed, either by finding a usable remote location
+" or by deletion.
+NeoBundleLocal ~/.vim/internal/
+" }}}
+
 call neobundle#end()
 
 " Find appropriate directory for data files, this used to be handled by
@@ -575,12 +582,6 @@ command! ShowHighlightGroup
     \ '> trans<' . synIDattr(synID(line("."), col("."), 0), "name") .
     \ "> lo<" . synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name") .
     \ ">"
-" }}}
-
-" Nasty bundled packages {{{
-" These packages are being removed, either by finding a usable remote location
-" or by deletion.
-NeoBundleLocal ~/.vim/internal/
 " }}}
 
 " Read all configs for external packages
