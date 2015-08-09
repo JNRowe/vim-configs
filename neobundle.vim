@@ -1,8 +1,4 @@
-autocmd BufWritePost ~/.vim/neobundle.vim source ~/.vim/neobundle.vim
-
-if neobundle#has_fresh_cache('~/.vim/neobundle.vim')
-    NeoBundleLoadCache
-else
+if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundleFetch 'Shougo/neobundle.vim'
 
     NeoBundle 'JNRowe/vim-jnrowe'
