@@ -1,19 +1,22 @@
 CTAGS ::= exuberant-ctags
 
+LUA_SOURCES ::= $(wildcard /usr/lib/lua/* /usr/share/lua/*)
+PYTHON_SOURCES ::= $(wildcard /usr/lib/python[0-9]*)
+RUBY_SOURCES ::= $(wildcard /usr/lib/ruby/[0-9]*)
 TARGETS ::= doc/tags tags/libc.ctags \
 	$(patsubst /usr/share/lua/%, tags/lua%.ctags, \
-		$(wildcard /usr/share/lua/*)) \
-	$(patsubst /usr/lib/%, tags/%.ctags, $(wildcard /usr/lib/python[0-9]*)) \
-	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, \
-		$(wildcard /usr/lib/ruby/[0-9]*))
+		$(LUA_SOURCES)) \
+	$(patsubst /usr/lib/%, tags/%.ctags, $(PYTHON_SOURCES)) \
+	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, $(RUBY_SOURCES))
 
-HTML ::= $(patsubst %.rst, %.html, $(wildcard *.rst))
+RST_SOURCES ::= $(wildcard *.rst)
+HTML ::= $(RST_SOURCES:.rst=.html)
 
 ifdef QUIET
 SILENT ::= @
 endif
 
-.PHONY: clean init-external update-external
+.PHONY: clean init-external update-external display_sources
 
 all: $(TARGETS) $(HTML)
 
@@ -61,3 +64,7 @@ init-external:
 update-external:
 	$(info - Updating plugin bundles)
 	vim -c ':NeoBundleUpdate' -c ':qa'
+
+display_sources:
+	@echo $(realpath $(LUA_SOURCES) $(PYTHON_SOURCES) $(RUBY_SOURCES) \
+	        $(RST_SOURCES))
