@@ -23,25 +23,19 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'Lokaltog/vim-easymotion'
 
     NeoBundleLazy 'Raimondi/delimitMate', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ }
+        \ 'on_i': 1,
     \ }
 
     if has('lua')
         NeoBundleLazy 'Shougo/neocomplete.vim', {
-            \ 'autoload': {
-            \   'insert': 1,
-            \ },
             \ 'disabled': !has('lua'),
+            \ 'on_i': 1,
             \ 'vim_version':'7.3.885',
         \ }
     else
         NeoBundleLazy 'Shougo/neocomplcache', {
-            \ 'autoload': {
-            \   'insert': 1,
-            \ },
             \ 'disabled': has('lua'),
+            \ 'on_i': 1,
         \ }
     endif
 
@@ -50,21 +44,15 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'Shougo/neosnippet', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ },
         \ 'depends': [
         \   ['Shougo/context_filetype.vim', {
-        \       'autoload': {
-        \           'insert': 1,
-        \       },
+        \       'on_i': 1,
         \   }],
         \   ['Shougo/neosnippet-snippets', {
-        \       'autoload': {
-        \           'insert': 1,
-        \       },
+        \       'on_i': 1,
         \   }],
         \ ],
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'Shougo/unite.vim', {
@@ -75,18 +63,14 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'airblade/vim-gitgutter', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ },
         \ 'disabled': !has('signs'),
         \ 'external_command': 'git',
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'bitc/vim-bad-whitespace', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ },
         \ 'on_cmd': 'ToggleBadWhitespace',
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'blindFS/vim-taskwarrior', {
@@ -127,10 +111,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'editorconfig/editorconfig-vim', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ },
         \ 'disabled': !has('python'),
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
@@ -147,9 +129,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'ervandew/supertab', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ }
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'godlygeek/tabular', {
@@ -186,9 +166,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'jceb/vim-fastwordcompleter', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ }
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'junkblocker/patchreview-vim', {
@@ -244,10 +222,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'scrooloose/syntastic', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ },
         \ 'disabled': !has('quickfix'),
+        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'sjl/clam.vim', {
@@ -261,9 +237,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'spolu/dwm.vim'
 
     NeoBundle 'terryma/vim-multiple-cursors' , {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ }
+        \ 'on_i': 1,
     \ }
 
     NeoBundle 'tpope/vim-characterize'
