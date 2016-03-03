@@ -179,6 +179,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \   'commands': 'XtermColorTable',
         \ }
     \ }
+
+    NeoBundle 'jamessan/vim-gnupg', {
+        \ 'external_command': 'gpg'
+    \ }
+
     NeoBundleLazy 'jceb/vim-fastwordcompleter', {
         \ 'autoload': {
         \   'insert': 1,
@@ -328,10 +333,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'autoload': {
         \   'filetypes': 'mail',
         \ }
-    \ }
-
-    NeoBundle 'git://gitorious.org/vim-gnupg/vim-gnupg.git', {
-        \ 'external_command': 'gpg'
     \ }
 
     NeoBundleSaveCache
