@@ -126,7 +126,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundleLazy 'editorconfig/editorconfig-vim', {
         \ 'autoload': {
         \   'insert': 1,
-        \ }
+        \ },
+        \ 'disabled': !has('python'),
     \ }
     NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
         \ 'autoload': {
