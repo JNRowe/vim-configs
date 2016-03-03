@@ -187,6 +187,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
+    NeoBundleLazy 'gabrielelana/vim-markdown', {
+        \ 'autoload': {
+        \   'filetypes': 'markdown',
+        \ }
+    \ }
+
     NeoBundleLazy 'gregsexton/gitv', {
         \ 'autoload': {
         \   'commands': 'Gitv',
