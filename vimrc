@@ -132,6 +132,7 @@ let &showbreak="» "
 
 " Syntax files settings {{{
 let g:erlang_highlight_special_atoms=1
+let g:is_posix=1 " Posix is a more realistic default for me
 let b:nroff_is_groff=1 " Default to groff
 let g:sh_fold_enabled=1 " Fold here-doc chunks
 let is_bash=1 " Default to bash for sh syntax
