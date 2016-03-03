@@ -13,9 +13,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'AndrewRadev/sideways.vim', {
-        \ 'autoload': {
-        \   'commands': ['SidewaysLeft', 'SidewaysRight'],
-        \ }
+        \ 'on_cmd': ['SidewaysLeft', 'SidewaysRight'],
     \ }
 
     NeoBundle 'JNRowe/vim-jnrowe', {
@@ -72,9 +70,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'Shougo/unite.vim', {
-        \ 'autoload': {
-        \   'commands': 'Unite',
-        \ }
+        \ 'on_cmd': 'Unite',
     \ }
     NeoBundleLazy 'Shougo/unite-outline', {
         \ 'autoload': {
@@ -92,23 +88,19 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
 
     NeoBundleLazy 'bitc/vim-bad-whitespace', {
         \ 'autoload': {
-        \   'commands': 'ToggleBadWhitespace',
         \   'insert': 1,
-        \ }
+        \ },
+        \ 'on_cmd': 'ToggleBadWhitespace',
     \ }
 
     NeoBundleLazy 'blindFS/vim-taskwarrior', {
-        \ 'autoload': {
-        \   'commands': ['TW', 'TWEditTaskrc'],
-        \ }
+        \ 'on_cmd': ['TW', 'TWEditTaskrc'],
     \ }
 
     NeoBundle 'bling/vim-airline'
 
     NeoBundleLazy 'chrisbra/NrrwRgn', {
-        \ 'autoload': {
-        \   'commands': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
-        \ }
+        \ 'on_cmd': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
     \ }
 
     NeoBundleLazy 'chrisbra/CheckAttach', {
@@ -122,18 +114,13 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'chrisbra/Recover.vim'
 
     NeoBundleLazy 'chrisbra/unicode.vim', {
-        \ 'autoload': {
-        \   'commands': ['Digraphs', 'SearchUnicode', 'UnicodeName',
-        \                'UnicodeTable'],
-        \ },
+        \ 'on_cmd': ['Digraphs', 'SearchUnicode', 'UnicodeName', 'UnicodeTable'],
     \ }
 
     NeoBundle 'chrisbra/vim_faq'
 
     NeoBundleLazy 'ciaranm/detectindent', {
-        \ 'autoload': {
-        \   'commands': 'DetectIndent',
-        \ }
+        \ 'on_cmd': 'Detectindent',
     \ }
 
     NeoBundle 'ciaranm/securemodelines'
@@ -160,9 +147,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'ervandew/regex', {
-        \ 'autoload': {
-        \   'commands': 'Regex',
-        \ }
+        \ 'on_cmd': 'Regex',
     \ }
 
     NeoBundleLazy 'ervandew/supertab', {
@@ -172,9 +157,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'godlygeek/tabular', {
-        \ 'autoload': {
-        \   'commands': ['Tabularize', 'AddTabularPipeline'],
-        \ }
+        \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
     \ }
 
     NeoBundleLazy 'gabrielelana/vim-markdown', {
@@ -182,16 +165,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'gregsexton/gitv', {
-        \ 'autoload': {
-        \   'commands': 'Gitv',
-        \ },
+        \ 'on_cmd': 'Gitv',
         \ 'depends': [
         \   ['tpope/vim-fugitive', {
         \       'augroup' : 'fugitive',
-        \       'autoload': {
-        \           'commands': ['Gblame', 'Gdiff', 'Git', 'Gcommit',
-        \                        'Glog', 'Gstatus'],
-        \       },
+        \       'on_cmd': ['Gblame', 'Gdiff', 'Git', 'Gcommit', 'Glog',
+        \                  'Gstatus'],
         \       'external_command': 'git'
         \   }],
         \ ],
@@ -203,9 +182,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'jceb/vim-editqf'
 
     NeoBundleLazy 'guns/xterm-color-table.vim', {
-        \ 'autoload': {
-        \   'commands': 'XtermColorTable',
-        \ }
+        \ 'on_cmd': 'XtermColorTable',
     \ }
 
     NeoBundle 'jamessan/vim-gnupg', {
@@ -219,9 +196,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'junkblocker/patchreview-vim', {
-        \ 'autoload': {
-        \   'commands': ['DiffReview', 'PatchReview'],
-        \ }
+        \ 'on_cmd': ['DiffReview', 'PatchReview'],
     \ }
 
     NeoBundle 'justincampbell/vim-eighties'
@@ -237,9 +212,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'majutsushi/tagbar', {
-        \ 'autoload': {
-        \   'commands': 'TagbarToggle',
-        \ }
+        \ 'on_cmd': 'TagbarToggle',
     \ }
 
     NeoBundle 'mhinz/vim-startify'
@@ -249,9 +222,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'mihaifm/vimpanel', {
-        \ 'autoload': {
-        \   'commands': ['VimpanelCreate', 'VimpanelLoad'],
-        \ }
+        \ 'on_cmd': ['VimpanelCreate', 'VimpanelLoad'],
     \ }
 
     NeoBundle 'mitsuhiko/vim-jinja', {
@@ -259,23 +230,17 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'mmozuras/vim-github-comment', {
-        \ 'autoload': {
-        \   'commands': 'GHComment',
-        \ },
+        \ 'on_cmd': 'GHComment',
         \ 'depends': 'mattn/webapi-vim',
     \ }
 
     NeoBundleLazy 'rking/ag.vim', {
-        \ 'autoload': {
-        \   'commands': ['Ag', 'grep'],
-        \ },
+        \ 'on_cmd': ['Ag', 'grep'],
         \ 'external_command': 'ag',
     \ }
 
     NeoBundleLazy 'scrooloose/nerdtree', {
-        \ 'autoload': {
-        \   'commands': ['NERDTreeFind', 'NERDTreeToggle'],
-        \ }
+        \ 'on_cmd': ['NERDTreeFind', 'NERDTreeToggle'],
     \ }
 
     NeoBundleLazy 'rust-lang/rust.vim', {
@@ -290,15 +255,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'sjl/clam.vim', {
-        \ 'autoload': {
-        \   'commands': 'Clam',
-        \ }
+        \ 'on_cmd': 'Clam',
     \ }
 
     NeoBundle 'sjl/gundo.vim', {
-        \ 'autoload': {
-        \   'commands': 'GundoToggle',
-        \ }
+        \ 'on_cmd': 'GundoToggle',
     \ }
 
     NeoBundle 'spolu/dwm.vim'
@@ -362,9 +323,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'vim-scripts/ZoomWin'
 
     NeoBundleLazy 'vim-scripts/dbext.vim', {
-        \ 'autoload': {
-        \   'commands': 'DBPromptForBufferParameters',
-        \ }
+        \ 'on_cmd': 'DBPromptForBufferParameters',
     \ }
 
     NeoBundle 'vim-scripts/python_match.vim', {
@@ -372,9 +331,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'vim-scripts/uptime.vim', {
-        \ 'autoload': {
-        \   'commands': 'Uptime',
-        \ }
+        \ 'on_cmd': 'Uptime',
     \ }
 
     NeoBundleLazy 'vim-scripts/uri-ref', {
@@ -382,9 +339,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'vim-utils/vim-man', {
-        \ 'autoload': {
-        \   'commands': ['Man', 'Vman'],
-        \ }
+        \ 'on_cmd': ['Man', 'Vman'],
     \ }
 
     NeoBundleSaveCache
