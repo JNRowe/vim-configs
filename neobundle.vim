@@ -102,7 +102,14 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
     NeoBundle 'chrisbra/Recover.vim'
-    NeoBundle 'chrisbra/unicode.vim'
+
+    NeoBundleLazy 'chrisbra/unicode.vim', {
+        \ 'autoload': {
+        \   'commands': ['Digraphs', 'SearchUnicode', 'UnicodeName',
+        \                'UnicodeTable'],
+        \ },
+    \ }
+
     NeoBundle 'chrisbra/vim_faq'
     NeoBundleLazy 'ciaranm/detectindent', {
         \ 'autoload': {
