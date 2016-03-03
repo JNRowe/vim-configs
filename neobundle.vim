@@ -113,7 +113,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'chrisbra/vim_faq'
     NeoBundleLazy 'ciaranm/detectindent', {
         \ 'autoload': {
-        \   'insert': 1,
+        \   'commands': 'DetectIndent',
         \ }
     \ }
     NeoBundle 'ciaranm/securemodelines'
