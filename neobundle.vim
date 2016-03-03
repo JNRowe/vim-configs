@@ -335,5 +335,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
+    NeoBundleLazy 'vim-utils/vim-man', {
+        \ 'autoload': {
+        \   'commands': ['Man', 'Vman'],
+        \ }
+    \ }
+
     NeoBundleSaveCache
 endif
