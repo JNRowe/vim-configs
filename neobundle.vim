@@ -175,12 +175,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
-    NeoBundleLazy 'gregsexton/MatchTag', {
-        \ 'autoload': {
-        \   'filetypes': ['html', 'xml', 'xsl'],
-        \ }
-    \ }
-
     NeoBundle 'gregsexton/gitv', {
         \ 'autoload':{
         \   'commands': 'Gitv',
