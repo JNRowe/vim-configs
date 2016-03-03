@@ -46,7 +46,7 @@ set noautowriteall
 set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = expand(g:xdg_data_dir) . '/backup//,' . &backupdir
-if has("ballooneval")
+if has("balloon_eval")
     set ballooneval
 endif
 set colorcolumn=+1
