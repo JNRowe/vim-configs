@@ -86,7 +86,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundle 'bling/vim-airline'
-    NeoBundle 'bling/vim-bufferline'
     NeoBundleLazy 'chrisbra/NrrwRgn', {
         \ 'autoload': {
         \   'commands': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
