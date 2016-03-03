@@ -245,7 +245,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundleLazy 'scrooloose/syntastic', {
         \ 'autoload': {
         \   'insert': 1,
-        \ }
+        \ },
+        \ 'disabled': !has('quickfix'),
     \ }
     NeoBundleLazy 'sjl/clam.vim', {
         \ 'autoload': {
