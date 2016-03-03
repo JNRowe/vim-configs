@@ -98,6 +98,7 @@ set pastetoggle=<F4>
 set report=0
 set shiftround
 set shiftwidth=4
+set showcmd
 set showfulltag
 set showtabline=1
 set smartcase
