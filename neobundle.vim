@@ -12,6 +12,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'vim_version': '7.2',
     \ }
 
+    NeoBundleLazy 'AndrewRadev/sideways.vim', {
+        \ 'autoload': {
+        \   'commands': ['SidewaysLeft', 'SidewaysRight'],
+        \ }
+    \ }
+
     NeoBundle 'JNRowe/vim-jnrowe', {
         \ 'gui': 1,
     \ }
