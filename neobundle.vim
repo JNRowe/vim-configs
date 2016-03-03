@@ -22,12 +22,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \   'insert': 1,
         \ }
     \ }
-    NeoBundleLazy 'Shougo/junkfile.vim', {
-        \ 'autoload': {
-        \   'commands': 'JunkfileOpen',
-        \   'unite_sources': ['junkfile', 'junkfile/new']
-        \ }
-    \ }
     if has('lua')
         NeoBundleLazy 'Shougo/neocomplete.vim', {
             \ 'autoload': {
