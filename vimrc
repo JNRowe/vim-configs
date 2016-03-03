@@ -115,7 +115,10 @@ set textwidth=80
 set tildeop
 set title
 set ttyfast
-let &undodir = expand(g:xdg_data_dir) . '/undo//,' . &undodir
+if has("persistent_undo")
+    set undofile
+    let &undodir = expand(g:xdg_data_dir) . '/undo//,' . &undodir
+endif
 set viminfo='1000,<1000,h,n$XDG_DATA_HOME/vim/tmp/viminfo
 set virtualedit=block
 set whichwrap+=<,>,[,]
