@@ -172,6 +172,8 @@ if has("autocmd")
 
     autocmd FileType man set nospell
 
+    autocmd FileType gitconfig set noexpandtab
+
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
