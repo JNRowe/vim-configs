@@ -290,10 +290,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': 'DBPromptForBufferParameters',
     \ }
 
-    NeoBundleLazy 'vim-scripts/uptime.vim', {
-        \ 'on_cmd': 'Uptime',
-    \ }
-
     NeoBundleLazy 'vim-scripts/uri-ref', {
         \ 'on_ft': 'mail',
     \ }
