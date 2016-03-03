@@ -23,7 +23,7 @@ if has('vim_starting')
 endif
 
 " Fire up neobundle, and setup plugins
-let g:neobundle#types#git#default_protocol='git'
+let g:neobundle#types#git#default_protocol='https'
 call neobundle#begin(expand('~/.vim/external/', 1))
 source ~/.vim/neobundle.vim
 
