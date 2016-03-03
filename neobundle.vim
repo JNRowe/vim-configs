@@ -261,14 +261,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'depends': 'mattn/webapi-vim',
     \ }
 
-    if executable('ag')
-        NeoBundleLazy 'rking/ag.vim', {
-            \ 'autoload': {
-            \   'commands': ['Ag', 'grep'],
-            \ },
-            \ 'external_command': 'ag',
-        \ }
-    endif
+    NeoBundleLazy 'rking/ag.vim', {
+        \ 'autoload': {
+        \   'commands': ['Ag', 'grep'],
+        \ },
+        \ 'external_command': 'ag',
+    \ }
 
     NeoBundleLazy 'scrooloose/nerdtree', {
         \ 'autoload': {
