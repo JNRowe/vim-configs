@@ -12,7 +12,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'vim_version': '7.2',
     \ }
 
-    NeoBundle 'JNRowe/vim-jnrowe'
+    NeoBundle 'JNRowe/vim-jnrowe', {
+        \ 'gui': 1,
+    \ }
+
     NeoBundle 'Lokaltog/vim-easymotion'
     NeoBundleLazy 'Raimondi/delimitMate', {
         \ 'autoload': {
