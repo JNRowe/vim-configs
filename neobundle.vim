@@ -296,6 +296,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
 
     NeoBundle 'vim-utils/vim-husk'
 
+    NeoBundle 'vim-utils/vim-line'
+
     NeoBundleLazy 'vim-utils/vim-man', {
         \ 'on_cmd': ['Man', 'Vman'],
     \ }
