@@ -2,7 +2,7 @@ Plugins I use
 =============
 
 These are all hosted on GitHub_ [#]_.  You should try at least a few of them,
-they make your life far simpler!
+they may make your life far simpler!
 
 ``JNRowe/vim-jnrowe``
 ---------------------
