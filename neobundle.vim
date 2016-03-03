@@ -65,9 +65,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \   'unite_sources': 'outline'
         \ }
     \ }
-    NeoBundle 'Yggdroot/indentLine', {
-        \ 'disabled': !has('conceal'),
-    \ }
     NeoBundleLazy 'airblade/vim-gitgutter', {
         \ 'autoload': {
         \   'insert': 1,
