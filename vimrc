@@ -59,7 +59,6 @@ set cryptmethod=blowfish
 set cursorline
 set dictionary+=/usr/share/dict/words
 let &directory = expand(g:xdg_data_dir) . '/swap//,' . &directory
-set directory=~/.xdg/local/vim/swap//,.,~/tmp,/var/tmp,/tmp
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
