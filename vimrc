@@ -179,7 +179,10 @@ if has("autocmd")
     autocmd BufWritePost .vimrc source %
 
     " Attempt filetype detection after writing.
-    autocmd BufWritePost * if empty(&ft) | filetype detect | endif
+    autocmd BufWritePost *
+        \ if empty(&filetype) |
+        \   filetype detect |
+        \ endif
 
     " Automatically chmod +x shell scripts
     autocmd BufWritePost *.sh silent !chmod +x %
