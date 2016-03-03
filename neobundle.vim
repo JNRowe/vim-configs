@@ -274,6 +274,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
+    NeoBundleLazy 'rust-lang/rust.vim', {
+        \ 'autoload': {
+        \   'filetypes': 'rust',
+        \ }
+    \ }
+
     NeoBundleLazy 'scrooloose/syntastic', {
         \ 'autoload': {
         \   'insert': 1,
