@@ -47,6 +47,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     endif
 
+    NeoBundleLazy 'Shougo/neomru.vim', {
+        \ 'autoload': {
+        \   'unite_sources': ['neomru/directory', 'neomru/file'],
+        \ }
+    \ }
+
     NeoBundleLazy 'Shougo/neosnippet', {
         \ 'autoload': {
         \   'insert': 1,
