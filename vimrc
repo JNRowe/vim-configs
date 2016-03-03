@@ -43,7 +43,7 @@ let g:xdg_data_dir = empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_H
 " General settings {{{
 set autochdir
 set noautowriteall
-set nobackup
+set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = expand(g:xdg_data_dir) . '/backup//,' . &backupdir
 if has("ballooneval")
