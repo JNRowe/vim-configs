@@ -112,15 +112,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'chrisbra/CheckAttach', {
-        \ 'autoload': {
-        \   'filetypes': 'mail',
-        \ }
+        \ 'on_ft': 'mail',
     \ }
 
     NeoBundleLazy 'chrisbra/csv.vim', {
-        \ 'autoload': {
-        \   'filetypes': 'csv',
-        \ }
+        \ 'on_ft': 'csv',
     \ }
 
     NeoBundle 'chrisbra/Recover.vim'
@@ -143,9 +139,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'ciaranm/securemodelines'
 
     NeoBundleLazy 'davidhalter/jedi-vim', {
-        \ 'autoload': {
-        \   'filetypes': 'python',
-        \ },
+        \ 'on_ft': 'python',
         \ 'disabled': !has('python'),
     \ }
 
@@ -157,16 +151,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
-        \ 'autoload': {
-        \   'filetypes': 'python',
-        \ },
+        \ 'on_ft': 'python',
         \ 'disabled': !has('conceal'),
     \ }
 
     NeoBundleLazy 'elzr/vim-json', {
-        \ 'autoload': {
-        \   'filetypes': 'json',
-        \ }
+        \ 'on_ft': 'json',
     \ }
 
     NeoBundleLazy 'ervandew/regex', {
@@ -188,9 +178,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'gabrielelana/vim-markdown', {
-        \ 'autoload': {
-        \   'filetypes': 'markdown',
-        \ }
+        \ 'on_ft': 'markdown',
     \ }
 
     NeoBundleLazy 'gregsexton/gitv', {
@@ -241,15 +229,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'kien/rainbow_parentheses.vim'
 
     NeoBundleLazy 'leafo/moonscript-vim', {
-        \ 'autoload': {
-        \   'filetypes': 'moon',
-        \ }
+        \ 'on_ft': 'moon',
     \ }
 
     NeoBundleLazy 'ledger/vim-ledger', {
-        \ 'autoload': {
-        \   'filetypes': 'ledger',
-        \ }
+        \ 'on_ft': 'ledger',
     \ }
 
     NeoBundleLazy 'majutsushi/tagbar', {
@@ -261,9 +245,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'mhinz/vim-startify'
 
     NeoBundleLazy 'michaeljsmith/vim-indent-object', {
-        \ 'autoload': {
-        \   'filetypes': 'python',
-        \ }
+        \ 'on_ft': 'python',
     \ }
 
     NeoBundleLazy 'mihaifm/vimpanel', {
@@ -273,9 +255,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundle 'mitsuhiko/vim-jinja', {
-        \ 'autoload': {
-        \   'filetypes': 'jinja',
-        \ }
+        \ 'on_ft': 'jinja',
     \ }
 
     NeoBundleLazy 'mmozuras/vim-github-comment', {
@@ -299,9 +279,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'rust-lang/rust.vim', {
-        \ 'autoload': {
-        \   'filetypes': 'rust',
-        \ }
+        \ 'on_ft': 'rust',
     \ }
 
     NeoBundleLazy 'scrooloose/syntastic', {
@@ -336,15 +314,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'tpope/vim-commentary'
 
     NeoBundle 'tpope/vim-jdaddy', {
-        \ 'autoload': {
-        \   'filetypes': 'json',
-        \ }
+        \ 'on_ft': 'json',
     \ }
 
     NeoBundle 'tpope/vim-ragtag', {
-        \ 'autoload': {
-        \   'filetypes': ['html', 'xml', 'xsl'],
-        \ }
+        \ 'on_ft': ['html', 'xml', 'xsl'],
     \ }
 
     NeoBundle 'tpope/vim-repeat'
@@ -368,15 +342,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'vim-scripts/DotOutlineTree', {
-        \ 'autoload': {
-        \   'filetypes': 'rst',
-        \ }
+        \ 'on_ft': 'rst',
     \ }
 
     NeoBundle 'vim-scripts/RST-Tables', {
-        \ 'autoload': {
-        \   'filetypes': 'rst',
-        \ }
+        \ 'on_ft': 'rst',
     \ }
 
     NeoBundleLazy 'vim-scripts/TaskList.vim', {
@@ -398,9 +368,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundle 'vim-scripts/python_match.vim', {
-        \ 'autoload': {
-        \   'filetypes': 'python',
-        \ }
+        \ 'on_ft': 'python',
     \ }
 
     NeoBundleLazy 'vim-scripts/uptime.vim', {
@@ -410,9 +378,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'vim-scripts/uri-ref', {
-        \ 'autoload': {
-        \   'filetypes': 'mail',
-        \ }
+        \ 'on_ft': 'mail',
     \ }
 
     NeoBundleLazy 'vim-utils/vim-man', {
