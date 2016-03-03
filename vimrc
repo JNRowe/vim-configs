@@ -254,11 +254,7 @@ else
     " Set up the menus so emenu works properly
     source $VIMRUNTIME/menu.vim
 
-    if &t_Co >= 88
-        colorscheme jnrowe
-    else
-        colorscheme elflord
-    endif
+    colorscheme elflord
     if $TERM ==# "linux" || $TERM =~ "^xterm" || $TERM == "st" ||
         \ $TERM =~ "^st-" || split($COLORFGBG . ";padding", ";")[0] == 15
         set background=dark
