@@ -37,6 +37,7 @@ call neobundle#end()
 
 " Find appropriate directory for data files, this used to be handled by
 " vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
+let g:xdg_cache_dir = empty($XDG_CACHE_HOME) ? '~/.cache/vim' : '$XDG_DATA_HOME/vim'
 let g:xdg_data_dir = empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
 
 " General settings {{{

@@ -1,2 +1,2 @@
 let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#data_directory = expand('$XDG_CACHE_HOME') . '/vim/tmp/neocomplete'
+let g:neocomplete#data_directory = g:xdg_cache_dir . '/tmp/neocomplete'
