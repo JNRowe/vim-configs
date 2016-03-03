@@ -175,8 +175,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
-    NeoBundle 'gregsexton/gitv', {
-        \ 'autoload':{
+    NeoBundleLazy 'gregsexton/gitv', {
+        \ 'autoload': {
         \   'commands': 'Gitv',
         \ },
         \ 'depends': [
