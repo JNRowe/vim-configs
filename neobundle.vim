@@ -46,9 +46,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     endif
 
     NeoBundleLazy 'Shougo/neomru.vim', {
-        \ 'autoload': {
-        \   'unite_sources': ['neomru/directory', 'neomru/file'],
-        \ }
+        \ 'on_unite': ['neomru/directory', 'neomru/file'],
     \ }
 
     NeoBundleLazy 'Shougo/neosnippet', {
@@ -73,9 +71,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': 'Unite',
     \ }
     NeoBundleLazy 'Shougo/unite-outline', {
-        \ 'autoload': {
-        \   'unite_sources': 'outline'
-        \ }
+        \ 'on_unite': 'outline',
     \ }
 
     NeoBundleLazy 'airblade/vim-gitgutter', {
@@ -291,15 +287,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'tpope/vim-surround'
 
     NeoBundleLazy 'tsukkee/unite-tag', {
-        \ 'autoload': {
-        \   'unite_sources': ['tag', 'tag/file']
-        \ }
+        \ 'on_unite': ['tag', 'tag/file'],
     \ }
 
     NeoBundleLazy 'ujihisa/unite-colorscheme', {
-        \ 'autoload': {
-        \   'unite_sources': 'colorscheme'
-        \ }
+        \ 'on_unite': 'colorscheme'
     \ }
 
     NeoBundleLazy 'vim-scripts/DotOutlineTree', {
