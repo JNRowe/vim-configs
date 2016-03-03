@@ -10,6 +10,6 @@ let g:startify_bookmarks = [
     \ '~/.vim/neobundle.vim',
 \ ]
 let g:startify_enable_special = 0
-let g:startify_session_dir = expand('$XDG_DATA_HOME') . '/vim/sessions'
+let g:startify_session_dir = g:xdg_data_dir . '/sessions'
 
 nnoremap <S-F1> :Startify<cr>
