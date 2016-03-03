@@ -74,6 +74,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
     NeoBundleLazy 'bitc/vim-bad-whitespace', {
         \ 'autoload': {
+        \   'commands': 'ToggleBadWhitespace',
         \   'insert': 1,
         \ }
     \ }
