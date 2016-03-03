@@ -450,6 +450,10 @@ map Y y$
 " Insert literal tab, for that once a year when it makes sense
 inoremap <silent> <S-Tab> <C-v><Tab>
 
+" Regrab selection after {de,in}dent for simpler repeating
+vnoremap < <gv
+vnoremap > >gv
+
 " <home> darts between start of line and start of text
 inoremap <silent> <home> <C-o>:call HomeSkip()<CR>
 nnoremap <silent> <home> :call HomeSkip()<CR>
