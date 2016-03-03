@@ -12,8 +12,8 @@ issue_, or drop me an email_.
 Installation
 ------------
 
-Do not install these files!!  They'll likely break your current set up and *may*
-even eat your dog.
+Do not blindly install this repository!!  It'll likely break your current
+set up and *may* even eat your dog.
 
 That being said if your dog doesn't mean that much to you::
 
