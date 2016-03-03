@@ -42,7 +42,18 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'autoload': {
         \   'insert': 1,
         \ },
-        \ 'depends': ['Shougo/context_filetype.vim', 'Shougo/neosnippet-snippets'],
+        \ 'depends': [
+        \   ['Shougo/context_filetype.vim', {
+        \       'autoload': {
+        \           'insert': 1,
+        \       },
+        \   }],
+        \   ['Shougo/neosnippet-snippets', {
+        \       'autoload': {
+        \           'insert': 1,
+        \       },
+        \   }],
+        \ ],
     \ }
     NeoBundleLazy 'Shougo/unite.vim', {
         \ 'autoload': {
