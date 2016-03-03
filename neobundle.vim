@@ -311,7 +311,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'vim-scripts/TaskList.vim', {
-        \ 'mappings': '<Plug>TaskList',
+        \ 'on_map': '<Plug>TaskList',
     \ }
 
     NeoBundleLazy 'vim-scripts/Toggle', {
