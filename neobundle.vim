@@ -169,12 +169,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
-    NeoBundle 'fs111/pydoc.vim', {
-        \ 'autoload': {
-        \   'filetypes': 'python',
-        \ },
-    \ }
-
     NeoBundleLazy 'godlygeek/tabular', {
         \ 'autoload': {
         \   'commands': ['Tabularize', 'AddTabularPipeline'],
