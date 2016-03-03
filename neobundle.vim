@@ -240,13 +240,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
-    NeoBundleLazy 'mattn/gist-vim', {
-        \ 'autoload': {
-        \   'commands': 'Gist'
-        \ },
-        \ 'depends': 'mattn/webapi-vim',
-    \ }
-
     NeoBundle 'mhinz/vim-startify'
 
     NeoBundleLazy 'michaeljsmith/vim-indent-object', {
