@@ -137,6 +137,7 @@ let b:nroff_is_groff=1 " Default to groff
 let g:sh_fold_enabled=7 " Fold as much as possible
 let g:vimsyn_embed='lPr' " lua/Python/ruby only embedded syntax
 let g:xml_syntax_folding=1
+let sh_minlines=400
 let is_bash=1 " Default to bash for sh syntax
 let python_highlight_all=1 " Highlight everything possible for python
 " }}}
