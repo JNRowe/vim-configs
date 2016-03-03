@@ -1,5 +1,16 @@
 if neobundle#load_cache('~/.vim/neobundle.vim')
-    NeoBundleFetch 'Shougo/neobundle.vim'
+    NeoBundleLazy 'Shougo/neobundle.vim', {
+        \ 'depends': [
+        \   ['Shougo/vimproc', {
+        \       'build': {
+        \           'mac': 'make',
+        \           'linux': 'make',
+        \       },
+        \   }],
+        \ ],
+        \ 'fetch': 1,
+        \ 'vim_version': '7.2',
+    \ }
 
     NeoBundle 'JNRowe/vim-jnrowe'
     NeoBundle 'Lokaltog/vim-easymotion'
@@ -53,12 +64,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'autoload': {
         \   'unite_sources': 'outline'
         \ }
-    \ }
-    NeoBundle 'Shougo/vimproc', {
-        \ 'build': {
-        \   'mac': 'make -f make_mac.mak',
-        \   'linux': 'make',
-        \ },
     \ }
     NeoBundle 'Yggdroot/indentLine', {
         \ 'disabled': !has('conceal'),
