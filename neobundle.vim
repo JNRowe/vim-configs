@@ -22,14 +22,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \   'insert': 1,
         \ }
     \ }
-    NeoBundleLazy 'Rykka/colorv.vim', {
-        \ 'autoload': {
-        \   'commands': ['ColorV', 'ColorVPreview'],
-        \   'filetypes': 'css',
-        \ },
-        \ 'gui': 1,
-        \ 'stay_same': 1,
-    \ }
     NeoBundleLazy 'Shougo/junkfile.vim', {
         \ 'autoload': {
         \   'commands': 'JunkfileOpen',
