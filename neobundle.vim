@@ -191,7 +191,16 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'autoload':{
         \   'commands': 'Gitv',
         \ },
-        \ 'depends': ['tpope/vim-fugitive'],
+        \ 'depends': [
+        \   ['tpope/vim-fugitive', {
+        \       'augroup' : 'fugitive',
+        \       'autoload': {
+        \           'commands': ['Gblame', 'Gdiff', 'Git', 'Gcommit',
+        \                        'Glog', 'Gstatus'],
+        \       },
+        \       'external_command': 'git'
+        \   }],
+        \ ],
         \ 'external_command': 'git',
     \ }
 
