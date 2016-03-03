@@ -315,9 +315,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'vim-scripts/Toggle', {
-        \ 'autoload': {
-        \   'functions': 'Toggle',
-        \ }
+        \ 'on_func': 'Toggle',
     \ }
 
     NeoBundle 'vim-scripts/ZoomWin'
