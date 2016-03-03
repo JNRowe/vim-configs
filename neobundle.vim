@@ -78,6 +78,13 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \   'insert': 1,
         \ }
     \ }
+
+    NeoBundleLazy 'blindFS/vim-taskwarrior', {
+        \ 'autoload': {
+        \   'commands': ['TW', 'TWEditTaskrc'],
+        \ }
+    \ }
+
     NeoBundle 'bling/vim-airline'
     NeoBundle 'bling/vim-bufferline'
     NeoBundleLazy 'chrisbra/NrrwRgn', {
