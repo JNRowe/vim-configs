@@ -120,7 +120,8 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundleLazy 'davidhalter/jedi-vim', {
         \ 'autoload': {
         \   'filetypes': 'python',
-        \ }
+        \ },
+        \ 'disabled': !has('python'),
     \ }
     NeoBundleLazy 'editorconfig/editorconfig-vim', {
         \ 'autoload': {
