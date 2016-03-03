@@ -1,1 +1,1 @@
-let g:cache_dir_options = {"cache_dir": $XDG_CACHE_HOME . '/vim/tmp/'}
+let g:cache_dir_options = {"cache_dir": g:xdg_cache_dir . '/tmp/'}
