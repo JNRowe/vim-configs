@@ -272,6 +272,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ }
     \ }
 
+    NeoBundle 'mitsuhiko/vim-jinja', {
+        \ 'autoload': {
+        \   'filetypes': 'jinja',
+        \ }
+    \ }
+
     NeoBundleLazy 'mmozuras/vim-github-comment', {
         \ 'autoload': {
         \   'commands': 'GHComment',
