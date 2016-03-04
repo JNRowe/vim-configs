@@ -180,6 +180,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': 'TagbarToggle',
     \ }
 
+    NeoBundle 'kshenoy/vim-signature', {
+        \ 'disabled': !has('signs'),
+    \ }
+
     NeoBundle 'mhinz/vim-startify'
 
     NeoBundleLazy 'michaeljsmith/vim-indent-object', {
