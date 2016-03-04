@@ -64,10 +64,9 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'build': 'make',
     \ }
 
-    NeoBundleLazy 'airblade/vim-gitgutter', {
+    NeoBundle 'airblade/vim-gitgutter', {
         \ 'disabled': !has('signs'),
         \ 'external_command': 'git',
-        \ 'on_i': 1,
     \ }
 
     NeoBundleLazy 'bitc/vim-bad-whitespace', {
