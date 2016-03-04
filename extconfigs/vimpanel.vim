@@ -1,1 +1,1 @@
-let g:VimpanelStorage = g:xdg_data_dir . "/vimpanel"
+let g:VimpanelStorage = g:vim_data_dir . "/vimpanel"
