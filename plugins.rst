@@ -465,16 +465,6 @@ Ask yourself why you can't figure out how to use ``tabular`` to make this plugin
 totally redundant.  Until then enjoy the speed of writing tables like you use
 a word processor.
 
-``vim-scripts/TaskList.vim``
-----------------------------
-
-:repo: https://github.com/vim-scripts/TaskList.vim
-
-    "Eclipse like task list"
-
-Scare yourself silly when you open *that* co-workers file who marks everything
-as ``FIXME`` instead of - you know - fixing it.
-
 ``vim-scripts/Toggle``
 ----------------------
 
