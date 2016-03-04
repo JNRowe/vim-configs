@@ -1,13 +1,6 @@
 if neobundle#load_cache('~/.vim/neobundle.vim')
-    NeoBundleLazy 'Shougo/neobundle.vim', {
-        \ 'depends': [
-        \   ['Shougo/vimproc', {
-        \       'build': {
-        \           'mac': 'make',
-        \           'linux': 'make',
-        \       },
-        \   }],
-        \ ],
+    NeoBundle 'Shougo/neobundle.vim', {
+        \ 'depends': 'Shougo/vimproc',
         \ 'fetch': 1,
         \ 'vim_version': '7.2',
     \ }
@@ -23,6 +16,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'Lokaltog/vim-easymotion'
 
     NeoBundleLazy 'Raimondi/delimitMate', {
+        \ 'on_i': 1,
+    \ }
+
+    NeoBundleLazy 'Shougo/context_filetype.vim', {
         \ 'on_i': 1,
     \ }
 
@@ -44,14 +41,13 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
 
     NeoBundleLazy 'Shougo/neosnippet', {
-        \ 'depends': [
-        \   ['Shougo/context_filetype.vim', {
-        \       'on_i': 1,
-        \   }],
-        \   ['Shougo/neosnippet-snippets', {
-        \       'on_i': 1,
-        \   }],
+        \ 'depends': ['Shougo/context_filetype.vim',
+        \             'Shougo/neosnippet-snippets'
         \ ],
+        \ 'on_i': 1,
+    \ }
+
+    NeoBundleLazy 'Shougo/neosnippet-snippets', {
         \ 'on_i': 1,
     \ }
 
@@ -60,6 +56,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     \ }
     NeoBundleLazy 'Shougo/unite-outline', {
         \ 'on_unite': 'outline',
+    \ }
+
+    NeoBundle 'Shougo/vimproc', {
+        \ 'build': 'make',
     \ }
 
     NeoBundleLazy 'airblade/vim-gitgutter', {
@@ -142,14 +142,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
 
     NeoBundleLazy 'gregsexton/gitv', {
         \ 'on_cmd': 'Gitv',
-        \ 'depends': [
-        \   ['tpope/vim-fugitive', {
-        \       'augroup' : 'fugitive',
-        \       'on_cmd': ['Gblame', 'Gdiff', 'Git', 'Gcommit', 'Glog',
-        \                  'Gstatus'],
-        \       'external_command': 'git'
-        \   }],
-        \ ],
+        \ 'depends': 'tpope/vim-fugitive',
         \ 'external_command': 'git',
     \ }
 
@@ -243,6 +236,12 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     NeoBundle 'tpope/vim-characterize'
 
     NeoBundle 'tpope/vim-commentary'
+
+    NeoBundleLazy 'tpope/vim-fugitive', {
+        \ 'augroup' : 'fugitive',
+        \ 'on_cmd': ['Gblame', 'Gdiff', 'Git', 'Gcommit', 'Glog', 'Gstatus'],
+        \ 'external_command': 'git'
+    \ }
 
     NeoBundle 'tpope/vim-jdaddy', {
         \ 'on_ft': 'json',
