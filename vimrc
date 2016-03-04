@@ -76,7 +76,7 @@ if executable('ag')
     set grepprg=ag\ --vimgrep\ $*
     set grepformat=%f:%l:%c:%m
 else
-    set grepprg=grep\ -nH\ --exclude='.*.swp'\ --exclude=tags\ $*
+    let &grepprg="grep -nH --exclude-from=" . g:xdg_data_dir . "/grep_excludes $* /dev/null"
 endif
 set guiheadroom=0
 set guioptions+=chR
