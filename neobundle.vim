@@ -84,10 +84,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
     \ }
 
-    NeoBundleLazy 'chrisbra/CheckAttach', {
-        \ 'on_ft': 'mail',
-    \ }
-
     NeoBundleLazy 'chrisbra/csv.vim', {
         \ 'on_ft': 'csv',
     \ }
