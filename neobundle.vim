@@ -207,6 +207,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'depends': 'mattn/webapi-vim',
     \ }
 
+    NeoBundleLazy 'moll/vim-bbye', {
+        \ 'on_cmd': 'Bdelete',
+    \ }
+
     NeoBundleLazy 'rking/ag.vim', {
         \ 'on_cmd': ['Ag', 'grep'],
         \ 'external_command': 'ag',
