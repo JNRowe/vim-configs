@@ -289,10 +289,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_ft': 'rst',
     \ }
 
-    NeoBundleLazy 'vim-scripts/TaskList.vim', {
-        \ 'on_map': '<Plug>TaskList',
-    \ }
-
     NeoBundleLazy 'vim-scripts/Toggle', {
         \ 'on_func': 'Toggle',
     \ }
