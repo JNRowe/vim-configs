@@ -119,7 +119,7 @@ if has("persistent_undo")
     set undofile
     let &undodir = g:xdg_data_dir . '/undo//,' . &undodir
 endif
-set viminfo='1000,<1000,h,n$XDG_DATA_HOME/vim/tmp/viminfo
+execute("set viminfo='1000,<1000,h,n" . g:xdg_data_dir . "/tmp/viminfo")
 set virtualedit=block
 set whichwrap+=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
