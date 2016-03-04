@@ -13,7 +13,7 @@ if has("gui_running")
     let g:airline_symbols.linenr = ''
 endif
 
-let g:airline_theme='jellybeans'
+let g:airline_theme='powerlineish'
 
 " vim-bad-whitespace handles this well for me
 let g:airline#extensions#whitespace#enabled=0
