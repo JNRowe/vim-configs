@@ -2,9 +2,9 @@
 " started vim without args, but perhaps others are more useful when started with
 " args?
 let g:startify_bookmarks = [
-    \ expand("$XDG_CONFIG_HOME/awesome/rc.lua"),
-    \ expand("$XDG_CONFIG_HOME/awesome/theme.lua"),
-    \ expand("$XDG_CONFIG_HOME/git/config"),
+    \ g:xdg_config_dir . "/awesome/rc.lua",
+    \ g:xdg_config_dir . "/awesome/theme.lua",
+    \ g:xdg_config_dir . "/git/config",
     \ '~/.vim/vimrc',
     \ '~/.vim/vimrc-local',
     \ '~/.vim/neobundle.vim',

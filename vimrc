@@ -37,9 +37,11 @@ call neobundle#end()
 " Find appropriate directory for data files, this used to be handled by
 " vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
 let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME) ? '~/.cache' : '$XDG_CACHE_HOME')
+let g:xdg_config_dir = expand(empty($XDG_CONFIG_HOME) ? '~/.config' : '$XDG_CONFIG_HOME')
 let g:xdg_data_dir = expand(empty($XDG_DATA_HOME) ? '~/.local/share' : '$XDG_DATA_HOME')
 
 let g:vim_cache_dir = g:xdg_cache_dir . "/vim"
+let g:vim_config_dir = g:xdg_config_dir . "/vim"
 let g:vim_data_dir = g:xdg_data_dir . "/vim"
 
 " General settings {{{
@@ -389,36 +391,37 @@ nnoremap <Space> za
 " only shows the menu if it is exists.  This allows us to list files for
 " different hosts without cluttering the menu too much.
 if has("menu")
-    if filereadable(expand("$XDG_CONFIG_HOME/awesome/rc.lua"))
+    if filereadable(g:xdg_config_dir . "/awesome/rc.lua")
         amenu L&ocations.&Awesome.rc
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/rc.lua"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/awesome/rc.lua")<CR>
         amenu L&ocations.&Awesome.theme
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/awesome/theme.lua"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/awesome/theme.lua")<CR>
     endif
-    if filereadable(expand("$XDG_CONFIG_HOME/openbox/rc.xml"))
+    if filereadable(g:xdg_config_dir . "/openbox/rc.xml")
         amenu L&ocations.&Openbox.autostart
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/autostart.sh"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/openbox/autostart.sh")<CR>
         amenu L&ocations.&Openbox.menu
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/menu.xml"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/openbox/menu.xml")<CR>
         amenu L&ocations.&Openbox.rc
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/openbox/rc.xml"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/openbox/rc.xml")<CR>
     endif
-    if filereadable(expand("$XDG_CONFIG_HOME/git/config"))
+    if filereadable(g:xdg_config_dir . "/git/config")
         amenu L&ocations.&gitconfig
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/git/config"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/git/config")<CR>
     elseif filereadable(expand("~/.gitconfig"))
         amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     endif
-    if filereadable(expand("$XDG_CONFIG_HOME/python/rc"))
+    if filereadable(g:xdg_config_dir . "/python/rc")
         amenu L&ocations.&python
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/python/rc"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/python/rc")<CR>
     endif
-    if filereadable(expand("~/.ledger.dat"))
-        amenu L&ocations.&ledger :e ~/.ledger.dat<CR>
+    if filereadable(g:xdg_data_dir . "/ledger/ledger.dat.gpg")
+        amenu L&ocations.&ledger
+            \ :execute("e " . g:xdg_data_dir . "/ledger/ledger.dat.gpg")<CR>
     endif
-    if filereadable(expand("$XDG_CONFIG_HOME/musca/start"))
+    if filereadable(g:xdg_config_dir . "/musca/start")
         amenu L&ocations.&musca
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/musca/start"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/musca/start")<CR>
     endif
     if filereadable(expand("~/.vimrc"))
         amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
@@ -434,9 +437,9 @@ if has("menu")
     amenu L&ocations.&xorg.X&initrc :e ~/.xinitrc
     if filereadable(expand("~/.fonts.conf"))
         amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
-    elseif filereadable(expand("$XDG_CONFIG_HOME/fontconfig/fonts.conf"))
+    elseif filereadable(g:xdg_config_dir . "/fontconfig/fonts.conf")
         amenu L&ocations.&freetype
-            \ :execute("e " . expand("$XDG_CONFIG_HOME/fontconfig/fonts.conf"))<CR>
+            \ :execute("e " . g:xdg_config_dir . "/fontconfig/fonts.conf")<CR>
     endif
     if filereadable(expand("~/.gtkrc-2.0"))
         amenu L&ocations.&gtk :e ~/.gtkrc-2.0<CR>
