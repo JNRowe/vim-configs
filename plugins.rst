@@ -454,17 +454,6 @@ a relatively painless task.
 Keep an overview of all the plugins you've already written about in your own
 rambling documentation and review attempts.
 
-``vim-scripts/RST-Tables``
---------------------------
-
-:repo: https://github.com/vim-scripts/RST-Tables
-
-    "Allows to create and edit restructuredText tables easily"
-
-Ask yourself why you can't figure out how to use ``tabular`` to make this plugin
-totally redundant.  Until then enjoy the speed of writing tables like you use
-a word processor.
-
 ``vim-scripts/Toggle``
 ----------------------
 
