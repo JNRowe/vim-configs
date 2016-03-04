@@ -164,10 +164,6 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_i': 1,
     \ }
 
-    NeoBundleLazy 'junkblocker/patchreview-vim', {
-        \ 'on_cmd': ['DiffReview', 'PatchReview'],
-    \ }
-
     NeoBundle 'justincampbell/vim-eighties'
 
     NeoBundle 'kien/rainbow_parentheses.vim'
