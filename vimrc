@@ -391,11 +391,11 @@ nnoremap <Space> za
 " only shows the menu if it is exists.  This allows us to list files for
 " different hosts without cluttering the menu too much.
 if has("menu")
-    if filereadable(g:xdg_config_dir . "/awesome/rc.lua")
+    if filereadable(g:xdg_config_dir . "/awesome/rc.moon")
         amenu L&ocations.&Awesome.rc
-            \ :execute("e " . g:xdg_config_dir . "/awesome/rc.lua")<CR>
+            \ :execute("e " . g:xdg_config_dir . "/awesome/rc.moon")<CR>
         amenu L&ocations.&Awesome.theme
-            \ :execute("e " . g:xdg_config_dir . "/awesome/theme.lua")<CR>
+            \ :execute("e " . g:xdg_config_dir . "/awesome/themes/jnrowe/theme.moon")<CR>
     endif
     if filereadable(g:xdg_config_dir . "/openbox/rc.xml")
         amenu L&ocations.&Openbox.autostart
