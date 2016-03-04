@@ -10,6 +10,12 @@ let g:startify_bookmarks = [
     \ '~/.vim/neobundle.vim',
 \ ]
 let g:startify_enable_special = 0
+let g:startify_list_order = [
+    \ ['🗄'], 'files',
+    \ ['📁'], 'dir',
+    \ ['␝'], 'sessions',
+    \ ['📑'], 'bookmarks',
+\ ]
 let g:startify_relative_path = 1
 let g:startify_session_dir = g:vim_data_dir . '/sessions'
 
