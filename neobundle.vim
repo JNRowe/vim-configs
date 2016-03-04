@@ -211,6 +211,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': 'Bdelete',
     \ }
 
+    NeoBundleLazy 'reinh/vim-makegreen', {
+        \ 'on_cmd': 'MakeGreen',
+    \ }
+
     NeoBundleLazy 'rking/ag.vim', {
         \ 'on_cmd': ['Ag', 'grep'],
         \ 'external_command': 'ag',
