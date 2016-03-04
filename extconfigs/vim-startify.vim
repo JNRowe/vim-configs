@@ -2,8 +2,8 @@
 " started vim without args, but perhaps others are more useful when started with
 " args?
 let g:startify_bookmarks = [
-    \ g:xdg_config_dir . "/awesome/rc.lua",
-    \ g:xdg_config_dir . "/awesome/theme.lua",
+    \ g:xdg_config_dir . "/awesome/rc.moon",
+    \ g:xdg_config_dir . "/awesome/themes/jnrowe/theme.moon",
     \ g:xdg_config_dir . "/git/config",
     \ '~/.vim/vimrc',
     \ '~/.vim/vimrc-local',
