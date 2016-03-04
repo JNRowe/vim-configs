@@ -4,7 +4,7 @@
 let g:startify_bookmarks = [
     \ g:xdg_config_dir . "/awesome/rc.moon",
     \ g:xdg_config_dir . "/awesome/themes/jnrowe/theme.moon",
-    \ g:xdg_config_dir . "/git/config",
+    \ filereadable(g:xdg_config_dir . "/git/config") ? g:xdg_config_dir . "/git/config" : "~/.gitconfig",
     \ '~/.vim/vimrc',
     \ '~/.vim/vimrc-local',
     \ '~/.vim/neobundle.vim',
