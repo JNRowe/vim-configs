@@ -37,6 +37,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
     endif
 
     NeoBundleLazy 'Shougo/neomru.vim', {
+        \ 'depends': 'Shougo/unite.vim',
         \ 'on_unite': ['neomru/directory', 'neomru/file'],
     \ }
 
@@ -55,6 +56,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': 'Unite',
     \ }
     NeoBundleLazy 'Shougo/unite-outline', {
+        \ 'depends': 'Shougo/unite.vim',
         \ 'on_unite': 'outline',
     \ }
 
