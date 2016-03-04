@@ -36,15 +36,15 @@ call neobundle#end()
 
 " Find appropriate directory for data files, this used to be handled by
 " vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
-let g:xdg_cache_dir = empty($XDG_CACHE_HOME) ? '~/.cache/vim' : '$XDG_DATA_HOME/vim'
-let g:xdg_data_dir = empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim'
+let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME) ? '~/.cache/vim' : '$XDG_CACHE_HOME/vim')
+let g:xdg_data_dir = expand(empty($XDG_DATA_HOME) ? '~/.local/share/vim' : '$XDG_DATA_HOME/vim')
 
 " General settings {{{
 set autochdir
 set noautowriteall
 set backup
 set backupcopy=auto,breakhardlink
-let &backupdir = expand(g:xdg_data_dir) . '/backup//,' . &backupdir
+let &backupdir = g:xdg_data_dir . '/backup//,' . &backupdir
 if has("balloon_eval")
     set ballooneval
 endif
@@ -57,7 +57,7 @@ set confirm
 set cryptmethod=blowfish
 set cursorline
 set dictionary+=/usr/share/dict/words
-let &directory = expand(g:xdg_data_dir) . '/swap//,' . &directory
+let &directory = g:xdg_data_dir . '/swap//,' . &directory
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
@@ -117,7 +117,7 @@ set title
 set ttyfast
 if has("persistent_undo")
     set undofile
-    let &undodir = expand(g:xdg_data_dir) . '/undo//,' . &undodir
+    let &undodir = g:xdg_data_dir . '/undo//,' . &undodir
 endif
 set viminfo='1000,<1000,h,n$XDG_DATA_HOME/vim/tmp/viminfo
 set virtualedit=block
