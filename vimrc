@@ -174,7 +174,7 @@ if has("autocmd")
     " We don't want to edit patch backup files by accident
     autocmd BufRead *.orig set readonly
 
-    autocmd FileType man set nospell
+    autocmd FileType man,startify set nospell
 
     autocmd FileType gitconfig set noexpandtab
 
