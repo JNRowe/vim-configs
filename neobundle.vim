@@ -190,6 +190,10 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_ft': 'python',
     \ }
 
+    NeoBundleLazy 'mihaifm/bufstop', {
+        \ 'on_cmd': ['Bufstop', 'BufstopFast'],
+    \ }
+
     NeoBundleLazy 'mihaifm/vimpanel', {
         \ 'on_cmd': ['VimpanelCreate', 'VimpanelLoad'],
     \ }
