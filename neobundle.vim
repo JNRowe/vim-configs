@@ -229,7 +229,7 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'on_cmd': 'Clam',
     \ }
 
-    NeoBundle 'sjl/gundo.vim', {
+    NeoBundleLazy 'sjl/gundo.vim', {
         \ 'on_cmd': 'GundoToggle',
     \ }
 
