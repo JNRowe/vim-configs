@@ -565,35 +565,6 @@ nmap + zo
 vmap - zf
 " }}}
 
-" Sign support {{{
-" Waaaay too much execute nastiness :/
-function! SignDefine(type, ...)
-    let capped = toupper(a:type[0]) . a:type[1:]
-    let text = capped[0] . capped[0]
-    let hl_type = a:0 == 1 ? a:1 : capped . "MSG"
-    execute("sign define " . capped . " text=" . text . " texthl=" . hl_type .
-        \ " icon=" . expand("~/.vim/icons/" . a:type . ".svg"))
-    execute("map <silent> <Leader>s" . a:type[0] . " :call MakeSign('" .
-        \ capped . "')<CR>")
-    execute("amenu icon=~/.vim/icons/" . a:type . ".svg ToolBar." .
-        \ capped . " :call MakeSign('" . capped . "')<CR>")
-    execute("tmenu ToolBar." . a:type . " Insert a" .
-        \ (a:type[0] =~? "[aeiou]" ? "n" : "") . " " . a:type .
-        \ " sign")
-endfunction
-
-amenu ToolBar.-Sep- :
-call SignDefine("info", "Todo")
-call SignDefine("warning")
-call SignDefine("error")
-
-function! MakeSign(type)
-    execute(":sign place " . line(".") . " line=" . line(".") .
-        \ " name=" . a:type . " file=" . expand("%:p"))
-endfunction
-map <silent> <Leader>sc :execute("sign unplace " . line("."))<CR>
-" }}}
-
 " Show highlight group of the current text {{{
 " From vim wiki
 command! ShowHighlightGroup
