@@ -154,7 +154,7 @@ NeoBundle 'int3/vim-extradite'
 NeoBundle 'jceb/vim-editqf'
 
 NeoBundleLazy 'guns/xterm-color-table.vim', {
-    \ 'on_cmd': 'XtermColorTable',
+    \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
 \ }
 
 NeoBundle 'jamessan/vim-gnupg', {
