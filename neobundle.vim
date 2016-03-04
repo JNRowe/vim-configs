@@ -111,6 +111,11 @@ if neobundle#load_cache('~/.vim/neobundle.vim')
         \ 'disabled': !has('python'),
     \ }
 
+    NeoBundleLazy 'dhruvasagar/vim-table-mode', {
+        \ 'on_cmd': ['TableModeToggle', 'Tableize'],
+        \ 'on_ft': 'rst',
+    \ }
+
     NeoBundleLazy 'editorconfig/editorconfig-vim', {
         \ 'disabled': !has('python'),
         \ 'on_i': 1,
