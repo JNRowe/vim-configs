@@ -11,5 +11,6 @@ call unite#custom#profile('default', 'context', {
 \ )
 
 let g:unite_data_directory = g:vim_cache_dir . '/unite'
+let g:unite_force_overwrite_statusline = 0
 
 nnoremap <C-p> :Unite buffer<CR>
