@@ -13,7 +13,7 @@ if has('signs')
         end
         unlet v
         execute("sign define Signature_" . k .
-            \ " icon=" . expand("~/.vim/icons/" . s:icon . ".svg") .
+            \ " icon=" . expand("~/.vim/icons/" . s:icon . ".png") .
             \ " text=" . toupper(s:icon[0] . s:icon[0]) . " texthl=" . s:hl)
     endfor
 end
