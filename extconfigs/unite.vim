@@ -12,6 +12,7 @@ call unite#custom#profile('default', 'context', {
 
 let g:unite_data_directory = g:vim_cache_dir . '/unite'
 let g:unite_force_overwrite_statusline = 0
+let g:unite_source_buffer_time_format='%FT%T'
 
 if executable('ag')
     let g:unite_source_rec_async_command = split('ag --follow --hidden -g ""')
