@@ -1,15 +1,14 @@
-doc/tags
+/doc/tags
 
-tags/
+/tags/
 
-*.html
+/*.html
 
-abbr-local
-vimrc-local
+/abbr-local
+/vimrc-local
 
 # neobundle support data
-external/.neobundle/
+/external/.neobundle/
 
 # neobundle managed plugins
-external/
-!external/neobundle.vim
+/external/
