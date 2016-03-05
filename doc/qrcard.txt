@@ -9,10 +9,10 @@
  |Insertion|
     |Insert-mode|
     |Advanced-insertion|
- |Deletion| 
+ |Deletion|
  |Search|
-    |Search-Patterns| 
-    |Offsets-in-search-commands| 
+    |Search-Patterns|
+    |Offsets-in-search-commands|
     |Search-&-Substitution|
  |Key-mapping|
  |Visual-mode|
@@ -22,11 +22,11 @@
  |Execution-Ranges|
  |Folding|
  |Miscellaneous|
- 
+
 ============================================================
  *Movement*
 ============================================================
-     *Basic-movement* 
+     *Basic-movement*
  h l k j .. character left, right; line up, down
  b w ...... word/token left, right
  ge e ..... end of word/token left, right
@@ -38,7 +38,7 @@
  n| ....... column n of current line
  %  ....... match of next brace, bracket, comment, #define
  nH nL .... line n from start, bottom of window
- M ........ middle line of window                                                        
+ M ........ middle line of window
 ============================================================
      *Complex-Movement*
  - + .... line up, down on first non-blank character
@@ -60,22 +60,22 @@
  [* ]* .. start, end of /* */ backward, forward
 ============================================================
  *Marks*
- mc ......... mark current position with mark c ∈ [a..Z]       
- ‘c ‘C ...... go to mark c in current, C in any file   
- ‘0..9 ...... go to last exit position  
- ‘‘ ‘" ...... go to position before jump, at last edit                   
- ‘[ ‘] ...... go to start, end of previously operated text                        
- :marks .... print the active marks list            
+ mc ......... mark current position with mark c ∈ [a..Z]
+ ‘c ‘C ...... go to mark c in current, C in any file
+ ‘0..9 ...... go to last exit position
+ ‘‘ ‘" ...... go to position before jump, at last edit
+ ‘[ ‘] ...... go to start, end of previously operated text
+ :marks .... print the active marks list
  :jumps .... print the jump list
  n^O ........ go to nth older position in jump list
  n^I ........ go to nth newer position in jump list
 ============================================================
  *Tags*
  :ta t ............ jump to tag t
- :nta ............. jump to nth newer tag in list 
+ :nta ............. jump to nth newer tag in list
  ^] CtrlT ......... jump to tag under cursor, previous tag
  :ts t<CR> ........ list matching tags & select for jump
- :tj t<CR> ........ jump to tag or select one if multiple 
+ :tj t<CR> ........ jump to tag or select one if multiple
  :tags<CR> ........ print tag list
  :npo<CR> ......... jump back from
  :n^T<CR> ......... jump back to nth older tag
@@ -109,27 +109,27 @@
  s ......... change one character and insert
  ~ ......... switch case and advance cursor
  g~m ....... switch case of|Movement|command m
- gum gUm ... lowercase, uppercase text of|Movement|m 
- <m >m ..... shift left, right text of|Movement|m        
+ gum gUm ... lowercase, uppercase text of|Movement|m
+ <m >m ..... shift left, right text of|Movement|m
  n<< n>> ... shift n lines left, right
 ============================================================
      *Insert-mode*
- ^Vc ^Vn ........... insert char c, decimal value n 
- ^A ................ insert previously inserted text     
- ^@................. same as ^A and go to command mode                          
- ^Rx ^R^Rx ......... insert register x, literally              
- ^N CtrlP .......... text completion before, after cursor          
- ^W ................ delete word before cursor  
- ^U ................ delete all inserted character in line               
- ^D CtrlT .......... shift left, right one shift width     
- ^Kc1 c2 | c1<CR>c2. enter digraph {c1 , c2 }    
- ^Oc ............... execute c in temporary command mode                 
+ ^Vc ^Vn ........... insert char c, decimal value n
+ ^A ................ insert previously inserted text
+ ^@................. same as ^A and go to command mode
+ ^Rx ^R^Rx ......... insert register x, literally
+ ^N CtrlP .......... text completion before, after cursor
+ ^W ................ delete word before cursor
+ ^U ................ delete all inserted character in line
+ ^D CtrlT .......... shift left, right one shift width
+ ^Kc1 c2 | c1<CR>c2. enter digraph {c1 , c2 }
+ ^Oc ............... execute c in temporary command mode
  ^XCtrlE ^X^Y ...... scroll up, down
- esc or ^[ ......... abandon edition → command mode                        
+ esc or ^[ ......... abandon edition → command mode
 ============================================================
      *Advanced-insertion*
  g?m .......... perform rot13 encoding on|Movement|m
- n^A nCtrlX ... +n, −n to number under cursor                  
+ n^A nCtrlX ... +n, −n to number under cursor
  gqm .......... format lines of|Movement|m to fixed width
  :rce w ....... center lines in range r to width w
  :rle i ....... left align lines in range r with indent i
@@ -138,17 +138,17 @@
  n!!c ......... filter n lines through command c
  :r!c ......... filter range r lines through command c
 ============================================================
-  *Deletion* 
+  *Deletion*
  x X ....... delete character under, before cursor
  dm ........ delete text of|Movement|command m
  dd D ...... delete current line, to the end of line
  J gJ ...... join current line with next, without space
  :rd<CR> ... delete range r lines
- :rdx<CR> .. delete range r lines into register x                          
+ :rdx<CR> .. delete range r lines into register x
 ============================================================
  *Search*
 ============================================================
-     *Search-Patterns* 
+     *Search-Patterns*
  . ^ $ ...... any single character, start, end of line
  \< \> ...... start, end of word
  [c1-c2] .... single character in range c1 ..c2
@@ -157,19 +157,19 @@
  \f \p \F \P  a file name, printable char.; excl. digits
  \s \S ...... a white space, a non-white space
  \e \t \r \b  <esc> , <tab> , <CR> , <DEL>
- \= * \+ .... match 0..1, 0..∞, 1..∞ of preceding atoms                
- \| ......... separate two branches (≡ or )                                    
- \( \) ...... group patterns into an atom                                       
- \& \n ...... the whole matched pattern, nth () group                            
- \u \l ...... next character made upper, lowercase              
- \c \C ...... ignore, match case on next pattern                                    
+ \= * \+ .... match 0..1, 0..∞, 1..∞ of preceding atoms
+ \| ......... separate two branches (≡ or )
+ \( \) ...... group patterns into an atom
+ \& \n ...... the whole matched pattern, nth () group
+ \u \l ...... next character made upper, lowercase
+ \c \C ...... ignore, match case on next pattern
 ============================================================
-     *Offsets-in-search-commands* 
- n or +n .... n line downward in column 1         
- -n ......... n line upward in column 1   
- e+n e-n .... n characters right, left to end of match                    
- s+n s-n .... n characters right, left to start of match                     
- ;sc ........ execute search command sc next              
+     *Offsets-in-search-commands*
+ n or +n .... n line downward in column 1
+ -n ......... n line upward in column 1
+ e+n e-n .... n characters right, left to end of match
+ s+n s-n .... n characters right, left to start of match
+ ;sc ........ execute search command sc next
 ============================================================
      *Search-&-Substitution*
  /s<CR> ?s<CR> ............. search forward, backward for s
@@ -184,13 +184,13 @@
  :rs x<CR> ........... repeat substitution with new r & x
 ============================================================
  *Key-mapping*
- :map c e .. map c → e in normal & visual mode                        
- :map! c e .. map c → e in insert & cmd-line mode                         
- :unmap c :unmap! c<CR> .......... remove mapping c                     
- :mk f  ... write current mappings, settings... to file f                  
- :ab c e ................. add abbreviation for c → e       
- :ab c<CR> ............ show abbreviations starting with c          
- :una c<CR> ....................... remove abbreviation c 
+ :map c e .. map c → e in normal & visual mode
+ :map! c e .. map c → e in insert & cmd-line mode
+ :unmap c :unmap! c<CR> .......... remove mapping c
+ :mk f  ... write current mappings, settings... to file f
+ :ab c e ................. add abbreviation for c → e
+ :ab c<CR> ............ show abbreviations starting with c
+ :una c<CR> ....................... remove abbreviation c
 ============================================================
  *Visual-mode*
  v V ^v .. start|stop highlight characters, lines, block
@@ -208,11 +208,11 @@
  zb or z- ..... set current line at bottom of window
  zh zl ........ scroll one character to the right, left
  zH zL ........ scroll half a screen to the right, left
- ^Ws or :split<CR> split window in two       
- ^Wn or :new<CR> . create new empty window              
- ^Wo or :on<CR> .. make current window one on screen                       
- ^Wj ^Wk ...... move to window below, above              
- ^Ww ^W^W...... move to window below, above (wrap)                         
+ ^Ws or :split<CR> split window in two
+ ^Wn or :new<CR> . create new empty window
+ ^Wo or :on<CR> .. make current window one on screen
+ ^Wj ^Wk ...... move to window below, above
+ ^Ww ^W^W...... move to window below, above (wrap)
 ============================================================
  *Execution-Commands*
  :e f .... edit file f , unless changes have been made
@@ -224,11 +224,11 @@
  :rw> .... append range r to file f
  :q :q! .. quit and confirm, quit and discard changes
  :wq :x ZZ write to current file and exit
- up down . recall commands starting with current                                  
- :r f .... insert content of file f below cursor                
- :r! c ... insert output of command c below cursor                        
- :args ... display the argument list       
- :rc a :rm a .......... copy, move range r below line a                    
+ up down . recall commands starting with current
+ :r f .... insert content of file f below cursor
+ :r! c ... insert output of command c below cursor
+ :args ... display the argument list
+ :rc a :rm a .......... copy, move range r below line a
 ============================================================
  *Undoing,-Repeating-&-Registers*
  u U .... undo last command, restore last changed line
@@ -259,7 +259,7 @@
  zv ............. open enough folds to see cursor line
  zr ............. reduce folding, foldlevel++
  zR ............. open all folds, max(foldlevel)
- zx ............. Update folds, re-apply 'foldlevel', 
+ zx ............. Update folds, re-apply 'foldlevel',
 ============================================================
  *Miscellaneous*
  :sh<CR> :!c<CR> ... start shell, execute command c in shell
