@@ -51,4 +51,4 @@ if has("autocmd")
         \ endif
     autocmd FileType unite nmap <buffer> ? <Plug>(unite_toggle_auto_preview) |
         \ HideBadWhitespace
-end
+endif

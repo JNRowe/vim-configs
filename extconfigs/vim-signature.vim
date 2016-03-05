@@ -16,4 +16,4 @@ if has('signs')
             \ " icon=" . expand("~/.vim/icons/" . s:icon . ".png") .
             \ " text=" . toupper(s:icon[0] . s:icon[0]) . " texthl=" . s:hl)
     endfor
-end
+endif
