@@ -41,6 +41,9 @@ nnoremap <silent> [unite]r :<C-u>Unite register<CR>
 nnoremap <silent> [unite]u :<C-u>Unite neomru/file<CR>
 nnoremap <silent> [unite]w :<C-u>Unite window<CR>
 
+" This replaces my previous use of vim-startify
+nnoremap <S-F1> :<C-u>Unite neomru/file bookmark file_rec/async<CR>
+
 if has("autocmd")
     autocmd FileType unite nmap <buffer> ? <Plug>(unite_toggle_auto_preview)
 end
