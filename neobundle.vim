@@ -286,7 +286,9 @@ NeoBundleLazy 'vim-scripts/Toggle', {
     \ 'on_func': 'Toggle',
 \ }
 
-NeoBundle 'vim-scripts/ZoomWin'
+NeoBundleLazy 'vim-scripts/ZoomWin', {
+    \ 'on_map': [['n', '<C-w>o']],
+\ }
 
 NeoBundleLazy 'vim-scripts/dbext.vim', {
     \ 'on_cmd': 'DBPromptForBufferParameters',
