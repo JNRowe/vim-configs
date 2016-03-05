@@ -8,6 +8,9 @@ autocmd BufRead,BufNewFile *.gs setfiletype genie
 " python-distribute config file
 autocmd BufNewFile,BufRead ~/.pypirc setfiletype dosini
 
+" editorconfig
+autocmd BufRead,BufNewFile .editorconfig setfiletype dosini
+
 " mutt
 autocmd BufRead,BufNewFile **/.mutt/*.rc setfiletype muttrc
 
