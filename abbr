@@ -19,6 +19,6 @@ iab WIBNI wouldn't it be nice if
 iab YMMV your mileage may vary
 
 " Date
-iabbr _t  <C-R>=strftime("%H:%M:%S")<CR>
-iabbr _d  <C-R>=strftime("%Y-%m-%d")<CR>
-iabbr _dt <C-R>=strftime("%Y-%m-%dT%H:%M:%S%z")<CR>
+iabbr _t  <C-R>=strftime("%T")<CR>
+iabbr _d  <C-R>=strftime("%F")<CR>
+iabbr _dt <C-R>=strftime("%FT%T%z")<CR>
