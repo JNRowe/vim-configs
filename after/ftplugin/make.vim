@@ -1,1 +1,1 @@
-setlocal wrap noexpandtab nosmarttab
+setlocal wrap nosmarttab
