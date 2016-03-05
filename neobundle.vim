@@ -53,9 +53,8 @@ NeoBundleLazy 'Shougo/neosnippet-snippets', {
     \ 'on_i': 1,
 \ }
 
-NeoBundleLazy 'Shougo/unite.vim', {
-    \ 'on_cmd': 'Unite',
-\ }
+NeoBundle 'Shougo/unite.vim'
+
 NeoBundleLazy 'Shougo/unite-outline', {
     \ 'depends': 'Shougo/unite.vim',
     \ 'on_unite': 'outline',
