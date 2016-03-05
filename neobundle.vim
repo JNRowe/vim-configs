@@ -69,7 +69,7 @@ NeoBundle 'airblade/vim-gitgutter', {
 \ }
 
 NeoBundleLazy 'bitc/vim-bad-whitespace', {
-    \ 'on_cmd': 'ToggleBadWhitespace',
+    \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
     \ 'on_i': 1,
 \ }
 
