@@ -40,3 +40,7 @@ nnoremap <silent> [unite]p :<C-u>Unite buffer:"-"<CR>
 nnoremap <silent> [unite]r :<C-u>Unite register<CR>
 nnoremap <silent> [unite]u :<C-u>Unite neomru/file<CR>
 nnoremap <silent> [unite]w :<C-u>Unite window<CR>
+
+if has("autocmd")
+    autocmd FileType unite nmap <buffer> ? <Plug>(unite_toggle_auto_preview)
+end
