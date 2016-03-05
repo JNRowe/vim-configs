@@ -183,8 +183,6 @@ NeoBundleLazy 'majutsushi/tagbar', {
     \ 'on_cmd': 'TagbarToggle',
 \ }
 
-NeoBundle 'mhinz/vim-startify'
-
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'on_ft': 'python',
 \ }
