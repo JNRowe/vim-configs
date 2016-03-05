@@ -3,6 +3,7 @@ autocmd BufRead *.vala set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead *.vapi set efm=%f:%l.%c-%[%^:]%#:\ %t%[%^:]%#:\ %m
 autocmd BufRead,BufNewFile *.vala setfiletype vala
 autocmd BufRead,BufNewFile *.vapi setfiletype vala
+autocmd BufRead,BufNewFile *.gs setfiletype genie
 
 " mutt
 autocmd BufRead,BufNewFile **/.mutt/*.rc setfiletype muttrc
