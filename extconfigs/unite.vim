@@ -10,6 +10,6 @@ call unite#custom#profile('default', 'context', {
     \ }
 \ )
 
-let g:unite_data_directory = g:vim_data_dir . '/unite'
+let g:unite_data_directory = g:vim_cache_dir . '/unite'
 
 nnoremap <C-p> :Unite buffer<CR>
