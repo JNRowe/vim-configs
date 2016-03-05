@@ -278,10 +278,6 @@ NeoBundleLazy 'ujihisa/unite-colorscheme', {
     \ 'on_unite': 'colorscheme'
 \ }
 
-NeoBundleLazy 'vim-scripts/DotOutlineTree', {
-    \ 'on_ft': 'rst',
-\ }
-
 NeoBundleLazy 'vim-scripts/Toggle', {
     \ 'on_func': 'Toggle',
 \ }
