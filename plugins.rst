@@ -444,16 +444,6 @@ fifteen orders of magnitude.
 Make using ``ls -1`` to produce the headings for your own ``plugins.rst``
 a relatively painless task.
 
-``vim-scripts/DotOutlineTree``
-------------------------------
-
-:repo: https://github.com/vim-scripts/DotOutlineTree
-
-    "Helps you edit structured text."
-
-Keep an overview of all the plugins you've already written about in your own
-rambling documentation and review attempts.
-
 ``vim-scripts/Toggle``
 ----------------------
 
