@@ -1,6 +1,6 @@
 CTAGS ::= exuberant-ctags
 
-LUA_SOURCES ::= $(wildcard /usr/lib/lua/* /usr/share/lua/*)
+LUA_SOURCES ::= $(wildcard /usr/share/lua/*)
 PYTHON_SOURCES ::= $(wildcard /usr/lib/python[0-9]*)
 RUBY_SOURCES ::= $(wildcard /usr/lib/ruby/[0-9]*)
 TARGETS ::= doc/tags tags/libc.ctags \
