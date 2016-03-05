@@ -2,9 +2,8 @@ if !neobundle#load_cache('~/.vim/neobundle.vim')
     finish
 end
 
-NeoBundle 'Shougo/neobundle.vim', {
+NeoBundleFetch 'Shougo/neobundle.vim', {
     \ 'depends': 'Shougo/vimproc',
-    \ 'fetch': 1,
     \ 'vim_version': '7.2',
 \ }
 
