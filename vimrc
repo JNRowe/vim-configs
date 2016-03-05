@@ -56,7 +56,7 @@ endif
 set colorcolumn=+1
 set completeopt=longest,menuone,preview
 if has('conceal')
-    set conceallevel=1
+    set conceallevel=2
 endif
 set confirm
 set cryptmethod=blowfish
