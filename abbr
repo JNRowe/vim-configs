@@ -1,24 +1,24 @@
 " Common-ish to me mail abbreviations
-iab AFAICR as far as I can remember
-iab AFAIK as far as I know
-iab AKA also known as
-iab ASAP as soon as possible
-iab FAF fire 'n' forget
-iab FINR fixed in the next release
-iab FWIW for what it's worth
-iab FYI for your information
-iab HTH hope that helps
-iab IIRC if I remember correctly
-iab IMHO in my humble opinion
-iab IMNSHO in my not so humble opinion
-iab IMO in my opinion
-iab OTOH on the other hand
-iab RTFM read the friendly manual
-iab WDYT what do you think?
-iab WIBNI wouldn't it be nice if
-iab YMMV your mileage may vary
+ia AFAICR as far as I can remember
+ia AFAIK as far as I know
+ia AKA also known as
+ia ASAP as soon as possible
+ia FAF fire'n'forget
+ia FINR fixed in the next release
+ia FWIW for what it's worth
+ia FYI for your information
+ia HTH hope that helps
+ia IIRC if I remember correctly
+ia IMHO in my humble opinion
+ia IMNSHO in my not so humble opinion
+ia IMO in my opinion
+ia OTOH on the other hand
+ia RTFM read the friendly manual
+ia WDYT what do you think?
+ia WIBNI wouldn't it be nice if
+ia YMMV your mileage may vary
 
 " Date
-iabbr _t  <C-R>=strftime("%T")<CR>
-iabbr _d  <C-R>=strftime("%F")<CR>
-iabbr _dt <C-R>=strftime("%FT%T%z")<CR>
+ia _t  <C-R>=strftime("%T")<CR>
+ia _d  <C-R>=strftime("%F")<CR>
+ia _dt <C-R>=strftime("%FT%T%z")<CR>
