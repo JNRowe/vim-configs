@@ -8,3 +8,4 @@ let g:neocomplcache_temporary_dir = g:vim_cache_dir . '/neocomplcache'
 let g:neocomplcache_enable_auto_delimiter = 1
 let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_fuzzy_completion = 1
+let g:neocomplcache_enable_smart_case = 1
