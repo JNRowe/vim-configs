@@ -150,6 +150,10 @@ NeoBundleLazy 'godlygeek/tabular', {
     \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
 \ }
 
+NeoBundleLazy 'fishman/vim-vala', {
+    \ 'on_ft': ['genie', 'vala', 'vapi'],
+\ }
+
 NeoBundleLazy 'gabrielelana/vim-markdown', {
     \ 'on_ft': 'markdown',
 \ }
