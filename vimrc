@@ -24,6 +24,10 @@ endif
 
 " Fire up neobundle, and setup plugins
 call neobundle#begin(expand('~/.vim/external/', 1))
+
+" Disable netrw, as it clashes with plugins
+let g:loaded_netrwPlugin = 1
+
 source ~/.vim/neobundle.vim
 
 " Nasty bundled packages {{{
