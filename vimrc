@@ -36,6 +36,7 @@ source ~/.vim/neobundle.vim
 NeoBundleLocal ~/.vim/internal/
 " }}}
 
+NeoBundleCheck
 call neobundle#end()
 
 " Find appropriate directory for data files, this used to be handled by
