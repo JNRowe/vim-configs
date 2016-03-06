@@ -291,16 +291,6 @@ trying to impress their grandpa.
 Combine this with ``csv.vim``, and it makes importing and editing your
 accounts/expenses an almost nice-ish experience.
 
-``majutsushi/tagbar``
----------------------
-
-:repo: https://github.com/majutsushi/tagbar
-
-    "Vim plugin that displays tags in a window, ordered by class etc."
-
-The approaching zero value of your IDE feature envy drops significantly with
-this plugin.
-
 ``michaeljsmith/vim-indent-object``
 -----------------------------------
 

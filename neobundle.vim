@@ -192,10 +192,6 @@ NeoBundleLazy 'ledger/vim-ledger', {
     \ 'on_ft': 'ledger',
 \ }
 
-NeoBundleLazy 'majutsushi/tagbar', {
-    \ 'on_cmd': 'TagbarToggle',
-\ }
-
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'on_ft': 'python',
 \ }
