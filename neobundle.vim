@@ -59,6 +59,19 @@ NeoBundleLazy 'Shougo/unite-outline', {
     \ 'on_unite': 'outline',
 \ }
 
+NeoBundleLazy 'Shougo/vimfiler.vim', {
+    \ 'depends': 'Shougo/unite.vim',
+    \ 'on_cmd': [
+    \   {
+    \       'name': ['VimFiler', 'VimFilerDouble'],
+    \       'complete': 'customlist,vimfiler#complete',
+    \   },
+    \   'VimFilerExplorer',
+    \ ],
+    \ 'on_map': [['n', '<Plug>']],
+    \ 'explorer': 1,
+\ }
+
 NeoBundle 'Shougo/vimproc', {
     \ 'build': 'make',
 \ }
