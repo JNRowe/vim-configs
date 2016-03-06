@@ -15,7 +15,9 @@ NeoBundle 'JNRowe/vim-jnrowe', {
     \ 'gui': 1,
 \ }
 
-NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundleLazy 'Lokaltog/vim-easymotion', {
+    \ 'on_map': '<Leader><Leader>',
+\ }
 
 NeoBundleLazy 'Raimondi/delimitMate', {
     \ 'on_i': 1,
