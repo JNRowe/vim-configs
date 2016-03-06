@@ -230,10 +230,6 @@ NeoBundleLazy 'rking/ag.vim', {
     \ 'external_command': 'ag',
 \ }
 
-NeoBundleLazy 'scrooloose/nerdtree', {
-    \ 'on_cmd': ['NERDTreeFind', 'NERDTreeToggle'],
-\ }
-
 NeoBundleLazy 'rust-lang/rust.vim', {
     \ 'on_ft': 'rust',
 \ }
