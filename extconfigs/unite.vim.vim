@@ -39,6 +39,7 @@ nnoremap <silent> [unite]h :<C-u>Unite history<CR>
 nnoremap <silent> [unite]m :<C-u>Unite mapping<CR>
 nnoremap <silent> [unite]p :<C-u>Unite buffer:"-"<CR>
 nnoremap <silent> [unite]r :<C-u>Unite register<CR>
+nnoremap <silent> [unite]t :<C-u>Unite grep:%::\(TODO\\|FIXME\)<CR>
 nnoremap <silent> [unite]u :<C-u>Unite neomru/file<CR>
 nnoremap <silent> [unite]w :<C-u>Unite window<CR>
 
