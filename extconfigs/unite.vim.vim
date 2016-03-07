@@ -25,23 +25,32 @@ endif
 nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
 
-nnoremap <silent> [unite]a :<C-u>Unite buffer:"-" bookmark neomru/file<CR>
-nnoremap <silent> [unite]! :<C-u>Unite output/shellcmd<CR>
-nnoremap <silent> [unite]/ :<C-u>Unite grep:.<CR>
-nnoremap <silent> [unite]: :<C-u>Unite output<CR>
-nnoremap <silent> [unite]? :<C-u>Unite source<CR>
-nnoremap <silent> [unite]b :<C-u>Unite bookmark<CR>
-nnoremap <silent> [unite]c :<C-u>Unite change<CR>
-nnoremap <silent> [unite]f :<C-u>Unite file/async<CR>
-nnoremap <silent> [unite]g :<C-u>Unite file_rec/git<CR>
-nnoremap <silent> [unite]R :<C-u>Unite file_rec/async<CR>
-nnoremap <silent> [unite]h :<C-u>Unite history<CR>
-nnoremap <silent> [unite]m :<C-u>Unite mapping<CR>
-nnoremap <silent> [unite]p :<C-u>Unite buffer:"-"<CR>
-nnoremap <silent> [unite]r :<C-u>Unite register<CR>
-nnoremap <silent> [unite]t :<C-u>Unite grep:%::\(TODO\\|FIXME\)<CR>
-nnoremap <silent> [unite]u :<C-u>Unite neomru/file<CR>
-nnoremap <silent> [unite]w :<C-u>Unite window<CR>
+for s:k in [
+    \   ['a',       'buffer:"-" bookmark neomru/file'],
+    \   ['!',       'output/shellcmd'],
+    \   ['/',       'grep:.'],
+    \   [':',       'output'],
+    \   ['?',       'source'],
+    \   'bookmark',
+    \   'change',
+    \   ['f',       'file/async'],
+    \   ['g',       'file_rec/git'],
+    \   ['R',       'file_rec/async'],
+    \   'history',
+    \   'mapping',
+    \   ['p',       'buffer:"-"'],
+    \   'register',
+    \   ['t',       'grep:%::\(TODO\\|FIXME\)'],
+    \   ['u',       'neomru/file'],
+    \   'window',
+    \ ]
+
+    let s:key = s:k[0]
+    let s:source= type(s:k) == 3 ? s:k[1] : s:k
+
+    execute("nnoremap <silent> [unite]" . s:key . " :<C-u>Unite " . s:source . "<CR>")
+    unlet s:k
+endfor
 
 " This replaces my previous use of vim-startify
 nnoremap <S-F1> :<C-u>Unite neomru/file bookmark file_rec/async<CR>
