@@ -2,6 +2,8 @@ if !neobundle#load_cache('~/.vim/neobundle.vim')
     finish
 end
 
+let g:vcs_cst = neobundle#config#get_types('vcs_cst') != {}
+
 NeoBundleFetch 'Shougo/neobundle.vim', {
     \ 'depends': 'Shougo/vimproc',
     \ 'vim_version': '7.2',
@@ -15,8 +17,9 @@ NeoBundle 'JNRowe/vim-jnrowe', {
     \ 'gui': 1,
 \ }
 
-NeoBundleLazy 'Lokaltog/vim-easymotion', {
+NeoBundleLazy (g:vcs_cst ? 'vcs_cst::cstrager' : 'Lokaltog') . '/vim-easymotion', {
     \ 'on_map': '<Leader><Leader>',
+    \ 'vim_version': '7.4',
 \ }
 
 NeoBundleLazy 'Raimondi/delimitMate', {
