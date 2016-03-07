@@ -95,11 +95,11 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
 \ }
 
-NeoBundle 'bling/vim-airline'
-
-NeoBundleLazy 'chrisbra/NrrwRgn', {
-    \ 'on_cmd': ['NR', 'NarrowRegion', 'NW', 'NUD', 'NRL'],
+NeoBundle 'bling/vim-airline', {
+    \ 'depends': ['airblade/vim-gitgutter', 'chrisbra/NrrwRgn'],
 \ }
+
+NeoBundle 'chrisbra/NrrwRgn'
 
 NeoBundleLazy 'chrisbra/csv.vim', {
     \ 'on_ft': 'csv',
