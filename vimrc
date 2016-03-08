@@ -188,6 +188,9 @@ if has("autocmd")
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
 
+    " Clear the neobundle cache on write
+    autocmd BufWritePost neobundle.vim NeoBundleClearCache
+
     " Attempt filetype detection after writing.
     autocmd BufWritePost *
         \ if empty(&filetype) |
