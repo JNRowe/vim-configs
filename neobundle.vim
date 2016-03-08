@@ -88,8 +88,6 @@ NeoBundle 'Shougo/vimproc', {
     \ 'build': 'make',
 \ }
 
-NeoBundle 'Yggdroot/indentLine'
-
 NeoBundle 'airblade/vim-gitgutter', {
     \ 'disabled': !has('signs'),
     \ 'external_command': 'git',
