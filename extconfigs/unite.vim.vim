@@ -26,39 +26,49 @@ nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
 
 for s:k in [
-    \   ['a',       'buffer:"-" bookmark neomru/file'],
-    \   ['!',       'output/shellcmd'],
+    \   ['a',       'buffer:"-" bookmark neomru/file', 'all'],
+    \   ['!',       'output/shellcmd',                 'shell'],
     \   ['/',       'grep:.'],
     \   [':',       'output'],
     \   ['?',       'source'],
     \   'bookmark',
     \   'change',
-    \   ['f',       'file/async'],
+    \   ['f',       'file/async',                      'file'],
     \   ['g',       'file_rec/git'],
     \   ['j',       'junkfile'],
-    \   ['R',       'file_rec/async'],
+    \   ['R',       'file_rec/async',                  'file/rec'],
     \   'history',
     \   'mapping',
     \   ['p',       'buffer:"-"'],
     \   'register',
-    \   ['t',       'grep:%::\(TODO\\|FIXME\)'],
+    \   ['t',       'grep:%::\(TODO\\|FIXME\)',        'task'],
     \   ['u',       'neomru/file'],
     \   'window',
     \ ]
 
     let s:key = s:k[0]
-    let s:source= type(s:k) == 3 ? s:k[1] : s:k
+    if type(s:k) == 3
+        let s:source = s:k[1]
+        let s:buffer_name = len(s:k) == 3 ? s:k[2] : split(s:source, ':')[0]
+    else
+        let s:source = s:k
+        let s:buffer_name = s:k
+    endif
 
-    execute("nnoremap <silent> [unite]" . s:key . " :<C-u>Unite " . s:source . "<CR>")
+    execute("nnoremap <silent> [unite]" . s:key .
+        \ " :<C-u>Unite -buffer-name=" . s:buffer_name . " " .
+        \ s:source . "<CR>")
     unlet s:k
 endfor
 
 " This replaces my previous use of vim-startify
-nnoremap <S-F1> :<C-u>Unite neomru/file bookmark file_rec/async<CR>
+nnoremap <S-F1> :<C-u>Unite -buffer-name=start neomru/file bookmark
+    \ file_rec/async<CR>
 
 if has("autocmd")
     autocmd VimEnter * if argc() == 0 |
-        \   Unite -no-start-insert neomru/file bookmark file_rec/async |
+        \   Unite -buffer-name=start -no-start-insert neomru/file bookmark
+        \       file_rec/async |
         \ endif
     autocmd FileType unite nmap <buffer> ? <Plug>(unite_toggle_auto_preview) |
         \ HideBadWhitespace
