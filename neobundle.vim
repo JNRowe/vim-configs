@@ -231,6 +231,10 @@ NeoBundle 'mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
 \ }
 
+NeoBundleLazy 'mitsuhiko/vim-rst', {
+    \ 'on_ft': 'rst',
+\ }
+
 NeoBundleLazy 'mmozuras/vim-github-comment', {
     \ 'on_cmd': 'GHComment',
     \ 'depends': 'mattn/webapi-vim',
