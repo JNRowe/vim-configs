@@ -369,15 +369,6 @@ power of ``\\\``.
 Replace most of your use of a shell when working on a project with just another
 ``vim`` buffer.
 
-``tpope/vim-ragtag``
---------------------
-
-:repo: https://github.com/tpope/vim-ragtag
-
-    "ragtag.vim: ghetto HTML/XML mappings (formerly allml.vim)"
-
-Pretend that the verbosity of the HTML in your templates is no longer a problem.
-
 ``tpope/vim-repeat``
 --------------------
 
