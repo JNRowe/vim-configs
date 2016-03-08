@@ -286,7 +286,7 @@ NeoBundle 'tpope/vim-fugitive', {
     \ 'external_command': 'git'
 \ }
 
-NeoBundle 'tpope/vim-jdaddy', {
+NeoBundleLazy 'tpope/vim-jdaddy', {
     \ 'on_ft': 'json',
 \ }
 
