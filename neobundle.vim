@@ -88,11 +88,6 @@ NeoBundle 'Shougo/vimproc', {
     \ 'build': 'make',
 \ }
 
-NeoBundle 'airblade/vim-gitgutter', {
-    \ 'disabled': !has('signs'),
-    \ 'external_command': 'git',
-\ }
-
 NeoBundleLazy 'bitc/vim-bad-whitespace', {
     \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
     \ 'on_i': 1,
@@ -104,7 +99,6 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
 
 NeoBundle 'bling/vim-airline', {
     \ 'depends': [
-    \   'airblade/vim-gitgutter',
     \   'chrisbra/NrrwRgn',
     \   'scrooloose/syntastic',
     \   'tpope/vim-fugitive',
