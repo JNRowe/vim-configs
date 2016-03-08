@@ -18,8 +18,6 @@ let g:airline_symbols = {
     \ 'whitespace': '·',
 \ }
 
-" vim-bad-whitespace handles this well for me
-let g:airline#extensions#whitespace#enabled=0
 
 let g:airline#extensions#disable_rtp_load=1
 if has('signs') && executable('git')
