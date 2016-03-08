@@ -125,10 +125,6 @@ NeoBundleLazy 'chrisbra/unicode.vim', {
 
 NeoBundle 'chrisbra/vim_faq'
 
-NeoBundleLazy 'ciaranm/detectindent', {
-    \ 'on_cmd': 'Detectindent',
-\ }
-
 NeoBundle 'ciaranm/securemodelines'
 
 NeoBundleLazy 'davidhalter/jedi-vim', {
