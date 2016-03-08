@@ -101,6 +101,7 @@ NeoBundle 'bling/vim-airline', {
     \ 'depends': [
     \   'chrisbra/NrrwRgn',
     \   'scrooloose/syntastic',
+    \   'mhinz/vim-signify',
     \   'tpope/vim-fugitive',
     \ ],
 \ }
@@ -206,6 +207,9 @@ NeoBundleLazy 'leafo/moonscript-vim', {
 NeoBundleLazy 'ledger/vim-ledger', {
     \ 'on_ft': 'ledger',
 \ }
+
+" vim-signature apparently can integrate with this, but how?
+NeoBundle 'mhinz/vim-signify'
 
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'on_ft': ['ledger', 'moon', 'python'],
