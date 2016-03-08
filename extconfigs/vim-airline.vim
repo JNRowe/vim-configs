@@ -37,3 +37,4 @@ if executable('git')
 endif
 
 let g:airline#extensions#csv#column_display = 'Name'
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
