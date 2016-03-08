@@ -215,7 +215,7 @@ NeoBundleLazy 'ledger/vim-ledger', {
 \ }
 
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
-    \ 'on_ft': 'python',
+    \ 'on_ft': ['ledger', 'moon', 'python'],
 \ }
 
 NeoBundleLazy 'mihaifm/bufstop', {
