@@ -222,15 +222,6 @@ Like ``tig``? Use ``gitv``
 The repo you'll be looking to fork when inserting a template makes you feel
 physically sick.
 
-``int3/vim-extradite``
-----------------------
-
-:repo: https://github.com/int3/vim-extradite
-
-    "A git commit browser for vim. Extends fugitive.vim."
-
-Another ``git`` commit browser, useful when diving around in a new project.
-
 ``jceb/vim-editqf``
 -------------------
 
