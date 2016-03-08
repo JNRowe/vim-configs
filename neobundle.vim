@@ -250,7 +250,7 @@ NeoBundleLazy 'reinh/vim-makegreen', {
 \ }
 
 NeoBundleLazy 'rking/ag.vim', {
-    \ 'on_cmd': ['Ag', 'grep'],
+    \ 'on_cmd': ['Ag', 'AgBuffer'],
     \ 'external_command': 'ag',
 \ }
 
