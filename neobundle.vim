@@ -225,7 +225,7 @@ NeoBundleLazy 'mihaifm/vimpanel', {
     \ 'on_cmd': ['VimpanelCreate', 'VimpanelLoad'],
 \ }
 
-NeoBundle 'mitsuhiko/vim-jinja', {
+NeoBundleLazy 'mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
 \ }
 
