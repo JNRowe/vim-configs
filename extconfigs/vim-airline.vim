@@ -18,11 +18,18 @@ let g:airline_symbols = {
     \ 'whitespace': '·',
 \ }
 
+let g:airline#extensions#disable_rtp_load = 1
+let g:airline_extensions = [
+    \ 'csv',
+    \ 'nrrwrgn',
+    \ 'whitespace',
+    \ 'wordcount',
+\ ]
 
-let g:airline#extensions#disable_rtp_load=1
-if has('signs') && executable('git')
-    let g:airline#extensions#hunks#enabled=1
+if has('quickfix')
+    let g:airline_extensions += ['quickfix', 'syntastic']
+end
+if executable('git')
+    let g:airline_extensions += ['branch', 'hunks']
     let g:airline#extensions#branch#format = 2
 endif
-let g:airline#extensions#nrrwrgn#enabled=1
-let g:airline#extensions#wordcount#enabled=1
