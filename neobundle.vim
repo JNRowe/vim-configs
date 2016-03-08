@@ -332,4 +332,5 @@ NeoBundleLazy 'vim-utils/vim-vertical-move', {
     \ 'on_map': ['[v', ']v'],
 \ }
 
+NeoBundleDocs
 NeoBundleSaveCache
