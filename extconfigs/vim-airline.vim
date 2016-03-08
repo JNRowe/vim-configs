@@ -33,4 +33,5 @@ if executable('git')
     let g:airline_extensions += ['branch', 'hunks']
     let g:airline#extensions#branch#format = 2
     let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
+    let g:airline#extensions#hunks#non_zero_only = 1
 endif
