@@ -22,6 +22,7 @@ let g:airline_symbols = {
 let g:airline#extensions#disable_rtp_load=1
 if has('signs') && executable('git')
     let g:airline#extensions#hunks#enabled=1
+    let g:airline#extensions#branch#format = 2
 endif
 let g:airline#extensions#nrrwrgn#enabled=1
 let g:airline#extensions#wordcount#enabled=1
