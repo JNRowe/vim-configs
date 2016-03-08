@@ -59,7 +59,7 @@ if has("balloon_eval")
     set ballooneval
 endif
 set colorcolumn=+1
-set completeopt=longest,menuone,preview
+set completeopt=longest,menu,preview
 if has('conceal')
     set conceallevel=2
     set concealcursor=nc
