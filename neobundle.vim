@@ -177,8 +177,6 @@ NeoBundleLazy 'gregsexton/gitv', {
     \ 'external_command': 'git',
 \ }
 
-NeoBundle 'int3/vim-extradite'
-
 NeoBundleLazy 'guns/xterm-color-table.vim', {
     \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
 \ }
