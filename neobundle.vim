@@ -30,6 +30,13 @@ NeoBundleLazy 'Shougo/context_filetype.vim', {
     \ 'on_i': 1,
 \ }
 
+NeoBundleLazy 'Shougo/junkfile.vim', {
+    \ 'autoload': {
+    \   'commands': 'JunkfileOpen',
+    \   'unite_sources': ['junkfile', 'junkfile/new'],
+    \ },
+\ }
+
 if has('lua')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
         \ 'disabled': !has('lua'),
