@@ -328,4 +328,8 @@ NeoBundleLazy 'vim-utils/vim-man', {
     \ 'on_cmd': ['Man', 'Vman'],
 \ }
 
+NeoBundleLazy 'vim-utils/vim-vertical-move', {
+    \ 'on_map': ['[v', ']v'],
+\ }
+
 NeoBundleSaveCache
