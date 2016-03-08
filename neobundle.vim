@@ -103,7 +103,12 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
 \ }
 
 NeoBundle 'bling/vim-airline', {
-    \ 'depends': ['airblade/vim-gitgutter', 'chrisbra/NrrwRgn'],
+    \ 'depends': [
+    \   'airblade/vim-gitgutter',
+    \   'chrisbra/NrrwRgn',
+    \   'scrooloose/syntastic',
+    \   'tpope/vim-fugitive',
+    \ ],
 \ }
 
 NeoBundle 'chrisbra/NrrwRgn'
