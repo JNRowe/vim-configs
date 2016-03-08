@@ -35,3 +35,5 @@ if executable('git')
     let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
     let g:airline#extensions#hunks#non_zero_only = 1
 endif
+
+let g:airline#extensions#csv#column_display = 'Name'
