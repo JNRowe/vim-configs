@@ -6,16 +6,16 @@ endif
 " basically just a convenience because I'm really used to the icons.
 "
 " Note to self: Names are from US S-<digit> keymap.
-for [k, v] in items({"!": ["info", "Todo"], "@": "warning", "#": "error"})
-    if type(v) == 3
-        let s:icon = v[0]
-        let s:hl = v[1]
+for [s:k, s:v] in items({"!": ["info", "Todo"], "@": "warning", "#": "error"})
+    if type(s:v) == 3
+        let s:icon = s:v[0]
+        let s:hl = s:v[1]
     else
-        let s:icon = v
-        let s:hl = toupper(v[0]) . v[1:] . "MSG"
+        let s:icon = s:v
+        let s:hl = toupper(s:v[0]) . s:v[1:] . "MSG"
     end
-    unlet v
-    execute("sign define Signature_" . k .
+    unlet s:v
+    execute("sign define Signature_" . s:k .
         \ " icon=" . expand("~/.vim/icons/" . s:icon . ".png") .
         \ " text=" . toupper(s:icon[0] . s:icon[0]) . " texthl=" . s:hl)
 endfor
