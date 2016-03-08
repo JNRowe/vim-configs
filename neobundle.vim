@@ -272,6 +272,8 @@ NeoBundleLazy 'sjl/gundo.vim', {
 
 NeoBundle 'spolu/dwm.vim'
 
+NeoBundle 'terryma/vim-expand-region'
+
 NeoBundle 'terryma/vim-multiple-cursors' , {
     \ 'on_i': 1,
 \ }
