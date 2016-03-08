@@ -35,6 +35,7 @@ for s:k in [
     \   'change',
     \   ['f',       'file/async'],
     \   ['g',       'file_rec/git'],
+    \   ['j',       'junkfile'],
     \   ['R',       'file_rec/async'],
     \   'history',
     \   'mapping',
