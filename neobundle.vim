@@ -296,6 +296,8 @@ NeoBundle 'tpope/vim-repeat'
 
 NeoBundle 'tpope/vim-sensible'
 
+NeoBundle 'tpope/vim-sleuth'
+
 NeoBundle 'tpope/vim-speeddating'
 
 NeoBundle 'tpope/vim-surround'
