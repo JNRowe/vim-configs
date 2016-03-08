@@ -274,8 +274,8 @@ NeoBundle 'spolu/dwm.vim'
 
 NeoBundle 'terryma/vim-expand-region'
 
-NeoBundle 'terryma/vim-multiple-cursors' , {
-    \ 'on_i': 1,
+NeoBundleLazy 'terryma/vim-multiple-cursors', {
+    \ 'on_map': [['nx', '<C-n>']],
 \ }
 
 NeoBundle 'tpope/vim-characterize'
