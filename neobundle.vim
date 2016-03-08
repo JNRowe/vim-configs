@@ -300,10 +300,6 @@ NeoBundle 'tpope/vim-speeddating'
 
 NeoBundle 'tpope/vim-surround'
 
-NeoBundleLazy 'tsukkee/unite-tag', {
-    \ 'on_unite': ['tag', 'tag/file'],
-\ }
-
 NeoBundleLazy 'ujihisa/unite-colorscheme', {
     \ 'on_unite': 'colorscheme'
 \ }
