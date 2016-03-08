@@ -282,9 +282,7 @@ NeoBundle 'tpope/vim-characterize'
 
 NeoBundle 'tpope/vim-commentary'
 
-NeoBundleLazy 'tpope/vim-fugitive', {
-    \ 'augroup' : 'fugitive',
-    \ 'on_cmd': ['Gblame', 'Gdiff', 'Git', 'Gcommit', 'Glog', 'Gstatus'],
+NeoBundle 'tpope/vim-fugitive', {
     \ 'external_command': 'git'
 \ }
 
