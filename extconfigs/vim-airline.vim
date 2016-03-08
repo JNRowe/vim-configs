@@ -1,9 +1,25 @@
 let g:airline_theme='powerlineish'
 
+" Requires powerline-symbols
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+" Requires Font Awesome in places
+" Note: I have FA resolve locally as webfonts are disabled in my browsers,
+" if you don't have a similar setup then the following won't work.
+let g:airline_symbols = {
+    \ 'branch': '',
+    \ 'crypt': '',
+    \ 'linenr': '⏎',
+    \ 'modified': '➕',
+    \ 'paste': ' ',
+    \ 'readonly': '',
+    \ 'space': ' ',
+    \ 'whitespace': '·',
+\ }
+
 " vim-bad-whitespace handles this well for me
 let g:airline#extensions#whitespace#enabled=0
-
-let g:airline_powerline_fonts=1
 
 let g:airline#extensions#disable_rtp_load=1
 if has('signs') && executable('git')
