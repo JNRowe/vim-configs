@@ -258,9 +258,8 @@ NeoBundleLazy 'rust-lang/rust.vim', {
     \ 'on_ft': 'rust',
 \ }
 
-NeoBundleLazy 'scrooloose/syntastic', {
+NeoBundle 'scrooloose/syntastic', {
     \ 'disabled': !has('quickfix'),
-    \ 'on_i': 1,
 \ }
 
 NeoBundleLazy 'sjl/clam.vim', {
