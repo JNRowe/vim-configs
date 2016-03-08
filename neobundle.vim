@@ -239,6 +239,8 @@ NeoBundleLazy 'moll/vim-bbye', {
     \ 'on_cmd': 'Bdelete',
 \ }
 
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
 NeoBundleLazy 'reinh/vim-makegreen', {
     \ 'on_cmd': 'MakeGreen',
 \ }
