@@ -184,6 +184,8 @@ if has("autocmd")
 
     autocmd FileType gitconfig set noexpandtab
 
+    autocmd FileType css,html EmmetInstall
+
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost .vimrc source %
