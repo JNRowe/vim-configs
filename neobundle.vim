@@ -247,6 +247,10 @@ NeoBundleLazy 'reinh/vim-makegreen', {
     \ 'on_cmd': 'MakeGreen',
 \ }
 
+NeoBundle 'rhysd/committia.vim', {
+    \ 'external_command': 'git',
+\ }
+
 NeoBundleLazy 'rking/ag.vim', {
     \ 'on_cmd': ['Ag', 'AgBuffer'],
     \ 'external_command': 'ag',
