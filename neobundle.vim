@@ -208,6 +208,10 @@ NeoBundleLazy 'ledger/vim-ledger', {
     \ 'on_ft': 'ledger',
 \ }
 
+NeoBundleLazy 'mattn/emmet-vim', {
+    \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
+\ }
+
 " vim-signature apparently can integrate with this, but how?
 NeoBundle 'mhinz/vim-signify'
 
