@@ -272,7 +272,9 @@ NeoBundleLazy 'sjl/gundo.vim', {
     \ 'on_cmd': 'GundoToggle',
 \ }
 
-NeoBundle 'spolu/dwm.vim'
+NeoBundleLazy 'spolu/dwm.vim', {
+    \ 'on_func': ['DWM_Focus', 'DWM_New', 'DWM_Rotate'],
+\ }
 
 NeoBundle 'terryma/vim-expand-region'
 
