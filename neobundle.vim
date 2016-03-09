@@ -224,10 +224,6 @@ NeoBundleLazy 'mihaifm/bufstop', {
     \ 'on_cmd': ['Bufstop', 'BufstopFast'],
 \ }
 
-NeoBundleLazy 'mihaifm/vimpanel', {
-    \ 'on_cmd': ['VimpanelCreate', 'VimpanelLoad'],
-\ }
-
 NeoBundleLazy 'mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
 \ }
