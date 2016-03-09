@@ -84,7 +84,7 @@ set formatoptions-=wvb
 set nofsync
 set gdefault
 if executable('ag')
-    set grepprg=ag\ --vimgrep\ $*
+    set grepprg=ag\ --vimgrep
     set grepformat=%f:%l:%c:%m
 else
     let &grepprg="grep -nH --exclude-from=" . g:xdg_data_dir . "/grep_excludes $* /dev/null"
