@@ -1,10 +1,10 @@
 vim-configs
 ===========
 
-This is just my personal vim_ configuration files that are shared between hosts.
+This is just my personal vim_ configuration files that are shared among hosts.
 Maybe they're useful to you too, or better yet you'll spot *and* fix a bug!
 
-It uses features introduced in version 7.3, but may work with later versions.
+It uses features introduced in version 7.3, but should work with later versions.
 
 If you find any problems with the files in this repository either file an
 issue_, or drop me an email_.
