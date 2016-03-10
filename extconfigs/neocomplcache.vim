@@ -15,3 +15,8 @@ let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_fuzzy_completion = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_temporary_dir = g:vim_cache_dir . '/neocomplcache'
+
+if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.python = '[^. \t]\.\w*'
