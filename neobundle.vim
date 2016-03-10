@@ -196,6 +196,7 @@ NeoBundleLazy 'jceb/vim-editqf', {
 
 NeoBundleLazy 'jceb/vim-fastwordcompleter', {
     \ 'on_cmd': 'AutocompletionStart',
+    \ 'on_ft': ['genie', 'python', 'vim'],
 \ }
 
 NeoBundle 'justincampbell/vim-eighties'
