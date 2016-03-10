@@ -13,3 +13,10 @@ for s:key in ['Left', 'Right']
     execute("nnoremap <silent> [sideways]<S-" . s:key . ">" .
         \ " :<C-u>SidewaysJump" . s:key . "<CR>")
 endfor
+
+for s:key in ['A', 'I']
+    execute("onoremap <silent> a" . tolower(s:key) .
+        \ " <Plug>SidewaysArgumentTextobj" . s:key)
+    execute("xnoremap <silent> a" . tolower(s:key) .
+        \ " <Plug>SidewaysArgumentTextobj" . s:key)
+endfor
