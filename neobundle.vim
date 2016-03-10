@@ -283,8 +283,6 @@ NeoBundleLazy 'terryma/vim-multiple-cursors', {
     \ 'on_map': [['nx', '<C-n>']],
 \ }
 
-NeoBundle 'tpope/vim-characterize'
-
 NeoBundle 'tpope/vim-commentary'
 
 NeoBundle 'tpope/vim-fugitive', {
