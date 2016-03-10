@@ -1,12 +1,10 @@
-" vim: sw=4 sts=4 et tw=80 fdm=marker:
-
 scriptencoding utf-8
 
 set nocompatible
 
 if v:version < 704
-    let v:warningmsg="Vim version 7.4 or higher is required for some of the " .
-        \ "functionality in this vimrc"
+    let v:warningmsg = "Vim version 7.4 or higher is required for some of "
+        \ "the functionality in this vimrc"
     echohl WarningMsg
     echomsg v:warningmsg
     echohl none
@@ -20,9 +18,12 @@ endif
 
 " Find appropriate directory for data files, this used to be handled by
 " vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
-let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME) ? '~/.cache' : '$XDG_CACHE_HOME')
-let g:xdg_config_dir = expand(empty($XDG_CONFIG_HOME) ? '~/.config' : '$XDG_CONFIG_HOME')
-let g:xdg_data_dir = expand(empty($XDG_DATA_HOME) ? '~/.local/share' : '$XDG_DATA_HOME')
+let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME)
+    \                        ? '~/.cache' : '$XDG_CACHE_HOME')
+let g:xdg_config_dir = expand(empty($XDG_CONFIG_HOME)
+    \                         ? '~/.config' : '$XDG_CONFIG_HOME')
+let g:xdg_data_dir = expand(empty($XDG_DATA_HOME)
+    \                       ? '~/.local/share' : '$XDG_DATA_HOME')
 
 let g:vim_cache_dir = g:xdg_cache_dir . "/vim"
 let g:vim_config_dir = g:xdg_config_dir . "/vim"
@@ -53,8 +54,8 @@ endif
 set colorcolumn=+1
 set completeopt=longest,menu,preview
 if has('conceal')
-    set conceallevel=2
     set concealcursor=nc
+    set conceallevel=2
 endif
 set confirm
 set cryptmethod=blowfish
@@ -79,7 +80,8 @@ if executable('ag')
     set grepprg=ag\ --vimgrep
     set grepformat=%f:%l:%c:%m
 else
-    let &grepprg="grep -nH --exclude-from=" . g:xdg_data_dir . "/grep_excludes $* /dev/null"
+    let &grepprg = "grep -nH "
+        \ "--exclude-from=" . g:xdg_data_dir . "/grep_excludes $* /dev/null"
 endif
 set guiheadroom=0
 set guioptions+=chR
@@ -98,11 +100,12 @@ set nonumber
 set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F4>
 set report=0
+set scrolloff=10
 set shiftround
 set shiftwidth=4
 set showcmd
 set showfulltag
-set showtabline=1
+set showmatch
 set smartcase
 set softtabstop=4
 set spell
@@ -111,10 +114,7 @@ set spelllang=en_gb
 set splitbelow
 set splitright
 set nostartofline
-set scrolloff=10
-set showmatch
 set suffixes+=.pyc,.pyo
-set swapsync=
 set textwidth=80
 set tildeop
 set title
@@ -134,23 +134,23 @@ set wildmode=longest,full
 let &showbreak="» "
 
 " Syntax files settings {{{
-let g:erlang_highlight_special_atoms=1
-let g:is_posix=1 " Posix is a more realistic default for me
-let b:nroff_is_groff=1 " Default to groff
-let g:sh_fold_enabled=7 " Fold as much as possible
-let g:vimsyn_embed='lPr' " lua/Python/ruby only embedded syntax
-let g:xml_syntax_folding=1
-let sh_minlines=400
-let is_bash=1 " Default to bash for sh syntax
-let python_highlight_all=1 " Highlight everything possible for python
+let g:erlang_highlight_special_atoms = 1
+let g:is_posix = 1  " Posix is a more realistic default for me
+let b:nroff_is_groff = 1  " Default to groff
+let g:sh_fold_enabled = 7  " Fold as much as possible
+let g:vimsyn_embed = 'lPr'  " lua/Python/ruby only embedded syntax
+let g:xml_syntax_folding = 1
+let sh_minlines = 400
+let is_bash = 1  " Default to bash for sh syntax
+let python_highlight_all = 1  " Highlight everything possible for python
 " }}}
 
 " Load abbreviations {{{
 if filereadable(expand("~/.vim/abbr"))
     source ~/.vim/abbr
 endif
-" This file is meant for host specific abbreviations, for example terms that are
-" used specifically at the office
+" This file is meant for host specific abbreviations, for example terms that
+" are used specifically at the office
 if filereadable(expand("~/.vim/abbr-local"))
     source ~/.vim/abbr-local
 endif
@@ -188,7 +188,8 @@ if has("autocmd")
 
     autocmd BufWritePost ~/.vim/extconfigs/*.vim
         \ if exists("g:loaded_extconfigs_" . expand("%:t:r:gs?[\.-]?_?")) |
-        \   execute("unlet g:loaded_extconfigs_" . expand("%:t:r:gs?[\.-]?_?")) |
+        \   execute("unlet g:loaded_extconfigs_" .
+        \           expand("%:t:r:gs?[\.-]?_?")) |
         \ endif |
         \ so %
 
@@ -232,12 +233,12 @@ if has("autocmd")
     autocmd QuickFixCmdPost * belowright cwindow 5
 
     " make timing, from http://github.com/ciaranm/dotfiles-ciaranm/ {{{
-    autocmd QuickFixCmdPre make let g:make_start_time=localtime()
+    autocmd QuickFixCmdPre make let g:make_start_time = localtime()
 
     autocmd QuickFixCmdPost make
-        \ let g:make_total_time=localtime() - g:make_start_time |
+        \ let g:make_total_time = localtime() - g:make_start_time |
         \ echo printf("Time taken: %dm%2.2ds", g:make_total_time / 60,
-        \   g:make_total_time % 60)
+        \             g:make_total_time % 60)
     " }}}
 
     " Only highlight cursor line in active window
@@ -292,14 +293,14 @@ else
 
     " Change the cursor colour for insert mode {{{
     if &term =~? '^rxvt' && exists('&t_SI')
-        let &t_SI="\<Esc>]12;purple\x7"
-        let &t_EI="\<Esc>]12;green\x7"
+        let &t_SI = "\<Esc>]12;purple\x7"
+        let &t_EI = "\<Esc>]12;green\x7"
     endif " }}}
     " }}}
 endif
 
 " Gentoo bug summary browser
-let g:bugsummary_browser="opera -newpage '%s'"
+let g:bugsummary_browser = "opera -newpage '%s'"
 
 " Show tabs and trailing whitespace {{{
 if &termencoding ==# "utf-8" || has("gui_running")
@@ -389,7 +390,8 @@ if has("menu")
         amenu L&ocations.&Awesome.rc
             \ :execute("e " . g:xdg_config_dir . "/awesome/rc.moon")<CR>
         amenu L&ocations.&Awesome.theme
-            \ :execute("e " . g:xdg_config_dir . "/awesome/themes/jnrowe/theme.moon")<CR>
+            \ :execute("e " . g:xdg_config_dir .
+            \          "/awesome/themes/jnrowe/theme.moon")<CR>
     endif
     if filereadable(g:xdg_config_dir . "/openbox/rc.xml")
         amenu L&ocations.&Openbox.autostart
@@ -501,7 +503,8 @@ function! ModelineStub()
     let save_cursor = getpos('.')
     let fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
 
-    let x = printf(&cms, printf(fmt, &filetype, &tabstop, &shiftwidth, &textwidth,
+    let x = printf(&cms, printf(fmt, &filetype, &tabstop, &shiftwidth,
+        \                       &textwidth,
         \                       (&expandtab ? "et" : "noexpandtab")))
     $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
     call setpos('.', save_cursor)
@@ -551,8 +554,8 @@ nmap <Leader>cl :clast<CR>
 " }}}
 
 " Folding support maps {{{
-" The following mappings may not be to your liking, but I never use +/- for line
-" movement.
+" The following mappings may not be to your liking, but I never use +/- for
+" line movement.
 nmap - zc
 nmap + zo
 
@@ -564,7 +567,8 @@ vmap - zf
 command! ShowHighlightGroup
     \ echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name") .
     \   '> trans<' . synIDattr(synID(line("."), col("."), 0), "name") .
-    \   "> lo<" . synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name") .
+    \   "> lo<" . synIDattr(synIDtrans(synID(line("."), col("."), 1)),
+    \                       "name") .
     \   ">"
 " }}}
 
@@ -575,3 +579,5 @@ runtime! extconfigs/*.vim
 if filereadable(expand("~/.vim/vimrc-local"))
     source ~/.vim/vimrc-local
 endif
+
+" vim: fdm=marker:

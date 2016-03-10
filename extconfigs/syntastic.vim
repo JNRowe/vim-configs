@@ -18,4 +18,5 @@ if (&termencoding ==# "utf-8") || has("gui_running")
 endif
 
 let g:syntastic_c_checkers = ["gcc", "splint"]
-let g:syntastic_c_compiler_options = '-std=gnu11 Wall -Wextra -Werror -pedantic'
+let g:syntastic_c_compiler_options =
+    \ '-std=gnu11 Wall -Wextra -Werror -pedantic'

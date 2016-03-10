@@ -4,4 +4,4 @@ else
     execute("let g:loaded_xcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
-let g:ag_working_path_mode='r'
+let g:ag_working_path_mode = 'r'
