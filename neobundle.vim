@@ -117,6 +117,7 @@ NeoBundle 'chrisbra/Recover.vim'
 
 NeoBundleLazy 'chrisbra/unicode.vim', {
     \ 'on_cmd': ['Digraphs', 'SearchUnicode', 'UnicodeName', 'UnicodeTable'],
+    \ 'on_map': '<Plug>(UnicodeGA)',
 \ }
 
 NeoBundle 'chrisbra/vim_faq'
