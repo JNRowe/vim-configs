@@ -117,7 +117,10 @@ NeoBundleLazy 'chrisbra/csv.vim', {
 
 NeoBundleLazy 'chrisbra/unicode.vim', {
     \ 'on_cmd': ['Digraphs', 'SearchUnicode', 'UnicodeName', 'UnicodeTable'],
-    \ 'on_map': '<Plug>(UnicodeGA)',
+    \ 'on_map': [
+    \   ['i', '<C-x><C-z>', '<C-x><C-g>'],
+    \   ['n', '<Plug>(UnicodeGA)'],
+    \ ],
 \ }
 
 NeoBundle 'chrisbra/vim_faq'
