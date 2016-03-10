@@ -1,3 +1,9 @@
+if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " I need only RFC2822, git and a limited collection of ISO-8601 variants.  One
 " mismatch happened *once*, and here we are…
 let g:speeddating_formats = [

@@ -1,3 +1,9 @@
+if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 let g:syntastic_auto_loc_list = 1
 
 " Define fallback symbols for when fancy signs don't work

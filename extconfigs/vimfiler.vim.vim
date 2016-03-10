@@ -1,3 +1,9 @@
+if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_data_directory = g:vim_cache_dir . "/vimfiler"
 let g:vimfiler_force_overwrite_statusline = 0
