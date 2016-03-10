@@ -157,7 +157,7 @@ NeoBundleLazy 'ervandew/regex', {
 \ }
 
 NeoBundleLazy 'ervandew/supertab', {
-    \ 'on_i': 1,
+    \ 'on_map': [['i', '<Tab>']],
 \ }
 
 NeoBundleLazy 'fishman/vim-vala', {
