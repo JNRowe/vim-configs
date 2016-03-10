@@ -45,6 +45,7 @@ for s:k in [
     \   ['R',       'file_rec/async',                  'file/rec'],
     \   'history',
     \   'mapping',
+    \   'neobundle',
     \   ['p',       'buffer:"-"'],
     \   'register',
     \   ['t',       'grep:%::\(TODO\\|FIXME\)',        'task'],
