@@ -135,6 +135,7 @@ NeoBundleLazy 'davidhalter/jedi-vim', {
 NeoBundleLazy 'dhruvasagar/vim-table-mode', {
     \ 'on_cmd': ['TableModeToggle', 'Tableize'],
     \ 'on_ft': 'rst',
+    \ 'on_map': [['nx', '<Leader>t']],
 \ }
 
 NeoBundleLazy 'editorconfig/editorconfig-vim', {
