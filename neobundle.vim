@@ -226,10 +226,6 @@ NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'on_map': [['ov', 'aI', 'ai', 'iI', 'ii']],
 \ }
 
-NeoBundleLazy 'mihaifm/bufstop', {
-    \ 'on_cmd': ['Bufstop', 'BufstopFast'],
-\ }
-
 NeoBundleLazy 'mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
 \ }
