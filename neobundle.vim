@@ -338,5 +338,11 @@ NeoBundleLazy 'vim-utils/vim-vertical-move', {
     \ 'on_map': ['[v', ']v'],
 \ }
 
+" Nasty bundled packages {{{
+" These packages are being removed, either by finding a usable remote location
+" or by deletion.
+NeoBundleLocal ~/.vim/internal/
+" }}}
+
 NeoBundleDocs
 NeoBundleSaveCache

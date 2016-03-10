@@ -18,27 +18,6 @@ if filereadable(expand("~/.vim/vimrc-local.pre"))
     source ~/.vim/vimrc-local.pre
 endif
 
-if has('vim_starting')
-    set runtimepath+=~/.vim/external/neobundle.vim/
-endif
-
-" Fire up neobundle, and setup plugins
-call neobundle#begin(expand('~/.vim/external/', 1))
-
-" Disable netrw, as it clashes with plugins
-let g:loaded_netrwPlugin = 1
-
-source ~/.vim/neobundle.vim
-
-" Nasty bundled packages {{{
-" These packages are being removed, either by finding a usable remote location
-" or by deletion.
-NeoBundleLocal ~/.vim/internal/
-" }}}
-
-NeoBundleCheck
-call neobundle#end()
-
 " Find appropriate directory for data files, this used to be handled by
 " vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
 let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME) ? '~/.cache' : '$XDG_CACHE_HOME')
@@ -48,6 +27,19 @@ let g:xdg_data_dir = expand(empty($XDG_DATA_HOME) ? '~/.local/share' : '$XDG_DAT
 let g:vim_cache_dir = g:xdg_cache_dir . "/vim"
 let g:vim_config_dir = g:xdg_config_dir . "/vim"
 let g:vim_data_dir = g:xdg_data_dir . "/vim"
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/external/neobundle.vim/
+endif
+
+" Fire up neobundle, and setup plugins
+source ~/.vim/extconfigs/neobundle.vim.vim
+call neobundle#begin(expand('~/.vim/external/', 1))
+
+source ~/.vim/neobundle.vim
+
+NeoBundleCheck
+call neobundle#end()
 
 " General settings {{{
 set autochdir
