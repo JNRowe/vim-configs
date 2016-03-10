@@ -307,7 +307,13 @@ NeoBundle 'tpope/vim-speeddating'
 
 NeoBundle 'tpope/vim-sleuth'
 
-NeoBundle 'tpope/vim-surround'
+NeoBundleLazy 'tpope/vim-surround', {
+    \ 'on_map': [
+    \   ['i', '<C-G>S', '<C-G>s', '<C-s>'],
+    \   ['n', 'cS', 'cs', 'ds', 'yS', 'ys'],
+    \   ['x', 'S'],
+    \ ],
+\ }
 
 NeoBundleLazy 'ujihisa/unite-colorscheme', {
     \ 'on_unite': 'colorscheme'
