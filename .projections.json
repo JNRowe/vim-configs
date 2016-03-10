@@ -1,5 +1,6 @@
 {
     "extconfigs/*.vim": {
+        "alternate": "external/{}",
         "template": [
             "if exists(\"g:loaded_extconfigs_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
             "    finish",
