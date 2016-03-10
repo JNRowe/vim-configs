@@ -1,3 +1,9 @@
+if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " Better judgement aside as it isn't packaged anywhere for me.  Should that
 " change…
 "let g:EditorConfig_core_mode = "external_command"

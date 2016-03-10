@@ -1,3 +1,9 @@
+if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " These settings are incredibly dependent on the colour schemes being used
 if has("gui_running")
     let g:indent_guides_color_change_percent = 7

@@ -1,3 +1,9 @@
+if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " Would be nicer if it was home row and then home row for repeats
 let g:EasyMotion_keys = 'qwertyuiopzxcvbnmn,.asdfghjkl;'
 let g:EasyMotion_use_smartsign_gb = 1
