@@ -170,17 +170,6 @@ config file or Kix2001 oddity.
 
 Pop up documentation for that obscure-function-with-a-random-string-suffix name.
 
-``garbas/vim-snipmate``
------------------------
-
-:repo: https://github.com/garbas/vim-snipmate
-
-    "snipMate.vim aims to be a concise vim script that implements some of
-    TextMate's snippets features in Vim. "
-
-Templates that don't make you want to pull your hair out every time you think
-about inserting one.
-
 ``godlygeek/tabular``
 ---------------------
 
@@ -211,16 +200,6 @@ nested tags in templates
     "gitk for Vim."
 
 Like ``tig``? Use ``gitv``
-
-``honza/snipmate-snippets``
----------------------------
-
-:repo: https://github.com/honza/snipmate-snippets
-
-    "vim-snipmate default snippets"
-
-The repo you'll be looking to fork when inserting a template makes you feel
-physically sick.
 
 ``jceb/vim-editqf``
 -------------------
@@ -291,16 +270,6 @@ accounts/expenses an almost nice-ish experience.
    "Text objects based on indent levels"
 
 Makes handling Python code far, far easier.
-
-``scrooloose/nerdtree``
------------------------
-
-:repo: https://github.com/scrooloose/nerdtree
-
-    "A tree explorer plugin for vim."
-
-Removes the need to install ``mc`` just to fish out that file to open in
-``vim``.
 
 ``scrooloose/syntastic``
 ------------------------
