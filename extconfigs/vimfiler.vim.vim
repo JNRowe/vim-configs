@@ -16,3 +16,7 @@ let g:vimfiler_time_format = "%FT%T"
 let g:vimfiler_tree_closed_icon = ''
 let g:vimfiler_tree_leaf_icon = ' '
 let g:vimfiler_tree_opened_icon = ''
+
+nmap <F4> :VimFilerExplorer<CR>
+nmap <S-F4> :VimFiler<CR>
+nmap <C-F4> :VimFilerDouble<CR>
