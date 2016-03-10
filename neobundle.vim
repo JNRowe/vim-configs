@@ -321,6 +321,10 @@ NeoBundleLazy 'ujihisa/unite-colorscheme', {
 
 NeoBundleLazy 'vim-scripts/Toggle', {
     \ 'on_func': 'Toggle',
+    \ 'on_map': [
+    \   ['i', '<C-T>'],
+    \   ['n', '+'],
+    \ ],
 \ }
 
 NeoBundleLazy 'vim-scripts/ZoomWin', {
