@@ -111,6 +111,7 @@ set spelllang=en_gb
 set splitbelow
 set splitright
 set nostartofline
+set scrolloff=10
 set showmatch
 set suffixes+=.pyc,.pyo
 set swapsync=
