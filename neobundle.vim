@@ -265,7 +265,7 @@ NeoBundle (g:vcs_cst ? 'vcs_cst::JNRowe' : 'scrooloose') . '/syntastic', {
 \ }
 
 NeoBundleLazy 'sjl/clam.vim', {
-    \ 'on_cmd': 'Clam',
+    \ 'on_cmd': ['Clam', 'ClamVisual'],
 \ }
 
 NeoBundleLazy 'sjl/gundo.vim', {
