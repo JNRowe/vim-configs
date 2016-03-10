@@ -109,11 +109,11 @@ NeoBundle 'bling/vim-airline', {
 
 NeoBundle 'chrisbra/NrrwRgn'
 
+NeoBundle 'chrisbra/Recover.vim'
+
 NeoBundleLazy 'chrisbra/csv.vim', {
     \ 'on_ft': 'csv',
 \ }
-
-NeoBundle 'chrisbra/Recover.vim'
 
 NeoBundleLazy 'chrisbra/unicode.vim', {
     \ 'on_cmd': ['Digraphs', 'SearchUnicode', 'UnicodeName', 'UnicodeTable'],
@@ -156,16 +156,16 @@ NeoBundleLazy 'ervandew/supertab', {
     \ 'on_i': 1,
 \ }
 
-NeoBundleLazy 'godlygeek/tabular', {
-    \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
-\ }
-
 NeoBundleLazy 'fishman/vim-vala', {
     \ 'on_ft': ['genie', 'vala', 'vapi'],
 \ }
 
 NeoBundleLazy 'gabrielelana/vim-markdown', {
     \ 'on_ft': 'markdown',
+\ }
+
+NeoBundleLazy 'godlygeek/tabular', {
+    \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
 \ }
 
 NeoBundleLazy 'gregsexton/gitv', {
@@ -182,16 +182,16 @@ NeoBundle 'jamessan/vim-gnupg', {
     \ 'external_command': 'gpg',
 \ }
 
-NeoBundleLazy 'jceb/vim-fastwordcompleter', {
-    \ 'on_i': 1,
-\ }
-
 NeoBundleLazy 'jceb/vim-editqf', {
     \ 'on_cmd': [
     \   'LocAddNote', 'LocLoad', 'LocSave',
     \   'QFAddNote', 'QFLoad', 'QFSave',
     \ ],
     \ 'on_map': [['n', '<Leader>n']],
+\ }
+
+NeoBundleLazy 'jceb/vim-fastwordcompleter', {
+    \ 'on_i': 1,
 \ }
 
 NeoBundle 'justincampbell/vim-eighties'
@@ -300,9 +300,9 @@ NeoBundle 'tpope/vim-repeat'
 
 NeoBundle 'tpope/vim-sensible'
 
-NeoBundle 'tpope/vim-sleuth'
-
 NeoBundle 'tpope/vim-speeddating'
+
+NeoBundle 'tpope/vim-sleuth'
 
 NeoBundle 'tpope/vim-surround'
 
