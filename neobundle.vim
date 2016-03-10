@@ -241,6 +241,7 @@ NeoBundleLazy 'mmozuras/vim-github-comment', {
 
 NeoBundleLazy 'moll/vim-bbye', {
     \ 'on_cmd': 'Bdelete',
+    \ 'on_map': [['n', '<Leader>q']],
 \ }
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
