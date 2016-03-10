@@ -11,6 +11,7 @@ NeoBundleFetch 'Shougo/neobundle.vim', {
 
 NeoBundleLazy 'AndrewRadev/sideways.vim', {
     \ 'on_cmd': ['SidewaysLeft', 'SidewaysRight'],
+    \ 'on_map': [['n', '[sideways]']],
 \ }
 
 NeoBundle 'JNRowe/vim-jnrowe', {
