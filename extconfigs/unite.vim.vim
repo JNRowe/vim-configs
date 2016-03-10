@@ -4,11 +4,14 @@ else
     execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
+" Requires Font Awesome in places
+" Note: I have FA resolve locally as webfonts are disabled in my browsers,
+" if you don't have a similar setup then the following won't work.
 call unite#custom#profile('default', 'context', {
     \   'direction': 'dynamictop',
     \   'empty': 1,
     \   'immediately': 1,
-    \   'prompt': '» ',
+    \   'prompt': ' ',
     \   'prompt_focus': 1,
     \   'start_insert': 1,
     \   'toggle': 1,
