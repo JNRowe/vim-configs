@@ -245,10 +245,6 @@ NeoBundleLazy 'moll/vim-bbye', {
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
-NeoBundleLazy 'reinh/vim-makegreen', {
-    \ 'on_cmd': 'MakeGreen',
-\ }
-
 NeoBundle 'rhysd/committia.vim', {
     \ 'external_command': 'git',
 \ }
