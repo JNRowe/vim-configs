@@ -284,7 +284,10 @@ NeoBundleLazy 'terryma/vim-multiple-cursors', {
     \ 'on_map': [['nx', '<C-n>']],
 \ }
 
-NeoBundle 'tpope/vim-commentary'
+NeoBundleLazy 'tpope/vim-commentary', {
+    \ 'on_cmd': 'Commentary',
+    \ 'on_map': 'gc',
+\ }
 
 NeoBundle 'tpope/vim-fugitive', {
     \ 'external_command': 'git',
