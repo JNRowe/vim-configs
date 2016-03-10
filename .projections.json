@@ -9,5 +9,8 @@
             ""
         ],
         "type": "config"
-    }
+    },
+    "README.rst": {"type": "doc"},
+    "neobundle.vim": {"type": "neo"},
+    "vimrc": {"type": "rc"}
 }
