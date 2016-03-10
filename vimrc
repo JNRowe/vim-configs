@@ -181,7 +181,7 @@ if has("autocmd")
 
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
-    autocmd BufWritePost .vimrc source %
+    autocmd BufWritePost ~/.vimrc,~/.vim/vimrc,~/.vim/vimrc-local source %
 
     " Clear the neobundle cache on write
     autocmd BufWritePost neobundle.vim NeoBundleClearCache
