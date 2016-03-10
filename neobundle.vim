@@ -294,6 +294,8 @@ NeoBundleLazy 'tpope/vim-jdaddy', {
     \ 'on_ft': 'json',
 \ }
 
+NeoBundle 'tpope/vim-projectionist'
+
 NeoBundle 'tpope/vim-repeat'
 
 NeoBundle 'tpope/vim-sensible'
