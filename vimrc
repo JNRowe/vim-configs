@@ -476,7 +476,7 @@ nmap <silent> <C-F11> :let @/ = ""<CR>
 
 " Flag toggling function {{{
 " From http://vim.wikia.com/wiki/Handy_option_flag_toggler
-function! ToggleFlag(option,flag)
+function! ToggleFlag(option, flag)
     execute('let lopt = &' . a:option)
     if lopt =~# (".*" . a:flag . ".*")
         execute('set ' . a:option . '-=' . a:flag)
@@ -557,9 +557,9 @@ vmap - zf
 " From vim wiki
 command! ShowHighlightGroup
     \ echo "hi<" . synIDattr(synID(line("."), col("."), 1), "name") .
-    \ '> trans<' . synIDattr(synID(line("."), col("."), 0), "name") .
-    \ "> lo<" . synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name") .
-    \ ">"
+    \   '> trans<' . synIDattr(synID(line("."), col("."), 0), "name") .
+    \   "> lo<" . synIDattr(synIDtrans(synID(line("."), col("."), 1)), "name") .
+    \   ">"
 " }}}
 
 " Read all configs for external packages
