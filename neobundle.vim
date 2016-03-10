@@ -179,7 +179,7 @@ NeoBundleLazy 'guns/xterm-color-table.vim', {
 \ }
 
 NeoBundle 'jamessan/vim-gnupg', {
-    \ 'external_command': 'gpg'
+    \ 'external_command': 'gpg',
 \ }
 
 NeoBundleLazy 'jceb/vim-fastwordcompleter', {
@@ -287,7 +287,7 @@ NeoBundleLazy 'terryma/vim-multiple-cursors', {
 NeoBundle 'tpope/vim-commentary'
 
 NeoBundle 'tpope/vim-fugitive', {
-    \ 'external_command': 'git'
+    \ 'external_command': 'git',
 \ }
 
 NeoBundleLazy 'tpope/vim-jdaddy', {

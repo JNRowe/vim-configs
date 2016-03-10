@@ -4,7 +4,7 @@ else
     execute("let g:loaded_xcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
-let g:airline_theme='powerlineish'
+let g:airline_theme = 'powerlineish'
 
 " Requires powerline-symbols
 let g:airline_left_sep = ''
