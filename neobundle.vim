@@ -261,7 +261,7 @@ NeoBundleLazy 'rust-lang/rust.vim', {
     \ 'on_ft': 'rust',
 \ }
 
-NeoBundle 'scrooloose/syntastic', {
+NeoBundle (g:vcs_cst ? 'vcs_cst::JNRowe' : 'scrooloose') . '/syntastic', {
     \ 'disabled': !has('quickfix'),
 \ }
 
