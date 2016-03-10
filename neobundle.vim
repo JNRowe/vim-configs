@@ -276,7 +276,9 @@ NeoBundleLazy 'spolu/dwm.vim', {
     \ 'on_func': ['DWM_Focus', 'DWM_New', 'DWM_Rotate'],
 \ }
 
-NeoBundle 'terryma/vim-expand-region'
+NeoBundleLazy 'terryma/vim-expand-region', {
+    \ 'on_map': [['nv', '+', '-']],
+\ }
 
 NeoBundleLazy 'terryma/vim-multiple-cursors', {
     \ 'on_map': [['nx', '<C-n>']],
