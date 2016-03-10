@@ -5,6 +5,7 @@ else
 endif
 
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
 
 " Define fallback symbols for when fancy signs don't work
 " Requires Font Awesome in places
