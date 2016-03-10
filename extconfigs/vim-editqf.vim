@@ -1,7 +1,7 @@
-if exists("g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+if exists("g:loaded_xcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-    execute("let g:loaded_extconfigs_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute("let g:loaded_xcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
 autocmd BufEnter * let g:editqf_saveqf_filename = g:vim_data_dir . "/quickfix/" . expand("%:p:~:gs?/?_?.dat") |
