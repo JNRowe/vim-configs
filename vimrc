@@ -105,7 +105,6 @@ set linespace=1
 set list
 set matchpairs+=<:>
 set nonumber
-set omnifunc=syntaxcomplete#Complete
 set pastetoggle=<F4>
 set report=0
 set scrolloff=10
@@ -176,6 +175,13 @@ if has("autocmd")
     " exists() is needed so that re-sourcing this file is possible.
     if !exists("*EditExisting")
         runtime! macros/editexisting.vim
+    endif
+
+    if has("+omnifunc")
+        autocmd Filetype *
+            \ if &omnifunc == "" |
+            \   setlocal omnifunc=syntaxcomplete#Complete |
+            \ endif
     endif
 
     " We don't want to edit patch backup files by accident
