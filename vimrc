@@ -44,7 +44,6 @@ call neobundle#end()
 
 " General settings {{{
 set autochdir
-set noautowriteall
 set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
@@ -52,7 +51,7 @@ if has("balloon_eval")
     set ballooneval
 endif
 set colorcolumn=+1
-set completeopt=longest,menu,preview
+set completeopt+=longest
 if has('conceal')
     set concealcursor=nc
     set conceallevel=2
@@ -74,7 +73,6 @@ set foldmethod=syntax
 set foldtext=MyFoldText()
 set formatoptions+=rnl1
 set formatoptions-=wvb
-set nofsync
 set gdefault
 if executable('ag')
     set grepprg=ag\ --vimgrep
@@ -127,7 +125,7 @@ execute("set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo")
 set virtualedit=block
 set whichwrap+=<,>,[,]
 set wildignore+=*.log,*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
-set wildmode=longest,full
+set wildmode^=longest
 " }}}
 
 " Characters to show for wrapped lines
