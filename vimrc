@@ -207,7 +207,7 @@ if has("autocmd")
 
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
-    autocmd BufWritePost ~/.vimrc,~/.vim/vimrc,~/.vim/vimrc-local source %
+    autocmd BufWritePost ~/.vimrc,~/.vim/vimrc source %
     autocmd BufWritePost ~/.vim/localcfg/*.vim call localcfg#docfg()
 
     " Clear the neobundle cache on write
@@ -419,7 +419,7 @@ if has("menu")
     endif
     if filereadable(expand("~/.vim/vimrc"))
         amenu L&ocations.&vim.&rc :e ~/.vim/vimrc<CR>
-        amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
+        amenu L&ocations.&vim.rc-&local :e ~/.vim/localcfg/<CR>
         amenu L&ocations.&vim.&neobundle :e ~/.vim/neobundle.vim<CR>
     endif
     if filereadable(expand("~/.no_my_zsh/zshrc"))
@@ -571,11 +571,6 @@ command! ShowHighlightGroup
 
 " Read all configs for external packages
 runtime! extconfigs/*.vim
-
-" Pull in local settings.  This file is for all site specific settings.
-if filereadable(expand("~/.vim/vimrc-local"))
-    source ~/.vim/vimrc-local
-endif
 
 call localcfg#docfg()
 
