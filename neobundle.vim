@@ -333,10 +333,6 @@ NeoBundleLazy 'vim-scripts/ZoomWin', {
     \ 'on_map': [['n', '<C-w>o']],
 \ }
 
-NeoBundleLazy 'vim-scripts/dbext.vim', {
-    \ 'on_cmd': 'DBPromptForBufferParameters',
-\ }
-
 NeoBundleLazy 'vim-scripts/uri-ref', {
     \ 'on_ft': 'mail',
 \ }
