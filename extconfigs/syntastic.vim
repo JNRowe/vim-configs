@@ -23,3 +23,4 @@ let g:syntastic_c_checkers = ["gcc", "splint"]
 let g:syntastic_c_compiler_options =
     \ '-std=gnu11 Wall -Wextra -Werror -pedantic'
 let g:syntastic_rst_checkers = ["rst2pseudoxml", "restyle"]
+let g:syntastic_sh_checkers = ["checkbashisms", "sh"]
