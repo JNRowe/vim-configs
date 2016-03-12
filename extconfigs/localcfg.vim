@@ -5,3 +5,4 @@ else
 endif
 
 let g:localcfg_cfgs = ['abbr']
+let g:localcfg_features = ['autocmd', 'gui']
