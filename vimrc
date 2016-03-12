@@ -169,61 +169,9 @@ if has('title') && (has('gui_running') || &title)
     set titlestring+=\ -\ %{v:progname} " Program name
 endif " }}}
 
-if has("gui_running")
-    " GUI specific settings {{{
-    set mousemodel=popup_setpos
-
-    " Always display line number in the GUI
-    set number
-    set relativenumber
-
-    " Shift insert works the same as in a terminal
-    map <S-Insert> <MiddleMouse>
-    map! <S-Insert> <MiddleMouse>
-
-    if has('gui_macvim')
-        set guifont=Menlo:h13
-    else
-        set guifont=Consolas\ 13
-    endif
-    colorscheme jnrowe
-
-    if has('title')
-        set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
-    endif
-    " }}}
-else
-    " Terminal specific settings {{{
-
-    " Set up the menus so emenu works properly
-    source $VIMRUNTIME/menu.vim
-
-    if $TERM ==# "linux" || $TERM =~ "^xterm" || $TERM == "st" ||
-        \ $TERM =~ "^st-" || split($COLORFGBG . ";padding", ";")[0] == 15
-        set background=dark
-    else
-        set background=light
-    endif
-    colorscheme elflord
-
-    " Change the cursor colour for insert mode {{{
-    if &term =~? '^rxvt' && exists('&t_SI')
-        let &t_SI = "\<Esc>]12;purple\x7"
-        let &t_EI = "\<Esc>]12;green\x7"
-    endif " }}}
-    " }}}
-endif
-
 " Make C-s do something useful, after disabling term stop!
 map <C-S> :shell<CR>
 
-" Omnicompletion rocks, but <C-x><C-o> doesn't. {{{
-if has("gui_running")
-    inoremap <C-Space> <C-x><C-o>
-else
-    inoremap <Nul> <C-x><C-o>
-endif
-" }}}
 
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
