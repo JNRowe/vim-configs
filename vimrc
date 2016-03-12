@@ -250,12 +250,6 @@ if has("autocmd")
     " a netbook
     autocmd BufEnter * syntax sync fromstart
 
-    " Current directory follows the file being edited for local files
-    autocmd BufEnter *
-        \ if bufname("") !~ '^[[:alnum:]]*://' |
-        \   silent! lcd %:p:h |
-        \ endif
-
     " Open quickfix window, if there are any entries
     autocmd QuickFixCmdPost * belowright cwindow 5
 
