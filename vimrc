@@ -417,10 +417,6 @@ if has("menu")
         amenu L&ocations.&ledger
             \ :execute("e " . g:xdg_data_dir . "/ledger/ledger.dat.gpg")<CR>
     endif
-    if filereadable(g:xdg_config_dir . "/musca/start")
-        amenu L&ocations.&musca
-            \ :execute("e " . g:xdg_config_dir . "/musca/start")<CR>
-    endif
     if filereadable(expand("~/.vimrc"))
         amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
         amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
