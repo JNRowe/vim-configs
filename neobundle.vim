@@ -301,7 +301,9 @@ NeoBundle 'tpope/vim-projectionist'
 
 NeoBundle 'tpope/vim-repeat'
 
-NeoBundle 'tpope/vim-sensible'
+" This is pinned as it can massively affect functionality, see
+" tpope/vim-sensible@2c57c5f4 for an example.
+NeoBundle 'tpope/vim-sensible', '680a5c69'
 
 NeoBundle 'tpope/vim-speeddating'
 
