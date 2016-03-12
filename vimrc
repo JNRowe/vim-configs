@@ -67,7 +67,9 @@ else
     set cryptmethod=blowfish
 endif
 set cursorline
-set dictionary+=/usr/share/dict/words
+if filereadable('/usr/share/dict/words')
+    set dictionary^=/usr/share/dict/words
+endif
 let &directory = g:vim_cache_dir . '/swap//,' . &directory
 set encoding=utf-8
 set expandtab
