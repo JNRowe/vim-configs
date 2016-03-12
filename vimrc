@@ -101,7 +101,6 @@ set ignorecase
 set infercase
 set isfname-=\=
 set lazyredraw
-set linespace=1
 set list
 " Show tabs and trailing whitespace {{{
 if &termencoding ==# "utf-8" || has("gui_running")
