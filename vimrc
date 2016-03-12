@@ -132,7 +132,7 @@ set spelllang=en_gb
 set splitbelow
 set splitright
 set nostartofline
-set suffixes+=.pyc,.pyo
+set suffixes+=.lua,.pyc,.pyo
 set textwidth=80
 set tildeop
 set title
