@@ -57,7 +57,15 @@ if has('conceal')
     set conceallevel=2
 endif
 set confirm
-set cryptmethod=blowfish
+if v:version > 704 || v:version == 704 && has("patch399")
+    set cryptmethod=blowfish2
+else
+    let v:warningmsg = "Using old blowfish cryptmethod"
+    echohl WarningMsg
+    echomsg v:warningmsg
+    echohl none
+    set cryptmethod=blowfish
+endif
 set cursorline
 set dictionary+=/usr/share/dict/words
 let &directory = g:vim_cache_dir . '/swap//,' . &directory
