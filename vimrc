@@ -175,6 +175,8 @@ if has("autocmd")
 
     autocmd FileType man,startify set nospell
 
+    autocmd FileType help,man setlocal colorcolumn=""
+
     autocmd FileType gitconfig set noexpandtab
 
     autocmd FileType css,html EmmetInstall
