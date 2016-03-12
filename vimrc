@@ -285,13 +285,13 @@ else
     " Set up the menus so emenu works properly
     source $VIMRUNTIME/menu.vim
 
-    colorscheme elflord
     if $TERM ==# "linux" || $TERM =~ "^xterm" || $TERM == "st" ||
         \ $TERM =~ "^st-" || split($COLORFGBG . ";padding", ";")[0] == 15
         set background=dark
     else
         set background=light
     endif
+    colorscheme elflord
 
     " Change the cursor colour for insert mode {{{
     if &term =~? '^rxvt' && exists('&t_SI')
