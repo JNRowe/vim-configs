@@ -10,10 +10,10 @@ if v:version < 704
     echohl none
 endif
 
-" Pull in local settings.  This is only for local required while reading this
-" file.
-if filereadable(expand("~/.vim/vimrc-local.pre"))
-    source ~/.vim/vimrc-local.pre
+" Pull in local settings.  This is only for locally required settings while
+" reading this file.
+if filereadable(expand("~/.vim/vimrc.pre"))
+    source ~/.vim/vimrc.pre
 endif
 
 " Find appropriate directory for data files, this used to be handled by
@@ -162,102 +162,6 @@ let is_bash = 1  " Default to bash for sh syntax
 let python_highlight_all = 1  " Highlight everything possible for python
 " }}}
 
-" Load abbreviations {{{
-if filereadable(expand("~/.vim/abbr"))
-    source ~/.vim/abbr
-endif
-" This file is meant for host specific abbreviations, for example terms that
-" are used specifically at the office
-if filereadable(expand("~/.vim/abbr-local"))
-    source ~/.vim/abbr-local
-endif
-" }}}
-
-" Autocommands {{{
-if has("autocmd")
-    " Scrub all autocommands
-    autocmd!
-
-    syntax on
-    filetype plugin indent on
-
-    " Edit files in already open sessions.
-    " exists() is needed so that re-sourcing this file is possible.
-    if !exists("*EditExisting")
-        runtime! macros/editexisting.vim
-    endif
-
-    if has("+omnifunc")
-        autocmd Filetype *
-            \ if &omnifunc == "" |
-            \   setlocal omnifunc=syntaxcomplete#Complete |
-            \ endif
-    endif
-
-    " We don't want to edit patch backup files by accident
-    autocmd BufRead *.orig set readonly
-
-    autocmd FileType man,startify set nospell
-
-    autocmd FileType help,man setlocal colorcolumn=""
-
-    autocmd FileType gitconfig set noexpandtab
-
-    autocmd FileType css,html EmmetInstall
-
-    " Reread the vimrc after writing.
-    " Note: This *can* cause problems, so be careful!
-    autocmd BufWritePost ~/.vimrc,~/.vim/vimrc,~/.vim/vimrc-local source %
-
-    " Clear the neobundle cache on write
-    autocmd BufWritePost neobundle.vim NeoBundleClearCache
-
-    autocmd BufWritePost ~/.vim/extconfigs/*.vim
-        \ if exists("g:loaded_extconfigs_" . expand("%:t:r:gs?[\.-]?_?")) |
-        \   execute("unlet g:loaded_extconfigs_" .
-        \           expand("%:t:r:gs?[\.-]?_?")) |
-        \ endif |
-        \ so %
-
-    " Attempt filetype detection after writing.
-    autocmd BufWritePost *
-        \ if empty(&filetype) |
-        \   filetype detect |
-        \ endif
-
-    " Automatically chmod +x shell scripts
-    autocmd BufWritePost *.sh silent !chmod +x %
-
-    " Jump to the last known cursor position if possible.
-    " Note: Don't restore saved position for git buffers as it tends not to be
-    " useful.
-    autocmd BufReadPost *
-        \ if &filetype =~# '^git' |
-        \   execute "normal gg" |
-        \ elseif line("'\"") > 0 && line("'\"") <= line("$") |
-        \   execute "normal g`\"" |
-        \ endif
-
-    autocmd BufNewFile,BufRead *.rb set sw=2
-
-    " Turn off search highlighting when entering a buffer
-    autocmd BufEnter * nohlsearch
-    " Turn off search highlighting when idle
-    autocmd CursorHold * nohlsearch | redraw
-
-    " Always do a full syntax refresh, this is still fast enough on
-    " a netbook
-    autocmd BufEnter * syntax sync fromstart
-
-    " Open quickfix window, if there are any entries
-    autocmd QuickFixCmdPost * belowright cwindow 5
-
-    " Only highlight cursor line in active window
-    autocmd WinLeave * setlocal nocursorline
-    autocmd WinEnter * setlocal cursorline
-endif
-" }}}
-
 " Fancy window titles where possible {{{
 if has('title') && (has('gui_running') || &title)
     set titlestring=
@@ -265,61 +169,9 @@ if has('title') && (has('gui_running') || &title)
     set titlestring+=\ -\ %{v:progname} " Program name
 endif " }}}
 
-if has("gui_running")
-    " GUI specific settings {{{
-    set mousemodel=popup_setpos
-
-    " Always display line number in the GUI
-    set number
-    set relativenumber
-
-    " Shift insert works the same as in a terminal
-    map <S-Insert> <MiddleMouse>
-    map! <S-Insert> <MiddleMouse>
-
-    if has('gui_macvim')
-        set guifont=Menlo:h13
-    else
-        set guifont=Consolas\ 13
-    endif
-    colorscheme jnrowe
-
-    if has('title')
-        set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
-    endif
-    " }}}
-else
-    " Terminal specific settings {{{
-
-    " Set up the menus so emenu works properly
-    source $VIMRUNTIME/menu.vim
-
-    if $TERM ==# "linux" || $TERM =~ "^xterm" || $TERM == "st" ||
-        \ $TERM =~ "^st-" || split($COLORFGBG . ";padding", ";")[0] == 15
-        set background=dark
-    else
-        set background=light
-    endif
-    colorscheme elflord
-
-    " Change the cursor colour for insert mode {{{
-    if &term =~? '^rxvt' && exists('&t_SI')
-        let &t_SI = "\<Esc>]12;purple\x7"
-        let &t_EI = "\<Esc>]12;green\x7"
-    endif " }}}
-    " }}}
-endif
-
 " Make C-s do something useful, after disabling term stop!
 map <C-S> :shell<CR>
 
-" Omnicompletion rocks, but <C-x><C-o> doesn't. {{{
-if has("gui_running")
-    inoremap <C-Space> <C-x><C-o>
-else
-    inoremap <Nul> <C-x><C-o>
-endif
-" }}}
 
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
@@ -378,68 +230,6 @@ nnoremap <S-Down> Vj
 
 " Toggle current fold
 nnoremap <Space> za
-
-" Custom menu items {{{
-" It checks for, what I consider to be, the most important file in a set and
-" only shows the menu if it is exists.  This allows us to list files for
-" different hosts without cluttering the menu too much.
-if has("menu")
-    if filereadable(g:xdg_config_dir . "/awesome/rc.moon")
-        amenu L&ocations.&Awesome.rc
-            \ :execute("e " . g:xdg_config_dir . "/awesome/rc.moon")<CR>
-        amenu L&ocations.&Awesome.theme
-            \ :execute("e " . g:xdg_config_dir .
-            \          "/awesome/themes/jnrowe/theme.moon")<CR>
-    endif
-    if filereadable(g:xdg_config_dir . "/openbox/rc.xml")
-        amenu L&ocations.&Openbox.autostart
-            \ :execute("e " . g:xdg_config_dir . "/openbox/autostart.sh")<CR>
-        amenu L&ocations.&Openbox.menu
-            \ :execute("e " . g:xdg_config_dir . "/openbox/menu.xml")<CR>
-        amenu L&ocations.&Openbox.rc
-            \ :execute("e " . g:xdg_config_dir . "/openbox/rc.xml")<CR>
-    endif
-    if filereadable(g:xdg_config_dir . "/git/config")
-        amenu L&ocations.&gitconfig
-            \ :execute("e " . g:xdg_config_dir . "/git/config")<CR>
-    elseif filereadable(expand("~/.gitconfig"))
-        amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
-    endif
-    if filereadable(expand("$PYTHONSTARTUP"))
-        amenu L&ocations.&python
-            \ :execute("e " . expand("$PYTHONSTARTUP"))<CR>
-    elseif filereadable(g:xdg_config_dir . "/python/rc")
-        amenu L&ocations.&python
-            \ :execute("e " . g:xdg_config_dir . "/python/rc")<CR>
-    endif
-    if filereadable(g:xdg_data_dir . "/ledger/ledger.dat.gpg")
-        amenu L&ocations.&ledger
-            \ :execute("e " . g:xdg_data_dir . "/ledger/ledger.dat.gpg")<CR>
-    endif
-    if filereadable(expand("~/.vim/vimrc"))
-        amenu L&ocations.&vim.&rc :e ~/.vim/vimrc<CR>
-        amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
-        amenu L&ocations.&vim.&neobundle :e ~/.vim/neobundle.vim<CR>
-    endif
-    if filereadable(expand("~/.no_my_zsh/zshrc"))
-        amenu L&ocations.&zsh.&completions :e ~/.no_my_zsh/completion/<CR>
-        amenu L&ocations.&zsh.&configs :e ~/.no_my_zsh/config/<CR>
-        amenu L&ocations.&zsh.&plugins :e ~/.no_my_zsh/plugin/<CR>
-        amenu L&ocations.&zsh.&zshrc :e ~/.no_my_zsh/zshrc<CR>
-    endif
-    amenu L&ocations.&xorg.X&modmap :e ~/.Xmodmap
-    amenu L&ocations.&xorg.X&resources :e ~/.Xresources
-    amenu L&ocations.&xorg.X&initrc :e ~/.xinitrc
-    if filereadable(g:xdg_config_dir . "/fontconfig/fonts.conf")
-        amenu L&ocations.&freetype
-            \ :execute("e " . g:xdg_config_dir . "/fontconfig/fonts.conf")<CR>
-    elseif filereadable(expand("~/.fonts.conf"))
-        amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
-    endif
-    if filereadable(expand("~/.gtkrc-2.0"))
-        amenu L&ocations.&gtk :e ~/.gtkrc-2.0<CR>
-    endif
-endif " }}}
 
 " Logical Y mapping, like D
 map Y y$
@@ -571,9 +361,6 @@ command! ShowHighlightGroup
 " Read all configs for external packages
 runtime! extconfigs/*.vim
 
-" Pull in local settings.  This file is for all site specific settings.
-if filereadable(expand("~/.vim/vimrc-local"))
-    source ~/.vim/vimrc-local
-endif
+call localcfg#docfg()
 
 " vim: fdm=marker:

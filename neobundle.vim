@@ -219,6 +219,8 @@ NeoBundleLazy 'ledger/vim-ledger', {
     \ 'on_ft': 'ledger',
 \ }
 
+NeoBundle 'magus/localcfg'
+
 NeoBundleLazy 'mattn/emmet-vim', {
     \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
 \ }
