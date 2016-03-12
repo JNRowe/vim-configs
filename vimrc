@@ -417,8 +417,8 @@ if has("menu")
         amenu L&ocations.&ledger
             \ :execute("e " . g:xdg_data_dir . "/ledger/ledger.dat.gpg")<CR>
     endif
-    if filereadable(expand("~/.vimrc"))
-        amenu L&ocations.&vim.&rc :e ~/.vimrc<CR>
+    if filereadable(expand("~/.vim/vimrc"))
+        amenu L&ocations.&vim.&rc :e ~/.vim/vimrc<CR>
         amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
         amenu L&ocations.&vim.&neobundle :e ~/.vim/neobundle.vim<CR>
     endif
