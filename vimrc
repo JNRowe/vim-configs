@@ -74,7 +74,7 @@ let &directory = g:vim_cache_dir . '/swap//,' . &directory
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
-if v:lang =~? 'utf8'
+if v:lang =~? 'utf-8'
     set fileencodings=utf-8,latin1,default
 endif
 set foldcolumn=2
