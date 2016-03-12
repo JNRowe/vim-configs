@@ -31,6 +31,9 @@ let g:airline_extensions = [
     \ 'whitespace',
     \ 'wordcount',
 \ ]
+if g:vcs_cst
+    let g:airline_extensions += ['zoomwin']
+endif
 
 if has('quickfix')
     let g:airline_extensions += ['quickfix', 'syntastic']
