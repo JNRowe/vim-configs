@@ -253,15 +253,6 @@ if has("autocmd")
     " Open quickfix window, if there are any entries
     autocmd QuickFixCmdPost * belowright cwindow 5
 
-    " make timing, from http://github.com/ciaranm/dotfiles-ciaranm/ {{{
-    autocmd QuickFixCmdPre make let g:make_start_time = localtime()
-
-    autocmd QuickFixCmdPost make
-        \ let g:make_total_time = localtime() - g:make_start_time |
-        \ echo printf("Time taken: %dm%2.2ds", g:make_total_time / 60,
-        \             g:make_total_time % 60)
-    " }}}
-
     " Only highlight cursor line in active window
     autocmd WinLeave * setlocal nocursorline
     autocmd WinEnter * setlocal cursorline
