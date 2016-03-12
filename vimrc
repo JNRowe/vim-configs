@@ -162,17 +162,6 @@ let is_bash = 1  " Default to bash for sh syntax
 let python_highlight_all = 1  " Highlight everything possible for python
 " }}}
 
-" Load abbreviations {{{
-if filereadable(expand("~/.vim/abbr"))
-    source ~/.vim/abbr
-endif
-" This file is meant for host specific abbreviations, for example terms that
-" are used specifically at the office
-if filereadable(expand("~/.vim/abbr-local"))
-    source ~/.vim/abbr-local
-endif
-" }}}
-
 " Autocommands {{{
 if has("autocmd")
     " Scrub all autocommands
