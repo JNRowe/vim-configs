@@ -72,7 +72,7 @@ set foldcolumn=2
 set foldlevelstart=99
 set foldmethod=syntax
 set foldtext=MyFoldText()
-set formatoptions+=rn2l1
+set formatoptions+=rnl1
 set formatoptions-=wvb
 set nofsync
 set gdefault

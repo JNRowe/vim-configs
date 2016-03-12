@@ -24,3 +24,4 @@ imap <buffer> <LocalLeader>`` <C-v>u201c
 imap <buffer> <LocalLeader>'' <C-v>u201d
 
 setlocal tw=72
+setlocal formatoptions+=2
