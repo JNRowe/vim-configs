@@ -110,6 +110,7 @@ set report=0
 set scrolloff=10
 set shiftround
 set shiftwidth=4
+set shortmess+=I
 set showcmd
 set showfulltag
 set showmatch
