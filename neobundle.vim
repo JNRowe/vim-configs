@@ -62,6 +62,7 @@ NeoBundleLazy 'Shougo/neomru.vim', {
 NeoBundleLazy 'Shougo/neosnippet', {
     \ 'depends': ['Shougo/context_filetype.vim', 'Shougo/neosnippet-snippets'],
     \ 'on_i': 1,
+    \ 'on_map': [['iv', '<C-k>']],
 \ }
 
 NeoBundleLazy 'Shougo/neosnippet-snippets', {
