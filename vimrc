@@ -10,10 +10,10 @@ if v:version < 704
     echohl none
 endif
 
-" Pull in local settings.  This is only for local required while reading this
-" file.
-if filereadable(expand("~/.vim/vimrc-local.pre"))
-    source ~/.vim/vimrc-local.pre
+" Pull in local settings.  This is only for locally required settings while
+" reading this file.
+if filereadable(expand("~/.vim/vimrc.pre"))
+    source ~/.vim/vimrc.pre
 endif
 
 " Find appropriate directory for data files, this used to be handled by
