@@ -406,7 +406,10 @@ if has("menu")
     elseif filereadable(expand("~/.gitconfig"))
         amenu L&ocations.&gitconfig :e ~/.gitconfig<CR>
     endif
-    if filereadable(g:xdg_config_dir . "/python/rc")
+    if filereadable(expand("$PYTHONSTARTUP"))
+        amenu L&ocations.&python
+            \ :execute("e " . expand("$PYTHONSTARTUP"))<CR>
+    elseif filereadable(g:xdg_config_dir . "/python/rc")
         amenu L&ocations.&python
             \ :execute("e " . g:xdg_config_dir . "/python/rc")<CR>
     endif
