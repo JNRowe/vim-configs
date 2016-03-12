@@ -98,7 +98,7 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
 \ }
 
-NeoBundle 'bling/vim-airline', {
+NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'bling') . '/vim-airline', {
     \ 'depends': [
     \   'chrisbra/NrrwRgn',
     \   'scrooloose/syntastic',
