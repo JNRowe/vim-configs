@@ -442,9 +442,6 @@ if has("menu")
     endif
 endif " }}}
 
-" Don't use default keys for scratch plugin
-let no_scratch_maps = 1
-
 " Logical Y mapping, like D
 map Y y$
 
