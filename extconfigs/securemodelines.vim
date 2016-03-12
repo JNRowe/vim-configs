@@ -6,4 +6,4 @@ endif
 
 set nomodeline
 
-let g:secure_modelines_modelines = 15
+let g:secure_modelines_modelines = 3
