@@ -431,11 +431,11 @@ if has("menu")
     amenu L&ocations.&xorg.X&modmap :e ~/.Xmodmap
     amenu L&ocations.&xorg.X&resources :e ~/.Xresources
     amenu L&ocations.&xorg.X&initrc :e ~/.xinitrc
-    if filereadable(expand("~/.fonts.conf"))
-        amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
-    elseif filereadable(g:xdg_config_dir . "/fontconfig/fonts.conf")
+    if filereadable(g:xdg_config_dir . "/fontconfig/fonts.conf")
         amenu L&ocations.&freetype
             \ :execute("e " . g:xdg_config_dir . "/fontconfig/fonts.conf")<CR>
+    elseif filereadable(expand("~/.fonts.conf"))
+        amenu L&ocations.&freetype :e ~/.fonts.conf<CR>
     endif
     if filereadable(expand("~/.gtkrc-2.0"))
         amenu L&ocations.&gtk :e ~/.gtkrc-2.0<CR>
