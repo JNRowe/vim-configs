@@ -311,10 +311,6 @@ else
     " }}}
 endif
 
-" Gentoo bug summary browser
-let g:bugsummary_browser = "opera -newpage '%s'"
-
-
 " Make C-s do something useful, after disabling term stop!
 map <C-S> :shell<CR>
 
