@@ -4,3 +4,5 @@
 map <buffer> UU yyp<C-v>$r=i<ESC>
 map <buffer> Uu yyp<C-v>$r-i<ESC>
 map <buffer> U_ yyp<C-v>$r'i<ESC>
+
+setlocal formatoptions+=a
