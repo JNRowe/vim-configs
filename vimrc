@@ -103,6 +103,16 @@ set isfname-=\=
 set lazyredraw
 set linespace=1
 set list
+" Show tabs and trailing whitespace {{{
+if &termencoding ==# "utf-8" || has("gui_running")
+    set listchars=tab:»·,extends:…,nbsp:‗
+    if has('conceal')
+        set listchars+=conceal:Δ
+    endif
+else
+    set listchars=tab:>-,extends:>,nbsp:_
+endif
+" }}}
 set matchpairs+=<:>
 set nonumber
 set pastetoggle=<F4>
@@ -319,15 +329,6 @@ endif
 " Gentoo bug summary browser
 let g:bugsummary_browser = "opera -newpage '%s'"
 
-" Show tabs and trailing whitespace {{{
-if &termencoding ==# "utf-8" || has("gui_running")
-    set listchars=tab:»·,extends:…,nbsp:‗
-    if has('conceal')
-        set listchars+=conceal:Δ
-    endif
-else
-    set listchars=tab:>-,extends:>,nbsp:_
-endif " }}}
 
 " Make C-s do something useful, after disabling term stop!
 map <C-S> :shell<CR>
