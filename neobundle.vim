@@ -345,7 +345,7 @@ NeoBundle 'vim-utils/vim-husk'
 NeoBundle 'vim-utils/vim-line'
 
 NeoBundleLazy 'vim-utils/vim-man', {
-    \ 'on_cmd': ['Man', 'Vman'],
+    \ 'on_cmd': ['Man', 'Mangrep', 'Vman'],
 \ }
 
 NeoBundleLazy 'vim-utils/vim-vertical-move', {
