@@ -208,6 +208,7 @@ if has("autocmd")
     " Reread the vimrc after writing.
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost ~/.vimrc,~/.vim/vimrc,~/.vim/vimrc-local source %
+    autocmd BufWritePost ~/.vim/localcfg/*.vim call localcfg#docfg()
 
     " Clear the neobundle cache on write
     autocmd BufWritePost neobundle.vim NeoBundleClearCache
@@ -575,5 +576,7 @@ runtime! extconfigs/*.vim
 if filereadable(expand("~/.vim/vimrc-local"))
     source ~/.vim/vimrc-local
 endif
+
+call localcfg#docfg()
 
 " vim: fdm=marker:
