@@ -422,9 +422,11 @@ if has("menu")
         amenu L&ocations.&vim.rc-&local :e ~/.vim/vimrc-local<CR>
         amenu L&ocations.&vim.&neobundle :e ~/.vim/neobundle.vim<CR>
     endif
-    if filereadable(expand("~/.zshrc"))
-        amenu L&ocations.&zsh.&functions-local :e ~/.zsh/functions-local<CR>
-        amenu L&ocations.&zsh.&zshrc :e ~/.zshrc<CR>
+    if filereadable(expand("~/.no_my_zsh/zshrc"))
+        amenu L&ocations.&zsh.&completions :e ~/.no_my_zsh/completion/<CR>
+        amenu L&ocations.&zsh.&configs :e ~/.no_my_zsh/config/<CR>
+        amenu L&ocations.&zsh.&plugins :e ~/.no_my_zsh/plugin/<CR>
+        amenu L&ocations.&zsh.&zshrc :e ~/.no_my_zsh/zshrc<CR>
     endif
     amenu L&ocations.&xorg.X&modmap :e ~/.Xmodmap
     amenu L&ocations.&xorg.X&resources :e ~/.Xresources
