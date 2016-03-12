@@ -1,3 +1,6 @@
+" vim: set isfname-=/:
+" Above modeline is so that ':Econfig <C-r><C-f>' works
+
 if !neobundle#load_cache('~/.vim/neobundle.vim')
     finish
 end
