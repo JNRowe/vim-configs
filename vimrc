@@ -193,17 +193,6 @@ map <C-S> :shell<CR>
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
 map <M-Right> :bnext<CR>
-
-map <Esc>1 :buffer 1<CR>
-map <Esc>2 :buffer 2<CR>
-map <Esc>3 :buffer 3<CR>
-map <Esc>4 :buffer 4<CR>
-map <Esc>5 :buffer 5<CR>
-map <Esc>6 :buffer 6<CR>
-map <Esc>7 :buffer 7<CR>
-map <Esc>8 :buffer 8<CR>
-map <Esc>9 :buffer 9<CR>
-map <Esc>0 :buffers<CR>
 " }}}
 
 " Navigate tags with keys I find less annoying {{{
