@@ -42,6 +42,10 @@ source ~/.vim/neobundle.vim
 NeoBundleCheck
 call neobundle#end()
 
+if !has('vim_starting')
+    call neobundle#call_hook('on_source')
+endif
+
 " General settings {{{
 set autochdir
 set backup
