@@ -95,13 +95,16 @@ function! MetaDetect(file)
     endwhile
 endfunction
 
-autocmd BufReadPost * let b:meta_dir = MetaDetect(expand('<afile>')) |
+autocmd BufReadPost * if !exists("b:meta_dir") |
+    \   let b:meta_dir = MetaDetect(expand('<afile>')) |
+    \ endif |
     \ if type(b:meta_dir) == type("")
     \       && index(split(&spellfile, ","),
     \                b:meta_dir . '/en.utf-8.add') == -1 |
     \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
-    \   if filereadable(b:meta_dir . '/abbr.vim') |
+    \   if !exists("b:meta_abbr") && filereadable(b:meta_dir . '/abbr.vim') |
     \       execute("source " . b:meta_dir . "/abbr.vim") |
+    \       let b:meta_abbr = 1 |
     \   endif |
     \ endif
 augroup END
