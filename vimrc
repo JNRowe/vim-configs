@@ -29,22 +29,23 @@ let g:vim_cache_dir = g:xdg_cache_dir . "/vim"
 let g:vim_config_dir = g:xdg_config_dir . "/vim"
 let g:vim_data_dir = g:xdg_data_dir . "/vim"
 
+" Fire up neobundle, and setup plugins {{{
 if has('vim_starting')
     set runtimepath+=~/.vim/external/neobundle.vim/
 endif
 
-" Fire up neobundle, and setup plugins
 source ~/.vim/extconfigs/neobundle.vim.vim
 call neobundle#begin(expand('~/.vim/external/', 1))
 
 source ~/.vim/neobundle.vim
 
-NeoBundleCheck
 call neobundle#end()
 
+NeoBundleCheck
 if !has('vim_starting')
     call neobundle#call_hook('on_source')
 endif
+" }}}
 
 " General settings {{{
 set autochdir
