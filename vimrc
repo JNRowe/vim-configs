@@ -186,10 +186,6 @@ if has('title') && (has('gui_running') || &title)
     set titlestring+=\ -\ %{v:progname} " Program name
 endif " }}}
 
-" Make C-s do something useful, after disabling term stop!
-map <C-S> :shell<CR>
-
-
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
 map <M-Right> :bnext<CR>
