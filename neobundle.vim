@@ -156,7 +156,10 @@ NeoBundleLazy 'elzr/vim-json', {
 \ }
 
 NeoBundleLazy 'ervandew/regex', {
-    \ 'on_cmd': 'Regex',
+    \ 'on_cmd': [{
+    \   'name': 'Regex',
+    \   'complete': 'customlist,RegexComplete',
+    \ }],
 \ }
 
 NeoBundleLazy 'ervandew/supertab', {
