@@ -136,6 +136,14 @@ NeoBundle 'chrisbra/vim_faq', {
 \ }
 
 NeoBundle 'ciaranm/securemodelines'
+let s:bundle = neobundle#get('securemodelines')
+function! s:bundle.hooks.on_post_source(bundle)
+    let g:secure_modelines_allowed_items += [
+        \ "isfname", "isf",
+        \ "spl",
+        \ "scrolloff", "so",
+    \ ]
+endfunction
 
 NeoBundleLazy 'davidhalter/jedi-vim', {
     \ 'on_ft': 'python',
@@ -295,6 +303,23 @@ NeoBundleLazy 'rust-lang/rust.vim', {
 NeoBundle (g:vcs_cst ? 'vcs_cst::JNRowe' : 'scrooloose') . '/syntastic', {
     \ 'disabled': !has('quickfix'),
 \ }
+let s:bundle = neobundle#get('syntastic')
+function! s:bundle.hooks.on_post_source(bundle)
+    " Use our pretty icons instead of the default text.
+    if has('signs')
+        for [k, v] in items({"error": "✘", "warning": "⚠", "info": "☁"})
+            let s:capped = toupper(k[0]) . k[1:]
+            if (&termencoding ==# "utf-8") || has("gui_running")
+                execute("sign define Syntastic" . s:capped . " text=". v .
+                    \ " texthl=" . s:capped .
+                    \ " icon=" .  expand("~/.vim/icons/" . k . ".png"))
+            else
+                execute("sign define Syntastic" . s:capped .
+                    \ " text=" . s:capped[0] . s:capped[0] . " texthl=" . s:capped)
+            endif
+        endfor
+    endif
+endfunction
 
 NeoBundleLazy 'sjl/clam.vim', {
     \ 'on_cmd': ['Clam', 'ClamVisual'],
