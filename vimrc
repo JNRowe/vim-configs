@@ -324,22 +324,6 @@ nmap <Tab> <C-w>w
 nmap <S-Tab> <C-w>W
 " }}}
 
-" Display occurrences of current word in quickfix window
-nnoremap <Leader>sw :execute "vimgrep ".expand("<cword>")." %"<cr>:copen<cr>
-" … and last search
-nnoremap <Leader>ss :execute 'vimgrep /'.@/.'/g %'<cr>:copen<cr>
-
-" Quickfix maps {{{
-nmap <Leader>cwc :cclose<CR>
-nmap <Leader>cwo :copen 7<CR><C-w>p
-nmap <Leader>cn :cnext<CR>
-nmap <Leader>cp :cprevious<CR>
-nmap <M-Down> :cnext<CR>
-nmap <M-Up> :cprevious<CR>
-nmap <Leader>cr :crewind<CR>
-nmap <Leader>cl :clast<CR>
-" }}}
-
 " Folding support maps {{{
 " The following mappings may not be to your liking, but I never use +/- for
 " line movement.
@@ -361,7 +345,7 @@ command! ShowHighlightGroup
 
 " Read all optional configs for build-dependent settings and external packages
 let g:localcfg_cfgs = ['abbr']
-let g:localcfg_features = ['autocmd', 'gui', 'menu']
+let g:localcfg_features = ['autocmd', 'gui', 'menu', 'quickfix']
 for s:bundle in neobundle#config#get_neobundles()
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
     let g:localcfg_cfgs += [(s:bundle.disabled ? 'not' : '') . s:cfgname]
