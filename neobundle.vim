@@ -1,11 +1,10 @@
 " vim: set isfname-=/:
 " Above modeline is so that ':Econfig <C-r><C-f>' works
 
+let g:vcs_cst = neobundle#config#get_types('vcs_cst') != {}
 if !neobundle#load_cache('~/.vim/neobundle.vim')
     finish
 end
-
-let g:vcs_cst = neobundle#config#get_types('vcs_cst') != {}
 
 NeoBundleFetch 'Shougo/neobundle.vim', {
     \ 'depends': 'vimproc',
