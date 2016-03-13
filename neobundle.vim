@@ -266,7 +266,9 @@ NeoBundleLazy 'moll/vim-bbye', {
     \ 'on_map': [['n', '<Leader>q']],
 \ }
 
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'nathanaelkane/vim-indent-guides', {
+    \ 'augroup': 'indent_guides',
+\ }
 
 NeoBundle 'rhysd/committia.vim', {
     \ 'external_command': 'git',
