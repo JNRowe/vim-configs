@@ -48,6 +48,7 @@ if has('lua')
 else
     NeoBundleLazy 'Shougo/neocomplcache', {
         \ 'disabled': has('lua'),
+        \ 'external_command': 'ctags',
         \ 'on_i': 1,
     \ }
 endif
@@ -70,6 +71,7 @@ NeoBundle 'Shougo/unite.vim'
 
 NeoBundleLazy 'Shougo/unite-outline', {
     \ 'depends': 'unite.vim',
+    \ 'external_command': 'ctags',
 \ }
 
 NeoBundleLazy 'Shougo/vimfiler.vim', {
@@ -95,6 +97,7 @@ NeoBundleLazy 'bitc/vim-bad-whitespace', {
 \ }
 
 NeoBundleLazy 'blindFS/vim-taskwarrior', {
+    \ 'external_command': 'task',
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
 \ }
 
@@ -221,8 +224,14 @@ NeoBundleLazy 'mattn/emmet-vim', {
     \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
 \ }
 
+NeoBundleLazy 'mattn/webapi-vim', {
+    \ 'external_commanpd': 'curl',
+\ }
+
 " vim-signature apparently can integrate with this, but how?
-NeoBundle 'mhinz/vim-signify'
+NeoBundle 'mhinz/vim-signify', {
+    \ 'external_command': 'git',
+\}
 
 NeoBundleLazy 'michaeljsmith/vim-indent-object', {
     \ 'on_ft': ['ledger', 'moon', 'python'],
@@ -240,6 +249,7 @@ NeoBundleLazy 'mitsuhiko/vim-rst', {
 NeoBundleLazy 'mmozuras/vim-github-comment', {
     \ 'on_cmd': 'GHComment',
     \ 'depends': 'webapi-vim',
+    \ 'external_command': ['git', 'xdg-open'],
 \ }
 
 NeoBundleLazy 'moll/vim-bbye', {
