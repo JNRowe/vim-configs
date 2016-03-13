@@ -1,3 +1,9 @@
+if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+     execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " Scrub all autocommands
 autocmd!
 
@@ -31,7 +37,12 @@ autocmd FileType css,html EmmetInstall
 " Reread the vimrc after writing.
 " Note: This *can* cause problems, so be careful!
 autocmd BufWritePost ~/.vimrc,~/.vim/vimrc source %
-autocmd BufWritePost ~/.vim/localcfg/*.vim call localcfg#docfg()
+autocmd BufWritePost ~/.vim/localcfg/*.vim
+    \ if exists("g:loaded_lcfg_" . expand("%:t:r:gs?[\.-]?_?")) |
+    \   execute("unlet g:loaded_lcfg_" .
+    \           expand("%:t:r:gs?[\.-]?_?")) |
+    \ endif |
+    \ call localcfg#docfg()
 
 " Clear the neobundle cache on write
 autocmd BufWritePost neobundle.vim NeoBundleClearCache

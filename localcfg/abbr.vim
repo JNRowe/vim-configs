@@ -1,3 +1,9 @@
+if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+     execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " Common-ish to me mail abbreviations
 ia AFAICR as far as I can remember
 ia AFAIK as far as I know
