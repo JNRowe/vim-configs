@@ -34,8 +34,6 @@ autocmd FileType man,startify set nospell
 
 autocmd FileType help,man setlocal colorcolumn=""
 
-autocmd FileType gitconfig set noexpandtab
-
 autocmd FileType css,html EmmetInstall
 
 " Reread the vimrc after writing.
@@ -69,8 +67,6 @@ autocmd BufReadPost *
     \ elseif line("'\"") > 0 && line("'\"") <= line("$") |
     \   execute "normal g`\"" |
     \ endif
-
-autocmd BufNewFile,BufRead *.rb set sw=2
 
 " Turn off search highlighting when entering a buffer
 autocmd BufEnter * nohlsearch
