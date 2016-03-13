@@ -16,7 +16,7 @@ if !exists("*EditExisting")
     runtime! macros/editexisting.vim
 endif
 
-if has("+omnifunc")
+if exists("+omnifunc")
     autocmd Filetype *
         \ if &omnifunc == "" |
         \   setlocal omnifunc=syntaxcomplete#Complete |
