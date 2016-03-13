@@ -110,9 +110,13 @@ NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'bling') . '/vim-airline', {
     \ ],
 \ }
 
-NeoBundle 'chrisbra/NrrwRgn'
+NeoBundle 'chrisbra/NrrwRgn', {
+    \ 'vim_version': '7.4',
+\ }
 
-NeoBundle 'chrisbra/Recover.vim'
+NeoBundle 'chrisbra/Recover.vim', {
+    \ 'vim_version': '7.3',
+\ }
 
 NeoBundleLazy 'chrisbra/csv.vim', {
     \ 'on_ft': 'csv',
@@ -124,9 +128,12 @@ NeoBundleLazy 'chrisbra/unicode.vim', {
     \   ['i', '<C-x><C-z>', '<C-x><C-g>'],
     \   ['n', '<Plug>(UnicodeGA)'],
     \ ],
+    \ 'vim_version': '7.4',
 \ }
 
-NeoBundle 'chrisbra/vim_faq'
+NeoBundle 'chrisbra/vim_faq', {
+    \ 'vim_version': '6.0',
+\ }
 
 NeoBundle 'ciaranm/securemodelines'
 
@@ -228,10 +235,12 @@ NeoBundle 'magus/localcfg'
 
 NeoBundleLazy 'mattn/emmet-vim', {
     \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
+    \ 'vim_version': '7.0',
 \ }
 
 NeoBundleLazy 'mattn/webapi-vim', {
     \ 'external_commanpd': 'curl',
+    \ 'vim_version': '7.0',
 \ }
 
 " vim-signature apparently can integrate with this, but how?
