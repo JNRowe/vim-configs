@@ -278,7 +278,7 @@ nmap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
 nmap <silent> <S-F4> :call ToggleFlag("guioptions","m")<CR>
 nmap <silent> <C-F4> :call ToggleFlag("guioptions","T")<CR>
-" F7-F9 are used for taglist, and are defined above
+" F5 is VimFiler
 nmap <F10> :make check<CR>
 nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>
 nmap <F11> :make<CR>
