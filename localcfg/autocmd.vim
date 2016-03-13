@@ -51,13 +51,6 @@ autocmd BufWritePost ~/.vim/localcfg/*.vim
 " Clear the neobundle cache on write
 autocmd BufWritePost neobundle.vim NeoBundleClearCache
 
-autocmd BufWritePost ~/.vim/extconfigs/*.vim
-    \ if exists("g:loaded_xcfg_" . expand("%:t:r:gs?[\.-]?_?")) |
-    \   execute("unlet g:loaded_xcfg_" .
-    \           expand("%:t:r:gs?[\.-]?_?")) |
-    \ endif |
-    \ so %
-
 " Attempt filetype detection after writing.
 autocmd BufWritePost *
     \ if empty(&filetype) |
