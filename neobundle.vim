@@ -201,6 +201,7 @@ NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
     \ 'description': 'Cute conceal support for Python',
     \ 'disabled': !has('conceal'),
     \ 'on_ft': 'python',
+    \ 'vim_version': '7.3',
 \ }
 
 NeoBundleLazy 'elzr/vim-json', {
