@@ -39,19 +39,19 @@ NeoBundleLazy 'Shougo/junkfile.vim', {
     \ 'on_unite': 'junkfile',
 \ }
 
-if has('lua')
-    NeoBundleLazy 'Shougo/neocomplete.vim', {
-        \ 'disabled': !has('lua'),
-        \ 'on_i': 1,
-        \ 'vim_version':'7.3.885',
-    \ }
-else
-    NeoBundleLazy 'Shougo/neocomplcache', {
-        \ 'disabled': has('lua'),
-        \ 'external_command': 'ctags',
-        \ 'on_i': 1,
-    \ }
-endif
+" Choose based on has('lua') {{{
+NeoBundleLazy 'Shougo/neocomplete.vim', {
+    \ 'disabled': !has('lua'),
+    \ 'on_i': 1,
+    \ 'vim_version':'7.3.885',
+\ }
+
+NeoBundleLazy 'Shougo/neocomplcache', {
+    \ 'disabled': has('lua'),
+    \ 'external_command': 'ctags',
+    \ 'on_i': 1,
+\ }
+" }}}
 
 NeoBundleLazy 'Shougo/neomru.vim', {
     \ 'on_unite': 'neomru',
