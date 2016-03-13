@@ -1,3 +1,9 @@
+if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+     execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
 " It checks for, what I consider to be, the most important file in a set and
 " only shows the menu if it is exists.  This allows us to list files for
 " different hosts without cluttering the menu too much.
