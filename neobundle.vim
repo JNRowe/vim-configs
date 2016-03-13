@@ -194,8 +194,11 @@ NeoBundle 'jamessan/vim-gnupg', {
 
 NeoBundleLazy 'jceb/vim-editqf', {
     \ 'on_cmd': [
-    \   'LocAddNote', 'LocLoad', 'LocSave',
-    \   'QFAddNote', 'QFLoad', 'QFSave',
+    \   {
+    \       'name': ['LocLoad', 'LocSave', 'QFLoad', 'QFSave'],
+    \       'complete': 'file',
+    \   },
+    \   'LocAddNote', 'QFAddNote',
     \ ],
     \ 'on_map': [['n', '<Leader>n']],
 \ }
