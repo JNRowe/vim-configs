@@ -56,7 +56,7 @@ for s:k in [
     \ ]
 
     let s:key = s:k[0]
-    if type(s:k) == 3
+    if type(s:k) == type([])
         let s:source = s:k[1]
         let s:buffer_name = len(s:k) == 3 ? s:k[2] : split(s:source, ':')[0]
     else
