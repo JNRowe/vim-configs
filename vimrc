@@ -258,8 +258,6 @@ endfunction
 " Function keys {{{
 nmap <silent> <F1> :set hlsearch!<CR>
 nnoremap <silent> <F2> :set list!<CR>
-nmap <silent> <C-F2> <Plug>ShowScratchBuffer
-imap <silent> <S-F2> <Plug>InsShowScratchBuffer
 nmap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
 nmap <silent> <S-F4> :call ToggleFlag("guioptions","m")<CR>
