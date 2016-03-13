@@ -71,6 +71,10 @@ for s:k in [
     unlet s:k
 endfor
 
+if $DISPLAY != "" && executable('wmctrl')
+    nnoremap <silent> [unite]x :<C-U>Unite -buffer-name=window/gui window/gui<CR>
+endif
+
 " This replaces my previous use of vim-startify
 nnoremap <S-F1> :<C-u>Unite -buffer-name=start neomru/file bookmark
     \ file_rec/async<CR>
