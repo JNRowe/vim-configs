@@ -1,11 +1,11 @@
 {
-    "extconfigs/*.vim": {
+    "localcfg/plugin_*.vim": {
         "alternate": "external/{}",
         "template": [
-            "if exists(\"g:loaded_xcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
+            "if exists(\"g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
             "	finish",
             "else",
-            "	 execute(\"let g:loaded_xcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
+            "	execute(\"let g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
             "endif",
             ""
         ],
@@ -16,7 +16,7 @@
             "if exists(\"g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
             "	finish",
             "else",
-            "	 execute(\"let g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
+            "	execute(\"let g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
             "endif",
             ""
         ],
