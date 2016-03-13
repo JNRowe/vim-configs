@@ -16,8 +16,7 @@ if filereadable(expand("~/.vim/vimrc.pre"))
     source ~/.vim/vimrc.pre
 endif
 
-" Find appropriate directory for data files, this used to be handled by
-" vim-sensible until 2c57c5f4c5446865db532064c763a6a67db2d0bb.
+" Find appropriate directory for data files {{{
 let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME)
     \                        ? '~/.cache' : '$XDG_CACHE_HOME')
 let g:xdg_config_dir = expand(empty($XDG_CONFIG_HOME)
@@ -28,6 +27,7 @@ let g:xdg_data_dir = expand(empty($XDG_DATA_HOME)
 let g:vim_cache_dir = g:xdg_cache_dir . "/vim"
 let g:vim_config_dir = g:xdg_config_dir . "/vim"
 let g:vim_data_dir = g:xdg_data_dir . "/vim"
+" }}}
 
 " Fire up neobundle, and setup plugins {{{
 if has('vim_starting')
