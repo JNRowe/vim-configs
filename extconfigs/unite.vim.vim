@@ -43,7 +43,6 @@ for s:k in [
     \   'bookmark',
     \   'change',
     \   ['f',       'file/async',                      'file'],
-    \   ['g',       'file_rec/git'],
     \   ['j',       'junkfile'],
     \   ['R',       'file_rec/async',                  'file/rec'],
     \   'history',
@@ -73,6 +72,11 @@ endfor
 
 if $DISPLAY != "" && executable('wmctrl')
     nnoremap <silent> [unite]x :<C-U>Unite -buffer-name=window/gui window/gui<CR>
+endif
+
+if executable('git')
+    nnoremap <silent> [unite]g :<C-U>Unite -buffer-name=file_rec/git
+        \ file_rec/git<CR>
 endif
 
 " This replaces my previous use of vim-startify
