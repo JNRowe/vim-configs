@@ -23,6 +23,10 @@ if has("+omnifunc")
         \ endif
 endif
 
+" Configure my autocommands {{{
+augroup jnrowe
+autocmd!
+
 " We don't want to edit patch backup files by accident [again]
 autocmd BufRead *.orig set readonly
 
@@ -108,3 +112,5 @@ autocmd BufReadPost * let b:meta_dir = MetaDetect(expand('<afile>')) |
     \                b:meta_dir . '/en.utf-8.add') == -1 |
     \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
     \ endif
+augroup END
+" }}}
