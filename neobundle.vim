@@ -325,22 +325,6 @@ NeoBundleLazy 'ujihisa/unite-colorscheme', {
     \ 'on_unite': 'colorscheme'
 \ }
 
-NeoBundleLazy 'vim-scripts/Toggle', {
-    \ 'on_func': 'Toggle',
-    \ 'on_map': [
-    \   ['i', '<C-T>'],
-    \   ['n', '+'],
-    \ ],
-\ }
-
-NeoBundleLazy 'vim-scripts/ZoomWin', {
-    \ 'on_map': [['n', '<C-w>o']],
-\ }
-
-NeoBundleLazy 'vim-scripts/uri-ref', {
-    \ 'on_ft': 'mail',
-\ }
-
 NeoBundle 'vim-utils/vim-husk'
 
 NeoBundle 'vim-utils/vim-line'
@@ -352,6 +336,25 @@ NeoBundleLazy 'vim-utils/vim-man', {
 NeoBundleLazy 'vim-utils/vim-vertical-move', {
     \ 'on_map': ['[v', ']v'],
 \ }
+
+" vim-scripts bundles {{{
+NeoBundleLazy 'Toggle', {
+    \ 'on_func': 'Toggle',
+    \ 'on_map': [
+    \   ['i', '<C-T>'],
+    \   ['n', '+'],
+    \ ],
+\ }
+
+NeoBundleLazy 'ZoomWin', {
+    \ 'on_map': [['n', '<C-w>o']],
+\ }
+
+NeoBundleLazy 'uri-ref', {
+    \ 'on_ft': 'mail',
+    \ 'terminal': 1,
+\ }
+" }}}
 
 " Nasty bundled packages {{{
 " These packages are being removed, either by finding a usable remote location
