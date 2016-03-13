@@ -379,5 +379,4 @@ call neobundle#local("~/.vim/internal/", {
 \ })
 " }}}
 
-NeoBundleDocs
 NeoBundleSaveCache
