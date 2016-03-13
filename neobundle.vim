@@ -66,7 +66,9 @@ NeoBundleLazy 'Shougo/neosnippet-snippets', {
     \ 'on_i': 1,
 \ }
 
-NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim', {
+    \ 'external_command': 'xdg-open',
+\ }
 
 NeoBundleLazy 'Shougo/unite-outline', {
     \ 'depends': 'unite.vim',
