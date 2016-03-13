@@ -90,3 +90,21 @@ autocmd QuickFixCmdPost * belowright cwindow 5
 " Only highlight cursor line in active window
 autocmd WinLeave * setlocal nocursorline
 autocmd WinEnter * setlocal cursorline
+
+function! MetaDetect(file)
+    let l:p = resolve(fnamemodify(a:file, ":p:h"))
+
+    while l:p != "/"
+        if isdirectory(l:p . "/.meta")
+            return l:p . "/.meta"
+        endif
+        let l:p = fnamemodify(l:p, ":h")
+    endwhile
+endfunction
+
+autocmd BufReadPost * let b:meta_dir = MetaDetect(expand('<afile>')) |
+    \ if type(b:meta_dir) == 1
+    \       && index(split(&spellfile, ","),
+    \                b:meta_dir . '/en.utf-8.add') == -1 |
+    \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
+    \ endif
