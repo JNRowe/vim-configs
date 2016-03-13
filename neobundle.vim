@@ -179,9 +179,9 @@ function! s:bundle.hooks.on_post_source(bundle)
 endfunction
 
 NeoBundleLazy 'davidhalter/jedi-vim', {
-    \ 'on_ft': 'python',
     \ 'description': 'A VIM binding to the jedi autocompletion library',
     \ 'disabled': !has('python'),
+    \ 'on_ft': 'python',
 \ }
 
 NeoBundleLazy 'dhruvasagar/vim-table-mode', {
@@ -198,9 +198,9 @@ NeoBundleLazy 'editorconfig/editorconfig-vim', {
 \ }
 
 NeoBundleLazy 'ehamberg/vim-cute-python', 'moresymbols', {
-    \ 'on_ft': 'python',
     \ 'description': 'Cute conceal support for Python',
     \ 'disabled': !has('conceal'),
+    \ 'on_ft': 'python',
 \ }
 
 NeoBundleLazy 'elzr/vim-json', {
@@ -237,10 +237,10 @@ NeoBundleLazy 'godlygeek/tabular', {
 \ }
 
 NeoBundleLazy 'gregsexton/gitv', {
-    \ 'on_cmd': 'Gitv',
     \ 'depends': 'vim-fugitive',
     \ 'description': "A 'gitk clone' plugin",
     \ 'external_command': 'git',
+    \ 'on_cmd': 'Gitv',
 \ }
 
 NeoBundleLazy 'guns/xterm-color-table.vim', {
@@ -333,9 +333,9 @@ NeoBundleLazy 'mitsuhiko/vim-rst', {
 \ }
 
 NeoBundleLazy 'mmozuras/vim-github-comment', {
-    \ 'on_cmd': 'GHComment',
     \ 'depends': 'webapi-vim',
     \ 'description': 'Comment on GitHub directly',
+    \ 'on_cmd': 'GHComment',
     \ 'external_command': ['git', 'xdg-open'],
 \ }
 
