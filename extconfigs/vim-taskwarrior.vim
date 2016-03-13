@@ -3,5 +3,8 @@ if exists("g:loaded_xcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
 else
     execute("let g:loaded_xcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
+if !executable('task')
+    finish
+endif
 
 let g:task_default_prompt = ['project', 'description', 'estimate']
