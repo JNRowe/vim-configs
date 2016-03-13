@@ -16,7 +16,7 @@ ifdef QUIET
 SILENT ::= @
 endif
 
-.PHONY: clean init-external update-external display_sources
+.PHONY: clean update-external display_sources
 
 all: $(TARGETS) $(HTML)
 
@@ -57,13 +57,9 @@ clean:
 	$(info - Cleaning generated files)
 	$(SILENT)rm -f $(TARGETS)
 
-init-external:
-	$(info - Initiating plugin bundles)
-	vim -c ':NeoBundleInstall' -c ':qa'
-
 update-external:
 	$(info - Updating plugin bundles)
-	vim -c ':NeoBundleUpdate' -c ':qa'
+	./external/neobundle.vim/bin/neoinstall
 
 display_sources:
 	@echo $(realpath $(LUA_SOURCES) $(PYTHON_SOURCES) $(RUBY_SOURCES) \
