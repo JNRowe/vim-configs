@@ -97,8 +97,10 @@ NeoBundleLazy 'bitc/vim-bad-whitespace', {
 \ }
 
 NeoBundleLazy 'blindFS/vim-taskwarrior', {
+    \ 'depends': 'unite.vim',
     \ 'external_command': 'task',
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
+    \ 'on_unite': 'taskwarrior',
 \ }
 
 NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'bling') . '/vim-airline', {
