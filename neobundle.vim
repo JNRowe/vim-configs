@@ -374,7 +374,9 @@ NeoBundleLazy 'uri-ref', {
 " Nasty bundled packages {{{
 " These packages are being removed, either by finding a usable remote location
 " or by deletion.
-NeoBundleLocal ~/.vim/internal/
+call neobundle#local("~/.vim/internal/", {
+    \ 'on_cmd': 'Snip',
+\ })
 " }}}
 
 NeoBundleDocs
