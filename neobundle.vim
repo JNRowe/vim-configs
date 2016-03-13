@@ -36,7 +36,7 @@ NeoBundleLazy 'Shougo/context_filetype.vim', {
 
 NeoBundleLazy 'Shougo/junkfile.vim', {
     \ 'on_cmd': 'JunkfileOpen',
-    \ 'on_unite': ['junkfile', 'junkfile/new'],
+    \ 'on_unite': 'junkfile',
 \ }
 
 if has('lua')
@@ -53,8 +53,7 @@ else
 endif
 
 NeoBundleLazy 'Shougo/neomru.vim', {
-    \ 'depends': 'Shougo/unite.vim',
-    \ 'on_unite': ['neomru/directory', 'neomru/file'],
+    \ 'on_unite': 'neomru',
 \ }
 
 NeoBundleLazy 'Shougo/neosnippet', {
@@ -71,7 +70,6 @@ NeoBundle 'Shougo/unite.vim'
 
 NeoBundleLazy 'Shougo/unite-outline', {
     \ 'depends': 'unite.vim',
-    \ 'on_unite': 'outline',
 \ }
 
 NeoBundleLazy 'Shougo/vimfiler.vim', {
@@ -321,9 +319,7 @@ NeoBundleLazy 'tpope/vim-surround', {
     \ ],
 \ }
 
-NeoBundleLazy 'ujihisa/unite-colorscheme', {
-    \ 'on_unite': 'colorscheme'
-\ }
+NeoBundleLazy 'ujihisa/unite-colorscheme'
 
 NeoBundle 'vim-utils/vim-husk'
 
