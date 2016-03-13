@@ -34,6 +34,21 @@ endif
 nnoremap [unite] <Nop>
 nmap <Leader>u [unite]
 
+function! s:unite_key(key)
+    let s:first = a:key[0]
+    if type(a:key) == type([])
+        let s:source = a:key[1]
+        let s:buffer_name = len(a:key) == 3 ? a:key[2] : split(s:source, ':')[0]
+    else
+        let s:source = a:key
+        let s:buffer_name = a:key
+    endif
+
+    execute("nnoremap <silent> [unite]" . s:first .
+        \ " :<C-u>Unite -buffer-name=" . s:buffer_name . " " .
+        \ s:source . "<CR>")
+endfunction
+
 for s:k in [
     \   ['a',       'buffer:"-" bookmark neomru/file', 'all'],
     \   ['!',       'output/shellcmd',                 'shell'],
@@ -54,29 +69,16 @@ for s:k in [
     \   ['u',       'neomru/file'],
     \   'window',
     \ ]
-
-    let s:key = s:k[0]
-    if type(s:k) == type([])
-        let s:source = s:k[1]
-        let s:buffer_name = len(s:k) == 3 ? s:k[2] : split(s:source, ':')[0]
-    else
-        let s:source = s:k
-        let s:buffer_name = s:k
-    endif
-
-    execute("nnoremap <silent> [unite]" . s:key .
-        \ " :<C-u>Unite -buffer-name=" . s:buffer_name . " " .
-        \ s:source . "<CR>")
+    call s:unite_key(s:k)
     unlet s:k
 endfor
 
 if $DISPLAY != "" && executable('wmctrl')
-    nnoremap <silent> [unite]x :<C-U>Unite -buffer-name=window/gui window/gui<CR>
+    call s:unite_key(['x', 'window/gui'])
 endif
 
 if executable('git')
-    nnoremap <silent> [unite]g :<C-U>Unite -buffer-name=file_rec/git
-        \ file_rec/git<CR>
+    call s:unite_key(['g', 'file_rec/git'])
 endif
 
 " This replaces my previous use of vim-startify
