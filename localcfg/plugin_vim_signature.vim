@@ -13,7 +13,7 @@ endif
 "
 " Note to self: Names are from US S-<digit> keymap.
 for [s:k, s:v] in items({"!": ["info", "Todo"], "@": "warning", "#": "error"})
-    if type(s:v) == 3
+    if type(s:v) == type([])
         let s:icon = s:v[0]
         let s:hl = s:v[1]
     else

@@ -100,7 +100,7 @@ function! MetaDetect(file)
 endfunction
 
 autocmd BufReadPost * let b:meta_dir = MetaDetect(expand('<afile>')) |
-    \ if type(b:meta_dir) == 1
+    \ if type(b:meta_dir) == type("")
     \       && index(split(&spellfile, ","),
     \                b:meta_dir . '/en.utf-8.add') == -1 |
     \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
