@@ -9,7 +9,18 @@
             "endif",
             ""
         ],
-        "type": "config"
+        "type": "xconfig"
+    },
+    "localcfg/*.vim": {
+        "template": [
+            "if exists(\"g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
+            "	finish",
+            "else",
+            "	 execute(\"let g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
+            "endif",
+            ""
+        ],
+        "type": "lconfig"
     },
     "README.rst": {"type": "doc"},
     "neobundle.vim": {"type": "neo"},
