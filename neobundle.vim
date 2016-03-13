@@ -8,7 +8,7 @@ end
 let g:vcs_cst = neobundle#config#get_types('vcs_cst') != {}
 
 NeoBundleFetch 'Shougo/neobundle.vim', {
-    \ 'depends': 'Shougo/vimproc',
+    \ 'depends': 'vimproc',
     \ 'vim_version': '7.2',
 \ }
 
@@ -58,7 +58,7 @@ NeoBundleLazy 'Shougo/neomru.vim', {
 \ }
 
 NeoBundleLazy 'Shougo/neosnippet', {
-    \ 'depends': ['Shougo/context_filetype.vim', 'Shougo/neosnippet-snippets'],
+    \ 'depends': 'neosnippet-snippets',
     \ 'on_i': 1,
     \ 'on_map': [['iv', '<C-k>']],
 \ }
@@ -70,12 +70,12 @@ NeoBundleLazy 'Shougo/neosnippet-snippets', {
 NeoBundle 'Shougo/unite.vim'
 
 NeoBundleLazy 'Shougo/unite-outline', {
-    \ 'depends': 'Shougo/unite.vim',
+    \ 'depends': 'unite.vim',
     \ 'on_unite': 'outline',
 \ }
 
 NeoBundleLazy 'Shougo/vimfiler.vim', {
-    \ 'depends': 'Shougo/unite.vim',
+    \ 'depends': 'unite.vim',
     \ 'on_cmd': [
     \   {
     \       'name': ['VimFiler', 'VimFilerDouble'],
@@ -102,10 +102,10 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
 
 NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'bling') . '/vim-airline', {
     \ 'depends': [
-    \   'chrisbra/NrrwRgn',
-    \   'scrooloose/syntastic',
-    \   'mhinz/vim-signify',
-    \   'tpope/vim-fugitive',
+    \   'NrrwRgn',
+    \   'syntastic',
+    \   'vim-signify',
+    \   'vim-fugitive',
     \ ],
 \ }
 
@@ -176,7 +176,7 @@ NeoBundleLazy 'godlygeek/tabular', {
 
 NeoBundleLazy 'gregsexton/gitv', {
     \ 'on_cmd': 'Gitv',
-    \ 'depends': 'tpope/vim-fugitive',
+    \ 'depends': 'vim-fugitive',
     \ 'external_command': 'git',
 \ }
 
@@ -241,7 +241,7 @@ NeoBundleLazy 'mitsuhiko/vim-rst', {
 
 NeoBundleLazy 'mmozuras/vim-github-comment', {
     \ 'on_cmd': 'GHComment',
-    \ 'depends': 'mattn/webapi-vim',
+    \ 'depends': 'webapi-vim',
 \ }
 
 NeoBundleLazy 'moll/vim-bbye', {
