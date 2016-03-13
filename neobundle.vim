@@ -259,7 +259,10 @@ NeoBundleLazy 'mmozuras/vim-github-comment', {
 \ }
 
 NeoBundleLazy 'moll/vim-bbye', {
-    \ 'on_cmd': 'Bdelete',
+    \ 'on_cmd': [{
+    \   'name': 'Bdelete',
+    \   'complete': 'buffer',
+    \  }],
     \ 'on_map': [['n', '<Leader>q']],
 \ }
 
