@@ -84,7 +84,7 @@ NeoBundleLazy 'Shougo/vimfiler.vim', {
     \   'VimFilerExplorer',
     \ ],
     \ 'on_map': [['n', '<Plug>']],
-    \ 'explorer': 1,
+    \ 'on_path': '.*',
 \ }
 
 NeoBundle 'Shougo/vimproc', {
