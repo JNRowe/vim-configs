@@ -375,9 +375,13 @@ command! ShowHighlightGroup
     \   ">"
 " }}}
 
-" Read all configs for external packages
-runtime! extconfigs/*.vim
-
+" Read all optional configs for build-dependent settings and external packages
+let g:localcfg_cfgs = ['abbr']
+let g:localcfg_features = ['autocmd', 'gui', 'menu']
+for s:bundle in neobundle#config#get_neobundles()
+    let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
+    let g:localcfg_cfgs += [(s:bundle.disabled ? 'not' : '') . s:cfgname]
+endfo
 call localcfg#docfg()
 
 " vim: fdm=marker:
