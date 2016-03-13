@@ -104,6 +104,9 @@ autocmd BufReadPost * let b:meta_dir = MetaDetect(expand('<afile>')) |
     \       && index(split(&spellfile, ","),
     \                b:meta_dir . '/en.utf-8.add') == -1 |
     \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
+    \   if filereadable(b:meta_dir . '/abbr.vim') |
+    \       execute("source " . b:meta_dir . "/abbr.vim") |
+    \   endif |
     \ endif
 augroup END
 " }}}
