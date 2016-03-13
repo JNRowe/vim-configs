@@ -103,6 +103,10 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
     \ 'on_unite': 'taskwarrior',
 \ }
+let s:bundle = neobundle#get('vim-taskwarrior')
+function! s:bundle.hooks.on_post_source(bundle)
+    let g:airline_extensions += ['taskwarrior']
+endfunction
 
 NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'bling') . '/vim-airline', {
     \ 'depends': [
