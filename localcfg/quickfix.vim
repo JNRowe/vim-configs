@@ -4,19 +4,19 @@ else
     execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
-" Display occurrences of current word in quickfix window
-" consider <Leader>q for "quick"?
-nnoremap <Leader>sw :execute "vimgrep " . expand("<cword>") . " %"<CR>:copen<CR>
-" … and last search
-nnoremap <Leader>ss :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+nnoremap [quickfix] <Nop>
+nmap <Leader>f [quickfix]
 
-" Quickfix maps {{{
-nmap <Leader>cwc :cclose<CR>
-nmap <Leader>cwo :copen 7<CR><C-w>p
-nmap <Leader>cn :cnext<CR>
-nmap <Leader>cp :cprevious<CR>
+" Display occurrences of current word in quickfix window
+nnoremap [quickfix]sw :execute "vimgrep " . expand("<cword>") . " %"<CR>:copen<CR>
+" … and last search
+nnoremap [quickfix]ss :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+
+nmap [quickfix]wc :cclose<CR>
+nmap [quickfix]wo :copen 7<CR><C-w>p
+nmap [quickfix]n :cnext<CR>
+nmap [quickfix]p :cprevious<CR>
 nmap <M-Down> :cnext<CR>
 nmap <M-Up> :cprevious<CR>
-nmap <Leader>cr :crewind<CR>
-nmap <Leader>cl :clast<CR>
-" }}}
+nmap [quickfix]r :crewind<CR>
+nmap [quickfix]l :clast<CR>
