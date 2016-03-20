@@ -1,0 +1,8 @@
+if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+    finish
+else
+    execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+endif
+
+nnoremap <silent> [unite]y :<C-U>Unite -buffer-name=history/yank
+    \ history/yank <CR>
