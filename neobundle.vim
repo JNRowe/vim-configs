@@ -150,6 +150,10 @@ NeoBundleLazy 'chrisbra/unicode.vim', {
     \ ],
     \ 'vim_version': '7.4',
 \ }
+let s:bundle = neobundle#get('unicode.vim')
+function! s:bundle.hooks.on_post_source(bundle)
+    let g:airline_extensions += ['unicode']
+endfunction
 
 NeoBundle 'chrisbra/vim_faq', {
     \ 'description': 'The vim FAQ',
