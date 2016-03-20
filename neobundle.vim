@@ -78,6 +78,11 @@ NeoBundleLazy 'Shougo/neosnippet-snippets', {
     \ 'on_i': 1,
 \ }
 
+NeoBundleLazy 'Shougo/neoyank.vim', {
+    \ 'description': 'Yank source for unite.vim',
+    \ 'on_unite': 'history/yank',
+\ }
+
 NeoBundle 'Shougo/unite.vim', {
     \ 'description': 'Unite and create user interfaces',
     \ 'external_command': 'xdg-open',
