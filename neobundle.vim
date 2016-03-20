@@ -458,6 +458,12 @@ NeoBundleLazy 'tpope/vim-surround', {
     \ ],
 \ }
 
+NeoBundleLazy 'ujihisa/unite-colorscheme', {
+    \ 'depends': 'unite.vim',
+    \ 'description': 'Colourscheme source for unite.vim',
+    \ 'external_command': 'ctags',
+\ }
+
 NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'vim-airline') . '/vim-airline', {
     \ 'depends': [
     \   'NrrwRgn',
