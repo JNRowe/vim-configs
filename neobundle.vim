@@ -401,6 +401,12 @@ NeoBundleLazy 'spolu/dwm.vim', {
     \ 'on_func': ['DWM_Focus', 'DWM_New', 'DWM_Rotate'],
 \ }
 
+NeoBundleLazy 'szw/vim-maximizer', {
+    \ 'description': 'Maximizes and restores the current window',
+    \ 'on_cmd': 'MaximizerToggle',
+    \ 'on_map': [['n', '<C-w>o']],
+\ }
+
 NeoBundleLazy 'terryma/vim-expand-region', {
     \ 'description': 'Incremental visual selection',
     \ 'on_map': [['nv', '+', '-']],
