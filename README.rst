@@ -5,9 +5,12 @@ This is just my personal vim_ configuration files that are shared among hosts.
 Maybe they're useful to you too, or better yet you'll spot *and* fix a bug!
 
 It uses features introduced in version 7.3, but should work with later versions.
+It will *not* work with neovim_, and that is unlikely to change in the near
+future.
 
 If you find any problems with the files in this repository either file an
-issue_, or drop me an email_.
+issue_, or drop me an email_.  However, please do not report problems when using
+neovim_, pull requests are fine though.
 
 Installation
 ------------
@@ -25,9 +28,10 @@ That being said if your dog doesn't mean that much to you::
     make
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
-choices are link it to ``~/.vimrc``, ``source`` it in your own ``~/.vimrc`` or
-simply cherrypick the parts of it you like.
+choices are to just run with it, override it with your own ``~/.vimrc`` or
+more likely simply to cherrypick the parts of it you like.
 
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
 .. _issue: https://github.com/JNRowe/vim-configs/issues
+.. _neovim: https://neovim.io
