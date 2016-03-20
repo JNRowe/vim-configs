@@ -506,6 +506,11 @@ NeoBundleLazy 'ZoomWin', {
     \ 'on_map': [['n', '<C-w>o']],
 \ }
 
+NeoBundleLazy 'po.vim--Jelenak', {
+    \ 'description': 'Extended support for GNU gettext',
+    \ 'on_ft': 'po',
+\ }
+
 NeoBundleLazy 'uri-ref', {
     \ 'description': 'Painless footer references',
     \ 'on_ft': 'mail',
