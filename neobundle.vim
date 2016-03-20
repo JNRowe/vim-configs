@@ -126,16 +126,6 @@ function! s:bundle.hooks.on_post_source(bundle)
     let g:airline_extensions += ['taskwarrior']
 endfunction
 
-NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'bling') . '/vim-airline', {
-    \ 'depends': [
-    \   'NrrwRgn',
-    \   'syntastic',
-    \   'vim-signify',
-    \   'vim-fugitive',
-    \ ],
-    \ 'description': "Lean & mean status/tabline for vim that's light as air",
-\ }
-
 NeoBundle 'chrisbra/NrrwRgn', {
     \ 'description': 'A narrow region plugin (similar to Emacs)',
     \ 'vim_version': '7.4',
@@ -462,6 +452,21 @@ NeoBundleLazy 'tpope/vim-surround', {
     \   ['n', 'cS', 'cs', 'ds', 'yS', 'ys'],
     \   ['x', 'S'],
     \ ],
+\ }
+
+NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'vim-airline') . '/vim-airline', {
+    \ 'depends': [
+    \   'NrrwRgn',
+    \   'syntastic',
+    \   'vim-airline-themes',
+    \   'vim-signify',
+    \   'vim-fugitive',
+    \ ],
+    \ 'description': "Lean & mean status/tabline for vim that's light as air",
+\ }
+
+NeoBundle 'vim-airline/vim-airline-themes', {
+    \ 'description': 'Official theme repository for vim-airline',
 \ }
 
 NeoBundle 'vim-utils/vim-husk', {
