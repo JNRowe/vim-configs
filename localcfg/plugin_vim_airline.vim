@@ -28,6 +28,7 @@ let g:airline#extensions#disable_rtp_load = 1
 let g:airline_extensions = [
     \ 'csv',
     \ 'nrrwrgn',
+    \ 'po',
     \ 'whitespace',
     \ 'wordcount',
 \ ]
