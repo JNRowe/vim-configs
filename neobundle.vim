@@ -464,7 +464,7 @@ NeoBundleLazy 'ujihisa/unite-colorscheme', {
     \ 'external_command': 'ctags',
 \ }
 
-NeoBundle (g:vcs_cst ? 'vcs_cst::cstrager' : 'vim-airline') . '/vim-airline', {
+NeoBundle 'vim-airline/vim-airline', {
     \ 'depends': [
     \   'NrrwRgn',
     \   'syntastic',
@@ -505,11 +505,6 @@ NeoBundleLazy 'Toggle', {
     \   ['i', '<C-T>'],
     \   ['n', '+'],
     \ ],
-\ }
-
-NeoBundleLazy 'ZoomWin', {
-    \ 'description': 'Zoom into/out-of a window',
-    \ 'on_map': [['n', '<C-w>o']],
 \ }
 
 NeoBundleLazy 'po.vim--Jelenak', {
