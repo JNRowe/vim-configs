@@ -84,24 +84,16 @@ autocmd QuickFixCmdPost * belowright cwindow 5
 autocmd WinLeave * setlocal nocursorline
 autocmd WinEnter * setlocal cursorline
 
-function! MetaDetect(file)
-    let l:p = resolve(fnamemodify(a:file, ":p:h"))
-
-    while l:p != "/"
-        if isdirectory(l:p . "/.meta")
-            return l:p . "/.meta"
-        endif
-        let l:p = fnamemodify(l:p, ":h")
-    endwhile
-endfunction
-
 autocmd BufReadPost * if !exists("b:meta_dir") |
-    \   let b:meta_dir = MetaDetect(expand('<afile>')) |
+    \   let s:proot = FindRootDirectory() |
+    \   if s:proot != "" |
+    \       let b:meta_dir = s:proot . "/.meta" |
+    \   endif |
     \ endif |
-    \ if type(b:meta_dir) == type("")
-    \       && index(split(&spellfile, ","),
-    \                b:meta_dir . '/en.utf-8.add') == -1 |
-    \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
+    \ if exists("b:meta_dir") && type(b:meta_dir) == type("") |
+    \   if index(split(&spellfile, ","), b:meta_dir . '/en.utf-8.add') == -1 |
+    \       execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
+    \   endif |
     \   if !exists("b:meta_abbr") && filereadable(b:meta_dir . '/abbr.vim') |
     \       execute("source " . b:meta_dir . "/abbr.vim") |
     \       let b:meta_abbr = 1 |
