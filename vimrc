@@ -60,7 +60,6 @@ endif
 " }}}
 
 " General settings {{{
-set autochdir
 set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
