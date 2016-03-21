@@ -530,7 +530,6 @@ NeoBundleLazy 'po.vim--Jelenak', {
 NeoBundleLazy 'uri-ref', {
     \ 'description': 'Painless footer references',
     \ 'on_ft': 'mail',
-    \ 'terminal': 1,
 \ }
 " }}}
 
