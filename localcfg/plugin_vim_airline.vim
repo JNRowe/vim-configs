@@ -18,6 +18,7 @@ let g:airline_symbols = {
     \ 'crypt': '',
     \ 'linenr': '⏎',
     \ 'modified': '➕',
+    \ 'notexists': '∉',
     \ 'paste': ' ',
     \ 'readonly': '',
     \ 'space': ' ',
