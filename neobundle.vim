@@ -113,6 +113,10 @@ NeoBundle 'Shougo/vimproc', {
     \ 'description': 'Asynchronous execution plugin',
 \ }
 
+NeoBundle 'airblade/vim-rooter', {
+    \ 'description': "Identify project's root directory",
+\ }
+
 NeoBundleLazy 'bitc/vim-bad-whitespace', {
     \ 'description': 'Highlights whitespace at the end of lines',
     \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
