@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile .editorconfig setfiletype dosini
+autocmd BufRead,BufNewFile .editorconfig set filetype=dosini

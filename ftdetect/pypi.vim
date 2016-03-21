@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead ~/.pypirc setfiletype dosini
+autocmd BufNewFile,BufRead ~/.pypirc set filetype=dosini
