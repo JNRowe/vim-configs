@@ -29,6 +29,10 @@ NeoBundleLazy (g:vcs_cst ? 'vcs_cst::cstrager' : 'Lokaltog') . '/vim-easymotion'
     \ 'vim_version': '7.4',
 \ }
 
+NeoBundle 'Konfekt/FastFold', {
+    \ 'description': 'Speed up folding by reducing recalculations',
+\ }
+
 NeoBundleLazy 'Raimondi/delimitMate', {
     \ 'description': 'Automatic closing of quotes, parenthesis, brackets, etc',
     \ 'on_i': 1,
