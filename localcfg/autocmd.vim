@@ -45,6 +45,12 @@ autocmd BufWritePost ~/.vim/localcfg/*.vim
     \           expand("%:t:r:gs?[\.-]?_?")) |
     \ endif |
     \ call localcfg#docfg()
+autocmd BufWritePost ~/.vim/ftdetect/*.vim
+    \ if exists("g:loaded_ftd_" . expand("%:t:r:gs?[\.-]?_?")) |
+    \   execute("unlet g:loaded_ftd_" .
+    \           expand("%:t:r:gs?[\.-]?_?")) |
+    \ endif |
+    \ source %
 
 " Clear the neobundle cache on write
 autocmd BufWritePost neobundle.vim NeoBundleClearCache
