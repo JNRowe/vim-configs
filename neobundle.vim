@@ -12,6 +12,13 @@ NeoBundleFetch 'Shougo/neobundle.vim', {
     \ 'vim_version': '7.2',
 \ }
 
+NeoBundleLazy 'Chun-Yang/vim-action-ag', {
+    \ 'depends': 'ag.vim',
+    \ 'description': 'Motion support for ag.vim',
+    \ 'external_command': 'ag',
+    \ 'on_map': [['nv', 'gag']],
+\ }
+
 NeoBundleLazy 'AndrewRadev/sideways.vim', {
     \ 'description': 'Move an item in a delimiter-separated list left or right',
     \ 'on_cmd': ['SidewaysLeft', 'SidewaysRight'],
