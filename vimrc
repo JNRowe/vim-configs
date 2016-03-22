@@ -340,7 +340,7 @@ command! ShowHighlightGroup
 
 " Read all optional configs for build-dependent settings and external packages
 let g:localcfg_cfgs = ['abbr']
-let g:localcfg_features = ['autocmd', 'gui', 'menu', 'quickfix']
+let g:localcfg_features = ['autocmd', 'gui', 'gui_macvim', 'menu', 'quickfix']
 for s:bundle in neobundle#config#get_neobundles()
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
     let g:localcfg_cfgs += [(s:bundle.disabled ? 'not' : '') . s:cfgname]
