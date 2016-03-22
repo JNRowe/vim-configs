@@ -43,10 +43,8 @@ NeoBundleLazy 'Shougo/context_filetype.vim', {
     \ 'on_i': 1,
 \ }
 
-NeoBundleLazy 'Shougo/junkfile.vim', {
-    \ 'on_cmd': 'JunkfileOpen',
+NeoBundle 'Shougo/junkfile.vim', {
     \ 'description': 'Create junk files',
-    \ 'on_unite': 'junkfile',
 \ }
 
 " Choose based on has('lua') {{{
@@ -65,9 +63,9 @@ NeoBundleLazy 'Shougo/neocomplcache', {
 \ }
 " }}}
 
-NeoBundleLazy 'Shougo/neomru.vim', {
+NeoBundle 'Shougo/neomru.vim', {
+    \ 'depends': 'unite.vim',
     \ 'description': 'MRU plugin includes unite.vim MRU sources',
-    \ 'on_unite': 'neomru',
 \ }
 
 NeoBundleLazy 'Shougo/neosnippet', {
@@ -82,9 +80,9 @@ NeoBundleLazy 'Shougo/neosnippet-snippets', {
     \ 'on_i': 1,
 \ }
 
-NeoBundleLazy 'Shougo/neoyank.vim', {
+NeoBundle 'Shougo/neoyank.vim', {
+    \ 'depends': 'unite.vim',
     \ 'description': 'Yank source for unite.vim',
-    \ 'on_unite': 'history/yank',
 \ }
 
 NeoBundle 'Shougo/unite.vim', {
@@ -92,7 +90,7 @@ NeoBundle 'Shougo/unite.vim', {
     \ 'external_command': 'xdg-open',
 \ }
 
-NeoBundleLazy 'Shougo/unite-outline', {
+NeoBundle 'Shougo/unite-outline', {
     \ 'depends': 'unite.vim',
     \ 'description': 'Outline source for unite.vim',
     \ 'external_command': 'ctags',
@@ -132,7 +130,6 @@ NeoBundleLazy 'blindFS/vim-taskwarrior', {
     \ 'description': 'An interface for Taskwarrior',
     \ 'external_command': 'task',
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
-    \ 'on_unite': 'taskwarrior',
 \ }
 let s:bundle = neobundle#get('vim-taskwarrior')
 function! s:bundle.hooks.on_post_source(bundle)
@@ -477,10 +474,9 @@ NeoBundleLazy 'tpope/vim-surround', {
     \ ],
 \ }
 
-NeoBundleLazy 'ujihisa/unite-colorscheme', {
+NeoBundle 'ujihisa/unite-colorscheme', {
     \ 'depends': 'unite.vim',
     \ 'description': 'Colourscheme source for unite.vim',
-    \ 'external_command': 'ctags',
 \ }
 
 NeoBundle 'vim-airline/vim-airline', {
