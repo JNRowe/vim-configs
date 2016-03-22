@@ -14,11 +14,7 @@ set relativenumber
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
-if has('gui_macvim')
-    set guifont=Menlo:h13
-else
-    set guifont=Consolas\ 13
-endif
+set guifont=Consolas\ 13
 colorscheme jnrowe
 
 if has('title')
