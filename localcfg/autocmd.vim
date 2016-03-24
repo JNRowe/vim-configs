@@ -74,6 +74,10 @@ autocmd BufReadPost *
     \   execute "normal g`\"" |
     \ endif
 
+" Make stdin buffers temporary by default.  Potentially dangerous, but I only
+" use them this way.
+autocmd StdinReadPost * set buftype=nofile
+
 " Turn off search highlighting when entering a buffer
 autocmd BufEnter * nohlsearch
 " Turn off search highlighting when idle
