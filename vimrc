@@ -31,7 +31,7 @@ let g:vim_data_dir = g:xdg_data_dir . "/vim"
 
 " Fire up neobundle, and setup plugins {{{
 if has('vim_starting')
-    set runtimepath+=~/.vim/external/neobundle.vim/
+    set runtimepath^=~/.vim/external/neobundle.vim/
 endif
 
 " Disable netrw, as it clashes with plugins
