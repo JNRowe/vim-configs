@@ -318,7 +318,7 @@ NeoBundleLazy 'mattn/emmet-vim', {
 
 NeoBundleLazy 'mattn/webapi-vim', {
     \ 'description': 'An interface to web APIs',
-    \ 'external_commanpd': 'curl',
+    \ 'external_command': 'curl',
     \ 'vim_version': '7.0',
 \ }
 
