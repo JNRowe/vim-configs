@@ -57,6 +57,10 @@ NeoBundleCheck
 if !has('vim_starting')
     call neobundle#call_hook('on_source')
 endif
+
+" This command was removed in c6d4686f59fc43547dd46eda8e73e59821a8aad6, but
+" I find it very useful.
+command! NeoBundleClean call neobundle#commands#clean(0)
 " }}}
 
 " General settings {{{
