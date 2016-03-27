@@ -47,9 +47,15 @@ call dein#add('Shougo/context_filetype.vim')
 " Create junk files
 call dein#add('Shougo/junkfile.vim')
 
+" Syntax source for neocomplete
+call dein#add('Shougo/neco-syntax', {
+    \ 'if': has('lua'),
+\ })
+
 " Choose based on has('lua') {{{
 " Next generation of auto completion framework
 call dein#add('Shougo/neocomplete.vim', {
+    \ 'depends': 'neco-syntax',
     \ 'if': has('lua') && has('patch-7.3.885'),
     \ 'on_i': 1,
 \ })
