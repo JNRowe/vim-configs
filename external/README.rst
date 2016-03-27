@@ -1,1 +1,1 @@
-The directory stores packages managed by neobundle.
+The directory stores packages that can't be bootstrapped by dein.

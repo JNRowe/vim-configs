@@ -29,38 +29,25 @@ let g:vim_config_dir = g:xdg_config_dir . "/vim"
 let g:vim_data_dir = g:xdg_data_dir . "/vim"
 " }}}
 
-" Fire up neobundle, and setup plugins {{{
-if has('vim_starting')
-    set runtimepath^=~/.vim/external/neobundle.vim/
-endif
+" Fire up dein, and setup plugins {{{
+set runtimepath^=~/.vim/external/dein.vim/
 
 " Disable netrw, as it clashes with plugins
 let g:loaded_netrwPlugin = 1
-let g:neobundle#cache_file = g:vim_cache_dir . '/neobundle.cache'
-let g:neobundle#default_options = {}
-if $NEOBUNDLE_DEBUG != ''
-    let g:neobundle#default_options._ = {
-        \ 'verbose': 1
-    \ }
-endif
-let g:neobundle#log_filename = g:vim_cache_dir . '/neobundle.log'
-" Sledgehammer to fix jedi-vim's bundling
-let g:neobundle#types#git#enable_submodule = 0
 
-call neobundle#begin(expand('~/.vim/external/', 1))
+if dein#load_state(g:vim_cache_dir . '/dein')
+    call dein#begin(g:vim_cache_dir . '/dein',
+        \ ['~/.vim/vimrc', '~/.vim/dein.vim'])
 
-source ~/.vim/neobundle.vim
+    source ~/.vim/dein.vim
 
-call neobundle#end()
-
-NeoBundleCheck
-if !has('vim_starting')
-    call neobundle#call_hook('on_source')
+    call dein#end()
+    call dein#save_state()
 endif
 
-" This command was removed in c6d4686f59fc43547dd46eda8e73e59821a8aad6, but
-" I find it very useful.
-command! NeoBundleClean call neobundle#commands#clean(0)
+if dein#check_install()
+    echo "Missing plugins"
+endif
 " }}}
 
 " General settings {{{
@@ -345,9 +332,9 @@ command! ShowHighlightGroup
 " Read all optional configs for build-dependent settings and external packages
 let g:localcfg_cfgs = ['abbr']
 let g:localcfg_features = ['autocmd', 'gui', 'gui_macvim', 'menu', 'quickfix']
-for s:bundle in neobundle#config#get_neobundles()
+for s:bundle in values(dein#get())
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
-    let g:localcfg_cfgs += [(s:bundle.disabled ? 'not' : '') . s:cfgname]
+    let g:localcfg_cfgs += [(s:bundle.if ? '' : 'not') . s:cfgname]
 endfo
 call localcfg#docfg()
 

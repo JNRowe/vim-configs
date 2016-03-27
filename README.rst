@@ -23,7 +23,7 @@ That being said if your dog doesn't mean that much to you::
     git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
     cd ~/.vim
     # This following fetches lots of remote resources, and may take some time
-    make init-external
+    make update-external
     # Rebuild generated language and documentation tag files
     make
 
