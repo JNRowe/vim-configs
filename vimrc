@@ -66,14 +66,16 @@ if has('conceal')
     set conceallevel=2
 endif
 set confirm
-if v:version > 704 || v:version == 704 && has("patch399")
-    set cryptmethod=blowfish2
-else
-    let v:warningmsg = "Using old blowfish cryptmethod"
-    echohl WarningMsg
-    echomsg v:warningmsg
-    echohl none
-    set cryptmethod=blowfish
+if has('cryptv')
+    if v:version > 704 || v:version == 704 && has("patch399")
+        set cryptmethod=blowfish2
+    else
+        let v:warningmsg = "Using old blowfish cryptmethod"
+        echohl WarningMsg
+        echomsg v:warningmsg
+        echohl none
+        set cryptmethod=blowfish
+    endif
 endif
 set cursorline
 if filereadable('/usr/share/dict/words')
@@ -86,10 +88,12 @@ set fileencoding=utf-8
 if v:lang =~? 'utf-8'
     set fileencodings=utf-8,latin1,default
 endif
-set foldcolumn=2
-set foldlevelstart=99
-set foldmethod=syntax
-set foldtext=MyFoldText()
+if has('folding')
+    set foldcolumn=2
+    set foldlevelstart=99
+    set foldmethod=syntax
+    set foldtext=MyFoldText()
+endif
 set formatoptions+=rnl1
 set formatoptions-=wvb
 set gdefault
@@ -124,14 +128,18 @@ set scrolloff=10
 set shiftround
 set shiftwidth=4
 set shortmess+=I
-set showcmd
+if has('cmdline_info') && has('showcmd')
+    set showcmd
+endif
 set showfulltag
 set showmatch
 set smartcase
 set softtabstop=4
-set spell
-set spellfile=~/.vim/spell/en.utf-8.add
-set spelllang=en_gb
+if has('spell')
+    set spell
+    set spellfile=~/.vim/spell/en.utf-8.add
+    set spelllang=en_gb
+endif
 set splitbelow
 set splitright
 set nostartofline
@@ -144,15 +152,23 @@ if has("persistent_undo")
     set undofile
     let &undodir = g:vim_data_dir . '/undo//,' . &undodir
 endif
-execute("set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo")
-set virtualedit=block
+if has('viminfo')
+    execute("set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo")
+endif
+if has('virtualedit')
+    set virtualedit=block
+endif
 set whichwrap+=<,>,[,]
-set wildignore+=*.log,*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
+if has('wildignore')
+    set wildignore+=*.log,*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
+endif
 set wildmode^=longest
 " }}}
 
 " Characters to show for wrapped lines
-let &showbreak="» "
+if has('linebreak')
+    let &showbreak="» "
+endif
 
 " Syntax files settings {{{
 let g:erlang_highlight_special_atoms = 1
@@ -215,7 +231,9 @@ nnoremap <S-Down> Vj
 " }}}
 
 " Toggle current fold
-nnoremap <Space> za
+if has('folding')
+    nnoremap <Space> za
+endif
 
 " Logical Y mapping, like D
 map Y y$
@@ -239,7 +257,9 @@ function! HomeSkip()
 endfunction
 
 " Function keys {{{
-nmap <silent> <F1> :set hlsearch!<CR>
+if has('extra_search')
+    nmap <silent> <F1> :set hlsearch!<CR>
+endif
 nnoremap <silent> <F2> :set list!<CR>
 nmap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
@@ -281,15 +301,17 @@ endfunction
 " }}}
 
 " Custom foldtext setting {{{
-function! MyFoldText()
-    let nlines = v:foldend - v:foldstart + 1
-    return v:folddashes . getline(v:foldstart)[:winwidth(0)-10] . ' ▼ ' .
-        \ nlines . ' lines '
-endfunction
+if has('folding')
+    function! MyFoldText()
+        let nlines = v:foldend - v:foldstart + 1
+        return v:folddashes . getline(v:foldstart)[:winwidth(0)-10] . ' ▼ ' .
+            \ nlines . ' lines '
+    endfunction
+endif
 " }}}
 
 " Vimdiff maps {{{
-if &diff
+if has('diff') && &diff
     noremap <LocalLeader>do :diffoff!<CR>
     noremap <LocalLeader>dp :diffput<CR>
     noremap <LocalLeader>dg :diffget<CR>
@@ -309,10 +331,12 @@ nmap <S-Tab> <C-w>W
 " Folding support maps {{{
 " The following mappings may not be to your liking, but I never use +/- for
 " line movement.
-nmap - zc
-nmap + zo
+if has('folding')
+    nmap - zc
+    nmap + zo
 
-vmap - zf
+    vmap - zf
+endif
 " }}}
 
 " Show highlight group of the current text {{{
@@ -326,7 +350,10 @@ command! ShowHighlightGroup
 " }}}
 
 " Read all optional configs for build-dependent settings and external packages
-let g:localcfg_cfgs = ['abbr']
+let g:localcfg_cfgs = []
+if has('localmap')
+    let g:localcfg_cfgs += ['abbr']
+endif
 let g:localcfg_features = ['autocmd', 'gui', 'gui_macvim', 'menu', 'quickfix']
 for s:bundle in values(dein#get())
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
