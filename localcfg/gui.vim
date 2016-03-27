@@ -7,6 +7,8 @@ endif
 set guiheadroom=0
 
 set guioptions+=chR
+set guioptions-=L
+set guioptions-=R
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
