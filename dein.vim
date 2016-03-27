@@ -55,7 +55,7 @@ call dein#add('Shougo/neco-syntax', {
 " Choose based on has('lua') {{{
 " Next generation of auto completion framework
 call dein#add('Shougo/neocomplete.vim', {
-    \ 'depends': 'neco-syntax',
+    \ 'depends': ['neco-syntax', 'neopairs.vim'],
     \ 'if': has('lua') && has('patch-7.3.885'),
     \ 'on_i': 1,
 \ })
@@ -70,6 +70,13 @@ call dein#add('Shougo/neocomplcache', {
 " MRU plugin includes unite.vim MRU sources
 call dein#add('Shougo/neomru.vim', {
     \ 'depends': 'unite.vim',
+\ })
+
+" Auto insert pairs neocomplete support
+call dein#add('Shougo/neopairs.vim', {
+    \ 'depends': 'neocomplete.vim',
+    \ 'if': has('lua') && has('patch-7.4.774'),
+    \ 'on_i': 1,
 \ })
 
 " Adds snippet support to Vim
