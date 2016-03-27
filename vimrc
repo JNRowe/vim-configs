@@ -126,6 +126,9 @@ set nonumber
 set pastetoggle=<F4>
 set report=0
 set scrolloff=10
+if has('filterpipe')
+    set noshelltemp
+endif
 set shiftround
 set shiftwidth=4
 set shortmess+=I
