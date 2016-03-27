@@ -26,12 +26,16 @@ map! <S-Insert> <MiddleMouse>
 set guifont=Consolas\ 13
 colorscheme jnrowe
 
-if has('title')
+if has('title')  && has('clientserver')
     set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
 endif
 
 " Omnicompletion rocks, but <C-x><C-o> doesn't.
 inoremap <C-Space> <C-x><C-o>
 
-nmap <silent> <S-F4> :call ToggleFlag("guioptions","m")<CR>
-nmap <silent> <C-F4> :call ToggleFlag("guioptions","T")<CR>
+if has('menu')
+    nmap <silent> <S-F4> :call ToggleFlag("guioptions","m")<CR>
+endif
+if has('toolbar')
+    nmap <silent> <C-F4> :call ToggleFlag("guioptions","T")<CR>
+endif
