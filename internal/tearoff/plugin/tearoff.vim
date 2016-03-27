@@ -5,6 +5,18 @@
 " pleasing alternative instead of hardcoding a length.
 "-------------------------------------%<-------------------------------------
 function! <SID>Snip() range
+	if get(g:, "tearoff_git_scissors")
+		let l:tearoff_markers = {
+			\ "start": "8<",
+			\ "end": ">8",
+		\ }
+	else
+		let l:tearoff_markers = {
+			\ "start": "%<",
+			\ "end": "%<",
+		\ }
+	endif
+
 	let i = a:firstline
 	let maxlen = -2
 	" find out the maximum virtual length of each line.
@@ -18,11 +30,11 @@ function! <SID>Snip() range
 	let half = maxlen/2
 	exe a:lastline
 	" put a string below
-	exe "norm! o\<esc>".(half - 1)."a-\<esc>A%<\<esc>".(half - 1)."a-"
+	exe "norm! o\<esc>".(half - 1)."a-\<esc>A". l:tearoff_markers.end ."\<esc>".(half - 1)."a-"
 	" and above. its necessary to put the string below the block of lines
 	" first because that way the first line number doesnt change...
 	exe a:firstline
-	exe "norm! O\<esc>".(half - 1)."a-\<esc>A%<\<esc>".(half - 1)."a-"
+	exe "norm! O\<esc>".(half - 1)."a-\<esc>A". l:tearoff_markers.start ."\<esc>".(half - 1)."a-"
 endfunction
 
 com! -nargs=0 -range Snip :<line1>,<line2>call <SID>Snip()
