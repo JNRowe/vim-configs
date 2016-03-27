@@ -194,6 +194,9 @@ call dein#add('ehamberg/vim-cute-python', {
     \ 'rev': 'moresymbols',
 \ })
 
+" An implementation of the PlainTasks format
+call dein#add('elentok/plaintasks.vim')
+
 " Enhanced JSON support
 call dein#add('elzr/vim-json')
 
