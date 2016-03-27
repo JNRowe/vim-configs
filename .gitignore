@@ -6,9 +6,3 @@
 
 /abbr-local
 /vimrc-local
-
-# neobundle support data
-/external/.neobundle/
-
-# neobundle managed plugins
-/external/

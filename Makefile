@@ -59,7 +59,7 @@ clean:
 
 update-external:
 	$(info - Updating plugin bundles)
-	./external/neobundle.vim/bin/neoinstall
+	vim -c 'call dein#update()' -c ':qa'
 
 display_sources:
 	@echo $(realpath $(LUA_SOURCES) $(PYTHON_SOURCES) $(RUBY_SOURCES) \
