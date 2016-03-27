@@ -34,12 +34,13 @@ let g:vim_data_dir = g:xdg_data_dir . "/vim"
 " Fire up dein, and setup plugins {{{
 set runtimepath^=~/.vim/external/dein.vim/
 
+let g:dein_state_dir = g:vim_cache_dir . '/dein'
+
 " Disable netrw, as it clashes with plugins
 let g:loaded_netrwPlugin = 1
 
-if dein#load_state(g:vim_cache_dir . '/dein')
-    call dein#begin(g:vim_cache_dir . '/dein',
-        \ ['~/.vim/vimrc', '~/.vim/dein.vim'])
+if dein#load_state(g:dein_state_dir)
+    call dein#begin(g:dein_state_dir, ['~/.vim/vimrc', '~/.vim/dein.vim'])
 
     source ~/.vim/dein.vim
 
