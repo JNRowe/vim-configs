@@ -44,6 +44,10 @@ if dein#load_state(g:vim_cache_dir . '/dein')
     call dein#end()
     call dein#save_state()
 endif
+
+if dein#check_install()
+    echo "Missing plugins"
+endif
 " }}}
 
 " General settings {{{
