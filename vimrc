@@ -98,11 +98,6 @@ else
     let &grepprg = "grep -nH "
         \ "--exclude-from=" . g:xdg_data_dir . "/grep_excludes $* /dev/null"
 endif
-set guiheadroom=0
-set guioptions+=chR
-set guioptions-=T
-set guioptions-=m
-set guioptions-=r
 set hidden
 set ignorecase
 set infercase
@@ -246,8 +241,7 @@ nmap <silent> <F1> :set hlsearch!<CR>
 nnoremap <silent> <F2> :set list!<CR>
 nmap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
-nmap <silent> <S-F4> :call ToggleFlag("guioptions","m")<CR>
-nmap <silent> <C-F4> :call ToggleFlag("guioptions","T")<CR>
+" <[SC]-F4> toggles menu/toolbar in gvim
 " F5 is VimFiler
 nmap <F10> :make check<CR>
 nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>

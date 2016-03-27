@@ -4,6 +4,13 @@ else
      execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
+set guiheadroom=0
+
+set guioptions+=chR
+set guioptions-=T
+set guioptions-=m
+set guioptions-=r
+
 set mousemodel=popup_setpos
 
 " Always display line number in the GUI
@@ -23,3 +30,6 @@ endif
 
 " Omnicompletion rocks, but <C-x><C-o> doesn't.
 inoremap <C-Space> <C-x><C-o>
+
+nmap <silent> <S-F4> :call ToggleFlag("guioptions","m")<CR>
+nmap <silent> <C-F4> :call ToggleFlag("guioptions","T")<CR>
