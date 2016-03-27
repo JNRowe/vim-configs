@@ -52,9 +52,6 @@ autocmd BufWritePost ~/.vim/ftdetect/*.vim
     \ endif |
     \ source %
 
-" Clear the neobundle cache on write
-autocmd BufWritePost neobundle.vim NeoBundleClearCache
-
 " Attempt filetype detection after writing.
 autocmd BufWritePost *
     \ if empty(&filetype) |

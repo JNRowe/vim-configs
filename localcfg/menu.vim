@@ -60,9 +60,9 @@ call DefineMenu("&python",
 call DefineMenu("&Ledger", g:xdg_data_dir . "/ledger/ledger.dat.gpg")
 
 call DefineMenu("&vim", {
+    \ "&dein": "~/.vim/dein.vim",
     \ "&rc": "~/.vim/vimrc",
     \ "rc-&local": "~/.vim/localcfg/",
-    \ "&neobundle": "~/.vim/neobundle.vim",
 \ })
 
 call DefineMenu("&zsh", {
