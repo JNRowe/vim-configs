@@ -358,7 +358,7 @@ let g:localcfg_cfgs = []
 if has('localmap')
     let g:localcfg_cfgs += ['abbr']
 endif
-let g:localcfg_features = ['autocmd', 'gui', 'gui_macvim', 'menu', 'quickfix']
+let g:localcfg_features = ['autocmd', 'gui_macvim', 'gui_running', 'menu', 'quickfix']
 for s:bundle in values(dein#get())
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
     let g:localcfg_cfgs += [(s:bundle.if ? '' : 'not') . s:cfgname]
