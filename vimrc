@@ -113,7 +113,7 @@ set lazyredraw
 set list
 " Show tabs and trailing whitespace {{{
 if &termencoding ==# "utf-8" || has("gui_running")
-    set listchars=tab:␉―,extends:…,nbsp:␠
+    set listchars=tab:␉·,extends:…,nbsp:␠
     if has('conceal')
         set listchars+=conceal:Δ
     endif
