@@ -29,7 +29,7 @@ That being said if your dog doesn't mean that much to you::
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are to just run with it, override it with your own ``~/.vimrc`` or
-more likely simply to cherrypick the parts of it you like.
+more likely simply to cherry pick the parts of it you like.
 
 .. _vim: http://www.vim.org/
 .. _email: jnrowe@gmail.com
