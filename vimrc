@@ -300,7 +300,7 @@ function! ModelineStub()
 
     let x = printf(&cms, printf(fmt, &filetype, &tabstop, &shiftwidth,
         \                       &textwidth,
-        \                       (&expandtab ? "et" : "noexpandtab")))
+        \                       (&expandtab ? "et" : "noet")))
     $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
     call setpos('.', save_cursor)
 endfunction
