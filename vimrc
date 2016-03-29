@@ -68,7 +68,7 @@ if has('conceal')
 endif
 set confirm
 if has('cryptv')
-    if v:version > 704 || v:version == 704 && has("patch399")
+    if has("patch-7.4.399")
         set cryptmethod=blowfish2
     else
         let v:warningmsg = "Using old blowfish cryptmethod"
