@@ -35,6 +35,7 @@ let g:vim_data_dir = g:xdg_data_dir . "/vim"
 set runtimepath^=~/.vim/external/dein.vim/
 
 let g:dein_state_dir = g:vim_cache_dir . '/dein'
+let g:dein_repos_dir = g:dein_state_dir . '/repos'
 
 " Disable netrw, as it clashes with plugins
 let g:loaded_netrwPlugin = 1
