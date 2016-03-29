@@ -150,7 +150,9 @@ set nostartofline
 set suffixes+=.lua,.pyc,.pyo
 set textwidth=80
 set tildeop
+set notimeout
 set title
+set ttimeout
 set ttyfast
 if has("persistent_undo")
     set undofile
