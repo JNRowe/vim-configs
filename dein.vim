@@ -253,6 +253,12 @@ call dein#add('jceb/vim-fastwordcompleter', {
     \ 'on_ft': ['genie', 'python', 'vim'],
 \ })
 
+" Text outlining and task management for Vim based on Emacs' Org-Mode
+call dein#add('jceb/vim-orgmode', {
+    \ 'depends': ['NrrwRgn', 'vim-repeat', 'vim-speeddating'],
+    \ 'on_ft': 'org',
+\ })
+
 " Automatically resizes your windows
 call dein#add('justincampbell/vim-eighties')
 
