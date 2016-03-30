@@ -27,6 +27,12 @@ endif
 augroup jnrowe
 autocmd!
 
+" Create missing directories when saving files
+autocmd BufWritePre *
+    \ if !isdirectory(expand('%:h', 1)) |
+    \   call mkdir(expand('%:h', 1), 'p') |
+    \ endif
+
 " We don't want to edit patch backup files by accident [again]
 autocmd BufRead *.orig set readonly
 
