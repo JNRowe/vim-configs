@@ -261,7 +261,8 @@ call dein#add('jceb/vim-fastwordcompleter', {
 
 " Text outlining and task management for Vim based on Emacs' Org-Mode
 call dein#add('jceb/vim-orgmode', {
-    \ 'depends': ['NrrwRgn', 'calendar-vim', 'vim-repeat', 'vim-speeddating'],
+    \ 'depends': ['NrrwRgn', 'SyntaxRange', 'calendar-vim', 'vim-repeat',
+    \             'vim-speeddating'],
     \ 'on_ft': 'org',
 \ })
 
@@ -471,6 +472,12 @@ call dein#add('vim-utils/vim-vertical-move', {
 \ })
 
 " vim-scripts bundles {{{
+
+" Set up regions within a buffer using their own filetypes
+call dein#add('SyntaxRange', {
+    \ 'on_cmd': ['SyntaxIgnore', 'SyntaxInclude'],
+\ })
+
 " Toggle values under the cursor
 call dein#add('Toggle', {
     \ 'on_func': 'Toggle',
