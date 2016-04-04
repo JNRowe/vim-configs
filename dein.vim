@@ -118,9 +118,6 @@ call dein#add('Shougo/vimproc', {
     \ 'build': 'make',
 \ })
 
-" Identify project's root directory
-call dein#add('airblade/vim-rooter')
-
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
