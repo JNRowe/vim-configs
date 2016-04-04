@@ -364,7 +364,7 @@ endif
 let g:localcfg_features = ['autocmd', 'gui_macvim', 'gui_running', 'menu', 'quickfix']
 for s:bundle in values(dein#get())
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
-    let g:localcfg_cfgs += [(s:bundle.if ? '' : 'not') . s:cfgname]
+    let g:localcfg_cfgs += [(get(s:bundle, 'if', 1) ? '' : 'not') . s:cfgname]
 endfo
 call localcfg#docfg()
 
