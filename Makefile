@@ -59,7 +59,7 @@ clean:
 
 update-external:
 	$(info - Updating plugin bundles)
-	vim -c 'call dein#update()' -c ':qa'
+	vim -X -c 'call dein#update()' -c ':q'
 
 display_sources:
 	@echo $(realpath $(LUA_SOURCES) $(PYTHON_SOURCES) $(RUBY_SOURCES) \
