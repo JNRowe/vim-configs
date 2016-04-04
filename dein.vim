@@ -233,6 +233,12 @@ call dein#add('guns/xterm-color-table.vim', {
     \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
 \ })
 
+" Aims provide a nice interface for dealing with Git branches
+call dein#add('idanarye/vim-merginal', {
+    \ 'depends': 'vim-fugitive',
+    \ 'on_cmd': ['Merginal', 'MerginalToggle'],
+\ })
+
 " Transparent editing of gpg encrypted files
 call dein#add('jamessan/vim-gnupg', {
     \ 'if': executable('gpg'),
