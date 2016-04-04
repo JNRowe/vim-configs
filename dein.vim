@@ -261,7 +261,7 @@ call dein#add('jceb/vim-fastwordcompleter', {
 
 " Text outlining and task management for Vim based on Emacs' Org-Mode
 call dein#add('jceb/vim-orgmode', {
-    \ 'depends': ['NrrwRgn', 'vim-repeat', 'vim-speeddating'],
+    \ 'depends': ['NrrwRgn', 'calendar-vim', 'vim-repeat', 'vim-speeddating'],
     \ 'on_ft': 'org',
 \ })
 
@@ -284,6 +284,12 @@ call dein#add('ledger/vim-ledger')
 
 " Help for customising based on features
 call dein#add('magus/localcfg')
+
+" A calendar window you can use within vim
+call dein#add('mattn/calendar-vim', {
+    \ 'on_cmd': ['Calendar', 'CalendarH', 'CalendarT', 'CalendarVR'],
+    \ 'on_map': [['n', '<Leader>cal', '<leader>caL']],
+\ })
 
 " Plugins for HTML and CSS hi-speed coding
 call dein#add('mattn/emmet-vim', {
