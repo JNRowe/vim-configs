@@ -318,17 +318,6 @@ if has('folding')
 endif
 " }}}
 
-" Vimdiff maps {{{
-if has('diff') && &diff
-    noremap <LocalLeader>do :diffoff!<CR>
-    noremap <LocalLeader>dp :diffput<CR>
-    noremap <LocalLeader>dg :diffget<CR>
-    noremap <LocalLeader>du :diffupdate<CR>
-    vnoremap < :diffget<CR>
-    vnoremap > :diffput<CR>
-endif
-" }}}
-
 " Window management {{{
 nmap <C-w><Bar> <C-w>v
 nmap <C-w>- <C-w>s
@@ -362,7 +351,9 @@ let g:localcfg_cfgs = []
 if has('localmap')
     let g:localcfg_cfgs += ['abbr']
 endif
-let g:localcfg_features = ['autocmd', 'gui_macvim', 'gui_running', 'menu', 'quickfix']
+let g:localcfg_features = [
+    \ 'autocmd', 'diff', 'gui_macvim', 'gui_running', 'menu', 'quickfix'
+\ ]
 for s:bundle in values(dein#get())
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
     let g:localcfg_cfgs += [(get(s:bundle, 'if', 1) ? '' : 'not') . s:cfgname]
