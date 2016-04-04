@@ -4,9 +4,6 @@ else
      execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
-" Scrub all autocommands
-autocmd!
-
 syntax on
 filetype plugin indent on
 
