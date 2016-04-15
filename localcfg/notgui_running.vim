@@ -7,6 +7,9 @@ endif
 " Set up the menus so emenu works properly
 source $VIMRUNTIME/menu.vim
 
+set nottybuiltin
+set term=$TERM  " Annoying, but necessary, to refresh termcap
+
 if $TERM ==# "linux" || $TERM =~ "^xterm" || $TERM == "st" ||
     \ $TERM =~ "^st-" || split($COLORFGBG . ";padding", ";")[0] == 15
     set background=dark
