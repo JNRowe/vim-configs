@@ -4,8 +4,8 @@ else
     execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
-syntax on
 filetype plugin indent on
+syntax on
 
 " Edit files in already open sessions.
 " exists() is needed so that re-sourcing this file is possible.
