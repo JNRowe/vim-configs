@@ -116,6 +116,11 @@ call dein#add('Shougo/vinarise.vim', {
     \ 'on_cmd': 'Vinarise',
 \ })
 
+" Multi-language colour colouriser
+call dein#add('ap/vim-css-color', {
+    \ 'on_ft': ['css', 'less', 'moon', 'python', 'vim', 'xdefaults'],
+\ })
+
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
