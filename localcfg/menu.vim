@@ -1,7 +1,7 @@
 if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-     execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 function! DefineMenu(heading, items)
@@ -16,8 +16,8 @@ function! DefineMenu(heading, items)
             let l:files = type(l:v) == type("") ? split(l:v) : l:v
             for l:f in l:files
                 if filereadable(l:f)
-                    execute("amenu L&ocations." . a:heading . "." . l:k .
-                        \   " :e " . l:f . "<CR>")
+                    execute "amenu L&ocations." . a:heading . "." . l:k .
+                        \   " :e " . l:f . "<CR>"
                     break
                 endif
             endfor
@@ -26,7 +26,7 @@ function! DefineMenu(heading, items)
         let l:files = type(a:items) == type("") ? [a:items] : a:items
         for l:f in l:files
             if filereadable(l:f)
-                execute("amenu L&ocations." . a:heading ." :e " . l:f . "<CR>")
+                execute "amenu L&ocations." . a:heading ." :e " . l:f . "<CR>"
                 break
             endif
         endfor

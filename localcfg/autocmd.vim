@@ -1,7 +1,7 @@
 if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-     execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 syntax on
@@ -44,14 +44,12 @@ autocmd FileType css,html EmmetInstall
 autocmd BufWritePost ~/.vimrc,~/.vim/vimrc source %
 autocmd BufWritePost ~/.vim/localcfg/*.vim
     \ if exists("g:loaded_lcfg_" . expand("%:t:r:gs?[\.-]?_?")) |
-    \   execute("unlet g:loaded_lcfg_" .
-    \           expand("%:t:r:gs?[\.-]?_?")) |
+    \   execute "unlet g:loaded_lcfg_" . expand("%:t:r:gs?[\.-]?_?") |
     \ endif |
     \ call localcfg#docfg()
 autocmd BufWritePost ~/.vim/ftdetect/*.vim
     \ if exists("g:loaded_ftd_" . expand("%:t:r:gs?[\.-]?_?")) |
-    \   execute("unlet g:loaded_ftd_" .
-    \           expand("%:t:r:gs?[\.-]?_?")) |
+    \   execute "unlet g:loaded_ftd_" .  expand("%:t:r:gs?[\.-]?_?") |
     \ endif |
     \ source %
 
@@ -111,9 +109,9 @@ autocmd BufReadPost * if !exists("b:meta_dir") |
     \ if type(b:meta_dir) == type("")
     \       && index(split(&spellfile, ","),
     \                b:meta_dir . '/en.utf-8.add') == -1 |
-    \   execute("setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add") |
+    \   execute "setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add" |
     \   if !exists("b:meta_abbr") && filereadable(b:meta_dir . '/abbr.vim') |
-    \       execute("source " . b:meta_dir . "/abbr.vim") |
+    \       execute "source " . b:meta_dir . "/abbr.vim" |
     \       let b:meta_abbr = 1 |
     \   endif |
     \ endif

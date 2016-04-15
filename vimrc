@@ -164,7 +164,7 @@ if has("persistent_undo")
     let &undodir = g:vim_data_dir . '/undo//,' . &undodir
 endif
 if has('viminfo')
-    execute("set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo")
+    execute "set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo"
 endif
 if has('virtualedit')
     set virtualedit=block
@@ -285,11 +285,11 @@ nmap <silent> <C-F11> :let @/ = ""<CR>
 " Flag toggling function {{{
 " From http://vim.wikia.com/wiki/Handy_option_flag_toggler
 function! ToggleFlag(option, flag)
-    execute('let lopt = &' . a:option)
+    execute 'let lopt = &' . a:option
     if lopt =~# (".*" . a:flag . ".*")
-        execute('set ' . a:option . '-=' . a:flag)
+        execute 'set ' . a:option . '-=' . a:flag
     else
-        execute('set ' . a:option . '+=' . a:flag)
+        execute 'set ' . a:option . '+=' . a:flag
     endif
 endfunction
 " }}}
