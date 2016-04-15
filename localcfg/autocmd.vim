@@ -22,6 +22,11 @@ augroup jnrowe
             \ endif
     endif
 
+    autocmd InsertLeave *
+        \ if &paste |
+        \   set nopaste |
+        \ endif
+
     " Create missing directories when saving files
     autocmd BufWritePre *
         \ if !isdirectory(expand('%:h', 1)) |
