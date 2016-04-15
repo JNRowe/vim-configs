@@ -14,7 +14,7 @@ endif
 
 " Pull in local settings.  This is only for locally required settings while
 " reading this file.
-if filereadable(expand("~/.vim/vimrc.pre"))
+if filereadable(fnamemodify("~/.vim/vimrc.pre", ':p'))
     source ~/.vim/vimrc.pre
 endif
 
