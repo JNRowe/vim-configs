@@ -52,6 +52,11 @@ autocmd BufWritePost ~/.vim/ftdetect/*.vim
     \   execute "unlet g:loaded_ftd_" .  expand("%:t:r:gs?[\.-]?_?") |
     \ endif |
     \ source %
+autocmd BufWritePost ~/.vim/vimrc.d/*.vim
+    \ if exists("g:loaded_rcd_" . expand("%:t:r:gs?[\.-]?_?")) |
+    \   execute "unlet g:loaded_rcd_" .  expand("%:t:r:gs?[\.-]?_?") |
+    \ endif |
+    \ source %
 
 " Attempt filetype detection after writing.
 autocmd BufWritePost *

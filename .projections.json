@@ -34,5 +34,16 @@
     },
     "README.rst": {"type": "doc"},
     "dein.vim": {"type": "dein"},
-    "vimrc": {"type": "rc"}
+    "vimrc": {"type": "rc"},
+    "vimrc.d/*.vim": {
+        "template": [
+            "if exists(\"g:loaded_rcd_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
+            "	finish",
+            "else",
+            "	execute(\"let g:loaded_rcd_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
+            "endif",
+            ""
+        ],
+        "type": "rconfig"
+    }
 }
