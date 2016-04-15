@@ -112,6 +112,9 @@ set ignorecase
 set infercase
 set isfname-=\=
 set lazyredraw
+if has('linebreak')
+    set linebreak
+endif
 set list
 " Show tabs and trailing whitespace {{{
 if &termencoding ==# "utf-8" || has("gui_running")
