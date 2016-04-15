@@ -110,6 +110,12 @@ call dein#add('Shougo/vimproc', {
     \ 'build': 'make',
 \ })
 
+" Ultimate hex editing system
+call dein#add('Shougo/vinarise.vim', {
+    \ 'depends': 'unite.vim',
+    \ 'on_cmd': 'Vinarise',
+\ })
+
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
