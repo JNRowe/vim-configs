@@ -70,8 +70,8 @@ autocmd BufWritePost *.sh silent !chmod +x %
 autocmd BufReadPost *
     \ if &filetype =~# '^git' |
     \   execute "normal gg" |
-    \ elseif line("'\"") > 0 && line("'\"") <= line("$") |
-    \   execute "normal g`\"" |
+    \ else |
+    \   call setpos(".", getpos("'\"")) |
     \ endif
 
 " Make stdin buffers temporary by default.  Potentially dangerous, but I only
