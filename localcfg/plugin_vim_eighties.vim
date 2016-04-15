@@ -1,7 +1,5 @@
-if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+if SLoaded(expand("<sfile>"))
     finish
-else
-    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 let g:eighties_bufname_additional_patterns = [

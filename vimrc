@@ -18,12 +18,12 @@ if filereadable(fnamemodify("~/.vim/vimrc.pre", ':p'))
     source ~/.vim/vimrc.pre
 endif
 
-runtime vimrc.d/paths.vim  " *Must* remain first
+runtime vimrc.d/lib.vim  " *Must* remain first
+runtime vimrc.d/paths.vim  " *Must* be early
 
 runtime vimrc.d/dein.vim
 runtime vimrc.d/settings.vim
 runtime vimrc.d/syntax.vim
 runtime vimrc.d/maps.vim
-runtime vimrc.d/lib.vim
 runtime vimrc.d/misc.vim
 runtime vimrc.d/localcfg.vim

@@ -1,7 +1,5 @@
-if exists("g:loaded_rcd_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+if SLoaded(expand("<sfile>"))
     finish
-else
-    execute("let g:loaded_rcd_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
 endif
 
 " Read all optional configs for build-dependent settings and external packages

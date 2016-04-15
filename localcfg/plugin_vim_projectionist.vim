@@ -1,7 +1,5 @@
-if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+if SLoaded(expand("<sfile>"))
     finish
-else
-    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 " PKG_LICENSE_DIR is set on most of the systems I use to an appropriate

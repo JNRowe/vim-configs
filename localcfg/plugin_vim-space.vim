@@ -1,4 +1,4 @@
-if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+if SLoaded(expand("<sfile>"))
     finish
 endif
 
