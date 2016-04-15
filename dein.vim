@@ -52,20 +52,12 @@ call dein#add('Shougo/neco-syntax', {
     \ 'if': has('lua'),
 \ })
 
-" Choose based on has('lua') {{{
 " Next generation of auto completion framework
 call dein#add('Shougo/neocomplete.vim', {
     \ 'depends': ['neco-syntax', 'neopairs.vim'],
     \ 'if': has('lua') && has('patch-7.3.885'),
     \ 'on_i': 1,
 \ })
-
-" Ultimate auto completion system for Vim
-call dein#add('Shougo/neocomplcache', {
-    \ 'if': !has('lua') && executable('ctags'),
-    \ 'on_i': 1,
-\ })
-" }}}
 
 " MRU plugin includes unite.vim MRU sources
 call dein#add('Shougo/neomru.vim', {
