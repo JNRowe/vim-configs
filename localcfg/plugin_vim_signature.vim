@@ -1,7 +1,7 @@
 if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-    execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 if !has('signs')
@@ -23,8 +23,8 @@ for [s:k, s:v] in items({"!": ["info", "Todo"], "@": "warning", "#": "error"})
     unlet s:v
     " This is brittle *and* dirty, but there isn't much way around it.
     " See 47ceaf9cbd970450953bdf3e84e281473a579ac0
-    execute("sign define " .
+    execute "sign define " .
         \ "Signature_" . s:k . "_SignatureMarkerText_SignatureMarkerLine" .
         \ " icon=" . expand("~/.vim/icons/" . s:icon . ".png") .
-        \ " text=" . toupper(s:icon[0] . s:icon[0]) . " texthl=" . s:hl)
+        \ " text=" . toupper(s:icon[0] . s:icon[0]) . " texthl=" . s:hl
 endfor

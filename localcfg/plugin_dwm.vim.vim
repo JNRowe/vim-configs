@@ -1,7 +1,7 @@
 if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-    execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 let g:dwm_map_keys = 0
@@ -25,6 +25,5 @@ for [s:key, s:cmd] in [
         let s:cmd = s:cmd[1:]
     endif
 
-    execute("nnoremap <silent> [dwm]" . s:key .
-        \ " :<C-u>" . s:cmd . "<CR>")
+    execute "nnoremap <silent> [dwm]" . s:key . " :<C-u>" . s:cmd . "<CR>"
 endfor

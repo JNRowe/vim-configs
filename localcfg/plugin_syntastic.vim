@@ -1,7 +1,7 @@
 if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-    execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 let g:syntastic_auto_loc_list = 1
@@ -31,12 +31,12 @@ if has("signs")
     for [k, v] in items({"error": "✘", "warning": "⚠", "info": "☁"})
         let s:capped = toupper(k[0]) . k[1:]
         if (&termencoding ==# "utf-8") || has("gui_running")
-            execute("sign define Syntastic" . s:capped . " text=". v .
+            execute "sign define Syntastic" . s:capped . " text=". v .
                 \ " texthl=" . s:capped .
-                \ " icon=" .  expand("~/.vim/icons/" . k . ".png"))
+                \ " icon=" .  expand("~/.vim/icons/" . k . ".png")
         else
-            execute("sign define Syntastic" . s:capped .
-                \ " text=" . s:capped[0] . s:capped[0] . " texthl=" . s:capped)
+            execute "sign define Syntastic" . s:capped .
+                \ " text=" . s:capped[0] . s:capped[0] . " texthl=" . s:capped
         endif
     endfor
 endif

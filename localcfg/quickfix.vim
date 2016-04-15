@@ -1,7 +1,7 @@
 if exists("g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
     finish
 else
-    execute("let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1")
+    execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
 nnoremap [quickfix] <Nop>
@@ -14,7 +14,7 @@ function! s:qf_key(key, cmd)
     else
         let l:cmd = a:cmd . "<CR>"
     endif
-    execute("nnoremap <silent> [quickfix]" . a:key . " :" . l:cmd)
+    execute "nnoremap <silent> [quickfix]" . a:key . " :" . l:cmd
 endfunction
 
 
