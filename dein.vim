@@ -1,5 +1,5 @@
 " vim: set isfname-=/:
-" Above modeline is so that ':Econfig <C-r><C-f>' works
+" Above modeline is so that ':Exconfig <C-r><C-f>' works
 
 " Note: I record requirements even when they're clearly met because I like to
 " know what /may/ break if I make changes.  For example, version checks for
