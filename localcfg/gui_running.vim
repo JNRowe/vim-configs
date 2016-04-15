@@ -24,7 +24,9 @@ map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
 set guifont=Consolas\ 13
-colorscheme jnrowe
+if !exists('g:colors_name')  " Don't reload on write
+    colorscheme jnrowe
+endif
 
 if has('title')  && has('clientserver')
     set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
