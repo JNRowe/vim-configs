@@ -221,13 +221,6 @@ call dein#add('godlygeek/tabular', {
     \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
 \ })
 
-" A 'gitk clone' plugin
-call dein#add('gregsexton/gitv', {
-    \ 'depends': 'vim-fugitive',
-    \ 'if': executable('git'),
-    \ 'on_cmd': 'Gitv',
-\ })
-
 " All 256 xterm colors with their RGB equivalents
 call dein#add('guns/xterm-color-table.vim', {
     \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
@@ -264,6 +257,13 @@ call dein#add('jceb/vim-orgmode', {
     \ 'depends': ['NrrwRgn', 'SyntaxRange', 'calendar-vim', 'vim-repeat',
     \             'vim-speeddating'],
     \ 'on_ft': 'org',
+\ })
+
+" A git commit browser
+call dein#add('junegunn/gv.vim', {
+    \ 'depends': 'vim-fugitive',
+    \ 'if': executable('git'),
+    \ 'on_cmd': 'GV',
 \ })
 
 " Automatically resizes your windows
