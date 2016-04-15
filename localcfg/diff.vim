@@ -4,6 +4,8 @@ else
     execute "let g:loaded_lcfg_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
+set diffopt+=iwhite
+
 function! DiffMaps()
     nnoremap [diff] <Nop>
     nmap <Leader>d [diff]
