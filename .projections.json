@@ -1,21 +1,9 @@
 {
-    "ftdetect/*.vim": {
-        "template": [
-            "if exists(\"g:loaded_ftd_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
-            "	finish",
-            "else",
-            "	execute \"let g:loaded_ftd_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\"",
-            "endif",
-            ""
-        ],
-        "type": "fconfig"
-    },
+    "ftdetect/*.vim": {"type": "fconfig"},
     "localcfg/plugin_*.vim": {
         "template": [
-            "if exists(\"g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
+            "if SLoaded(expand(\"<sfile>\"))",
             "	finish",
-            "else",
-            "	execute \"let g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\"",
             "endif",
             ""
         ],
@@ -23,10 +11,8 @@
     },
     "localcfg/*.vim": {
         "template": [
-            "if exists(\"g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
+            "if SLoaded(expand(\"<sfile>\"))",
             "	finish",
-            "else",
-            "	execute \"let g:loaded_lcfg_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\"",
             "endif",
             ""
         ],
@@ -37,10 +23,8 @@
     "vimrc": {"type": "rc"},
     "vimrc.d/*.vim": {
         "template": [
-            "if exists(\"g:loaded_rcd_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\"))",
+            "if SLoaded(expand(\"<sfile>\"))",
             "	finish",
-            "else",
-            "	execute(\"let g:loaded_rcd_\" . expand(\"<sfile>:t:r:gs?[\\.-]?_?\") . \" = 1\")",
             "endif",
             ""
         ],

@@ -1,19 +1,15 @@
-if exists("g:loaded_rcd_" . expand("<sfile>:t:r:gs?[\.-]?_?"))
+if exists("*SLoaded") && SLoaded(expand("<sfile>"))
     finish
-else
-    execute "let g:loaded_rcd_" . expand("<sfile>:t:r:gs?[\.-]?_?") . " = 1"
 endif
 
-" Flag toggling function {{{
-" From http://vim.wikia.com/wiki/Handy_option_flag_toggler
-function! ToggleFlag(option, flag)
-    execute 'let lopt = &' . a:option
-    if lopt =~# (".*" . a:flag . ".*")
-        execute 'set ' . a:option . '-=' . a:flag
+function! SLoaded(name)
+    let l:var = "loaded_" . fnamemodify(a:name, ":h:t:gs?[\.-\]?_?") . "_" .
+        \ fnamemodify(a:name, ":t:r:gs?[\.-]?_?")
+    if get(g:, l:var)
+        return 1
     else
-        execute 'set ' . a:option . '+=' . a:flag
+        execute "let g:" . l:var . " = 1"
+        return 0
     endif
 endfunction
-" }}}
-
-" vim: fdm=marker:
+call SLoaded(expand("<sfile>"))
