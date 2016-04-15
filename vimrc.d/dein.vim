@@ -26,6 +26,6 @@ if dein#load_state(g:dein_state_dir)
     call dein#save_state()
 endif
 
-if dein#check_install()
+if has('vim_starting') && dein#check_install()
     echo "Missing plugins"
 endif
