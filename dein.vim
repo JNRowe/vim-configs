@@ -365,6 +365,11 @@ call dein#add('sjl/gundo.vim', {
     \ 'on_cmd': 'GundoToggle',
 \ })
 
+" Smart space key
+call dein#add('spiiph/vim-space', {
+    \ 'on_map': [['n', '<space>']],
+\ })
+
 " Tiled Window Management for Vim
 call dein#add('spolu/dwm.vim', {
     \ 'on_func': ['DWM_Focus', 'DWM_New', 'DWM_Rotate'],

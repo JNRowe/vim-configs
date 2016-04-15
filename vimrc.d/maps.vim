@@ -45,11 +45,6 @@ nnoremap <S-Up> Vk
 nnoremap <S-Down> Vj
 " }}}
 
-" Toggle current fold
-if has('folding')
-    nnoremap <Space> za
-endif
-
 " Logical Y mapping, like D
 map Y y$
 
