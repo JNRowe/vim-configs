@@ -21,7 +21,10 @@ for [s:k, s:v] in items({"!": ["info", "Todo"], "@": "warning", "#": "error"})
         let s:hl = toupper(s:v[0]) . s:v[1:] . "MSG"
     end
     unlet s:v
-    execute("sign define Signature_" . s:k .
+    " This is brittle *and* dirty, but there isn't much way around it.
+    " See 47ceaf9cbd970450953bdf3e84e281473a579ac0
+    execute("sign define " .
+        \ "Signature_" . s:k . "_SignatureMarkerText_SignatureMarkerLine" .
         \ " icon=" . expand("~/.vim/icons/" . s:icon . ".png") .
         \ " text=" . toupper(s:icon[0] . s:icon[0]) . " texthl=" . s:hl)
 endfor
