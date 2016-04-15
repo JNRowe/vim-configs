@@ -11,16 +11,16 @@ if !exists("*EditExisting")
     runtime macros/editexisting.vim
 endif
 
-if exists("+omnifunc")
-    autocmd Filetype *
-        \ if &omnifunc == "" |
-        \   setlocal omnifunc=syntaxcomplete#Complete |
-        \ endif
-endif
-
 " Configure my autocommands {{{
 augroup jnrowe
     autocmd!
+
+    if exists("+omnifunc")
+        autocmd Filetype *
+            \ if &omnifunc == "" |
+            \   setlocal omnifunc=syntaxcomplete#Complete |
+            \ endif
+    endif
 
     " Create missing directories when saving files
     autocmd BufWritePre *
