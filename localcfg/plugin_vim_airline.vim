@@ -22,6 +22,7 @@ let g:airline_symbols = {
     \ 'paste': ' ',
     \ 'readonly': '',
     \ 'space': ' ',
+    \ 'spell': '',
     \ 'whitespace': '·',
 \ }
 
