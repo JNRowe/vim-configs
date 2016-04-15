@@ -1,21 +1,15 @@
 " Make these scrub the old entry if they exists
-map <buffer> <LocalLeader>pn
-    \ mXgg/^$/<CR>iX-advice: perhaps read now<CR><Esc>`X
-map <buffer> <LocalLeader>ps
-    \ mXgg/^$/<CR>iX-advice: perhaps read soon<CR><Esc>`X
-map <buffer> <LocalLeader>pw
-    \ mXgg/^$/<CR>iX-advice: perhaps read whenever<CR><Esc>`X
 
-map <buffer> <LocalLeader>sn mXgg/^$/<CR>iX-advice: should read now<CR><Esc>`X
-map <buffer> <LocalLeader>ss
-    \ mXgg/^$/<CR>iX-advice: should read soon<CR><Esc>`X
-map <buffer> <LocalLeader>sw
-    \ mXgg/^$/<CR>iX-advice: should read whenever<CR><Esc>`X
+nnoremap <buffer> [advice] <Nop>
+nmap <buffer> <Leader>a [advice]
 
-map <buffer> <LocalLeader>mn mXgg/^$/<CR>iX-advice: must read now<CR><Esc>`X
-map <buffer> <LocalLeader>ms mXgg/^$/<CR>iX-advice: must read soon<CR><Esc>`X
-map <buffer> <LocalLeader>mw
-    \ mXgg/^$/<CR>iX-advice: must read whenever<CR><Esc>`X
+for s:prio in ['perhaps', 'should', 'must']
+    for s:due in ['now', 'soon', 'whenever']
+        execute "nnoremap <buffer> <silent> [advice]" . s:prio[0] . s:due[0] .
+            \ " mxgg/^$/<CR>iX-advice: " . s:prio . " read " . s:due .
+            \ "<CR><Esc>`x"
+    endfor
+endfor
 
 " So called smart quotes. ‘, ’, “, ” respectively
 imap <buffer> <LocalLeader>_` <C-v>u2018
