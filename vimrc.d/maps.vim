@@ -88,6 +88,9 @@ nmap <silent> <C-F11> :let @/ = ""<CR>
 nmap <C-w><Bar> <C-w>v
 nmap <C-w>- <C-w>s
 nmap <Tab> <C-w>p
+if has('quickfix')
+    nmap <S-Tab> <C-w>P
+endif
 " }}}
 
 " Folding support maps {{{
