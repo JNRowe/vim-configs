@@ -121,4 +121,11 @@ function! s:ModelineStub()
 endfunction
 " }}}
 
+nnoremap [Help] <Nop>
+nmap <Leader>h [Help]
+
+for s:t in ["pattern", "quickref", "registers"]
+    execute "nmap [Help]" . s:t[0] . " :help " . s:t . "<CR>"
+endfor
+
 " vim: fdm=marker:
