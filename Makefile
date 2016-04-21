@@ -2,7 +2,7 @@ CTAGS ::= exuberant-ctags
 
 LUA_SOURCES ::= $(wildcard /usr/share/lua/*)
 RUBY_SOURCES ::= $(wildcard /usr/lib/ruby/[0-9]*)
-TARGETS ::= doc/tags tags/libc.ctags \
+TARGETS ::= tags/libc.ctags \
 	$(patsubst /usr/share/lua/%, tags/lua%.ctags, \
 		$(LUA_SOURCES)) \
 	$(patsubst /usr/lib/ruby/%, tags/ruby%.ctags, $(RUBY_SOURCES))
@@ -40,10 +40,6 @@ endif
 tags/libc.ctags: $(LIBC_INCS)
 	$(info - Updating glibc tags)
 	$(SILENT)$(CTAGS) -f $@ $^
-
-doc/tags: $(filter-out doc/tags, $(wildcard doc/*))
-	$(info - Updating help tags)
-	$(SILENT)vim -X -u NONE -c 'helptags $(dir $@)' -c ':q' </dev/null &>/dev/null
 
 clean:
 	$(info - Cleaning generated files)
