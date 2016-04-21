@@ -10,9 +10,13 @@ let g:xdg_config_dir = expand(empty($XDG_CONFIG_HOME)
 let g:xdg_data_dir = expand(empty($XDG_DATA_HOME)
     \                       ? '~/.local/share' : '$XDG_DATA_HOME')
 
-let g:vim_cache_dir = g:xdg_cache_dir . "/vim"
-let g:vim_config_dir = g:xdg_config_dir . "/vim"
-let g:vim_data_dir = g:xdg_data_dir . "/vim"
+" Vim specific paths
+for s:name in ['cache', 'config', 'data']
+    execute "let g:vim_" . s:name . "_dir = g:xdg_" . s:name . "_dir . '/vim'"
+    if !isdirectory(get(g:, "vim_" . s:name . "_dir"))
+        call mkdir(get(g:, "vim_" . s:name . "_dir"), 'p')
+    endif
+endfor
 " }}}
 
 " vim: fdm=marker:
