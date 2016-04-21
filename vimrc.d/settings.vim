@@ -116,6 +116,9 @@ if has("persistent_undo")
     let &undodir = g:vim_data_dir . '/undo//,' . &undodir
 endif
 set updatetime=7500
+if has("mksession")
+    let &viewdir = g:vim_cache_dir . "/view"
+endif
 if has('viminfo')
     execute "set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo"
 endif
