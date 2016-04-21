@@ -84,6 +84,7 @@ call dein#add('Shougo/neosnippet-snippets')
 " Yank source for unite.vim
 call dein#add('Shougo/neoyank.vim', {
     \ 'depends': 'unite.vim',
+    \ 'on_path': '.*',
 \ })
 
 " Unite and create user interfaces
