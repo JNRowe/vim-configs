@@ -75,6 +75,7 @@ else
 endif
 " }}}
 set matchpairs+=<:>
+set matchtime=3
 set nonumber
 set pastetoggle=<F4>
 if has('insert_expand')
