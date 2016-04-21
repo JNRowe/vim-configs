@@ -5,4 +5,5 @@ endif
 let g:neosnippet#data_directory = g:vim_cache_dir . "/neosnippet"
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
-vmap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
