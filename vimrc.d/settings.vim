@@ -77,6 +77,9 @@ endif
 set matchpairs+=<:>
 set nonumber
 set pastetoggle=<F4>
+if has('insert_expand')
+    set pumheight=10
+endif
 set report=0
 set scrolloff=10
 if has('filterpipe')
