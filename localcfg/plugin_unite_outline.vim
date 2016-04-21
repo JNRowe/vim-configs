@@ -16,3 +16,7 @@ call unite#custom#profile('outline', 'context', {
 \ )
 
 nnoremap <silent> [unite]o :<C-u>Unite -profile-name=outline outline<CR>
+if has('folding')
+    nnoremap <silent> [unite]F :<C-u>Unite -profile-name=outline
+        \ outline:folding<CR>
+endif
