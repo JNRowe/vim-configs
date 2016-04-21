@@ -2,9 +2,6 @@ if SLoaded(expand("<sfile>"))
     finish
 endif
 
-filetype plugin indent on
-syntax on
-
 " Edit files in already open sessions.
 " exists() is needed so that re-sourcing this file is possible.
 if !exists("*EditExisting")
