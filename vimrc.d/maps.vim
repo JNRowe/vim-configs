@@ -49,9 +49,14 @@ map Y y$
 " Insert literal tab, for that once a year when it makes sense
 inoremap <silent> <S-Tab> <C-v><Tab>
 
-" Regrab selection after {de,in}dent for simpler repeating
+" Re-grab selection after {de,in}dent for simpler repeating {{{
 vnoremap < <gv
 vnoremap > >gv
+
+" Visual mode indent that matches how it *feels* in insert
+vnoremap <Tab> >gv
+vnoremap <Backspace> <gv
+" }}}
 
 " <home> darts between start of line and start of text
 inoremap <silent> <home> <C-o>:call HomeSkip()<CR>
