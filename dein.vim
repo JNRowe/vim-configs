@@ -73,7 +73,7 @@ call dein#add('Shougo/neopairs.vim', {
 
 " Adds snippet support to Vim
 call dein#add('Shougo/neosnippet', {
-    \ 'depends': 'neosnippet-snippets',
+    \ 'depends': ['context_filetype.vim', 'neosnippet-snippets'],
     \ 'on_i': 1,
     \ 'on_map': [['iv', '<C-k>']],
 \ })
