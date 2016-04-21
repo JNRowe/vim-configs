@@ -476,6 +476,9 @@ call dein#add('vim-utils/vim-vertical-move', {
     \ 'on_map': ['[v', ']v'],
 \ })
 
+" Provides additional text objects
+call dein#add('wellle/targets.vim')
+
 " vim-scripts bundles {{{
 
 " Set up regions within a buffer using their own filetypes
