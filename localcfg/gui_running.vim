@@ -21,7 +21,8 @@ set relativenumber
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
 
-set guifont=Consolas\ 13
+let s:font_family="Consolas"
+let &guifont=s:font_family . "\ 13"
 if !exists('g:colors_name')  " Don't reload on write
     colorscheme jnrowe
 endif
@@ -39,3 +40,11 @@ endif
 if has('toolbar')
     nmap <silent> <C-F4> :call ToggleFlag("guioptions","T")<CR>
 endif
+
+function! s:font_complete(arglead, cmdline, cursorpos)
+    " Yeah, some of these are *huuuuuge* but I often pop up a snippet in
+    " a meeting and this helps.
+    return [s:font_family . "\\ 13", ]
+        \ + map(range(8), "s:font_family . '\\ ' . (v:val * 8 + 16)")
+endfunction
+command! -nargs=1 -complete=customlist,s:font_complete Fontsel set guifont=<args>
