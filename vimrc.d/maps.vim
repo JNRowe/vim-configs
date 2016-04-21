@@ -104,9 +104,9 @@ endif
 " From godlygeek's vimrc {{{
 "
 " Insert a modeline on the last line with <Leader>ml
-nmap <silent> <Leader>ml :call ModelineStub()<CR>
+nmap <silent> <Leader>ml :call <SID>ModelineStub()<CR>
 
-function! ModelineStub()
+function! s:ModelineStub()
     let save_cursor = getpos('.')
     let fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
 
