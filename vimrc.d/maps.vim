@@ -121,6 +121,19 @@ function! s:ModelineStub()
 endfunction
 " }}}
 
+" Close the help window, wherever that may be {{{
+function! s:Close_Help()
+    for l:w in range(1, winnr("$"))
+        let l:b = winbufnr(l:w)
+        if getbufvar(l:b, '&buftype') == "help"
+            execute l:w . "wincmd c"
+            break
+        endif
+    endfor
+endfunction
+nmap <silent> <Leader>? :call <SID>Close_Help()<CR>
+" }}}
+
 nnoremap [Help] <Nop>
 nmap <Leader>h [Help]
 
