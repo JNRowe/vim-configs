@@ -12,9 +12,6 @@ if executable('notify-send') && $DISPLAY != ""
     let g:dein#notification_icon = "~/.vim/icons/editor.png"
 endif
 
-" Disable netrw, as it clashes with plugins
-let g:loaded_netrwPlugin = 1
-
 if dein#load_state(g:dein_state_dir)
     call dein#begin(g:dein_state_dir, ['~/.vim/vimrc', '~/.vim/dein.vim'])
 
