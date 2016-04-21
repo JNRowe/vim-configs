@@ -5,8 +5,7 @@ if &compatible
 endif
 
 if v:version < 704
-    let v:warningmsg = "Vim version 7.4 or higher is required for some of "
-        \ "the functionality in this vimrc"
+    let v:warningmsg = "Vim version 7.4 or higher is required"
     echohl WarningMsg
     echomsg v:warningmsg
     echohl none
