@@ -10,6 +10,14 @@ if v:version < 704
     echomsg v:warningmsg
     echohl none
 endif
+if has('nvim')
+    let v:errmsg = "This config will *NOT* work with nvim"
+    " ^^ but, pull requests that don't break Vim are welcome
+    echohl ErrorMsg
+    echoerr v:errmsg
+    echohl none
+    cquit
+endif
 
 " Pull in local settings.  This is only for locally required settings while
 " reading this file.
