@@ -87,8 +87,7 @@ nmap <silent> <C-F11> :let @/ = ""<CR>
 " Window management {{{
 nmap <C-w><Bar> <C-w>v
 nmap <C-w>- <C-w>s
-nmap <Tab> <C-w>w
-nmap <S-Tab> <C-w>W
+nmap <Tab> <C-w>p
 " }}}
 
 " Folding support maps {{{
