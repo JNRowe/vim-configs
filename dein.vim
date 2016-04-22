@@ -207,11 +207,6 @@ call dein#add('ervandew/regex', {
     \ 'on_cmd': 'Regex',
 \ })
 
-" Allows you to use <Tab> for insert completion
-call dein#add('ervandew/supertab', {
-    \ 'on_map': [['i', '<Tab>']],
-\ })
-
 " Vala language support
 call dein#add('fishman/vim-vala')
 
