@@ -38,7 +38,7 @@ call dein#add('Konfekt/FastFold')
 
 " Automatic closing of quotes, parenthesis, brackets, etc
 call dein#add('Raimondi/delimitMate', {
-    \ 'on_i': 1,
+    \ 'on_event': 'InsertEnter',
 \ })
 
 " Context sensitive filetypes
@@ -56,7 +56,7 @@ call dein#add('Shougo/neco-syntax', {
 call dein#add('Shougo/neocomplete.vim', {
     \ 'depends': ['neco-syntax', 'neopairs.vim'],
     \ 'if': has('lua') && has('patch-7.3.885'),
-    \ 'on_i': 1,
+    \ 'on_event': 'InsertEnter',
 \ })
 
 " MRU plugin includes unite.vim MRU sources
@@ -68,7 +68,7 @@ call dein#add('Shougo/neomru.vim', {
 call dein#add('Shougo/neopairs.vim', {
     \ 'depends': 'neocomplete.vim',
     \ 'if': has('lua') && has('patch-7.4.774'),
-    \ 'on_i': 1,
+    \ 'on_event': 'InsertEnter',
 \ })
 
 " Adds snippet support to Vim
@@ -126,7 +126,7 @@ call dein#add('ap/vim-css-color', {
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
-    \ 'on_i': 1,
+    \ 'on_event': 'InsertEnter',
 \ })
 
 " An interface for Taskwarrior
@@ -187,7 +187,7 @@ call dein#add('dhruvasagar/vim-table-mode', {
 " The EditorConfig plugin
 call dein#add('editorconfig/editorconfig-vim', {
     \ 'if': has('python'),
-    \ 'on_i': 1,
+    \ 'on_event': 'InsertEnter',
 \ })
 
 " Cute conceal support for Python
