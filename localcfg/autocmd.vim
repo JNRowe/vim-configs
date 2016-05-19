@@ -39,23 +39,14 @@ augroup jnrowe
 
     autocmd FileType css,html EmmetInstall
 
-    " Reread the vimrc after writing.
+    " Reread the config files after writing.
     " Note: This *can* cause problems, so be careful!
-    autocmd BufWritePost ~/.vimrc,~/.vim/vimrc source %
+    autocmd BufWritePost ~/.vim/vimrc source %
     autocmd BufWritePost ~/.vim/localcfg/*.vim
-        \ if exists("g:loaded_lcfg_" . expand("%:t:r:gs?[\.-]?_?")) |
-        \   execute "unlet g:loaded_lcfg_" . expand("%:t:r:gs?[\.-]?_?") |
-        \ endif |
+        \ call SUnLoad(expand("<afile>", ":p")) |
         \ call localcfg#docfg()
-    autocmd BufWritePost ~/.vim/ftdetect/*.vim
-        \ if exists("g:loaded_ftd_" . expand("%:t:r:gs?[\.-]?_?")) |
-        \   execute "unlet g:loaded_ftd_" .  expand("%:t:r:gs?[\.-]?_?") |
-        \ endif |
-        \ source %
-    autocmd BufWritePost ~/.vim/vimrc.d/*.vim
-        \ if exists("g:loaded_rcd_" . expand("%:t:r:gs?[\.-]?_?")) |
-        \   execute "unlet g:loaded_rcd_" .  expand("%:t:r:gs?[\.-]?_?") |
-        \ endif |
+    autocmd BufWritePost ~/.vim/ftdetect/*.vim,~/.vim/vimrc.d/*.vim
+        \ call SUnLoad(expand("<afile>", ":p")) |
         \ source %
 
     " Attempt filetype detection after writing.
