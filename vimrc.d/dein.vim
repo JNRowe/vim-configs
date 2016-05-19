@@ -13,7 +13,7 @@ if executable('notify-send') && $DISPLAY != ""
 endif
 
 if dein#load_state(g:dein_state_dir)
-    call dein#begin(g:dein_state_dir, ['~/.vim/vimrc', '~/.vim/dein.vim'])
+    call dein#begin(g:dein_state_dir, ['~/.vim/vimrc', '~/.vim/dein.vim', expand('<sfile>')])
 
     source ~/.vim/dein.vim
 
