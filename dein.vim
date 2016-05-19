@@ -99,6 +99,12 @@ call dein#add('Shougo/vinarise.vim', {
     \ 'on_cmd': 'Vinarise',
 \ })
 
+" Super simple, super minimal, super light-weight tab-completion
+call dein#add('ajh17/VimCompletesMe', {
+    \ 'on_event': 'InsertEnter',
+    \ 'on_map': [['i', '<Tab>']],
+\ })
+
 " Multi-language colour colouriser
 call dein#add('ap/vim-css-color', {
     \ 'on_ft': ['css', 'less', 'moon', 'python', 'vim', 'xdefaults'],
