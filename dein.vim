@@ -482,6 +482,11 @@ call dein#add('Toggle', {
 " Extended support for GNU gettext
 call dein#add('po.vim--Jelenak')
 
+" Extended support for remind
+call dein#add('remind', {
+    \ 'on_ft': 'remind',
+\ })
+
 " Painless footer references
 call dein#add('uri-ref', {
     \ 'on_ft': 'mail',
