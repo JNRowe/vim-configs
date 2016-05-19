@@ -13,3 +13,11 @@ function! SLoaded(name)
     endif
 endfunction
 call SLoaded(expand("<sfile>"))
+
+function! SUnLoad(name)
+    let l:var = "loaded_" . fnamemodify(a:name, ":h:t:gs?[\.-\]?_?") . "_" .
+        \ fnamemodify(a:name, ":t:r:gs?[\.-]?_?")
+    if get(g:, l:var)
+        execute "unlet g:" . l:var
+    endif
+endfunction
