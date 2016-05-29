@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -7,7 +7,7 @@ let g:user_emmet_install_global = 0
 
 let g:iser_emmet_settings = {
     \ 'variables': {
-    \   'locale': "en-GB",
+    \   'locale': 'en-GB',
     \ },
     \ 'htmljinja': {
     \   'extends': 'html',

@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -42,9 +42,9 @@ function! s:unite_key(key)
         let s:buffer_name = a:key
     endif
 
-    execute "nnoremap <silent> [unite]" . s:first .
-        \ " :<C-u>Unite -buffer-name=" . s:buffer_name . " " .
-        \ s:source . "<CR>"
+    execute 'nnoremap <silent> [unite]' . s:first .
+        \ ' :<C-u>Unite -buffer-name=' . s:buffer_name . ' ' .
+        \ s:source . '<CR>'
 endfunction
 
 for s:k in [
@@ -71,7 +71,7 @@ for s:k in [
     unlet s:k
 endfor
 
-if $DISPLAY != "" && executable('wmctrl')
+if $DISPLAY != '' && executable('wmctrl')
     call s:unite_key(['x', 'window/gui'])
 endif
 
@@ -83,7 +83,7 @@ endif
 nnoremap <S-F1> :<C-u>Unite -buffer-name=start neomru/file bookmark
     \ file_rec/async<CR>
 
-if has("autocmd")
+if has('autocmd')
     if argc() == 0 |
         autocmd VimEnter * Unite -buffer-name=start -no-start-insert
             \ neomru/file bookmark file_rec/async

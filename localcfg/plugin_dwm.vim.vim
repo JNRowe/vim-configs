@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -23,5 +23,5 @@ for [s:key, s:cmd] in [
         let s:cmd = s:cmd[1:]
     endif
 
-    execute "nnoremap <silent> [dwm]" . s:key . " :<C-u>" . s:cmd . "<CR>"
+    execute 'nnoremap <silent> [dwm]' . s:key . ' :<C-u>' . s:cmd . '<CR>'
 endfor

@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -6,7 +6,7 @@ endif
 let g:org_prefer_insert_mode = 0
 
 let g:org_todo_keywords = [
-    \ "TODO(t)", "NEXT(n)", "STARTED(s)",
-    \ "|",
-    \ "DONE(d)", "CANCELLED(c)", "REJECTED(r)"
+    \ 'TODO(t)', 'NEXT(n)', 'STARTED(s)',
+    \ '|',
+    \ 'DONE(d)', 'CANCELLED(c)', 'REJECTED(r)'
 \]

@@ -1,9 +1,9 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
 " These settings are incredibly dependent on the colour schemes being used
-if has("gui_running")
+if has('gui_running')
     let g:indent_guides_color_change_percent = 7
 else
     let g:indent_guides_auto_colors = 0

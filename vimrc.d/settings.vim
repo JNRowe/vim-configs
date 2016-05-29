@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -7,7 +7,7 @@ set autochdir
 set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
-if has("balloon_eval")
+if has('balloon_eval')
     set ballooneval
 endif
 set colorcolumn=+1
@@ -18,10 +18,10 @@ if has('conceal')
 endif
 set confirm
 if has('cryptv')
-    if has("patch-7.4.399")
+    if has('patch-7.4.399')
         set cryptmethod=blowfish2
     else
-        let v:warningmsg = "Using old blowfish cryptmethod"
+        let v:warningmsg = 'Using old blowfish cryptmethod'
         echohl WarningMsg
         echomsg v:warningmsg
         echohl none
@@ -51,8 +51,8 @@ if executable('ag')
     set grepprg=ag\ --vimgrep
     set grepformat=%f:%l:%c:%m
 else
-    let &grepprg = "grep -nH "
-        \ "--exclude-from=" . g:xdg_data_dir . "/grep_excludes $* /dev/null"
+    let &grepprg = 'grep -nH '
+        \ . '--exclude-from=' . g:xdg_data_dir . '/grep_excludes $* /dev/null'
 endif
 set hidden
 set ignorecase
@@ -64,7 +64,7 @@ if has('linebreak')
 endif
 set list
 " Show tabs and trailing whitespace {{{
-if &termencoding ==# "utf-8" || has("gui_running")
+if &termencoding ==# 'utf-8' || has('gui_running')
     set listchars=tab:␉·,extends:…,nbsp:␠
     if has('conceal')
         set listchars+=conceal:Δ
@@ -110,16 +110,16 @@ set notimeout
 set title
 set ttimeout
 set ttyfast
-if has("persistent_undo")
+if has('persistent_undo')
     set undofile
     let &undodir = g:vim_data_dir . '/undo//,' . &undodir
 endif
 set updatetime=7500
-if has("mksession")
-    let &viewdir = g:vim_cache_dir . "/view"
+if has('mksession')
+    let &viewdir = g:vim_cache_dir . '/view'
 endif
 if has('viminfo')
-    execute "set viminfo='1000,<1000,h,n" . g:vim_cache_dir . "/viminfo"
+    execute "set viminfo='1000,<1000,h,n" . g:vim_cache_dir . '/viminfo'
 endif
 if has('virtualedit')
     set virtualedit=block
@@ -133,7 +133,7 @@ set wildmode^=longest
 
 " Characters to show for wrapped lines
 if has('linebreak')
-    let &showbreak="» "
+    let &showbreak='» '
 endif
 
 " Fancy window titles where possible {{{
