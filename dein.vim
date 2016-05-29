@@ -210,6 +210,11 @@ call dein#add('guns/xterm-color-table.vim', {
     \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
 \ })
 
+" Utility comamnds for dein.vim
+call dein#add('haya14busa/dein-command.vim', {
+    \ 'on_cmd': 'Dein',
+\ })
+
 " Aims provide a nice interface for dealing with Git branches
 call dein#add('idanarye/vim-merginal', {
     \ 'depends': 'vim-fugitive',
