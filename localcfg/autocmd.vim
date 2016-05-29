@@ -84,10 +84,6 @@ augroup jnrowe
     " Open quickfix window, if there are any entries
     autocmd QuickFixCmdPost * belowright cwindow 5
 
-    " Only highlight cursor line in active window
-    autocmd WinLeave * setlocal nocursorline
-    autocmd WinEnter * setlocal cursorline
-
     function! MetaDetect(file)
         let l:p = resolve(fnamemodify(a:file, ":p:h"))
 
