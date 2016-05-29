@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -7,9 +7,9 @@ set runtimepath^=~/.vim/external/dein.vim/
 let g:dein_state_dir = g:vim_cache_dir . '/dein'
 let g:dein_repos_dir = g:dein_state_dir . '/repos'
 
-if executable('notify-send') && $DISPLAY != ""
+if executable('notify-send') && $DISPLAY != ''
     let g:dein#enable_notification = 1
-    let g:dein#notification_icon = "~/.vim/icons/editor.png"
+    let g:dein#notification_icon = '~/.vim/icons/editor.png'
 endif
 
 if dein#load_state(g:dein_state_dir)
@@ -25,7 +25,7 @@ call dein#call_hook('source')
 call dein#call_hook('post_source')
 if has('vim_starting')
     if dein#check_install()
-        echo "Missing plugins"
+        echo 'Missing plugins'
     endif
 else
     syntax enable

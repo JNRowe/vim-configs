@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -23,6 +23,6 @@ ia WIBNI wouldn't it be nice if
 ia YMMV your mileage may vary
 
 " Date
-ia _t  <C-R>=strftime("%T")<CR>
-ia _d  <C-R>=strftime("%F")<CR>
-ia _dt <C-R>=strftime("%FT%T%z")<CR>
+ia _t  <C-R>=strftime('%T')<CR>
+ia _d  <C-R>=strftime('%F')<CR>
+ia _dt <C-R>=strftime('%FT%T%z')<CR>

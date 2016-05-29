@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -12,9 +12,9 @@ let g:xdg_data_dir = expand(empty($XDG_DATA_HOME)
 
 " Vim specific paths
 for s:name in ['cache', 'config', 'data']
-    execute "let g:vim_" . s:name . "_dir = g:xdg_" . s:name . "_dir . '/vim'"
-    if !isdirectory(get(g:, "vim_" . s:name . "_dir"))
-        call mkdir(get(g:, "vim_" . s:name . "_dir"), 'p')
+    execute 'let g:vim_' . s:name . '_dir = g:xdg_' . s:name . "_dir . '/vim'"
+    if !isdirectory(get(g:, 'vim_' . s:name . '_dir'))
+        call mkdir(get(g:, 'vim_' . s:name . '_dir'), 'p')
     endif
 endfor
 " }}}

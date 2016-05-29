@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -79,10 +79,10 @@ nmap <silent> <F3> :set expandtab!<CR>
 " <[SC]-F4> toggles menu/toolbar in gvim
 " F5 is VimFiler
 nmap <F10> :make check<CR>
-nmap <S-F10> :execute "make -C " . expand("%:p:h") . " check"<CR>
+nmap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
 nmap <F11> :make<CR>
-nmap <S-F11> :execute "make -C " . expand("%:p:h")<CR>
-nmap <silent> <C-F11> :let @/ = ""<CR>
+nmap <S-F11> :execute 'make -C ' . expand('%:p:h')<CR>
+nmap <silent> <C-F11> :let @/ = ''<CR>
 
 " Window management {{{
 nmap <C-w><Bar> <C-w>v
@@ -115,7 +115,7 @@ function! s:ModelineStub()
 
     let x = printf(&cms, printf(fmt, &filetype, &tabstop, &shiftwidth,
         \                       &textwidth,
-        \                       (&expandtab ? "et" : "noet")))
+        \                       (&expandtab ? 'et' : 'noet')))
     $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
     call setpos('.', save_cursor)
 endfunction
@@ -123,10 +123,10 @@ endfunction
 
 " Close the help window, wherever that may be {{{
 function! s:Close_Help()
-    for l:w in range(1, winnr("$"))
+    for l:w in range(1, winnr('$'))
         let l:b = winbufnr(l:w)
-        if getbufvar(l:b, '&buftype') == "help"
-            execute l:w . "wincmd c"
+        if getbufvar(l:b, '&buftype') == 'help'
+            execute l:w . 'wincmd c'
             break
         endif
     endfor
@@ -137,8 +137,8 @@ nmap <silent> <Leader>? :call <SID>Close_Help()<CR>
 nnoremap [Help] <Nop>
 nmap <Leader>h [Help]
 
-for s:t in ["pattern", "quickref", "registers"]
-    execute "nmap [Help]" . s:t[0] . " :help " . s:t . "<CR>"
+for s:t in ['pattern', 'quickref', 'registers']
+    execute 'nmap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
 endfor
 
 " vim: fdm=marker:

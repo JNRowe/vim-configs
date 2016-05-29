@@ -1,7 +1,7 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
-if $DISPLAY != ""
+if $DISPLAY != ''
     let g:github_comment_open_browser = 1
 endif

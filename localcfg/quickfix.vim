@@ -1,4 +1,4 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
@@ -7,12 +7,12 @@ nmap <Leader>f [quickfix]
 
 function! s:qf_key(key, cmd)
     " Commands ending with backslash don't have <CR> appended
-    if a:cmd[len(a:cmd)-1] == "\\"
+    if a:cmd[len(a:cmd)-1] == '\'
         let l:cmd = a:cmd[:len(a:cmd)-2]
     else
-        let l:cmd = a:cmd . "<CR>"
+        let l:cmd = a:cmd . '<CR>'
     endif
-    execute "nnoremap <silent> [quickfix]" . a:key . " :" . l:cmd
+    execute 'nnoremap <silent> [quickfix]' . a:key . ' :' . l:cmd
 endfunction
 
 

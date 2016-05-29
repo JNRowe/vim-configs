@@ -1,5 +1,5 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
-let g:committia_use_singlecolumn = "always"
+let g:committia_use_singlecolumn = 'always'

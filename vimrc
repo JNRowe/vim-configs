@@ -5,13 +5,13 @@ if &compatible
 endif
 
 if v:version < 704
-    let v:warningmsg = "Vim version 7.4 or higher is required"
+    let v:warningmsg = 'Vim version 7.4 or higher is required'
     echohl WarningMsg
     echomsg v:warningmsg
     echohl none
 endif
 if has('nvim')
-    let v:errmsg = "This config will *NOT* work with nvim"
+    let v:errmsg = 'This config will *NOT* work with nvim'
     " ^^ but, pull requests that don't break Vim are welcome
     echohl ErrorMsg
     echoerr v:errmsg
@@ -21,7 +21,7 @@ endif
 
 " Pull in local settings.  This is only for locally required settings while
 " reading this file.
-if filereadable(fnamemodify("~/.vim/vimrc.pre", ':p'))
+if filereadable(fnamemodify('~/.vim/vimrc.pre', ':p'))
     source ~/.vim/vimrc.pre
 endif
 

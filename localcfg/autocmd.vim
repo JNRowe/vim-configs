@@ -1,10 +1,10 @@
-if SLoaded(expand("<sfile>"))
+if SLoaded(expand('<sfile>'))
     finish
 endif
 
 " Edit files in already open sessions.
 " exists() is needed so that re-sourcing this file is possible.
-if !exists("*EditExisting")
+if !exists('*EditExisting')
     runtime macros/editexisting.vim
 endif
 
@@ -12,7 +12,7 @@ endif
 augroup jnrowe
     autocmd!
 
-    if exists("+omnifunc")
+    if exists('+omnifunc')
         autocmd Filetype *
             \ if &omnifunc == "" |
             \   setlocal omnifunc=syntaxcomplete#Complete |
@@ -43,10 +43,10 @@ augroup jnrowe
     " Note: This *can* cause problems, so be careful!
     autocmd BufWritePost ~/.vim/vimrc source %
     autocmd BufWritePost ~/.vim/localcfg/*.vim
-        \ call SUnLoad(expand("<afile>", ":p")) |
+        \ call SUnLoad(expand('<afile>', ':p')) |
         \ call localcfg#docfg()
     autocmd BufWritePost ~/.vim/ftdetect/*.vim,~/.vim/vimrc.d/*.vim
-        \ call SUnLoad(expand("<afile>", ":p")) |
+        \ call SUnLoad(expand('<afile>', ':p')) |
         \ source %
 
     " Attempt filetype detection after writing.
@@ -63,9 +63,9 @@ augroup jnrowe
     " useful.
     autocmd BufReadPost *
         \ if &filetype =~# '^git' |
-        \   execute "normal gg" |
+        \   execute 'normal gg' |
         \ else |
-        \   call setpos(".", getpos("'\"")) |
+        \   call setpos('.', getpos("'\"")) |
         \ endif
 
     " Make stdin buffers temporary by default.  Potentially dangerous, but
@@ -85,26 +85,26 @@ augroup jnrowe
     autocmd QuickFixCmdPost * belowright cwindow 5
 
     function! MetaDetect(file)
-        let l:p = resolve(fnamemodify(a:file, ":p:h"))
+        let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
-        while l:p != "/"
-            if isdirectory(l:p . "/.meta")
-                return l:p . "/.meta"
+        while l:p != '/'
+            if isdirectory(l:p . '/.meta')
+                return l:p . '/.meta'
             endif
-            let l:p = fnamemodify(l:p, ":h")
+            let l:p = fnamemodify(l:p, ':h')
         endwhile
     endfunction
 
-    autocmd BufReadPost * if !exists("b:meta_dir") |
+    autocmd BufReadPost * if !exists('b:meta_dir') |
         \   let b:meta_dir = MetaDetect(expand('<afile>')) |
         \ endif |
-        \ if type(b:meta_dir) == type("")
-        \       && index(split(&spellfile, ","),
+        \ if type(b:meta_dir) == type('')
+        \       && index(split(&spellfile, ','),
         \                b:meta_dir . '/en.utf-8.add') == -1 |
-        \   execute "setlocal spellfile+=" . b:meta_dir . "/en.utf-8.add" |
-        \   if !exists("b:meta_abbr")
+        \   execute 'setlocal spellfile+=' . b:meta_dir . '/en.utf-8.add' |
+        \   if !exists('b:meta_abbr')
         \           && filereadable(b:meta_dir . '/abbr.vim') |
-        \       execute "source " . b:meta_dir . "/abbr.vim" |
+        \       execute 'source ' . b:meta_dir . '/abbr.vim' |
         \       let b:meta_abbr = 1 |
         \   endif |
         \ endif

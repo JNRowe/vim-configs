@@ -508,7 +508,7 @@ call dein#add('uri-ref', {
 " Nasty bundled packages {{{
 " These packages are being removed, either by finding a usable remote location
 " or by deletion.
-call dein#local("~/.vim/internal/", {
+call dein#local('~/.vim/internal/', {
     \ 'on_cmd': 'Snip',
 \ })
 " }}}
