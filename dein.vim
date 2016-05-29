@@ -27,12 +27,6 @@ call dein#add('AndrewRadev/sideways.vim', {
 " Tango inspired colourscheme
 call dein#add('JNRowe/vim-jnrowe')
 
-" A much simpler way to use some motions in vim
-call dein#add((g:vcs_cst ? 'vcs_cst::cstrager' : 'Lokaltog') . '/vim-easymotion', {
-    \ 'if': v:version >= 704,
-    \ 'on_map': '<Leader><Leader>',
-\ })
-
 " Speed up folding by reducing recalculations
 call dein#add('Konfekt/FastFold')
 
