@@ -21,14 +21,13 @@ if dein#load_state(g:dein_state_dir)
     call dein#save_state()
 endif
 
+call dein#call_hook('source')
+call dein#call_hook('post_source')
 if has('vim_starting')
     if dein#check_install()
         echo "Missing plugins"
     endif
 else
-    call dein#call_hook('source')
-    call dein#call_hook('post_source')
-
     syntax enable
     filetype plugin indent on
 endif
