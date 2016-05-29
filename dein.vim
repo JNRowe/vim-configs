@@ -252,6 +252,16 @@ call dein#add('junegunn/gv.vim', {
 " Automatically resizes your windows
 call dein#add('justincampbell/vim-eighties')
 
+" Motion improved
+call dein#add('justinmk/vim-sneak', {
+    \ 'if': v:version >= 703,
+    \ 'on_map': [
+    \   ['n', 'S', 's'],
+    \   ['o', 'Z', 'z'],
+    \   ['x', 'Z', 's'],
+    \ ],
+\ })
+
 " Better rainbow parentheses
 call dein#add('kien/rainbow_parentheses.vim')
 
