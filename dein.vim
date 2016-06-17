@@ -228,6 +228,7 @@ call dein#add('jamessan/vim-gnupg', {
 
 " Edit and store quickfix/location list entries
 call dein#add('jceb/vim-editqf', {
+    \ 'if': has('quickfix'),
     \ 'on_cmd': [
     \   'LocAddNote', 'LocLoad', 'LocSave',
     \   'QFAddNote', 'QFLoad', 'QFSave'
