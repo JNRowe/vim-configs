@@ -125,7 +125,7 @@ endfunction
 function! s:Close_Help()
     for l:w in range(1, winnr('$'))
         let l:b = winbufnr(l:w)
-        if getbufvar(l:b, '&buftype') == 'help'
+        if getbufvar(l:b, '&buftype') ==# 'help'
             execute l:w . 'wincmd c'
             break
         endif
