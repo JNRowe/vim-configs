@@ -73,7 +73,7 @@ for s:k in [
     unlet s:k
 endfor
 
-if $DISPLAY != '' && executable('wmctrl')
+if exists('$DISPLAY') && executable('wmctrl')
     call s:unite_key(['x', 'window/gui'])
 endif
 
