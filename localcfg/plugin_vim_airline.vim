@@ -1,9 +1,5 @@
 scriptencoding utf-8
 
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 let g:airline_theme = 'powerlineish'
 
 " Requires powerline-symbols

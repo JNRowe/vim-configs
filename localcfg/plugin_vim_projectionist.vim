@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " PKG_LICENSE_DIR is set on most of the systems I use to an appropriate
 " distro-specific location for licenses; /usr/share/licenses,
 " /var/lib/repos/gentoo/licenses, &c.

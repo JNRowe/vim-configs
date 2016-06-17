@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Edit files in already open sessions.
 " exists() is needed so that re-sourcing this file is possible.
 if !exists('*EditExisting')
@@ -38,16 +34,6 @@ augroup jnrowe
     autocmd FileType help,man setlocal colorcolumn=""
 
     autocmd FileType css,html EmmetInstall
-
-    " Reread the config files after writing.
-    " Note: This *can* cause problems, so be careful!
-    autocmd BufWritePost ~/.vim/vimrc source %
-    autocmd BufWritePost ~/.vim/localcfg/*.vim
-        \ call SUnLoad(expand('<afile>', ':p')) |
-        \ call localcfg#docfg()
-    autocmd BufWritePost ~/.vim/ftdetect/*.vim,~/.vim/vimrc.d/*.vim
-        \ call SUnLoad(expand('<afile>', ':p')) |
-        \ source %
 
     " Attempt filetype detection after writing.
     autocmd BufWritePost *

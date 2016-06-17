@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 let g:user_emmet_complete_tag = 1
 let g:user_emmet_install_global = 0
 

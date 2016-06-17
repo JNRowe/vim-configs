@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " These settings are incredibly dependent on the colour schemes being used
 if has('gui_running')
     let g:indent_guides_color_change_percent = 7

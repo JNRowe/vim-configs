@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 let g:junkfile#directory = g:vim_cache_dir . '/junk'
 
 " Override default JunkfileOpen, 'cos I hate the time format

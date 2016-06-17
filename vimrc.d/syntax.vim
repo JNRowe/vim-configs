@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Syntax files settings {{{
 let g:erlang_highlight_special_atoms = 1
 let g:is_posix = 1  " Posix is a more realistic default for me

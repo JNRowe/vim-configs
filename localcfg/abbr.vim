@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Common-ish to me mail abbreviations
 ia AFAICR as far as I can remember
 ia AFAIK as far as I know

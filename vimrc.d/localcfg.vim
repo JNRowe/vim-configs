@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Read all optional configs for build-dependent settings and external packages
 let g:localcfg_cfgs = []
 if has('localmap')

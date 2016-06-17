@@ -1,9 +1,5 @@
 scriptencoding utf-8
 
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 nnoremap [quickfix] <Nop>
 nmap <Leader>f [quickfix]
 

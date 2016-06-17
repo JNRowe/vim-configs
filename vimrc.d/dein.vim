@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 set runtimepath^=~/.vim/external/dein.vim/
 
 let g:dein_state_dir = g:vim_cache_dir . '/dein'

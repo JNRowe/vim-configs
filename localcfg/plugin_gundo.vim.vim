@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 nnoremap <LocalLeader># :GundoToggle<CR>
 
 let g:gundo_help = 0

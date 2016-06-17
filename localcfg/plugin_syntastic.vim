@@ -1,9 +1,5 @@
 scriptencoding utf-8
 
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_debug_file = g:vim_cache_dir . '/syntastic.log'

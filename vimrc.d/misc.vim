@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Show highlight group of the current text {{{
 " From vim wiki
 command! ShowHighlightGroup
