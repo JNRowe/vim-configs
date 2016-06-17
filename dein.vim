@@ -68,6 +68,12 @@ call dein#add('Shougo/unite.vim', {
     \ 'if': executable('xdg-open'),
 \ })
 
+" Build, fex make, source for unite.vim
+call dein#add('Shougo/unite-build', {
+    \ 'depends': 'unite.vim',
+    \ 'if': executable('make'),
+\ })
+
 " Outline source for unite.vim
 call dein#add('Shougo/unite-outline', {
     \ 'depends': 'unite.vim',
