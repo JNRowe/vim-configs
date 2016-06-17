@@ -59,9 +59,9 @@ vnoremap <Backspace> <gv
 " }}}
 
 " <home> darts between start of line and start of text
-inoremap <silent> <home> <C-o>:call HomeSkip()<CR>
-nnoremap <silent> <home> :call HomeSkip()<CR>
-function! HomeSkip()
+inoremap <silent> <home> <C-o>:call <SID>HomeSkip()<CR>
+nnoremap <silent> <home> :call <SID>HomeSkip()<CR>
+function! s:HomeSkip()
     if col('.') != 1
         normal 0
     else
@@ -110,14 +110,14 @@ endif
 nmap <silent> <Leader>ml :call <SID>ModelineStub()<CR>
 
 function! s:ModelineStub()
-    let save_cursor = getpos('.')
-    let fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
+    let s:save_cursor = getpos('.')
+    let s:fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
 
-    let x = printf(&cms, printf(fmt, &filetype, &tabstop, &shiftwidth,
-        \                       &textwidth,
-        \                       (&expandtab ? 'et' : 'noet')))
-    $put =substitute(substitute(x, '\ \+', ' ', 'g'), ' $', '', '')
-    call setpos('.', save_cursor)
+    let s:x = printf(&commentstring,
+        \            printf(s:fmt, &filetype, &tabstop, &shiftwidth,
+        \                   &textwidth, (&expandtab ? 'et' : 'noet')))
+    $put =substitute(substitute(s:x, '\ \+', ' ', 'g'), ' $', '', '')
+    call setpos('.', s:save_cursor)
 endfunction
 " }}}
 
