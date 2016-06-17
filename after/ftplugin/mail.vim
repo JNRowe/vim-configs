@@ -1,4 +1,4 @@
-" Make these scrub the old entry if they exists
+scriptencoding utf-8
 
 nnoremap <buffer> [advice] <Nop>
 nmap <buffer> <Leader>a [advice]
