@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Quickly move between buffers {{{
 map <M-Left> :bprev<CR>
 map <M-Right> :bnext<CR>

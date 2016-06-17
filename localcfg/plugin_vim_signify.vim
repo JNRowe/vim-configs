@@ -1,9 +1,5 @@
 scriptencoding utf-8
 
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 if !(has('signs') && executable('git'))
     finish
 endif

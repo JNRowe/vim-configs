@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 augroup jnrowe_editqf
     autocmd BufEnter *
         \ let g:editqf_saveqf_filename = g:vim_data_dir . '/quickfix/' .

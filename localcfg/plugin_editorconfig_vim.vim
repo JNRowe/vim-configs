@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Better judgement aside as it isn't packaged anywhere for me.  Should that
 " change…
 "let g:EditorConfig_core_mode = 'external_command'

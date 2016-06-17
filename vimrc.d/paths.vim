@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Find appropriate directory for data files {{{
 let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME)
     \                        ? '~/.cache' : '$XDG_CACHE_HOME')

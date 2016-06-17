@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " I need only RFC2822, git and a limited collection of ISO-8601 variants.  One
 " mismatch happened *once*, and here we are…
 let g:speeddating_formats = [

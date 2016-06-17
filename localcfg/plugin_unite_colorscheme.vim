@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 call unite#custom#profile('colourscheme', 'context', {
     \   'auto_preview': 1,
     \   'buffer_name': 'colourscheme',

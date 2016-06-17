@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 function! DefineMenu(heading, items)
     " heading: menu title
     " items:

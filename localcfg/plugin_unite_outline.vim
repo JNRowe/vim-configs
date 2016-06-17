@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 call unite#custom#profile('outline', 'context', {
     \   'buffer_name': 'outline',
     \   'direction': 'dynamicbottom',

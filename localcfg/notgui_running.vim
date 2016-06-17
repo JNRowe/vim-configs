@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Set up the menus so emenu works properly
 source $VIMRUNTIME/menu.vim
 

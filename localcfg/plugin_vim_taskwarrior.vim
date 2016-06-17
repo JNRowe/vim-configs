@@ -1,6 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
 if !executable('task')
     finish
 endif

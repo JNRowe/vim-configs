@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 " Don't load unhelpful default plugins
 let g:loaded_tarPlugin = 1
 let g:loaded_zipPlugin = 1

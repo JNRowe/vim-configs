@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 let g:dwm_map_keys = 0
 
 nnoremap [dwm] <Nop>

@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 let g:eighties_bufname_additional_patterns = [
     \ '__Gundo__',
     \ '__Gundo_Preview__',

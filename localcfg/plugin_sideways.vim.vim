@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 nnoremap [sideways] <Nop>
 nmap <Leader>s [sideways]
 

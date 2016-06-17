@@ -1,7 +1,3 @@
-if SLoaded(expand('<sfile>'))
-    finish
-endif
-
 set diffopt+=iwhite
 
 function! DiffMaps()
