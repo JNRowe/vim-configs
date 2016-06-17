@@ -80,6 +80,12 @@ call dein#add('Shougo/unite-outline', {
     \ 'if': executable('ctags'),
 \ })
 
+" Editor session source for unite.vim
+call dein#add('Shougo/unite-session', {
+    \ 'depends': 'unite.vim',
+    \ 'if': has('mksession'),
+\ })
+
 " Powerful file explorer
 call dein#add('Shougo/vimfiler.vim', {
     \ 'depends': 'unite.vim',
