@@ -341,6 +341,12 @@ call dein#add('mtth/cursorcross.vim')
 " A plugin for visually displaying indent levels
 call dein#add('nathanaelkane/vim-indent-guides')
 
+" quickfix source for unite.vim
+call dein#add('osyo-manga/unite-quickfix', {
+    \ 'depends': 'unite.vim',
+    \ 'if': has('quickfix'),
+\ })
+
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
