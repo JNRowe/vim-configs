@@ -84,10 +84,12 @@ nnoremap <S-F1> :<C-u>Unite -buffer-name=start neomru/file bookmark
     \ file_rec/async<CR>
 
 if has('autocmd')
-    if argc() == 0 |
-        autocmd VimEnter * Unite -buffer-name=start -no-start-insert
-            \ neomru/file bookmark file_rec/async
-    endif
-    autocmd FileType unite nmap <buffer> ? <Plug>(unite_toggle_auto_preview) |
-        \ HideBadWhitespace
+    augroup jnrowe_unite
+        if argc() == 0 |
+            autocmd VimEnter * Unite -buffer-name=start -no-start-insert
+                \ neomru/file bookmark file_rec/async
+        endif
+        autocmd FileType unite nmap <buffer> ? <Plug>(unite_toggle_auto_preview) |
+            \ HideBadWhitespace
+    augroup END
 endif

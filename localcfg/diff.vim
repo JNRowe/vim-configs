@@ -17,4 +17,6 @@ function! DiffMaps()
     vnoremap <buffer> > :diffput<CR>
 endfunction
 
-autocmd BufEnter * if &diff | call DiffMaps() | endif
+augroup jnrowe_diff
+    autocmd BufEnter * if &diff | call DiffMaps() | endif
+augroup END
