@@ -146,9 +146,9 @@ endif " }}}
 " Custom foldtext setting {{{
 if has('folding')
     function! MyFoldText()
-        let nlines = v:foldend - v:foldstart + 1
+        let l:nlines = v:foldend - v:foldstart + 1
         return v:folddashes . getline(v:foldstart)[:winwidth(0)-10] . ' ▼ ' .
-            \ nlines . ' lines '
+            \ l:nlines . ' lines '
     endfunction
 endif
 " }}}

@@ -28,12 +28,12 @@ let g:syntastic_sh_checkers = ['checkbashisms', 'sh']
 
 " Use our pretty icons instead of the default text.
 if has('signs')
-    for [k, v] in items({'error': '✘', 'warning': '⚠', 'info': '☁'})
-        let s:capped = toupper(k[0]) . k[1:]
+    for [s:k, s:v] in items({'error': '✘', 'warning': '⚠', 'info': '☁'})
+        let s:capped = toupper(s:k[0]) . s:k[1:]
         if (&termencoding ==# 'utf-8') || has('gui_running')
-            execute 'sign define Syntastic' . s:capped . ' text='. v .
+            execute 'sign define Syntastic' . s:capped . ' text='. s:v .
                 \ ' texthl=' . s:capped .
-                \ ' icon=' .  expand('~/.vim/icons/' . k . '.png')
+                \ ' icon=' .  expand('~/.vim/icons/' . s:k . '.png')
         else
             execute 'sign define Syntastic' . s:capped .
                 \ ' text=' . s:capped[0] . s:capped[0] . ' texthl=' . s:capped
