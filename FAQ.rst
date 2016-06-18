@@ -1,6 +1,11 @@
 Frequently Asked Questions
 ==========================
 
+This can't *possibly* be worth it
+---------------------------------
+
+Okay, thanks for pointing that out.
+
 Why don't you support reloading of config files?
 ------------------------------------------------
 
