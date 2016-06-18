@@ -1,0 +1,9 @@
+#! /bin/sh
+
+set -eu
+
+RVER=$(echo $2 | sed 's,ruby\(.*\)\.ctags,\1,')
+
+find /usr/lib/ruby/$RVER -not -type d | LC_ALL=C sort | gup --contents
+
+exuberant-ctags --exclude=*/test/* --languages=ruby -R -f $1 /usr/lib/ruby/$RVER

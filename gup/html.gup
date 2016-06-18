@@ -1,0 +1,16 @@
+#! /bin/sh
+
+set -eu
+
+source=${2%.html}.rst
+
+gup -u $source
+
+trap 'rm -f "${temp}"' EXIT
+temp=$(mktemp --tmpdir prettyrst.XXXXXXXXXX)
+
+prettyrst --record-dependencies $temp $source >$1
+
+if [ -s ${temp} ]; then
+    gup -u $(cat ${temp})
+fi
