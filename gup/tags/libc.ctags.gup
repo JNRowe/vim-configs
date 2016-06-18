@@ -1,0 +1,16 @@
+#! /bin/sh
+
+set -eu
+
+LIBC_INCS=$(qlist glibc | grep include)
+if [ -z "$LIBC_INCS" ]; then
+    LIBC_INCS=$(dpkg -L libc6-dev | grep include)
+fi
+if [ -z "$LIBC_INCS" ]; then
+    echo LIBC_INCS is undefined. Not on Gentoo or Debian? >&2
+    exit 255
+fi
+
+gup -u $LIBC_INCS
+
+exuberant-ctags -f $1 $LIBC_INCS

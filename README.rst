@@ -22,10 +22,8 @@ That being said if your dog doesn't mean that much to you::
 
     git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
     cd ~/.vim
-    # This following fetches lots of remote resources, and may take some time
-    make update-external
     # Rebuild generated language and documentation tag files
-    make
+    gup
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are to just run with it, override it with your own ``~/.vimrc`` or
