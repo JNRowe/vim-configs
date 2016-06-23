@@ -137,4 +137,7 @@ for s:t in ['pattern', 'quickref', 'registers']
     execute 'nmap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
 endfor
 
+cmap <C-h> help<Space>  " I don't use vi movement keys in command-line mode
+cmap <C-S-h> vert help<Space>
+
 " vim: fdm=marker:
