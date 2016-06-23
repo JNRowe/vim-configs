@@ -8,3 +8,5 @@ let g:xml_syntax_folding = 1
 let g:sh_minlines = 400
 let g:is_bash = 1  " Default to bash for sh syntax
 let g:python_highlight_all = 1  " Highlight everything possible for python
+let g:zsh_fold_enable = 1
+let g:ft_man_folding_enable = 1
