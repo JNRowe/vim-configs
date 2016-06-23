@@ -1,9 +1,3 @@
-" Edit files in already open sessions.
-" exists() is needed so that re-sourcing this file is possible.
-if !exists('*EditExisting')
-    runtime macros/editexisting.vim
-endif
-
 " Configure my autocommands {{{
 augroup jnrowe
     autocmd!

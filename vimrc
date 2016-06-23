@@ -34,4 +34,7 @@ runtime vimrc.d/settings.vim
 runtime vimrc.d/syntax.vim
 runtime vimrc.d/maps.vim
 runtime vimrc.d/misc.vim
+if has('patch-7.4.1821')
+    runtime vimrc.d/packages.vim
+endif
 runtime vimrc.d/localcfg.vim
