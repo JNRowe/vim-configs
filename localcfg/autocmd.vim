@@ -2,7 +2,7 @@ augroup jnrowe
     autocmd!
 
     if exists('+omnifunc')
-        autocmd Filetype *
+        autocmd FileType *
             \ if !exists('&omnifunc') |
             \   setlocal omnifunc=syntaxcomplete#Complete |
             \ endif
