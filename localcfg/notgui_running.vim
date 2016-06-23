@@ -1,5 +1,5 @@
 " Set up the menus so emenu works properly
-source $VIMRUNTIME/menu.vim
+runtime! ALL menu.vim
 
 set nottybuiltin
 set term=$TERM  " Annoying, but necessary, to refresh termcap
