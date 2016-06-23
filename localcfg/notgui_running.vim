@@ -3,6 +3,9 @@ runtime! ALL menu.vim
 
 set nottybuiltin
 set term=$TERM  " Annoying, but necessary, to refresh termcap
+if has('termguicolors') && &t_Co > 256
+    set termguicolors
+endif
 
 if $TERM ==# 'linux' || $TERM =~# '^xterm' || $TERM ==# 'st' ||
     \ $TERM =~# '^st-' || split($COLORFGBG . ';padding', ';')[0] == 15
