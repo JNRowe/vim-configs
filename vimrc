@@ -30,6 +30,7 @@ runtime vimrc.d/paths.vim  " *Must* be early
 
 runtime vimrc.d/disabled.vim
 runtime vimrc.d/dein.vim
+runtime vimrc.d/ftplugin_*.vim
 runtime vimrc.d/settings.vim
 runtime vimrc.d/syntax.vim
 runtime vimrc.d/maps.vim
