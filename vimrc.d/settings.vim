@@ -72,6 +72,7 @@ endif
 set matchpairs+=<:>
 set matchtime=3
 set nonumber
+set nrformats+=octal
 set pastetoggle=<F4>
 if has('insert_expand')
     set pumheight=10
