@@ -1,4 +1,3 @@
-" Configure my autocommands {{{
 augroup jnrowe
     autocmd!
 
@@ -89,4 +88,3 @@ augroup jnrowe
         \   endif |
         \ endif
 augroup END
-" }}}
