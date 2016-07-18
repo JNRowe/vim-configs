@@ -30,7 +30,9 @@ call dein#add('JNRowe/vim-jnrowe',{
 \ })
 
 " Speed up folding by reducing recalculations
-call dein#add('Konfekt/FastFold')
+call dein#add('Konfekt/FastFold', {
+    \ 'if': has('folding'),
+\ })
 
 call dein#add('Nymphium/syntastic-moonscript', {
     \ 'depends': 'syntastic',
