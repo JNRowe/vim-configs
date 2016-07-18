@@ -32,6 +32,12 @@ call dein#add('JNRowe/vim-jnrowe',{
 " Speed up folding by reducing recalculations
 call dein#add('Konfekt/FastFold')
 
+call dein#add('Nymphium/syntastic-moonscript', {
+    \ 'depends': 'syntastic',
+    \ 'if': executable('moonc'),
+    \ 'build': 'make neobundle',
+\ })
+
 " Automatic closing of quotes, parenthesis, brackets, etc
 call dein#add('Raimondi/delimitMate', {
     \ 'on_event': 'InsertEnter',
