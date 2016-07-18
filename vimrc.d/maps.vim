@@ -137,6 +137,13 @@ for s:t in ['pattern', 'quickref', 'registers']
     execute 'nmap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
 endfor
 
+" Perform word-ish searches in a new window, so we can maintain position in the
+" current window
+for s:k in ['*', '#']
+    execute 'nmap <C-w>' . s:k  . ' <C-w>s' . s:k
+    execute 'nmap <C-w>g' . s:k  . ' <C-w>sg' . s:k
+endfor
+
 cmap <C-h> help<Space>  " I don't use vi movement keys in command-line mode
 cmap <C-S-h> vert help<Space>
 
