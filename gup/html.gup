@@ -1,4 +1,6 @@
-#! /bin/sh
+#!sh
+[ "${GUP_XTRACE:-0}" -eq 1 ] && set -x
+[ "$GUP_VERBOSE" -ge 1 ] && set -v
 
 set -eu
 
