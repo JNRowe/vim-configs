@@ -220,6 +220,14 @@ call dein#add('fishman/vim-vala')
 " Enhanced Markdown support
 call dein#add('gabrielelana/vim-markdown')
 
+" Show cyclomatic complexity of Python code
+call dein#add('garybernhardt/pycomplexity', {
+    \ 'if': has('signs') && has('python'),
+    \ 'on_cmd': 'Complexity',
+    \ 'on_ft': 'python',
+    \ 'rtp': 'pycomplexity.vim',
+\ })
+
 " Configurable, flexible, intuitive text aligning
 call dein#add('godlygeek/tabular', {
     \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
