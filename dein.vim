@@ -128,7 +128,11 @@ call dein#add('ap/vim-css-color', {
 
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
-    \ 'on_cmd': ['HideBadWhitespace', 'ToggleBadWhitespace'],
+    \ 'on_cmd': [
+    \   'EraseBadWhitespace',
+    \   'HideBadWhitespace',
+    \   'ToggleBadWhitespace'
+    \ ],
     \ 'on_event': 'InsertEnter',
 \ })
 
