@@ -22,7 +22,7 @@ let g:airline_symbols = {
     \ 'whitespace': '·',
 \ }
 
-let g:airline#extensions#disable_rtp_load = 1
+let g:airline#extensions#disable_rtp_load = v:true
 let g:airline_extensions = [
     \ 'csv',
     \ 'nrrwrgn',
@@ -38,7 +38,7 @@ if executable('git')
     let g:airline_extensions += ['branch', 'hunks']
     let g:airline#extensions#branch#format = 2
     let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
-    let g:airline#extensions#hunks#non_zero_only = 1
+    let g:airline#extensions#hunks#non_zero_only = v:true
 endif
 
 let g:airline#extensions#csv#column_display = 'Name'

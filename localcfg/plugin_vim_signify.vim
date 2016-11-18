@@ -11,7 +11,7 @@ let g:signify_sign_add               = ''
 let g:signify_sign_delete            = ''
 let g:signify_sign_change            = ''
 let g:signify_sign_changedelete      = ''
-let g:signify_skip_filetype = {'diff': 1, 'gitcommit': 1}
+let g:signify_skip_filetype = {'diff': v:true, 'gitcommit': v:true}
 let g:signify_vcs_list = ['git', 'hg']
 
 highlight SignifySignAdd                        guifg=#8ae234

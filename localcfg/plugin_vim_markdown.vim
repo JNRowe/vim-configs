@@ -1,1 +1,1 @@
-let g:markdown_include_jekyll_support = 0
+let g:markdown_include_jekyll_support = v:false

@@ -1,4 +1,4 @@
-let g:dwm_map_keys = 0
+let g:dwm_map_keys = v:false
 
 nnoremap [dwm] <Nop>
 nmap <Leader>d [dwm]

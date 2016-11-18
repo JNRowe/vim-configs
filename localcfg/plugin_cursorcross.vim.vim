@@ -1,2 +1,2 @@
 let g:cursorcross_dynamic = 'lw'
-let g:cursorcross_mappings = 1
+let g:cursorcross_mappings = v:true
