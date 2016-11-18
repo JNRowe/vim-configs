@@ -55,9 +55,9 @@ vnoremap <Backspace> <gv
 " }}}
 
 " <home> darts between start of line and start of text
-inoremap <silent> <home> <C-o>:call <SID>HomeSkip()<CR>
-nnoremap <silent> <home> :call <SID>HomeSkip()<CR>
-function! s:HomeSkip()
+inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
+nnoremap <silent> <home> :call <SID>home_skip()<CR>
+function! s:home_skip()
     if col('.') != 1
         normal 0
     else
@@ -103,9 +103,9 @@ endif
 " From godlygeek's vimrc {{{
 "
 " Insert a modeline on the last line with <Leader>ml
-nmap <silent> <Leader>ml :call <SID>ModelineStub()<CR>
+nmap <silent> <Leader>ml :call <SID>modeline_stub()<CR>
 
-function! s:ModelineStub()
+function! s:modeline_stub()
     let s:save_cursor = getpos('.')
     let s:fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
 
@@ -118,7 +118,7 @@ endfunction
 " }}}
 
 " Close the help window, wherever that may be {{{
-function! s:Close_Help()
+function! s:close_help()
     for l:w in range(1, winnr('$'))
         let l:b = winbufnr(l:w)
         if getbufvar(l:b, '&buftype') ==# 'help'
@@ -127,7 +127,7 @@ function! s:Close_Help()
         endif
     endfor
 endfunction
-nmap <silent> <Leader>? :call <SID>Close_Help()<CR>
+nmap <silent> <Leader>? :call <SID>close_help()<CR>
 " }}}
 
 nnoremap [Help] <Nop>

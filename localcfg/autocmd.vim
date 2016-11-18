@@ -63,7 +63,7 @@ augroup jnrowe
     " Open quickfix window, if there are any entries
     autocmd QuickFixCmdPost * belowright cwindow 5
 
-    function! MetaDetect(file)
+    function! s:meta_detect(file)
         let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
         while l:p != '/'
@@ -75,7 +75,7 @@ augroup jnrowe
     endfunction
 
     autocmd BufReadPost * if !exists('b:meta_dir') |
-        \   let b:meta_dir = MetaDetect(expand('<afile>')) |
+        \   let b:meta_dir = s:meta_detect(expand('<afile>')) |
         \ endif |
         \ if type(b:meta_dir) == type('')
         \       && index(split(&spellfile, ','),

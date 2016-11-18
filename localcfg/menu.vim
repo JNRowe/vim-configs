@@ -1,4 +1,4 @@
-function! DefineMenu(heading, items)
+function! s:DefineMenu(heading, items)
     " heading: menu title
     " items:
     "    str -> base item
@@ -27,55 +27,55 @@ function! DefineMenu(heading, items)
     endif
 endfunction
 
-call DefineMenu('&Awesome', {
+call s:DefineMenu('&Awesome', {
     \ 'rc': g:xdg_config_dir . '/awesome/rc.moon',
     \ 'theme':  g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
 \ })
 
-call DefineMenu('&Openbox', {
+call s:DefineMenu('&Openbox', {
     \ 'autostart': g:xdg_config_dir . '/openbox/autostart.sh',
     \ 'menu': g:xdg_config_dir . '/openbox/menu.xml',
     \ 'rc': g:xdg_config_dir . '/openbox/rc.xml',
 \ })
 
-call DefineMenu('&gitconfig', [
+call s:DefineMenu('&gitconfig', [
     \   g:xdg_config_dir . '/git/config',
     \   '~/.gitconfig'
     \ ]
 \ )
 
-call DefineMenu('&python',
+call s:DefineMenu('&python',
     \ [
     \   expand('$PYTHONSTARTUP'),
     \   g:xdg_config_dir . '/python/rc'
     \ ],
 \ )
 
-call DefineMenu('&Ledger', g:xdg_data_dir . '/ledger/ledger.dat.gpg')
+call s:DefineMenu('&Ledger', g:xdg_data_dir . '/ledger/ledger.dat.gpg')
 
-call DefineMenu('&vim', {
+call s:DefineMenu('&vim', {
     \ '&dein': '~/.vim/dein.vim',
     \ '&rc': '~/.vim/vimrc',
     \ 'rc-&local': '~/.vim/localcfg/',
 \ })
 
-call DefineMenu('&zsh', {
+call s:DefineMenu('&zsh', {
     \ '&completions': '~/.no_my_zsh/completion/',
     \ '&configs': '~/.no_my_zsh/config/',
     \ '&plugins': '~/.no_my_zsh/plugin/',
     \ '&zshrc': '~/.no_my_zsh/zshrc',
 \ })
 
-call DefineMenu('&xorg', {
+call s:DefineMenu('&xorg', {
     \ 'X&modmap': '~/.Xmodmap',
     \ 'X&resources': '~/.Xresources',
     \ 'X&initrc': '~/.xinitrc',
 \ })
 
-call DefineMenu('&freetype', [
+call s:DefineMenu('&freetype', [
     \   g:xdg_config_dir . '/fontconfig/fonts.conf',
     \   '~/.fonts.conf',
     \ ],
 \ )
 
-call DefineMenu('&gtk', '~/.gtkrc-2.0')
+call s:DefineMenu('&gtk', '~/.gtkrc-2.0')

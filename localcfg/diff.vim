@@ -1,6 +1,6 @@
 set diffopt+=iwhite
 
-function! DiffMaps()
+function! s:diff_maps()
     nnoremap [diff] <Nop>
     nmap <Leader>d [diff]
 
@@ -14,5 +14,5 @@ function! DiffMaps()
 endfunction
 
 augroup jnrowe_diff
-    autocmd BufEnter * if &diff | call DiffMaps() | endif
+    autocmd BufEnter * if &diff | call s:diff_maps() | endif
 augroup END
