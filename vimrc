@@ -4,8 +4,9 @@ if &compatible
     set nocompatible
 endif
 
-if v:version < 704
-    let v:warningmsg = 'Vim version 7.4 or higher is required'
+if v:version < 800
+    let v:warningmsg = 'Vim version 8 or higher is required'
+    " ^^ but, pull requests that aren't too invasive are welcome
     echohl WarningMsg
     echomsg v:warningmsg
     echohl none
