@@ -35,7 +35,7 @@ augroup jnrowe
         \ endif
 
     " Automatically chmod +x shell scripts
-    autocmd BufWritePost *.sh silent !chmod +x %
+    autocmd BufWritePost *.sh call setfperm(expand('%:p'), 'rwxr-xr-x')
 
     " Jump to the last known cursor position if possible.
     " Note: Don't restore saved position for git buffers as it tends not to be
