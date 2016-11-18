@@ -15,8 +15,8 @@ augroup jnrowe
 
     " Create missing directories when saving files
     autocmd BufWritePre *
-        \ if !isdirectory(expand('%:h', 1)) |
-        \   call mkdir(expand('%:h', 1), 'p') |
+        \ if !isdirectory(expand('%:h', v:true)) |
+        \   call mkdir(expand('%:h', v:true), 'p') |
         \ endif
 
     " We don't want to edit patch backup files by accident [again]
@@ -84,7 +84,7 @@ augroup jnrowe
         \   if !exists('b:meta_abbr')
         \           && filereadable(b:meta_dir . '/abbr.vim') |
         \       execute 'source ' . b:meta_dir . '/abbr.vim' |
-        \       let b:meta_abbr = 1 |
+        \       let b:meta_abbr = v:true |
         \   endif |
         \ endif
 augroup END

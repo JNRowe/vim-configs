@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_loc_list = v:true
+let g:syntastic_check_on_wq = v:false
 let g:syntastic_debug_file = g:vim_cache_dir . '/syntastic.log'
 let g:syntastic_shell = '/bin/sh'
 
