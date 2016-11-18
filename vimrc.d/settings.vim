@@ -38,7 +38,7 @@ if has('folding')
     set foldcolumn=2
     set foldlevelstart=99
     set foldmethod=syntax
-    set foldtext=MyFoldText()
+    set foldtext=s:my_fold_text()
 endif
 set formatoptions+=rnl1
 set formatoptions-=wvb
@@ -142,7 +142,7 @@ endif " }}}
 
 " Custom foldtext setting {{{
 if has('folding')
-    function! MyFoldText()
+    function! s:my_fold_text()
         let l:nlines = v:foldend - v:foldstart + 1
         return v:folddashes . getline(v:foldstart)[:winwidth(0)-10] . ' ▼ ' .
             \ l:nlines . ' lines '
