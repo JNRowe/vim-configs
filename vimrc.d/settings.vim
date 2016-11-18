@@ -56,6 +56,7 @@ set hidden
 set ignorecase
 set infercase
 set isfname-=\=
+set keywordprg=:Man
 set lazyredraw
 if has('linebreak')
     set linebreak
