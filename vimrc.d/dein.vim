@@ -1,4 +1,4 @@
-set runtimepath^=~/.vim/external/dein.vim/
+set runtimepath+=~/.vim/external/dein.vim/
 
 let g:dein_state_dir = g:vim_cache_dir . '/dein'
 let g:dein_repos_dir = g:dein_state_dir . '/repos'
@@ -24,6 +24,6 @@ if has('vim_starting')
         echo 'Missing plugins'
     endif
 else
-    syntax enable
     filetype plugin indent on
+    syntax enable
 endif
