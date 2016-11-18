@@ -5,9 +5,9 @@ function! DefineMenu(heading, items)
     "    [str] -> potential fn
     "    {str: str} -> submenu with fn
     "    {str: [str]} -> submenu with potential fn
-    if type(a:items) == type({})
+    if type(a:items) == v:t_dict
         for [l:k, l:v] in items(a:items)
-            let l:files = type(l:v) == type('') ? split(l:v) : l:v
+            let l:files = type(l:v) == v:t_string ? split(l:v) : l:v
             for l:f in l:files
                 if filereadable(l:f)
                     execute 'amenu L&ocations.' . a:heading . '.' . l:k .
@@ -17,7 +17,7 @@ function! DefineMenu(heading, items)
             endfor
         endfor
     else
-        let l:files = type(a:items) == type('') ? [a:items] : a:items
+        let l:files = type(a:items) == v:t_string ? [a:items] : a:items
         for l:f in l:files
             if filereadable(l:f)
                 execute 'amenu L&ocations.' . a:heading .' :e ' . l:f . '<CR>'

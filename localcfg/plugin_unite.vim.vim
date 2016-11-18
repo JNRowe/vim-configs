@@ -32,7 +32,7 @@ nmap <Leader>u [unite]
 
 function! s:unite_key(key)
     let s:first = a:key[0]
-    if type(a:key) == type([])
+    if type(a:key) == v:t_list
         let s:source = a:key[1]
         let s:buffer_name = len(a:key) == 3 ? a:key[2] : split(s:source, ':')[0]
     else
