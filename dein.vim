@@ -345,9 +345,6 @@ call dein#add('mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
 \ })
 
-" Enhanced reST support
-call dein#add('mitsuhiko/vim-rst')
-
 " Comment on GitHub directly
 call dein#add('mmozuras/vim-github-comment', {
     \ 'depends': 'webapi-vim',
