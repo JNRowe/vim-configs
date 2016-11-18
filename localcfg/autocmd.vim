@@ -15,8 +15,8 @@ augroup jnrowe
 
     " Create missing directories when saving files
     autocmd BufWritePre *
-        \ if !isdirectory(expand('%:h', 1)) |
-        \   call mkdir(expand('%:h', 1), 'p') |
+        \ if !isdirectory(expand('%:h', v:true)) |
+        \   call mkdir(expand('%:h', v:true), 'p') |
         \ endif
 
     " We don't want to edit patch backup files by accident [again]
@@ -35,7 +35,7 @@ augroup jnrowe
         \ endif
 
     " Automatically chmod +x shell scripts
-    autocmd BufWritePost *.sh silent !chmod +x %
+    autocmd BufWritePost *.sh call setfperm(expand('%:p'), 'rwxr-xr-x')
 
     " Jump to the last known cursor position if possible.
     " Note: Don't restore saved position for git buffers as it tends not to be
@@ -77,14 +77,14 @@ augroup jnrowe
     autocmd BufReadPost * if !exists('b:meta_dir') |
         \   let b:meta_dir = s:meta_detect(expand('<afile>')) |
         \ endif |
-        \ if type(b:meta_dir) == type('')
+        \ if type(b:meta_dir) == v:t_string
         \       && index(split(&spellfile, ','),
         \                b:meta_dir . '/en.utf-8.add') == -1 |
         \   execute 'setlocal spellfile+=' . b:meta_dir . '/en.utf-8.add' |
         \   if !exists('b:meta_abbr')
         \           && filereadable(b:meta_dir . '/abbr.vim') |
         \       execute 'source ' . b:meta_dir . '/abbr.vim' |
-        \       let b:meta_abbr = 1 |
+        \       let b:meta_abbr = v:true |
         \   endif |
         \ endif
 augroup END

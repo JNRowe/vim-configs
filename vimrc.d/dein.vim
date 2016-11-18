@@ -4,7 +4,7 @@ let g:dein_state_dir = g:vim_cache_dir . '/dein'
 let g:dein_repos_dir = g:dein_state_dir . '/repos'
 
 if executable('notify-send') && exists('$DISPLAY')
-    let g:dein#enable_notification = 1
+    let g:dein#enable_notification = v:true
     let g:dein#notification_icon = '~/.vim/icons/editor.png'
 endif
 

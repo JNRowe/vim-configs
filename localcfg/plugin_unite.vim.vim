@@ -5,18 +5,18 @@ scriptencoding utf-8
 " if you don't have a similar setup then the following won't work.
 call unite#custom#profile('default', 'context', {
     \   'direction': 'dynamictop',
-    \   'empty': 1,
-    \   'immediately': 1,
+    \   'empty': v:true,
+    \   'immediately': v:true,
     \   'prompt': ' ',
-    \   'prompt_focus': 1,
-    \   'start_insert': 1,
-    \   'toggle': 1,
-    \   'vertical_preview': 1
+    \   'prompt_focus': v:true,
+    \   'start_insert': v:true,
+    \   'toggle': v:true,
+    \   'vertical_preview': v:true
     \ }
 \ )
 
 let g:unite_data_directory = g:vim_cache_dir . '/unite'
-let g:unite_force_overwrite_statusline = 0
+let g:unite_force_overwrite_statusline = v:false
 let g:unite_source_buffer_time_format = '%FT%T'
 
 if executable('ag')
@@ -32,7 +32,7 @@ nmap <Leader>u [unite]
 
 function! s:unite_key(key)
     let s:first = a:key[0]
-    if type(a:key) == type([])
+    if type(a:key) == v:t_list
         let s:source = a:key[1]
         let s:buffer_name = len(a:key) == 3 ? a:key[2] : split(s:source, ':')[0]
     else

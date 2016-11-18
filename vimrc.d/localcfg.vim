@@ -8,6 +8,6 @@ let g:localcfg_features = [
 \ ]
 for s:bundle in values(dein#get())
     let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
-    let g:localcfg_cfgs += [(get(s:bundle, 'if', 1) ? '' : 'not') . s:cfgname]
+    let g:localcfg_cfgs += [(get(s:bundle, 'if', v:true) ? '' : 'not') . s:cfgname]
 endfo
 call localcfg#docfg()

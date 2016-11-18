@@ -1,12 +1,12 @@
 call unite#custom#profile('outline', 'context', {
     \   'buffer_name': 'outline',
     \   'direction': 'dynamicbottom',
-    \   'immediately': 0,
+    \   'immediately': v:false,
     \   'prompt': '',
-    \   'quit': 0,
-    \   'resume': 1,
-    \   'start_insert': 0,
-    \   'vertical': 1,
+    \   'quit': v:false,
+    \   'resume': v:true,
+    \   'start_insert': v:false,
+    \   'vertical': v:true,
     \   'winwidth': 30,
     \ }
 \ )

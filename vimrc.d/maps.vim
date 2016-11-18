@@ -106,7 +106,7 @@ endif
 nmap <silent> <Leader>ml :call <SID>modeline_stub()<CR>
 
 function! s:modeline_stub()
-    let s:save_cursor = getpos('.')
+    let s:save_cursor = getcurpos()
     let s:fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
 
     let s:x = printf(&commentstring,

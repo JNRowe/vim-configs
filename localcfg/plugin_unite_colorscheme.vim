@@ -1,11 +1,11 @@
 call unite#custom#profile('colourscheme', 'context', {
-    \   'auto_preview': 1,
+    \   'auto_preview': v:true,
     \   'buffer_name': 'colourscheme',
     \   'direction': 'dynamicbottom',
     \   'prompt': '',
-    \   'resume': 1,
-    \   'start_insert': 0,
-    \   'vertical': 1,
+    \   'resume': v:true,
+    \   'start_insert': v:false,
+    \   'vertical': v:true,
     \   'winwidth': 15,
     \ }
 \ )
