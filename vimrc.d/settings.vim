@@ -6,6 +6,8 @@ let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
 if has('balloon_eval')
     set ballooneval
 endif
+set breakindent
+set breakindentopt=sbr
 set colorcolumn=+1
 set completeopt+=longest,menuone
 if has('conceal')
