@@ -206,9 +206,6 @@ call dein#add('ehamberg/vim-cute-python', {
 " An implementation of the PlainTasks format
 call dein#add('elentok/plaintasks.vim')
 
-" Enhanced JSON support
-call dein#add('elzr/vim-json')
-
 " Allows you to test regular expressions
 call dein#add('ervandew/regex', {
     \ 'on_cmd': 'Regex',
