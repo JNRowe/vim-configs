@@ -1,9 +1,9 @@
 " Show highlight group of the current text {{{
 " From vim wiki
 command! ShowHighlightGroup
-    \ echo 'hi<' . synIDattr(synID(line('.'), col('.'), 1), 'name') .
-    \   '> trans<' . synIDattr(synID(line('.'), col('.'), 0), 'name') .
-    \   '> lo<' . synIDattr(synIDtrans(synID(line('.'), col('.'), 1)),
+    \ echo 'hi<' . synIDattr(synID(line('.'), col('.'), v:true), 'name') .
+    \   '> trans<' . synIDattr(synID(line('.'), col('.'), v:false), 'name') .
+    \   '> lo<' . synIDattr(synIDtrans(synID(line('.'), col('.'), v:true)),
     \                       'name') .
     \   '>'
 " }}}

@@ -1,1 +1,1 @@
-let g:tearoff_git_scissors = 1
+let g:tearoff_git_scissors = v:true
