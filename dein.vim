@@ -177,6 +177,7 @@ call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'ciaranm') . '/securemodelines')
 " A VIM binding to the jedi autocompletion library
 call dein#add('davidhalter/jedi-vim', {
     \ 'if': has('python'),
+    \ 'on_cmd': 'JediClearCache',
     \ 'on_ft': 'python',
 \ })
 
