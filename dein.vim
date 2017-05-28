@@ -513,12 +513,12 @@ call dein#add('wellle/targets.vim')
 " vim-scripts bundles {{{
 
 " Set up regions within a buffer using their own filetypes
-call dein#add('SyntaxRange', {
+call dein#add('vim-scripts/SyntaxRange', {
     \ 'on_cmd': ['SyntaxIgnore', 'SyntaxInclude'],
 \ })
 
 " Toggle values under the cursor
-call dein#add('Toggle', {
+call dein#add('vim-scripts/Toggle', {
     \ 'on_func': 'Toggle',
     \ 'on_map': [
     \   ['i', '<C-T>'],
@@ -527,15 +527,15 @@ call dein#add('Toggle', {
 \ })
 
 " Extended support for GNU gettext
-call dein#add('po.vim--Jelenak')
+call dein#add('vim-scripts/po.vim--Jelenak')
 
 " Extended support for remind
-call dein#add('remind', {
+call dein#add('vim-scripts/remind', {
     \ 'on_ft': 'remind',
 \ })
 
 " Painless footer references
-call dein#add('uri-ref', {
+call dein#add('vim-scripts/uri-ref', {
     \ 'on_ft': 'mail',
 \ })
 " }}}
