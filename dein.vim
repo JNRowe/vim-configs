@@ -105,11 +105,6 @@ call dein#add('Shougo/vimfiler.vim', {
     \ 'on_path': '.*',
 \ })
 
-" Asynchronous execution plugin
-call dein#add('Shougo/vimproc', {
-    \ 'build': 'make',
-\ })
-
 " Ultimate hex editing system
 call dein#add('Shougo/vinarise.vim', {
     \ 'depends': 'unite.vim',
