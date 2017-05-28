@@ -62,6 +62,7 @@ call dein#add('Shougo/neosnippet', {
     \ 'hook_post_source': 'call Neosnippet_Map()',
     \ 'on_ft': 'snippet',
     \ 'on_map': [['iv', '<C-k>']],
+    \ 'if': v:version >= 704,
 \ })
 
 " The standard snippets repository for neosnippet
