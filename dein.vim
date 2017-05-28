@@ -386,7 +386,7 @@ call dein#add('rust-lang/rust.vim', {
 \ })
 
 " Syntax checking on the fly
-call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'scrooloose') . '/syntastic', {
+call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'vim-syntastic') . '/syntastic', {
     \ 'if': has('quickfix'),
 \ })
 
