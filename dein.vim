@@ -279,7 +279,9 @@ call dein#add('junegunn/gv.vim', {
 \ })
 
 " Automatically resizes your windows
-call dein#add('justincampbell/vim-eighties')
+call dein#add('justincampbell/vim-eighties', {
+    \ 'on_cmd': ['EightiesDisable', 'EightiesEnable'],
+\ })
 
 " Motion improved
 call dein#add('justinmk/vim-sneak', {
