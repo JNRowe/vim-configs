@@ -11,13 +11,6 @@ let g:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 " A dark powered Vim/Neovim plugin manager
 call dein#add(expand('~/.vim/external/dein.vim'))
 
-" Motion support for ag.vim
-call dein#add('Chun-Yang/vim-action-ag', {
-    \ 'depends': 'ag.vim',
-    \ 'if': executable('ag'),
-    \ 'on_map': [['nv', 'gag']],
-\ })
-
 " Move an item in a delimiter-separated list left or right
 call dein#add('AndrewRadev/sideways.vim', {
     \ 'on_cmd': ['SidewaysLeft', 'SidewaysRight'],
@@ -339,6 +332,12 @@ call dein#add('michaeljsmith/vim-indent-object', {
     \ 'on_map': [['ov', 'aI', 'ai', 'iI', 'ii']],
 \ })
 
+" Run your favorite search tool from Vim, with an enhanced results list
+call dein#add('mileszs/ack.vim', {
+    \ 'if': executable('ag'),
+    \ 'on_cmd': ['Ack', 'LAck'],
+\ })
+
 " Language support for jinja
 call dein#add('mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
@@ -372,12 +371,6 @@ call dein#add('osyo-manga/unite-quickfix', {
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
-\ })
-
-" A plugin for the_silver_searcher
-call dein#add('rking/ag.vim', {
-    \ 'if': executable('ag'),
-    \ 'on_cmd': ['Ag', 'AgBuffer'],
 \ })
 
 " Language support for rust
