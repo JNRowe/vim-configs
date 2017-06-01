@@ -13,13 +13,6 @@ if $TERM ==# 'linux' || $TERM =~# '^xterm' || $TERM ==# 'st' ||
 else
     set background=light
 endif
-if !exists('g:colors_name')  " Don't reload on write
-    if &t_Co >= 88
-        colorscheme native
-    else
-        colorscheme elflord
-    endif
-endif
 
 " Change the cursor colour for insert mode {{{
 if &term =~? '^rxvt' && exists('&t_SI')

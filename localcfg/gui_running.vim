@@ -19,9 +19,6 @@ map! <S-Insert> <MiddleMouse>
 
 let s:font_family='Consolas'
 let &guifont=s:font_family . ' 13'
-if !exists('g:colors_name')  " Don't reload on write
-    colorscheme jnrowe
-endif
 
 if has('title')  && has('clientserver')
     set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}

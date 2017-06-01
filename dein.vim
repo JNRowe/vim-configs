@@ -18,9 +18,7 @@ call dein#add('AndrewRadev/sideways.vim', {
 \ })
 
 " Tango inspired colourscheme
-call dein#add('JNRowe/vim-jnrowe',{
-    \ 'if': has('gui_running'),
-\ })
+call dein#add('JNRowe/vim-jnrowe')
 
 " Speed up folding by reducing recalculations
 call dein#add('Konfekt/FastFold', {
