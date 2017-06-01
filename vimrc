@@ -26,7 +26,6 @@ if filereadable(fnamemodify('~/.vim/vimrc.pre', ':p'))
     source ~/.vim/vimrc.pre
 endif
 
-runtime vimrc.d/lib.vim  " *Must* remain first
 runtime vimrc.d/paths.vim  " *Must* be early
 
 runtime vimrc.d/disabled.vim
