@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile ~/.reminders.d/* set filetype=remind
+autocmd BufRead,BufNewFile ~/.reminders.d/* setlocal filetype=remind

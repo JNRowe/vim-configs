@@ -1,1 +1,1 @@
-autocmd BufRead,BufNewFile *.mht set filetype=html
+autocmd BufRead,BufNewFile *.mht setlocal filetype=html
