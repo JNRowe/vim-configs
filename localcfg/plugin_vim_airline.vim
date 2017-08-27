@@ -13,6 +13,7 @@ let g:airline_symbols = {
     \ 'branch': '',
     \ 'crypt': '',
     \ 'linenr': '⏎',
+    \ 'maxlinenr': '☰',
     \ 'modified': '➕',
     \ 'notexists': '∉',
     \ 'paste': ' ',
