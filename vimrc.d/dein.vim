@@ -23,7 +23,6 @@ if has('vim_starting')
     if dein#check_install()
         echo 'Missing plugins'
     endif
-else
-    filetype plugin indent on
-    syntax enable
 endif
+filetype plugin indent on
+syntax enable
