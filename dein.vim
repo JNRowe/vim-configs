@@ -25,6 +25,7 @@ call dein#add('Konfekt/FastFold', {
     \ 'if': has('folding'),
 \ })
 
+" Syntastic checker for MoonScript
 call dein#add('Nymphium/syntastic-moonscript', {
     \ 'depends': 'syntastic',
     \ 'if': executable('moonc'),
