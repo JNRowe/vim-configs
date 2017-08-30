@@ -409,6 +409,7 @@ call dein#add('tpope/vim-speeddating', {
 
 " Plugin for deleting, changing, and adding "surroundings"
 call dein#add('tpope/vim-surround', {
+    \ 'depends': 'vim-repeat',
     \ 'on_map': [
     \   ['i', '<C-G>S', '<C-G>s', '<C-s>'],
     \   ['n', 'cS', 'cs', 'ds', 'yS', 'ys'],
