@@ -60,11 +60,6 @@ call dein#add('Shougo/neosnippet', {
 " The standard snippets repository for neosnippet
 call dein#add('Shougo/neosnippet-snippets')
 
-" Ultimate hex editing system
-call dein#add('Shougo/vinarise.vim', {
-    \ 'on_cmd': 'Vinarise',
-\ })
-
 " Super simple, super minimal, super light-weight tab-completion
 call dein#add('ajh17/VimCompletesMe', {
     \ 'on_event': 'InsertEnter',
