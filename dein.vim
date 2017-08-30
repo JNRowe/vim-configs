@@ -398,7 +398,9 @@ call dein#add('tpope/vim-sensible', {
 \ })
 
 " Increment dates, times, and more
-call dein#add('tpope/vim-speeddating')
+call dein#add('tpope/vim-speeddating', {
+    \ 'depends': 'vim-repeat',
+\ })
 
 " Heuristically set buffer options
 call dein#add('tpope/vim-sleuth')
