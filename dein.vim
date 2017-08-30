@@ -85,6 +85,7 @@ call dein#add('bitc/vim-bad-whitespace', {
 call dein#add('chrisbra/NrrwRgn', {
     \ 'hook_post_source': 'let g:airline_extensions += ["nrrwrgn"]',
     \ 'if': v:version >= 704,
+    \ 'on_cmd': ['NUD', 'NR', 'NW']
 \ })
 
 " Show differences for recovered files
@@ -411,7 +412,6 @@ call dein#add('tpope/vim-surround', {
 " Lean & mean status/tabline for vim that's light as air
 call dein#add('vim-airline/vim-airline', {
     \ 'depends': [
-    \   'NrrwRgn',
     \   'syntastic',
     \   'vim-airline-themes',
     \   'vim-signify',
