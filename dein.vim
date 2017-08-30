@@ -230,6 +230,7 @@ call dein#add('justincampbell/vim-eighties', {
 
 " Motion improved
 call dein#add('justinmk/vim-sneak', {
+    \ 'depends': 'vim-repeat',
     \ 'if': v:version >= 703,
     \ 'on_map': [
     \   ['n', 'S', 's'],
