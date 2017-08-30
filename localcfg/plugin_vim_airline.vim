@@ -26,7 +26,6 @@ let g:airline_symbols = {
 let g:airline#extensions#disable_rtp_load = v:true
 let g:airline_extensions = [
     \ 'csv',
-    \ 'nrrwrgn',
     \ 'denite',
     \ 'po',
     \ 'whitespace',
