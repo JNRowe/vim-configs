@@ -40,13 +40,13 @@ call dein#add('Raimondi/delimitMate', {
 " Context sensitive filetypes
 call dein#add('Shougo/context_filetype.vim')
 
+" A dark powered plugin for Neovim/Vim to unite all interfaces
+call dein#add('Shougo/denite.nvim', {
+    \ 'if': has('python3') && v:version >= 800,
+\ })
+
 " Create junk files
 call dein#add('Shougo/junkfile.vim')
-
-" MRU plugin includes unite.vim MRU sources
-call dein#add('Shougo/neomru.vim', {
-    \ 'depends': 'unite.vim',
-\ })
 
 " Adds snippet support to Vim
 call dein#add('Shougo/neosnippet', {
@@ -60,46 +60,8 @@ call dein#add('Shougo/neosnippet', {
 " The standard snippets repository for neosnippet
 call dein#add('Shougo/neosnippet-snippets')
 
-" Yank source for unite.vim
-call dein#add('Shougo/neoyank.vim', {
-    \ 'depends': 'unite.vim',
-    \ 'on_path': '.*',
-\ })
-
-" Unite and create user interfaces
-call dein#add('Shougo/unite.vim', {
-    \ 'if': executable('xdg-open'),
-\ })
-
-" Build, fex make, source for unite.vim
-call dein#add('Shougo/unite-build', {
-    \ 'depends': 'unite.vim',
-    \ 'if': executable('make'),
-\ })
-
-" Outline source for unite.vim
-call dein#add('Shougo/unite-outline', {
-    \ 'depends': 'unite.vim',
-    \ 'if': executable('ctags'),
-\ })
-
-" Editor session source for unite.vim
-call dein#add('Shougo/unite-session', {
-    \ 'depends': 'unite.vim',
-    \ 'if': has('mksession'),
-\ })
-
-" Powerful file explorer
-call dein#add('Shougo/vimfiler.vim', {
-    \ 'depends': 'unite.vim',
-    \ 'on_cmd':  ['VimFiler', 'VimFilerDouble', 'VimFilerExplorer'],
-    \ 'on_map': [['n', '<Plug>']],
-    \ 'on_path': '.*',
-\ })
-
 " Ultimate hex editing system
 call dein#add('Shougo/vinarise.vim', {
-    \ 'depends': 'unite.vim',
     \ 'on_cmd': 'Vinarise',
 \ })
 
@@ -126,7 +88,6 @@ call dein#add('bitc/vim-bad-whitespace', {
 
 " An interface for Taskwarrior
 call dein#add('blindFS/vim-taskwarrior', {
-    \ 'depends': 'unite.vim',
     \ 'hook_post_source': 'let g:airline_extensions += ["taskwarrior"]',
     \ 'if': executable('task'),
     \ 'on_cmd': ['TW', 'TWEditTaskrc'],
@@ -361,11 +322,6 @@ call dein#add('mtth/cursorcross.vim')
 " A plugin for visually displaying indent levels
 call dein#add('nathanaelkane/vim-indent-guides')
 
-" quickfix source for unite.vim
-call dein#add('osyo-manga/unite-quickfix', {
-    \ 'depends': 'unite.vim',
-    \ 'if': has('quickfix'),
-\ })
 
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
@@ -461,11 +417,6 @@ call dein#add('tpope/vim-surround', {
     \   ['n', 'cS', 'cs', 'ds', 'yS', 'ys'],
     \   ['x', 'S'],
     \ ],
-\ })
-
-" Colourscheme source for unite.vim
-call dein#add('ujihisa/unite-colorscheme', {
-    \ 'depends': 'unite.vim',
 \ })
 
 " Lean & mean status/tabline for vim that's light as air
