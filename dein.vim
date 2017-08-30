@@ -83,6 +83,7 @@ call dein#add('bitc/vim-bad-whitespace', {
 
 " A narrow region plugin (similar to Emacs)
 call dein#add('chrisbra/NrrwRgn', {
+    \ 'hook_post_source': 'let g:airline_extensions += ["nrrwrgn"]',
     \ 'if': v:version >= 704,
 \ })
 
