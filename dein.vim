@@ -81,13 +81,6 @@ call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_event': 'InsertEnter',
 \ })
 
-" An interface for Taskwarrior
-call dein#add('blindFS/vim-taskwarrior', {
-    \ 'hook_post_source': 'let g:airline_extensions += ["taskwarrior"]',
-    \ 'if': executable('task'),
-    \ 'on_cmd': ['TW', 'TWEditTaskrc'],
-\ })
-
 " A narrow region plugin (similar to Emacs)
 call dein#add('chrisbra/NrrwRgn', {
     \ 'if': v:version >= 704,
