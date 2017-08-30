@@ -394,7 +394,7 @@ call dein#add('tpope/vim-repeat')
 " This is pinned as it can massively affect functionality, see
 " tpope/vim-sensible@2c57c5f4 for an example.
 call dein#add('tpope/vim-sensible', {
-    \ 'rev': '4b753592',
+    \ 'rev': '49ee3642',
 \ })
 
 " Increment dates, times, and more
