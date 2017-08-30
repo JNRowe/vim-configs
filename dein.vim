@@ -155,7 +155,9 @@ call dein#add('ervandew/regex', {
 call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'fishman') . '/vim-vala')
 
 " Enhanced Markdown support
-call dein#add('gabrielelana/vim-markdown')
+call dein#add('gabrielelana/vim-markdown', {
+    \ 'on_ft': 'markdown',
+\ })
 
 " Show cyclomatic complexity of Python code
 call dein#add('garybernhardt/pycomplexity', {
