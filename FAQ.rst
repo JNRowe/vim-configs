@@ -18,7 +18,5 @@ especially given how annoying it is to handle all the tiny corner cases that
 make the process a complete nightmare to debug.
 
 I'd pay the cost if the cycle time was even close to a second, but it isn't.
-Plus combined with ``mksession``, via unite-session_, the editor pops back up in
-the editing state as if we were using live reloading.
-
-.. _unite-session: https://github.com/Shougo/unite-session
+Plus combined with ``mksession`` the editor pops back up in the editing state
+as if we were using live reloading.
