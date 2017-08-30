@@ -397,13 +397,15 @@ call dein#add('tpope/vim-sensible', {
     \ 'rev': '49ee3642',
 \ })
 
+" Heuristically set buffer options
+call dein#add('tpope/vim-sleuth', {
+    \ 'on_cmd': 'Sleuth',
+\ })
+
 " Increment dates, times, and more
 call dein#add('tpope/vim-speeddating', {
     \ 'depends': 'vim-repeat',
 \ })
-
-" Heuristically set buffer options
-call dein#add('tpope/vim-sleuth')
 
 " Plugin for deleting, changing, and adding "surroundings"
 call dein#add('tpope/vim-surround', {
