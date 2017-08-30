@@ -1,3 +1,4 @@
-highlight link SneakPluginTarget MatchParen
-highlight link SneakStreakTarget IncSearch
-highlight link SneakStreakMask Search
+augroup jnrowe_vim_sneak
+    autocmd ColorScheme * highlight Sneak guifg=black guibg=red
+        \ ctermfg=black ctermbg=red
+augroup END
