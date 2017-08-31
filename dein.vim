@@ -207,13 +207,6 @@ call dein#add('jreybert/vimagit', {
     \ 'on_cmd': 'Magit',
 \ })
 
-" A git commit browser
-call dein#add('junegunn/gv.vim', {
-    \ 'depends': 'vim-fugitive',
-    \ 'if': executable('git'),
-    \ 'on_cmd': 'GV',
-\ })
-
 " Automatically resizes your windows
 call dein#add('justincampbell/vim-eighties', {
     \ 'on_cmd': ['EightiesDisable', 'EightiesEnable'],
