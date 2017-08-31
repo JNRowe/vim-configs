@@ -260,7 +260,7 @@ call dein#add('mbbill/undotree', {
 
 " Use signs to indicate VCS state
 call dein#add('mhinz/vim-signify', {
-    \ 'if': executable('git'),
+    \ 'if': executable('git') || executable('hg'),
 \ })
 
 " Text objects based on indent levels
