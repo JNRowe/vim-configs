@@ -181,6 +181,12 @@ call dein#add('idanarye/vim-merginal', {
     \ 'on_cmd': ['Merginal', 'MerginalToggle'],
 \ })
 
+" Incrementally highlights *all* pattern matches
+call dein#add('haya14busa/incsearch.vim', {
+    \ 'hook_post_source': 'call Incsearch_Map()',
+    \ 'on_map': [['n', '/', '?', 'g/']],
+\ })
+
 " Transparent editing of gpg encrypted files
 call dein#add('jamessan/vim-gnupg', {
     \ 'if': executable('gpg'),
