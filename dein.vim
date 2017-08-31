@@ -196,12 +196,6 @@ call dein#add('jceb/vim-editqf', {
     \ 'on_map': [['n', '<Leader>n']],
 \ })
 
-" Editing support through autocompletion
-call dein#add('jceb/vim-fastwordcompleter', {
-    \ 'on_cmd': 'AutocompletionStart',
-    \ 'on_ft': ['genie', 'python', 'vim'],
-\ })
-
 " Text outlining and task management for Vim based on Emacs' Org-Mode
 call dein#add('jceb/vim-orgmode', {
     \ 'depends': ['NrrwRgn', 'SyntaxRange', 'calendar-vim', 'vim-repeat',
