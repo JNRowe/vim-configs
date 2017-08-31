@@ -175,12 +175,6 @@ call dein#add('haya14busa/dein-command.vim', {
     \ 'on_cmd': 'Dein',
 \ })
 
-" Aims provide a nice interface for dealing with Git branches
-call dein#add('idanarye/vim-merginal', {
-    \ 'depends': 'vim-fugitive',
-    \ 'on_cmd': ['Merginal', 'MerginalToggle'],
-\ })
-
 " Incrementally highlights *all* pattern matches
 call dein#add('haya14busa/incsearch.vim', {
     \ 'hook_post_source': 'call Incsearch_Map()',
