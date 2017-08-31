@@ -252,12 +252,6 @@ call dein#add('mattn/emmet-vim', {
     \ 'if': v:version >= 700,
 \ })
 
-" An interface to web APIs
-call dein#add('mattn/webapi-vim', {
-    \ 'external_commanpd': 'curl',
-    \ 'if': v:version >= 700,
-\ })
-
 " Use signs to indicate VCS state
 call dein#add('mhinz/vim-signify', {
     \ 'if': executable('git'),
@@ -278,13 +272,6 @@ call dein#add('mileszs/ack.vim', {
 " Language support for jinja
 call dein#add('mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
-\ })
-
-" Comment on GitHub directly
-call dein#add('mmozuras/vim-github-comment', {
-    \ 'depends': 'webapi-vim',
-    \ 'if': executable('git') && executable('xdg-open'),
-    \ 'on_cmd': 'GHComment',
 \ })
 
 " delete buffers without breaking your layout
