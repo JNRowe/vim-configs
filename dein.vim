@@ -95,7 +95,8 @@ call dein#add('chrisbra/csv.vim', {
 call dein#add('chrisbra/unicode.vim', {
     \ 'hook_post_source': 'let g:airline_extensions += ["unicode"]',
     \ 'if': v:version >= 704,
-    \ 'on_cmd': ['DigraphNew', 'Digraphs', 'UnicodeSearch', 'UnicodeName', 'UnicodeTable'],
+    \ 'on_cmd': ['DigraphNew', 'Digraphs', 'UnicodeSearch', 'UnicodeName',
+    \            'UnicodeTable'],
     \ 'on_map': [
     \   ['i', '<C-x><C-z>', '<C-x><C-g>'],
     \   ['n', '<Plug>(UnicodeGA)'],
