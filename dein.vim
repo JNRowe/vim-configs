@@ -25,13 +25,6 @@ call dein#add('Konfekt/FastFold', {
     \ 'if': has('folding'),
 \ })
 
-" Syntastic checker for MoonScript
-call dein#add('Nymphium/syntastic-moonscript', {
-    \ 'depends': 'syntastic',
-    \ 'if': executable('moonc'),
-    \ 'build': 'make neobundle',
-\ })
-
 " Automatic closing of quotes, parenthesis, brackets, etc
 call dein#add('Raimondi/delimitMate', {
     \ 'on_event': 'InsertEnter',
