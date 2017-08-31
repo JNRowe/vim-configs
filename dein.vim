@@ -252,6 +252,12 @@ call dein#add('mattn/emmet-vim', {
     \ 'if': v:version >= 700,
 \ })
 
+" Display your undo history in a graph
+call dein#add('mbbill/undotree', {
+    \ 'if': v:version >= 700,
+    \ 'on_cmd': 'UndotreeToggle',
+\ })
+
 " Use signs to indicate VCS state
 call dein#add('mhinz/vim-signify', {
     \ 'if': executable('git'),
