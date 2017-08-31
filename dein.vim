@@ -216,6 +216,12 @@ call dein#add('jceb/vim-orgmode', {
     \ 'on_ft': 'org',
 \ })
 
+" Ease your git workflow
+call dein#add('jreybert/vimagit', {
+    \ 'if': executable('git'),
+    \ 'on_cmd': 'Magit',
+\ })
+
 " A git commit browser
 call dein#add('junegunn/gv.vim', {
     \ 'depends': 'vim-fugitive',
