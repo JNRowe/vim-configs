@@ -38,9 +38,6 @@ call dein#add('Shougo/denite.nvim', {
     \ 'if': has('python3') && v:version >= 800,
 \ })
 
-" Create junk files
-call dein#add('Shougo/junkfile.vim')
-
 " Adds snippet support to Vim
 call dein#add('Shougo/neosnippet', {
     \ 'depends': ['context_filetype.vim', 'neosnippet-snippets'],
