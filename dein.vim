@@ -142,9 +142,6 @@ call dein#add('ervandew/regex', {
     \ 'on_cmd': 'Regex',
 \ })
 
-" Vala language support
-call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'fishman') . '/vim-vala')
-
 " Enhanced Markdown support
 call dein#add('gabrielelana/vim-markdown', {
     \ 'on_ft': 'markdown',
