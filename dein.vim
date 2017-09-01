@@ -361,6 +361,11 @@ call dein#add('terryma/vim-multiple-cursors', {
     \ 'on_map': [['nx', '<C-n>']],
 \ })
 
+" Defines a code alignment operator
+call dein#add('tommcdo/vim-lion', {
+    \ 'on_map': ['gl', 'gL'],
+\ })
+
 " Comment stuff out
 call dein#add('tpope/vim-commentary', {
     \ 'on_cmd': 'Commentary',
