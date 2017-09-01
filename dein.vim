@@ -488,11 +488,6 @@ call dein#add('vim-scripts/ebnf.vim', {
 " Extended support for GNU gettext
 call dein#add('vim-scripts/po.vim--Jelenak')
 
-" Extended support for remind
-call dein#add('vim-scripts/remind', {
-    \ 'on_ft': 'remind',
-\ })
-
 " Painless footer references
 call dein#add('vim-scripts/uri-ref', {
     \ 'on_ft': 'mail',
