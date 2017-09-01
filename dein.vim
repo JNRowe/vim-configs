@@ -308,6 +308,11 @@ call dein#add('romainl/vim-qlist', {
     \ 'on_map': [['n', '[D', ']D', 'I', ']I']],
 \ })
 
+" HTML5 + inline SVG omnicomplete function, indent and syntax
+call dein#add('othree/html5.vim', {
+    \ 'on_ft': 'html',
+\ })
+
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
