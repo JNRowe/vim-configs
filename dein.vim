@@ -66,6 +66,12 @@ call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_event': 'InsertEnter',
 \ })
 
+" Colour colournames and codes
+call dein#add('chrisbra/Colorizer', {
+    \ 'on_cmd': ['ColorHighlight', 'ColorToggle', 'RGB2Term'],
+    \ 'on_ft': ['css', 'less', 'moon', 'python', 'vim', 'xdefaults'],
+\ })
+
 " A narrow region plugin (similar to Emacs)
 call dein#add('chrisbra/NrrwRgn', {
     \ 'hook_post_source': 'let g:airline_extensions += ["nrrwrgn"]',
