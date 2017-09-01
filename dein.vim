@@ -318,11 +318,6 @@ call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
 \ })
 
-" Language support for rust
-call dein#add('rust-lang/rust.vim', {
-    \ 'on_ft': 'rust',
-\ })
-
 " Syntax checking on the fly
 call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'vim-syntastic') . '/syntastic', {
     \ 'if': has('quickfix'),
