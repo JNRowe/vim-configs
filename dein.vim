@@ -454,6 +454,16 @@ call dein#add('vim-utils/vim-vertical-move', {
 " Provides additional text objects
 call dein#add('wellle/targets.vim')
 
+" Miscellaneous auto-load Vim scripts
+call dein#add('xolox/vim-misc')
+
+" Easy note taking in Vim
+call dein#add('xolox/vim-notes', {
+    \ 'depends': 'vim-misc',
+    \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
+    \ 'on_map': [['ov', '<Leader>en']],
+\ })
+
 " vim-scripts bundles {{{
 
 " Set up regions within a buffer using their own filetypes
