@@ -316,11 +316,6 @@ call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
 \ })
 
-" Syntax checking on the fly
-call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'vim-syntastic') . '/syntastic', {
-    \ 'if': has('quickfix'),
-\ })
-
 " Easily work with shell commands
 call dein#add('sjl/clam.vim', {
     \ 'on_cmd': ['Clam', 'ClamVisual'],
@@ -435,6 +430,11 @@ call dein#add('vim-airline/vim-airline', {
 
 " Official theme repository for vim-airline
 call dein#add('vim-airline/vim-airline-themes')
+
+" Syntax checking on the fly
+call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'vim-syntastic') . '/syntastic', {
+    \ 'if': has('quickfix'),
+\ })
 
 " Mappings that boost command line mode
 call dein#add('vim-utils/vim-husk')
