@@ -407,7 +407,7 @@ call dein#add('tpope/vim-speeddating', {
     \ 'depends': 'vim-repeat',
 \ })
 
-" Plugin for deleting, changing, and adding "surroundings"
+" Plugin for deleting, changing, and adding “surroundings”
 call dein#add('tpope/vim-surround', {
     \ 'depends': 'vim-repeat',
     \ 'on_map': [
@@ -433,7 +433,7 @@ call dein#add('vim-airline/vim-airline-themes')
 " Mappings that boost command line mode
 call dein#add('vim-utils/vim-husk')
 
-" "inner line" text object
+" “inner line” text object
 call dein#add('vim-utils/vim-line')
 
 " Enhanced man support
