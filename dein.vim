@@ -381,6 +381,12 @@ call dein#add('tpope/vim-projectionist')
 " Repeat for plugin maps
 call dein#add('tpope/vim-repeat')
 
+" If fugitive.vim is the Git, rhubarb.vim is the Hub
+call dein#add('tpope/vim-rhubarb', {
+    \ 'depends': 'vim-fugitive',
+    \ 'if': executable('curl') && executable('git'),
+\ })
+
 " One step above 'nocompatible' mode
 "
 " This is pinned as it can massively affect functionality, see
