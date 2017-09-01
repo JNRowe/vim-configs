@@ -292,6 +292,14 @@ call dein#add('mtth/cursorcross.vim')
 " A plugin for visually displaying indent levels
 call dein#add('nathanaelkane/vim-indent-guides')
 
+" Make working with the quickfix list/window smoother
+call dein#add('romainl/vim-qf', {
+    \ 'if': has('quickfix'),
+    \ 'on_cmd': [
+    \   'ListLists', 'LoadList', 'SaveList',
+    \   'Keep', 'Reject',
+    \ ],
+\ })
 
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
