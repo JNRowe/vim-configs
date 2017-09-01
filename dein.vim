@@ -301,6 +301,13 @@ call dein#add('romainl/vim-qf', {
     \ ],
 \ })
 
+" Make working with the quickfix list/window smoother
+call dein#add('romainl/vim-qlist', {
+    \ 'if': has('quickfix'),
+    \ 'on_cmd': ['Dlist', 'Ilist'],
+    \ 'on_map': [['n', '[D', ']D', 'I', ']I']],
+\ })
+
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
