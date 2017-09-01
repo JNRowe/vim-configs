@@ -51,11 +51,6 @@ augroup jnrowe
     " I only use them this way.
     autocmd StdinReadPost * set buftype=nofile
 
-    " Turn off search highlighting when entering a buffer
-    autocmd BufEnter * nohlsearch
-    " Turn off search highlighting when idle
-    autocmd CursorHold * nohlsearch | redraw
-
     " Always do a full syntax refresh, this is still fast enough on
     " a netbook
     autocmd BufEnter * syntax sync fromstart
