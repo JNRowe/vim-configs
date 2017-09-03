@@ -468,7 +468,6 @@ call dein#add('tpope/vim-surround', {
 " Lean & mean status/tabline for vim that's light as air
 call dein#add('vim-airline/vim-airline', {
     \ 'depends': [
-    \   'syntastic',
     \   'vim-airline-themes',
     \   'vim-signify',
     \   'vim-fugitive',
@@ -477,11 +476,6 @@ call dein#add('vim-airline/vim-airline', {
 
 " Official theme repository for vim-airline
 call dein#add('vim-airline/vim-airline-themes')
-
-" Syntax checking on the fly
-call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'vim-syntastic') . '/syntastic', {
-    \ 'if': has('quickfix'),
-\ })
 
 " Mappings that boost command line mode
 call dein#add('vim-utils/vim-husk')
@@ -501,6 +495,11 @@ call dein#add('vim-utils/vim-vertical-move', {
 
 " Provides additional text objects
 call dein#add('wellle/targets.vim')
+
+" Asynchronous Lint Engine
+call dein#add('w0rp/ale', {
+    \ 'if': v:version >= 800 && has('signs'),
+\ })
 
 " Miscellaneous auto-load Vim scripts
 call dein#add('xolox/vim-misc')

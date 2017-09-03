@@ -33,7 +33,7 @@ let g:airline_extensions = [
 \ ]
 
 if has('quickfix')
-    let g:airline_extensions += ['quickfix', 'syntastic']
+    let g:airline_extensions += ['ale', 'quickfix']
 end
 if executable('git')
     let g:airline_extensions += ['branch', 'hunks']
