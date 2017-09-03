@@ -98,6 +98,7 @@ if has('cmdline_info') && has('showcmd')
 endif
 set showfulltag
 set showmatch
+set noshowmode
 set smartcase
 set softtabstop=4
 if has('spell')
