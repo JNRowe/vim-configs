@@ -122,6 +122,12 @@ call dein#add('dhruvasagar/vim-table-mode', {
     \ 'on_map': [['nx', '<Leader>t']],
 \ })
 
+" Automated Bullet Lists in Vim
+call dein#add('dkarter/bullets.vim', {
+    \ 'hook_post_source': 'let g:bullets_enabled_file_types += ["rst"]',
+    \ 'on_ft': ['gitcommit', 'rst'],
+\ })
+
 " Better rainbow parentheses
 call dein#add('eapache/rainbow_parentheses.vim')
 
