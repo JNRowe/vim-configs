@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " General settings {{{
 set autochdir
 set backup
@@ -35,6 +37,9 @@ set expandtab
 set fileencoding=utf-8
 if v:lang =~? 'utf-8'
     set fileencodings=utf-8,latin1,default
+endif
+if &termencoding ==# 'utf-8' || has('gui_running')
+    set fillchars+=vert:│
 endif
 if has('folding')
     set foldcolumn=2
