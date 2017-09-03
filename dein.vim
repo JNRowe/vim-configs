@@ -421,7 +421,9 @@ call dein#add('tpope/vim-repeat')
 " If fugitive.vim is the Git, rhubarb.vim is the Hub
 call dein#add('tpope/vim-rhubarb', {
     \ 'depends': 'vim-fugitive',
+    \ 'hook_post_source': 'let g:github_password = systemlist("pass github.com")[0]',
     \ 'if': executable('curl') && executable('git'),
+    \ 'on_map': [['i', '<C-x><C-o>']],
 \ })
 
 " One step above 'nocompatible' mode
