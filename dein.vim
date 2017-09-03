@@ -122,6 +122,9 @@ call dein#add('dhruvasagar/vim-table-mode', {
     \ 'on_map': [['nx', '<Leader>t']],
 \ })
 
+" Better rainbow parentheses
+call dein#add('eapache/rainbow_parentheses.vim')
+
 " The EditorConfig plugin
 call dein#add('editorconfig/editorconfig-vim', {
     \ 'if': has('python'),
@@ -219,9 +222,6 @@ call dein#add('justinmk/vim-sneak', {
     \   ['x', 'Z', 's'],
     \ ],
 \ })
-
-" Better rainbow parentheses
-call dein#add('kien/rainbow_parentheses.vim')
 
 " A plugin to place, toggle and display marks
 call dein#add('kshenoy/vim-signature', {
