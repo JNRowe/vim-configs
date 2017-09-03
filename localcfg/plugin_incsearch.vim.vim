@@ -1,4 +1,4 @@
-let g:incsearch#auto_nohlsearch = 1
+let g:incsearch#auto_nohlsearch = v:true
 
 function! Incsearch_Map()
     map /  <Plug>(incsearch-forward)

@@ -1,1 +1,1 @@
-let g:qf_mapping_ack_style = 1
+let g:qf_mapping_ack_style = v:true
