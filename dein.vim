@@ -212,6 +212,9 @@ call dein#add('jceb/vim-orgmode', {
     \ 'on_ft': 'org',
 \ })
 
+" Enable opening a file in a given line(for pasting compiler output)
+call dein#add('jreybert/file-line')
+
 " Ease your git workflow
 call dein#add('jreybert/vimagit', {
     \ 'if': executable('git'),
