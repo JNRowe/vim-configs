@@ -143,6 +143,11 @@ call dein#add('ehamberg/vim-cute-python', {
     \ 'rev': 'moresymbols',
 \ })
 
+" Sum numbers that appear in selection
+call dein#add('elazar/visSum.vim', {
+    \ 'on_map': [['x', '<Leader>su']],
+\ })
+
 " An implementation of the PlainTasks format
 call dein#add('elentok/plaintasks.vim')
 
