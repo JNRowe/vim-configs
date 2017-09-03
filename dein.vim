@@ -201,6 +201,12 @@ call dein#add('haya14busa/incsearch.vim', {
     \ 'on_map': [['n', '/', '?', 'g/']],
 \ })
 
+" All powerful Pythonic task runner
+call dein#add('idanarye/vim-omnipytent', {
+    \ 'if': has('python') || has('python3'),
+    \ 'on_cmd': ['OPedit', 'OP2edit', 'OP3edit']
+\ })
+
 " Meson build system support
 call dein#add('igankevich/mesonic', {
     \ 'on_cmd': 'MesonInit',
