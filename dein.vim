@@ -88,6 +88,12 @@ call dein#add('chrisbra/Replay', {
     \ 'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
 \ })
 
+" Save signs across sessions
+call dein#add('chrisbra/SaveSigns.vim', {
+    \ 'if': has('signs'),
+    \ 'on_cmd': 'SaveSigns',
+\ })
+
 " A filetype plugin for CSV files
 call dein#add('chrisbra/csv.vim', {
     \ 'on_ft': 'csv',
