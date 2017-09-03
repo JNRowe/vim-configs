@@ -83,6 +83,11 @@ call dein#add('chrisbra/Recover.vim', {
     \ 'if': v:version >= 703,
 \ })
 
+" Record and replay your editing sessions
+call dein#add('chrisbra/Replay', {
+    \ 'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
+\ })
+
 " A filetype plugin for CSV files
 call dein#add('chrisbra/csv.vim', {
     \ 'on_ft': 'csv',
