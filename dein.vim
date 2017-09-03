@@ -232,6 +232,11 @@ call dein#add('jreybert/vimagit', {
     \ 'on_cmd': 'Magit',
 \ })
 
+" Emoji support
+call dein#add('junegunn/vim-emoji', {
+    \ 'on_func': 'emoji',
+\ })
+
 " Automatically resizes your windows
 call dein#add('justincampbell/vim-eighties', {
     \ 'on_cmd': ['EightiesDisable', 'EightiesEnable'],
