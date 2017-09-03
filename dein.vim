@@ -185,6 +185,11 @@ call dein#add('haya14busa/incsearch.vim', {
     \ 'on_map': [['n', '/', '?', 'g/']],
 \ })
 
+" Meson build system support
+call dein#add('igankevich/mesonic', {
+    \ 'on_cmd': 'MesonInit',
+\ })
+
 " Transparent editing of gpg encrypted files
 call dein#add('jamessan/vim-gnupg', {
     \ 'if': executable('gpg'),
