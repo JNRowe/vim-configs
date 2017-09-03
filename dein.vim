@@ -195,6 +195,9 @@ call dein#add('igankevich/mesonic', {
     \ 'on_cmd': 'MesonInit',
 \ })
 
+" Highlight matching parenthesis
+call dein#add('itchyny/vim-parenmatch')
+
 " Transparent editing of gpg encrypted files
 call dein#add('jamessan/vim-gnupg', {
     \ 'if': executable('gpg'),
