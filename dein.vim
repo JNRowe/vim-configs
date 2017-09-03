@@ -52,7 +52,6 @@ call dein#add('Shougo/neosnippet-snippets')
 
 " Super simple, super minimal, super light-weight tab-completion
 call dein#add('ajh17/VimCompletesMe', {
-    \ 'on_event': 'InsertEnter',
     \ 'on_map': [['i', '<Tab>']],
 \ })
 
