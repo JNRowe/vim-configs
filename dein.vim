@@ -232,6 +232,11 @@ call dein#add('jreybert/vimagit', {
     \ 'on_cmd': 'Magit',
 \ })
 
+" Distraction-free writing in Vim.
+call dein#add('junegunn/goyo.vim', {
+    \ 'on_cmd': 'Goyo',
+\ })
+
 " Emoji support
 call dein#add('junegunn/vim-emoji', {
     \ 'on_func': 'emoji',
