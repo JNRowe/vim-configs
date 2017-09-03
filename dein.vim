@@ -517,6 +517,11 @@ call dein#add('vim-scripts/Toggle', {
     \ ],
 \ })
 
+" Highlight BNFs
+call dein#add('vim-scripts/bnf.vim', {
+    \ 'on_ft': 'bnf',
+\ })
+
 " Extended BNF (ISO/IEC 14977) Syntax
 call dein#add('vim-scripts/ebnf.vim', {
     \ 'on_ft': 'ebnf',
