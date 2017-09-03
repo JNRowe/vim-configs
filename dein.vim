@@ -195,6 +195,9 @@ call dein#add('igankevich/mesonic', {
     \ 'on_cmd': 'MesonInit',
 \ })
 
+" Underline the word under the cursor
+call dein#add('itchyny/vim-cursorword')
+
 " Highlight matching parenthesis
 call dein#add('itchyny/vim-parenmatch')
 
