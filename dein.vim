@@ -213,6 +213,11 @@ call dein#add('idanarye/vim-omnipytent', {
     \ 'on_cmd': ['OPedit', 'OP2edit', 'OP3edit']
 \ })
 
+" Regex powered yank and substitute
+call dein#add('idanarye/vim-yankitute', {
+    \ 'on_cmd': 'Yankitute',
+\ })
+
 " Meson build system support
 call dein#add('igankevich/mesonic', {
     \ 'on_cmd': 'MesonInit',
