@@ -359,6 +359,11 @@ call dein#add('mtth/cursorcross.vim')
 " A plugin for visually displaying indent levels
 call dein#add('nathanaelkane/vim-indent-guides')
 
+" Allow transparent calls to Python functions in native Vim scripts
+call dein#add('nvie/vim_bridge', {
+    \ 'on_cmd': 'python',
+\ })
+
 " Make working with the quickfix list/window smoother
 call dein#add('romainl/vim-qf', {
     \ 'if': has('quickfix'),
