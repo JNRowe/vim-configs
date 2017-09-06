@@ -459,6 +459,11 @@ call dein#add('tpope/vim-jdaddy', {
     \ 'on_ft': 'json',
 \ })
 
+call dein#add('tpope/vim-obsession', {
+    \ 'hook_post_source': 'let g:airline_extensions += ["obsession"]',
+    \ 'on_cmd': 'Obsession',
+\ })
+
 " Project configuration
 call dein#add('tpope/vim-projectionist')
 
