@@ -283,6 +283,11 @@ call dein#add('justinmk/vim-sneak', {
     \ ],
 \ })
 
+" nyancat. bah, grow up!
+call dein#add('koron/nyancat-vim', {
+    \ 'on_cmd': 'Nyancat',
+\ })
+
 " A plugin to place, toggle and display marks
 call dein#add('kshenoy/vim-signature', {
     \ 'if': has('signs'),
