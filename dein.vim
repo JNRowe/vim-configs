@@ -17,6 +17,12 @@ call dein#add('AndrewRadev/sideways.vim', {
     \ 'on_map': [['n', '[sideways]']],
 \ })
 
+" Switch between single-line and multiline forms of code
+call dein#add('AndrewRadev/splitjoin.vim', {
+    \ 'on_cmd': ['SplitjoinJoin', 'SplitjoinSplit'],
+    \ 'on_map': [['n', 'gJ', 'gS']],
+\ })
+
 " Tango inspired colourscheme
 call dein#add('JNRowe/vim-jnrowe')
 
