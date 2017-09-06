@@ -415,6 +415,13 @@ call dein#add('spolu/dwm.vim', {
     \ 'on_func': ['DWM_Focus', 'DWM_New', 'DWM_Rotate'],
 \ })
 
+" Linter for vim script
+call dein#add('syngan/vim-vimlint', {
+    \ 'depends': 'vim-vimlparser',
+    \ 'on_cmd': 'VimLint',
+    \ 'on_ft': 'vim',
+\ })
+
 " Maximizes and restores the current window
 call dein#add('szw/vim-maximizer', {
     \ 'on_cmd': 'MaximizerToggle',
@@ -574,6 +581,11 @@ call dein#add('vim-scripts/uri-ref', {
     \ 'on_ft': 'mail',
 \ })
 " }}}
+
+" Vimscript parser
+call dein#add('ynkdir/vim-vimlparser', {
+    \ 'on_ft': 'vim',
+\ })
 
 " Nasty bundled packages {{{
 " These packages are being removed, either by finding a usable remote location
