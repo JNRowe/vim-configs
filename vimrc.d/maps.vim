@@ -59,9 +59,9 @@ inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
 nnoremap <silent> <home> :call <SID>home_skip()<CR>
 function! s:home_skip()
     if col('.') != 1
-        normal 0
+        normal! 0
     else
-        normal ^
+        normal! ^
     endif
 endfunction
 
