@@ -506,6 +506,11 @@ call dein#add('tpope/vim-surround', {
     \ ],
 \ })
 
+" 1ms could mean the difference between life and death
+call dein#add('tweekmonster/startuptime.vim', {
+    \ 'on_cmd': 'StartupTime',
+\ })
+
 " Lean & mean status/tabline for vim that's light as air
 call dein#add('vim-airline/vim-airline', {
     \ 'depends': [
