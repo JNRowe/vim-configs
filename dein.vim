@@ -283,6 +283,11 @@ call dein#add('justinmk/vim-sneak', {
     \ ],
 \ })
 
+" Create your own text objects
+call dein#add('kana/vim-textobj-user', {
+    \ 'on_func': 'textobj',
+\ })
+
 " nyancat. bah, grow up!
 call dein#add('koron/nyancat-vim', {
     \ 'on_cmd': 'Nyancat',
@@ -362,6 +367,12 @@ call dein#add('nathanaelkane/vim-indent-guides')
 " Allow transparent calls to Python functions in native Vim scripts
 call dein#add('nvie/vim_bridge', {
     \ 'on_cmd': 'python',
+\ })
+
+" Better support for typographic (‘curly’) quote characters
+call dein#add('reedes/vim-textobj-quote', {
+    \ 'depends': 'vim-textobj-user',
+    \ 'on_ft': ['rst', 'text'],
 \ })
 
 " Make working with the quickfix list/window smoother
