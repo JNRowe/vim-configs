@@ -56,6 +56,11 @@ call dein#add('Shougo/neosnippet', {
 " The standard snippets repository for neosnippet
 call dein#add('Shougo/neosnippet-snippets')
 
+" Asynchronous execution plugin
+call dein#add('Shougo/vimproc', {
+    \ 'build': 'make',
+\ })
+
 " Super simple, super minimal, super light-weight tab-completion
 call dein#add('ajh17/VimCompletesMe', {
     \ 'on_map': [['i', '<Tab>']],
@@ -211,6 +216,13 @@ call dein#add('haya14busa/incsearch.vim', {
 call dein#add('idanarye/vim-omnipytent', {
     \ 'if': has('python') || has('python3'),
     \ 'on_cmd': ['OPedit', 'OP2edit', 'OP3edit']
+\ })
+
+" Yet another debugger frontend plugin
+call dein#add('idanarye/vim-vebugger', {
+    \ 'depends': 'vimproc',
+    \ 'on_cmd': ['VBGstartGBB', 'VBGstartLLDB', 'VBGstartPDB3'],
+    \ 'on_func': 'vebugger',
 \ })
 
 " Regex powered yank and substitute
