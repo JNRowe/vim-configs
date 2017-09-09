@@ -353,6 +353,9 @@ call dein#add('michaeljsmith/vim-indent-object', {
     \ 'on_map': [['ov', 'aI', 'ai', 'iI', 'ii']],
 \ })
 
+" Order buffers in Most Recently Used order
+call dein#add('mildred/vim-bufmru')
+
 " Run your favorite search tool from Vim, with an enhanced results list
 call dein#add('mileszs/ack.vim', {
     \ 'if': executable('ag'),
