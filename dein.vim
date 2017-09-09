@@ -485,6 +485,7 @@ call dein#add('tpope/vim-jdaddy', {
     \ 'on_ft': 'json',
 \ })
 
+" Continuously updated session files
 call dein#add('tpope/vim-obsession', {
     \ 'hook_post_source': 'let g:airline_extensions += ["obsession"]',
     \ 'on_cmd': 'Obsession',
