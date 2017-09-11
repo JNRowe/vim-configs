@@ -1,4 +1,4 @@
-let g:textobj#quote#matchit = 1
+let g:textobj#quote#matchit = v:true
 
 augroup jnrowe_textobj_quote
     autocmd!

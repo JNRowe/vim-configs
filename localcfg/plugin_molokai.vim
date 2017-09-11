@@ -1,1 +1,1 @@
-let g:rehash256 = 1
+let g:rehash256 = v:true

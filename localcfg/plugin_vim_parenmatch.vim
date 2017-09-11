@@ -1,1 +1,1 @@
-let g:loaded_matchparen = 1
+let g:loaded_matchparen = v:true
