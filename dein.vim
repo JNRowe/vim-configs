@@ -347,6 +347,9 @@ call dein#add('mhinz/vim-signify', {
     \ 'if': has('signs') && (executable('git') || executable('hg')),
 \ })
 
+" The fancy start screen.
+call dein#add('mhinz/vim-startify')
+
 " Text objects based on indent levels
 call dein#add('michaeljsmith/vim-indent-object', {
     \ 'on_ft': ['ledger', 'moon', 'python'],
