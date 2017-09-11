@@ -2,6 +2,8 @@ scriptencoding utf-8
 
 let g:ale_completion_max_suggestions = 20
 let g:ale_open_list = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = v:true
 
 " Requires Font Awesome in places
 " Note: I have FA resolve locally as webfonts are disabled in my browsers,
