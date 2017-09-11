@@ -3,6 +3,21 @@ map <M-Left> :bprev<CR>
 map <M-Right> :bnext<CR>
 " }}}
 
+" I hate you *so* much Right now {{{
+if exists('$VIM_DISABLE_CURSORS')
+    noremap <Up> <nop>
+    inoremap <Up> <nop>
+
+    noremap <down> <nop>
+    inoremap <down> <nop>
+
+    noremap <Left> <nop>
+    noremap <Right> <nop>
+    inoremap <Left> <nop>
+    inoremap <Right> <nop>
+endif
+" }}}
+
 " Navigate tags with keys I find less annoying {{{
 map <C-S-Left> <C-T>
 map <C-S-Right> <C-]>
