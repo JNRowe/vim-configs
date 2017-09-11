@@ -1,1 +1,1 @@
-let g:replay_record = 1
+let g:replay_record = v:true

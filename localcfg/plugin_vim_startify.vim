@@ -29,6 +29,6 @@ let g:startify_list_order = [
 let g:startify_relative_path = v:true
 let g:startify_session_autoload = v:true
 let g:startify_session_dir = g:vim_data_dir . '/sessions'
-let g:startify_session_sort = 1
+let g:startify_session_sort = v:true
 
 nnoremap <S-F1> :Startify<CR>
