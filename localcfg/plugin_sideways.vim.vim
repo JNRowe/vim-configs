@@ -1,5 +1,5 @@
 nnoremap [sideways] <Nop>
-nmap <Leader>s [sideways]
+nmap <LocalLeader>s [sideways]
 
 for s:key in ['Left', 'Right']
     execute 'nnoremap <silent> [sideways]<' . s:key . '>' .

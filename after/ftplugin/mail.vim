@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 nnoremap <buffer> [advice] <Nop>
-nmap <buffer> <Leader>a [advice]
+nmap <buffer> <LocalLeader>a [advice]
 
 for s:prio in ['perhaps', 'should', 'must']
     for s:due in ['now', 'soon', 'whenever']

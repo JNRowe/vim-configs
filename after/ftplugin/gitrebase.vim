@@ -1,5 +1,5 @@
 nnoremap <buffer> [rebase] <Nop>
-nmap <buffer> <Leader>r [rebase]
+nmap <buffer> <LocalLeader>r [rebase]
 
 " Not all methods available in ftplugin
 for s:verb in ['Cycle', 'Edit', 'Fixup', 'Pick', 'Reword', 'Squash']

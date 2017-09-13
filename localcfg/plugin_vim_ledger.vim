@@ -2,7 +2,7 @@ let g:ledger_align_at = 44
 let g:ledger_date_format = '%F'
 
 nnoremap [ledger] <Nop>
-nmap <Leader>l [ledger]
+nmap <LocalLeader>l [ledger]
 
 for [s:key, s:cmd] in [
     \   ['a',       ':LedgerAlign'],
