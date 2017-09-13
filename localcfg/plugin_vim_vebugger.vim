@@ -1,4 +1,4 @@
 nnoremap [vebugger] <Nop>
-nmap <Leader>v [vebugger]
+nmap <LocalLeader>v [vebugger]
 
 let g:vebugger_leader='[vebugger]'

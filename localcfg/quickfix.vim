@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 nnoremap [quickfix] <Nop>
-nmap <Leader>f [quickfix]
+nmap <LocalLeader>f [quickfix]
 
 function! s:qf_key(key, cmd)
     " Commands ending with backslash don't have <CR> appended

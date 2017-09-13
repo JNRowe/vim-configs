@@ -17,7 +17,7 @@ if (&termencoding ==# 'utf-8') || has('gui_running')
 endif
 
 nnoremap [ale] <Nop>
-nmap <Leader>a [ale]
+nmap <LocalLeader>a [ale]
 
 for [s:key, s:cmd] in [
     \   ['d',       'detail'],

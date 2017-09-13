@@ -27,7 +27,7 @@ if executable('ag')
 endif
 
 nnoremap [denite] <Nop>
-nmap <Leader>d [denite]
+nmap <Leader>u [denite]
 
 function! s:denite_key(key)
     let s:first = a:key[0]

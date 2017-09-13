@@ -2,7 +2,7 @@ set diffopt+=iwhite
 
 function! s:diff_maps()
     nnoremap [diff] <Nop>
-    nmap <Leader>d [diff]
+    nmap <LocalLeader>i [diff]
 
     noremap <buffer> [diff]o :diffoff!<CR>
     noremap <buffer> [diff]p :diffput<CR>

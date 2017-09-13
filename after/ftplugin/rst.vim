@@ -1,5 +1,5 @@
 nnoremap <buffer> [heading] <Nop>
-nmap <buffer> <Leader>h [heading]
+nmap <buffer> <LocalLeader>h [heading]
 
 " This creates reST headings using *my* favourite definitions of =, - and '
 for [s:key, s:sym] in [['U', '='], ['u', '-'], ['_', "'"]]

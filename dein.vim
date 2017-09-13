@@ -141,7 +141,7 @@ call dein#add('davidhalter/jedi-vim', {
 call dein#add('dhruvasagar/vim-table-mode', {
     \ 'on_cmd': ['TableModeToggle', 'Tableize'],
     \ 'on_ft': 'rst',
-    \ 'on_map': [['nx', '<Leader>t']],
+    \ 'on_map': [['nx', '<LocalLeader>t']],
 \ })
 
 " Automated Bullet Lists in Vim
@@ -167,7 +167,7 @@ call dein#add('ehamberg/vim-cute-python', {
 
 " Sum numbers that appear in selection
 call dein#add('elazar/visSum.vim', {
-    \ 'on_map': [['x', '<Leader>su']],
+    \ 'on_map': [['x', '<LocalLeader>su']],
 \ })
 
 " An implementation of the PlainTasks format
@@ -253,7 +253,7 @@ call dein#add('jceb/vim-editqf', {
     \   'LocAddNote', 'LocLoad', 'LocSave',
     \   'QFAddNote', 'QFLoad', 'QFSave'
     \ ],
-    \ 'on_map': [['n', '<Leader>n']],
+    \ 'on_map': [['n', '<LocalLeader>n']],
 \ })
 
 " Text outlining and task management for Vim based on Emacs' Org-Mode
@@ -373,7 +373,7 @@ call dein#add('mitsuhiko/vim-jinja', {
 " delete buffers without breaking your layout
 call dein#add('moll/vim-bbye', {
     \ 'on_cmd': 'Bdelete',
-    \ 'on_map': [['n', '<Leader>q']],
+    \ 'on_map': [['n', '<LocalLeader>q']],
 \ })
 
 " Refreshingly sane ``cursorcolumn`` and ``cursorline`` handling
@@ -587,7 +587,7 @@ call dein#add('xolox/vim-misc')
 call dein#add('xolox/vim-notes', {
     \ 'depends': 'vim-misc',
     \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
-    \ 'on_map': [['ov', '<Leader>en']],
+    \ 'on_map': [['ov', '<LocalLeader>en']],
 \ })
 
 " vim-scripts bundles {{{
