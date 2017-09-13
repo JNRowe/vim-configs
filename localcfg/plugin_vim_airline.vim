@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
 let g:airline_theme = 'powerlineish'
+let g:airline_skip_empty_sections = 1
 
 " Requires powerline-symbols
 let g:airline_left_sep = ''
