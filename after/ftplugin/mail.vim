@@ -11,11 +11,5 @@ for s:prio in ['perhaps', 'should', 'must']
     endfor
 endfor
 
-" So called smart quotes. ‘, ’, “, ” respectively
-imap <buffer> <LocalLeader>_` <C-v>u2018
-imap <buffer> <LocalLeader>_' <C-v>u2019
-imap <buffer> <LocalLeader>`` <C-v>u201c
-imap <buffer> <LocalLeader>'' <C-v>u201d
-
 setlocal textwidth=72
 setlocal formatoptions+=2

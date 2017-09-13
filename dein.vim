@@ -390,7 +390,7 @@ call dein#add('nvie/vim_bridge', {
 " Better support for typographic (‘curly’) quote characters
 call dein#add('reedes/vim-textobj-quote', {
     \ 'depends': 'vim-textobj-user',
-    \ 'on_ft': ['rst', 'text'],
+    \ 'on_ft': ['mail', 'rst', 'text'],
 \ })
 
 " Make working with the quickfix list/window smoother
