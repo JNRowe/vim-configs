@@ -129,6 +129,14 @@ function! s:modeline_stub()
 endfunction
 " }}}
 
+" Help related maps {{{
+nnoremap [Help] <Nop>
+nmap <Leader>? [Help]
+
+for s:t in ['pattern', 'quickref', 'registers']
+    execute 'nmap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
+endfor
+
 " Close the help window, wherever that may be {{{
 function! s:close_help()
     for l:w in range(1, winnr('$'))
@@ -139,15 +147,10 @@ function! s:close_help()
         endif
     endfor
 endfunction
-nmap <silent> <Leader>? :call <SID>close_help()<CR>
+nmap <silent> [Help]c :call <SID>close_help()<CR>
 " }}}
 
-nnoremap [Help] <Nop>
-nmap <Leader>h [Help]
-
-for s:t in ['pattern', 'quickref', 'registers']
-    execute 'nmap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
-endfor
+" }}}
 
 " Perform word-ish searches in a new window, so we can maintain position in the
 " current window
