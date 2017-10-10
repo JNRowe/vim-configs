@@ -3,6 +3,7 @@ let g:erlang_highlight_special_atoms = v:true
 let g:is_posix = v:true  " Posix is a more realistic default for me
 let g:nroff_is_groff = v:true  " Default to groff
 let g:sh_fold_enabled = 7  " Fold as much as possible
+let g:sh_no_error = v:true  " Handled by linter
 let g:vimsyn_embed = 'lPr'  " lua/Python/ruby only embedded syntax
 let g:xml_syntax_folding = v:true
 let g:sh_minlines = 400
