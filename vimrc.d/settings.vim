@@ -49,7 +49,6 @@ if has('folding')
 endif
 set formatoptions+=rnl1
 set formatoptions-=wvb
-set gdefault
 if executable('ag')
     set grepprg=ag\ --vimgrep
     set grepformat=%f:%l:%c:%m
