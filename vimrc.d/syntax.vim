@@ -11,6 +11,10 @@ let g:python_highlight_all = v:true  " Highlight everything possible for python
 let g:zsh_fold_enable = v:true
 let g:ft_man_folding_enable = v:true
 let g:ft_man_open_mode = 'vert'
+let g:rust_conceal = v:true
+let g:rust_conceal_mod_path = v:true
+let g:rust_conceal_pub = v:true
+let g:rust_fold = 2
 
 if !exists('g:colors_name')  " Don't reload on write
     colorscheme jnrowe
