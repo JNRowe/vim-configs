@@ -28,6 +28,8 @@ augroup jnrowe
 
     autocmd FileType css,html EmmetInstall
 
+    autocmd FileType rst setlocal complete+=k/usr/share/dict/words
+
     " Attempt filetype detection after writing.
     autocmd BufWritePost *
         \ if empty(&filetype) |
