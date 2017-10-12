@@ -206,12 +206,6 @@ call dein#add('haya14busa/dein-command.vim', {
     \ 'on_cmd': 'Dein',
 \ })
 
-" Incrementally highlights *all* pattern matches
-call dein#add('haya14busa/incsearch.vim', {
-    \ 'hook_post_source': 'call Incsearch_Map()',
-    \ 'on_map': [['n', '/', '?', 'g/']],
-\ })
-
 " All powerful Pythonic task runner
 call dein#add('idanarye/vim-omnipytent', {
     \ 'if': has('python') || has('python3'),

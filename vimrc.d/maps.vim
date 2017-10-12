@@ -81,6 +81,9 @@ function! s:home_skip()
 endfunction
 
 " Function keys {{{
+if has('extra_search')
+    nmap <silent> <F1> :set hlsearch!<CR>
+endif
 nnoremap <silent> <F2> :set list!<CR>
 nmap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
