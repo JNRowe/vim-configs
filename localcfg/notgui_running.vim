@@ -7,8 +7,8 @@ if has('termguicolors') && &t_Co > 256
     set termguicolors
 endif
 
-if $TERM ==# 'linux' || $TERM =~# '^xterm' || $TERM ==# 'st' ||
-    \ $TERM =~# '^st-' || split($COLORFGBG . ';padding', ';')[0] == 15
+if $TERM =~# '^\(linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$' ||
+    \ split($COLORFGBG . ';padding', ';')[0] == 15
     set background=dark
 else
     set background=light
