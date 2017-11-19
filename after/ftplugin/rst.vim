@@ -6,3 +6,5 @@ for [s:key, s:sym] in [['U', '='], ['u', '-'], ['_', "'"]]
     execute 'nnoremap <buffer> <silent> [heading]' . s:key .
         \ ' yyp<C-v>$r' . s:sym . 'i<Esc>'
 endfor
+
+setlocal complete+=s
