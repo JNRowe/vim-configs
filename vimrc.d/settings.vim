@@ -135,7 +135,7 @@ if has('virtualedit')
 endif
 set whichwrap+=<,>,[,]
 if has('wildignore')
-    set wildignore+=*.log,*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
+    set wildignore+=*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
 endif
 set wildmode^=longest
 " }}}
