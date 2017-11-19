@@ -497,6 +497,7 @@ call dein#add('tpope/vim-rhubarb', {
     \ 'depends': 'vim-fugitive',
     \ 'hook_post_source': 'let g:github_password = systemlist("pass github.com")[0]',
     \ 'if': executable('curl') && executable('git'),
+    \ 'on_cmd': 'Gbrowse',
     \ 'on_ft': 'gitcommit',
     \ 'on_map': [['i', '<C-x><C-o>']],
 \ })
