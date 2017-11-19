@@ -413,11 +413,6 @@ call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
 \ })
 
-" Easily work with shell commands
-call dein#add('sjl/clam.vim', {
-    \ 'on_cmd': ['Clam', 'ClamVisual'],
-\ })
-
 " Graph your undo tree
 call dein#add('sjl/gundo.vim', {
     \ 'on_cmd': 'GundoToggle',
