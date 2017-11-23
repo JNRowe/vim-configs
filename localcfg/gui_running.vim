@@ -14,8 +14,8 @@ set number
 set relativenumber
 
 " Shift insert works the same as in a terminal
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
+noremap <S-Insert> <MiddleMouse>
+noremap! <S-Insert> <MiddleMouse>
 
 let s:font_family='Consolas'
 let &guifont=s:font_family . ' 13'
@@ -28,10 +28,10 @@ endif
 inoremap <C-Space> <C-x><C-o>
 
 if has('menu')
-    nmap <silent> <S-F4> :call ToggleFlag('guioptions', 'm')<CR>
+    nnoremap <silent> <S-F4> :call ToggleFlag('guioptions', 'm')<CR>
 endif
 if has('toolbar')
-    nmap <silent> <C-F4> :call ToggleFlag('guioptions', 'T')<CR>
+    nnoremap <silent> <C-F4> :call ToggleFlag('guioptions', 'T')<CR>
 endif
 
 function! s:font_complete(arglead, cmdline, cursorpos)
