@@ -1,2 +1,2 @@
-nmap <buffer> <Return> <C-]>
-nmap <buffer> <Backspace> <C-T>
+nnoremap <buffer> <CR> <C-]>
+nnoremap <buffer> <BS> <C-T>

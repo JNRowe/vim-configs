@@ -35,5 +35,5 @@ for s:t in ['l', 'c']
     endfor
 endfor
 
-nmap <M-Down> :cnext<CR>
-nmap <M-Up> :cprevious<CR>
+nnoremap <M-Down> :cnext<CR>
+nnoremap <M-Up> :cprevious<CR>

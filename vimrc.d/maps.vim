@@ -1,26 +1,26 @@
 " Quickly move between buffers {{{
-map <M-Left> :bprev<CR>
-map <M-Right> :bnext<CR>
+noremap <M-Left> :bprev<CR>
+noremap <M-Right> :bnext<CR>
 " }}}
 
 " I hate you *so* much Right now {{{
 if exists('$VIM_DISABLE_CURSORS')
-    noremap <Up> <nop>
+    nnoremap <Up> <nop>
     inoremap <Up> <nop>
 
-    noremap <down> <nop>
+    nnoremap <down> <nop>
     inoremap <down> <nop>
 
-    noremap <Left> <nop>
-    noremap <Right> <nop>
+    nnoremap <Left> <nop>
+    nnoremap <Right> <nop>
     inoremap <Left> <nop>
     inoremap <Right> <nop>
 endif
 " }}}
 
 " Navigate tags with keys I find less annoying {{{
-map <C-S-Left> <C-T>
-map <C-S-Right> <C-]>
+noremap <C-S-Left> <C-T>
+noremap <C-S-Right> <C-]>
 " }}}
 
 " Ctrl + up/down to skip paragraphs {{{
@@ -31,15 +31,15 @@ nnoremap <C-Down> }
 " Remove nasty page skipping mappings {{{
 inoremap <S-Up> <C-o>gk
 inoremap <S-Down> <C-o>gj
-noremap <S-Up> gk
-noremap <S-Down> gj
+nnoremap <S-Up> gk
+nnoremap <S-Down> gj
 " }}}
 
 " Make C-g verbose by default
 nnoremap <C-g> 2<C-g>
 
 " Map Q to reformat paragraphs
-nmap Q gqap
+nnoremap Q gqap
 
 " Wrap current word in brackets {{{
 nmap ,( mpwbi(<Esc>ea)<Esc>`pl
@@ -55,7 +55,7 @@ nnoremap <S-Down> Vj
 " }}}
 
 " Logical Y mapping, like D
-map Y y$
+nnoremap Y y$
 
 " Insert literal tab, for that once a year when it makes sense
 inoremap <silent> <S-Tab> <C-v><Tab>
@@ -85,22 +85,22 @@ if has('extra_search')
     nmap <silent> <F1> :set hlsearch!<CR>
 endif
 nnoremap <silent> <F2> :set list!<CR>
-nmap <silent> <F3> :set expandtab!<CR>
+nnoremap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
 " <[SC]-F4> toggles menu/toolbar in gvim
 " F5 is VimFiler
-nmap <F10> :make check<CR>
-nmap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
-nmap <F11> :make<CR>
-nmap <S-F11> :execute 'make -C ' . expand('%:p:h')<CR>
-nmap <silent> <C-F11> :let @/ = ''<CR>
+nnoremap <F10> :make check<CR>
+nnoremap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
+nnoremap <F11> :make<CR>
+nnoremap <S-F11> :execute 'make -C ' . expand('%:p:h')<CR>
+nnoremap <silent> <C-F11> :let @/ = ''<CR>
 
 " Window management {{{
-nmap <C-w><Bar> <C-w>v
-nmap <C-w>- <C-w>s
-nmap <Tab> <C-w>p
+nnoremap <C-w><Bar> <C-w>v
+nnoremap <C-w>- <C-w>s
+nnoremap <Tab> <C-w>p
 if has('quickfix')
-    nmap <S-Tab> <C-w>P
+    nnoremap <S-Tab> <C-w>P
 endif
 " }}}
 
@@ -108,17 +108,17 @@ endif
 " The following mappings may not be to your liking, but I never use +/- for
 " line movement.
 if has('folding')
-    nmap - zc
-    nmap + zo
+    nnoremap - zc
+    nnoremap + zo
 
-    vmap - zf
+    vnoremap - zf
 endif
 " }}}
 
 " From godlygeek's vimrc {{{
 "
 " Insert a modeline on the last line with <Leader>ml
-nmap <silent> <Leader>ml :call <SID>modeline_stub()<CR>
+nnoremap <silent> <Leader>ml :call <SID>modeline_stub()<CR>
 
 function! s:modeline_stub()
     let s:save_cursor = getcurpos()
@@ -137,7 +137,7 @@ nnoremap [Help] <Nop>
 nmap <Leader>? [Help]
 
 for s:t in ['pattern', 'quickref', 'registers']
-    execute 'nmap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
+    execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
 endfor
 
 " Close the help window, wherever that may be {{{
@@ -150,7 +150,7 @@ function! s:close_help()
         endif
     endfor
 endfunction
-nmap <silent> [Help]c :call <SID>close_help()<CR>
+nnoremap <silent> [Help]c :call <SID>close_help()<CR>
 " }}}
 
 " }}}
@@ -158,11 +158,11 @@ nmap <silent> [Help]c :call <SID>close_help()<CR>
 " Perform word-ish searches in a new window, so we can maintain position in the
 " current window
 for s:k in ['*', '#']
-    execute 'nmap <C-w>' . s:k  . ' <C-w>s' . s:k
-    execute 'nmap <C-w>g' . s:k  . ' <C-w>sg' . s:k
+    execute 'nnoremap <C-w>' . s:k  . ' <C-w>s' . s:k
+    execute 'nnoremap <C-w>g' . s:k  . ' <C-w>sg' . s:k
 endfor
 
-cmap <C-h> help<Space>  " I don't use vi movement keys in command-line mode
-cmap <C-S-h> vert help<Space>
+cnoremap <C-h> help<Space>  " I don't use vi movement keys in command-line mode
+cnoremap <C-S-h> vert help<Space>
 
 " vim: fdm=marker:
