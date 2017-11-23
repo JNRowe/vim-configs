@@ -40,7 +40,7 @@ let g:airline_extensions = [
 
 if has('quickfix')
     let g:airline_extensions += ['ale', 'quickfix']
-end
+endif
 if executable('git')
     let g:airline_extensions += ['branch', 'hunks']
     let g:airline#extensions#branch#format = 2

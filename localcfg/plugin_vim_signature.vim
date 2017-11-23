@@ -13,7 +13,7 @@ for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning', '#': 'error'})
     else
         let s:icon = s:v
         let s:hl = toupper(s:v[0]) . s:v[1:] . 'MSG'
-    end
+    endif
     unlet s:v
     " This is brittle *and* dirty, but there isn't much way around it.
     " See 47ceaf9cbd970450953bdf3e84e281473a579ac0
