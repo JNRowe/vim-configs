@@ -384,6 +384,7 @@ call dein#add('nvie/vim_bridge', {
 " Better support for typographic (‘curly’) quote characters
 call dein#add('reedes/vim-textobj-quote', {
     \ 'depends': 'vim-textobj-user',
+    \ 'on_cmd': 'ToggleEducate',
     \ 'on_ft': ['mail', 'rst', 'text'],
 \ })
 
