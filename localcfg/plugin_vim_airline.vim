@@ -3,26 +3,31 @@ scriptencoding utf-8
 let g:airline_theme = 'powerlineish'
 let g:airline_skip_empty_sections = 1
 
-" Requires powerline-symbols
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+if has('gui_running')
+    " Requires powerline-symbols
+    " let g:airline_left_sep = ''
+    " let g:airline_right_sep = ''
+    let g:airline_powerline_fonts = 1
 
-" Requires Font Awesome in places
-" Note: I have FA resolve locally as webfonts are disabled in my browsers,
-" if you don't have a similar setup then the following won't work.
-let g:airline_symbols = {
-    \ 'branch': '',
-    \ 'crypt': '',
-    \ 'linenr': '⏎',
-    \ 'maxlinenr': '☰',
-    \ 'modified': '➕',
-    \ 'notexists': '∉',
-    \ 'paste': ' ',
-    \ 'readonly': '',
-    \ 'space': ' ',
-    \ 'spell': '',
-    \ 'whitespace': '·',
-\ }
+    " Requires Font Awesome in places
+    " Note: I have FA resolve locally as webfonts are disabled in my browsers,
+    " if you don't have a similar setup then the following won't work.
+    let g:airline_symbols = {
+        \ 'branch': '',
+        \ 'crypt': '',
+        \ 'linenr': '⏎',
+        \ 'maxlinenr': '☰',
+        \ 'modified': '➕',
+        \ 'notexists': '∉',
+        \ 'paste': ' ',
+        \ 'readonly': '',
+        \ 'space': ' ',
+        \ 'spell': '',
+        \ 'whitespace': '·',
+    \ }
+else
+    let g:airline_symbols_ascii = 1
+endif
 
 let g:airline#extensions#disable_rtp_load = v:true
 let g:airline_extensions = [
@@ -39,7 +44,9 @@ end
 if executable('git')
     let g:airline_extensions += ['branch', 'hunks']
     let g:airline#extensions#branch#format = 2
-    let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
+    if has('gui_running')
+        let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
+    endif
     let g:airline#extensions#hunks#non_zero_only = v:true
 endif
 
