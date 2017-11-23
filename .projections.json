@@ -6,7 +6,10 @@
     "localcfg/*.vim": {
         "type": "lconfig"
     },
-    "README.rst": {"type": "doc"},
+    "*.rst": {
+        "alternate": "{}.html",
+        "type": "doc"
+    },
     "dein.vim": {"type": "dein"},
     "vimrc": {"type": "rc"},
     "vimrc.d/*.vim": {
