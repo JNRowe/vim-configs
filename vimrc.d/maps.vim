@@ -82,7 +82,6 @@ nnoremap <silent> <F2> :set list!<CR>
 nnoremap <silent> <F3> :set expandtab!<CR>
 " F4 toggles paste
 " <[SC]-F4> toggles menu/toolbar in gvim
-" F5 is VimFiler
 nnoremap <F10> :make check<CR>
 nnoremap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
 nnoremap <F11> :make<CR>
