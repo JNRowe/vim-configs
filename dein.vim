@@ -48,7 +48,7 @@ call dein#add('Shougo/denite.nvim', {
 call dein#add('Shougo/neosnippet', {
     \ 'depends': ['context_filetype.vim', 'neosnippet-snippets'],
     \ 'hook_post_source': 'call Neosnippet_Map()',
-    \ 'on_ft': 'snippet',
+    \ 'on_ft': 'neosnippet',
     \ 'on_map': [['iv', '<C-k>']],
     \ 'if': v:version >= 704,
 \ })
