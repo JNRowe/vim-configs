@@ -14,5 +14,6 @@ function! s:diff_maps()
 endfunction
 
 augroup jnrowe_diff
+    autocmd!
     autocmd BufEnter * if &diff | call s:diff_maps() | endif
 augroup END
