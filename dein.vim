@@ -531,6 +531,9 @@ call dein#add('tpope/vim-surround', {
     \ ],
 \ })
 
+" Pairs of handy mappings
+call dein#add('tpope/vim-unimpaired')
+
 " 1ms could mean the difference between life and death
 call dein#add('tweekmonster/startuptime.vim', {
     \ 'on_cmd': 'StartupTime',
