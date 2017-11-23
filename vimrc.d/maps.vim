@@ -41,12 +41,6 @@ nnoremap <C-g> 2<C-g>
 " Map Q to reformat paragraphs
 nnoremap Q gqap
 
-" Wrap current word in brackets {{{
-nmap ,( mpwbi(<Esc>ea)<Esc>`pl
-nmap ,[ mpwbi[<Esc>ea]<Esc>`pl
-nmap ,{ mpwbi{<Esc>ea}<Esc>`pl
-" }}}
-
 " Shift + left/right to select text {{{
 nnoremap <S-Left> vh
 nnoremap <S-Right> vl
