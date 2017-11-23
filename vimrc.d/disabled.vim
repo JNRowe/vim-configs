@@ -1,4 +1,5 @@
 " Don't load unhelpful default plugins
+let g:loaded_2html_plugin = v:true
 let g:loaded_tarPlugin = v:true
 let g:loaded_zipPlugin = v:true
 let g:loaded_rrhelper = v:true
