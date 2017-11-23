@@ -8,3 +8,4 @@ let g:loaded_getscriptPlugin = v:true
 let g:loaded_netrw = v:true
 let g:loaded_netrwPlugin = v:true
 let g:loaded_logipat = v:true
+let g:loaded_spellfile_plugin = v:true
