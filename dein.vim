@@ -325,11 +325,6 @@ call dein#add('mattn/emmet-vim', {
     \ 'if': v:version >= 700,
 \ })
 
-" Move lines and selections up and even down
-call dein#add('matze/vim-move', {
-    \ 'on_map': [['nx', '<A-j>', '<A-k>']],
-\ })
-
 " Display your undo history in a graph
 call dein#add('mbbill/undotree', {
     \ 'if': v:version >= 700,
