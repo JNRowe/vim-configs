@@ -8,7 +8,7 @@ It uses features introduced in version 8.0, but should work with later
 versions.  It will *not* work with neovim_, and that is unlikely to change in
 the near future.
 
-If you want a rambling back story, see ``background.rst`` in this repository.
+If you want a rambling backstory, see ``background.rst`` in this repository.
 
 If you find any problems with the files in this repository either file an
 issue_, or drop me an email_.  However, please do not report problems when
