@@ -75,7 +75,7 @@ me, and I even jumped through a few hoops to have them pony up for a few mildly
 interesting plugins.
 
 So why do I play with it?  Simple, occasionally people show me some cool thing
-it can do and I want to play to.  Also, because for the past two years there
+it can do and I want to play too.  Also, because for the past two years there
 has been a constant promise of an Open Source clone floating around.
 
 I'm not sure if a Open Source clone would be enough for me to switch, but
