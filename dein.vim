@@ -537,6 +537,7 @@ call dein#add('tweekmonster/startuptime.vim', {
 " Lean & mean status/tabline for vim that's light as air
 call dein#add('vim-airline/vim-airline', {
     \ 'depends': [
+    \   'denite.nvim',
     \   'vim-airline-themes',
     \   'vim-signify',
     \   'vim-fugitive',
