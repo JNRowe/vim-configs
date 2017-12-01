@@ -178,11 +178,6 @@ call dein#add('ervandew/regex', {
     \ 'on_cmd': 'Regex',
 \ })
 
-" Enhanced Markdown support
-call dein#add('gabrielelana/vim-markdown', {
-    \ 'on_ft': 'markdown',
-\ })
-
 " Show cyclomatic complexity of Python code
 call dein#add('garybernhardt/pycomplexity', {
     \ 'if': has('signs') && has('python'),
