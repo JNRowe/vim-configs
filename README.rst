@@ -18,16 +18,14 @@ Installation
 ------------
 
 Do not blindly install this repository!!  It’ll likely break your current set
-up and *may* even eat your dog.
+up and *may* even eat your dog.  That being said if your dog doesn’t mean that
+much to you:
 
-That being said if your dog doesn’t mean that much to you:
+.. code-block:: console
 
-.. code-block:: shell
-
-    git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
-    cd ~/.vim
-    # Rebuild generated language and documentation tag files
-    gup -u
+    $ git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
+    $ cd !$
+    $ gup -u  # Rebuild generated language and documentation tag files
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are: to just run with it, override it with your own ``~/.vimrc`` or
