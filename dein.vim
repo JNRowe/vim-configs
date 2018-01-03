@@ -1,6 +1,8 @@
 " vim: set isfname-=/:
 " Above modeline is so that ':Exconfig <C-r><C-f>' works
 
+scriptencoding utf-8
+
 " Note: I record requirements even when they're clearly met because I like to
 " know what /may/ break if I make changes.  For example, version checks for
 " cases where dein wouldn't work anyway or using "has('patch-x.x.x')" for
