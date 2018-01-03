@@ -531,6 +531,7 @@ call dein#add('tpope/vim-sleuth', {
 " Increment dates, times, and more
 call dein#add('tpope/vim-speeddating', {
     \ 'depends': 'vim-repeat',
+    \ 'on_map': ['n', '<C-a>', '<C-x>'],
 \ })
 
 " Plugin for deleting, changing, and adding “surroundings”
