@@ -392,6 +392,11 @@ call dein#add('nvie/vim_bridge', {
     \ 'on_cmd': 'python',
 \ })
 
+" HTML5 + inline SVG omnicomplete function, indent and syntax
+call dein#add('othree/html5.vim', {
+    \ 'on_ft': 'html',
+\ })
+
 " Better support for typographic (‘curly’) quote characters
 call dein#add('reedes/vim-textobj-quote', {
     \ 'depends': 'vim-textobj-user',
@@ -413,11 +418,6 @@ call dein#add('romainl/vim-qlist', {
     \ 'if': has('quickfix'),
     \ 'on_cmd': ['Dlist', 'Ilist'],
     \ 'on_map': [['n', '[D', ']D', 'I', ']I']],
-\ })
-
-" HTML5 + inline SVG omnicomplete function, indent and syntax
-call dein#add('othree/html5.vim', {
-    \ 'on_ft': 'html',
 \ })
 
 " More pleasant editing on commit message
