@@ -260,6 +260,7 @@ call dein#add('jceb/vim-orgmode', {
 
 " Ease your git workflow
 call dein#add('jreybert/vimagit', {
+    \ 'hook_post_source': 'let g:airline_extensions += ["vimagit"]',
     \ 'if': executable('git'),
     \ 'on_cmd': 'Magit',
 \ })
