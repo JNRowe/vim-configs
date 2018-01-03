@@ -319,7 +319,9 @@ call dein#add('leafo/moonscript-vim', {
 \ })
 
 " Language support for ledger
-call dein#add('ledger/vim-ledger')
+call dein#add('ledger/vim-ledger', {
+    \ 'on_ft': 'ledger',
+\ })
 
 " Help for customising based on features
 call dein#add('magus/localcfg')
