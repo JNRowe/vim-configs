@@ -175,7 +175,9 @@ call dein#add('elazar/visSum.vim', {
 \ })
 
 " An implementation of the PlainTasks format
-call dein#add('elentok/plaintasks.vim')
+call dein#add('elentok/plaintasks.vim', {
+    \ 'on_ft': 'plaintasks',
+\ })
 
 " Allows you to test regular expressions
 call dein#add('ervandew/regex', {
