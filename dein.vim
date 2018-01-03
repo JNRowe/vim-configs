@@ -594,7 +594,11 @@ call dein#add('w0rp/ale', {
 \ })
 
 " Miscellaneous auto-load Vim scripts
-call dein#add('xolox/vim-misc')
+" Note: Lazy loaded for rdeps hooks
+call dein#add('xolox/vim-misc', {
+    \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
+    \ 'on_map': [['ov', '<LocalLeader>en']],
+\ })
 
 " Easy note taking in Vim
 call dein#add('xolox/vim-notes', {
