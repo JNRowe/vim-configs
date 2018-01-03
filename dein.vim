@@ -645,7 +645,9 @@ call dein#add('vim-scripts/uri-ref', {
 " }}}
 
 " Vimscript parser
+" Note: Lazy loaded for rdeps hooks
 call dein#add('ynkdir/vim-vimlparser', {
+    \ 'on_cmd': 'VimLint',
     \ 'on_ft': 'vim',
 \ })
 
