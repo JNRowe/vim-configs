@@ -58,7 +58,11 @@ call dein#add('Shougo/neosnippet', {
 \ })
 
 " The standard snippets repository for neosnippet
-call dein#add('Shougo/neosnippet-snippets')
+" Note: Lazy loaded for rdeps hooks
+call dein#add('Shougo/neosnippet-snippets', {
+    \ 'on_map': [['iv', '<C-k>']],
+    \ 'if': v:version >= 704,
+\ })
 
 " Asynchronous execution plugin
 call dein#add('Shougo/vimproc', {
