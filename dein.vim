@@ -37,7 +37,11 @@ call dein#add('Raimondi/delimitMate', {
 \ })
 
 " Context sensitive filetypes
-call dein#add('Shougo/context_filetype.vim')
+" Note: Lazy loaded for rdeps hooks
+call dein#add('Shougo/context_filetype.vim', {
+    \ 'on_map': [['iv', '<C-k>']],
+    \ 'if': v:version >= 704,
+\ })
 
 " A dark powered plugin for Neovim/Vim to unite all interfaces
 call dein#add('Shougo/denite.nvim', {
