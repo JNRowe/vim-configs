@@ -569,7 +569,9 @@ call dein#add('vim-airline/vim-airline-themes')
 call dein#add('vim-utils/vim-husk')
 
 " “inner line” text object
-call dein#add('vim-utils/vim-line')
+call dein#add('vim-utils/vim-line', {
+    \ 'on_map': [['ov', '_']],
+\ })
 
 " Enhanced man support
 call dein#add('vim-utils/vim-man', {
