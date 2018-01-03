@@ -431,7 +431,7 @@ call dein#add('sjl/gundo.vim', {
     \ 'on_cmd': 'GundoToggle',
 \ })
 
-"Plugin for resolving conflicts during three-way merges
+" Plugin for resolving conflicts during three-way merges
 call dein#add('sjl/splice.vim', {
     \ 'on_cmd': 'SpliceInit',
 \ })
