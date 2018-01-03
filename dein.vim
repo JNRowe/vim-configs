@@ -65,8 +65,11 @@ call dein#add('Shougo/neosnippet-snippets', {
 \ })
 
 " Asynchronous execution plugin
+" Note: Lazy loaded for rdeps hooks
 call dein#add('Shougo/vimproc', {
     \ 'build': 'make',
+    \ 'on_cmd': ['VBGstartGBB', 'VBGstartLLDB', 'VBGstartPDB3'],
+    \ 'on_func': 'vebugger',
 \ })
 
 " Super simple, super minimal, super light-weight tab-completion
