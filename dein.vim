@@ -314,7 +314,9 @@ call dein#add('kshenoy/vim-signature', {
 \ })
 
 " Language support for moonscript
-call dein#add('leafo/moonscript-vim')
+call dein#add('leafo/moonscript-vim', {
+    \ 'on_ft': 'moon',
+\ })
 
 " Language support for ledger
 call dein#add('ledger/vim-ledger')
