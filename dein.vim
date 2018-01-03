@@ -357,7 +357,10 @@ call dein#add('michaeljsmith/vim-indent-object', {
 \ })
 
 " Order buffers in Most Recently Used order
-call dein#add('mildred/vim-bufmru')
+call dein#add('mildred/vim-bufmru', {
+    \ 'on_cmd': 'BufMRU',
+    \ 'on_map': [['n', '[bufmru]']],
+\ })
 
 " Run your favorite search tool from Vim, with an enhanced results list
 call dein#add('mileszs/ack.vim', {
