@@ -360,7 +360,7 @@ call dein#add('mhinz/vim-startify')
 
 " Text objects based on indent levels
 call dein#add('michaeljsmith/vim-indent-object', {
-    \ 'on_ft': ['ledger', 'moon', 'python'],
+    \ 'on_ft': ['ledger', 'moon', 'nim', 'python'],
     \ 'on_map': [['ov', 'aI', 'ai', 'iI', 'ii']],
 \ })
 
