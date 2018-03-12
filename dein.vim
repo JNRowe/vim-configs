@@ -251,7 +251,7 @@ call dein#add('itchyny/vim-parenmatch')
 
 " Transparent editing of gpg encrypted files
 call dein#add('jamessan/vim-gnupg', {
-    \ 'if': executable('gpg'),
+    \ 'if': executable('gpg') || executable('gpg2'),
 \ })
 
 " Edit and store quickfix/location list entries
