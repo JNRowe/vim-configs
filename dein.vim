@@ -229,7 +229,7 @@ call dein#add('idanarye/vim-omnipytent', {
 " Yet another debugger frontend plugin
 call dein#add('idanarye/vim-vebugger', {
     \ 'depends': 'vimproc',
-    \ 'on_cmd': ['VBGstartGBB', 'VBGstartLLDB', 'VBGstartPDB3'],
+    \ 'on_cmd': ['VBGstartGDB', 'VBGstartLLDB', 'VBGstartPDB3'],
     \ 'on_func': 'vebugger',
 \ })
 
