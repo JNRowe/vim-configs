@@ -90,6 +90,10 @@ call dein#add('bitc/vim-bad-whitespace', {
 \ })
 
 " Colour colournames and codes
+" Note: The filetype hooks are *my* hooks.  I often want highlighting in vim
+" files because I’m always editing my colourscheme, but I don’t need it for
+" C in general because it is relatively uncommon for my C file to actually be
+" dwm’s config.h.
 call dein#add('chrisbra/Colorizer', {
     \ 'on_cmd': ['ColorHighlight', 'ColorToggle', 'RGB2Term'],
     \ 'on_ft': ['css', 'less', 'moon', 'python', 'vim', 'xdefaults'],
