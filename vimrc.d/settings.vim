@@ -5,6 +5,7 @@ set autochdir
 set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
+set backupskip+=*.mht
 if has('balloon_eval')
     set ballooneval
 endif
