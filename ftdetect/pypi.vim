@@ -1,3 +1,3 @@
 augroup jnrowe_ftdetect
-    autocmd BufNewFile,BufRead ~/.pypirc setlocal filetype=dosini
+    autocmd BufNewFile,BufRead ~/.pypirc setfiletype FALLBACK dosini
 augroup END

@@ -1,3 +1,3 @@
 augroup jnrowe_ftdetect
-    autocmd BufRead,BufNewFile .editorconfig setlocal filetype=dosini
+    autocmd BufRead,BufNewFile .editorconfig setfiletype dosini
 augroup END

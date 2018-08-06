@@ -1,3 +1,3 @@
 augroup jnrowe_ftdetect
-    autocmd BufRead,BufNewFile **/.mutt/*.rc setlocal filetype=muttrc
+    autocmd BufRead,BufNewFile **/.config/neomutt/*.rc setfiletype neomuttrc
 augroup END
