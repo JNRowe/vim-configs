@@ -1,3 +1,3 @@
 augroup jnrowe_ftdetect
-    autocmd BufRead,BufNewFile ~/.reminders.d/* setlocal filetype=remind
+    autocmd BufRead,BufNewFile ~/.reminders.d/* setfiletype remind
 augroup END
