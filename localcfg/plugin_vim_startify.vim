@@ -19,12 +19,13 @@ let g:startify_fortune_use_unicode = v:true
 " Requires Font Awesome in places
 " Note: I have FA resolve locally as webfonts are disabled in my browsers,
 " if you don't have a similar setup then the following won't work.
-let g:startify_list_order = [
-    \ [''], 'files',
-    \ [''], 'dir',
-    \ [''], 'sessions',
-    \ [''], 'commands',
-    \ [''], 'bookmarks',
+" FIXME: Look at the commits example
+let g:startify_lists = [
+    \ {'type': 'files', 'header': ['']},
+    \ {'type': 'dir', 'header': ['']},
+    \ {'type': 'sessions', 'header': ['']},
+    \ {'type': 'commands', 'header': ['']},
+    \ {'type': 'bookmarks', 'header': ['']},
 \ ]
 let g:startify_relative_path = v:true
 let g:startify_session_autoload = v:true
