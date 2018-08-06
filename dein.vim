@@ -385,7 +385,7 @@ call dein#add('mitsuhiko/vim-jinja', {
 
 " delete buffers without breaking your layout
 call dein#add('moll/vim-bbye', {
-    \ 'on_cmd': 'Bdelete',
+    \ 'on_cmd': ['Bdelete', 'Bwipeout'],
     \ 'on_map': [['n', '<LocalLeader>q']],
 \ })
 
