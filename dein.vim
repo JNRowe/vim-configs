@@ -169,9 +169,6 @@ call dein#add('dkarter/bullets.vim', {
     \ 'on_ft': ['gitcommit', 'rst'],
 \ })
 
-" Better rainbow parentheses
-call dein#add('eapache/rainbow_parentheses.vim')
-
 " The EditorConfig plugin
 call dein#add('editorconfig/editorconfig-vim', {
     \ 'if': has('python'),
@@ -330,6 +327,9 @@ call dein#add('leafo/moonscript-vim', {
 call dein#add('ledger/vim-ledger', {
     \ 'on_ft': 'ledger',
 \ })
+
+" Help read complex code by showing parentheses in different colours
+call dein#add('luochen1990/rainbow')
 
 " Help for customising based on features
 call dein#add('magus/localcfg')
