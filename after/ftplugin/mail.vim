@@ -12,5 +12,5 @@ for s:prio in ['perhaps', 'should', 'must']
 endfor
 
 setlocal complete+=s
+setlocal formatoptions+=2a
 setlocal textwidth=72
-setlocal formatoptions+=2
