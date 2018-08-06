@@ -16,7 +16,7 @@ call denite#custom#option('_', {
 call denite#custom#var('buffer', 'date_format', '%FT%T')
 
 if executable('ag')
-    call denite#custom#var('file_rec', 'command',
+    call denite#custom#var('file/rec', 'command',
         \ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
     call denite#custom#var('grep', 'command', ['ag'])
     call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
@@ -51,8 +51,8 @@ for s:k in [
     \   ['x',       'command'],
     \   ['h',       'command_history'],
     \   'file',
-    \   ['o',       'file_old'],
-    \   ['R',       'file_rec'],
+    \   ['o',       'file/old'],
+    \   ['R',       'file/rec'],
     \   ['C',       'filetype'],
     \   ['/',       'grep'],
     \   ['t',       'grep:::\(TODO\\|FIXME\)', 'task'],
@@ -68,8 +68,8 @@ for s:k in [
 endfor
 
 if executable('git')
-    call denite#custom#alias('source', 'file_rec/git', 'file_rec')
-    call denite#custom#var('file_rec/git', 'command',
+    call denite#custom#alias('source', 'file/rec/git', 'file/rec')
+    call denite#custom#var('file/rec/git', 'command',
         \ ['git', 'ls-files', '-co', '--exclude-standard'])
-    call s:denite_key(['g', 'file_rec/git'])
+    call s:denite_key(['g', 'file/rec/git'])
 endif
