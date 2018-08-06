@@ -11,7 +11,9 @@ scriptencoding utf-8
 let g:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
 " A dark powered Vim/Neovim plugin manager
-call dein#add(expand('~/.vim/external/dein.vim'))
+call dein#add(expand('~/.vim/external/dein.vim'), {
+    \ 'if': v:version >= 800,
+\ })
 
 " Move an item in a delimiter-separated list left or right
 call dein#add('AndrewRadev/sideways.vim', {
