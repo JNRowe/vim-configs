@@ -38,8 +38,11 @@ let g:airline_extensions = [
     \ 'wordcount',
 \ ]
 
+if v:version >= 800 && has('signs')
+    let g:airline_extensions += ['ale']
+endif
 if has('quickfix')
-    let g:airline_extensions += ['ale', 'quickfix']
+    let g:airline_extensions += ['quickfix']
 endif
 if executable('git')
     let g:airline_extensions += ['branch', 'hunks']
