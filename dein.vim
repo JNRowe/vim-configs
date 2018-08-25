@@ -213,7 +213,7 @@ call dein#add('godlygeek/tabular', {
     \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
 \ })
 
-" All 256 xterm colors with their RGB equivalents
+" All 256 xterm colours with their RGB equivalents
 call dein#add('guns/xterm-color-table.vim', {
     \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
 \ })
@@ -387,7 +387,7 @@ call dein#add('mitsuhiko/vim-jinja', {
     \ 'on_ft': 'jinja',
 \ })
 
-" delete buffers without breaking your layout
+" Delete buffers without breaking your layout
 call dein#add('moll/vim-bbye', {
     \ 'on_cmd': ['Bdelete', 'Bwipeout'],
     \ 'on_map': [['n', '<LocalLeader>q']],
