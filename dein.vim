@@ -182,6 +182,7 @@ call dein#add('editorconfig/editorconfig-vim', {
 " Cute conceal support for Python
 call dein#add('ehamberg/vim-cute-python', {
     \ 'if': has('conceal') && v:version >= 703,
+    \ 'on_ft': 'python',
     \ 'rev': 'moresymbols',
 \ })
 
