@@ -19,6 +19,6 @@ ia WIBNI wouldn't it be nice if
 ia YMMV your mileage may vary
 
 " Date
-ia _t  <C-R>=strftime('%T')<CR>
-ia _d  <C-R>=strftime('%F')<CR>
-ia _dt <C-R>=strftime('%FT%T%z')<CR>
+iabbrev <expr> _t  strftime('%T')
+iabbrev <expr> _d  strftime('%F')
+iabbrev <expr> _dt strftime('%FT%T%z')
