@@ -8,6 +8,10 @@ scriptencoding utf-8
 " cases where dein wouldn't work anyway or using "has('patch-x.x.x')" for
 " versions prior to 7.4.237.
 
+" Note: In places where I could use a prefix, in sideways.vim's on_cmd for
+" example, I'll often not do so because I prefer to have tab completion
+" available for the commands that I use from the outset.
+
 let g:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
 " A dark powered Vim/Neovim plugin manager
