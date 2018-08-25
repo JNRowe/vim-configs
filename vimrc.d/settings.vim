@@ -89,7 +89,7 @@ if has('pythonx') && has('python3')
     set pyxversion=3
 endif
 set report=0
-set scrolloff=10
+set scrolloff=100
 if has('filterpipe')
     set noshelltemp
 endif
