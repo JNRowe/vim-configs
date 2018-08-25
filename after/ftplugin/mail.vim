@@ -13,4 +13,9 @@ endfor
 
 setlocal complete+=s
 setlocal formatoptions+=2a
+if executable('par-format')
+    setlocal formatprg=par-format\ -w72eq
+elseif executable('par')
+    setlocal formatprg=par\ -w72eq
+endif
 setlocal textwidth=72
