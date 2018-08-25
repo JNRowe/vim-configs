@@ -400,6 +400,11 @@ call dein#add('mtth/cursorcross.vim')
 " A plugin for visually displaying indent levels
 call dein#add('nathanaelkane/vim-indent-guides')
 
+" Filetype plugin for beancount files
+call dein#add('nathangrigg/vim-beancount', {
+    \ 'on_ft': 'beancount',
+\ })
+
 " Allow transparent calls to Python functions in native Vim scripts
 call dein#add('nvie/vim_bridge', {
     \ 'on_cmd': 'python',
