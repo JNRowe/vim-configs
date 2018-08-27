@@ -4,6 +4,8 @@ noremap <M-Right> :bnext<CR>
 " }}}
 
 " I hate you *so* much Right now {{{
+" I’ll add that this isn’t about hjkl, I’m truly not interested in that
+" argument.  This is entirely about forcing me to use text objects more often.
 if exists('$VIM_DISABLE_CURSORS')
     nnoremap <Up> <nop>
     inoremap <Up> <nop>
