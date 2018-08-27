@@ -1,6 +1,19 @@
 {
-    "ftdetect/*.vim": {"type": "fconfig"},
+    "ftdetect/*.vim": {
+        "template": [
+            "augroup jnrowe_ftdetect",
+            "    autocmd BufRead,BufNewFile FIXME setfiletype FALLBACK FIXME",
+            "augroup END"
+        ],
+        "type": "fconfig"
+    },
     "localcfg/plugin_*.vim": {
+        "template": [
+            "scriptencoding utf-8",
+            "",
+            "nnoremap [{capitalize}] <Nop>",
+            "nmap <LocalLeader>FIXME [{capitalize}]"
+        ],
         "type": "xconfig"
     },
     "localcfg/*.vim": {
@@ -13,6 +26,10 @@
     "dein.vim": {"type": "dein"},
     "vimrc": {"type": "rc"},
     "vimrc.d/*.vim": {
+        "template": [
+            "",
+            " vim: fdm=marker:"
+        ],
         "type": "rconfig"
     }
 }
