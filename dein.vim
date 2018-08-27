@@ -80,6 +80,11 @@ call dein#add('Shougo/vimproc', {
     \ 'on_func': 'vebugger',
 \ })
 
+" Show git diff status in the gutter
+call dein#add('airblade/vim-gitgutter', {
+    \ 'if': has('signs') && executable('git'),
+\ })
+
 " Super simple, super minimal, super light-weight tab-completion
 call dein#add('ajh17/VimCompletesMe', {
     \ 'on_map': [['i', '<Tab>']],
@@ -355,11 +360,6 @@ call dein#add('mattn/emmet-vim', {
 call dein#add('mbbill/undotree', {
     \ 'if': v:version >= 700,
     \ 'on_cmd': 'UndotreeToggle',
-\ })
-
-" Use signs to indicate VCS state
-call dein#add('mhinz/vim-signify', {
-    \ 'if': has('signs') && (executable('git') || executable('hg')),
 \ })
 
 " The fancy start screen.
