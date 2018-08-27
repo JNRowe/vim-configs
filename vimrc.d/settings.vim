@@ -151,7 +151,8 @@ if has('title') && (has('gui_running') || &title)
     set titlestring=
     set titlestring+=%F " File name
     set titlestring+=\ -\ %{v:progname} " Program name
-endif " }}}
+endif
+" }}}
 
 " Custom foldtext setting {{{
 if has('folding')
