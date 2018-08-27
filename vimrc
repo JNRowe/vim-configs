@@ -36,5 +36,11 @@ runtime vimrc.d/maps.vim
 runtime vimrc.d/misc.vim
 if has('patch-7.4.1821')
     runtime vimrc.d/packages.vim
+else
+    " There may be other things in packages.vim, but this is *the* thing I can't
+    " do without.
+    if !exists('*EditExisting')
+        runtime macros/editexisting.vim
+    endif
 endif
 runtime vimrc.d/localcfg.vim
