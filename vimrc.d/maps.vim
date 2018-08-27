@@ -65,7 +65,7 @@ vnoremap <Tab> >gv
 vnoremap <Backspace> <gv
 " }}}
 
-" <home> darts between start of line and start of text
+" <home> darts between start of line and start of text {{{
 inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
 nnoremap <silent> <home> :call <SID>home_skip()<CR>
 function! s:home_skip()
@@ -75,6 +75,7 @@ function! s:home_skip()
         normal! ^
     endif
 endfunction
+" }}}
 
 " Function keys {{{
 nnoremap <silent> <F3> :set expandtab!<CR>
@@ -85,6 +86,7 @@ nnoremap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
 nnoremap <F11> :make<CR>
 nnoremap <S-F11> :execute 'make -C ' . expand('%:p:h')<CR>
 nnoremap <silent> <C-F11> :let @/ = ''<CR>
+" }}}
 
 " Window management {{{
 nnoremap <C-w><Bar> <C-w>v
