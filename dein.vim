@@ -44,32 +44,9 @@ call dein#add('Raimondi/delimitMate', {
     \ 'on_event': 'InsertEnter',
 \ })
 
-" Context sensitive filetypes
-" Note: Lazy loaded for rdeps hooks
-call dein#add('Shougo/context_filetype.vim', {
-    \ 'on_map': [['iv', '<C-k>']],
-    \ 'if': v:version >= 704,
-\ })
-
 " A dark powered plugin for Neovim/Vim to unite all interfaces
 call dein#add('Shougo/denite.nvim', {
     \ 'if': has('python3') && v:version >= 800,
-\ })
-
-" Adds snippet support to Vim
-call dein#add('Shougo/neosnippet', {
-    \ 'depends': ['context_filetype.vim', 'neosnippet-snippets'],
-    \ 'hook_post_source': 'call Neosnippet_Map()',
-    \ 'on_ft': 'neosnippet',
-    \ 'on_map': [['iv', '<C-k>']],
-    \ 'if': v:version >= 704,
-\ })
-
-" The standard snippets repository for neosnippet
-" Note: Lazy loaded for rdeps hooks
-call dein#add('Shougo/neosnippet-snippets', {
-    \ 'on_map': [['iv', '<C-k>']],
-    \ 'if': v:version >= 704,
 \ })
 
 " Asynchronous execution plugin
@@ -78,6 +55,12 @@ call dein#add('Shougo/vimproc', {
     \ 'build': 'make',
     \ 'on_cmd': ['VBGstartGBB', 'VBGstartLLDB', 'VBGstartPDB3'],
     \ 'on_func': 'vebugger',
+\ })
+
+" The ultimate plugin for snippets
+call dein#add('SirVer/ultisnips', {
+    \ 'depends': 'vim-snippets',
+    \ 'if': (has('python') || has('python3')) && v:version >= 704,
 \ })
 
 " Show git diff status in the gutter
@@ -228,6 +211,9 @@ call dein#add('guns/xterm-color-table.vim', {
 call dein#add('haya14busa/dein-command.vim', {
     \ 'on_cmd': 'Dein',
 \ })
+
+" Snippet files for various programming languages
+call dein#add('honza/vim-snippets')
 
 " All powerful Pythonic task runner
 call dein#add('idanarye/vim-omnipytent', {

@@ -1,4 +1,2 @@
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-    \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <C-p> pumvisible() ? '<C-p>' :
-    \ '<C-p><C-r>=pumvisible() ? "\<lt>Up>" : ""<CR>'
+let g:vcm_default_maps = 0
+imap <S-Tab> <Plug>vim_completes_me_backward
