@@ -108,20 +108,24 @@ if has('folding')
 endif
 " }}}
 
-" From godlygeek's vimrc {{{
+" Adapted from godlygeek’s vimrc {{{
 "
 " Insert a modeline on the last line with <Leader>ml
-nnoremap <silent> <Leader>ml :call <SID>modeline_stub()<CR>
+" Given a count of 2 or more, write a longer verbose modeline.  Think of it as
+" analogous to [count]<C-g>
+nnoremap <silent> <Leader>ml :<C-u>call <SID>modeline_stub()<CR>
 
 function! s:modeline_stub()
-    let s:save_cursor = getcurpos()
-    let s:fmt = ' vim: set ft=%s ts=%d sw=%d tw=%d %s:'
-
-    let s:x = printf(&commentstring,
-        \            printf(s:fmt, &filetype, &tabstop, &shiftwidth,
-        \                   &textwidth, (&expandtab ? 'et' : 'noet')))
-    $put =substitute(substitute(s:x, '\ \+', ' ', 'g'), ' $', '', '')
-    call setpos('.', s:save_cursor)
+    let l:save_cursor = getcurpos()
+    let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
+    if v:count > 1
+        let l:x .= printf(' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop, &shiftwidth,
+            \             &textwidth, &foldmethod,
+            \            (&foldmethod == 'marker' ? ' fmr=' . &fmr : ''))
+    endif
+    let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
+    $put =substitute(substitute(l:x, '\ \+', ' ', 'g'), ' $', '', '')
+    call setpos('.', l:save_cursor)
 endfunction
 " }}}
 
