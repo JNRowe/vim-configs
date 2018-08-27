@@ -1,1 +1,1 @@
-nnoremap <Leader>q :Bdelete<CR>
+nnoremap <LocalLeader>q :Bdelete<CR>
