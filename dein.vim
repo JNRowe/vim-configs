@@ -490,6 +490,14 @@ call dein#add('terryma/vim-multiple-cursors', {
 " Vim port of the monokai theme for TextMate
 call dein#add('tomasr/molokai')
 
+" Easy text exchange operator
+call dein#add('tommcdo/vim-exchange', {
+    \ 'on_map': [
+    \   ['n', 'cx'],
+    \   ['v', 'X'],
+    \ ],
+\ })
+
 " Defines a code alignment operator
 call dein#add('tommcdo/vim-lion', {
     \ 'on_map': ['gl', 'gL'],
