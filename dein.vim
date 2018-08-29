@@ -431,7 +431,7 @@ call dein#add('rhysd/committia.vim', {
 
 " Graph your undo tree
 call dein#add('sjl/gundo.vim', {
-    \ 'if': v:version >= 700,
+    \ 'if': (has('python') || has('python3')) && v:version >= 703,
     \ 'on_cmd': 'GundoToggle',
 \ })
 
