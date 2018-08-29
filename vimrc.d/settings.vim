@@ -43,6 +43,7 @@ if &termencoding ==# 'utf-8' || has('gui_running')
     set fillchars+=vert:│
 endif
 if has('folding')
+    set fillchars+=fold:\  " Intentional trailing space
     set foldcolumn=2
     set foldlevelstart=99
     set foldmethod=syntax
@@ -157,9 +158,23 @@ endif
 " Custom foldtext setting {{{
 if has('folding')
     function! MyFoldText()
-        let l:nlines = v:foldend - v:foldstart + 1
-        return v:folddashes . getline(v:foldstart)[:winwidth(0)-10] . ' ▼ ' .
-            \ l:nlines . ' lines '
+        function s:shorten(text, line_str)
+            let l:text = a:text
+            " Non-getline() text length
+            let l:base = 19
+            let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+            if strlen(l:text) > l:text_width
+                let l:text = l:text[:l:text_width] . '…'
+            endif
+            return l:text
+        endfunction
+
+        " Parsing foldtext() may be brittle, but manual creation is loads of
+        " work; whitespace, &cms regex escaping(C fex), &fdr, no scanf(), etc
+        return substitute(foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
+            \             {m -> repeat('─', v:foldlevel) . ' ' .
+            \                   s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
+            \             '')
     endfunction
 endif
 " }}}
