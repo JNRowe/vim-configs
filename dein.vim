@@ -447,7 +447,7 @@ call dein#add('spiiph/vim-space', {
 
 " Tiled Window Management for Vim
 call dein#add('spolu/dwm.vim', {
-    \ 'on_func': ['DWM_Focus', 'DWM_New', 'DWM_Rotate'],
+    \ 'on_func': ['DWM_Close', 'DWM_Focus', 'DWM_New', 'DWM_Rotate'],
 \ })
 
 " Linter for vim script
