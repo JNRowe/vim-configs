@@ -152,4 +152,8 @@ endfor
 cnoremap <C-h> help<Space>  " I don't use vi movement keys in command-line mode
 cnoremap <C-S-h> vert help<Space>
 
+" Insert Path to current file at command line
+cmap <M-.> <C-r>=expand('%:p:h') . "/"<CR>
+" }}}
+
 " vim: fdm=marker:
