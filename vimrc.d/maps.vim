@@ -137,17 +137,7 @@ for s:t in ['pattern', 'quickref', 'registers']
     execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
 endfor
 
-" Close the help window, wherever that may be {{{
-function! s:close_help()
-    for l:w in range(1, winnr('$'))
-        let l:b = winbufnr(l:w)
-        if getbufvar(l:b, '&buftype') ==# 'help'
-            execute l:w . 'wincmd c'
-            break
-        endif
-    endfor
-endfunction
-nnoremap <silent> [Help]c :call <SID>close_help()<CR>
+nnoremap <silent> [Help]c :helpclose<CR>
 " }}}
 
 " }}}
