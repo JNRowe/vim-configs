@@ -658,11 +658,6 @@ call dein#add('vim-scripts/ebnf.vim', {
     \ 'on_ft': 'ebnf',
 \ })
 
-" Extended support for GNU gettext
-call dein#add('vim-scripts/po.vim--Jelenak', {
-    \ 'on_ft': 'po',
-\ })
-
 " Painless footer references
 call dein#add('vim-scripts/uri-ref', {
     \ 'on_ft': 'mail',
