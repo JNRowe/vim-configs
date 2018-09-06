@@ -68,11 +68,6 @@ call dein#add('airblade/vim-gitgutter', {
     \ 'if': has('signs') && executable('git'),
 \ })
 
-" Super simple, super minimal, super light-weight tab-completion
-call dein#add('ajh17/VimCompletesMe', {
-    \ 'on_map': [['i', '<Tab>']],
-\ })
-
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_cmd': [
@@ -406,6 +401,9 @@ call dein#add('nathanaelkane/vim-indent-guides')
 call dein#add('nathangrigg/vim-beancount', {
     \ 'on_ft': 'beancount',
 \ })
+
+" Tiny replacement for Supertab
+call dein#add('neitanod/vim-clevertab')
 
 " Allow transparent calls to Python functions in native Vim scripts
 call dein#add('nvie/vim_bridge', {
