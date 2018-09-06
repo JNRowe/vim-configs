@@ -628,6 +628,12 @@ call dein#add('xolox/vim-notes', {
 
 " vim-scripts bundles {{{
 
+" An outline tree of a buffer
+" I write my mail in reST.  No, really.
+call dein#add('vim-scripts/DotOutlineTree', {
+    \ 'on_ft': ['mail', 'rst'],
+\ })
+
 " Set up regions within a buffer using their own filetypes
 call dein#add('vim-scripts/SyntaxRange', {
     \ 'on_cmd': ['SyntaxIgnore', 'SyntaxInclude'],
