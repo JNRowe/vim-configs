@@ -5,6 +5,7 @@ set autochdir
 set backup
 set backupcopy=auto,breakhardlink
 let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
+call mkdir(g:vim_cache_dir . '/backup', 'p')
 set backupskip+=*.mht
 if has('balloon_eval')
     set ballooneval
@@ -33,6 +34,7 @@ if filereadable('/usr/share/dict/words')
     set dictionary^=/usr/share/dict/words
 endif
 let &directory = g:vim_cache_dir . '/swap//,' . &directory
+call mkdir(g:vim_cache_dir . '/swap', 'p')
 set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
@@ -123,6 +125,7 @@ set ttyfast
 if has('persistent_undo')
     set undofile
     let &undodir = g:vim_data_dir . '/undo//,' . &undodir
+    call mkdir(g:vim_data_dir . '/undo', 'p')
 endif
 set updatetime=7500
 if has('mksession')
