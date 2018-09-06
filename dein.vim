@@ -34,11 +34,6 @@ call dein#add('AndrewRadev/splitjoin.vim', {
 " Tango inspired colourscheme
 call dein#add('JNRowe/vim-jnrowe')
 
-" Speed up folding by reducing recalculations
-call dein#add('Konfekt/FastFold', {
-    \ 'if': has('folding'),
-\ })
-
 " Automatic closing of quotes, parenthesis, brackets, etc
 call dein#add('Raimondi/delimitMate', {
     \ 'on_event': 'InsertEnter',
