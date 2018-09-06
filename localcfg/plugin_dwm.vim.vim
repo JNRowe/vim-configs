@@ -3,12 +3,15 @@ let g:dwm_map_keys = v:false
 nnoremap [dwm] <Nop>
 nmap <Leader>d [dwm]
 
+" Imagine <Up> increases window count, and <Down>… well, yeah.
 for [s:key, s:cmd] in [
     \   ['n',       'New'],
     \   ['c',       ':exe DWM_Close'],
     \   ['f',       'Focus'],
     \   ['<left>',  'Rotate(0)'],
     \   ['<right>', 'Rotate(1)'],
+    \   ['<up>',    'New'],
+    \   ['<down>',  ':exe DWM_Close'],
     \ ]
     if stridx(s:cmd, '(') == -1
         let s:cmd .= '()'
