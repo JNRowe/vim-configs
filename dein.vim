@@ -169,11 +169,6 @@ call dein#add('elazar/visSum.vim', {
     \ 'on_map': [['x', '<LocalLeader>su']],
 \ })
 
-" An implementation of the PlainTasks format
-call dein#add('elentok/plaintasks.vim', {
-    \ 'on_ft': 'plaintasks',
-\ })
-
 " Allows you to test regular expressions
 call dein#add('ervandew/regex', {
     \ 'on_cmd': 'Regex',
