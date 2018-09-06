@@ -1,10 +1,9 @@
-.gup/
-
 /doc/tags
 
 /tags/
 
 /*.html
 
+/build.ninja
 /abbr-local
 /vimrc-local

@@ -25,7 +25,8 @@ much to you:
 
     $ git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
     $ cd !$
-    $ gup -u  # Rebuild generated language and documentation tag files
+    $ ./build.py  # Generate ninja build rules, see --help for options
+    $ ninja  # Rebuild generated language and documentation tag files
 
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are: to just run with it, override it with your own ``~/.vimrc`` or

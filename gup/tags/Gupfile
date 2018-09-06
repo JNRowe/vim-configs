@@ -1,4 +1,0 @@
-lua.gup:
-    lua*.ctags
-ruby.gup:
-    ruby*.ctags
