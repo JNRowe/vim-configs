@@ -132,7 +132,7 @@ if has('mksession')
     let &viewdir = g:vim_cache_dir . '/view'
 endif
 if has('viminfo')
-    set viminfo='1000,<1000,h
+    set viminfo='5000,<1000,h
     let &viminfofile = g:vim_cache_dir . '/viminfo'
 endif
 if has('virtualedit')
