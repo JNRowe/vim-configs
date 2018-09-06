@@ -566,7 +566,7 @@ call dein#add('tpope/vim-speeddating', {
 call dein#add('tpope/vim-surround', {
     \ 'depends': 'vim-repeat',
     \ 'on_map': [
-    \   ['i', '<C-G>S', '<C-G>s', '<C-s>'],
+    \   ['i', '<C-g>S', '<C-g>s', '<C-s>'],
     \   ['n', 'cS', 'cs', 'ds', 'yS', 'ys'],
     \   ['x', 'S'],
     \ ],
