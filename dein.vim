@@ -578,7 +578,6 @@ call dein#add('vim-airline/vim-airline', {
     \ 'depends': [
     \   'denite.nvim',
     \   'vim-airline-themes',
-    \   'vim-signify',
     \   'vim-fugitive',
     \ ],
 \ })
