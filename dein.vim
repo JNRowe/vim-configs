@@ -273,6 +273,22 @@ call dein#add('jreybert/vimagit', {
     \ 'on_cmd': 'Magit',
 \ })
 
+" Basic fzf integration
+call dein#add('junegunn/fzf', {
+    \ 'if': executable('fzf'),
+    \ 'on_cmd': 'FZF',
+    \ 'on_func': 'fzf',
+\ })
+
+" Advanced fzf integration
+call dein#add('junegunn/fzf.vim', {
+    \ 'depends': 'fzf',
+    \ 'if': executable('fzf'),
+    \ 'on_cmd': ['Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
+    \            'History', 'Lines', 'Maps', 'Marks', 'Snippets',
+    \            'Windows'],
+\ })
+
 " Distraction-free writing in Vim.
 call dein#add('junegunn/goyo.vim', {
     \ 'on_cmd': 'Goyo',
