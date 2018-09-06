@@ -31,6 +31,29 @@ Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are: run with it, override it with your own ``~/.vimrc``, or — most
 likely — simply cherry pick the parts of it you like.
 
+Contributors
+------------
+
+I’d like to thank the following people who have contributed to ``vim-configs``.
+
+Patches
+'''''''
+
+* <your name here>
+
+Bug reports
+'''''''''''
+
+* <your name here>
+
+Ideas
+'''''
+
+* Nathan McGregor
+
+If I’ve forgotten to include your name I wholeheartedly apologise.  Just drop me
+a email_ and I’ll update the list!
+
 .. _vim: http://www.vim.org/
 .. _neovim: https://neovim.io/
 .. _issue: https://github.com/JNRowe/vim-configs/issues
