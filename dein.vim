@@ -300,6 +300,12 @@ call dein#add('justinmk/vim-sneak', {
     \ ],
 \ })
 
+" Enhanced Python folding
+call dein#add('kalekundert/vim-coiled-snake', {
+    \ 'if': has('folding'),
+    \ 'on_ft': 'python',
+\ })
+
 " Create your own text objects
 call dein#add('kana/vim-textobj-user', {
     \ 'on_func': 'textobj',
