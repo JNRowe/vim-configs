@@ -8,3 +8,11 @@ for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
 endfor
 
 setlocal complete+=s
+
+" Break undo sequence on sentence level punctuation.
+"
+" This kind of feels better when editing prose and taking advantage of
+" undo-tree.  Not yet sure if it is too granular.
+for s:key in split(',.!¿?:;', '\zs')
+    execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
+endfor
