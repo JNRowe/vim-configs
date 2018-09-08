@@ -419,15 +419,6 @@ call dein#add('reedes/vim-textobj-quote', {
 \ })
 
 " Make working with the quickfix list/window smoother
-call dein#add('romainl/vim-qf', {
-    \ 'if': has('quickfix'),
-    \ 'on_cmd': [
-    \   'ListLists', 'LoadList', 'SaveList',
-    \   'Keep', 'Reject',
-    \ ],
-\ })
-
-" Make working with the quickfix list/window smoother
 call dein#add('romainl/vim-qlist', {
     \ 'if': has('quickfix'),
     \ 'on_cmd': ['Dlist', 'Ilist'],
