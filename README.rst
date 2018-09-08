@@ -11,7 +11,7 @@ near future.
 If you want a rambling backstory, see ``background.rst`` in this repository.
 
 If you find any problems with the files in this repository either file an
-issue_, or drop me an email_.  However, please do not report problems when using
+issue_, or drop me an mail_.  However, please do not report problems when using
 neovim_, pull requests are fine though.
 
 Installation
@@ -53,9 +53,18 @@ Ideas
 * Nathan McGregor
 
 If I’ve forgotten to include your name I wholeheartedly apologise.  Just drop me
-a email_ and I’ll update the list!
+a mail_ and I’ll update the list!
+
+Bugs
+----
+
+If you find any problems, bugs or just have a question about this package either
+file an issue_ or drop me a mail_.
+
+If you’ve found a bug please try to include a minimal testcase that reproduces
+the problem, or even better a patch that fixes it!
 
 .. _vim: http://www.vim.org/
 .. _neovim: https://neovim.io/
 .. _issue: https://github.com/JNRowe/vim-configs/issues
-.. _email: jnrowe@gmail.com
+.. _mail: jnrowe@gmail.com
