@@ -4,10 +4,8 @@ let g:airline_theme = 'powerlineish'
 let g:airline_skip_empty_sections = 1
 
 if has('gui_running')
-    " Requires powerline-symbols
-    " let g:airline_left_sep = ''
-    " let g:airline_right_sep = ''
-    let g:airline_powerline_fonts = 1
+    let g:airline_left_sep = '╗'
+    let g:airline_right_sep = '╔'
 
     " Requires Font Awesome in places
     " Note: I have FA resolve locally as webfonts are disabled in my browsers,
