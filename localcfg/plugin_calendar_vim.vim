@@ -15,6 +15,7 @@ let g:calendar_no_mappings = v:true
 let g:calendar_mark = 'left-fit'
 let g:calendar_monday = v:true
 let g:calendar_weeknm = v:true
+let g:calendar_datetime = 'statusline'
 let g:calendar_filetype = 'rst'
 
 if has('autocmd')
