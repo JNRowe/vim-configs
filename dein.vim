@@ -528,6 +528,11 @@ call dein#add('tpope/vim-rhubarb', {
     \ 'on_map': [['i', '<C-x><C-o>']],
 \ })
 
+" Readline style insertion
+call dein#add('tpope/vim-rsi', {
+    \ 'on_event': ['CmdlineEnter', 'InsertEnter'],
+\ })
+
 " One step above 'nocompatible' mode
 "
 " This is pinned as it can massively affect functionality, see
@@ -576,9 +581,6 @@ call dein#add('vim-airline/vim-airline', {
 
 " Official theme repository for vim-airline
 call dein#add('vim-airline/vim-airline-themes')
-
-" Mappings that boost command line mode
-call dein#add('vim-utils/vim-husk')
 
 " “inner line” text object
 call dein#add('vim-utils/vim-line', {
