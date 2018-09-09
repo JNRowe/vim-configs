@@ -30,6 +30,7 @@ if has('cryptv')
         set cryptmethod=blowfish
     endif
 endif
+set cursorline
 if filereadable('/usr/share/dict/words')
     set dictionary^=/usr/share/dict/words
 endif

@@ -387,9 +387,6 @@ call dein#add('moll/vim-bbye', {
     \ 'on_map': [['n', '<LocalLeader>q']],
 \ })
 
-" Refreshingly sane ``cursorcolumn`` and ``cursorline`` handling
-call dein#add('mtth/cursorcross.vim')
-
 " A plugin for visually displaying indent levels
 call dein#add('nathanaelkane/vim-indent-guides')
 
