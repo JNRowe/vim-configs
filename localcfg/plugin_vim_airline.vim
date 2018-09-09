@@ -1,7 +1,7 @@
 scriptencoding utf-8
 
 let g:airline_theme = 'powerlineish'
-let g:airline_skip_empty_sections = 1
+let g:airline_skip_empty_sections = v:true
 
 if has('gui_running')
     let g:airline_left_sep = '╗'
@@ -24,7 +24,7 @@ if has('gui_running')
         \ 'whitespace': '·',
     \ }
 else
-    let g:airline_symbols_ascii = 1
+    let g:airline_symbols_ascii = v:true
 endif
 
 let g:airline#extensions#disable_rtp_load = v:true
