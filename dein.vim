@@ -340,7 +340,7 @@ call dein#add('magus/localcfg')
 " A calendar window you can use within vim
 call dein#add('mattn/calendar-vim', {
     \ 'on_cmd': ['Calendar', 'CalendarH', 'CalendarT', 'CalendarVR'],
-    \ 'on_map': [['n', '<Leader>cal', '<Leader>caL']],
+    \ 'on_map': [['n', '[calendar]']],
 \ })
 
 " Plugins for HTML and CSS hi-speed coding
