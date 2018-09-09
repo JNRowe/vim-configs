@@ -444,7 +444,7 @@ call dein#add('spiiph/vim-space', {
 \ })
 
 " Tiled Window Management for Vim
-call dein#add((g:vcs_cst ? 'vcs_cst::JNRowe' : 'spolu') . '/dwm.vim', {
+call dein#add('JNRowe/dwm.vim', {
     \ 'on_func': ['DWM_Close', 'DWM_Focus', 'DWM_New', 'DWM_Rotate'],
 \ })
 
