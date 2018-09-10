@@ -493,6 +493,11 @@ call dein#add('tpope/vim-commentary', {
     \ 'on_map': 'gc',
 \ })
 
+" Automatically insert block closing structures
+call dein#add('tpope/vim-endwise', {
+    \ 'on_event': 'InsertEnter',
+\ })
+
 " A Git wrapper so awesome, it should be illegal
 call dein#add('tpope/vim-fugitive', {
     \ 'if': executable('git'),
