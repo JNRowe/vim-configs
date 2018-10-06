@@ -141,7 +141,7 @@ call dein#add('JNRowe/securemodelines')
 
 " A VIM binding to the jedi autocompletion library
 call dein#add('davidhalter/jedi-vim', {
-    \ 'if': has('python'),
+    \ 'if': has('python') || has('python3'),
     \ 'on_cmd': 'JediClearCache',
     \ 'on_ft': 'python',
 \ })
@@ -161,7 +161,7 @@ call dein#add('dkarter/bullets.vim', {
 
 " The EditorConfig plugin
 call dein#add('editorconfig/editorconfig-vim', {
-    \ 'if': has('python'),
+    \ 'if': has('python') || has('python3'),
     \ 'on_event': 'InsertEnter',
 \ })
 
@@ -184,7 +184,7 @@ call dein#add('ervandew/regex', {
 
 " Show cyclomatic complexity of Python code
 call dein#add('garybernhardt/pycomplexity', {
-    \ 'if': has('signs') && has('python'),
+    \ 'if': has('signs') && (has('python') || has('python3')),
     \ 'on_cmd': 'Complexity',
     \ 'on_ft': 'python',
     \ 'rtp': 'pycomplexity.vim',
