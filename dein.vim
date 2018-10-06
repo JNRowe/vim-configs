@@ -36,13 +36,13 @@ call dein#add(expand('~/.vim/external/dein.vim'), {
 " Move an item in a delimiter-separated list left or right
 call dein#add('AndrewRadev/sideways.vim', {
     \ 'on_cmd': s:prefix('Sideways', ['Left', 'Right']),
-    \ 'on_map': [['n', '[sideways]']],
+    \ 'on_map': {'n': '[sideways]'},
 \ })
 
 " Switch between single-line and multiline forms of code
 call dein#add('AndrewRadev/splitjoin.vim', {
     \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
-    \ 'on_map': [['n', 'gJ', 'gS']],
+    \ 'on_map': {'n': ['gJ', 'gS']},
 \ })
 
 " Tango inspired colourscheme
@@ -125,10 +125,10 @@ call dein#add('chrisbra/unicode.vim', {
     \ 'on_cmd':
     \   ['DigraphNew', 'Digraphs']
     \   + s:prefix('Unicode', ['Name', 'Search', 'Table']),
-    \ 'on_map': [
-    \   ['i', '<C-x><C-z>', '<C-x><C-g>'],
-    \   ['n', '<Plug>(UnicodeGA)'],
-    \ ],
+    \ 'on_map': {
+    \   'i': ['<C-x><C-z>', '<C-x><C-g>'],
+    \   'n': '<Plug>(UnicodeGA)',
+    \ },
 \ })
 
 " The vim FAQ
@@ -150,7 +150,7 @@ call dein#add('davidhalter/jedi-vim', {
 call dein#add('dhruvasagar/vim-table-mode', {
     \ 'on_cmd': s:prefix('Table', ['ModeToggle', 'ize']),
     \ 'on_ft': 'rst',
-    \ 'on_map': [['nx', '<LocalLeader>t']],
+    \ 'on_map': '<LocalLeader>t',
 \ })
 
 " Automated Bullet Lists in Vim
@@ -174,7 +174,7 @@ call dein#add('ehamberg/vim-cute-python', {
 
 " Sum numbers that appear in selection
 call dein#add('elazar/visSum.vim', {
-    \ 'on_map': [['x', '<LocalLeader>su']],
+    \ 'on_map': {'x': '<LocalLeader>su'},
 \ })
 
 " Allows you to test regular expressions
@@ -248,7 +248,7 @@ call dein#add('jceb/vim-editqf', {
     \ 'on_cmd':
     \   s:prefix('Loc', ['AddNote', 'Load', 'Save'])
     \   + s:prefix('QF', ['AddNote', 'Load', 'Save']),
-    \ 'on_map': [['n', '<LocalLeader>n']],
+    \ 'on_map': {'n': '<LocalLeader>n'},
 \ })
 
 " Text outlining and task management for Vim based on Emacs' Org-Mode
@@ -301,11 +301,11 @@ call dein#add('justincampbell/vim-eighties', {
 call dein#add('justinmk/vim-sneak', {
     \ 'depends': 'vim-repeat',
     \ 'if': v:version >= 703,
-    \ 'on_map': [
-    \   ['n', 'S', 's'],
-    \   ['o', 'Z', 'z'],
-    \   ['x', 'Z', 's'],
-    \ ],
+    \ 'on_map': {
+    \   'n': ['S', 's'],
+    \   'o': ['Z', 'z'],
+    \   'x': ['Z', 's'],
+    \ },
 \ })
 
 " Enhanced Python folding
@@ -348,7 +348,7 @@ call dein#add('magus/localcfg')
 " A calendar window you can use within vim
 call dein#add('mattn/calendar-vim', {
     \ 'on_cmd': s:suffix('Calendar', ['', 'H', 'T', 'VR']),
-    \ 'on_map': [['n', '[calendar]']],
+    \ 'on_map': {'n': '[calendar]'},
 \ })
 
 " Plugins for HTML and CSS hi-speed coding
@@ -369,13 +369,13 @@ call dein#add('mhinz/vim-startify')
 " Text objects based on indent levels
 call dein#add('michaeljsmith/vim-indent-object', {
     \ 'on_ft': ['ledger', 'moon', 'nim', 'python'],
-    \ 'on_map': [['ov', 'aI', 'ai', 'iI', 'ii']],
+    \ 'on_map': {'ov': ['aI', 'ai', 'iI', 'ii']},
 \ })
 
 " Order buffers in Most Recently Used order
 call dein#add('mildred/vim-bufmru', {
     \ 'on_cmd': 'BufMRU',
-    \ 'on_map': [['n', '[bufmru]']],
+    \ 'on_map': {'n': '[bufmru]'},
 \ })
 
 " Run your favorite search tool from Vim, with an enhanced results list
@@ -392,7 +392,7 @@ call dein#add('mitsuhiko/vim-jinja', {
 " Delete buffers without breaking your layout
 call dein#add('moll/vim-bbye', {
     \ 'on_cmd': ['Bdelete', 'Bwipeout'],
-    \ 'on_map': [['n', '<LocalLeader>q']],
+    \ 'on_map': {'n': '<LocalLeader>q'},
 \ })
 
 " A plugin for visually displaying indent levels
@@ -427,7 +427,7 @@ call dein#add('reedes/vim-textobj-quote', {
 call dein#add('romainl/vim-qlist', {
     \ 'if': has('quickfix'),
     \ 'on_cmd': s:suffix('list', ['D', 'I']),
-    \ 'on_map': [['n', '[D', ']D', 'I', ']I']],
+    \ 'on_map': {'n': ['[D', ']D', 'I', ']I']},
 \ })
 
 " More pleasant editing on commit message
@@ -448,7 +448,7 @@ call dein#add('sjl/splice.vim', {
 
 " Smart space key
 call dein#add('spiiph/vim-space', {
-    \ 'on_map': [['n', '<space>']],
+    \ 'on_map': {'n': '<space>'},
 \ })
 
 " Tiled Window Management for Vim
@@ -466,17 +466,17 @@ call dein#add('syngan/vim-vimlint', {
 " Maximizes and restores the current window
 call dein#add('szw/vim-maximizer', {
     \ 'on_cmd': 'MaximizerToggle',
-    \ 'on_map': [['n', '<C-w>o']],
+    \ 'on_map': {'n': '<C-w>o'},
 \ })
 
 " Incremental visual selection
 call dein#add('terryma/vim-expand-region', {
-    \ 'on_map': [['nv', '+', '-']],
+    \ 'on_map': {'nv': ['+', '-']},
 \ })
 
 " True Sublime Text multiple selection
 call dein#add('terryma/vim-multiple-cursors', {
-    \ 'on_map': [['nx', '<C-n>']],
+    \ 'on_map': '<C-n>',
 \ })
 
 " Vim port of the monokai theme for TextMate
@@ -484,15 +484,15 @@ call dein#add('tomasr/molokai')
 
 " Easy text exchange operator
 call dein#add('tommcdo/vim-exchange', {
-    \ 'on_map': [
-    \   ['n', 'cx'],
-    \   ['v', 'X'],
-    \ ],
+    \ 'on_map': {
+    \   'n': 'cx',
+    \   'v': 'X',
+    \ },
 \ })
 
 " Defines a code alignment operator
 call dein#add('tommcdo/vim-lion', {
-    \ 'on_map': ['gl', 'gL'],
+    \ 'on_map': {'n': ['gl', 'gL']},
 \ })
 
 " Comment stuff out
@@ -555,17 +555,17 @@ call dein#add('tpope/vim-sleuth', {
 " Increment dates, times, and more
 call dein#add('tpope/vim-speeddating', {
     \ 'depends': 'vim-repeat',
-    \ 'on_map': ['n', '<C-a>', '<C-x>'],
+    \ 'on_map': {'n': ['<C-a>', '<C-x>']},
 \ })
 
 " Plugin for deleting, changing, and adding “surroundings”
 call dein#add('tpope/vim-surround', {
     \ 'depends': 'vim-repeat',
-    \ 'on_map': [
-    \   ['i', '<C-g>S', '<C-g>s', '<C-s>'],
-    \   ['n', 'cS', 'cs', 'ds', 'yS', 'ys'],
-    \   ['x', 'S'],
-    \ ],
+    \ 'on_map': {
+    \   'i': ['<C-g>S', '<C-g>s', '<C-s>'],
+    \   'n': ['cS', 'cs', 'ds', 'yS', 'ys'],
+    \   'x': 'S',
+    \ },
 \ })
 
 " Pairs of handy mappings
@@ -589,7 +589,7 @@ call dein#add('vim-airline/vim-airline-themes')
 
 " “inner line” text object
 call dein#add('vim-utils/vim-line', {
-    \ 'on_map': [['ov', '_']],
+    \ 'on_map': {'ov': '_'},
 \ })
 
 " Enhanced man support
@@ -614,14 +614,14 @@ call dein#add('w0rp/ale', {
 " Note: Lazy loaded for rdeps hooks
 call dein#add('xolox/vim-misc', {
     \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
-    \ 'on_map': [['ov', '<LocalLeader>en']],
+    \ 'on_map': {'ov': '<LocalLeader>en'},
 \ })
 
 " Easy note taking in Vim
 call dein#add('xolox/vim-notes', {
     \ 'depends': 'vim-misc',
     \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
-    \ 'on_map': [['ov', '<LocalLeader>en']],
+    \ 'on_map': {'ov': '<LocalLeader>en'},
 \ })
 
 " vim-scripts bundles {{{
@@ -640,10 +640,10 @@ call dein#add('vim-scripts/SyntaxRange', {
 " Toggle values under the cursor
 call dein#add('vim-scripts/Toggle', {
     \ 'on_func': 'Toggle',
-    \ 'on_map': [
-    \   ['i', '<C-T>'],
-    \   ['n', '+'],
-    \ ],
+    \ 'on_map': {
+    \   'i': '<C-T>',
+    \   'n': '+',
+    \ },
 \ })
 
 " Highlight BNFs
