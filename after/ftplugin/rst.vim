@@ -29,3 +29,4 @@ let g:rst_syntax_code_list = {
     \ 'sh': ['sh', 'zsh'],
     \ 'vim': ['vim'],
 \ }
+let g:rst_use_emphasis_colors = v:true
