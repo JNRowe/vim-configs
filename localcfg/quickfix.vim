@@ -24,6 +24,7 @@ nnoremap <silent> [quickfix]ss :execute "vimgrep /" . getreg("/") . "/g %"<CR>
 for s:t in ['l', 'c']
     for [s:key, s:cmd] in [
         \   ['wc', 'close'],
+        "\ 7 lines seems to be the magic number for *me*
         \   ['wo', 'open 7<CR><C-w>p\'],
         \   ['b', 'bottom'],
         \   ['n', 'next'],
