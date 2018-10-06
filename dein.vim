@@ -321,7 +321,7 @@ call dein#add('kana/vim-textobj-user', {
 
 " nyancat. bah, grow up!
 call dein#add('koron/nyancat-vim', {
-    \ 'on_cmd': 'Nyancat',
+    \ 'on_cmd': s:prefix('Nyancat', ['', '2']),
 \ })
 
 " A plugin to place, toggle and display marks
