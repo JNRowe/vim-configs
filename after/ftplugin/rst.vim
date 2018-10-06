@@ -21,3 +21,11 @@ setlocal complete+=s
 for s:key in split(',.!¿?:;', '\zs')
     execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
 endfor
+
+let g:rst_syntax_code_list = {
+    \ 'cpp': ['cpp', 'c++'],
+    \ 'lisp': ['emacs', 'lisp'],
+    \ 'python': ['python'],
+    \ 'sh': ['sh', 'zsh'],
+    \ 'vim': ['vim'],
+\ }
