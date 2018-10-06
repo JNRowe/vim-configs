@@ -495,6 +495,12 @@ call dein#add('tommcdo/vim-lion', {
     \ 'on_map': {'n': ['gl', 'gL']},
 \ })
 
+" Language friendly searches, substitutions, and abbreviations
+call dein#add('tpope/vim-abolish', {
+    \ 'on_cmd': ['Abolish', 'S'],
+    \ 'on_map': {'n': 'cr'},
+\ })
+
 " Comment stuff out
 call dein#add('tpope/vim-commentary', {
     \ 'on_cmd': 'Commentary',
