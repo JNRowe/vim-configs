@@ -12,6 +12,14 @@ scriptencoding utf-8
 " example, I'll often not do so because I prefer to have tab completion
 " available for the commands that I use from the outset.
 
+function! s:prefix(str, args)
+    return map(a:args, {s -> a:str . v:val})
+endfunction
+
+function! s:suffix(str, args)
+    return map(a:args, {s -> v:val . a:str})
+endfunction
+
 function! s:airline_enable(extension)
     return 'let g:airline_extensions += ["'. a:extension . '"]'
 endfunction
@@ -27,13 +35,13 @@ call dein#add(expand('~/.vim/external/dein.vim'), {
 
 " Move an item in a delimiter-separated list left or right
 call dein#add('AndrewRadev/sideways.vim', {
-    \ 'on_cmd': ['SidewaysLeft', 'SidewaysRight'],
+    \ 'on_cmd': s:prefix('Sideways', ['Left', 'Right']),
     \ 'on_map': [['n', '[sideways]']],
 \ })
 
 " Switch between single-line and multiline forms of code
 call dein#add('AndrewRadev/splitjoin.vim', {
-    \ 'on_cmd': ['SplitjoinJoin', 'SplitjoinSplit'],
+    \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
     \ 'on_map': [['n', 'gJ', 'gS']],
 \ })
 
@@ -49,7 +57,7 @@ call dein#add('Raimondi/delimitMate', {
 " Note: Lazy loaded for rdeps hooks
 call dein#add('Shougo/vimproc', {
     \ 'build': 'make',
-    \ 'on_cmd': ['VBGstartGBB', 'VBGstartLLDB', 'VBGstartPDB3'],
+    \ 'on_cmd': s:prefix('VBGstart', ['GBB', 'LLDB', 'PDB3']),
     \ 'on_func': 'vebugger',
 \ })
 
@@ -66,11 +74,7 @@ call dein#add('airblade/vim-gitgutter', {
 
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
-    \ 'on_cmd': [
-    \   'EraseBadWhitespace',
-    \   'HideBadWhitespace',
-    \   'ToggleBadWhitespace'
-    \ ],
+    \ 'on_cmd': s:suffix('BadWhitespace', ['Erase', 'Hide', 'Toggle']),
     \ 'on_event': 'InsertEnter',
 \ })
 
@@ -80,7 +84,9 @@ call dein#add('bitc/vim-bad-whitespace', {
 " C in general because it is relatively uncommon for my C file to actually be
 " dwm’s config.h.
 call dein#add('chrisbra/Colorizer', {
-    \ 'on_cmd': ['ColorHighlight', 'ColorToggle', 'RGB2Term'],
+    \ 'on_cmd':
+    \   s:prefix('Color', ['Highlight', 'Toggle'])
+    \   + ['RGB2Term', ],
     \ 'on_ft': ['css', 'less', 'moon', 'python', 'vim', 'xdefaults'],
 \ })
 
@@ -116,8 +122,9 @@ call dein#add('chrisbra/csv.vim', {
 call dein#add('chrisbra/unicode.vim', {
     \ 'hook_post_source': s:airline_enable('unicode'),
     \ 'if': v:version >= 704,
-    \ 'on_cmd': ['DigraphNew', 'Digraphs', 'UnicodeSearch', 'UnicodeName',
-    \            'UnicodeTable'],
+    \ 'on_cmd':
+    \   ['DigraphNew', 'Digraphs']
+    \   + s:prefix('Unicode', ['Name', 'Search', 'Table']),
     \ 'on_map': [
     \   ['i', '<C-x><C-z>', '<C-x><C-g>'],
     \   ['n', '<Plug>(UnicodeGA)'],
@@ -141,7 +148,7 @@ call dein#add('davidhalter/jedi-vim', {
 
 " An awesome automatic table creator & formatter
 call dein#add('dhruvasagar/vim-table-mode', {
-    \ 'on_cmd': ['TableModeToggle', 'Tableize'],
+    \ 'on_cmd': s:prefix('Table', ['ModeToggle', 'ize']),
     \ 'on_ft': 'rst',
     \ 'on_map': [['nx', '<LocalLeader>t']],
 \ })
@@ -190,7 +197,7 @@ call dein#add('godlygeek/tabular', {
 
 " All 256 xterm colours with their RGB equivalents
 call dein#add('guns/xterm-color-table.vim', {
-    \ 'on_cmd': ['XtermColorTable', 'VXtermColorTable'],
+    \ 'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
 \ })
 
 " Utility comamnds for dein.vim
@@ -204,7 +211,7 @@ call dein#add('honza/vim-snippets')
 " All powerful Pythonic task runner
 call dein#add('idanarye/vim-omnipytent', {
     \ 'if': has('python') || has('python3'),
-    \ 'on_cmd': ['OPedit', 'OP2edit', 'OP3edit']
+    \ 'on_cmd': s:prefix('OP', ['edit', '2edit', '3edit']),
 \ })
 
 " Yet another debugger frontend plugin
@@ -238,10 +245,9 @@ call dein#add('jamessan/vim-gnupg', {
 " Edit and store quickfix/location list entries
 call dein#add('jceb/vim-editqf', {
     \ 'if': has('quickfix'),
-    \ 'on_cmd': [
-    \   'LocAddNote', 'LocLoad', 'LocSave',
-    \   'QFAddNote', 'QFLoad', 'QFSave'
-    \ ],
+    \ 'on_cmd':
+    \   s:prefix('Loc', ['AddNote', 'Load', 'Save'])
+    \   + s:prefix('QF', ['AddNote', 'Load', 'Save']),
     \ 'on_map': [['n', '<LocalLeader>n']],
 \ })
 
@@ -270,9 +276,10 @@ call dein#add('junegunn/fzf', {
 call dein#add('junegunn/fzf.vim', {
     \ 'depends': 'fzf',
     \ 'if': executable('fzf'),
-    \ 'on_cmd': ['Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
-    \            'History', 'Lines', 'Maps', 'Marks', 'Snippets',
-    \            'Windows'],
+    \ 'on_cmd': s:prefix(
+    \   'FZF',
+    \   ['Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
+    \    'History', 'Lines', 'Maps', 'Marks', 'Snippets', 'Windows']),
 \ })
 
 " Distraction-free writing in Vim.
@@ -287,7 +294,7 @@ call dein#add('junegunn/vim-emoji', {
 
 " Automatically resizes your windows
 call dein#add('justincampbell/vim-eighties', {
-    \ 'on_cmd': ['EightiesDisable', 'EightiesEnable'],
+    \ 'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
 \ })
 
 " Motion improved
@@ -340,7 +347,7 @@ call dein#add('magus/localcfg')
 
 " A calendar window you can use within vim
 call dein#add('mattn/calendar-vim', {
-    \ 'on_cmd': ['Calendar', 'CalendarH', 'CalendarT', 'CalendarVR'],
+    \ 'on_cmd': s:suffix('Calendar', ['', 'H', 'T', 'VR']),
     \ 'on_map': [['n', '[calendar]']],
 \ })
 
@@ -419,7 +426,7 @@ call dein#add('reedes/vim-textobj-quote', {
 " Make working with the quickfix list/window smoother
 call dein#add('romainl/vim-qlist', {
     \ 'if': has('quickfix'),
-    \ 'on_cmd': ['Dlist', 'Ilist'],
+    \ 'on_cmd': s:suffix('list', ['D', 'I']),
     \ 'on_map': [['n', '[D', ']D', 'I', ']I']],
 \ })
 
@@ -446,7 +453,7 @@ call dein#add('spiiph/vim-space', {
 
 " Tiled Window Management for Vim
 call dein#add('JNRowe/dwm.vim', {
-    \ 'on_func': ['DWM_Close', 'DWM_Focus', 'DWM_New', 'DWM_Rotate'],
+    \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
 \ })
 
 " Linter for vim script
@@ -627,7 +634,7 @@ call dein#add('vim-scripts/DotOutlineTree', {
 
 " Set up regions within a buffer using their own filetypes
 call dein#add('vim-scripts/SyntaxRange', {
-    \ 'on_cmd': ['SyntaxIgnore', 'SyntaxInclude'],
+    \ 'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
 \ })
 
 " Toggle values under the cursor
