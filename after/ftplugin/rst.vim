@@ -3,8 +3,13 @@ nmap <buffer> <LocalLeader>h [heading]
 
 " This creates reST headings using *my* favourite definitions of =, - and '
 for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
-    execute 'nnoremap <buffer> <silent> [heading]' . s:key .
-        \ ' yyp<C-v>$r' . s:sym . 'o<Esc>.'
+    for [s:cmd, s:post] in [
+        \ ['', 'o<Esc>.'],
+        \ ['s', 'k'],
+    \ ]
+        execute 'nnoremap <buffer> <silent> [heading]' . s:cmd . s:key .
+            \ ' yyp<C-v>$r' . s:sym . s:post
+    endfor
 endfor
 
 setlocal complete+=s
