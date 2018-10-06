@@ -12,6 +12,10 @@ scriptencoding utf-8
 " example, I'll often not do so because I prefer to have tab completion
 " available for the commands that I use from the outset.
 
+function! s:airline_enable(extension)
+    return 'let g:airline_extensions += ["'. a:extension . '"]'
+endfunction
+
 " Used in ternaries for fallbacks to upstream sources when vcs_cst isn’t
 " available
 let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
@@ -87,7 +91,7 @@ call dein#add('chrisbra/Colorizer', {
 
 " A narrow region plugin (similar to Emacs)
 call dein#add('chrisbra/NrrwRgn', {
-    \ 'hook_post_source': 'let g:airline_extensions += ["nrrwrgn"]',
+    \ 'hook_post_source': s:airline_enable('nrrwrgn'),
     \ 'if': v:version >= 704,
     \ 'on_cmd': ['NUD', 'NR', 'NW']
 \ })
@@ -115,7 +119,7 @@ call dein#add('chrisbra/csv.vim', {
 
 " A plugin for handling unicode and digraphs characters
 call dein#add('chrisbra/unicode.vim', {
-    \ 'hook_post_source': 'let g:airline_extensions += ["unicode"]',
+    \ 'hook_post_source': s:airline_enable('unicode'),
     \ 'if': v:version >= 704,
     \ 'on_cmd': ['DigraphNew', 'Digraphs', 'UnicodeSearch', 'UnicodeName',
     \            'UnicodeTable'],
@@ -255,7 +259,7 @@ call dein#add('jceb/vim-orgmode', {
 
 " Ease your git workflow
 call dein#add('jreybert/vimagit', {
-    \ 'hook_post_source': 'let g:airline_extensions += ["vimagit"]',
+    \ 'hook_post_source': s:airline_enable('vimagit'),
     \ 'if': executable('git'),
     \ 'on_cmd': 'Magit',
 \ })
@@ -512,7 +516,7 @@ call dein#add('tpope/vim-jdaddy', {
 
 " Continuously updated session files
 call dein#add('tpope/vim-obsession', {
-    \ 'hook_post_source': 'let g:airline_extensions += ["obsession"]',
+    \ 'hook_post_source': s:airline_enable('obsession'),
     \ 'on_cmd': 'Obsession',
 \ })
 
