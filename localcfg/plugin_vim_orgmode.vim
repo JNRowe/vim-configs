@@ -2,7 +2,7 @@
 let g:org_prefer_insert_mode = v:false
 
 let g:org_todo_keywords = [
-    \ 'TODO(t)', 'NEXT(n)', 'STARTED(s)',
+    \ 'TODO(t)', 'NEXT(n)', 'STARTED(s)', 'HOLD(h)',
     \ '|',
     \ 'DONE(d)', 'CANCELLED(c)', 'REJECTED(r)'
 \]
