@@ -32,6 +32,11 @@ call s:DefineMenu('&Awesome', {
     \ 'theme':  g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
 \ })
 
+call s:DefineMenu('&Dwm', {
+    \ 'config.h': g:xdg_config_dir . '/dwm/config.h',
+    \ 'theme':  g:xdg_config_dir . '/dwm/themes/theme.h',
+\ })
+
 call s:DefineMenu('&Openbox', {
     \ 'autostart': g:xdg_config_dir . '/openbox/autostart.sh',
     \ 'menu': g:xdg_config_dir . '/openbox/menu.xml',
