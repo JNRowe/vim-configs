@@ -14,14 +14,14 @@ if has('gui_running')
         \ 'branch': '',
         \ 'crypt': '',
         \ 'linenr': '⏎',
-        \ 'maxlinenr': '☰',
-        \ 'modified': '➕',
-        \ 'notexists': '∉',
-        \ 'paste': ' ',
+        \ 'maxlinenr': '⌇',
+        \ 'modified': '+',
+        \ 'notexists': 'Ɇ',
+        \ 'paste': 'ρ',
         \ 'readonly': '',
         \ 'space': ' ',
         \ 'spell': '',
-        \ 'whitespace': '·',
+        \ 'whitespace': 'Ξ',
     \ }
 else
     let g:airline_symbols_ascii = v:true
