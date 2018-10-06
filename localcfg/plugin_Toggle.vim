@@ -1,3 +1,8 @@
-inoremap <C-M-T> <C-O>:call Toggle()<CR>
-nnoremap <C-M-T> :call Toggle()<CR>
-vnoremap <C-M-T> <ESC>:call Toggle()<CR>
+for [s:mode, s:cmd_prefix] in [
+    \   ['i', '<C-O>'],
+    \   ['n', ''],
+    \   ['v', '<ESC>'],
+    \ ]
+    execute s:mode . 'noremap <C-M-T> ' . s:cmd_prefix .
+        \ ':call Toggle()<CR>'
+endfor
