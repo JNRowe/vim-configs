@@ -22,11 +22,13 @@ nnoremap <silent> [gitgutter]p :GitGutterPreviewHunk<CR>
 " If you have more than 50 edits you probably need to commit!
 let g:gitgutter_max_signs = 50
 
-let g:gitgutter_sign_added              = ''
-let g:gitgutter_sign_modified           = ''
-let g:gitgutter_sign_removed            = ''
-let g:gitgutter_sign_removed_first_line = '˙'
-let g:gitgutter_sign_modified_removed   = ''
+if has('gui_running')
+    let g:gitgutter_sign_added              = ''
+    let g:gitgutter_sign_modified           = ''
+    let g:gitgutter_sign_removed            = ''
+    let g:gitgutter_sign_removed_first_line = '˙'
+    let g:gitgutter_sign_modified_removed   = ''
+endif
 
 let g:gitgutter_override_sign_column_highlight = v:false
 
