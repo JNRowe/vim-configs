@@ -30,7 +30,6 @@ endif
 let g:airline#extensions#disable_rtp_load = v:true
 let g:airline_extensions = [
     \ 'csv',
-    \ 'denite',
     \ 'po',
     \ 'whitespace',
     \ 'wordcount',
