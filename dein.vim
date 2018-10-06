@@ -353,8 +353,8 @@ call dein#add('mattn/calendar-vim', {
 
 " Plugins for HTML and CSS hi-speed coding
 call dein#add('mattn/emmet-vim', {
-    \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ 'if': v:version >= 700,
+    \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
 \ })
 
 " Display your undo history in a graph
