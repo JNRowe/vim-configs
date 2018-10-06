@@ -363,7 +363,7 @@ call dein#add('mbbill/undotree', {
     \ 'on_cmd': 'UndotreeToggle',
 \ })
 
-" The fancy start screen.
+" The fancy start screen
 call dein#add('mhinz/vim-startify')
 
 " Text objects based on indent levels
