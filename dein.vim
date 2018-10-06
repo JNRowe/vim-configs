@@ -12,7 +12,9 @@ scriptencoding utf-8
 " example, I'll often not do so because I prefer to have tab completion
 " available for the commands that I use from the outset.
 
-let g:vcs_cst = dein#util#_get_type('vcs_cst') != {}
+" Used in ternaries for fallbacks to upstream sources when vcs_cst isn’t
+" available
+let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
 " A dark powered Vim/Neovim plugin manager
 call dein#add(expand('~/.vim/external/dein.vim'), {
