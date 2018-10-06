@@ -6,6 +6,7 @@ endif
 
 nnoremap [gitgutter] <Nop>
 nmap <Leader>g [gitgutter]
+
 let g:gitgutter_map_keys = v:false
 
 for [s:key, s:cmd] in [

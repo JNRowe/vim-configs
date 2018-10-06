@@ -666,6 +666,7 @@ call dein#add('vim-scripts/ebnf.vim', {
 call dein#add('vim-scripts/uri-ref', {
     \ 'on_ft': 'mail',
 \ })
+
 " }}}
 
 " Vimscript parser
