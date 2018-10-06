@@ -269,7 +269,7 @@ call dein#add('jreybert/vimagit', {
 call dein#add('junegunn/fzf', {
     \ 'if': executable('fzf'),
     \ 'on_cmd': 'FZF',
-    \ 'on_func': 'fzf',
+    \ 'on_func': 'fzf#run',
 \ })
 
 " Advanced fzf integration
