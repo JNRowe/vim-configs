@@ -45,11 +45,6 @@ call dein#add('Raimondi/delimitMate', {
     \ 'on_event': 'InsertEnter',
 \ })
 
-" A dark powered plugin for Neovim/Vim to unite all interfaces
-call dein#add('Shougo/denite.nvim', {
-    \ 'if': has('python3') && v:version >= 800,
-\ })
-
 " Asynchronous execution plugin
 " Note: Lazy loaded for rdeps hooks
 call dein#add('Shougo/vimproc', {
@@ -577,7 +572,6 @@ call dein#add('tweekmonster/startuptime.vim', {
 " Lean & mean status/tabline for vim that's light as air
 call dein#add('vim-airline/vim-airline', {
     \ 'depends': [
-    \   'denite.nvim',
     \   'vim-airline-themes',
     \   'vim-fugitive',
     \ ],
