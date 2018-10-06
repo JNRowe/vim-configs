@@ -29,11 +29,5 @@ for [s:key, s:cmd] in [
     \   ['<Down>', 'previous_wrap'],
     \   ['<Up>',   'next_wrap'],
     \ ]
-    if s:cmd[0] !=# ':'
-        let s:cmd = '<Plug>(ale_' . s:cmd . ')'
-    else
-        let s:cmd = s:cmd[1:]
-    endif
-
-    execute 'nmap <silent> [ale]' . s:key . ' ' . s:cmd
+    execute 'nmap <silent> [ale]' . s:key . ' ' . '<Plug>(ale_' . s:cmd . ')'
 endfor
