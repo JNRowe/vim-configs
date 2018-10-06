@@ -20,14 +20,14 @@ nnoremap [ale] <Nop>
 nmap <LocalLeader>a [ale]
 
 for [s:key, s:cmd] in [
-    \   ['d',       'detail'],
-    \   ['f',       'fix'],
-    \   ['l',       'lint'],
-    \   ['t',       'toggle'],
-    \   ['<Home>',  'first'],
-    \   ['<End>',   'last'],
-    \   ['<Down>',  'previous_wrap'],
-    \   ['<Up>',    'next_wrap'],
+    \   ['d',      'detail'],
+    \   ['f',      'fix'],
+    \   ['l',      'lint'],
+    \   ['t',      'toggle'],
+    \   ['<Home>', 'first'],
+    \   ['<End>',  'last'],
+    \   ['<Down>', 'previous_wrap'],
+    \   ['<Up>',   'next_wrap'],
     \ ]
     if s:cmd[0] !=# ':'
         let s:cmd = '<Plug>(ale_' . s:cmd . ')'
