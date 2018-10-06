@@ -83,4 +83,5 @@ call s:DefineMenu('&freetype', [
     \ ],
 \ )
 
-call s:DefineMenu('&gtk', '~/.gtkrc-2.0')
+call s:DefineMenu('&gtk2', '~/.gtkrc-2.0')
+call s:DefineMenu('&gtk3', g:xdg_config_dir . '/gtk-3.0/settings.ini')
