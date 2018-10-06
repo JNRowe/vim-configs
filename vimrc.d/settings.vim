@@ -4,7 +4,7 @@ scriptencoding utf-8
 set autochdir
 set backup
 set backupcopy=auto,breakhardlink
-let &backupdir = g:vim_cache_dir . '/backup//,' . &backupdir
+let &backupdir = g:vim_cache_dir . '/backup//'
 call mkdir(g:vim_cache_dir . '/backup', 'p')
 set backupskip+=*.mht
 if has('balloon_eval')
