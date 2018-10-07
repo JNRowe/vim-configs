@@ -491,6 +491,12 @@ call dein#add('terryma/vim-multiple-cursors', {
     \ 'on_map': '<C-n>',
 \ })
 
+" Look up word definitions with wordnet
+call dein#add('timcharper/wordnet.vim', {
+    \ 'if': executable('wn'),
+    \ 'on_map': '<Leader>wn',
+\ })
+
 " Vim port of the monokai theme for TextMate
 call dein#add('tomasr/molokai')
 
