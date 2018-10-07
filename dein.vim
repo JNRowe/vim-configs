@@ -45,6 +45,11 @@ call dein#add('AndrewRadev/splitjoin.vim', {
     \ 'on_map': {'n': ['gJ', 'gS']},
 \ })
 
+" Speed up folding by reducing recalculations
+call dein#add('Konfekt/FastFold', {
+    \ 'if': has('folding'),
+\ })
+
 " Tango inspired colourscheme
 call dein#add('JNRowe/vim-jnrowe')
 
