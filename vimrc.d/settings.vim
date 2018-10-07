@@ -13,7 +13,7 @@ endif
 set breakindent
 set breakindentopt=sbr
 set colorcolumn=+1
-set completeopt+=longest,menuone
+set completeopt+=menuone
 if has('conceal')
     set concealcursor=nc
     set conceallevel=2
