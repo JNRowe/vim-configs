@@ -642,6 +642,12 @@ call dein#add('xolox/vim-notes', {
     \ 'on_map': {'ov': '<LocalLeader>en'},
 \ })
 
+" Nim language support
+call dein#add('zah/nim.vim', {
+    \ 'if': executable('nim'),
+    \ 'on_ft': 'nim',
+\ })
+
 " vim-scripts bundles {{{
 
 " An outline tree of a buffer
