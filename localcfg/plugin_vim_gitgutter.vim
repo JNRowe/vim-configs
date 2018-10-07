@@ -19,8 +19,8 @@ for [s:key, s:cmd] in [
 endfor
 nnoremap <silent> [gitgutter]p :GitGutterPreviewHunk<CR>
 
-" If you have more than 50 edits you probably need to commit!
-let g:gitgutter_max_signs = 50
+" If you have more than 100 edits you probably need to commit!
+let g:gitgutter_max_signs = 100
 
 if has('gui_running')
     let g:gitgutter_sign_added              = ''
