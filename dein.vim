@@ -77,6 +77,13 @@ call dein#add('airblade/vim-gitgutter', {
     \ 'if': has('signs') && executable('git'),
 \ })
 
+" Run pytest from within vim
+call dein#add('alfredodeza/pytest.vim', {
+    \ 'if': executable('pytest'),
+    \ 'on_cmd': 'Pytest',
+    \ 'on_ft': 'python',
+\ })
+
 " Highlights whitespace at the end of lines
 call dein#add('bitc/vim-bad-whitespace', {
     \ 'on_cmd': s:suffix('BadWhitespace', ['Erase', 'Hide', 'Toggle']),
