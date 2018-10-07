@@ -420,7 +420,7 @@ call dein#add('othree/html5.vim', {
 call dein#add('reedes/vim-textobj-quote', {
     \ 'depends': 'vim-textobj-user',
     \ 'on_cmd': 'ToggleEducate',
-    \ 'on_ft': ['mail', 'rst', 'text'],
+    \ 'on_ft': ['gitcommit', 'mail', 'rst', 'text'],
 \ })
 
 " Make working with the quickfix list/window smoother
