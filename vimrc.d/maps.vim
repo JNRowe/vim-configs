@@ -168,7 +168,7 @@ nmap <silent> <C-Space> :call <SID>cursor_ping()<CR>
 
 nnoremap <silent> <S-Space> :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
 
-" Insert Path to current file at command line
+" Insert PWD at command line
 cmap <M-.> <C-r>=expand('%:p:h') . "/"<CR>
 " }}}
 
