@@ -30,13 +30,6 @@ nnoremap <C-Up> {
 nnoremap <C-Down> }
 " }}}
 
-" Remove nasty page skipping mappings {{{
-inoremap <S-Up> <C-o>gk
-inoremap <S-Down> <C-o>gj
-nnoremap <S-Up> gk
-nnoremap <S-Down> gj
-" }}}
-
 " Make C-g verbose by default
 nnoremap <C-g> 2<C-g>
 
