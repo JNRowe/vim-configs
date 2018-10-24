@@ -9,14 +9,16 @@ command! ShowHighlightGroup
 " }}}
 
 " Flag toggling function {{{
-" From http://vim.wikia.com/wiki/Handy_option_flag_toggler
 function! ToggleFlag(option, flag)
-    execute 'let l:lopt = &' . a:option
-    if l:lopt =~# ('.*' . a:flag . '.*')
-        execute 'set ' . a:option . '-=' . a:flag
+    let l:optstr = eval('&' . a:option)
+    if stridx(l:optstr, ',') == -1
+        " Simple char options like 'fo'
+        let l:flip = '+-'[l:optstr =~# a:flag]
     else
-        execute 'set ' . a:option . '+=' . a:flag
+        " Comma lists options like 'cot'
+        let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
     endif
+    execute 'set ' . a:option . l:flip . '=' . a:flag
 endfunction
 " }}}
 
