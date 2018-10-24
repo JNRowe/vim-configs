@@ -40,6 +40,9 @@ nnoremap <C-g> 2<C-g>
 " Map Q to reformat paragraphs
 nnoremap Q gqap
 
+" Man page, for easy access with custom keywordprg
+nnoremap <C-?> :<C-U>execute "Man" v:count "<C-R><C-W>"<CR>
+
 " Shift + left/right to select text {{{
 nnoremap <S-Left> vh
 nnoremap <S-Right> vl
