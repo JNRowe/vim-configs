@@ -194,14 +194,6 @@ call dein#add('ervandew/regex', {
     \ 'on_cmd': 'Regex',
 \ })
 
-" Show cyclomatic complexity of Python code
-call dein#add('garybernhardt/pycomplexity', {
-    \ 'if': has('signs') && (has('python') || has('python3')),
-    \ 'on_cmd': 'Complexity',
-    \ 'on_ft': 'python',
-    \ 'rtp': 'pycomplexity.vim',
-\ })
-
 " Configurable, flexible, intuitive text aligning
 call dein#add('godlygeek/tabular', {
     \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
@@ -445,6 +437,13 @@ call dein#add('romainl/vim-qlist', {
 " More pleasant editing on commit message
 call dein#add('rhysd/committia.vim', {
     \ 'if': executable('git'),
+\ })
+
+" Show cyclomatic complexity of Python code
+call dein#add('rubik/vim-radon', {
+    \ 'if': has('signs') && (has('python') || has('python3')),
+    \ 'on_cmd': 'Radon',
+    \ 'on_ft': 'python',
 \ })
 
 " Graph your undo tree
