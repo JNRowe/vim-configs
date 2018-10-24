@@ -79,7 +79,6 @@ endfunction
 
 " Function keys {{{
 nnoremap <silent> <F3> :set expandtab!<CR>
-" F4 toggles paste
 " <[SC]-F4> toggles menu/toolbar in gvim
 nnoremap <F10> :make check<CR>
 nnoremap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
