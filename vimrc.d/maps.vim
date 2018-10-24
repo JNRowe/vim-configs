@@ -43,7 +43,7 @@ nnoremap Q gqap
 " Man page, for easy access with custom keywordprg
 nnoremap <C-?> :<C-U>execute "Man" v:count "<C-R><C-W>"<CR>
 
-" Shift + left/right to select text {{{
+" Shift + arrows to select text {{{
 nnoremap <S-Left> vh
 nnoremap <S-Right> vl
 nnoremap <S-Up> Vk
