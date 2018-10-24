@@ -30,6 +30,10 @@ nnoremap <C-Up> {
 nnoremap <C-Down> }
 " }}}
 
+" Begin new line from anywhere
+inoremap <S-CR> <C-o>o
+inoremap <C-CR> <C-o>O
+
 " Make C-g verbose by default
 nnoremap <C-g> 2<C-g>
 
