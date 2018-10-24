@@ -15,7 +15,7 @@ they may make your life far simpler!
    :target: http://jnrowe.github.com/vim-jnrowe/_images/default.png
    :width: 25%
 
-My tango palette colour scheme, try it you'll like it!
+My tango palette colour scheme, try it… you'll love it!
 
 ``Lokaltog/vim-easymotion``
 ---------------------------
