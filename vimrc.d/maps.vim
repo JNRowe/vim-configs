@@ -153,6 +153,19 @@ endfor
 cnoremap <C-h> help<Space>  " I don't use vi movement keys in command-line mode
 cnoremap <C-S-h> vert help<Space>
 
+function! s:cursor_ping()
+    let l:cursorline = &cursorline
+    let l:cursorcolumn = &cursorcolumn
+    for _ in range(5)
+        set cursorline! cursorcolumn!
+        redraw
+        sleep 15m
+    endfor
+    let &cursorline = l:cursorline
+    let &cursorcolumn = l:cursorcolumn
+endfunction
+nmap <silent> <C-Space> :call <SID>cursor_ping()<CR>
+
 " Insert Path to current file at command line
 cmap <M-.> <C-r>=expand('%:p:h') . "/"<CR>
 " }}}
