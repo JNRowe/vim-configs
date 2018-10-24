@@ -80,10 +80,12 @@ endfunction
 " Function keys {{{
 nnoremap <silent> <F3> :set expandtab!<CR>
 " <[SC]-F4> toggles menu/toolbar in gvim
-nnoremap <F10> :make check<CR>
-nnoremap <S-F10> :execute 'make -C ' . expand('%:p:h') . ' check'<CR>
-nnoremap <F11> :make<CR>
-nnoremap <S-F11> :execute 'make -C ' . expand('%:p:h')<CR>
+function! s:call_build(...)
+    let l:make = filereadable('build.ninja') ? 'ninja' : 'make'
+    execute l:make . ' -C ' . expand('%:p:h') . ' ' . get(a:, 1, '')
+endfunction
+nnoremap <F10> :call <SID>call_build()<CR>
+nnoremap <S-F10> :call <SID>call_build('check')<CR>
 nnoremap <silent> <C-F11> :let @/ = ''<CR>
 " }}}
 
