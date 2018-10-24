@@ -625,6 +625,12 @@ call dein#add('vim-utils/vim-vertical-move', {
     \ 'on_map': ['[v', ']v'],
 \ })
 
+" A personal wiki
+call dein#add('vimwiki/vimwiki', {
+    \ 'on_cmd': s:prefix('Vimwiki', ['DiaryIndex', 'Index', 'MakeDiaryNote']),
+    \ 'on_ft': 'vimwiki',
+\ })
+
 " Provides additional text objects
 call dein#add('wellle/targets.vim')
 
