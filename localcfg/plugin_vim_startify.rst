@@ -26,7 +26,7 @@ args?
     let g:startify_enable_special = v:false
     let g:startify_fortune_use_unicode = v:true
 
-Requires Font Awesome in places
+.. include:: ../.includes/fontawesome.rst
 
 .. code-block:: vim
 
@@ -42,11 +42,6 @@ Requires Font Awesome in places
     let g:startify_session_autoload = v:true
     let g:startify_session_dir = g:vim_data_dir . '/sessions'
     let g:startify_session_sort = v:true
-
-.. note::
-
-    I have FA resolve locally as webfonts are disabled in my browsers,
-    if you don't have a similar setup then the following won't work.
 
 .. code-block:: vim
 

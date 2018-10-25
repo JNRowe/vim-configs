@@ -10,7 +10,7 @@
     let g:ale_lint_on_insert_leave = v:true
     let g:ale_open_list = v:true
 
-Requires Font Awesome in places
+.. include:: ../.includes/fontawesome.rst
 
 .. code-block:: vim
 
@@ -21,11 +21,6 @@ Requires Font Awesome in places
         let g:ale_sign_style_error = ''
         let g:ale_sign_style_warning = ''
     endif
-
-.. note::
-
-    I have FA resolve locally as webfonts are disabled in my browsers, if you
-    don't have a similar setup then the following won't work.
 
 .. code-block:: vim
 
