@@ -33,6 +33,12 @@ Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are: run with it, override it with your own ``~/.vimrc``, or — most
 likely — simply cherry pick the parts of it you like.
 
+Help
+----
+
+* `background <background.html>`__
+* `FAQ <FAQ.html>`__
+
 Vim files
 ---------
 
