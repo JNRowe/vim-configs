@@ -8,7 +8,7 @@
     let g:airline_theme = 'powerlineish'
     let g:airline_skip_empty_sections = v:true
 
-Requires Font Awesome in places
+.. include:: ../.includes/fontawesome.rst
 
 .. code-block:: vim
 
@@ -32,11 +32,6 @@ Requires Font Awesome in places
     else
         let g:airline_symbols_ascii = v:true
     endif
-
-.. note::
-
-    I have FA resolve locally as webfonts are disabled in my browsers, if you
-    don't have a similar setup then the following won't work.
 
 .. code-block:: vim
 
