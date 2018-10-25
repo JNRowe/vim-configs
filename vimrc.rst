@@ -57,8 +57,8 @@ Pull in remaining configs.
     runtime vimrc.d/dein.vim
     runtime vimrc.d/settings.vim
     runtime vimrc.d/syntax.vim
-    runtime vimrc.d/maps.vim
     runtime vimrc.d/misc.vim
+    runtime vimrc.d/maps.vim
     if has('patch-7.4.1821')
         runtime vimrc.d/packages.vim
     else

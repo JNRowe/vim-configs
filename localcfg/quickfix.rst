@@ -5,10 +5,8 @@
 
 .. code-block:: vim
 
-    nnoremap [quickfix] <Nop>
-    nmap <LocalLeader>f [quickfix]
-    nnoremap [location] <Nop>
-    nmap <LocalLeader>l [location]
+    call MnemonicMap('quickfix', {'key': 'f', 'local': v:true})
+    call MnemonicMap('location', {'local': v:true})
 
     function! s:qf_key(type, key, cmd)
         let l:group = a:type == 'l' ? 'location' : 'quickfix'

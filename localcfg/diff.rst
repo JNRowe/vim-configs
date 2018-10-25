@@ -8,8 +8,7 @@
 .. code-block:: vim
 
     function! s:diff_maps()
-        nnoremap [diff] <Nop>
-        nmap <LocalLeader>i [diff]
+        call MnemonicMap('diff', {'key': 'i', 'local': v:true})
 
         noremap <buffer> [diff]o :diffoff!<CR>
         noremap <buffer> [diff]p :diffput<CR>

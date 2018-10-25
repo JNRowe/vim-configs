@@ -5,9 +5,7 @@
 
 .. code-block:: vim
 
-    nnoremap [vimwiki] <Nop>
-    nmap <Leader>x [vimwiki]
-
+    call MnemonicMap('vimwiki', {'key': 'x'})
     let g:vimwiki_map_prefix = '[vimwiki]'
 
 .. code-block:: vim

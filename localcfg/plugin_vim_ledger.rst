@@ -8,8 +8,7 @@
 
 .. code-block:: vim
 
-    nnoremap [ledger] <Nop>
-    nmap <LocalLeader>l [ledger]
+    call MnemonicMap('Ledger', {'buffer': v:true, 'local': v:true})
 
     for [s:key, s:cmd] in [
         \   ['a',       ':LedgerAlign'],
@@ -24,7 +23,7 @@
             let s:cmd = s:cmd[1:]
         endif
 
-        execute 'autocmd Filetype ledger nnoremap <silent> [ledger]' .
+        execute 'autocmd Filetype ledger nnoremap <silent> [Ledger]' .
             \ s:key . ' :' . s:cmd . '<CR>'
     endfor
 

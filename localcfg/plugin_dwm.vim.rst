@@ -5,8 +5,7 @@
 
     let g:dwm_map_keys = v:false
 
-    nnoremap [dwm] <Nop>
-    nmap <Leader>d [dwm]
+    call MnemonicMap('dwm')
 
 Imagine <Up> increases window count, and <Down>… well, yeah.
 

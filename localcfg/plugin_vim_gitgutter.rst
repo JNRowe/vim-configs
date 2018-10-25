@@ -5,9 +5,7 @@
 
 .. code-block:: vim
 
-    nnoremap [gitgutter] <Nop>
-    nmap <Leader>g [gitgutter]
-
+    call MnemonicMap('gitgutter')
     let g:gitgutter_map_keys = v:false
 
     for [s:key, s:cmd] in [

@@ -3,8 +3,7 @@
 
 .. code-block:: vim
 
-    nnoremap [calendar] <Nop>
-    nmap <LocalLeader>c [calendar]
+    call MnemonicMap('Calendar')
 
     for [s:key, s:cmd] in [
         \   ['v', ''],
@@ -12,7 +11,7 @@
         \   ['f', 'T'],
         \   ['r', 'VR'],
         \ ]
-        execute 'nnoremap <silent> [calendar]' . s:key . ' '
+        execute 'nnoremap <silent> [Calendar]' . s:key . ' '
             \ ':Calendar' . s:cmd . '<CR>'
     endfor
 

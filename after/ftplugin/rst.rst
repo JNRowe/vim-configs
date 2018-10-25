@@ -3,8 +3,7 @@
 
 .. code-block:: vim
 
-    nnoremap <buffer> [heading] <Nop>
-    nmap <buffer> <LocalLeader>h [heading]
+    call MnemonicMap('Heading', {'buffer': v:true, 'local': v:true})
 
 This creates reST headings using *my* favourite definitions of =, - and '
 
@@ -15,7 +14,7 @@ This creates reST headings using *my* favourite definitions of =, - and '
             \ ['', 'o<Esc>.'],
             \ ['s', 'k'],
         \ ]
-            execute 'nnoremap <buffer> <silent> [heading]' . s:cmd . s:key .
+            execute 'nnoremap <buffer> <silent> [Heading]' . s:cmd . s:key .
                 \ ' yyp<C-v>$r' . s:sym . s:post
         endfor
     endfor

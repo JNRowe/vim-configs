@@ -3,8 +3,7 @@
 
 .. code-block:: vim
 
-    nnoremap [sideways] <Nop>
-    nmap <LocalLeader>s [sideways]
+    call MnemonicMap('sideways', {'local': v:true})
 
     for s:key in ['Left', 'Right']
         execute 'nnoremap <silent> [sideways]<' . s:key . '>' .

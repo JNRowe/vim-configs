@@ -24,8 +24,7 @@
 
 .. code-block:: vim
 
-    nnoremap [ale] <Nop>
-    nmap <LocalLeader>a [ale]
+    call MnemonicMap('ale', {'local': v:true})
 
     for [s:key, s:cmd] in [
         \   ['d',      'detail'],

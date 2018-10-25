@@ -3,9 +3,12 @@
 
 .. code-block:: vim
 
-    nnoremap <buffer> [haskell] <Nop>
-    nmap <buffer> <Leader>h [haskell]
+    call MnemonicMap('Haskell', {
+        \ 'buffer': v:true,
+        \ 'local': v:true,
+        \ 'mode': 'v'
+    \ })
 
-    vnoremap <buffer> [haskell]= :Tabularize /=<CR>
-    vnoremap <buffer> [haskell]: :Tabularize /::<CR>
-    vnoremap <buffer> [haskell]- :Tabularize /-><CR>
+    vnoremap <buffer> [Haskell]= :Tabularize /=<CR>
+    vnoremap <buffer> [Haskell]: :Tabularize /::<CR>
+    vnoremap <buffer> [Haskell]- :Tabularize /-><CR>
