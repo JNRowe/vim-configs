@@ -5,12 +5,6 @@
 
 .. code-block:: vim
 
-    if !(has('signs') && executable('git'))
-        finish
-    endif
-
-.. code-block:: vim
-
     nnoremap [gitgutter] <Nop>
     nmap <Leader>g [gitgutter]
 
