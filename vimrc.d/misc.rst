@@ -27,3 +27,10 @@ Flag toggling function
         endif
         execute 'set ' . a:option . l:flip . '=' . a:flag
     endfunction
+
+User email address, as used by various plugins
+
+.. code-block:: vim
+
+    silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
+        \ ' <' . systemlist('git -C ~ config user.email')[0] . '>'
