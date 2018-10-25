@@ -185,8 +185,7 @@ Help related maps
 
 .. code-block:: vim
 
-    nnoremap [Help] <Nop>
-    nmap <Leader>? [Help]
+    call MnemonicMap('Help', {'key': '?'})
 
     for s:t in ['pattern', 'quickref', 'registers']
         execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'

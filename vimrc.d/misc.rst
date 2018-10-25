@@ -34,3 +34,24 @@ User email address, as used by various plugins
 
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
         \ ' <' . systemlist('git -C ~ config user.email')[0] . '>'
+
+Mnemonic mapping setup function
+
+.. tip::
+
+    This adds a ``?`` binding to display the map list for ``name``
+
+.. code-block:: vim
+
+    function! MnemonicMap(name, ...)
+        let l:extra = get(a:, 1, {})
+        let l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
+        let l:key = get(l:extra, 'key', tolower(a:name[0]))
+        let l:leader = get(l:extra, 'local', v:false) ? 'Local' : ''
+        let l:mode = get(l:extra, 'mode', 'n')
+        execute l:mode . 'noremap ' . l:buffer . ' [' . a:name . '] <Nop>'
+        execute l:mode . 'map ' . l:buffer . ' <' . l:leader . 'Leader>'
+            \ . l:key . ' [' . a:name ."]"
+        execute l:mode . 'noremap <silent> [' . a:name . ']?'
+            \ ' :' . l:mode . 'map [' . a:name . ']<CR>'
+    endfunction

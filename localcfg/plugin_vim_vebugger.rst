@@ -3,9 +3,7 @@
 
 .. code-block:: vim
 
-    nnoremap [vebugger] <Nop>
-    nmap <LocalLeader>v [vebugger]
-
+    call MnemonicMap('vebugger', {'local': v:true})
     let g:vebugger_leader='[vebugger]'
 
 .. code-block:: vim
