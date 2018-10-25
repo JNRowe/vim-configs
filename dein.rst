@@ -109,9 +109,7 @@ Asynchronous execution plugin
         \ 'on_func': 'vebugger',
     \ })
 
-.. note::
-
-    Lazy loaded for rdeps hooks
+.. include:: .includes/lazy_rdep.rst
 
 The ultimate plugin for snippets
 
@@ -1006,9 +1004,7 @@ Miscellaneous auto-load Vim scripts
         \ 'on_map': {'ov': '<LocalLeader>en'},
     \ })
 
-.. note::
-
-    Lazy loaded for rdeps hooks
+.. include:: .includes/lazy_rdep.rst
 
 Easy note taking in Vim
 
@@ -1038,9 +1034,7 @@ Vimscript parser
         \ 'on_ft': 'vim',
     \ })
 
-.. note::
-
-    Lazy loaded for rdeps hooks
+.. include:: .includes/lazy_rdep.rst
 
 vim-scripts mirrors
 -------------------
