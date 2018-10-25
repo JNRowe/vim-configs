@@ -32,6 +32,17 @@ Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are: run with it, override it with your own ``~/.vimrc``, or — most
 likely — simply cherry pick the parts of it you like.
 
+Vim files
+---------
+
+* `after/ftplugin/ <after/ftplugin/index.html>`__
+* `ftdetect/ <ftdetect/index.html>`__
+* `ftplugin/ <ftplugin/index.html>`__
+* `localcfg/ <localcfg/index.html>`__
+* `vimrc.d/ <vimrc.d/index.html>`__
+* `vimrc <vimrc.html>`__
+* `dein.vim <dein.html>`__
+
 Contributors
 ------------
 

@@ -1,1 +1,0 @@
-nmap ga <Plug>(UnicodeGA)
