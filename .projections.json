@@ -1,35 +1,73 @@
 {
-    "ftdetect/*.vim": {
+    "*": {
+        "make": "ninja -C ~ -j1"
+    },
+    "FAQ.rst": {
+        "type": "faq"
+    },
+    "README.rst": {
+        "type": "readme"
+    },
+    "dein.rst": {
+        "alternate": "{}.vim",
+        "type": "dein"
+    },
+    "ftdetect/*.rst": {
+        "alternate": "ftdetect/{}.vim",
         "template": [
-            "augroup jnrowe_ftdetect",
-            "    autocmd BufRead,BufNewFile FIXME setfiletype FALLBACK FIXME",
-            "augroup END"
+            "``{file|dirname|basename}/{}``",
+            "===",
+            "",
+            ".. code-block:: vim",
+            "",
+            "    augroup jnrowe_ftdetect",
+            "        autocmd BufRead,BufNewFile FIXME setfiletype FALLBACK FIXME",
+            "    augroup END"
         ],
         "type": "fconfig"
     },
-    "localcfg/plugin_*.vim": {
+    "localcfg/*.rst": {
+        "alternate": "localcfg/{}.vim",
         "template": [
-            "scriptencoding utf-8",
+            "``{file|dirname|basename}/{}``",
+            "===",
             "",
-            "nnoremap [{capitalize}] <Nop>",
-            "nmap <LocalLeader>FIXME [{capitalize}]"
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            ".. code-block:: vim",
+            ""
+        ],
+        "type": "lconfig"
+    },
+    "localcfg/plugin_*.rst": {
+        "alternate": "localcfg/{}.vim",
+        "template": [
+            "``{file|dirname|basename}/{}``",
+            "===",
+            "",
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            ".. code-block:: vim",
+            "",
+            "        call MnemonicMap('{capitalize}', {'buffer': v:true})"
         ],
         "type": "xconfig"
     },
-    "localcfg/*.vim": {
-        "type": "lconfig"
-    },
-    "*.rst": {
-        "alternate": "{}.html",
-        "type": "doc"
-    },
-    "dein.vim": {"type": "dein"},
-    "vimrc": {"type": "rc"},
-    "vimrc.d/*.vim": {
+    "vimrc.d/*.rst": {
+        "alternate": "vimrc.d/{}.vim",
         "template": [
+            "``{file|dirname|basename}/{}``",
+            "===",
             "",
-            " vim: fdm=marker:"
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            ".. code-block:: vim",
+            ""
         ],
         "type": "rconfig"
+    },
+    "vimrc.rst": {
+        "alternate": "{}.vim",
+        "type": "rc"
     }
 }
