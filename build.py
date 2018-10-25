@@ -9,7 +9,6 @@
 """
 
 from inspect import stack
-from os.path import expanduser
 from pathlib import Path
 from shutil import which
 from typing import List, NoReturn
