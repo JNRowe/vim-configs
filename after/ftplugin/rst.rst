@@ -30,7 +30,7 @@ too granular.
 
 .. code-block:: vim
 
-    for s:key in split(',.!¿?:;', '\zs')
+    for s:key in split(',.!?:;', '\zs')
         execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
     endfor
 
