@@ -9,6 +9,7 @@
 """
 
 from inspect import stack
+from os.path import expanduser
 from pathlib import Path
 from shutil import which
 from typing import List, NoReturn
@@ -25,7 +26,7 @@ def pretty(string: str, colour: bool = True) -> str:
         colour: Colourise output
     """
     head, tail = string.rsplit()
-    space = ' ' * (8 - len(head))
+    space = ' ' * (9 - len(head))
     if colour:
         return ''.join([click.style(head, 'green'), space,
                         click.style(tail, bold=True)])
@@ -97,6 +98,15 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                pretty('RST2HTML $out', colour),
                '$out.d', deps='gcc')
 
+        # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
+        # dependency file.
+        n.rule('rst_extract',
+               (f'{location / "rst2vim.py"} -r $out.d.tmp $in $out; '
+                '[ -f $out.d.tmp ] && echo $out: $$(< $out.d.tmp) > $out.dep; '
+                'rm -f $out.d.tmp'),
+               pretty('RST2VIM $out', colour),
+               '$out.dep', deps='gcc')
+
         n.rule('symlink', 'ln -rsf $in $out', pretty('SYMLINK $out', colour))
 
         n.rule('tags_gen',
@@ -108,10 +118,20 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 [f'{location / "build.py"}', ],
                 [ninja_syntax.__file__, ])
 
-        for p in location.glob('*.rst'):
-            n.build(p.with_suffix('.html').as_posix(), 'rst_compile',
-                    [p.as_posix(), ],
+        rst_files = list(location.glob('**/*.rst'))
+        for p in rst_files:
+            n.build(f'{location / p.with_suffix(".html")}', 'rst_compile',
+                    [f'{location / p }', ],
                     [which(rst2html), ])
+            if p.name == 'vimrc.rst':
+                n.build(f'{location / p.with_suffix("")}', 'rst_extract',
+                        [f'{location / p }', ],
+                        [f'{location / "rst2vim.py"}', ])
+            elif p.name not in ('FAQ.rst', 'README.rst', 'background.rst',
+                                'index.rst'):
+                n.build(f'{location / p.with_suffix(".vim")}', 'rst_extract',
+                        [f'{location / p }', ],
+                        [f'{location / "rst2vim.py"}', ])
 
         tags = location / 'tags'
         ctags_path = which('exuberant-ctags')
