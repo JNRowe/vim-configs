@@ -117,7 +117,7 @@ The ultimate plugin for snippets
 
     call dein#add('SirVer/ultisnips', {
         \ 'depends': 'vim-snippets',
-        \ 'if': (has('python') || has('python3')) && v:version >= 704,
+        \ 'if': has('pythonx') && v:version >= 704,
     \ })
 
 Show git diff status in the gutter
@@ -243,7 +243,7 @@ A VIM binding to the jedi autocompletion library
 .. code-block:: vim
 
     call dein#add('davidhalter/jedi-vim', {
-        \ 'if': has('python') || has('python3'),
+        \ 'if': has('pythonx'),
         \ 'on_cmd': 'JediClearCache',
         \ 'on_ft': 'python',
     \ })
@@ -272,7 +272,7 @@ The EditorConfig plugin
 .. code-block:: vim
 
     call dein#add('editorconfig/editorconfig-vim', {
-        \ 'if': has('python') || has('python3'),
+        \ 'if': has('pythonx'),
         \ 'on_event': 'InsertEnter',
     \ })
 
@@ -337,7 +337,7 @@ All powerful Pythonic task runner
 .. code-block:: vim
 
     call dein#add('idanarye/vim-omnipytent', {
-        \ 'if': has('python') || has('python3'),
+        \ 'if': has('pythonx'),
         \ 'on_cmd': s:prefix('OP', ['edit', '2edit', '3edit']),
     \ })
 
@@ -687,7 +687,7 @@ Show cyclomatic complexity of Python code
 .. code-block:: vim
 
     call dein#add('rubik/vim-radon', {
-        \ 'if': has('signs') && (has('python') || has('python3')),
+        \ 'if': has('signs') && has('pythonx'),
         \ 'on_cmd': 'Radon',
         \ 'on_ft': 'python',
     \ })
@@ -697,7 +697,7 @@ Graph your undo tree
 .. code-block:: vim
 
     call dein#add('sjl/gundo.vim', {
-        \ 'if': (has('python') || has('python3')) && v:version >= 703,
+        \ 'if': has('pythonx') && v:version >= 703,
         \ 'on_cmd': 'GundoToggle',
     \ })
 
