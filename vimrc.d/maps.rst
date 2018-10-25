@@ -1,12 +1,29 @@
 ``vimrc.d/maps.vim``
 ====================
 
-Quickly move between buffers
+Quickly move between buffers.
+
+I *love* ``hidden``, as it really suits the way I work.  However, it also means
+I occasionally have to skip through things I don’t care about in ``:bnext`` and
+I don’t love that.  The following function skips the buffers I wouldn’t care
+about and provides a more useful *to me* version of buffer cycling.
 
 .. code-block:: vim
 
-    noremap <M-Left> :bprev<CR>
-    noremap <M-Right> :bnext<CR>
+    function! s:switch_buf(count)
+        let b:bufs = filter(range(1, bufnr('$')),
+            \               'buflisted(v:val) && bufname(v:val) != ""')
+        if len(b:bufs) < 2
+            return
+        endif
+        let b:place = index(b:bufs, bufnr('%'))
+        let b:buf = get(b:bufs, b:place + a:count,
+            \           bufnr('%') == 1 ? bufnr('$') : b:bufs[0] )
+        execute "buffer " . b:buf
+    endfunction
+
+    noremap <silent> <M-Left> :call <SID>switch_buf(-1)<CR>
+    noremap <silent> <M-Right> :call <SID>switch_buf(1)<CR>
 
 I hate you *so* much right now
 
