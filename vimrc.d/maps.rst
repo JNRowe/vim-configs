@@ -234,3 +234,20 @@ Insert PWD at command line
 .. code-block:: vim
 
     cmap <M-.> <C-r>=expand('%:p:h') . "/"<CR>
+
+Scroll wheel moves through undo list, and through branches with shift.  Can’t
+for the life of me remember who was demoing something similar as a feature, but
+thanks for the idea!
+
+.. code-block:: vim
+
+    for s:m in ['i', 'n']
+        let s:break_insert = s:m == 'i' ? '<C-o>' : ''
+        for [s:mod, s:key, s:cmd] in [
+            \  ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
+            \  ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']
+            \ ]
+            execute s:m . 'noremap <' . s:mod . 'ScrollWheel' . s:key . '> '
+                \ . s:break_insert . s:cmd
+        endfor
+    endfor
