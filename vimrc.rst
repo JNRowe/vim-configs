@@ -1,11 +1,7 @@
 Basic setup
 ===========
 
-Don’t be afraid to use Unicode.
-
-.. code-block:: vim
-
-    scriptencoding utf-8
+.. include:: .includes/scriptencoding.rst
 
 Recent vim versions disable compatible when a ``vimrc`` is found, but some
 distributions are disabling that change for a reason that is far beyond me.

@@ -118,7 +118,8 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 [f'{location / "build.py"}', ],
                 [ninja_syntax.__file__, ])
 
-        rst_files = list(location.glob('**/*.rst'))
+        rst_files = [p for p in location.glob('**/*.rst')
+                     if '.includes' not in p.parts]
         for p in rst_files:
             n.build(f'{location / p.with_suffix(".html")}', 'rst_compile',
                     [f'{location / p }', ],
