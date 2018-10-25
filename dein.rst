@@ -7,11 +7,7 @@ Modeline is set so that ``:Exconfig <C-r><C-f>`` works
 
     " vim: set isfname-=/:
 
-Don’t be afraid to use Unicode.
-
-.. code-block:: vim
-
-    scriptencoding utf-8
+.. include:: .includes/scriptencoding.rst
 
 .. note::
 

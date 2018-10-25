@@ -1,11 +1,7 @@
 ``localcfg/plugin_vim_obsession.vim``
 =====================================
 
-Don’t be afraid to use Unicode.
-
-.. code-block:: vim
-
-    scriptencoding utf-8
+.. include:: ../.includes/scriptencoding.rst
 
 Requires Font Awesome in places
 
