@@ -51,6 +51,12 @@ available
 
     let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
+``executable()`` doesn’t cache results, so we’ll do it ourselves
+
+.. code-block:: vim
+
+    let s:has_git = executable('git')
+
 A dark powered Vim/Neovim plugin manager
 
 .. code-block:: vim
@@ -125,7 +131,7 @@ Show git diff status in the gutter
 .. code-block:: vim
 
     call dein#add('airblade/vim-gitgutter', {
-        \ 'if': has('signs') && executable('git'),
+        \ 'if': has('signs') && s:has_git,
     \ })
 
 Run pytest from within vim
@@ -415,7 +421,7 @@ Ease your git workflow
 
     call dein#add('jreybert/vimagit', {
         \ 'hook_post_source': s:airline_enable('vimagit'),
-        \ 'if': executable('git'),
+        \ 'if': s:has_git,
         \ 'on_cmd': 'Magit',
     \ })
 
@@ -679,7 +685,7 @@ More pleasant editing on commit message
 .. code-block:: vim
 
     call dein#add('rhysd/committia.vim', {
-        \ 'if': executable('git'),
+        \ 'if': s:has_git,
     \ })
 
 Show cyclomatic complexity of Python code
@@ -825,7 +831,7 @@ A Git wrapper so awesome, it should be illegal
 .. code-block:: vim
 
     call dein#add('tpope/vim-fugitive', {
-        \ 'if': executable('git'),
+        \ 'if': s:has_git,
     \ })
 
 JSON manipulation and pretty printing
@@ -863,7 +869,7 @@ If fugitive.vim is the Git, rhubarb.vim is the Hub
 
     call dein#add('tpope/vim-rhubarb', {
         \ 'depends': 'vim-fugitive',
-        \ 'if': executable('git'),
+        \ 'if': s:has_git,
     \ })
 
 Readline style insertion
