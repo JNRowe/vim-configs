@@ -1,6 +1,8 @@
-This directory contains icons used for signs.
+This directory contains icons used for signs and notifications.
 
-They come from adwaita-icon-theme-3.18.0, and are used under the Creative Commons
-Attribution-Share Alike 3.0.
+They come from adwaita-icon-theme_ v3.22.3, and are used under the Creative
+Commons Attribution-Share Alike 3.0.
 
-Thanks GNOME folks, they're very pretty!
+Thanks GNOME folks, they’re very pretty!
+
+.. _adwaita-icon-theme: https://git.gnome.org/browse/adwaita-icon-theme/
