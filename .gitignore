@@ -2,8 +2,11 @@
 
 /tags/
 
-/*.html
+*.html
+*.vim
+!internal/tearoff/plugin/tearoff.vim
 
 /build.ninja
 /abbr-local
+/vimrc
 /vimrc-local

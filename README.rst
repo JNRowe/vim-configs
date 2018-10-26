@@ -8,7 +8,8 @@ It uses features introduced in version 8.0, but should work with later versions.
 It will probably *not* work with neovim_, and that is unlikely to change in the
 near future.
 
-If you want a rambling backstory, see ``background.rst`` in this repository.
+If you want a rambling backstory, see the `background <background.html>`__
+document.
 
 If you find any problems with the files in this repository either file an
 issue_, or drop me an mail_.  However, please do not report problems when using
@@ -31,6 +32,23 @@ much to you:
 Scan over the ``vimrc`` file and figure out what you wish to do with it.  The
 choices are: run with it, override it with your own ``~/.vimrc``, or — most
 likely — simply cherry pick the parts of it you like.
+
+Help
+----
+
+* `background <background.html>`__
+* `FAQ <FAQ.html>`__
+
+Vim files
+---------
+
+* `after/ftplugin/ <after/ftplugin/index.html>`__
+* `ftdetect/ <ftdetect/index.html>`__
+* `ftplugin/ <ftplugin/index.html>`__
+* `localcfg/ <localcfg/index.html>`__
+* `vimrc.d/ <vimrc.d/index.html>`__
+* `vimrc <vimrc.html>`__
+* `dein.vim <dein.html>`__
 
 Contributors
 ------------
