@@ -5,7 +5,7 @@ let g:dein_repos_dir = g:dein_state_dir . '/repos'
 
 if executable('notify-send') && exists('$DISPLAY')
     let g:dein#enable_notification = v:true
-    let g:dein#notification_icon = '~/.vim/icons/editor.png'
+    let g:dein#notification_icon = '~/.vim/icons/editor.svg'
 endif
 
 if dein#load_state(g:dein_state_dir)
