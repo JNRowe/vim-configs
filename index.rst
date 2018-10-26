@@ -59,6 +59,14 @@ Vim files
     vimrc
     dein
 
+Development
+'''''''''''
+
+.. toctree::
+    :titlesonly:
+
+    todo
+
 Indices and tables
 ''''''''''''''''''
 
