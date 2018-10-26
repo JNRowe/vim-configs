@@ -9,12 +9,24 @@ more.
 from argparse import ArgumentParser
 
 from docutils.core import publish_doctree
+from docutils.nodes import Node
 from docutils.utils import DependencyList
 
 
-def is_vim_code(node):
-    return (node.tagname == 'literal_block'
-            and 'vim' in node.attributes['classes'])
+def is_vim_code(node: Node):
+    """Filter function to extract code blocks.
+
+    .. note::
+
+        This extracts plain literals and blocks marked as vim.  We can assume
+        all plain literals are vim code, as we’ve set ``highlight_language`` in
+        :file:`conf.py`.
+
+    """
+    if not node.tagname == 'literal_block':
+        return False
+    if node.attributes['classes'] == [] or 'vim' in node.attributes['classes']:
+        return True
 
 
 p = ArgumentParser()

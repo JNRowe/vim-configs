@@ -4,16 +4,26 @@
 Contents
 --------
 
-* `c.vim <c.html>`__
-* `cpp.vim <cpp.html>`__
-* `gitcommit.vim <gitcommit.html>`__
-* `gitrebase.vim <gitrebase.html>`__
-* `haskell.vim <haskell.html>`__
-* `help.vim <help.html>`__
-* `mail.vim <mail.html>`__
-* `make.vim <make.html>`__
-* `remind.vim <remind.html>`__
-* `rst.vim <rst.html>`__
-* `text.vim <text.html>`__
-* `vim.vim <vim.html>`__
-* `xml.vim <xml.html>`__
+.. toctree::
+    :titlesonly:
+
+    c
+    gitcommit
+    gitrebase
+    haskell
+    help
+    mail
+    make
+    remind
+    rst
+    text
+    vim
+    xml
+
+.. Hide symlinked docs.  Can’t hide them with orphan in the docs as it will
+   hide the original too.
+
+.. toctree::
+   :hidden:
+
+   cpp

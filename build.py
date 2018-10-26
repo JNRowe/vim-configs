@@ -97,6 +97,10 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                pretty('RST2HTML $out', colour),
                '$out.d', deps='gcc')
 
+        n.rule('sphinx_build',
+               f'sphinx-build -M html {location} {location / ".build"}',
+               pretty('SPHINX $out', colour))
+
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
         # dependency file.
         n.rule('rst_extract',
@@ -117,12 +121,19 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 [f'{location / "build.py"}', ],
                 [ninja_syntax.__file__, ])
 
+        n.build(f'{location / "README.html"}', 'rst_compile',
+                [f'{location / "README.rst"}' , ],
+                [which(rst2html), ])
+
         rst_files = [p for p in location.glob('**/*.rst')
                      if '.includes' not in p.parts]
+
+        n.build(f'{location / ".build/html"}', 'sphinx_build',
+                [f'{location / "conf.py"}', ]
+                + [p.as_posix() for p in rst_files],
+                implicit=[which('sphinx-build'), ])
+
         for p in rst_files:
-            n.build(f'{location / p.with_suffix(".html")}', 'rst_compile',
-                    [f'{location / p }', ],
-                    [which(rst2html), ])
             if p.name == 'vimrc.rst':
                 n.build(f'{location / p.with_suffix("")}', 'rst_extract',
                         [f'{location / p }', ],
