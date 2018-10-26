@@ -1,8 +1,9 @@
 /doc/tags
 
+/.build/
 /tags/
 
-*.html
+README.html
 *.vim
 !internal/tearoff/plugin/tearoff.vim
 
