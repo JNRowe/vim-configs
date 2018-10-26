@@ -1,6 +1,12 @@
 Frequently Asked Questions
 ==========================
 
+..
+    Ask them, and perhaps they’ll become frequent enough to be added here ;)
+
+.. contents::
+    :local:
+
 This can't *possibly* be worth it
 ---------------------------------
 
