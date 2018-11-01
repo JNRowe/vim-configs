@@ -1,5 +1,5 @@
-``localcfg``
-============
+``localcfg`` - Optional and system dependent configuration files
+================================================================
 
 The directory contains feature and plugin specific configuration data.
 
