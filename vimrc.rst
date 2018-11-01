@@ -3,8 +3,9 @@ Basic setup
 
 .. include:: .includes/scriptencoding.rst
 
-Recent vim versions disable compatible when a ``vimrc`` is found, but some
-distributions are disabling that change for a reason that is far beyond me.
+Recent :command:`vim` versions disable compatible when a :file:`vimrc` is
+found, but some distributions are disabling that change for a reason that is
+far beyond me.
 
 .. code-block:: vim
 
@@ -12,8 +13,8 @@ distributions are disabling that change for a reason that is far beyond me.
         set nocompatible
     endif
 
-Warn users with pre-v8 vim that problems with occur, but note that pull
-requests which aren’t too invasive are welcome.
+Warn users with pre-v8 :command:`vim` that problems with occur, but note that
+pull requests which aren’t too invasive are most welcome.
 
 .. code-block:: vim
 
