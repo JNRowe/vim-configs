@@ -3,7 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
-.. code-block:: vim
+Add maps to insert `X-Advice headers`_.  Obviously we’re not going to convince
+every one to take part, but they have become popular in work mail::
 
     call MnemonicMap('Advice', {'buffer': v:true, 'local': v:true})
 
@@ -28,3 +29,5 @@
     elseif executable('par')
         setlocal formatprg=par\ -w72eq
     endif
+
+.. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
