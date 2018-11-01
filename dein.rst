@@ -1,5 +1,5 @@
-dein plugins configuration
-==========================
+``dein.vim`` - ``dein`` plugins configuration
+=============================================
 
 Modeline is set so that ``:Exconfig <C-r><C-f>`` works
 

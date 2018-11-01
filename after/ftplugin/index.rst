@@ -1,5 +1,5 @@
-``after/ftplugin``
-==================
+``after/ftplugin`` - filetype specific overrides
+================================================
 
 Contents
 --------

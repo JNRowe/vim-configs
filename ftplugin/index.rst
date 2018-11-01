@@ -1,5 +1,5 @@
-``ftplugin``
-============
+``ftplugin`` - filetype specific setup
+======================================
 
 Contents
 --------

@@ -1,5 +1,5 @@
-``ftdetect``
-============
+``ftdetect`` - filetype detection
+=================================
 
 Contents
 --------
