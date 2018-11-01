@@ -10,6 +10,7 @@ from argparse import ArgumentParser
 
 from docutils.core import publish_doctree
 from docutils.nodes import Node
+from docutils.parsers.rst import nodes, roles
 from docutils.utils import DependencyList
 
 
@@ -28,6 +29,10 @@ def is_vim_code(node: Node):
     if node.attributes['classes'] == [] or 'vim' in node.attributes['classes']:
         return True
 
+
+# Stub used Sphinx roles, as we’re not using them in output
+for role in ('command', 'file'):
+    roles.register_generic_role(role, nodes.comment)
 
 p = ArgumentParser()
 p.add_argument('-r')

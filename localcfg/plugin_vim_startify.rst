@@ -2,8 +2,8 @@
 ====================================
 
 These commonly edited config files are reasonable bookmarks for when I've
-started vim without args, but perhaps others are more useful when started with
-args?
+started :command:`vim` without args, but perhaps others are more useful when
+started with -args?
 
 .. code-block:: vim
 
