@@ -104,9 +104,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
         # dependency file.
         n.rule('rst_extract',
-               (f'{location / "rst2vim.py"} -r $out.d.tmp $in $out; '
-                '[ -f $out.d.tmp ] && echo $out: $$(< $out.d.tmp) > $out.dep; '
-                'rm -f $out.d.tmp'),
+               f'{location / "rst2vim.py"} -r $out.dep $in $out',
                pretty('RST2VIM $out', colour),
                '$out.dep', deps='gcc')
 
