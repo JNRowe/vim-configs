@@ -16,18 +16,6 @@ every one to take part, but they have become popular in work mail::
         endfor
     endfor
 
-.. code-block:: vim
-
-    setlocal complete+=s
-    setlocal formatoptions+=2a
-    setlocal textwidth=72
-
-.. code-block:: vim
-
-    if executable('par-format')
-        setlocal formatprg=par-format\ -w72eq
-    elseif executable('par')
-        setlocal formatprg=par\ -w72eq
-    endif
+.. include:: ../../.includes/prose.rst
 
 .. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
