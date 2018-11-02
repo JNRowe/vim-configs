@@ -16,6 +16,7 @@ every one to take part, but they have become popular in work mail::
         endfor
     endfor
 
+.. include:: ../../.includes/thesaurus.rst
 .. include:: ../../.includes/prose.rst
 
 .. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
