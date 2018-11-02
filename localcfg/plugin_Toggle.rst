@@ -1,7 +1,7 @@
 ``localcfg/plugin_Toggle.vim``
 ==============================
 
-.. code-block:: vim
+Use :kbd:`<C-M-T>` to flip word under cursor::
 
     for [s:mode, s:cmd_prefix] in [
         \   ['i', '<C-O>'],
