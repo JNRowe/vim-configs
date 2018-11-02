@@ -1,6 +1,6 @@
 ``localcfg/plugin_Replay.vim``
 ==============================
 
-.. code-block:: vim
+Record video of replay sessions when possible::
 
     let g:replay_record = v:true
