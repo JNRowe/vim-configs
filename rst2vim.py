@@ -31,7 +31,7 @@ def is_vim_code(node: Node):
 
 
 # Stub used Sphinx roles, as we’re not using them in output
-for role in ('command', 'file', 'kbd'):
+for role in ('abbr', 'command', 'file', 'kbd'):
     roles.register_generic_role(role, nodes.comment)
 
 p = ArgumentParser()
