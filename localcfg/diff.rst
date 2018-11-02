@@ -1,11 +1,11 @@
 ``localcfg/diff.vim``
 =====================
 
-.. code-block:: vim
+Ignore white space by default::
 
     set diffopt+=iwhite
 
-.. code-block:: vim
+Add my bindings for diff mode::
 
     function! s:diff_maps()
         call MnemonicMap('diff', {'key': 'i', 'local': v:true})
@@ -18,8 +18,6 @@
         vnoremap <buffer> < :diffget<CR>
         vnoremap <buffer> > :diffput<CR>
     endfunction
-
-.. code-block:: vim
 
     augroup jnrowe_diff
         autocmd!
