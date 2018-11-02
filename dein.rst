@@ -57,7 +57,12 @@ available
 
     let s:has_git = executable('git')
 
-A dark powered Vim/Neovim plugin manager
+.. Dear reader, all these bare comment markers are here to break ``code-block``
+   directives from the following blockquote.
+
+..
+
+    “A dark powered Vim/Neovim plugin manager”
 
 .. code-block:: vim
 
@@ -65,7 +70,9 @@ A dark powered Vim/Neovim plugin manager
         \ 'if': v:version >= 800,
     \ })
 
-Move an item in a delimiter-separated list left or right
+..
+
+    “Move an item in a delimiter-separated list left or right”
 
 .. code-block:: vim
 
@@ -74,7 +81,9 @@ Move an item in a delimiter-separated list left or right
         \ 'on_map': {'n': '[sideways]'},
     \ })
 
-Switch between single-line and multiline forms of code
+..
+
+    “Switch between single-line and multiline forms of code”
 
 .. code-block:: vim
 
@@ -83,7 +92,9 @@ Switch between single-line and multiline forms of code
         \ 'on_map': {'n': ['gJ', 'gS']},
     \ })
 
-Speed up folding by reducing recalculations
+..
+
+    “Folding optimization”
 
 .. code-block:: vim
 
@@ -91,13 +102,17 @@ Speed up folding by reducing recalculations
         \ 'if': has('folding'),
     \ })
 
-Tango inspired colourscheme
+..
+
+    “Tango inspired colourscheme”
 
 .. code-block:: vim
 
     call dein#add('JNRowe/vim-jnrowe')
 
-Automatic closing of quotes, parenthesis, brackets, &c
+..
+
+    “Automatic closing of quotes, parenthesis, brackets, &c”
 
 .. code-block:: vim
 
@@ -105,7 +120,9 @@ Automatic closing of quotes, parenthesis, brackets, &c
         \ 'on_event': 'InsertEnter',
     \ })
 
-Asynchronous execution plugin
+..
+
+    “Asynchronous execution plugin”
 
 .. code-block:: vim
 
@@ -117,7 +134,9 @@ Asynchronous execution plugin
 
 .. include:: .includes/lazy_rdep.rst
 
-The ultimate plugin for snippets
+..
+
+    “The ultimate plugin for snippets”
 
 .. code-block:: vim
 
@@ -126,7 +145,9 @@ The ultimate plugin for snippets
         \ 'if': has('pythonx') && v:version >= 704,
     \ })
 
-Show git diff status in the gutter
+..
+
+    “Show git diff status in the gutter”
 
 .. code-block:: vim
 
@@ -134,7 +155,9 @@ Show git diff status in the gutter
         \ 'if': has('signs') && s:has_git,
     \ })
 
-Run pytest from within vim
+..
+
+    “Run pytest from within vim”
 
 .. code-block:: vim
 
@@ -144,7 +167,9 @@ Run pytest from within vim
         \ 'on_ft': 'python',
     \ })
 
-Highlights whitespace at the end of lines
+..
+
+    “Highlights whitespace at the end of lines”
 
 .. code-block:: vim
 
@@ -153,7 +178,9 @@ Highlights whitespace at the end of lines
         \ 'on_event': 'InsertEnter',
     \ })
 
-Colour colournames and codes
+..
+
+    “Colour colournames and codes”
 
 .. code-block:: vim
 
@@ -171,7 +198,9 @@ Colour colournames and codes
     general because it is relatively uncommon for my C file to actually be
     dwm’s config.h.
 
-A narrow region plugin (similar to Emacs)
+..
+
+    “A narrow region plugin (similar to Emacs)”
 
 .. code-block:: vim
 
@@ -181,7 +210,9 @@ A narrow region plugin (similar to Emacs)
         \ 'on_cmd': ['NUD', 'NR', 'NW']
     \ })
 
-Show differences for recovered files
+..
+
+    “Show differences for recovered files”
 
 .. code-block:: vim
 
@@ -189,7 +220,9 @@ Show differences for recovered files
         \ 'if': v:version >= 703,
     \ })
 
-Record and replay your editing sessions
+..
+
+    “Record and replay your editing sessions”
 
 .. code-block:: vim
 
@@ -197,7 +230,9 @@ Record and replay your editing sessions
         \ 'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
     \ })
 
-Save signs across sessions
+..
+
+    “Save signs across sessions”
 
 .. code-block:: vim
 
@@ -206,7 +241,9 @@ Save signs across sessions
         \ 'on_cmd': 'SaveSigns',
     \ })
 
-A filetype plugin for CSV files
+..
+
+    “A filetype plugin for CSV files”
 
 .. code-block:: vim
 
@@ -214,7 +251,9 @@ A filetype plugin for CSV files
         \ 'on_ft': 'csv',
     \ })
 
-A plugin for handling unicode and digraphs characters
+..
+
+    “A plugin for handling unicode and digraphs characters”
 
 .. code-block:: vim
 
@@ -230,7 +269,9 @@ A plugin for handling unicode and digraphs characters
         \ },
     \ })
 
-The vim FAQ
+..
+
+    “The vim FAQ”
 
 .. code-block:: vim
 
@@ -238,13 +279,17 @@ The vim FAQ
         \ 'if': v:version >= 600,
     \ })
 
-A secure alternative to modelines
+..
+
+    “A secure alternative to modelines”
 
 .. code-block:: vim
 
     call dein#add('JNRowe/securemodelines')
 
-A VIM binding to the jedi autocompletion library
+..
+
+    “A VIM binding to the jedi autocompletion library”
 
 .. code-block:: vim
 
@@ -254,7 +299,9 @@ A VIM binding to the jedi autocompletion library
         \ 'on_ft': 'python',
     \ })
 
-An awesome automatic table creator & formatter
+..
+
+    “An awesome automatic table creator & formatter”
 
 .. code-block:: vim
 
@@ -264,7 +311,9 @@ An awesome automatic table creator & formatter
         \ 'on_map': '<LocalLeader>t',
     \ })
 
-Automated Bullet Lists in Vim
+..
+
+    “Automated Bullet Lists in Vim”
 
 .. code-block:: vim
 
@@ -273,7 +322,9 @@ Automated Bullet Lists in Vim
         \ 'on_ft': ['gitcommit', 'rst'],
     \ })
 
-The EditorConfig plugin
+..
+
+    “The EditorConfig plugin”
 
 .. code-block:: vim
 
@@ -282,7 +333,9 @@ The EditorConfig plugin
         \ 'on_event': 'InsertEnter',
     \ })
 
-Cute conceal support for Python
+..
+
+    “Cute conceal support for Python”
 
 .. code-block:: vim
 
@@ -292,7 +345,9 @@ Cute conceal support for Python
         \ 'rev': 'moresymbols',
     \ })
 
-Sum numbers that appear in selection
+..
+
+    “Sum numbers that appear in selection”
 
 .. code-block:: vim
 
@@ -300,7 +355,9 @@ Sum numbers that appear in selection
         \ 'on_map': {'x': '<LocalLeader>su'},
     \ })
 
-Allows you to test regular expressions
+..
+
+    “Allows you to test regular expressions”
 
 .. code-block:: vim
 
@@ -308,7 +365,9 @@ Allows you to test regular expressions
         \ 'on_cmd': 'Regex',
     \ })
 
-Configurable, flexible, intuitive text aligning
+..
+
+    “Configurable, flexible, intuitive text aligning”
 
 .. code-block:: vim
 
@@ -316,7 +375,9 @@ Configurable, flexible, intuitive text aligning
         \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
     \ })
 
-All 256 xterm colours with their RGB equivalents
+..
+
+    “All 256 xterm colours with their RGB equivalents”
 
 .. code-block:: vim
 
@@ -324,7 +385,9 @@ All 256 xterm colours with their RGB equivalents
         \ 'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
     \ })
 
-Utility comamnds for dein.vim
+..
+
+    “Utility comamnds for dein.vim”
 
 .. code-block:: vim
 
@@ -332,13 +395,17 @@ Utility comamnds for dein.vim
         \ 'on_cmd': 'Dein',
     \ })
 
-Snippet files for various programming languages
+..
+
+    “Snippet files for various programming languages”
 
 .. code-block:: vim
 
     call dein#add('honza/vim-snippets')
 
-All powerful Pythonic task runner
+..
+
+    “All powerful Pythonic task runner”
 
 .. code-block:: vim
 
@@ -347,7 +414,9 @@ All powerful Pythonic task runner
         \ 'on_cmd': s:prefix('OP', ['edit', '2edit', '3edit']),
     \ })
 
-Yet another debugger frontend plugin
+..
+
+    “Yet another debugger frontend plugin”
 
 .. code-block:: vim
 
@@ -357,7 +426,9 @@ Yet another debugger frontend plugin
         \ 'on_func': 'vebugger',
     \ })
 
-Regex powered yank and substitute
+..
+
+    “Regex powered yank and substitute”
 
 .. code-block:: vim
 
@@ -365,7 +436,9 @@ Regex powered yank and substitute
         \ 'on_cmd': 'Yankitute',
     \ })
 
-Meson build system support
+..
+
+    “Meson build system support”
 
 .. code-block:: vim
 
@@ -373,19 +446,25 @@ Meson build system support
         \ 'on_cmd': 'MesonInit',
     \ })
 
-Underline the word under the cursor
+..
+
+    “Underline the word under the cursor”
 
 .. code-block:: vim
 
     call dein#add('itchyny/vim-cursorword')
 
-Highlight matching parenthesis
+..
+
+    “Highlight matching parenthesis”
 
 .. code-block:: vim
 
     call dein#add('itchyny/vim-parenmatch')
 
-Transparent editing of gpg encrypted files
+..
+
+    “Transparent editing of gpg encrypted files”
 
 .. code-block:: vim
 
@@ -393,7 +472,9 @@ Transparent editing of gpg encrypted files
         \ 'if': executable('gpg') || executable('gpg2'),
     \ })
 
-Edit and store quickfix/location list entries
+..
+
+    “Edit and store quickfix/location list entries”
 
 .. code-block:: vim
 
@@ -405,7 +486,9 @@ Edit and store quickfix/location list entries
         \ 'on_map': {'n': '<LocalLeader>n'},
     \ })
 
-Text outlining and task management for Vim based on Emacs’ Org-Mode
+..
+
+    “Text outlining and task management for Vim based on Emacs’ Org-Mode”
 
 .. code-block:: vim
 
@@ -415,7 +498,9 @@ Text outlining and task management for Vim based on Emacs’ Org-Mode
         \ 'on_ft': 'org',
     \ })
 
-Ease your git workflow
+..
+
+    “Ease your git workflow”
 
 .. code-block:: vim
 
@@ -425,7 +510,9 @@ Ease your git workflow
         \ 'on_cmd': 'Magit',
     \ })
 
-Basic fzf integration
+..
+
+    “Basic fzf integration”
 
 .. code-block:: vim
 
@@ -435,7 +522,9 @@ Basic fzf integration
         \ 'on_func': 'fzf#run',
     \ })
 
-Advanced fzf integration
+..
+
+    “Advanced fzf integration”
 
 .. code-block:: vim
 
@@ -448,7 +537,9 @@ Advanced fzf integration
         \    'History', 'Lines', 'Maps', 'Marks', 'Snippets', 'Windows']),
     \ })
 
-Distraction-free writing in Vim.
+..
+
+    “Distraction-free writing in Vim.”
 
 .. code-block:: vim
 
@@ -456,7 +547,9 @@ Distraction-free writing in Vim.
         \ 'on_cmd': 'Goyo',
     \ })
 
-Emoji support
+..
+
+    “Emoji support”
 
 .. code-block:: vim
 
@@ -464,7 +557,9 @@ Emoji support
         \ 'on_func': 'emoji',
     \ })
 
-Automatically resizes your windows
+..
+
+    “Automatically resizes your windows”
 
 .. code-block:: vim
 
@@ -472,7 +567,9 @@ Automatically resizes your windows
         \ 'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
     \ })
 
-Motion improved
+..
+
+    “Motion improved”
 
 .. code-block:: vim
 
@@ -486,7 +583,9 @@ Motion improved
         \ },
     \ })
 
-Enhanced Python folding
+..
+
+    “Enhanced Python folding”
 
 .. code-block:: vim
 
@@ -495,7 +594,9 @@ Enhanced Python folding
         \ 'on_ft': 'python',
     \ })
 
-Create your own text objects
+..
+
+    “Create your own text objects”
 
 .. code-block:: vim
 
@@ -511,7 +612,9 @@ nyancat. bah, grow up!
         \ 'on_cmd': s:prefix('Nyancat', ['', '2']),
     \ })
 
-A plugin to place, toggle and display marks
+..
+
+    “A plugin to place, toggle and display marks”
 
 .. code-block:: vim
 
@@ -519,7 +622,9 @@ A plugin to place, toggle and display marks
         \ 'if': has('signs'),
     \ })
 
-Language support for moonscript
+..
+
+    “Language support for moonscript”
 
 .. code-block:: vim
 
@@ -527,7 +632,9 @@ Language support for moonscript
         \ 'on_ft': 'moon',
     \ })
 
-Language support for ledger
+..
+
+    “Language support for ledger”
 
 .. code-block:: vim
 
@@ -535,19 +642,25 @@ Language support for ledger
         \ 'on_ft': 'ledger',
     \ })
 
-Help read complex code by showing parentheses in different colours
+..
+
+    “Help read complex code by showing parentheses in different colours”
 
 .. code-block:: vim
 
     call dein#add('luochen1990/rainbow')
 
-Help for customising based on features
+..
+
+    “Help for customising based on features”
 
 .. code-block:: vim
 
     call dein#add('magus/localcfg')
 
-A calendar window you can use within vim
+..
+
+    “A calendar window you can use within vim”
 
 .. code-block:: vim
 
@@ -556,7 +669,9 @@ A calendar window you can use within vim
         \ 'on_map': {'n': '[calendar]'},
     \ })
 
-Plugins for HTML and CSS hi-speed coding
+..
+
+    “Plugins for HTML and CSS hi-speed coding”
 
 .. code-block:: vim
 
@@ -565,7 +680,9 @@ Plugins for HTML and CSS hi-speed coding
         \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
 
-Display your undo history in a graph
+..
+
+    “Display your undo history in a graph”
 
 .. code-block:: vim
 
@@ -574,13 +691,17 @@ Display your undo history in a graph
         \ 'on_cmd': 'UndotreeToggle',
     \ })
 
-The fancy start screen
+..
+
+    “The fancy start screen”
 
 .. code-block:: vim
 
     call dein#add('mhinz/vim-startify')
 
-Text objects based on indent levels
+..
+
+    “Text objects based on indent levels”
 
 .. code-block:: vim
 
@@ -589,7 +710,9 @@ Text objects based on indent levels
         \ 'on_map': {'ov': ['aI', 'ai', 'iI', 'ii']},
     \ })
 
-Order buffers in Most Recently Used order
+..
+
+    “Order buffers in Most Recently Used order”
 
 .. code-block:: vim
 
@@ -598,7 +721,9 @@ Order buffers in Most Recently Used order
         \ 'on_map': {'n': '[bufmru]'},
     \ })
 
-Run your favorite search tool from Vim, with an enhanced results list
+..
+
+    “Run your favorite search tool from Vim, with an enhanced results list”
 
 .. code-block:: vim
 
@@ -607,7 +732,9 @@ Run your favorite search tool from Vim, with an enhanced results list
         \ 'on_cmd': ['Ack', 'LAck'],
     \ })
 
-Language support for jinja
+..
+
+    “Language support for jinja”
 
 .. code-block:: vim
 
@@ -615,7 +742,9 @@ Language support for jinja
         \ 'on_ft': 'jinja',
     \ })
 
-Delete buffers without breaking your layout
+..
+
+    “Delete buffers without breaking your layout”
 
 .. code-block:: vim
 
@@ -624,13 +753,17 @@ Delete buffers without breaking your layout
         \ 'on_map': {'n': '<LocalLeader>q'},
     \ })
 
-A plugin for visually displaying indent levels
+..
+
+    “A plugin for visually displaying indent levels”
 
 .. code-block:: vim
 
     call dein#add('nathanaelkane/vim-indent-guides')
 
-Filetype plugin for beancount files
+..
+
+    “Filetype plugin for beancount files”
 
 .. code-block:: vim
 
@@ -638,13 +771,17 @@ Filetype plugin for beancount files
         \ 'on_ft': 'beancount',
     \ })
 
-Tiny replacement for Supertab
+..
+
+    “Tiny replacement for Supertab”
 
 .. code-block:: vim
 
     call dein#add('neitanod/vim-clevertab')
 
-Allow transparent calls to Python functions in native Vim scripts
+..
+
+    “Allow transparent calls to Python functions in native Vim scripts”
 
 .. code-block:: vim
 
@@ -652,7 +789,9 @@ Allow transparent calls to Python functions in native Vim scripts
         \ 'on_cmd': 'python',
     \ })
 
-HTML5 + inline SVG omnicomplete function, indent and syntax
+..
+
+    “HTML5 + inline SVG omnicomplete function, indent and syntax”
 
 .. code-block:: vim
 
@@ -660,7 +799,9 @@ HTML5 + inline SVG omnicomplete function, indent and syntax
         \ 'on_ft': 'html',
     \ })
 
-Better support for typographic (‘curly’) quote characters
+..
+
+    “Better support for typographic (‘curly’) quote characters”
 
 .. code-block:: vim
 
@@ -670,7 +811,9 @@ Better support for typographic (‘curly’) quote characters
         \ 'on_ft': ['gitcommit', 'mail', 'rst', 'text'],
     \ })
 
-Make working with the quickfix list/window smoother
+..
+
+    “Make working with the quickfix list/window smoother”
 
 .. code-block:: vim
 
@@ -680,7 +823,9 @@ Make working with the quickfix list/window smoother
         \ 'on_map': {'n': ['[D', ']D', 'I', ']I']},
     \ })
 
-More pleasant editing on commit message
+..
+
+    “More pleasant editing on commit message”
 
 .. code-block:: vim
 
@@ -688,7 +833,9 @@ More pleasant editing on commit message
         \ 'if': s:has_git,
     \ })
 
-Show cyclomatic complexity of Python code
+..
+
+    “Show cyclomatic complexity of Python code”
 
 .. code-block:: vim
 
@@ -698,7 +845,9 @@ Show cyclomatic complexity of Python code
         \ 'on_ft': 'python',
     \ })
 
-Graph your undo tree
+..
+
+    “Graph your undo tree”
 
 .. code-block:: vim
 
@@ -707,7 +856,9 @@ Graph your undo tree
         \ 'on_cmd': 'GundoToggle',
     \ })
 
-Plugin for resolving conflicts during three-way merges
+..
+
+    “Plugin for resolving conflicts during three-way merges”
 
 .. code-block:: vim
 
@@ -715,7 +866,9 @@ Plugin for resolving conflicts during three-way merges
         \ 'on_cmd': 'SpliceInit',
     \ })
 
-Smart space key
+..
+
+    “Smart space key”
 
 .. code-block:: vim
 
@@ -723,7 +876,9 @@ Smart space key
         \ 'on_map': {'n': '<space>'},
     \ })
 
-Tiled Window Management for Vim
+..
+
+    “Tiled Window Management for Vim”
 
 .. code-block:: vim
 
@@ -731,7 +886,9 @@ Tiled Window Management for Vim
         \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
     \ })
 
-Linter for vim script
+..
+
+    “Linter for vim script”
 
 .. code-block:: vim
 
@@ -741,7 +898,9 @@ Linter for vim script
         \ 'on_ft': 'vim',
     \ })
 
-Maximizes and restores the current window
+..
+
+    “Maximizes and restores the current window”
 
 .. code-block:: vim
 
@@ -750,7 +909,9 @@ Maximizes and restores the current window
         \ 'on_map': {'n': '<C-w>o'},
     \ })
 
-Incremental visual selection
+..
+
+    “Incremental visual selection”
 
 .. code-block:: vim
 
@@ -758,7 +919,9 @@ Incremental visual selection
         \ 'on_map': {'nv': ['+', '-']},
     \ })
 
-True Sublime Text multiple selection
+..
+
+    “True Sublime Text multiple selection”
 
 .. code-block:: vim
 
@@ -766,7 +929,9 @@ True Sublime Text multiple selection
         \ 'on_map': '<C-n>',
     \ })
 
-Look up word definitions with wordnet
+..
+
+    “Look up word definitions with wordnet”
 
 .. code-block:: vim
 
@@ -775,13 +940,17 @@ Look up word definitions with wordnet
         \ 'on_map': '<Leader>wn',
     \ })
 
-Vim port of the monokai theme for TextMate
+..
+
+    “Vim port of the monokai theme for TextMate”
 
 .. code-block:: vim
 
     call dein#add('tomasr/molokai')
 
-Easy text exchange operator
+..
+
+    “Easy text exchange operator”
 
 .. code-block:: vim
 
@@ -792,7 +961,9 @@ Easy text exchange operator
         \ },
     \ })
 
-Defines a code alignment operator
+..
+
+    “Defines a code alignment operator”
 
 .. code-block:: vim
 
@@ -800,7 +971,9 @@ Defines a code alignment operator
         \ 'on_map': {'n': ['gl', 'gL']},
     \ })
 
-Language friendly searches, substitutions, and abbreviations
+..
+
+    “Language friendly searches, substitutions, and abbreviations”
 
 .. code-block:: vim
 
@@ -809,7 +982,9 @@ Language friendly searches, substitutions, and abbreviations
         \ 'on_map': {'n': 'cr'},
     \ })
 
-Comment stuff out
+..
+
+    “Comment stuff out”
 
 .. code-block:: vim
 
@@ -818,7 +993,9 @@ Comment stuff out
         \ 'on_map': 'gc',
     \ })
 
-Automatically insert block closing structures
+..
+
+    “Automatically insert block closing structures”
 
 .. code-block:: vim
 
@@ -826,7 +1003,9 @@ Automatically insert block closing structures
         \ 'on_event': 'InsertEnter',
     \ })
 
-A Git wrapper so awesome, it should be illegal
+..
+
+    “A Git wrapper so awesome, it should be illegal”
 
 .. code-block:: vim
 
@@ -834,7 +1013,9 @@ A Git wrapper so awesome, it should be illegal
         \ 'if': s:has_git,
     \ })
 
-JSON manipulation and pretty printing
+..
+
+    “JSON manipulation and pretty printing”
 
 .. code-block:: vim
 
@@ -842,7 +1023,9 @@ JSON manipulation and pretty printing
         \ 'on_ft': 'json',
     \ })
 
-Continuously updated session files
+..
+
+    “Continuously updated session files”
 
 .. code-block:: vim
 
@@ -851,19 +1034,25 @@ Continuously updated session files
         \ 'on_cmd': 'Obsession',
     \ })
 
-Project configuration
+..
+
+    “Project configuration”
 
 .. code-block:: vim
 
     call dein#add('tpope/vim-projectionist')
 
-Repeat for plugin maps
+..
+
+    “Repeat for plugin maps”
 
 .. code-block:: vim
 
     call dein#add('tpope/vim-repeat')
 
-If fugitive.vim is the Git, rhubarb.vim is the Hub
+..
+
+    “If fugitive.vim is the Git, rhubarb.vim is the Hub”
 
 .. code-block:: vim
 
@@ -872,7 +1061,9 @@ If fugitive.vim is the Git, rhubarb.vim is the Hub
         \ 'if': s:has_git,
     \ })
 
-Readline style insertion
+..
+
+    “Readline style insertion”
 
 .. code-block:: vim
 
@@ -880,7 +1071,9 @@ Readline style insertion
         \ 'on_event': ['CmdlineEnter', 'InsertEnter'],
     \ })
 
-One step above ``nocompatible`` mode
+..
+
+    “One step above ``nocompatible`` mode”
 
 .. code-block:: vim
 
@@ -893,7 +1086,9 @@ One step above ``nocompatible`` mode
     This is pinned as it can massively affect functionality, see
     tpope/vim-sensible@2c57c5f4 for an example.
 
-Heuristically set buffer options
+..
+
+    “Heuristically set buffer options”
 
 .. code-block:: vim
 
@@ -901,7 +1096,9 @@ Heuristically set buffer options
         \ 'on_cmd': 'Sleuth',
     \ })
 
-Increment dates, times, and more
+..
+
+    “Increment dates, times, and more”
 
 .. code-block:: vim
 
@@ -910,7 +1107,9 @@ Increment dates, times, and more
         \ 'on_map': {'n': ['<C-a>', '<C-x>']},
     \ })
 
-Plugin for deleting, changing, and adding “surroundings”
+..
+
+    “Plugin for deleting, changing, and adding “surroundings””
 
 .. code-block:: vim
 
@@ -923,13 +1122,17 @@ Plugin for deleting, changing, and adding “surroundings”
         \ },
     \ })
 
-Pairs of handy mappings
+..
+
+    “Pairs of handy mappings”
 
 .. code-block:: vim
 
     call dein#add('tpope/vim-unimpaired')
 
-1ms could mean the difference between life and death
+..
+
+    “1ms could mean the difference between life and death”
 
 .. code-block:: vim
 
@@ -937,7 +1140,9 @@ Pairs of handy mappings
         \ 'on_cmd': 'StartupTime',
     \ })
 
-Lean & mean status/tabline for vim that’s light as air
+..
+
+    “Lean & mean status/tabline for vim that’s light as air”
 
 .. code-block:: vim
 
@@ -948,13 +1153,17 @@ Lean & mean status/tabline for vim that’s light as air
         \ ],
     \ })
 
-Official theme repository for vim-airline
+..
+
+    “Official theme repository for vim-airline”
 
 .. code-block:: vim
 
     call dein#add('vim-airline/vim-airline-themes')
 
-“inner line” text object
+..
+
+    ““inner line” text object”
 
 .. code-block:: vim
 
@@ -962,7 +1171,9 @@ Official theme repository for vim-airline
         \ 'on_map': {'ov': '_'},
     \ })
 
-Enhanced man support
+..
+
+    “Enhanced man support”
 
 .. code-block:: vim
 
@@ -970,7 +1181,9 @@ Enhanced man support
         \ 'on_cmd': ['Man', 'Mangrep', 'Vman'],
     \ })
 
-Motions to move a cursor without changing the column
+..
+
+    “Motions to move a cursor without changing the column”
 
 .. code-block:: vim
 
@@ -978,7 +1191,9 @@ Motions to move a cursor without changing the column
         \ 'on_map': ['[v', ']v'],
     \ })
 
-A personal wiki
+..
+
+    “A personal wiki”
 
 .. code-block:: vim
 
@@ -987,13 +1202,17 @@ A personal wiki
         \ 'on_ft': 'vimwiki',
     \ })
 
-Provides additional text objects
+..
+
+    “Provides additional text objects”
 
 .. code-block:: vim
 
     call dein#add('wellle/targets.vim')
 
-Asynchronous Lint Engine
+..
+
+    “Asynchronous Lint Engine”
 
 .. code-block:: vim
 
@@ -1001,7 +1220,9 @@ Asynchronous Lint Engine
         \ 'if': v:version >= 800 && has('signs'),
     \ })
 
-Miscellaneous auto-load Vim scripts
+..
+
+    “Miscellaneous auto-load Vim scripts”
 
 .. code-block:: vim
 
@@ -1012,7 +1233,9 @@ Miscellaneous auto-load Vim scripts
 
 .. include:: .includes/lazy_rdep.rst
 
-Easy note taking in Vim
+..
+
+    “Easy note taking in Vim”
 
 .. code-block:: vim
 
@@ -1022,7 +1245,9 @@ Easy note taking in Vim
         \ 'on_map': {'ov': '<LocalLeader>en'},
     \ })
 
-Nim language support
+..
+
+    “Nim language support”
 
 .. code-block:: vim
 
@@ -1031,7 +1256,9 @@ Nim language support
         \ 'on_ft': 'nim',
     \ })
 
-Vimscript parser
+..
+
+    “Vimscript parser”
 
 .. code-block:: vim
 
@@ -1045,8 +1272,11 @@ Vimscript parser
 vim-scripts mirrors
 -------------------
 
-An outline tree of a buffer
-I write my mail in reST.  No, really.
+..
+
+    “An outline tree of a buffer”
+
+I write my mail in reST.”  No, really.
 
 .. code-block:: vim
 
@@ -1054,7 +1284,9 @@ I write my mail in reST.  No, really.
         \ 'on_ft': ['mail', 'rst'],
     \ })
 
-Set up regions within a buffer using their own filetypes
+..
+
+    “Set up regions within a buffer using their own filetypes”
 
 .. code-block:: vim
 
@@ -1062,7 +1294,9 @@ Set up regions within a buffer using their own filetypes
         \ 'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
     \ })
 
-Toggle values under the cursor
+..
+
+    “Toggle values under the cursor”
 
 .. code-block:: vim
 
@@ -1074,7 +1308,9 @@ Toggle values under the cursor
         \ },
     \ })
 
-Highlight BNFs
+..
+
+    “Highlight BNFs”
 
 .. code-block:: vim
 
@@ -1082,7 +1318,9 @@ Highlight BNFs
         \ 'on_ft': 'bnf',
     \ })
 
-Extended BNF (ISO/IEC 14977) Syntax
+..
+
+    “Extended BNF (ISO/IEC 14977) Syntax”
 
 .. code-block:: vim
 
@@ -1090,7 +1328,9 @@ Extended BNF (ISO/IEC 14977) Syntax
         \ 'on_ft': 'ebnf',
     \ })
 
-Painless footer references
+..
+
+    “Painless footer references”
 
 .. code-block:: vim
 
