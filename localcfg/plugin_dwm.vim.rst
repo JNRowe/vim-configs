@@ -1,13 +1,15 @@
 ``localcfg/plugin_dwm.vim.vim``
 ===============================
 
-.. code-block:: vim
+Use my custom maps::
 
     let g:dwm_map_keys = v:false
 
     call MnemonicMap('dwm')
 
-Imagine <Up> increases window count, and <Down>… well, yeah.
+.. tip::
+
+    Imagine :kbd:`<Up>` increases window count, and :kbd:`<Down>`… well, yeah.
 
 .. code-block:: vim
 
