@@ -1,55 +1,84 @@
 ``localcfg/gui_running.vim``
 ============================
 
-.. code-block:: vim
+My chosen window managers handle boundaries far better than :command:`gvim`
+does, so disable the default::
 
     set guiheadroom=0
 
-.. code-block:: vim
+Use console dialogs instead of jarring popups::
 
-    set guioptions+=chR
+    set guioptions+=c
+
+If toggled on, limit the horizontal scroll bar size::
+
+    set guioptions+=h
+
+Disable the left *and* right scrollbars::
+
     set guioptions-=L
-    set guioptions-=R
-    set guioptions-=T
-    set guioptions-=m
     set guioptions-=r
 
-.. code-block:: vim
+I don’t use the toolbar, and rarely want the menu::
+
+    set guioptions-=T
+    set guioptions-=m
+
+… but, add :ref:`maps for quick toggle <gui-toggles>`.
+
+Configure right mouse button to closer match the rest of my system::
 
     set mousemodel=popup_setpos
 
-Always display line number in the GUI
+.. _gui-linenumbers:
 
-.. code-block:: vim
+Always display relative line numbers in the GUI, but show actual line number
+on current line::
 
     set number
     set relativenumber
 
-Shift insert works the same as in a terminal
-
-.. code-block:: vim
+Shift insert works the same as in a terminal::
 
     noremap <S-Insert> <MiddleMouse>
     noremap! <S-Insert> <MiddleMouse>
 
+Consolas is available on most of the systems I use, and feels reasonably nice.
+If :command:`gvim` starts supporting ligatures upstream or with a cleaner patch,
+then I’ll look for replacements.
+
 .. code-block:: vim
 
-    let s:font_family='Consolas'
-    let &guifont=s:font_family . ' 13'
+    let s:font_family = 'Consolas'
+    let &guifont = s:font_family . ' 13'
+
+Add command to switch text size quickly.  Yeah, some of these are *huuuuuge*
+but I’ll often pop up a snippet for discussion in a meeting and this really
+helps.
 
 .. code-block:: vim
+
+    function! s:font_complete(arglead, cmdline, cursorpos)
+        return [s:font_family . '\ 13', ]
+            \ + map(range(8), {n -> s:font_family . '\ ' . (n * 8 + 16)})
+    endfunction
+    command! -nargs=1 -complete=customlist,s:font_complete Fontsel
+        \ set guifont=<args>
+
+Include non-standard server names in the window title::
 
     if has('title')  && has('clientserver')
         set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
     endif
 
-Omnicompletion rocks, but <C-x><C-o> doesn't.
-
-.. code-block:: vim
+Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn't::
 
     inoremap <C-Space> <C-x><C-o>
 
-.. code-block:: vim
+.. _gui-toggles:
+
+Occasionally the toolbar can be useful for pairing co-worker, and from time
+to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
 
     if has('menu')
         nnoremap <silent> <S-F4> :call ToggleFlag('guioptions', 'm')<CR>
@@ -57,14 +86,3 @@ Omnicompletion rocks, but <C-x><C-o> doesn't.
     if has('toolbar')
         nnoremap <silent> <C-F4> :call ToggleFlag('guioptions', 'T')<CR>
     endif
-
-Yeah, some of these are *huuuuuge* but I often pop up a snippet in a meeting
-and this helps.
-
-.. code-block:: vim
-
-    function! s:font_complete(arglead, cmdline, cursorpos)
-        return [s:font_family . '\ 13', ]
-            \ + map(range(8), "s:font_family . '\\ ' . (v:val * 8 + 16)")
-    endfunction
-    command! -nargs=1 -complete=customlist,s:font_complete Fontsel set guifont=<args>
