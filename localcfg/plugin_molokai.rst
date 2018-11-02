@@ -1,6 +1,6 @@
 ``localcfg/plugin_molokai.vim``
 ===============================
 
-.. code-block:: vim
+Try to match original colourscheme in terminal::
 
     let g:rehash256 = v:true
