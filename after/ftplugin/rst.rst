@@ -31,7 +31,7 @@ too granular.
         execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
     endfor
 
-.. code-block:: vim
+Enable common — to me — highlighting support::
 
     let g:rst_syntax_code_list = {
         \ 'cpp': ['cpp', 'c++'],
