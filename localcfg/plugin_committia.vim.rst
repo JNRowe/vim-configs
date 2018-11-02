@@ -1,6 +1,6 @@
 ``localcfg/plugin_committia.vim.vim``
 =====================================
 
-.. code-block:: vim
+I never want multi-column display in the terminal::
 
     let g:committia_use_singlecolumn = 'always'
