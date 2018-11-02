@@ -1,21 +1,22 @@
 ``localcfg/plugin_fzf.vim``
 ===========================
 
-.. code-block:: vim
+Use smaller than default fzf_ window::
 
     let g:fzf_layout = { 'down': '~30%' }
 
-.. code-block:: vim
+Override default prompt colour::
 
     let g:fzf_colors = {
         \ 'prompt':  ['fg', 'Conditional'],
     \ }
 
-.. code-block:: vim
+Keep history in `XDG basedir`_ compliant location::
 
     let g:fzf_history_dir = g:vim_cache_dir . '/fzf-history'
 
-.. code-block:: vim
+Jump through hoops to find a valid way to run :command:`fzf` if ``:terminal``
+isn’t available::
 
     if !has('terminal')
         if $TERMINAL == 'st' || $TERMINAL == 'urxvtc'
@@ -30,3 +31,6 @@
             let g:fzf_launcher = 'xterm -e ' . $SHELL . ' -ic %s'
         endif
     endif
+
+.. _fzf: https://github.com/junegunn/fzf
+.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
