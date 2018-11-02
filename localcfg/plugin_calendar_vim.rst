@@ -1,7 +1,9 @@
 ``localcfg/plugin_calendar_vim.vim``
 ====================================
 
-.. code-block:: vim
+Use my custom maps::
+
+    let g:calendar_no_mappings = v:true
 
     call MnemonicMap('Calendar')
 
@@ -15,19 +17,24 @@
             \ ':Calendar' . s:cmd . '<CR>'
     endfor
 
-.. code-block:: vim
+Configure look::
 
-    let g:calendar_no_mappings = v:true
     let g:calendar_mark = 'left-fit'
     let g:calendar_monday = v:true
     let g:calendar_weeknm = 1
     let g:calendar_datetime = 'statusline'
-    let g:calendar_filetype = 'rst'
 
-.. code-block:: vim
+Use reST_ formatting for note files::
+
+    let g:calendar_filetype = 'rst'
+    let g:calendar_diary_extension = '.rst'
+
+We don’t care that the calendar has trailing whitespace::
 
     if has('autocmd')
         augroup jnrowe_cal
             autocmd FileType calendar HideBadWhitespace
         augroup END
     endif
+
+.. _reST: http://docutils.sourceforge.net/rst.html
