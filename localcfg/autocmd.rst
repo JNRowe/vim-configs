@@ -1,12 +1,12 @@
 ``localcfg/autocmd.vim``
 ========================
 
-.. code-block:: vim
+::
 
     augroup jnrowe
         autocmd!
 
-.. code-block:: vim
+Add a default function for ``'omnifunc``::
 
         if exists('+omnifunc')
             autocmd FileType *
@@ -15,26 +15,24 @@
                 \ endif
         endif
 
-Create missing directories when saving files
-
-.. code-block:: vim
+Create missing directories when saving files::
 
         autocmd BufWritePre *
             \ if !isdirectory(expand('%:h', v:true)) |
             \   call mkdir(expand('%:h', v:true), 'p') |
             \ endif
 
-We don't want to edit patch backup files by accident [again]
-
-.. code-block:: vim
+We don't want to edit patch backup files by accident [*again*]::
 
         autocmd BufRead *.orig set readonly
 
-.. code-block:: vim
+Buffers that aren’t really for editing don’t need to have spelling errors
+highlighted::
+
 
         autocmd FileType man,startify set nospell
 
-.. code-block:: vim
+Highlights for read only buffers aren’t interesting::
 
         autocmd FileType help,man setlocal colorcolumn=""
 
@@ -46,24 +44,18 @@ We don't want to edit patch backup files by accident [again]
 
         autocmd FileType rst setlocal complete+=k/usr/share/dict/words
 
-Attempt filetype detection after writing.
-
-.. code-block:: vim
+Attempt filetype detection after writing.::
 
         autocmd BufWritePost *
             \ if empty(&filetype) |
             \   filetype detect |
             \ endif
 
-Automatically chmod +x shell scripts
-
-.. code-block:: vim
+Automatically :command:`chmod +x` shell scripts::
 
         autocmd BufWritePost *.sh call setfperm(expand('%:p'), 'rwxr-xr-x')
 
-Jump to the last known cursor position if possible.
-
-.. code-block:: vim
+Jump to the last known cursor position if possible::
 
         autocmd BufReadPost *
             \ if &filetype =~# '^git' |
@@ -74,7 +66,7 @@ Jump to the last known cursor position if possible.
 
 .. note::
 
-    Don't restore saved position for git buffers as it tends not to be
+    Doesn’t restore saved position for git buffers as that tends to not be
     useful.
 
 Make stdin buffers temporary by default.  Potentially dangerous, but
@@ -84,45 +76,35 @@ I only use them this way.
 
         autocmd StdinReadPost * set buftype=nofile
 
-Turn off search highlighting when entering a buffer
-
-.. code-block:: vim
+Turn off search highlighting when entering a buffer::
 
         autocmd BufEnter * nohlsearch
 
-Turn off search highlighting when idle
-
-.. code-block:: vim
+Turn off search highlighting when idle::
 
         autocmd CursorHold * nohlsearch | redraw
 
-Always do a full syntax refresh, this is still fast enough on a netbook
-
-.. code-block:: vim
+Always do a full syntax refresh, as this is still fast enough on a netbook::
 
         autocmd BufEnter * syntax sync fromstart
 
-Open quickfix window, if there are any entries
-
-.. code-block:: vim
+Open quickfix window, if there are any entries::
 
         autocmd QuickFixCmdPost * belowright cwindow 5
 
-Only highlight cursor line in active window
-
-.. code-block:: vim
+Only highlight cursor line in active window::
 
         autocmd WinLeave * setlocal nocursorline
         autocmd WinEnter * setlocal cursorline
 
-… and when in insert
-
-.. code-block:: vim
+… and when in insert::
 
         autocmd InsertEnter * setlocal nocursorline
         autocmd InsertLeave * setlocal cursorline
 
-.. code-block:: vim
+Search upwards for a :file:`.meta` directory, and add any word
+list(:file:`en.utf8.add`) or abbreviations(:file:`abbr.vim`) found to the
+buffer’s settings::
 
         function! s:meta_detect(file)
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
@@ -148,4 +130,7 @@ Only highlight cursor line in active window
             \       let b:meta_abbr = v:true |
             \   endif |
             \ endif
+
+.. code-block:: vim
+
     augroup END
