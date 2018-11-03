@@ -1,14 +1,16 @@
 ``vimrc.d/dein.vim``
 ====================
 
-.. code-block:: vim
+Make the dein_ submodule available to :command:`vim`::
 
     set runtimepath+=~/.vim/external/dein.vim/
 
-.. code-block:: vim
+Keep plugins and data in `XDG basedir`_ compliant location::
 
     let g:dein_state_dir = g:vim_cache_dir . '/dein'
     let g:dein_repos_dir = g:dein_state_dir . '/repos'
+
+If possible, support `system notifications`_:
 
 .. code-block:: vim
 
@@ -17,7 +19,7 @@
         let g:dein#notification_icon = '~/.vim/icons/editor.svg'
     endif
 
-.. code-block:: vim
+Handle initial plugin configuration::
 
     if dein#load_state(g:dein_state_dir)
         call dein#begin(g:dein_state_dir, ['~/.vim/vimrc', '~/.vim/dein.vim', expand('<sfile>')])
@@ -28,17 +30,25 @@
         call dein#save_state()
     endif
 
-.. code-block:: vim
-
     call dein#call_hook('source')
     call dein#call_hook('post_source')
+
+Issue a warning message if we’re missing plugins::
+
     if has('vim_starting')
         if dein#check_install()
-            echo 'Missing plugins'
+            let v:warningmsg = 'dein: Missing plugins'
+            echohl WarningMsg
+            echomsg v:warningmsg
+            echohl none
         endif
     endif
 
-.. code-block:: vim
+Enable all the vim fanciness::
 
     filetype plugin indent on
     syntax enable
+
+.. _dein: https://github.com/Shougo/dein.vim
+.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+.. _system notifications: https://git.gnome.org/browse/libnotify
