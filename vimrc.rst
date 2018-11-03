@@ -1,5 +1,5 @@
-Basic setup
-===========
+``vimrc`` - Basic setup
+=======================
 
 .. include:: .includes/scriptencoding.rst
 
