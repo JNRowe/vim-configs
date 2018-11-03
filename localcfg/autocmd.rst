@@ -92,6 +92,8 @@ Open quickfix window, if there are any entries::
 
         autocmd QuickFixCmdPost * belowright cwindow 5
 
+.. _dynamic-cursorline:
+
 Only highlight cursor line in active window::
 
         autocmd WinLeave * setlocal nocursorline
