@@ -1,6 +1,6 @@
 ``localcfg/plugin_vim_parenmatch.vim``
 ======================================
 
-.. code-block:: vim
+Disable :command:`vim`’s builtin parenthesis matching plugin::
 
     let g:loaded_matchparen = v:true
