@@ -25,8 +25,8 @@ pull requests which aren’t too invasive are most welcome.
         echohl none
     endif
 
-neovim is *never* tested, as it removes functionality I use.  Feel free to open
-pull requests for neovim support, *iff* they aren’t too invasive and don’t
+neovim_ is *never* tested, as it removes functionality I use.  Feel free to open
+pull requests for ``neovim`` support, *iff* they aren’t too invasive and don’t
 break vim.
 
 .. code-block:: vim
@@ -70,3 +70,5 @@ Pull in remaining configs.
         endif
     endif
     runtime vimrc.d/localcfg.vim
+
+.. _neovim: https://neovim.io/
