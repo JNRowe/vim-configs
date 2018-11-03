@@ -1,12 +1,17 @@
 ``vimrc.d/maps.vim``
 ====================
 
-Quickly move between buffers.
+.. _switch-bufs:
 
-I *love* ``hidden``, as it really suits the way I work.  However, it also means
-I occasionally have to skip through things I don’t care about in ``:bnext`` and
-I don’t love that.  The following function skips the buffers I wouldn’t care
-about and provides a more useful *to me* version of buffer cycling.
+Set up map to quickly move between buffers.
+
+.. note::
+
+    I *love* ``hidden``, as it really suits the way I work.  However, it also
+    means I occasionally have to skip through things I don’t care about in
+    ``:bnext`` and I don’t love that.  The following function skips the buffers
+    I wouldn’t care about and provides a more useful *to me* version of buffer
+    cycling.
 
 .. code-block:: vim
 
@@ -44,87 +49,66 @@ I hate you *so* much right now
 
 .. note::
 
-    I’ll add that this isn’t about hjkl, I’m truly not interested in that
-    argument.  This is entirely about forcing me to use text objects more
-    often.
+    I’ll add that this isn’t about :kbd:`[hjkl]` purism, I’m truly not
+    interested in that argument.  This is entirely about forcing me to use text
+    objects more often.
 
-Navigate tags with keys I find less annoying
-
-.. code-block:: vim
+Navigate tags with keys I find less annoying::
 
     noremap <C-S-Left> <C-T>
     noremap <C-S-Right> <C-]>
 
-Ctrl + up/down to skip paragraphs
-
-.. code-block:: vim
+Add oddly *verbose* maps to skip paragraphs::
 
     nnoremap <C-Up> {
     nnoremap <C-Down> }
 
-Begin new line from anywhere
+… it may seem strange but when you’re diving about :kbd:`<C-Up>` is often easier
+to hit.
 
-.. code-block:: vim
+Begin new line from anywhere::
 
     inoremap <S-CR> <C-o>o
     inoremap <C-CR> <C-o>O
 
-Make C-g verbose by default
-
-.. code-block:: vim
+Make :kbd:`<C-g>` verbose by default::
 
     nnoremap <C-g> 2<C-g>
 
-Map Q to reformat paragraphs
-
-.. code-block:: vim
+Map Q to reformat paragraphs just like everyone else does::
 
     nnoremap Q gqap
 
-Man page, for easy access with custom keywordprg
-
-.. code-block:: vim
+Easy access to man pages when using a custom ``keywordprg``::
 
     nnoremap <C-?> :<C-U>execute "Man" v:count "<C-R><C-W>"<CR>
 
-Shift + arrows to select text
-
-.. code-block:: vim
+Shift + arrows to select text like other applications::
 
     nnoremap <S-Left> vh
     nnoremap <S-Right> vl
     nnoremap <S-Up> Vk
     nnoremap <S-Down> Vj
 
-Logical Y mapping, like D
-
-.. code-block:: vim
+Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
     nnoremap Y y$
 
-Insert literal tab, for that once a year when it makes sense
-
-.. code-block:: vim
+Insert literal tab, for that once a year when it makes sense::
 
     inoremap <silent> <S-Tab> <C-v><Tab>
 
-Re-grab selection after {de,in}dent for simpler repeating
-
-.. code-block:: vim
+Re-grab selection after {de,in}dent for simpler repeating::
 
     vnoremap < <gv
     vnoremap > >gv
 
-Visual mode indent that matches how it *feels* in insert
-
-.. code-block:: vim
+Visual mode indent that matches how it *feels* in insert::
 
     vnoremap <Tab> >gv
     vnoremap <Backspace> <gv
 
-<home> darts between start of line and start of text
-
-.. code-block:: vim
+:kbd:`<Home>` darts between start of line and start of text::
 
     inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
     nnoremap <silent> <home> :call <SID>home_skip()<CR>
@@ -136,9 +120,7 @@ Visual mode indent that matches how it *feels* in insert
         endif
     endfunction
 
-Function keys
-
-.. code-block:: vim
+Utility function to choose between ninja_ and make_ for builds::
 
     nnoremap <silent> <F3> :set expandtab!<CR>
     " <[SC]-F4> toggles menu/toolbar in gvim
@@ -146,13 +128,15 @@ Function keys
         let l:make = filereadable('build.ninja') ? 'ninja' : 'make'
         execute l:make . ' -C ' . expand('%:p:h') . ' ' . get(a:, 1, '')
     endfunction
+
+Function keys are for executing common quick commands::
+
+    nnoremap <silent> <F3> :set expandtab!<CR>
     nnoremap <F10> :call <SID>call_build()<CR>
     nnoremap <S-F10> :call <SID>call_build('check')<CR>
     nnoremap <silent> <C-F11> :let @/ = ''<CR>
 
-Window management
-
-.. code-block:: vim
+Window management::
 
     nnoremap <C-w><Bar> <C-w>v
     nnoremap <C-w>- <C-w>s
@@ -161,9 +145,12 @@ Window management
         nnoremap <S-Tab> <C-w>P
     endif
 
-Folding support maps
+.. tip::
 
-.. code-block:: vim
+    Imagine that :kbd:`<C-w>|` and :kbd:`<C-w>-` are cleaving the window to
+    match the key.
+
+Folding support maps::
 
     if has('folding')
         nnoremap - zc
@@ -174,11 +161,12 @@ Folding support maps
 
 .. note::
 
-    The previous mappings may not be to your liking, but I never use +/- for
-    line movement.
+    The previous mappings may not be to your liking, but I never use :kbd:`[+-]`
+    for line movement.
 
 Insert a modeline on the last line.  Given a count of 2 or more, write a longer
-verbose modeline.  Think of it as analogous to [count]<C-g>
+verbose modeline.  Think of it as analogous to the behaviour of
+``[count]<C-g>``.
 
 .. code-block:: vim
 
@@ -198,9 +186,7 @@ verbose modeline.  Think of it as analogous to [count]<C-g>
         call setpos('.', l:save_cursor)
     endfunction
 
-Help related maps
-
-.. code-block:: vim
+Help related maps::
 
     call MnemonicMap('Help', {'key': '?'})
 
@@ -211,23 +197,20 @@ Help related maps
     nnoremap <silent> [Help]c :helpclose<CR>
 
 Perform word-ish searches in a new window, so we can maintain position in the
-current window
-
-.. code-block:: vim
+current window::
 
     for s:k in ['*', '#']
         execute 'nnoremap <C-w>' . s:k  . ' <C-w>s' . s:k
         execute 'nnoremap <C-w>g' . s:k  . ' <C-w>sg' . s:k
     endfor
 
-I don't use vi movement keys in command-line mode
-
-.. code-block:: vim
+I don't use :command:`vi` movement keys in command-line mode, so we can use them
+for shortcuts::
 
     cnoremap <C-h> help<Space>
     cnoremap <C-S-h> vert help<Space>
 
-.. code-block:: vim
+Ping the cursor position as a visual cue when returning to a session::
 
     function! s:cursor_ping()
         let l:cursorline = &cursorline
@@ -242,13 +225,12 @@ I don't use vi movement keys in command-line mode
     endfunction
     nmap <silent> <C-Space> :call <SID>cursor_ping()<CR>
 
-.. code-block:: vim
+Add map to toggle conceal support, which is useful when co-worker’s freak out
+when you’re showing code::
 
     nnoremap <silent> <S-Space> :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
 
-Insert PWD at command line
-
-.. code-block:: vim
+Insert current buffer’s directory at command line::
 
     cmap <M-.> <C-r>=expand('%:p:h') . "/"<CR>
 
@@ -268,3 +250,6 @@ thanks for the idea!
                 \ . s:break_insert . s:cmd
         endfor
     endfor
+
+.. _ninja: https://ninja-build.org/
+.. _make: https://www.gnu.org/software/make/make.html
