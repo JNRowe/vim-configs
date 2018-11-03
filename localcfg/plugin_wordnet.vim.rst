@@ -1,7 +1,7 @@
 ``localcfg/plugin_wordnet.vim.vim``
 ===================================
 
-.. code-block:: vim
+Add map to close wordnet_ window from anywhere::
 
     function WordnetCloseWin()
         if bufnr("__WordNet__") > -1
@@ -11,10 +11,12 @@
 
     nnoremap <silent> <Leader>wnq :call WordnetCloseWin()<CR>
 
-.. code-block:: vim
+We don’t care that the dictionary buffer has trailing whitespace::
 
     if has('autocmd')
         augroup jnrowe_wordnet
             autocmd BufNewFile __WordNet__ HideBadWhitespace
         augroup END
     endif
+
+.. _wordnet: https://wordnet.princeton.edu/
