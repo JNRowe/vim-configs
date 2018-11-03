@@ -1,7 +1,8 @@
 ``vimrc.d/misc.vim``
 ====================
 
-Show highlight group of the current text, taken from vim wiki
+Show highlight group of the current text, taken from vim wiki which is now
+offline.
 
 .. code-block:: vim
 
@@ -12,9 +13,7 @@ Show highlight group of the current text, taken from vim wiki
         \                       'name') .
         \   '>'
 
-Flag toggling function
-
-.. code-block:: vim
+Flag toggling function::
 
     function! ToggleFlag(option, flag)
         let l:optstr = eval('&' . a:option)
@@ -28,20 +27,12 @@ Flag toggling function
         execute 'set ' . a:option . l:flip . '=' . a:flag
     endfunction
 
-User email address, as used by various plugins
-
-.. code-block:: vim
+User email address, as used by various plugins::
 
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
         \ ' <' . systemlist('git -C ~ config user.email')[0] . '>'
 
-Mnemonic mapping setup function
-
-.. tip::
-
-    This adds a ``?`` binding to display the map list for ``name``
-
-.. code-block:: vim
+Mnemonic mapping setup function::
 
     function! MnemonicMap(name, ...)
         let l:extra = get(a:, 1, {})
@@ -55,3 +46,7 @@ Mnemonic mapping setup function
         execute l:mode . 'noremap <silent> [' . a:name . ']?'
             \ ' :' . l:mode . 'map [' . a:name . ']<CR>'
     endfunction
+
+.. tip::
+
+    This adds a :kbd:`?` binding to display the map list for ``name``.
