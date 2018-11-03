@@ -1,29 +1,31 @@
 ``dein.vim`` - ``dein`` plugins configuration
 =============================================
 
-Modeline is set so that ``:Exconfig <C-r><C-f>`` works
-
-.. code-block:: vim
+Modeline is set so that ``:Exconfig <C-r><C-f>`` works on plugin names [#]_::
 
     " vim: set isfname-=/:
 
 .. include:: .includes/scriptencoding.rst
 
-.. note::
+.. attention::
 
     I record requirements even when they’re clearly met because I like to know
     what *may* break if I make changes.  For example, version checks for cases
-    where dein wouldn't work anyway or using ``has('patch-x.x.x')`` for
+    where dein_ wouldn't work anyway or using ``has('patch-x.x.x')`` for
     versions prior to 7.4.237.
 
 .. note::
 
-    In places where I could use a prefix, in sideways.vim’s ``on_cmd`` for
-    example, I’ll often not do so because I prefer to have tab completion
-    available for the commands that I use from the outset.
+    In places where I could use a prefix, in `on_cmd setup
+    <sideways.vim-config>`_ for example, I’ll often not do so because I prefer
+    to have tab completion available for the commands that I use from the
+    outset.
 
-Utility functions for adding {pre,suf}fix to a list of strings.  This greatly
-improves readability in my opinion.
+Utility functions
+-----------------
+
+Add a pre- or suffix to a list of strings.  This greatly improves readability in
+my opinion.
 
 .. code-block:: vim
 
@@ -35,8 +37,7 @@ improves readability in my opinion.
         return map(a:args, {s -> v:val . a:str})
     endfunction
 
-Utility function to enable an airline extension.  This is purely to remove
-duplication in setup.
+Enable an airline extension.  This is purely to remove duplication in setup.
 
 .. code-block:: vim
 
@@ -44,18 +45,21 @@ duplication in setup.
         return 'let g:airline_extensions += ["'. a:extension . '"]'
     endfunction
 
-Used in ternaries for fallbacks to upstream sources when ``vcs_cst`` isn’t
-available
+Support variables
+-----------------
 
-.. code-block:: vim
+Used in ternaries for fallbacks to upstream sources when ``vcs_cst`` isn’t
+available::
 
     let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
-``executable()`` doesn’t cache results, so we’ll do it ourselves
-
-.. code-block:: vim
+``executable()`` doesn’t cache results, so we’ll do it ourselves for repeated
+calls::
 
     let s:has_git = executable('git')
+
+Repositories
+------------
 
 .. Dear reader, all these bare comment markers are here to break ``code-block``
    directives from the following blockquote.
@@ -70,7 +74,7 @@ available
         \ 'if': v:version >= 800,
     \ })
 
-..
+.. _sideways.vim-config:
 
     “Move an item in a delimiter-separated list left or right”
 
@@ -1349,3 +1353,11 @@ by deletion.
     call dein#local('~/.vim/internal/', {
         \ 'on_cmd': 'Snip',
     \ })
+
+.. rubric:: Footnotes
+
+.. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
+       supported via vim-projectionist_.
+
+.. _dein: https://github.com/Shougo/dein.vim
+.. _vim-projectionist: https://github.com/tpope/vim-projectionist
