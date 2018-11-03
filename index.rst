@@ -43,6 +43,7 @@ Help
 
     background
     FAQ
+    support/envvars
 
 Vim files
 '''''''''

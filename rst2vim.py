@@ -11,8 +11,15 @@ from tempfile import NamedTemporaryFile
 
 from docutils.core import publish_doctree
 from docutils.nodes import Node
-from docutils.parsers.rst import nodes, roles
+from docutils.parsers.rst import Directive, directives, nodes, roles
 from docutils.utils import DependencyList
+
+
+class StubDirective(Directive):
+    has_content = True
+
+    def run(self):
+        return []
 
 
 def is_vim_code(node: Node):
@@ -31,8 +38,10 @@ def is_vim_code(node: Node):
         return True
 
 
-# Stub used Sphinx roles, as we’re not using them in output
-for role in ('abbr', 'command', 'doc', 'file', 'kbd', 'manpage', 'ref'):
+# Stub used Sphinx directives and roles, as we’re not using them in output
+directives.register_directive('envvar', StubDirective)
+for role in ('abbr', 'command', 'doc', 'envvar', 'file', 'kbd', 'manpage',
+             'ref'):
     roles.register_generic_role(role, nodes.comment)
 
 p = ArgumentParser()
