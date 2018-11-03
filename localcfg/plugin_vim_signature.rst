@@ -8,7 +8,14 @@
     endif
 
 This replaces my custom info/warn/error sign code with [1-3] markers, basically
-just a convenience because I'm really used to the icons.
+just a convenience because I'm really used to the icons.  See
+``c150ea3da3effcdc4043f55aac6129b0df99d77f`` for the original idea, although it
+has changed massively before we made it here.
+
+.. tip::
+
+    Names are from US :kbd:`<S-|digit|>` keymap(I know I’ll forget this by the
+    next time *I* open this file).
 
 .. code-block:: vim
 
@@ -21,12 +28,6 @@ just a convenience because I'm really used to the icons.
             let s:hl = toupper(s:v[0]) . s:v[1:] . 'MSG'
         endif
         unlet s:v
-
-This is brittle *and* dirty, but there isn't much way around it.  See
-``47ceaf9cbd970450953bdf3e84e281473a579ac0``
-
-.. code-block:: vim
-
         execute 'sign define ' .
             \ 'Signature_' . s:k . '_SignatureMarkerText_SignatureMarkerLine' .
             \ ' icon=' . expand('~/.vim/icons/' . s:icon . '.png') .
@@ -35,4 +36,5 @@ This is brittle *and* dirty, but there isn't much way around it.  See
 
 .. note::
 
-    Names are from US S-<digit> keymap.
+    This is brittle *and* dirty, but there isn't much way around it.  See
+    ``47ceaf9cbd970450953bdf3e84e281473a579ac0``
