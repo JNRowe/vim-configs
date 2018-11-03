@@ -136,6 +136,8 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 n.build(f'{location / p.with_suffix("")}', 'rst_extract',
                         [f'{location / p }', ],
                         [f'{location / "rst2vim.py"}', ])
+            elif p.parent.stem == 'support':
+                continue
             elif p.name not in ('FAQ.rst', 'README.rst', 'background.rst',
                                 'index.rst', 'todo.rst'):
                 n.build(f'{location / p.with_suffix(".vim")}', 'rst_extract',
