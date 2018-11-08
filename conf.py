@@ -27,6 +27,12 @@ if not on_rtd:
     else:
         extensions.append('sphinxcontrib.spelling')
 
+with suppress(CalledProcessError):
+    proc = run(['git', 'log', "--pretty=format:%ad [%h]", '--date=short',
+                '-n1'],
+               stdout=PIPE)
+    html_last_updated_fmt = proc.stdout.decode()
+
 master_doc = 'index'
 source_suffix = '.rst'
 
@@ -35,7 +41,7 @@ exclude_patterns = ['.build', 'README.rst', '**/README.rst']
 project = 'vim-configs'
 copyright = '2009-2018  James Rowe'
 
-release = '2018-10-28'
+release = html_last_updated_fmt
 version = ''
 
 html_experimental_html5_writer = True
@@ -50,11 +56,6 @@ if not on_rtd:
 highlight_language = 'vim'
 
 pygments_style = 'sphinx'
-with suppress(CalledProcessError):
-    proc = run(['git', 'log', "--pretty=format:'%ad [%h]'", '--date=short',
-                '-n1'],
-               stdout=PIPE)
-    html_last_updated_fmt = proc.stdout.decode()
 
 # Autodoc extension settings
 autoclass_content = 'init'
