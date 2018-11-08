@@ -1,4 +1,4 @@
-Requires `Font Awesome`_ in places
+Requires `Font Awesome`_ in places.
 
 .. attention::
 
