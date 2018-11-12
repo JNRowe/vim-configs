@@ -9,7 +9,6 @@ Contents
 
     editorconfig
     mht
-    mutt
     pypi
     redo
     reminders
