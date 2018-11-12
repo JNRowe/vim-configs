@@ -17,7 +17,6 @@ Contents
     remind
     rst
     text
-    vim
     xml
 
 .. Hide symlinked docs.  Can’t hide them with orphan in the docs as it will
