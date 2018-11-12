@@ -30,11 +30,11 @@ my opinion.
 .. code-block:: vim
 
     function! s:prefix(str, args)
-        return map(a:args, {s -> a:str . v:val})
+        return map(a:args, {_, s -> a:str . s})
     endfunction
 
     function! s:suffix(str, args)
-        return map(a:args, {s -> v:val . a:str})
+        return map(a:args, {_, s -> s . a:str})
     endfunction
 
 Enable an airline extension.  This is purely to remove duplication in setup.
