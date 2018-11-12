@@ -98,13 +98,21 @@ Repositories
 
 ..
 
-    “Folding optimization”
+    “Tiled Window Management for Vim”
 
 ::
 
-    call dein#add('Konfekt/FastFold', {
-        \ 'if': has('folding'),
+    call dein#add('JNRowe/dwm.vim', {
+        \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
     \ })
+
+..
+
+    “A secure alternative to modelines”
+
+.. code-block:: vim
+
+    call dein#add('JNRowe/securemodelines')
 
 ..
 
@@ -113,6 +121,16 @@ Repositories
 ::
 
     call dein#add('JNRowe/vim-jnrowe')
+
+..
+
+    “Folding optimization”
+
+.. code-block:: vim
+
+    call dein#add('Konfekt/FastFold', {
+        \ 'if': has('folding'),
+    \ })
 
 ..
 
@@ -282,14 +300,6 @@ Repositories
     call dein#add('chrisbra/vim_faq', {
         \ 'if': v:version >= 600,
     \ })
-
-..
-
-    “A secure alternative to modelines”
-
-::
-
-    call dein#add('JNRowe/securemodelines')
 
 ..
 
@@ -868,16 +878,6 @@ nyancat. bah, grow up!
 
     call dein#add('spiiph/vim-space', {
         \ 'on_map': {'n': '<space>'},
-    \ })
-
-..
-
-    “Tiled Window Management for Vim”
-
-::
-
-    call dein#add('JNRowe/dwm.vim', {
-        \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
     \ })
 
 ..
