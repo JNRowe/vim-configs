@@ -31,3 +31,13 @@ snippets if I wasn’t so used to this now:
     iabbrev <expr> _t  strftime('%T')
     iabbrev <expr> _d  strftime('%F')
     iabbrev <expr> _dt strftime('%FT%T%z')
+
+    iabbrev <expr> _ut  system('date -u +%T')
+    iabbrev <expr> _ud  system('date -u +%F')
+    iabbrev <expr> _udt system('date -u +%FT%T%z')
+
+.. note::
+
+    We shell out to the system’s :command:`date` command for :abbr:`UTC
+    (Coordinated Universal Time)` support because :command:`vim` doesn’t expose
+    :manpage:`gmtime()`.
