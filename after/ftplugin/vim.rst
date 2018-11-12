@@ -1,6 +1,6 @@
 ``after/ftplugin/vim.vim``
 ==========================
 
-.. code-block:: vim
+Use ``:help`` with :kbd:`K` in vim files::
 
     setlocal keywordprg=:help

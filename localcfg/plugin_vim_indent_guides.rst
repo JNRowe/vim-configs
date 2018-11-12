@@ -1,9 +1,7 @@
 ``localcfg/plugin_vim_indent_guides.vim``
 =========================================
 
-These settings are incredibly dependent on the colour schemes being used
-
-.. code-block:: vim
+Configure styling::
 
     if has('gui_running')
         let g:indent_guides_color_change_percent = 7
@@ -18,7 +16,10 @@ These settings are incredibly dependent on the colour schemes being used
         endif
     endif
 
-.. code-block:: vim
+I’ve never toggled guides off, so make it permanent::
 
     let g:indent_guides_enable_on_vim_startup = v:true
+
+Highlights for read only buffers aren’t interesting::
+
     let g:indent_guides_exclude_filetypes = ['help', 'man']

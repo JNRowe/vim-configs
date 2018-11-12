@@ -1,7 +1,7 @@
 ``localcfg/gui_macvim.vim``
 ===========================
 
-.. code-block:: vim
+MacOS specific fonts setup::
 
     set antialias
     set guifont=Menlo:h13

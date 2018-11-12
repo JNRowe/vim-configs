@@ -3,10 +3,12 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-.. code-block:: vim
+Configure my custom maps::
 
     call MnemonicMap('quickfix', {'key': 'f', 'local': v:true})
     call MnemonicMap('location', {'local': v:true})
+
+A utility function to add new map commands::
 
     function! s:qf_key(type, key, cmd)
         let l:group = a:type == 'l' ? 'location' : 'quickfix'
@@ -19,19 +21,15 @@
         execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' . a:type . l:cmd
     endfunction
 
-Display occurrences of current word in quickfix window
-
-.. code-block:: vim
+Display occurrences of current word in quickfix window::
 
     nnoremap <silent> [quickfix]sw :execute "vimgrep " . expand("<cword>") . " %"<CR>
 
-… and last search
-
-.. code-block:: vim
+… and last search::
 
     nnoremap <silent> [quickfix]ss :execute "vimgrep /" . getreg("/") . "/g %"<CR>
 
-.. code-block:: vim
+Configure layered maps for useful quickfix and location functions::
 
     for s:t in ['l', 'c']
         for [s:key, s:cmd] in [
@@ -48,7 +46,7 @@ Display occurrences of current word in quickfix window
         endfor
     endfor
 
-.. code-block:: vim
+Move up and down in the quickfix list with quick shortcut::
 
     nnoremap <M-Down> :cnext<CR>
     nnoremap <M-Up> :cprevious<CR>

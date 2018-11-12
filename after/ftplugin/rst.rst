@@ -19,9 +19,7 @@ This creates reST headings using *my* favourite definitions of =, - and '
         endfor
     endfor
 
-.. code-block:: vim
-
-    setlocal complete+=s
+.. include:: ../../.includes/thesaurus.rst
 
 Break undo sequence on sentence level punctuation.  This kind of feels better
 when editing prose and taking advantage of undo-tree.  Not yet sure if it is
@@ -33,7 +31,7 @@ too granular.
         execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
     endfor
 
-.. code-block:: vim
+Enable common — to me — highlighting support::
 
     let g:rst_syntax_code_list = {
         \ 'cpp': ['cpp', 'c++'],

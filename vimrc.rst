@@ -1,10 +1,11 @@
-Basic setup
-===========
+``vimrc`` - Basic setup
+=======================
 
 .. include:: .includes/scriptencoding.rst
 
-Recent vim versions disable compatible when a ``vimrc`` is found, but some
-distributions are disabling that change for a reason that is far beyond me.
+Recent :command:`vim` versions disable compatible when a :file:`vimrc` is
+found, but some distributions are disabling that change for a reason that is
+far beyond me.
 
 .. code-block:: vim
 
@@ -12,8 +13,8 @@ distributions are disabling that change for a reason that is far beyond me.
         set nocompatible
     endif
 
-Warn users with pre-v8 vim that problems with occur, but note that pull
-requests which aren’t too invasive are welcome.
+Warn users with pre-v8 :command:`vim` that problems with occur, but note that
+pull requests which aren’t too invasive are most welcome.
 
 .. code-block:: vim
 
@@ -24,8 +25,8 @@ requests which aren’t too invasive are welcome.
         echohl none
     endif
 
-neovim is *never* tested, as it removes functionality I use.  Feel free to open
-pull requests for neovim support, *iff* they aren’t too invasive and don’t
+neovim_ is *never* tested, as it removes functionality I use.  Feel free to open
+pull requests for ``neovim`` support, *iff* they aren’t too invasive and don’t
 break vim.
 
 .. code-block:: vim
@@ -69,3 +70,5 @@ Pull in remaining configs.
         endif
     endif
     runtime vimrc.d/localcfg.vim
+
+.. _neovim: https://neovim.io/

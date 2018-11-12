@@ -1,11 +1,15 @@
 ``localcfg/plugin_securemodelines.vim``
 =======================================
 
-.. code-block:: vim
+With this plugin we don’t want builtin modeline support::
 
     set nomodeline
 
-.. code-block:: vim
+I like to know what is being skipped, mostly so I can whitelist any options that
+are valuable::
 
     let g:secure_modelines_verbose = v:true
+
+Don’t look beyond three lines::
+
     let g:secure_modelines_modelines = 3
