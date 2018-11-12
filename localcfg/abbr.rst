@@ -1,9 +1,8 @@
 ``localcfg/abbr.vim``
 =====================
 
-Common-ish to me mail abbreviations
-
-.. code-block:: vim
+Common-ish mail abbreviations, that may also appear occasionally in other
+contexts too::
 
     iabbrev AFAICR as far as I can remember
     iabbrev AFAIK as far as I know
@@ -24,7 +23,8 @@ Common-ish to me mail abbreviations
     iabbrev WIBNI wouldn't it be nice if
     iabbrev YMMV your mileage may vary
 
-Date
+Date and time input, all of which could easily be replaced with equivalent
+snippets if I wasn’t so used to this now:
 
 .. code-block:: vim
 

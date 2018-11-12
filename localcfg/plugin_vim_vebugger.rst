@@ -1,12 +1,12 @@
 ``localcfg/plugin_vim_vebugger.vim``
 ====================================
 
-.. code-block:: vim
+Use my custom maps::
 
     call MnemonicMap('vebugger', {'local': v:true})
     let g:vebugger_leader='[vebugger]'
 
-.. code-block:: vim
+Configure symbols::
 
     let g:vebugger_breakpoint_text = '⇒'
     let g:vebugger_currentline_text = '●'

@@ -1,12 +1,21 @@
 ``localcfg/plugin_vim_ledger.vim``
 ==================================
 
-.. code-block:: vim
+Use a shorter than default column width to allow for larger expressions
+without pushing lines too long::
 
     let g:ledger_align_at = 44
+
+.. note::
+
+    44 was arrived by grepping ten years of ledger_ data, and
+    adding 10% to the minimum *I* would need.  Your mileage may vary.
+
+Use ISO-8601_ compatible date format::
+
     let g:ledger_date_format = '%F'
 
-.. code-block:: vim
+Use my custom maps::
 
     call MnemonicMap('Ledger', {'buffer': v:true, 'local': v:true})
 
@@ -27,9 +36,12 @@
             \ s:key . ' :' . s:cmd . '<CR>'
     endfor
 
-.. code-block:: vim
+Configure magic currency completion in ledger files::
 
     augroup jnrowe_vim_ledger
         autocmd FileType ledger inoremap <silent> <Tab>
             \ <C-r>=ledger#autocomplete_and_align()<CR>
     augroup END
+
+.. _ledger: https://www.ledger-cli.org/
+.. _ISO-8601: https://en.m.wikipedia.org/wiki/ISO_8601

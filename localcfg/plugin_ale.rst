@@ -3,11 +3,21 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-.. code-block:: vim
+Setting suggestions much higher than twenty grinds things to a halt too
+often::
 
     let g:ale_completion_max_suggestions = 20
+
+Disable lint on change as it is *far* too processor intensive for me::
+
     let g:ale_lint_on_text_changed = 'never'
+
+… but linting when leaving insert suits the way I work::
+
     let g:ale_lint_on_insert_leave = v:true
+
+Open location list when errors exist::
+
     let g:ale_open_list = v:true
 
 .. include:: ../.includes/fontawesome.rst

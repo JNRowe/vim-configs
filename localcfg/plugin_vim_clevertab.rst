@@ -1,7 +1,7 @@
 ``localcfg/plugin_vim_clevertab.vim``
 =====================================
 
-.. code-block:: vim
+Configure preferred order of completion::
 
     inoremap <silent><Tab> <C-r>=CleverTab#Complete('start')<CR>
         \<C-r>=CleverTab#Complete('tab')<CR>

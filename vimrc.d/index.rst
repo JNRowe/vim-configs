@@ -1,15 +1,22 @@
-``vimrc.d``
-===========
+``vimrc.d`` - Main configuration files
+======================================
+
+With the notable exception of ``dein`` configuration, this directory is for
+configuring :command:`vim`’s built-in functionality.  The ``dein`` configuration
+is here because it needs to be read before :doc:`../localcfg/index` can be used.
 
 Contents
 --------
 
-* `dein.vim <dein.html>`__
-* `disabled.vim <disabled.html>`__
-* `localcfg.vim <localcfg.html>`__
-* `maps.vim <maps.html>`__
-* `misc.vim <misc.html>`__
-* `packages.vim <packages.html>`__
-* `paths.vim <paths.html>`__
-* `settings.vim <settings.html>`__
-* `syntax.vim <syntax.html>`__
+.. toctree::
+    :titlesonly:
+
+    dein
+    disabled
+    localcfg
+    maps
+    misc
+    packages
+    paths
+    settings
+    syntax

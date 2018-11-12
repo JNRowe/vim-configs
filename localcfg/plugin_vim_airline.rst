@@ -3,14 +3,17 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-.. code-block:: vim
+.. image:: /.static/vim_airline_powerlineish.png
+   :alt: powerlineish theme screenshot
+
+Configure look::
 
     let g:airline_theme = 'powerlineish'
     let g:airline_skip_empty_sections = v:true
 
 .. include:: ../.includes/fontawesome.rst
 
-.. code-block:: vim
+Configure symbols::
 
     if has('gui_running')
         let g:airline_left_sep = '╗'
@@ -33,7 +36,7 @@
         let g:airline_symbols_ascii = v:true
     endif
 
-.. code-block:: vim
+Only use the extensions I actually want::
 
     let g:airline#extensions#disable_rtp_load = v:true
     let g:airline_extensions = [
@@ -43,27 +46,54 @@
         \ 'wordcount',
     \ ]
 
-.. code-block:: vim
+Enable ale_ extension::
 
     if v:version >= 800 && has('signs')
         let g:airline_extensions += ['ale']
     endif
+
+Use simple statusline for quickfix windows::
+
     if has('quickfix')
         let g:airline_extensions += ['quickfix']
     endif
 
-.. code-block:: vim
+Enable git_ extension::
 
     if executable('git')
         let g:airline_extensions += ['branch', 'hunks']
+
+… truncate all but the “basename” of branch names::
+
         let g:airline#extensions#branch#format = 2
+
+… use nice symbols where possible::
+
         if has('gui_running')
             let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
         endif
+
+… don’t display symbol and count when zero::
+
         let g:airline#extensions#hunks#non_zero_only = v:true
-    endif
 
 .. code-block:: vim
 
+    endif
+
+When :abbr:`CSV (Comma Separated Value)` files have a header, use it::
+
     let g:airline#extensions#csv#column_display = 'Name'
+
+.. note::
+
+    The ``csv`` extension uses the *excellent* csv.vim_ plugin by Christian
+    Brabandt.
+
+Allow spaces *after* tabs, but not in between::
+
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
+
+.. _ale: https://github.com/w0rp/ale
+.. _git: https://www.git-scm.com/
+.. _csv.vim: https://github.com/chrisbra/csv.vim

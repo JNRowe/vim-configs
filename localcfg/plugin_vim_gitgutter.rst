@@ -3,7 +3,7 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-.. code-block:: vim
+Use my custom maps::
 
     call MnemonicMap('gitgutter')
     let g:gitgutter_map_keys = v:false
@@ -24,7 +24,9 @@ If you have more than 100 edits you probably need to commit!
 
     let g:gitgutter_max_signs = 100
 
-.. code-block:: vim
+.. include:: ../.includes/fontawesome.rst
+
+Configure symbols::
 
     if has('gui_running')
         let g:gitgutter_sign_added              = ''
@@ -34,11 +36,11 @@ If you have more than 100 edits you probably need to commit!
         let g:gitgutter_sign_modified_removed   = ''
     endif
 
-.. code-block:: vim
+I prefer my colourscheme’s sign column setup::
 
     let g:gitgutter_override_sign_column_highlight = v:false
 
-.. code-block:: vim
+Use a sign colourscheme that approximately matches my terminal diff output::
 
     highlight GitGutterAdd                        guifg=#8ae234
     highlight GitGutterChange                     guifg=#fce94f

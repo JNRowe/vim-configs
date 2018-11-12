@@ -1,7 +1,7 @@
 ``localcfg/plugin_regex.vim``
 =============================
 
-.. code-block:: vim
+Add completion based on installed languages::
 
     function! s:regex_complete(arglead, cmdline, cursorpos)
         return filter(map(glob(g:dein_repos_dir .
