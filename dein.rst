@@ -442,16 +442,6 @@ Repositories
 
 ..
 
-    “Meson build system support”
-
-.. code-block:: vim
-
-    call dein#add('igankevich/mesonic', {
-        \ 'on_cmd': 'MesonInit',
-    \ })
-
-..
-
     “Underline the word under the cursor”
 
 .. code-block:: vim
