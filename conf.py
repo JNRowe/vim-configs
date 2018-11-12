@@ -39,7 +39,7 @@ source_suffix = '.rst'
 exclude_patterns = ['.build', 'README.rst', '**/README.rst']
 
 project = 'vim-configs'
-copyright = '2009-2018  James Rowe'
+copyright = '2009-2018  James Rowe'  # NOQA: A001
 
 release = html_last_updated_fmt
 version = ''
