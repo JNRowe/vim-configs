@@ -120,7 +120,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 [ninja_syntax.__file__, ])
 
         n.build(f'{location / "README.html"}', 'rst_compile',
-                [f'{location / "README.rst"}' , ],
+                [f'{location / "README.rst"}', ],
                 [which(rst2html), ])
 
         rst_files = [p for p in location.glob('**/*.rst')
