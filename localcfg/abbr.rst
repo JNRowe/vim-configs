@@ -8,9 +8,9 @@ contexts too::
     iabbrev AFAIK as far as I know
     iabbrev AKA also known as
     iabbrev ASAP as soon as possible
-    iabbrev FAF fire'n'forget
+    iabbrev FAF fire’n’forget
     iabbrev FINR fixed in the next release
-    iabbrev FWIW for what it's worth
+    iabbrev FWIW for what it’s worth
     iabbrev FYI for your information
     iabbrev HTH hope that helps
     iabbrev IIRC if I remember correctly
@@ -20,7 +20,7 @@ contexts too::
     iabbrev OTOH on the other hand
     iabbrev RTFM read the friendly manual
     iabbrev WDYT what do you think?
-    iabbrev WIBNI wouldn't it be nice if
+    iabbrev WIBNI wouldn’t it be nice if
     iabbrev YMMV your mileage may vary
 
 Date and time input, all of which could easily be replaced with equivalent
