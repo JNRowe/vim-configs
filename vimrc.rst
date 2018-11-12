@@ -39,6 +39,24 @@ break vim.
         cquit
     endif
 
+Enable profiler if :envvar:`VIM_PROFILE` is set.  For example,
+``VIM_PROFILE=$TMPDIR/vim.prof`` will profile all files under ``~/.vim`` and
+``VIM_PROFILE=$TMPDIR/vim.prof:dein#*`` will profile all ``dein`` function
+calls.  In both cases, output will be written to :file:`vim.prof` under
+:envvar:`TMPDIR`.
+
+::
+
+    if exists('$VIM_PROFILE')
+        let [s:profile_file, s:profile_func] = (split($VIM_PROFILE, ':') + [v:none])[:1]
+        execute "profile start " . s:profile_file
+        if s:profile_func == v:none
+            profile file ~/.vim/*
+        else
+            execute "profile func " . s:profile_func
+        endif
+    endif
+
 Pull in semi-private local settings.  This is only for locally required
 settings while reading this file.
 
