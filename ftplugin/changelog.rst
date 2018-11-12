@@ -4,7 +4,7 @@
 For old fashioned projects with hand crafted :file:`ChangeLog` files,
 ``:NewChangelogEntry`` is fantastic laziness.
 
-.. code-block:: vim
+::
 
     let g:changelog_username = g:user_email
 

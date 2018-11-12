@@ -47,7 +47,7 @@ Consolas is available on most of the systems I use, and feels reasonably nice.
 If :command:`gvim` starts supporting ligatures upstream or with a cleaner patch,
 then I’ll look for replacements.
 
-.. code-block:: vim
+::
 
     let s:font_family = 'Consolas'
     let &guifont = s:font_family . ' 13'
@@ -56,7 +56,7 @@ Add command to switch text size quickly.  Yeah, some of these are *huuuuuge*
 but I’ll often pop up a snippet for discussion in a meeting and this really
 helps.
 
-.. code-block:: vim
+::
 
     function! s:font_complete(arglead, cmdline, cursorpos)
         return [s:font_family . '\ 13', ]

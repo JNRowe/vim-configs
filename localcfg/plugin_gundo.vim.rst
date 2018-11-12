@@ -1,7 +1,7 @@
 ``localcfg/plugin_gundo.vim.vim``
 =================================
 
-.. code-block:: vim
+::
 
     nnoremap <LocalLeader># :GundoToggle<CR>
 

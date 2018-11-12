@@ -4,7 +4,7 @@
 Use ``:Tabularize`` to do simple lazy code formatting, as this is far quicker
 than doing a complete pretty print
 
-.. code-block:: vim
+::
 
     call MnemonicMap('Haskell', {
         \ 'buffer': v:true,

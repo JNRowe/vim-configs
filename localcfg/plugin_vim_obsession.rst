@@ -5,6 +5,6 @@
 
 .. include:: ../.includes/fontawesome.rst
 
-.. code-block:: vim
+::
 
     let g:airline#extensions#obsession#indicator_text = ''

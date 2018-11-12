@@ -36,11 +36,11 @@ Highlights for read only buffers aren’t interesting::
 
         autocmd FileType help,man setlocal colorcolumn=""
 
-.. code-block:: vim
+::
 
         autocmd FileType css,html EmmetInstall
 
-.. code-block:: vim
+::
 
         autocmd FileType rst setlocal complete+=k/usr/share/dict/words
 
@@ -72,7 +72,7 @@ Jump to the last known cursor position if possible::
 Make stdin buffers temporary by default.  Potentially dangerous, but
 I only use them this way.
 
-.. code-block:: vim
+::
 
         autocmd StdinReadPost * set buftype=nofile
 
@@ -133,6 +133,6 @@ buffer’s settings::
             \   endif |
             \ endif
 
-.. code-block:: vim
+::
 
     augroup END

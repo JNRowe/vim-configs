@@ -4,7 +4,7 @@
 Show highlight group of the current text, taken from vim wiki which is now
 offline.
 
-.. code-block:: vim
+::
 
     command! ShowHighlightGroup
         \ echo 'hi<' . synIDattr(synID(line('.'), col('.'), v:true), 'name') .

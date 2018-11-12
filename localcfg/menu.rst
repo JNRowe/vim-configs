@@ -17,7 +17,7 @@ Signature        Maps to
 ``{str: [str]}`` Submenu with list of potential filenames
 ================ =========================================
 
-.. code-block:: vim
+::
 
     function! s:DefineMenu(heading, items)
         if type(a:items) == v:t_dict
@@ -42,21 +42,21 @@ Signature        Maps to
         endif
     endfunction
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&Awesome', {
         \ 'rc': g:xdg_config_dir . '/awesome/rc.moon',
         \ 'theme':  g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
     \ })
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&Dwm', {
         \ 'config.h': g:xdg_config_dir . '/dwm/config.h',
         \ 'theme':  g:xdg_config_dir . '/dwm/themes/theme.h',
     \ })
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&Openbox', {
         \ 'autostart': g:xdg_config_dir . '/openbox/autostart.sh',
@@ -64,7 +64,7 @@ Signature        Maps to
         \ 'rc': g:xdg_config_dir . '/openbox/rc.xml',
     \ })
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&gitconfig', [
         \   g:xdg_config_dir . '/git/config',
@@ -72,7 +72,7 @@ Signature        Maps to
         \ ]
     \ )
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&python',
         \ [
@@ -81,11 +81,11 @@ Signature        Maps to
         \ ],
     \ )
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&Ledger', g:xdg_data_dir . '/ledger/ledger.dat.gpg')
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&vim', {
         \ '&dein': '~/.vim/dein.vim',
@@ -93,7 +93,7 @@ Signature        Maps to
         \ 'rc-&local': '~/.vim/localcfg/',
     \ })
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&zsh', {
         \ '&completions': '~/.no_my_zsh/completion/',
@@ -102,7 +102,7 @@ Signature        Maps to
         \ '&zshrc': '~/.no_my_zsh/zshrc',
     \ })
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&xorg', {
         \ 'X&modmap': '~/.Xmodmap',
@@ -110,7 +110,7 @@ Signature        Maps to
         \ 'X&initrc': '~/.xinitrc',
     \ })
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&freetype', [
         \   g:xdg_config_dir . '/fontconfig/fonts.conf',
@@ -118,7 +118,7 @@ Signature        Maps to
         \ ],
     \ )
 
-.. code-block:: vim
+::
 
     call s:DefineMenu('&gtk2', '~/.gtkrc-2.0')
     call s:DefineMenu('&gtk3', g:xdg_config_dir . '/gtk-3.0/settings.ini')

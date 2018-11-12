@@ -27,7 +27,7 @@ Utility functions
 Add a pre- or suffix to a list of strings.  This greatly improves readability in
 my opinion.
 
-.. code-block:: vim
+::
 
     function! s:prefix(str, args)
         return map(a:args, {_, s -> a:str . s})
@@ -39,7 +39,7 @@ my opinion.
 
 Enable an airline extension.  This is purely to remove duplication in setup.
 
-.. code-block:: vim
+::
 
     function! s:airline_enable(extension)
         return 'let g:airline_extensions += ["'. a:extension . '"]'
@@ -68,7 +68,7 @@ Repositories
 
     “A dark powered Vim/Neovim plugin manager”
 
-.. code-block:: vim
+::
 
     call dein#add(expand('~/.vim/external/dein.vim'), {
         \ 'if': v:version >= 800,
@@ -78,7 +78,7 @@ Repositories
 
     “Move an item in a delimiter-separated list left or right”
 
-.. code-block:: vim
+::
 
     call dein#add('AndrewRadev/sideways.vim', {
         \ 'on_cmd': s:prefix('Sideways', ['Left', 'Right']),
@@ -89,7 +89,7 @@ Repositories
 
     “Switch between single-line and multiline forms of code”
 
-.. code-block:: vim
+::
 
     call dein#add('AndrewRadev/splitjoin.vim', {
         \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
@@ -100,7 +100,7 @@ Repositories
 
     “Folding optimization”
 
-.. code-block:: vim
+::
 
     call dein#add('Konfekt/FastFold', {
         \ 'if': has('folding'),
@@ -110,7 +110,7 @@ Repositories
 
     “Tango inspired colourscheme”
 
-.. code-block:: vim
+::
 
     call dein#add('JNRowe/vim-jnrowe')
 
@@ -118,7 +118,7 @@ Repositories
 
     “Automatic closing of quotes, parenthesis, brackets, &c”
 
-.. code-block:: vim
+::
 
     call dein#add('Raimondi/delimitMate', {
         \ 'on_event': 'InsertEnter',
@@ -128,7 +128,7 @@ Repositories
 
     “Asynchronous execution plugin”
 
-.. code-block:: vim
+::
 
     call dein#add('Shougo/vimproc', {
         \ 'build': 'make',
@@ -142,7 +142,7 @@ Repositories
 
     “The ultimate plugin for snippets”
 
-.. code-block:: vim
+::
 
     call dein#add('SirVer/ultisnips', {
         \ 'depends': 'vim-snippets',
@@ -153,7 +153,7 @@ Repositories
 
     “Show git diff status in the gutter”
 
-.. code-block:: vim
+::
 
     call dein#add('airblade/vim-gitgutter', {
         \ 'if': has('signs') && s:has_git,
@@ -163,7 +163,7 @@ Repositories
 
     “Run pytest from within vim”
 
-.. code-block:: vim
+::
 
     call dein#add('alfredodeza/pytest.vim', {
         \ 'if': executable('pytest'),
@@ -175,7 +175,7 @@ Repositories
 
     “Highlights whitespace at the end of lines”
 
-.. code-block:: vim
+::
 
     call dein#add('bitc/vim-bad-whitespace', {
         \ 'on_cmd': s:suffix('BadWhitespace', ['Erase', 'Hide', 'Toggle']),
@@ -186,7 +186,7 @@ Repositories
 
     “Colour colournames and codes”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/Colorizer', {
         \ 'on_cmd':
@@ -206,7 +206,7 @@ Repositories
 
     “A narrow region plugin (similar to Emacs)”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/NrrwRgn', {
         \ 'hook_post_source': s:airline_enable('nrrwrgn'),
@@ -218,7 +218,7 @@ Repositories
 
     “Show differences for recovered files”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/Recover.vim', {
         \ 'if': v:version >= 703,
@@ -228,7 +228,7 @@ Repositories
 
     “Record and replay your editing sessions”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/Replay', {
         \ 'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
@@ -238,7 +238,7 @@ Repositories
 
     “Save signs across sessions”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/SaveSigns.vim', {
         \ 'if': has('signs'),
@@ -249,7 +249,7 @@ Repositories
 
     “A filetype plugin for CSV files”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/csv.vim', {
         \ 'on_ft': 'csv',
@@ -259,7 +259,7 @@ Repositories
 
     “A plugin for handling unicode and digraphs characters”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/unicode.vim', {
         \ 'hook_post_source': s:airline_enable('unicode'),
@@ -277,7 +277,7 @@ Repositories
 
     “The vim FAQ”
 
-.. code-block:: vim
+::
 
     call dein#add('chrisbra/vim_faq', {
         \ 'if': v:version >= 600,
@@ -287,7 +287,7 @@ Repositories
 
     “A secure alternative to modelines”
 
-.. code-block:: vim
+::
 
     call dein#add('JNRowe/securemodelines')
 
@@ -295,7 +295,7 @@ Repositories
 
     “A VIM binding to the jedi autocompletion library”
 
-.. code-block:: vim
+::
 
     call dein#add('davidhalter/jedi-vim', {
         \ 'if': has('pythonx'),
@@ -307,7 +307,7 @@ Repositories
 
     “An awesome automatic table creator & formatter”
 
-.. code-block:: vim
+::
 
     call dein#add('dhruvasagar/vim-table-mode', {
         \ 'on_cmd': s:prefix('Table', ['ModeToggle', 'ize']),
@@ -319,7 +319,7 @@ Repositories
 
     “Automated Bullet Lists in Vim”
 
-.. code-block:: vim
+::
 
     call dein#add('dkarter/bullets.vim', {
         \ 'hook_post_source': 'let g:bullets_enabled_file_types += ["rst"]',
@@ -330,7 +330,7 @@ Repositories
 
     “The EditorConfig plugin”
 
-.. code-block:: vim
+::
 
     call dein#add('editorconfig/editorconfig-vim', {
         \ 'if': has('pythonx'),
@@ -341,7 +341,7 @@ Repositories
 
     “Cute conceal support for Python”
 
-.. code-block:: vim
+::
 
     call dein#add('ehamberg/vim-cute-python', {
         \ 'if': has('conceal') && v:version >= 703,
@@ -353,7 +353,7 @@ Repositories
 
     “Sum numbers that appear in selection”
 
-.. code-block:: vim
+::
 
     call dein#add('elazar/visSum.vim', {
         \ 'on_map': {'x': '<LocalLeader>su'},
@@ -363,7 +363,7 @@ Repositories
 
     “Allows you to test regular expressions”
 
-.. code-block:: vim
+::
 
     call dein#add('ervandew/regex', {
         \ 'on_cmd': 'Regex',
@@ -373,7 +373,7 @@ Repositories
 
     “Configurable, flexible, intuitive text aligning”
 
-.. code-block:: vim
+::
 
     call dein#add('godlygeek/tabular', {
         \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
@@ -383,7 +383,7 @@ Repositories
 
     “All 256 xterm colours with their RGB equivalents”
 
-.. code-block:: vim
+::
 
     call dein#add('guns/xterm-color-table.vim', {
         \ 'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
@@ -393,7 +393,7 @@ Repositories
 
     “Utility comamnds for dein.vim”
 
-.. code-block:: vim
+::
 
     call dein#add('haya14busa/dein-command.vim', {
         \ 'on_cmd': 'Dein',
@@ -403,7 +403,7 @@ Repositories
 
     “Snippet files for various programming languages”
 
-.. code-block:: vim
+::
 
     call dein#add('honza/vim-snippets')
 
@@ -411,7 +411,7 @@ Repositories
 
     “All powerful Pythonic task runner”
 
-.. code-block:: vim
+::
 
     call dein#add('idanarye/vim-omnipytent', {
         \ 'if': has('pythonx'),
@@ -422,7 +422,7 @@ Repositories
 
     “Yet another debugger frontend plugin”
 
-.. code-block:: vim
+::
 
     call dein#add('idanarye/vim-vebugger', {
         \ 'depends': 'vimproc',
@@ -434,7 +434,7 @@ Repositories
 
     “Regex powered yank and substitute”
 
-.. code-block:: vim
+::
 
     call dein#add('idanarye/vim-yankitute', {
         \ 'on_cmd': 'Yankitute',
@@ -444,7 +444,7 @@ Repositories
 
     “Underline the word under the cursor”
 
-.. code-block:: vim
+::
 
     call dein#add('itchyny/vim-cursorword')
 
@@ -452,7 +452,7 @@ Repositories
 
     “Highlight matching parenthesis”
 
-.. code-block:: vim
+::
 
     call dein#add('itchyny/vim-parenmatch')
 
@@ -460,7 +460,7 @@ Repositories
 
     “Transparent editing of gpg encrypted files”
 
-.. code-block:: vim
+::
 
     call dein#add('jamessan/vim-gnupg', {
         \ 'if': executable('gpg') || executable('gpg2'),
@@ -470,7 +470,7 @@ Repositories
 
     “Edit and store quickfix/location list entries”
 
-.. code-block:: vim
+::
 
     call dein#add('jceb/vim-editqf', {
         \ 'if': has('quickfix'),
@@ -484,7 +484,7 @@ Repositories
 
     “Text outlining and task management for Vim based on Emacs’ Org-Mode”
 
-.. code-block:: vim
+::
 
     call dein#add('jceb/vim-orgmode', {
         \ 'depends': ['NrrwRgn', 'SyntaxRange', 'calendar-vim', 'vim-repeat',
@@ -496,7 +496,7 @@ Repositories
 
     “Ease your git workflow”
 
-.. code-block:: vim
+::
 
     call dein#add('jreybert/vimagit', {
         \ 'hook_post_source': s:airline_enable('vimagit'),
@@ -508,7 +508,7 @@ Repositories
 
     “Basic fzf integration”
 
-.. code-block:: vim
+::
 
     call dein#add('junegunn/fzf', {
         \ 'if': executable('fzf'),
@@ -520,7 +520,7 @@ Repositories
 
     “Advanced fzf integration”
 
-.. code-block:: vim
+::
 
     call dein#add('junegunn/fzf.vim', {
         \ 'depends': 'fzf',
@@ -535,7 +535,7 @@ Repositories
 
     “Distraction-free writing in Vim.”
 
-.. code-block:: vim
+::
 
     call dein#add('junegunn/goyo.vim', {
         \ 'on_cmd': 'Goyo',
@@ -545,7 +545,7 @@ Repositories
 
     “Emoji support”
 
-.. code-block:: vim
+::
 
     call dein#add('junegunn/vim-emoji', {
         \ 'on_func': 'emoji',
@@ -555,7 +555,7 @@ Repositories
 
     “Automatically resizes your windows”
 
-.. code-block:: vim
+::
 
     call dein#add('justincampbell/vim-eighties', {
         \ 'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
@@ -565,7 +565,7 @@ Repositories
 
     “Motion improved”
 
-.. code-block:: vim
+::
 
     call dein#add('justinmk/vim-sneak', {
         \ 'depends': 'vim-repeat',
@@ -581,7 +581,7 @@ Repositories
 
     “Enhanced Python folding”
 
-.. code-block:: vim
+::
 
     call dein#add('kalekundert/vim-coiled-snake', {
         \ 'if': has('folding'),
@@ -592,7 +592,7 @@ Repositories
 
     “Create your own text objects”
 
-.. code-block:: vim
+::
 
     call dein#add('kana/vim-textobj-user', {
         \ 'on_func': 'textobj',
@@ -600,7 +600,7 @@ Repositories
 
 nyancat. bah, grow up!
 
-.. code-block:: vim
+::
 
     call dein#add('koron/nyancat-vim', {
         \ 'on_cmd': s:prefix('Nyancat', ['', '2']),
@@ -610,7 +610,7 @@ nyancat. bah, grow up!
 
     “A plugin to place, toggle and display marks”
 
-.. code-block:: vim
+::
 
     call dein#add('kshenoy/vim-signature', {
         \ 'if': has('signs'),
@@ -620,7 +620,7 @@ nyancat. bah, grow up!
 
     “Language support for moonscript”
 
-.. code-block:: vim
+::
 
     call dein#add('leafo/moonscript-vim', {
         \ 'on_ft': 'moon',
@@ -630,7 +630,7 @@ nyancat. bah, grow up!
 
     “Language support for ledger”
 
-.. code-block:: vim
+::
 
     call dein#add('ledger/vim-ledger', {
         \ 'on_ft': 'ledger',
@@ -640,7 +640,7 @@ nyancat. bah, grow up!
 
     “Help read complex code by showing parentheses in different colours”
 
-.. code-block:: vim
+::
 
     call dein#add('luochen1990/rainbow')
 
@@ -648,7 +648,7 @@ nyancat. bah, grow up!
 
     “Help for customising based on features”
 
-.. code-block:: vim
+::
 
     call dein#add('magus/localcfg')
 
@@ -656,7 +656,7 @@ nyancat. bah, grow up!
 
     “A calendar window you can use within vim”
 
-.. code-block:: vim
+::
 
     call dein#add('mattn/calendar-vim', {
         \ 'on_cmd': s:suffix('Calendar', ['', 'H', 'T', 'VR']),
@@ -667,7 +667,7 @@ nyancat. bah, grow up!
 
     “Plugins for HTML and CSS hi-speed coding”
 
-.. code-block:: vim
+::
 
     call dein#add('mattn/emmet-vim', {
         \ 'if': v:version >= 700,
@@ -678,7 +678,7 @@ nyancat. bah, grow up!
 
     “Display your undo history in a graph”
 
-.. code-block:: vim
+::
 
     call dein#add('mbbill/undotree', {
         \ 'if': v:version >= 700,
@@ -689,7 +689,7 @@ nyancat. bah, grow up!
 
     “The fancy start screen”
 
-.. code-block:: vim
+::
 
     call dein#add('mhinz/vim-startify')
 
@@ -697,7 +697,7 @@ nyancat. bah, grow up!
 
     “Text objects based on indent levels”
 
-.. code-block:: vim
+::
 
     call dein#add('michaeljsmith/vim-indent-object', {
         \ 'on_ft': ['ledger', 'moon', 'nim', 'python'],
@@ -708,7 +708,7 @@ nyancat. bah, grow up!
 
     “Order buffers in Most Recently Used order”
 
-.. code-block:: vim
+::
 
     call dein#add('mildred/vim-bufmru', {
         \ 'on_cmd': 'BufMRU',
@@ -719,7 +719,7 @@ nyancat. bah, grow up!
 
     “Run your favorite search tool from Vim, with an enhanced results list”
 
-.. code-block:: vim
+::
 
     call dein#add('mileszs/ack.vim', {
         \ 'if': executable('ag'),
@@ -730,7 +730,7 @@ nyancat. bah, grow up!
 
     “Language support for jinja”
 
-.. code-block:: vim
+::
 
     call dein#add('mitsuhiko/vim-jinja', {
         \ 'on_ft': 'jinja',
@@ -740,7 +740,7 @@ nyancat. bah, grow up!
 
     “Delete buffers without breaking your layout”
 
-.. code-block:: vim
+::
 
     call dein#add('moll/vim-bbye', {
         \ 'on_cmd': ['Bdelete', 'Bwipeout'],
@@ -751,7 +751,7 @@ nyancat. bah, grow up!
 
     “A plugin for visually displaying indent levels”
 
-.. code-block:: vim
+::
 
     call dein#add('nathanaelkane/vim-indent-guides')
 
@@ -759,7 +759,7 @@ nyancat. bah, grow up!
 
     “Filetype plugin for beancount files”
 
-.. code-block:: vim
+::
 
     call dein#add('nathangrigg/vim-beancount', {
         \ 'on_ft': 'beancount',
@@ -769,7 +769,7 @@ nyancat. bah, grow up!
 
     “Tiny replacement for Supertab”
 
-.. code-block:: vim
+::
 
     call dein#add('neitanod/vim-clevertab')
 
@@ -777,7 +777,7 @@ nyancat. bah, grow up!
 
     “Allow transparent calls to Python functions in native Vim scripts”
 
-.. code-block:: vim
+::
 
     call dein#add('nvie/vim_bridge', {
         \ 'on_cmd': 'python',
@@ -787,7 +787,7 @@ nyancat. bah, grow up!
 
     “HTML5 + inline SVG omnicomplete function, indent and syntax”
 
-.. code-block:: vim
+::
 
     call dein#add('othree/html5.vim', {
         \ 'on_ft': 'html',
@@ -797,7 +797,7 @@ nyancat. bah, grow up!
 
     “Better support for typographic (‘curly’) quote characters”
 
-.. code-block:: vim
+::
 
     call dein#add('reedes/vim-textobj-quote', {
         \ 'depends': 'vim-textobj-user',
@@ -809,7 +809,7 @@ nyancat. bah, grow up!
 
     “Make working with the quickfix list/window smoother”
 
-.. code-block:: vim
+::
 
     call dein#add('romainl/vim-qlist', {
         \ 'if': has('quickfix'),
@@ -821,7 +821,7 @@ nyancat. bah, grow up!
 
     “More pleasant editing on commit message”
 
-.. code-block:: vim
+::
 
     call dein#add('rhysd/committia.vim', {
         \ 'if': s:has_git,
@@ -831,7 +831,7 @@ nyancat. bah, grow up!
 
     “Show cyclomatic complexity of Python code”
 
-.. code-block:: vim
+::
 
     call dein#add('rubik/vim-radon', {
         \ 'if': has('signs') && has('pythonx'),
@@ -843,7 +843,7 @@ nyancat. bah, grow up!
 
     “Graph your undo tree”
 
-.. code-block:: vim
+::
 
     call dein#add('sjl/gundo.vim', {
         \ 'if': has('pythonx') && v:version >= 703,
@@ -854,7 +854,7 @@ nyancat. bah, grow up!
 
     “Plugin for resolving conflicts during three-way merges”
 
-.. code-block:: vim
+::
 
     call dein#add('sjl/splice.vim', {
         \ 'on_cmd': 'SpliceInit',
@@ -864,7 +864,7 @@ nyancat. bah, grow up!
 
     “Smart space key”
 
-.. code-block:: vim
+::
 
     call dein#add('spiiph/vim-space', {
         \ 'on_map': {'n': '<space>'},
@@ -874,7 +874,7 @@ nyancat. bah, grow up!
 
     “Tiled Window Management for Vim”
 
-.. code-block:: vim
+::
 
     call dein#add('JNRowe/dwm.vim', {
         \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
@@ -884,7 +884,7 @@ nyancat. bah, grow up!
 
     “Linter for vim script”
 
-.. code-block:: vim
+::
 
     call dein#add('syngan/vim-vimlint', {
         \ 'depends': 'vim-vimlparser',
@@ -896,7 +896,7 @@ nyancat. bah, grow up!
 
     “Maximizes and restores the current window”
 
-.. code-block:: vim
+::
 
     call dein#add('szw/vim-maximizer', {
         \ 'on_cmd': 'MaximizerToggle',
@@ -907,7 +907,7 @@ nyancat. bah, grow up!
 
     “Incremental visual selection”
 
-.. code-block:: vim
+::
 
     call dein#add('terryma/vim-expand-region', {
         \ 'on_map': {'nv': ['+', '-']},
@@ -917,7 +917,7 @@ nyancat. bah, grow up!
 
     “True Sublime Text multiple selection”
 
-.. code-block:: vim
+::
 
     call dein#add('terryma/vim-multiple-cursors', {
         \ 'on_map': '<C-n>',
@@ -927,7 +927,7 @@ nyancat. bah, grow up!
 
     “Look up word definitions with wordnet”
 
-.. code-block:: vim
+::
 
     call dein#add('timcharper/wordnet.vim', {
         \ 'if': executable('wn'),
@@ -938,7 +938,7 @@ nyancat. bah, grow up!
 
     “Vim port of the monokai theme for TextMate”
 
-.. code-block:: vim
+::
 
     call dein#add('tomasr/molokai')
 
@@ -946,7 +946,7 @@ nyancat. bah, grow up!
 
     “Easy text exchange operator”
 
-.. code-block:: vim
+::
 
     call dein#add('tommcdo/vim-exchange', {
         \ 'on_map': {
@@ -959,7 +959,7 @@ nyancat. bah, grow up!
 
     “Defines a code alignment operator”
 
-.. code-block:: vim
+::
 
     call dein#add('tommcdo/vim-lion', {
         \ 'on_map': {'n': ['gl', 'gL']},
@@ -969,7 +969,7 @@ nyancat. bah, grow up!
 
     “Language friendly searches, substitutions, and abbreviations”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-abolish', {
         \ 'on_cmd': ['Abolish', 'S'],
@@ -980,7 +980,7 @@ nyancat. bah, grow up!
 
     “Comment stuff out”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-commentary', {
         \ 'on_cmd': 'Commentary',
@@ -991,7 +991,7 @@ nyancat. bah, grow up!
 
     “Automatically insert block closing structures”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-endwise', {
         \ 'on_event': 'InsertEnter',
@@ -1001,7 +1001,7 @@ nyancat. bah, grow up!
 
     “A Git wrapper so awesome, it should be illegal”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-fugitive', {
         \ 'if': s:has_git,
@@ -1011,7 +1011,7 @@ nyancat. bah, grow up!
 
     “JSON manipulation and pretty printing”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-jdaddy', {
         \ 'on_ft': 'json',
@@ -1021,7 +1021,7 @@ nyancat. bah, grow up!
 
     “Continuously updated session files”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-obsession', {
         \ 'hook_post_source': s:airline_enable('obsession'),
@@ -1032,7 +1032,7 @@ nyancat. bah, grow up!
 
     “Project configuration”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-projectionist')
 
@@ -1040,7 +1040,7 @@ nyancat. bah, grow up!
 
     “Repeat for plugin maps”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-repeat')
 
@@ -1048,7 +1048,7 @@ nyancat. bah, grow up!
 
     “If fugitive.vim is the Git, rhubarb.vim is the Hub”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-rhubarb', {
         \ 'depends': 'vim-fugitive',
@@ -1059,7 +1059,7 @@ nyancat. bah, grow up!
 
     “Readline style insertion”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-rsi', {
         \ 'on_event': ['CmdlineEnter', 'InsertEnter'],
@@ -1069,7 +1069,7 @@ nyancat. bah, grow up!
 
     “One step above ``nocompatible`` mode”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-sensible', {
         \ 'rev': 'v1.2',
@@ -1084,7 +1084,7 @@ nyancat. bah, grow up!
 
     “Heuristically set buffer options”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-sleuth', {
         \ 'on_cmd': 'Sleuth',
@@ -1094,7 +1094,7 @@ nyancat. bah, grow up!
 
     “Increment dates, times, and more”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-speeddating', {
         \ 'depends': 'vim-repeat',
@@ -1105,7 +1105,7 @@ nyancat. bah, grow up!
 
     “Plugin for deleting, changing, and adding “surroundings””
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-surround', {
         \ 'depends': 'vim-repeat',
@@ -1120,7 +1120,7 @@ nyancat. bah, grow up!
 
     “Pairs of handy mappings”
 
-.. code-block:: vim
+::
 
     call dein#add('tpope/vim-unimpaired')
 
@@ -1128,7 +1128,7 @@ nyancat. bah, grow up!
 
     “1ms could mean the difference between life and death”
 
-.. code-block:: vim
+::
 
     call dein#add('tweekmonster/startuptime.vim', {
         \ 'on_cmd': 'StartupTime',
@@ -1138,7 +1138,7 @@ nyancat. bah, grow up!
 
     “Lean & mean status/tabline for vim that’s light as air”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-airline/vim-airline', {
         \ 'depends': [
@@ -1151,7 +1151,7 @@ nyancat. bah, grow up!
 
     “Official theme repository for vim-airline”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-airline/vim-airline-themes')
 
@@ -1159,7 +1159,7 @@ nyancat. bah, grow up!
 
     ““inner line” text object”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-utils/vim-line', {
         \ 'on_map': {'ov': '_'},
@@ -1169,7 +1169,7 @@ nyancat. bah, grow up!
 
     “Enhanced man support”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-utils/vim-man', {
         \ 'on_cmd': ['Man', 'Mangrep', 'Vman'],
@@ -1179,7 +1179,7 @@ nyancat. bah, grow up!
 
     “Motions to move a cursor without changing the column”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-utils/vim-vertical-move', {
         \ 'on_map': ['[v', ']v'],
@@ -1189,7 +1189,7 @@ nyancat. bah, grow up!
 
     “A personal wiki”
 
-.. code-block:: vim
+::
 
     call dein#add('vimwiki/vimwiki', {
         \ 'on_cmd': s:prefix('Vimwiki', ['DiaryIndex', 'Index', 'MakeDiaryNote']),
@@ -1200,7 +1200,7 @@ nyancat. bah, grow up!
 
     “Provides additional text objects”
 
-.. code-block:: vim
+::
 
     call dein#add('wellle/targets.vim')
 
@@ -1208,7 +1208,7 @@ nyancat. bah, grow up!
 
     “Asynchronous Lint Engine”
 
-.. code-block:: vim
+::
 
     call dein#add('w0rp/ale', {
         \ 'if': v:version >= 800 && has('signs'),
@@ -1218,7 +1218,7 @@ nyancat. bah, grow up!
 
     “Miscellaneous auto-load Vim scripts”
 
-.. code-block:: vim
+::
 
     call dein#add('xolox/vim-misc', {
         \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
@@ -1231,7 +1231,7 @@ nyancat. bah, grow up!
 
     “Easy note taking in Vim”
 
-.. code-block:: vim
+::
 
     call dein#add('xolox/vim-notes', {
         \ 'depends': 'vim-misc',
@@ -1243,7 +1243,7 @@ nyancat. bah, grow up!
 
     “Nim language support”
 
-.. code-block:: vim
+::
 
     call dein#add('zah/nim.vim', {
         \ 'if': executable('nim'),
@@ -1254,7 +1254,7 @@ nyancat. bah, grow up!
 
     “Vimscript parser”
 
-.. code-block:: vim
+::
 
     call dein#add('ynkdir/vim-vimlparser', {
         \ 'on_cmd': 'VimLint',
@@ -1272,7 +1272,7 @@ vim-scripts mirrors
 
 I write my mail in reST.”  No, really.
 
-.. code-block:: vim
+::
 
     call dein#add('vim-scripts/DotOutlineTree', {
         \ 'on_ft': ['mail', 'rst'],
@@ -1282,7 +1282,7 @@ I write my mail in reST.”  No, really.
 
     “Set up regions within a buffer using their own filetypes”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-scripts/SyntaxRange', {
         \ 'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
@@ -1292,7 +1292,7 @@ I write my mail in reST.”  No, really.
 
     “Toggle values under the cursor”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-scripts/Toggle', {
         \ 'on_func': 'Toggle',
@@ -1306,7 +1306,7 @@ I write my mail in reST.”  No, really.
 
     “Highlight BNFs”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-scripts/bnf.vim', {
         \ 'on_ft': 'bnf',
@@ -1316,7 +1316,7 @@ I write my mail in reST.”  No, really.
 
     “Extended BNF (ISO/IEC 14977) Syntax”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-scripts/ebnf.vim', {
         \ 'on_ft': 'ebnf',
@@ -1326,7 +1326,7 @@ I write my mail in reST.”  No, really.
 
     “Painless footer references”
 
-.. code-block:: vim
+::
 
     call dein#add('vim-scripts/uri-ref', {
         \ 'on_ft': 'mail',
@@ -1338,7 +1338,7 @@ Nasty bundled packages
 These packages are being removed, either by finding a usable remote location or
 by deletion.
 
-.. code-block:: vim
+::
 
     call dein#local('~/.vim/internal/', {
         \ 'on_cmd': 'Snip',

@@ -13,7 +13,7 @@ Set up map to quickly move between buffers.
     I wouldn’t care about and provides a more useful *to me* version of buffer
     cycling.
 
-.. code-block:: vim
+::
 
     function! s:switch_buf(count)
         let b:bufs = filter(range(1, bufnr('$')),
@@ -32,7 +32,7 @@ Set up map to quickly move between buffers.
 
 I hate you *so* much right now
 
-.. code-block:: vim
+::
 
     if exists('$VIM_DISABLE_CURSORS')
         nnoremap <Up> <nop>
@@ -168,7 +168,7 @@ Insert a modeline on the last line.  Given a count of 2 or more, write a longer
 verbose modeline.  Think of it as analogous to the behaviour of
 ``[count]<C-g>``.
 
-.. code-block:: vim
+::
 
     nnoremap <silent> <Leader>ml :<C-u>call <SID>modeline_stub()<CR>
 
@@ -238,7 +238,7 @@ Scroll wheel moves through undo list, and through branches with shift.  Can’t
 for the life of me remember who was demoing something similar as a feature, but
 thanks for the idea!
 
-.. code-block:: vim
+::
 
     for s:m in ['i', 'n']
         let s:break_insert = s:m == 'i' ? '<C-o>' : ''

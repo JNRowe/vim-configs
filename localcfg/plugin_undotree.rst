@@ -3,7 +3,7 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-.. code-block:: vim
+::
 
     let g:undotree_DiffCommand = 'diff -pud --label earlier --label later'
     let g:undotree_HelpLine = v:false

@@ -6,7 +6,7 @@ as the things which we don’t want(``vimball`` support), and things with far
 superior external alternatives(Pygments_ over ``2html``) or plugins with
 superior alternatives(dein_ over ``getscript``).
 
-.. code-block:: vim
+::
 
     let g:loaded_2html_plugin = v:true
     let g:loaded_getscriptPlugin = v:true

@@ -5,7 +5,7 @@ These commonly [to me] edited config files are reasonable bookmarks for when
 I've started :command:`vim` without arguments, but perhaps others are more
 useful when started with arguments?
 
-.. code-block:: vim
+::
 
     let g:startify_bookmarks = [
         \ g:xdg_config_dir . "/awesome/rc.moon",

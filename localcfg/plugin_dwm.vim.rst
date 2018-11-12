@@ -11,7 +11,7 @@ Use my custom maps::
 
     Imagine :kbd:`<Up>` increases window count, and :kbd:`<Down>`… well, yeah.
 
-.. code-block:: vim
+::
 
     for [s:key, s:cmd] in [
         \   ['n',       'New'],

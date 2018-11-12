@@ -1,7 +1,7 @@
 ``localcfg/plugin_sideways.vim.vim``
 ====================================
 
-.. code-block:: vim
+::
 
     call MnemonicMap('sideways', {'local': v:true})
 

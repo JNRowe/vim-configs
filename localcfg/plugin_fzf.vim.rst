@@ -4,7 +4,7 @@
 Without a prefix the exported commands shadow other plugins, and are far harder
 to remember [#]_.
 
-.. code-block:: vim
+::
 
     let g:fzf_command_prefix = 'FZF'
 
