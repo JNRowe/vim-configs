@@ -75,7 +75,7 @@ at the patches that are applied in the binaries installed on my work machine.
 It is buggy enough that the current package maintainer is willing to support
 a stack of no less than 15 very dirty patches, even of which have been
 painstakingly fixed without access to the source.  Interestingly they require
-vim_‘s :comand:`xxd` to apply [2]_, almost as if to prove a point.
+vim_‘s :command:`xxd` to apply [2]_, almost as if to prove a point.
 
 I‘ve used it enough that I don‘t regret having my employer license a copy for
 me, and I even jumped through hoops to have them pony up for some mildly
