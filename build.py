@@ -3,9 +3,9 @@
 
 .. note::
 
-    I get that this looks *massively* over engineered for a ``~/.vim`` build
-    script, but it fits in nicely with my ``subninja``-based home directory
-    management… but yeah, it is probably overkill ;)
+    I get that this looks *massively* over engineered for a :file:`~/.vim`
+    build script, but it fits in nicely with my ``subninja``-based home
+    directory management… but yeah, it is probably overkill ;)
 """
 
 from inspect import stack
@@ -18,7 +18,7 @@ import ninja_syntax
 
 
 def pretty(string: str, colour: bool = True) -> str:
-    """Generate pretty output for ``ninja``’s non-verbose mode.
+    """Generate pretty output for :command:`ninja`’s non-verbose mode.
 
     Args:
         string: Text to prettify
@@ -68,7 +68,8 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
               libc_exclude: List[str], file: Path) -> NoReturn:
     """Write a ninja build configuration.
 
-    Unless FILE is given this writes to ninja_’s default ``build.ninja`` file.
+    Unless FILE is given this writes to ninja_’s default :file:`build.ninja`
+    file.
 
     .. _ninja: https://ninja-build.org/
     """
