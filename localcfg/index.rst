@@ -55,7 +55,6 @@ Contents
     plugin_gundo.vim
     plugin_html5.vim
     plugin_jedi_vim
-    plugin_mesonic
     plugin_molokai
     plugin_rainbow
     plugin_regex
