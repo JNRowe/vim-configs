@@ -3,7 +3,9 @@
 
 Issue an immediate “split to right” for help buffers::
 
-    wincmd L
+    if has('vertsplit')
+        wincmd L
+    endif
 
 .. note::
 
