@@ -28,13 +28,12 @@ snippets if I wasn’t so used to this now:
 
 .. code-block:: vim
 
-    iabbrev <expr> _t  strftime('%T')
-    iabbrev <expr> _d  strftime('%F')
-    iabbrev <expr> _dt strftime('%FT%T%z')
-
-    iabbrev <expr> _ut  system('date -u +%T')
-    iabbrev <expr> _ud  system('date -u +%F')
-    iabbrev <expr> _udt system('date -u +%FT%T%z')
+    for [s:key, s:fmt] in [['t', '%T'], ['d', '%F'], ['dt', '%FT%T%z']]
+        execute 'iabbrev <expr> _' . s:key . ' '
+            \ (exists("*strftime") ? 'strftime("' : 'system("date + ')
+            \ . s:fmt . '")'
+        execute 'iabbrev <expr> _u' . s:key . ' system("date -u +' . s:fmt . '")'
+    endfor
 
 .. note::
 
