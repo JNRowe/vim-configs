@@ -106,7 +106,7 @@ Only files that *must* contain tabs(:file:`Makefile`) *should* contain tabs::
 
     set expandtab
 
-.. code-block:: vim
+::
 
     set fileencoding=utf-8
     if v:lang =~? 'utf-8'

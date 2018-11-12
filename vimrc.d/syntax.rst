@@ -28,9 +28,7 @@ Highlight everything possible for Python_::
 
     let g:python_highlight_all = v:true
 
-Use fancy conceal support for rust_:
-
-.. code-block:: vim
+Use fancy conceal support for rust_::
 
     let g:rust_conceal = v:true
     let g:rust_conceal_mod_path = v:true

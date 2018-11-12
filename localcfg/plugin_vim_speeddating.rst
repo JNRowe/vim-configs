@@ -4,7 +4,7 @@
 I need only :rfc:`2822`, :command:`git` and a limited collection of ISO-8601_
 variants.  One mismatch happened *once*, and here we are…
 
-.. code-block:: vim
+::
 
     let g:speeddating_formats = [
         \ ['%i, %d %h %Y %H:%M:%S %z', 0, 0],

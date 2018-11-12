@@ -20,7 +20,7 @@ Use my custom maps::
 
 If you have more than 100 edits you probably need to commit!
 
-.. code-block:: vim
+::
 
     let g:gitgutter_max_signs = 100
 

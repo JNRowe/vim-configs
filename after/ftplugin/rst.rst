@@ -1,13 +1,13 @@
 ``after/ftplugin/rst.vim``
 ==========================
 
-.. code-block:: vim
+::
 
     call MnemonicMap('Heading', {'buffer': v:true, 'local': v:true})
 
 This creates reST headings using *my* favourite definitions of =, - and '
 
-.. code-block:: vim
+::
 
     for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
         for [s:cmd, s:post] in [
@@ -25,7 +25,7 @@ Break undo sequence on sentence level punctuation.  This kind of feels better
 when editing prose and taking advantage of undo-tree.  Not yet sure if it is
 too granular.
 
-.. code-block:: vim
+::
 
     for s:key in split(',.!?:;', '\zs')
         execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'

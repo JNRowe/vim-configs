@@ -7,7 +7,7 @@ Recent :command:`vim` versions disable compatible when a :file:`vimrc` is
 found, but some distributions are disabling that change for a reason that is
 far beyond me.
 
-.. code-block:: vim
+::
 
     if &compatible
         set nocompatible
@@ -16,7 +16,7 @@ far beyond me.
 Warn users with pre-v8 :command:`vim` that problems with occur, but note that
 pull requests which aren’t too invasive are most welcome.
 
-.. code-block:: vim
+::
 
     if v:version < 800
         let v:warningmsg = 'Vim version 8 or higher is required'
@@ -29,7 +29,7 @@ neovim_ is *never* tested, as it removes functionality I use.  Feel free to open
 pull requests for ``neovim`` support, *iff* they aren’t too invasive and don’t
 break vim.
 
-.. code-block:: vim
+::
 
     if has('nvim')
         let v:errmsg = 'This config will *NOT* work with nvim'
@@ -42,7 +42,7 @@ break vim.
 Pull in semi-private local settings.  This is only for locally required
 settings while reading this file.
 
-.. code-block:: vim
+::
 
     if filereadable(fnamemodify('~/.vim/vimrc.pre', ':p'))
         source ~/.vim/vimrc.pre
@@ -50,7 +50,7 @@ settings while reading this file.
 
 Pull in remaining configs.
 
-.. code-block:: vim
+::
 
     runtime vimrc.d/paths.vim  " *Must* be early
 

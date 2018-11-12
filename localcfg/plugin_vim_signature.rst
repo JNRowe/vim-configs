@@ -1,7 +1,7 @@
 ``localcfg/plugin_vim_signature.vim``
 =====================================
 
-.. code-block:: vim
+::
 
     if !has('signs')
         finish
@@ -17,7 +17,7 @@ has changed massively before we made it here.
     Names are from US :kbd:`<S-|digit|>` keymap(I know I’ll forget this by the
     next time *I* open this file).
 
-.. code-block:: vim
+::
 
     for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning', '#': 'error'})
         if type(s:v) == v:t_list

@@ -6,7 +6,7 @@ colour definitions.  ``moon`` is here because I use moonscript_ for *all* config
 files that use lua_, and :command:`vim` is here because I often poke about in my
 colourscheme.
 
-.. code-block:: vim
+::
 
     let g:colorizer_auto_filetype = 'css,less,moon,python,vim,xdefaults'
 

@@ -77,7 +77,7 @@ Enable git_ extension::
 
         let g:airline#extensions#hunks#non_zero_only = v:true
 
-.. code-block:: vim
+::
 
     endif
 

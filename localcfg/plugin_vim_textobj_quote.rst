@@ -1,7 +1,7 @@
 ``localcfg/plugin_vim_textobj_quote.vim``
 =========================================
 
-.. code-block:: vim
+::
 
     let g:textobj#quote#matchit = v:true
 

@@ -12,7 +12,7 @@ Keep plugins and data in `XDG basedir`_ compliant location::
 
 If possible, support `system notifications`_:
 
-.. code-block:: vim
+::
 
     if executable('notify-send') && exists('$DISPLAY')
         let g:dein#enable_notification = v:true

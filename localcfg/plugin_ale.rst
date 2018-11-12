@@ -22,7 +22,7 @@ Open location list when errors exist::
 
 .. include:: ../.includes/fontawesome.rst
 
-.. code-block:: vim
+::
 
     if (&termencoding ==# 'utf-8') || has('gui_running')
         let g:ale_sign_error = ''
@@ -32,7 +32,7 @@ Open location list when errors exist::
         let g:ale_sign_style_warning = ''
     endif
 
-.. code-block:: vim
+::
 
     call MnemonicMap('ale', {'local': v:true})
 

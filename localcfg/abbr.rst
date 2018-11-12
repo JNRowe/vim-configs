@@ -24,9 +24,7 @@ contexts too::
     iabbrev YMMV your mileage may vary
 
 Date and time input, all of which could easily be replaced with equivalent
-snippets if I wasn’t so used to this now:
-
-.. code-block:: vim
+snippets if I wasn’t so used to this now::
 
     for [s:key, s:fmt] in [['t', '%T'], ['d', '%F'], ['dt', '%FT%T%z']]
         execute 'iabbrev <expr> _' . s:key . ' '
