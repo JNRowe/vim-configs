@@ -41,7 +41,7 @@ def is_vim_code(node: Node):
 # Stub used Sphinx directives and roles, as we’re not using them in output
 directives.register_directive('envvar', StubDirective)
 for role in ('abbr', 'command', 'doc', 'envvar', 'file', 'kbd', 'manpage',
-             'ref'):
+             'pypi', 'ref'):
     roles.register_generic_role(role, nodes.comment)
 
 p = ArgumentParser()

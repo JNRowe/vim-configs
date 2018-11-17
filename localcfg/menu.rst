@@ -133,7 +133,7 @@ For openbox_::
     \ })
 
 Python related tools; python_’s interactive config, flake8_, pip_, and the
-amazing ptpython_::
+amazing :pypi:`ptpython`::
 
     call s:define_menu('&python', {
         \ '&config': [
@@ -149,7 +149,7 @@ For readline_ and its numerous dependents::
 
     call s:define_menu('readline', [expand('$INPUTRC'), '~/.inputrc'])
 
-For rdial_, and my habitual editing of `run wrappers`::
+For :pypi:`rdial`, and my habitual editing of `run wrappers`::
 
     call s:define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
 
@@ -223,9 +223,7 @@ For zsh_::
 .. _python: https://www.python.org/
 .. _flake8: https://gitlab.com/pycqa/flake8/
 .. _pip: https://pip.pypa.io/
-.. _ptpython: https://pypi.org/project/ptpython/
 .. _readline: http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
-.. _rdial: https://pypi.python.org/pypi/rdial/
 .. _run wrappers: https://rdial.readthedocs.io/en/latest/config.html#run-wrappers-section
 .. _remind: http://www.roaringpenguin.com/products/remind
 .. _wyrd: http://pessimization.com/software/wyrd/

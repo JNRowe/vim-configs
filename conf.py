@@ -10,8 +10,8 @@ if not on_rtd:
     import sphinx_rtd_theme
 
 extensions = \
-    [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'githubpages',
-                                     'intersphinx', 'todo']] \
+    [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
+                                     'githubpages', 'intersphinx', 'todo']] \
     + [f'sphinxcontrib.{ext}' for ext in []] \
     + ['sphinx_autodoc_typehints', 'sphinx_click.ext']  # type: List[str]
 
@@ -60,6 +60,12 @@ pygments_style = 'sphinx'
 # Autodoc extension settings
 autoclass_content = 'init'
 autodoc_default_flags = ['members', ]  # type: List[str]
+
+# extlinks extension settings {{{
+extlinks = {
+    'pypi': ('https://pypi.org/project/%s/', ''),
+}
+# }}}
 
 # intersphinx extension settings
 intersphinx_mapping = {
