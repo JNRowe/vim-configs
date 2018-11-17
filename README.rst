@@ -40,5 +40,5 @@ a mail_ and I’ll update the list!
 
 .. _vim: http://www.vim.org/
 .. _neovim: https://neovim.io/
-.. _issue: https://github.com/JNRowe/vim-configs/issues
+.. _issue: https://github.com/JNRowe/vim-configs/issues/
 .. _mail: jnrowe@gmail.com

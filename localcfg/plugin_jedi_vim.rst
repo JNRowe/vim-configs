@@ -18,4 +18,4 @@ I find vim-clevertab_ performs exactly how I want::
     let g:jedi#completions_enabled = v:false
 
 .. _Python: https://www.python.org/
-.. _vim-clevertab: https://github.com.com/neitanod/vim-clevertab
+.. _vim-clevertab: https://github.com.com/neitanod/vim-clevertab/

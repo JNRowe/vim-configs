@@ -32,5 +32,5 @@ isn’t available::
         endif
     endif
 
-.. _fzf: https://github.com/junegunn/fzf
+.. _fzf: https://github.com/junegunn/fzf/
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

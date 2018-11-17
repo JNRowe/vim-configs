@@ -14,5 +14,5 @@ A little wiggle room “feels” nicer::
 
     let g:eighties_extra_width = 3
 
-.. _gundo: https://github.com/sjl/gundo.vim
-.. _committia: https://github.com/rhysd/committia.vim
+.. _gundo: https://github.com/sjl/gundo.vim/
+.. _committia: https://github.com/rhysd/committia.vim/

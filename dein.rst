@@ -1460,7 +1460,7 @@ by deletion.
        the effort required to manage them normally exceeds their usefulness.
 
 .. _github: https://github.com/
-.. _dein: https://github.com/Shougo/dein.vim
+.. _dein: https://github.com/Shougo/dein.vim/
 .. _dwm: https://dwm.suckless.org/
 .. _ledger: https://www.ledger-cli.org/
-.. _vim-projectionist: https://github.com/tpope/vim-projectionist
+.. _vim-projectionist: https://github.com/tpope/vim-projectionist/

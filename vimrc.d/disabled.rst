@@ -20,4 +20,4 @@ superior alternatives(dein_ over ``getscript``).
     let g:loaded_zipPlugin = v:true
 
 .. _pygments: http://pygments.org/
-.. _dein: https://github.com/Shougo/dein.vim
+.. _dein: https://github.com/Shougo/dein.vim/

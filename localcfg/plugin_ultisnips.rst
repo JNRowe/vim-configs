@@ -6,4 +6,4 @@ but occasionally I’ll jump straight to snippet expansion::
 
     let g:UltiSnipsExpandTrigger = '<C-j>'
 
-.. _vim-clevertab: https://github.com.com/neitanod/vim-clevertab
+.. _vim-clevertab: https://github.com.com/neitanod/vim-clevertab/

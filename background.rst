@@ -115,6 +115,6 @@ the developers for the nudge that brought modern IPC to stock :command:`vim`.
 .. _MicroEMACS: ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/
 .. _GNU Emacs: https://www.gnu.org/software/emacs/
 .. _org-mode: http://www.orgmode.org/
-.. _evil-mode: https://github.com/emacs-evil/evil
+.. _evil-mode: https://github.com/emacs-evil/evil/
 .. _vim: http://www.vim.org/
 .. _NeoVim: https://neovim.io/
