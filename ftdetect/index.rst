@@ -7,7 +7,6 @@ Contents
 .. toctree::
     :titlesonly:
 
-    editorconfig
     mht
     pypi
     redo
