@@ -720,7 +720,7 @@ directly.
 ``nyancat-vim``
 ---------------
 
-nyancat. bah, grow up!
+:wikipedia:`nyancat`. bah, grow up!
 
 ::
 
