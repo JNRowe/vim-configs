@@ -1304,6 +1304,8 @@ because you can dump heaps and heaps of custom code you've written in your
 
     call dein#add('wellle/targets.vim')
 
+.. _ale-plugin:
+
 ..
 
     “Asynchronous Lint Engine”
