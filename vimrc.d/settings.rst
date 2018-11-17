@@ -483,13 +483,13 @@ Custom foldtext setting::
     &c.
 
 .. _MHTML: https://en.m.wikipedia.org/wiki/MHTML
-.. _vim-cute-python: ehamberg/vim-cute-python
+.. _vim-cute-python: https://github.com/ehamberg/vim-cute-python/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 .. _UTF-8: https://en.m.wikipedia.org/wiki/UTF-8
-.. _the_silver_searcher: https://github.com/ggreer/the_silver_searcher
+.. _the_silver_searcher: https://github.com/ggreer/the_silver_searcher/
 .. _Python: https://www.python.org/
-.. _vim-startify: https://github.com/mhinz/vim-startify
-.. _vim-airline: https://github.com/vim-airline/vim-airline
+.. _vim-startify: https://github.com/mhinz/vim-startify/
+.. _vim-airline: https://github.com/vim-airline/vim-airline/
 .. _moonscript: https://github.com/leafo/moonscript/
 .. _sqlite: https://sqlite.org/

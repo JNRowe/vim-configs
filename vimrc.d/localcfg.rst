@@ -30,5 +30,5 @@ Read defined configs::
 
     call localcfg#docfg()
 
-.. _localcfg: https://gitlab.com/magus/localcfg
-.. _dein: https://github.com/Shougo/dein.vim
+.. _localcfg: https://gitlab.com/magus/localcfg/
+.. _dein: https://github.com/Shougo/dein.vim/

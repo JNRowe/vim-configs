@@ -108,5 +108,5 @@ the problem, or even better a patch that fixes it!
 
 .. _vim: http://www.vim.org/
 .. _neovim: https://neovim.io/
-.. _issue: https://github.com/JNRowe/vim-configs/issues
+.. _issue: https://github.com/JNRowe/vim-configs/issues/
 .. _mail: jnrowe@gmail.com

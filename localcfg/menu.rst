@@ -221,7 +221,7 @@ For zsh_::
 .. _per-terminal themeing for neomutt: https://jnrowe.github.io/articles/tips/Theming_mutt.html
 .. _openbox: http://openbox.org/
 .. _python: https://www.python.org/
-.. _flake8: https://gitlab.com/pycqa/flake8
+.. _flake8: https://gitlab.com/pycqa/flake8/
 .. _pip: https://pip.pypa.io/
 .. _ptpython: https://pypi.org/project/ptpython/
 .. _readline: http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html

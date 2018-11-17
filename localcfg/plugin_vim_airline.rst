@@ -94,6 +94,6 @@ Allow spaces *after* tabs, but not in between::
 
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
-.. _ale: https://github.com/w0rp/ale
+.. _ale: https://github.com/w0rp/ale/
 .. _git: https://www.git-scm.com/
-.. _csv.vim: https://github.com/chrisbra/csv.vim
+.. _csv.vim: https://github.com/chrisbra/csv.vim/

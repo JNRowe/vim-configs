@@ -18,4 +18,4 @@ These configs can be influenced by the following environment variables.
     all files under ``~/.vim``, and if specified as ``<filename>:<function>``
     will profile only the specified functions.
 
-.. _projectionist: https://github.com/tpope/vim-projectionist
+.. _projectionist: https://github.com/tpope/vim-projectionist/
