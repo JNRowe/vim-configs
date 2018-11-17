@@ -70,7 +70,8 @@ Repositories
 .. Dear reader, all these bare comment markers are here to break ``code-block``
    directives from the following blockquote.
 
-..
+``dein.vim``
+''''''''''''
 
     “A dark powered Vim/Neovim plugin manager”
 
@@ -82,6 +83,9 @@ Repositories
 
 .. _sideways.vim-config:
 
+``sideways.vim``
+''''''''''''''''
+
     “Move an item in a delimiter-separated list left or right”
 
 ::
@@ -91,7 +95,8 @@ Repositories
         \ 'on_map': {'n': '[sideways]'},
     \ })
 
-..
+``splitjoin.vim``
+'''''''''''''''''
 
     “Switch between single-line and multiline forms of code”
 
@@ -102,7 +107,8 @@ Repositories
         \ 'on_map': {'n': ['gJ', 'gS']},
     \ })
 
-..
+``dwm.vim``
+'''''''''''
 
     “Tiled Window Management for Vim”
 
@@ -115,7 +121,8 @@ Excellent window management, it really does bring dwm_ simplicity to
         \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
     \ })
 
-..
+``securemodelines``
+'''''''''''''''''''
 
     “A secure alternative to modelines”
 
@@ -127,7 +134,8 @@ standards <editorconfig-plugin>` without allowing them free access to your
 
     call dein#add('JNRowe/securemodelines')
 
-..
+``vim-jnrowe``
+''''''''''''''
 
     “Tango inspired colourscheme”
 
@@ -139,7 +147,8 @@ standards <editorconfig-plugin>` without allowing them free access to your
 
     call dein#add('JNRowe/vim-jnrowe')
 
-..
+``FastFold``
+''''''''''''
 
     “Folding optimization”
 
@@ -149,7 +158,8 @@ standards <editorconfig-plugin>` without allowing them free access to your
         \ 'if': has('folding'),
     \ })
 
-..
+``delimitMate``
+'''''''''''''''
 
     “Automatic closing of quotes, parenthesis, brackets, &c”
 
@@ -163,7 +173,8 @@ language.
         \ 'on_event': 'InsertEnter',
     \ })
 
-..
+``vimproc``
+'''''''''''
 
     “Asynchronous execution plugin”
 
@@ -177,7 +188,8 @@ language.
 
 .. include:: .includes/lazy_rdep.rst
 
-..
+``ultisnips``
+'''''''''''''
 
     “The ultimate plugin for snippets”
 
@@ -188,7 +200,8 @@ language.
         \ 'if': has('pythonx') && v:version >= 704,
     \ })
 
-..
+``vim-gitgutter``
+'''''''''''''''''
 
     “Show git diff status in the gutter”
 
@@ -198,7 +211,8 @@ language.
         \ 'if': has('signs') && s:has_git,
     \ })
 
-..
+``pytest.vim``
+''''''''''''''
 
     “Run pytest from within vim”
 
@@ -210,7 +224,8 @@ language.
         \ 'on_ft': 'python',
     \ })
 
-..
+``vim-bad-whitespace``
+''''''''''''''''''''''
 
     “Highlights whitespace at the end of lines”
 
@@ -224,7 +239,8 @@ almost-kind-of-works solution from your :file:`.vimrc`.
         \ 'on_event': 'InsertEnter',
     \ })
 
-..
+``Colorizer``
+'''''''''''''
 
     “Colour colournames and codes”
 
@@ -244,7 +260,8 @@ almost-kind-of-works solution from your :file:`.vimrc`.
     general because it is relatively uncommon for my C file to actually be
     dwm’s config.h.
 
-..
+``NrrwRgn``
+'''''''''''
 
     “A narrow region plugin (similar to Emacs)”
 
@@ -260,7 +277,8 @@ a full editing session.
         \ 'on_cmd': ['NUD', 'NR', 'NW']
     \ })
 
-..
+``Recover``
+'''''''''''
 
     “Show differences for recovered files”
 
@@ -270,7 +288,8 @@ a full editing session.
         \ 'if': v:version >= 703,
     \ })
 
-..
+``Replay``
+''''''''''
 
     “Record and replay your editing sessions”
 
@@ -280,7 +299,8 @@ a full editing session.
         \ 'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
     \ })
 
-..
+``SaveSigns.vim``
+'''''''''''''''''
 
     “Save signs across sessions”
 
@@ -293,7 +313,8 @@ a full editing session.
 
 .. _csv.vim-plugin:
 
-..
+``csv.vim``
+'''''''''''
 
     “A filetype plugin for :abbr:`CSV (Comma-separated values)` files”
 
@@ -306,7 +327,8 @@ said.
         \ 'on_ft': 'csv',
     \ })
 
-..
+``unicode.vim``
+'''''''''''''''
 
     “A plugin for handling unicode and digraphs characters”
 
@@ -327,7 +349,8 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
         \ },
     \ })
 
-..
+``vim_faq``
+'''''''''''
 
     “The vim :abbr:`FAQ (Frequently Asked Questions)`\”
 
@@ -337,7 +360,8 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
         \ 'if': v:version >= 600,
     \ })
 
-..
+``jedi-vim``
+''''''''''''
 
     “A VIM binding to the jedi autocompletion library”
 
@@ -349,7 +373,8 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
         \ 'on_ft': 'python',
     \ })
 
-..
+``vim-table-mode``
+''''''''''''''''''
 
     “An awesome automatic table creator & formatter”
 
@@ -361,7 +386,8 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
         \ 'on_map': '<LocalLeader>t',
     \ })
 
-..
+``bullets.vim``
+'''''''''''''''
 
     “Automated Bullet Lists in Vim”
 
@@ -374,7 +400,8 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
 
 .. _editorconfig-plugin:
 
-..
+``editorconfig-vim``
+''''''''''''''''''''
 
     “The EditorConfig plugin”
 
@@ -386,7 +413,8 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
         \ 'on_path': '.editorconfig',
     \ })
 
-..
+``vim-cute-python``
+'''''''''''''''''''
 
     “Cute conceal support for Python”
 
@@ -406,7 +434,8 @@ decorating it with glyphs.
     Be sure to try the ``moresymbols`` branch.  It makes a far larger visual
     change to editing Python files.
 
-..
+``visSum.vim``
+''''''''''''''
 
     “Sum numbers that appear in selection”
 
@@ -416,7 +445,8 @@ decorating it with glyphs.
         \ 'on_map': {'x': '<LocalLeader>su'},
     \ })
 
-..
+``regex``
+'''''''''
 
     “Allows you to test regular expressions”
 
@@ -429,7 +459,8 @@ when writing ugly, ugly :abbr:`regex (Regular Expressions)`.
         \ 'on_cmd': 'Regex',
     \ })
 
-..
+``tabular``
+'''''''''''
 
     “Configurable, flexible, intuitive text aligning”
 
@@ -444,7 +475,8 @@ jealous.
         \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
     \ })
 
-..
+``xterm-color-table.vim``
+'''''''''''''''''''''''''
 
     “All 256 xterm colours with their RGB equivalents”
 
@@ -454,7 +486,8 @@ jealous.
         \ 'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
     \ })
 
-..
+``dein-command.vim``
+''''''''''''''''''''
 
     “Utility comamnds for dein.vim”
 
@@ -464,7 +497,8 @@ jealous.
         \ 'on_cmd': 'Dein',
     \ })
 
-..
+``vim-snippets``
+''''''''''''''''
 
     “Snippet files for various programming languages”
 
@@ -472,7 +506,8 @@ jealous.
 
     call dein#add('honza/vim-snippets')
 
-..
+``vim-omnipytent``
+''''''''''''''''''
 
     “All powerful Pythonic task runner”
 
@@ -483,7 +518,8 @@ jealous.
         \ 'on_cmd': s:prefix('OP', ['edit', '2edit', '3edit']),
     \ })
 
-..
+``vim-vebugger``
+''''''''''''''''
 
     “Yet another debugger frontend plugin”
 
@@ -495,7 +531,8 @@ jealous.
         \ 'on_func': 'vebugger',
     \ })
 
-..
+``vim-yankitute``
+'''''''''''''''''
 
     “Regex powered yank and substitute”
 
@@ -505,7 +542,8 @@ jealous.
         \ 'on_cmd': 'Yankitute',
     \ })
 
-..
+``vim-cursorword``
+''''''''''''''''''
 
     “Underline the word under the cursor”
 
@@ -513,7 +551,8 @@ jealous.
 
     call dein#add('itchyny/vim-cursorword')
 
-..
+``vim-parenmatch``
+''''''''''''''''''
 
     “Highlight matching parenthesis”
 
@@ -521,7 +560,8 @@ jealous.
 
     call dein#add('itchyny/vim-parenmatch')
 
-..
+``vim-gnupg``
+'''''''''''''
 
     “Transparent editing of gpg encrypted files”
 
@@ -531,7 +571,8 @@ jealous.
         \ 'if': executable('gpg') || executable('gpg2'),
     \ })
 
-..
+``vim-editqf``
+''''''''''''''
 
     “Edit and store quickfix/location list entries”
 
@@ -548,7 +589,8 @@ directly.
         \ 'on_map': {'n': '<LocalLeader>n'},
     \ })
 
-..
+``vim-orgmode``
+'''''''''''''''
 
     “Text outlining and task management for Vim based on Emacs’ Org-Mode”
 
@@ -560,7 +602,8 @@ directly.
         \ 'on_ft': 'org',
     \ })
 
-..
+``vimagit``
+'''''''''''
 
     “Ease your git workflow”
 
@@ -572,7 +615,8 @@ directly.
         \ 'on_cmd': 'Magit',
     \ })
 
-..
+``fzf``
+'''''''
 
     “Basic fzf integration”
 
@@ -584,7 +628,8 @@ directly.
         \ 'on_func': 'fzf#run',
     \ })
 
-..
+``fzf.vim``
+'''''''''''
 
     “Advanced fzf integration”
 
@@ -599,7 +644,8 @@ directly.
         \    'History', 'Lines', 'Maps', 'Marks', 'Snippets', 'Windows']),
     \ })
 
-..
+``goyo.vim``
+''''''''''''
 
     “Distraction-free writing in Vim.”
 
@@ -609,7 +655,8 @@ directly.
         \ 'on_cmd': 'Goyo',
     \ })
 
-..
+``vim-emoji``
+'''''''''''''
 
     “Emoji support”
 
@@ -619,7 +666,8 @@ directly.
         \ 'on_func': 'emoji',
     \ })
 
-..
+``vim-eighties``
+''''''''''''''''
 
     “Automatically resizes your windows”
 
@@ -629,7 +677,8 @@ directly.
         \ 'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
     \ })
 
-..
+``vim-sneak``
+'''''''''''''
 
     “Motion improved”
 
@@ -645,7 +694,8 @@ directly.
         \ },
     \ })
 
-..
+``vim-coiled-snake``
+''''''''''''''''''''
 
     “Enhanced Python folding”
 
@@ -656,7 +706,8 @@ directly.
         \ 'on_ft': 'python',
     \ })
 
-..
+``vim-textobj-user``
+''''''''''''''''''''
 
     “Create your own text objects”
 
@@ -666,6 +717,9 @@ directly.
         \ 'on_func': 'textobj',
     \ })
 
+``nyancat-vim``
+---------------
+
 nyancat. bah, grow up!
 
 ::
@@ -674,7 +728,8 @@ nyancat. bah, grow up!
         \ 'on_cmd': s:prefix('Nyancat', ['', '2']),
     \ })
 
-..
+``vim-signature``
+'''''''''''''''''
 
     “A plugin to place, toggle and display marks”
 
@@ -684,7 +739,8 @@ nyancat. bah, grow up!
         \ 'if': has('signs'),
     \ })
 
-..
+``moonscript-vim``
+''''''''''''''''''
 
     “Language support for moonscript”
 
@@ -696,7 +752,8 @@ nyancat. bah, grow up!
 
 .. _ledger-plugin:
 
-..
+``vim-ledger``
+''''''''''''''
 
     “Language support for ledger_”
 
@@ -709,7 +766,8 @@ editing your accounts/expenses an almost nice-ish experience.
         \ 'on_ft': 'ledger',
     \ })
 
-..
+``rainbow``
+'''''''''''
 
     “Help read complex code by showing parentheses in different colours”
 
@@ -720,7 +778,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
     call dein#add('luochen1990/rainbow')
 
-..
+``localcfg``
+''''''''''''
 
     “Help for customising based on features”
 
@@ -728,7 +787,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
     call dein#add('magus/localcfg')
 
-..
+``calendar-vim``
+''''''''''''''''
 
     “A calendar window you can use within vim”
 
@@ -739,7 +799,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
         \ 'on_map': {'n': '[calendar]'},
     \ })
 
-..
+``emmet-vim``
+'''''''''''''
 
     “Plugins for :abbr:`HTML (HyperText Markup Language)` and :abbr:`CSS
     (Cascading Style Sheets)` hi-speed coding”
@@ -751,7 +812,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
         \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
 
-..
+``undotree``
+''''''''''''
 
     “Display your undo history in a graph”
 
@@ -762,7 +824,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
         \ 'on_cmd': 'UndotreeToggle',
     \ })
 
-..
+``vim-startify``
+''''''''''''''''
 
     “The fancy start screen”
 
@@ -770,7 +833,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
     call dein#add('mhinz/vim-startify')
 
-..
+``vim-indent-object``
+'''''''''''''''''''''
 
     “Text objects based on indent levels”
 
@@ -783,7 +847,8 @@ Makes handling Python code far, far easier.
         \ 'on_map': {'ov': ['aI', 'ai', 'iI', 'ii']},
     \ })
 
-..
+``vim-bufmru``
+''''''''''''''
 
     “Order buffers in Most Recently Used order”
 
@@ -794,7 +859,8 @@ Makes handling Python code far, far easier.
         \ 'on_map': {'n': '[bufmru]'},
     \ })
 
-..
+``ack.vim``
+'''''''''''
 
     “Run your favorite search tool from Vim, with an enhanced results list”
 
@@ -805,7 +871,8 @@ Makes handling Python code far, far easier.
         \ 'on_cmd': ['Ack', 'LAck'],
     \ })
 
-..
+``vim-jinja``
+'''''''''''''
 
     “Language support for jinja”
 
@@ -815,7 +882,8 @@ Makes handling Python code far, far easier.
         \ 'on_ft': 'jinja',
     \ })
 
-..
+``vim-bbye``
+''''''''''''
 
     “Delete buffers without breaking your layout”
 
@@ -826,7 +894,8 @@ Makes handling Python code far, far easier.
         \ 'on_map': {'n': '<LocalLeader>q'},
     \ })
 
-..
+``vim-indent-guides``
+'''''''''''''''''''''
 
     “A plugin for visually displaying indent levels”
 
@@ -834,7 +903,8 @@ Makes handling Python code far, far easier.
 
     call dein#add('nathanaelkane/vim-indent-guides')
 
-..
+``vim-beancount``
+'''''''''''''''''
 
     “Filetype plugin for beancount files”
 
@@ -844,7 +914,8 @@ Makes handling Python code far, far easier.
         \ 'on_ft': 'beancount',
     \ })
 
-..
+``vim-clevertab``
+'''''''''''''''''
 
     “Tiny replacement for Supertab”
 
@@ -855,7 +926,8 @@ user, how cool is that?
 
     call dein#add('neitanod/vim-clevertab')
 
-..
+``vim_bridge``
+''''''''''''''
 
     “Allow transparent calls to Python functions in native Vim scripts”
 
@@ -865,7 +937,8 @@ user, how cool is that?
         \ 'on_cmd': 'python',
     \ })
 
-..
+``html5.vim``
+'''''''''''''
 
     “:abbr:`HTML (HyperText Markup Language)`\5 + inline :abbr:`SVG (Scalable
     Vector Graphics)` omnicomplete function, indent and syntax”
@@ -876,7 +949,8 @@ user, how cool is that?
         \ 'on_ft': 'html',
     \ })
 
-..
+``vim-textobj-quote``
+'''''''''''''''''''''
 
     “Better support for typographic (‘curly’) quote characters”
 
@@ -888,7 +962,8 @@ user, how cool is that?
         \ 'on_ft': ['gitcommit', 'mail', 'rst', 'text'],
     \ })
 
-..
+``vim-qlist``
+'''''''''''''
 
     “Make working with the quickfix list/window smoother”
 
@@ -900,7 +975,8 @@ user, how cool is that?
         \ 'on_map': {'n': ['[D', ']D', 'I', ']I']},
     \ })
 
-..
+``committia.vim``
+'''''''''''''''''
 
     “More pleasant editing on commit message”
 
@@ -910,7 +986,8 @@ user, how cool is that?
         \ 'if': s:has_git,
     \ })
 
-..
+``vim-radon``
+'''''''''''''
 
     “Show cyclomatic complexity of Python code”
 
@@ -922,7 +999,8 @@ user, how cool is that?
         \ 'on_ft': 'python',
     \ })
 
-..
+``gundo.vim``
+'''''''''''''
 
     “Graph your undo tree”
 
@@ -936,7 +1014,8 @@ really daunting to wrap your head around.
         \ 'on_cmd': 'GundoToggle',
     \ })
 
-..
+``splice.vim``
+''''''''''''''
 
     “Plugin for resolving conflicts during three-way merges”
 
@@ -946,7 +1025,8 @@ really daunting to wrap your head around.
         \ 'on_cmd': 'SpliceInit',
     \ })
 
-..
+``vim-space``
+'''''''''''''
 
     “Smart space key”
 
@@ -956,7 +1036,8 @@ really daunting to wrap your head around.
         \ 'on_map': {'n': '<space>'},
     \ })
 
-..
+``vim-vimlint``
+'''''''''''''''
 
     “Linter for vim script”
 
@@ -968,7 +1049,8 @@ really daunting to wrap your head around.
         \ 'on_ft': 'vim',
     \ })
 
-..
+``vim-maximizer``
+'''''''''''''''''
 
     “Maximizes and restores the current window”
 
@@ -979,7 +1061,8 @@ really daunting to wrap your head around.
         \ 'on_map': {'n': '<C-w>o'},
     \ })
 
-..
+``vim-expand-region``
+'''''''''''''''''''''
 
     “Incremental visual selection”
 
@@ -989,7 +1072,8 @@ really daunting to wrap your head around.
         \ 'on_map': {'nv': ['+', '-']},
     \ })
 
-..
+``vim-multiple-cursors``
+''''''''''''''''''''''''
 
     “True Sublime Text multiple selection”
 
@@ -999,7 +1083,8 @@ really daunting to wrap your head around.
         \ 'on_map': '<C-n>',
     \ })
 
-..
+``wordnet.vim``
+'''''''''''''''
 
     “Look up word definitions with wordnet”
 
@@ -1010,7 +1095,8 @@ really daunting to wrap your head around.
         \ 'on_map': '<Leader>wn',
     \ })
 
-..
+``molokai``
+'''''''''''
 
     “Vim port of the monokai theme for TextMate”
 
@@ -1018,7 +1104,8 @@ really daunting to wrap your head around.
 
     call dein#add('tomasr/molokai')
 
-..
+``vim-exchange``
+''''''''''''''''
 
     “Easy text exchange operator”
 
@@ -1031,7 +1118,8 @@ really daunting to wrap your head around.
         \ },
     \ })
 
-..
+``vim-lion``
+''''''''''''
 
     “Defines a code alignment operator”
 
@@ -1041,7 +1129,8 @@ really daunting to wrap your head around.
         \ 'on_map': {'n': ['gl', 'gL']},
     \ })
 
-..
+``vim-abolish``
+'''''''''''''''
 
     “Language friendly searches, substitutions, and abbreviations”
 
@@ -1052,7 +1141,8 @@ really daunting to wrap your head around.
         \ 'on_map': {'n': 'cr'},
     \ })
 
-..
+``vim-commentary``
+''''''''''''''''''
 
     “Comment stuff out”
 
@@ -1066,7 +1156,8 @@ power of ``gcc``.
         \ 'on_map': 'gc',
     \ })
 
-..
+``vim-endwise``
+'''''''''''''''
 
     “Automatically insert block closing structures”
 
@@ -1076,7 +1167,8 @@ power of ``gcc``.
         \ 'on_event': 'InsertEnter',
     \ })
 
-..
+``vim-fugitive``
+''''''''''''''''
 
     “A Git wrapper so awesome, it should be illegal”
 
@@ -1089,7 +1181,8 @@ Replace most of your use of a shell when working on a project with just another
         \ 'if': s:has_git,
     \ })
 
-..
+``vim-jdaddy``
+''''''''''''''
 
     “:abbr:`JSON (JavaScript Object Notation)` manipulation and pretty printing”
 
@@ -1099,7 +1192,8 @@ Replace most of your use of a shell when working on a project with just another
         \ 'on_ft': 'json',
     \ })
 
-..
+``vim-obsession``
+'''''''''''''''''
 
     “Continuously updated session files”
 
@@ -1110,7 +1204,8 @@ Replace most of your use of a shell when working on a project with just another
         \ 'on_cmd': 'Obsession',
     \ })
 
-..
+``vim-projectionist``
+'''''''''''''''''''''
 
     “Project configuration”
 
@@ -1118,7 +1213,8 @@ Replace most of your use of a shell when working on a project with just another
 
     call dein#add('tpope/vim-projectionist')
 
-..
+``vim-repeat``
+''''''''''''''
 
     “Repeat for plugin maps”
 
@@ -1129,7 +1225,8 @@ your favourite plugin anyway.
 
     call dein#add('tpope/vim-repeat')
 
-..
+``vim-rhubarb``
+'''''''''''''''
 
     “If fugitive.vim is the Git, rhubarb.vim is the Hub”
 
@@ -1140,7 +1237,8 @@ your favourite plugin anyway.
         \ 'if': s:has_git,
     \ })
 
-..
+``vim-rsi``
+'''''''''''
 
     “Readline style insertion”
 
@@ -1150,7 +1248,8 @@ your favourite plugin anyway.
         \ 'on_event': ['CmdlineEnter', 'InsertEnter'],
     \ })
 
-..
+``vim-sensible``
+''''''''''''''''
 
     “One step above ``nocompatible`` mode”
 
@@ -1168,7 +1267,8 @@ Sane defaults for :command:`vim`, tracking this repo might make your
     This is pinned as it can massively affect functionality, see
     tpope/vim-sensible@2c57c5f4 for an example.
 
-..
+``vim-sleuth``
+''''''''''''''
 
     “Heuristically set buffer options”
 
@@ -1180,7 +1280,8 @@ Automagic indentation configuration, that just works.
         \ 'on_cmd': 'Sleuth',
     \ })
 
-..
+``vim-speeddating``
+'''''''''''''''''''
 
     “Increment dates, times, and more”
 
@@ -1194,7 +1295,8 @@ sessions by at least fifteen orders of magnitude… or your money back.
         \ 'on_map': {'n': ['<C-a>', '<C-x>']},
     \ })
 
-..
+``vim-surround``
+''''''''''''''''
 
     “Plugin for deleting, changing, and adding “surroundings””
 
@@ -1212,7 +1314,8 @@ documentation a relatively painless task.
         \ },
     \ })
 
-..
+``vim-unimpaired``
+''''''''''''''''''
 
     “Pairs of handy mappings”
 
@@ -1220,7 +1323,8 @@ documentation a relatively painless task.
 
     call dein#add('tpope/vim-unimpaired')
 
-..
+``startuptime.vim``
+'''''''''''''''''''
 
     “1ms could mean the difference between life and death”
 
@@ -1230,7 +1334,8 @@ documentation a relatively painless task.
         \ 'on_cmd': 'StartupTime',
     \ })
 
-..
+``vim-airline``
+'''''''''''''''
 
     “Lean & mean status/tabline for vim that’s light as air”
 
@@ -1247,7 +1352,8 @@ because you can dump heaps and heaps of custom code you've written in your
         \ ],
     \ })
 
-..
+``vim-airline-themes``
+''''''''''''''''''''''
 
     “Official theme repository for vim-airline”
 
@@ -1255,7 +1361,8 @@ because you can dump heaps and heaps of custom code you've written in your
 
     call dein#add('vim-airline/vim-airline-themes')
 
-..
+``vim-line``
+''''''''''''
 
     ““inner line” text object”
 
@@ -1265,7 +1372,8 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_map': {'ov': '_'},
     \ })
 
-..
+``vim-man``
+'''''''''''
 
     “Enhanced man support”
 
@@ -1275,7 +1383,8 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_cmd': ['Man', 'Mangrep', 'Vman'],
     \ })
 
-..
+``vim-vertical-move``
+'''''''''''''''''''''
 
     “Motions to move a cursor without changing the column”
 
@@ -1285,7 +1394,8 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_map': ['[v', ']v'],
     \ })
 
-..
+``vimwiki``
+'''''''''''
 
     “A personal wiki”
 
@@ -1296,7 +1406,8 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_ft': 'vimwiki',
     \ })
 
-..
+``targets.vim``
+'''''''''''''''
 
     “Provides additional text objects”
 
@@ -1306,7 +1417,8 @@ because you can dump heaps and heaps of custom code you've written in your
 
 .. _ale-plugin:
 
-..
+``ale``
+'''''''
 
     “Asynchronous Lint Engine”
 
@@ -1319,7 +1431,8 @@ WingIDE to a real editor when they edit files of different types.
         \ 'if': v:version >= 800 && has('signs'),
     \ })
 
-..
+``vim-misc``
+''''''''''''
 
     “Miscellaneous auto-load Vim scripts”
 
@@ -1332,7 +1445,8 @@ WingIDE to a real editor when they edit files of different types.
 
 .. include:: .includes/lazy_rdep.rst
 
-..
+``vim-notes``
+'''''''''''''
 
     “Easy note taking in Vim”
 
@@ -1344,7 +1458,8 @@ WingIDE to a real editor when they edit files of different types.
         \ 'on_map': {'ov': '<LocalLeader>en'},
     \ })
 
-..
+``nim.vim``
+'''''''''''
 
     “Nim language support”
 
@@ -1355,7 +1470,8 @@ WingIDE to a real editor when they edit files of different types.
         \ 'on_ft': 'nim',
     \ })
 
-..
+``vim-vimlparser``
+''''''''''''''''''
 
     “Vimscript parser”
 
@@ -1371,7 +1487,8 @@ WingIDE to a real editor when they edit files of different types.
 vim-scripts mirrors
 -------------------
 
-..
+``DotOutlineTree``
+''''''''''''''''''
 
     “An outline tree of a buffer”
 
@@ -1383,7 +1500,8 @@ I write my mail in reST.”  No, really.
         \ 'on_ft': ['mail', 'rst'],
     \ })
 
-..
+``SyntaxRange``
+'''''''''''''''
 
     “Set up regions within a buffer using their own filetypes”
 
@@ -1393,7 +1511,8 @@ I write my mail in reST.”  No, really.
         \ 'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
     \ })
 
-..
+``Toggle``
+''''''''''
 
     “Toggle values under the cursor”
 
@@ -1410,7 +1529,8 @@ preferences.
         \ },
     \ })
 
-..
+``bnf.vim``
+'''''''''''
 
     “Highlight :abbr:`BNF (Backus–Naur form)`\s”
 
@@ -1420,7 +1540,8 @@ preferences.
         \ 'on_ft': 'bnf',
     \ })
 
-..
+``ebnf.vim``
+''''''''''''
 
     “Extended :abbr:`BNF (Backus–Naur form)` (:abbr:`ISO (International
     Organization for Standardization)`/:abbr:`IEC (International
@@ -1432,7 +1553,8 @@ preferences.
         \ 'on_ft': 'ebnf',
     \ })
 
-..
+``uri-ref``
+'''''''''''
 
     “Painless footer references”
 
