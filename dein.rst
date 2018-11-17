@@ -698,7 +698,7 @@ nyancat. bah, grow up!
 
 ..
 
-    “Language support for ledger”
+    “Language support for ledger_”
 
 Combine this with :ref:`csv.vim <csv.vim-plugin>`, and it makes importing and
 editing your accounts/expenses an almost nice-ish experience.
@@ -1462,4 +1462,5 @@ by deletion.
 .. _github: https://github.com/
 .. _dein: https://github.com/Shougo/dein.vim
 .. _dwm: https://dwm.suckless.org/
+.. _ledger: https://www.ledger-cli.org/
 .. _vim-projectionist: https://github.com/tpope/vim-projectionist
