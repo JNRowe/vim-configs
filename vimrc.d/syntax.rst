@@ -46,7 +46,8 @@ Fold shell scripts as much as possible::
 
     let g:sh_minlines = 400
 
-… and disable highlighting errors that will be caught by linter_::
+… and disable highlighting errors that will be caught by :ref:`linter
+<ale-plugin>`::
 
     let g:sh_no_error = v:true
 
@@ -75,7 +76,6 @@ Load a colourscheme, but only on first source::
 .. _Python: https://www.python.org/
 .. _reST: http://docutils.sourceforge.net/rst.html
 .. _rust: https://www.rust-lang.org/
-.. _linter: https://github.com/w0rp/ale
 .. _lua: http://www.lua.org/
 .. _ruby: https://www.ruby-lang.org/
 .. _zsh: https://www.zsh.org/
