@@ -345,6 +345,7 @@ Repositories
     call dein#add('editorconfig/editorconfig-vim', {
         \ 'if': has('pythonx'),
         \ 'on_event': 'InsertEnter',
+        \ 'on_path': '.editorconfig',
     \ })
 
 ..
