@@ -1,6 +1,9 @@
 ``dein.vim`` - ``dein`` plugins configuration
 =============================================
 
+These are all hosted on GitHub_ [#]_.  You should try at least a few of them,
+they may make your life far simpler!
+
 Modeline is set so that ``:Exconfig <C-r><C-f>`` works on plugin names [#]_::
 
     " vim: set isfname-=/:
@@ -100,6 +103,9 @@ Repositories
 
     “Tiled Window Management for Vim”
 
+Excellent window management, it really does bring dwm_ simplicity to
+:command:`vim`!
+
 ::
 
     call dein#add('JNRowe/dwm.vim', {
@@ -110,6 +116,10 @@ Repositories
 
     “A secure alternative to modelines”
 
+This lightens the load of dealing with people who can’t follow :ref:`coding
+standards <editorconfig-plugin>` without allowing them free access to your
+:command:`vim` session.
+
 .. code-block:: vim
 
     call dein#add('JNRowe/securemodelines')
@@ -117,6 +127,10 @@ Repositories
 ..
 
     “Tango inspired colourscheme”
+
+.. image:: http://jnrowe.github.io/vim-jnrowe/_images/default.png
+   :target: http://jnrowe.github.io/vim-jnrowe/_images/default.png
+   :width: 25%
 
 ::
 
@@ -135,6 +149,10 @@ Repositories
 ..
 
     “Automatic closing of quotes, parenthesis, brackets, &c”
+
+The number 1 “Love it or hate it” plugin, to use it well you’ll want to read its
+documentation and disable the defaults that get in the way of your favourite
+language.
 
 ::
 
@@ -193,6 +211,9 @@ Repositories
 
     “Highlights whitespace at the end of lines”
 
+Highlights or deletes broken whitespace, and removes that ugly
+almost-kind-of-works solution from your :file:`.vimrc`.
+
 ::
 
     call dein#add('bitc/vim-bad-whitespace', {
@@ -223,6 +244,10 @@ Repositories
 ..
 
     “A narrow region plugin (similar to Emacs)”
+
+If, like me, you’re a partial :command:`emacs` convert ``NrrwRgn`` is wonderful.
+If you’re not then simply imagine being able to work in a visual mode hunk for
+a full editing session.
 
 ::
 
@@ -263,9 +288,14 @@ Repositories
         \ 'on_cmd': 'SaveSigns',
     \ })
 
+.. _csv.vim-plugin:
+
 ..
 
     “A filetype plugin for CSV files”
+
+Disturbingly cool editing for :abbr:`CSV (Comma-separated values)` files, ‘nuff
+said.
 
 ::
 
@@ -276,6 +306,9 @@ Repositories
 ..
 
     “A plugin for handling unicode and digraphs characters”
+
+Be like me and annoy your co-workers/friends by littering your mails with
+Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
 
 ::
 
@@ -336,6 +369,8 @@ Repositories
         \ 'on_ft': ['gitcommit', 'rst'],
     \ })
 
+.. _editorconfig-plugin:
+
 ..
 
     “The EditorConfig plugin”
@@ -352,6 +387,9 @@ Repositories
 
     “Cute conceal support for Python”
 
+Make your Python code unreadable to people looking over your shoulder, by
+decorating it with glyphs.
+
 ::
 
     call dein#add('ehamberg/vim-cute-python', {
@@ -359,6 +397,11 @@ Repositories
         \ 'on_ft': 'python',
         \ 'rev': 'moresymbols',
     \ })
+
+.. tip::
+
+    Be sure to try the ``moresymbols`` branch.  It makes a far larger visual
+    change to editing Python files.
 
 ..
 
@@ -374,6 +417,9 @@ Repositories
 
     “Allows you to test regular expressions”
 
+Removes the need to jump to your language’s :abbr:`REPL (Read-Eval-Print Loop)`
+when writing ugly, ugly :abbr:`regex (Regular Expressions)`.
+
 ::
 
     call dein#add('ervandew/regex', {
@@ -383,6 +429,11 @@ Repositories
 ..
 
     “Configurable, flexible, intuitive text aligning”
+
+Fancy text alignment tricks are only seconds away.
+
+This is the one plugin you use to make people who use lesser environments
+jealous.
 
 ::
 
@@ -480,6 +531,9 @@ Repositories
 ..
 
     “Edit and store quickfix/location list entries”
+
+Save all the window hopping key bashes and fix all those compiler warnings
+directly.
 
 ::
 
@@ -637,9 +691,14 @@ nyancat. bah, grow up!
         \ 'on_ft': 'moon',
     \ })
 
+.. _ledger-plugin:
+
 ..
 
     “Language support for ledger”
+
+Combine this with :ref:`csv.vim <csv.vim-plugin>`, and it makes importing and
+editing your accounts/expenses an almost nice-ish experience.
 
 ::
 
@@ -650,6 +709,9 @@ nyancat. bah, grow up!
 ..
 
     “Help read complex code by showing parentheses in different colours”
+
+Make your ``vim`` sessions feel like they have been painted by a three year old
+trying to impress their grandpa.  Which is a Good Thing™.
 
 ::
 
@@ -707,6 +769,8 @@ nyancat. bah, grow up!
 ..
 
     “Text objects based on indent levels”
+
+Makes handling Python code far, far easier.
 
 ::
 
@@ -779,6 +843,9 @@ nyancat. bah, grow up!
 ..
 
     “Tiny replacement for Supertab”
+
+Makes you feel more like a smart :abbr:`IDE (Integrated Developer Environment)`
+user, how cool is that?
 
 ::
 
@@ -853,6 +920,9 @@ nyancat. bah, grow up!
 ..
 
     “Graph your undo tree”
+
+Finally grasp the :command:`vim` ``undo-tree``, without this the feature can be
+really daunting to wrap your head around.
 
 ::
 
@@ -981,6 +1051,9 @@ nyancat. bah, grow up!
 
     “Comment stuff out”
 
+Comment out those abusive remarks you wrote about a vim plugin with the simple
+power of ``gcc``.
+
 ::
 
     call dein#add('tpope/vim-commentary', {
@@ -1001,6 +1074,9 @@ nyancat. bah, grow up!
 ..
 
     “A Git wrapper so awesome, it should be illegal”
+
+Replace most of your use of a shell when working on a project with just another
+:command:`vim` buffer.
 
 ::
 
@@ -1041,6 +1117,9 @@ nyancat. bah, grow up!
 
     “Repeat for plugin maps”
 
+Make ``.`` work how you think it works… once someone has hacked in support to
+your favourite plugin anyway.
+
 ::
 
     call dein#add('tpope/vim-repeat')
@@ -1070,6 +1149,9 @@ nyancat. bah, grow up!
 
     “One step above ``nocompatible`` mode”
 
+Sane defaults for :command:`vim`, tracking this repo might make your
+:command:`vim` experience a little more comfortable.
+
 ::
 
     call dein#add('tpope/vim-sensible', {
@@ -1085,6 +1167,8 @@ nyancat. bah, grow up!
 
     “Heuristically set buffer options”
 
+Automagic indentation configuration, that just works.
+
 ::
 
     call dein#add('tpope/vim-sleuth', {
@@ -1094,6 +1178,9 @@ nyancat. bah, grow up!
 ..
 
     “Increment dates, times, and more”
+
+Speed up those ``y`` and ``p`` based :ref:`ledger <ledger-plugin>` entry writing
+sessions by at least fifteen orders of magnitude… or your money back.
 
 ::
 
@@ -1105,6 +1192,9 @@ nyancat. bah, grow up!
 ..
 
     “Plugin for deleting, changing, and adding “surroundings””
+
+Make using :command:`ls -1` to produce the headings for your own :command:`vim`
+documentation a relatively painless task.
 
 ::
 
@@ -1138,6 +1228,10 @@ nyancat. bah, grow up!
 ..
 
     “Lean & mean status/tabline for vim that’s light as air”
+
+The main reason to use this is not “simply because it is pretty”, but mostly
+because you can dump heaps and heaps of custom code you've written in your
+:file:`.vimrc` and replace it with a heap of code that is far better maintained.
 
 ::
 
@@ -1208,6 +1302,9 @@ nyancat. bah, grow up!
 ..
 
     “Asynchronous Lint Engine”
+
+Start your mind boggling every time someone moans about having to switch from
+WingIDE to a real editor when they edit files of different types.
 
 ::
 
@@ -1293,6 +1390,9 @@ I write my mail in reST.”  No, really.
 
     “Toggle values under the cursor”
 
+Edit your config files like they had a fancy dialog box to fiddle with their
+preferences.
+
 ::
 
     call dein#add('vim-scripts/Toggle', {
@@ -1347,8 +1447,12 @@ by deletion.
 
 .. rubric:: Footnotes
 
+.. [#] I tend to ignore plugins that aren't available in this manner, because
+       the effort required to manage them normally exceeds their usefulness
 .. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
        supported via vim-projectionist_.
 
+.. _github: https://github.com/
 .. _dein: https://github.com/Shougo/dein.vim
+.. _dwm: https://dwm.suckless.org/
 .. _vim-projectionist: https://github.com/tpope/vim-projectionist
