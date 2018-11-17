@@ -11,7 +11,7 @@ without pushing lines too long::
     44 was arrived by grepping ten years of ledger_ data, and
     adding 10% to the minimum *I* would need.  Your mileage may vary.
 
-Use ISO-8601_ compatible date format::
+Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
     let g:ledger_date_format = '%F'
 
@@ -44,4 +44,3 @@ Configure magic currency completion in ledger files::
     augroup END
 
 .. _ledger: https://www.ledger-cli.org/
-.. _ISO-8601: https://en.m.wikipedia.org/wiki/ISO_8601
