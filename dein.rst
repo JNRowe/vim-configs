@@ -295,7 +295,7 @@ a full editing session.
 
 ..
 
-    “A filetype plugin for CSV files”
+    “A filetype plugin for :abbr:`CSV (Comma-separated values)` files”
 
 Disturbingly cool editing for :abbr:`CSV (Comma-separated values)` files, ‘nuff
 said.
@@ -329,7 +329,7 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
 
 ..
 
-    “The vim FAQ”
+    “The vim :abbr:`FAQ (Frequently Asked Questions)`\”
 
 ::
 
@@ -741,7 +741,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
 ..
 
-    “Plugins for HTML and CSS hi-speed coding”
+    “Plugins for :abbr:`HTML (HyperText Markup Language)` and :abbr:`CSS
+    (Cascading Style Sheets)` hi-speed coding”
 
 ::
 
@@ -866,7 +867,8 @@ user, how cool is that?
 
 ..
 
-    “HTML5 + inline SVG omnicomplete function, indent and syntax”
+    “:abbr:`HTML (HyperText Markup Language)`\5 + inline :abbr:`SVG (Scalable
+    Vector Graphics)` omnicomplete function, indent and syntax”
 
 ::
 
@@ -1089,7 +1091,7 @@ Replace most of your use of a shell when working on a project with just another
 
 ..
 
-    “JSON manipulation and pretty printing”
+    “:abbr:`JSON (JavaScript Object Notation)` manipulation and pretty printing”
 
 ::
 
@@ -1408,7 +1410,7 @@ preferences.
 
 ..
 
-    “Highlight BNFs”
+    “Highlight :abbr:`BNF (Backus–Naur form)`\s”
 
 ::
 
@@ -1418,7 +1420,9 @@ preferences.
 
 ..
 
-    “Extended BNF (ISO/IEC 14977) Syntax”
+    “Extended :abbr:`BNF (Backus–Naur form)` (:abbr:`ISO (International
+    Organization for Standardization)`/:abbr:`IEC (International
+    Electrotechnical Commission)` 14977) Syntax”
 
 ::
 
