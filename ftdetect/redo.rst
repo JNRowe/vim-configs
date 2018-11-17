@@ -11,7 +11,5 @@
 .. warning::
 
     This doesn’t use ``FALLBACK`` as we *always* want to override ``vim``’s
-    default detection in this case.  If you know what stata_ is you might not
-    like this ;)
-
-.. _stata: https://en.m.wikipedia.org/wiki/Stata
+    default detection in this case.  If you know what :wikipedia:`stata` is you
+    might not like this ;)

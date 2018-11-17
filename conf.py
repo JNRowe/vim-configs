@@ -64,6 +64,7 @@ autodoc_default_flags = ['members', ]  # type: List[str]
 # extlinks extension settings {{{
 extlinks = {
     'pypi': ('https://pypi.org/project/%s/', ''),
+    'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', ''),
 }
 # }}}
 

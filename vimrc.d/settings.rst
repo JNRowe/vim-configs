@@ -21,8 +21,8 @@ overwrite a :command:`cp --link` tree::
     let &backupdir = g:vim_cache_dir . '/backup//'
     call mkdir(g:vim_cache_dir . '/backup', 'p')
 
-I don’t often open MHTML_ files, but when I do it is only for quick edits and
-the resulting *huge* backups are practically always useless to me.
+I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
+edits and the resulting *huge* backups are practically always useless to me.
 
 ::
 
@@ -97,8 +97,8 @@ Keep swap files in `XDG basedir`_ compliant location::
     let &directory = g:vim_cache_dir . '/swap//,' . &directory
     call mkdir(g:vim_cache_dir . '/swap', 'p')
 
-UTF-8_ should be default on all systems now, and :command:`vim` will pick that
-up via :envvar:`LANG`, but we’ll force it just in case::
+:wikipedia:`UTF-8` should be default on all systems now, and :command:`vim` will
+pick that up via :envvar:`LANG`, but we’ll force it just in case::
 
     set encoding=utf-8
 
@@ -482,11 +482,9 @@ Custom foldtext setting::
     work; whitespace, ``&cms`` regex escaping(C fex), ``&fdr``, no ``scanf()``,
     &c.
 
-.. _MHTML: https://en.m.wikipedia.org/wiki/MHTML
 .. _vim-cute-python: https://github.com/ehamberg/vim-cute-python/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
-.. _UTF-8: https://en.m.wikipedia.org/wiki/UTF-8
 .. _the_silver_searcher: https://github.com/ggreer/the_silver_searcher/
 .. _Python: https://www.python.org/
 .. _vim-startify: https://github.com/mhinz/vim-startify/

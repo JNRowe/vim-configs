@@ -1,8 +1,9 @@
 ``localcfg/plugin_vim_speeddating.vim``
 =======================================
 
-I need only :rfc:`2822`, :command:`git` and a limited collection of ISO-8601_
-variants.  One mismatch happened *once*, and here we are…
+I need only :rfc:`2822`, :command:`git` and a limited collection of
+:wikipedia:`ISO-8601 <ISO_8601>` variants.  One mismatch happened *once*, and
+here we are…
 
 ::
 
@@ -16,5 +17,3 @@ variants.  One mismatch happened *once*, and here we are…
         \ ['%Y-%m-%d', 0, 0],
         \ ['%H:%M:%S', 0, 0]
     \ ]
-
-.. _ISO-8601: https://en.m.wikipedia.org/wiki/ISO_8601
