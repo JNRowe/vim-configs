@@ -1,12 +1,15 @@
 ``dein.vim`` - ``dein`` plugins configuration
 =============================================
 
+.. tip::
+
+    Modeline is set so that ``:Exconfig <C-r><C-f>`` works on plugin names [#]_::
+
+        " vim: set isfname-=/:
+
 These are all hosted on GitHub_ [#]_.  You should try at least a few of them,
 they may make your life far simpler!
 
-Modeline is set so that ``:Exconfig <C-r><C-f>`` works on plugin names [#]_::
-
-    " vim: set isfname-=/:
 
 .. include:: .includes/scriptencoding.rst
 
@@ -1447,10 +1450,10 @@ by deletion.
 
 .. rubric:: Footnotes
 
-.. [#] I tend to ignore plugins that aren't available in this manner, because
-       the effort required to manage them normally exceeds their usefulness
 .. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
        supported via vim-projectionist_.
+.. [#] I tend to ignore plugins that aren’t available in this manner, because
+       the effort required to manage them normally exceeds their usefulness.
 
 .. _github: https://github.com/
 .. _dein: https://github.com/Shougo/dein.vim
