@@ -50,3 +50,15 @@ Mnemonic mapping setup function::
 .. tip::
 
     This adds a :kbd:`?` binding to display the map list for ``name``.
+
+Many distributions package :command:`vim` with cherry picked patches, and
+sometimes it is nice to know the current base version state::
+
+    function! Version()
+        let l:n = 1
+        while has('patch' . n)
+            let l:n += 1
+        endwhile
+        return join([v:version / 100, v:version % 100, n - 1], '.')
+    endfunction
+    command! Version :echo 'vim-' . Version()
