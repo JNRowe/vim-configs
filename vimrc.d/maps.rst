@@ -251,5 +251,18 @@ thanks for the idea!
         endfor
     endfor
 
+Make insert mode maps for accessing all completion modes without needed hand
+stretching:::
+
+    for s:key in split('lnkti]fdvuos', '\zs')
+        execute 'inoremap <silent> ,' . s:key . ' <C-x><C-' . s:key . '>'
+    endfor
+
+.. note::
+
+    In *my* usage there are no common occurrences of wanting to use type
+    a comma immediately followed by a character, so this isn’t a problem.  It
+    may be for you depending on your coding style choices.
+
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
