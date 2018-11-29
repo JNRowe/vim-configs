@@ -93,7 +93,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
 
         n.rule('rst_compile',
                (f'{rst2html} --record-dependencies $out.d.tmp $in $out; '
-                '[ -f $out.d.tmp ] && echo $out: $$(< $out.d.tmp) > $out.d; '
+                '[ -f $out.d.tmp ] && echo $out: $$(cat $out.d.tmp) > $out.d; '
                 'rm -f $out.d.tmp'),
                pretty('RST2HTML $out', colour),
                '$out.d', deps='gcc')
