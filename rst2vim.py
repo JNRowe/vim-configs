@@ -7,7 +7,6 @@ more.
 """
 
 from argparse import ArgumentParser
-from tempfile import NamedTemporaryFile
 
 from docutils.core import publish_doctree
 from docutils.nodes import Node
@@ -50,19 +49,15 @@ p.add_argument('input')
 p.add_argument('output')
 args = p.parse_args()
 
-settings = {}
-if args.r:
-    temp_fp = NamedTemporaryFile()
-    settings['_disable_config'] = 1
-    settings['record_dependencies'] = DependencyList(temp_fp.name)
+dl = DependencyList()
+settings = {
+    '_disable_config': 1,
+    'record_dependencies': dl,
+}
 
 with open(args.input) as f:
     doctree = publish_doctree(f.read(), args.input,
                               settings_overrides=settings)
-if args.r:
-    with open(args.r, 'w') as f:
-        f.write(f'{args.output}: {temp_fp.read().decode()}')
-    temp_fp.close()
 
 code_blocks = doctree.traverse(condition=is_vim_code)
 
@@ -70,3 +65,6 @@ if len(code_blocks) >= 1:
     with open(args.output, 'w') as f:
         for block in code_blocks:
             f.write(block.astext() + '\n')
+    if args.r:
+        with open(args.r, 'w') as f:
+            f.write(f'{args.output}: {" ".join(dl.list)}\n')
