@@ -1,6 +1,6 @@
 Set useful defaults for formatting prose::
 
-    setlocal formatoptions+=2a
+    setlocal formatoptions+=2
     setlocal textwidth=72
 
 If par_ is available we’ll use it::
