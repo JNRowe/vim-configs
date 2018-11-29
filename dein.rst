@@ -1511,6 +1511,15 @@ I write my mail in reST.”  No, really.
         \ 'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
     \ })
 
+``TaQua``
+'''''''''
+
+    “Colourscheme to fit the light/baby/soft colors of the aqua stuff”
+
+::
+
+    call dein#add('vim-scripts/TaQua')
+
 ``Toggle``
 ''''''''''
 
@@ -1552,6 +1561,15 @@ preferences.
     call dein#add('vim-scripts/ebnf.vim', {
         \ 'on_ft': 'ebnf',
     \ })
+
+``summerfruit256.vim``
+''''''''''''''''''''''
+
+    “88/256 colour version of Armin Ronacher's summerfruit colourscheme”
+
+::
+
+    call dein#add('vim-scripts/summerfruit256.vim')
 
 ``uri-ref``
 '''''''''''
