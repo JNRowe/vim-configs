@@ -3,13 +3,13 @@
 
 Add map to close wordnet_ window from anywhere::
 
-    function WordnetCloseWin()
+    function! s:wordnet_close_win()
         if bufnr("__WordNet__") > -1
             exec bufnr("__WordNet__") . "bdelete!"
         endif
     endfunction
 
-    nnoremap <silent> <Leader>wnq :call WordnetCloseWin()<CR>
+    nnoremap <silent> <Leader>wnq :call <SID>wordnet_close_win()<CR>
 
 We don’t care that the dictionary buffer has trailing whitespace::
 
