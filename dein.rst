@@ -606,6 +606,18 @@ jealous.
         \ 'if': executable('gpg') || executable('gpg2'),
     \ })
 
+``vim-textobj-css``
+'''''''''''''''''''
+
+   “Text objects for working with CSS”
+
+::
+
+   call dein#add('jasonlong/vim-textobj-css', {
+        \ 'depends': 'vim-textobj-user',
+        \ 'on_ft': ['css', 'html'],
+   \ })
+
 ``vim-editqf``
 ''''''''''''''
 
