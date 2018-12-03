@@ -1,5 +1,5 @@
-``localcfg/plugin_Toggle.vim``
-==============================
+``localcfg/plugin_switch.vim.vim``
+==================================
 
 Use :kbd:`<C-M-T>` to flip word under cursor::
 
@@ -9,5 +9,5 @@ Use :kbd:`<C-M-T>` to flip word under cursor::
         \   ['v', '<ESC>'],
         \ ]
         execute s:mode . 'noremap <C-M-T> ' . s:cmd_prefix .
-            \ ':call Toggle()<CR>'
+            \ ':Switch<CR>'
     endfor

@@ -40,7 +40,6 @@ Contents
     plugin_Colorizer
     plugin_Recover.vim
     plugin_Replay
-    plugin_Toggle
     plugin_ack.vim
     plugin_ale
     plugin_calendar_vim
@@ -61,6 +60,7 @@ Contents
     plugin_securemodelines
     plugin_sideways.vim
     plugin_splitjoin.vim
+    plugin_switch.vim
     plugin_tearoff
     plugin_ultisnips
     plugin_undotree

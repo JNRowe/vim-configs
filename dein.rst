@@ -104,6 +104,22 @@ Repositories
         \ 'on_map': {'n': ['gJ', 'gS']},
     \ })
 
+``switch.vim``
+''''''''''''''
+
+   “Switch segments of text with predefined replacements”
+
+Edit your config files like they had a fancy dialog box to fiddle with their
+preferences.
+
+::
+
+    call dein#add('AndrewRadev/switch.vim', {
+        \ 'on_cmd': 'Switch',
+        \ 'on_func': 'switch#Switch',
+        \ 'on_map': {'n': 'gs'},
+    \ })
+
 ``dwm.vim``
 '''''''''''
 
@@ -1516,24 +1532,6 @@ I write my mail in reST.”  No, really.
 ::
 
     call dein#add('vim-scripts/TaQua')
-
-``Toggle``
-''''''''''
-
-    “Toggle values under the cursor”
-
-Edit your config files like they had a fancy dialog box to fiddle with their
-preferences.
-
-::
-
-    call dein#add('vim-scripts/Toggle', {
-        \ 'on_func': 'Toggle',
-        \ 'on_map': {
-        \   'i': '<C-T>',
-        \   'n': '+',
-        \ },
-    \ })
 
 ``bnf.vim``
 '''''''''''
