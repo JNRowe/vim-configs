@@ -397,6 +397,17 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
         \ 'on_ft': 'python',
     \ })
 
+``vim-ditto``
+'''''''''''''
+
+   “Highlight overused words”
+
+::
+
+   call dein#add('dbmrq/vim-ditto', {
+      \ 'on_cmd': ['DittoFile', 'DittoOn'],
+   \ })
+
 ``vim-table-mode``
 ''''''''''''''''''
 
