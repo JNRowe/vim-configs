@@ -67,9 +67,6 @@ calls::
 Repositories
 ------------
 
-.. Dear reader, all these bare comment markers are here to break ``code-block``
-   directives from the following blockquote.
-
 ``dein.vim``
 ''''''''''''
 
