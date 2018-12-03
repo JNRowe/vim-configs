@@ -448,7 +448,7 @@ Custom foldtext setting::
 
     if has('folding')
         function! MyFoldText()
-            function s:shorten(text, line_str)
+            function! s:shorten(text, line_str)
                 let l:text = a:text
                 " Non-getline() text length
                 let l:base = 19
