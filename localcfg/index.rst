@@ -71,6 +71,7 @@ Contents
     plugin_vim_bufmru
     plugin_vim_clevertab
     plugin_vim_coiled_snake
+    plugin_vim_ditto
     plugin_vim_editqf
     plugin_vim_eighties
     plugin_vim_exchange
