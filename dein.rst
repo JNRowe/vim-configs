@@ -120,6 +120,17 @@ preferences.
         \ 'on_map': {'n': 'gs'},
     \ })
 
+``vim-bracketed-paste``
+'''''''''''''''''''''''
+
+    “Enables transparent pasting into vim”
+
+::
+
+    call dein#add('ConradIrwin/vim-bracketed-paste', {
+        \ 'if': !has('gui_running'),
+    \ })
+
 ``dwm.vim``
 '''''''''''
 
