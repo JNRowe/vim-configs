@@ -19,7 +19,7 @@ Prepare localcfg_ to read all optional configs::
     for s:bundle in values(dein#get())
         let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
         let g:localcfg_cfgs += [(get(s:bundle, 'if', v:true) ? '' : 'not') . s:cfgname]
-    endfo
+    endfor
 
 .. note::
 
