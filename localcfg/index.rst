@@ -75,6 +75,7 @@ Contents
     plugin_vim_editqf
     plugin_vim_eighties
     plugin_vim_exchange
+    plugin_vim_fugitive
     plugin_vim_gitgutter
     plugin_vim_indent_guides
     plugin_vim_jinja
