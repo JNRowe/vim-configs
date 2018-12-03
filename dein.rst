@@ -1085,6 +1085,18 @@ really daunting to wrap your head around.
         \ 'on_map': {'n': '<C-w>o'},
     \ })
 
+``vim-quick-radon``
+'''''''''''''''''''
+
+    “Applies radon_ to your current file”
+
+::
+
+    call dein#add('tell-k/vim-quick-radon', {
+        \ 'if': executable('radon'),
+        \ 'on_cmd': 'QuickRadon',
+    \ })
+
 ``vim-expand-region``
 '''''''''''''''''''''
 
@@ -1611,4 +1623,5 @@ by deletion.
 .. _dein: https://github.com/Shougo/dein.vim/
 .. _dwm: https://dwm.suckless.org/
 .. _ledger: https://www.ledger-cli.org/
+.. _radon: https://radon.readthedocs.io/
 .. _vim-projectionist: https://github.com/tpope/vim-projectionist/
