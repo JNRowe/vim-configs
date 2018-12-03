@@ -86,6 +86,7 @@ Contents
     plugin_vim_orgmode
     plugin_vim_parenmatch
     plugin_vim_projectionist
+    plugin_vim_quick_radon
     plugin_vim_rhubarb
     plugin_vim_signature
     plugin_vim_sneak
