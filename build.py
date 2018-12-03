@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-"""Generate a build script
+"""Generate a build script.
 
 .. note::
 
@@ -34,7 +34,7 @@ def pretty(string: str, colour: bool = True) -> str:
 
 
 def wopt(name: str) -> str:
-    """Generate a command line option string
+    """Generate a command line option string.
 
     Args:
         name: Option name
