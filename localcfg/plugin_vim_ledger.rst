@@ -8,7 +8,7 @@ without pushing lines too long::
 
 .. note::
 
-    44 was arrived by grepping ten years of ledger_ data, and
+    44 was arrived at by :command:`grep`’ing ten years of ledger_ data, and
     adding 10% to the minimum *I* would need.  Your mileage may vary.
 
 Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::

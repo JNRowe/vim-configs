@@ -161,7 +161,7 @@ standards <editorconfig-plugin>` without allowing them free access to your
 ``vim-jnrowe``
 ''''''''''''''
 
-    “Tango inspired colourscheme”
+    “Tango inspired colour scheme”
 
 .. image:: http://jnrowe.github.io/vim-jnrowe/_images/default.png
    :target: http://jnrowe.github.io/vim-jnrowe/_images/default.png
@@ -266,7 +266,7 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 ``Colorizer``
 '''''''''''''
 
-    “Colour colournames and codes”
+    “Colour colour names and codes”
 
 ::
 
@@ -280,7 +280,7 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 .. note::
 
     The filetype hooks are *my* hooks.  I often want highlighting in vim files
-    because I’m always editing my colourscheme, but I don’t need it for C in
+    because I’m always editing my colour scheme, but I don’t need it for C in
     general because it is relatively uncommon for my C file to actually be
     dwm’s config.h.
 
@@ -486,7 +486,7 @@ decorating it with glyphs.
     “Allows you to test regular expressions”
 
 Removes the need to jump to your language’s :abbr:`REPL (Read-Eval-Print Loop)`
-when writing ugly, ugly :abbr:`regex (Regular Expressions)`.
+when writing ugly, ugly :abbr:`RegEx (Regular Expression)`.
 
 ::
 
@@ -524,7 +524,7 @@ jealous.
 ``dein-command.vim``
 ''''''''''''''''''''
 
-    “Utility comamnds for dein.vim”
+    “Utility commands for dein.vim”
 
 ::
 
@@ -569,7 +569,7 @@ jealous.
 ``vim-yankitute``
 '''''''''''''''''
 
-    “Regex powered yank and substitute”
+    “:abbr:`RegEx (Regular Expression)` powered yank and substitute”
 
 ::
 
@@ -909,7 +909,7 @@ Makes handling Python code far, far easier.
 ``ack.vim``
 '''''''''''
 
-    “Run your favorite search tool from Vim, with an enhanced results list”
+    “Run your favourite search tool from Vim, with an enhanced results list”
 
 ::
 
@@ -1573,7 +1573,7 @@ I write my mail in reST.”  No, really.
 ``TaQua``
 '''''''''
 
-    “Colourscheme to fit the light/baby/soft colors of the aqua stuff”
+    “Colour scheme to fit the light/baby/soft colours of the aqua stuff”
 
 ::
 
@@ -1606,7 +1606,7 @@ I write my mail in reST.”  No, really.
 ``summerfruit256.vim``
 ''''''''''''''''''''''
 
-    “88/256 colour version of Armin Ronacher's summerfruit colourscheme”
+    “88/256 colour version of Armin Ronacher's summerfruit colour scheme”
 
 ::
 

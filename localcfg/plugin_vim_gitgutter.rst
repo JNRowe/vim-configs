@@ -36,11 +36,11 @@ Configure symbols::
         let g:gitgutter_sign_modified_removed   = ''
     endif
 
-I prefer my colourscheme’s sign column setup::
+I prefer my colour scheme’s sign column setup::
 
     let g:gitgutter_override_sign_column_highlight = v:false
 
-Use a sign colourscheme that approximately matches my terminal diff output::
+Use a sign colour scheme that approximately matches my terminal diff output::
 
     highlight GitGutterAdd                        guifg=#8ae234
     highlight GitGutterChange                     guifg=#fce94f

@@ -147,7 +147,7 @@ When the_silver_searcher_ is installed *always* use it::
 
 .. note::
 
-    :command:`ag` is just *so* much faster that any incompatiblity is worth
+    :command:`ag` is just *so* much faster that any incompatibility is worth
     the grief.
 
 Allow unsaved modified buffers in the background::
@@ -469,8 +469,8 @@ Custom foldtext setting::
 .. note::
 
     Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
-    work; whitespace, ``&cms`` regex escaping(C fex), ``&fdr``, no ``scanf()``,
-    &c.
+    work; whitespace, ``&cms`` :abbr:`RegEx (Regular Expression)` escaping(C
+    fex), ``&fdr``, no ``scanf()``, &c.
 
 .. _vim-cute-python: https://github.com/ehamberg/vim-cute-python/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/

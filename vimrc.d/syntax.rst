@@ -63,7 +63,7 @@ Support folding for zsh_ too, including the excellent alternative syntax::
 
     let g:zsh_fold_enable = v:true
 
-Load a colourscheme, but only on first source::
+Load a colour scheme, but only on first source::
 
     if !exists('g:colors_name')
         colorscheme jnrowe
