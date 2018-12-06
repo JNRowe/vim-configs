@@ -79,7 +79,7 @@ For git_::
     call s:define_menu('&git', {
         \ '&config': [
         \   g:xdg_config_dir . '/git/config',
-        \   '~/.gitconfig'
+        \   '~/.gitconfig',
         \ ],
         \ '&attributes': g:xdg_config_dir . '/git/attributes',
         \ '&mailmap': g:xdg_config_dir . '/git/mailmap',
@@ -138,7 +138,7 @@ amazing :pypi:`ptpython`::
     call s:define_menu('&python', {
         \ '&config': [
         \   expand('$PYTHONSTARTUP'),
-        \   g:xdg_config_dir . '/python/rc'
+        \   g:xdg_config_dir . '/python/rc',
         \ ],
         \ '&flake8': g:xdg_config_dir . '/flake8',
         \ '&pip': g:xdg_config_dir . '/pip/pip.conf',

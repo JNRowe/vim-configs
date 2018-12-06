@@ -9,7 +9,7 @@ than doing a complete pretty print
     call MnemonicMap('Haskell', {
         \ 'buffer': v:true,
         \ 'local': v:true,
-        \ 'mode': 'v'
+        \ 'mode': 'v',
     \ })
 
     vnoremap <buffer> [Haskell]= :Tabularize /=<CR>
