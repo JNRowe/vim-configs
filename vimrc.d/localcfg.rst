@@ -11,7 +11,7 @@ Prepare localcfg_ to read all optional configs::
         let g:localcfg_cfgs += ['abbr']
     endif
     let g:localcfg_features = [
-        \ 'autocmd', 'diff', 'gui_macvim', 'gui_running', 'menu', 'quickfix'
+        \ 'autocmd', 'diff', 'gui_macvim', 'gui_running', 'menu', 'quickfix',
     \ ]
 
 … and dein_ managed packages::
