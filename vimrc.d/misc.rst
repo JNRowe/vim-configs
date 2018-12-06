@@ -1,17 +1,31 @@
 ``vimrc.d/misc.vim``
 ====================
 
-Show highlight group of the current text, taken from vim wiki which is now
-offline.
+Find highlight group of the given location::
 
-::
+    function! GetHighlightGroup(...)
+        let [l:lnum, l:col] = getpos(get(a:, 1, '.')[1:2]
 
-    command! ShowHighlightGroup
-        \ echo 'hi<' . synIDattr(synID(line('.'), col('.'), v:true), 'name') .
-        \   '> trans<' . synIDattr(synID(line('.'), col('.'), v:false), 'name') .
-        \   '> lo<' . synIDattr(synIDtrans(synID(line('.'), col('.'), v:true)),
-        \                       'name') .
-        \   '>'
+        let s:synname = {synid -> synIDattr(synid, 'name')}
+
+        let l:groups = []
+        for l:id in synstack(l:lnum, l:col)
+            let l:groups += [{
+                \ 'high': s:synname(l:id),
+                \ 'tran': s:synname(synIDtrans(l:id)),
+            \ }]
+        endfor
+        return l:groups
+    endfunction
+
+Show highlight group of the current location::
+
+    command! ShowHighlightGroups
+        \ echo join(map(GetHighlightGroup(),
+        \               {k, v -> join(values(map(v,
+        \                                        {k, v -> k . ':' . v})),
+        \                             ', ')}),
+        \           ' | ')
 
 Flag toggling function::
 
