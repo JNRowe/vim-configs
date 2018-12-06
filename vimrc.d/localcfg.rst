@@ -14,7 +14,7 @@ Prepare localcfg_ to read all optional configs::
         \ 'autocmd', 'diff', 'gui_macvim', 'gui_running', 'menu', 'quickfix',
     \ ]
 
-… and dein_ managed packages::
+… and :repo:`dein <Shougo/dein.vim>` managed packages::
 
     for s:bundle in values(dein#get())
         let s:enabled = get(s:bundle, 'if', v:true)
@@ -32,4 +32,3 @@ Read defined configs::
     call localcfg#docfg()
 
 .. _localcfg: https://gitlab.com/magus/localcfg/
-.. _dein: https://github.com/Shougo/dein.vim/

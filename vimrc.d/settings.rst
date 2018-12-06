@@ -44,7 +44,7 @@ see the call signature in supported filetypes for example.
     set completeopt+=menuone
 
 Enable fancy Unicode display, see the builtin ``rust`` filetype and
-vim-cute-python_ for examples::
+:repo:`vim-cute-python <ehamberg/vim-cute-python>` for examples::
 
     if has('conceal')
         set concealcursor=nc
@@ -135,7 +135,8 @@ Option           Use
     set formatoptions+=rnl1
     set formatoptions-=wvb
 
-When the_silver_searcher_ is installed *always* use it::
+When :repo:`the_silver_searcher <ggreer/the_silver_searcher>` is installed
+*always* use it::
 
     if executable('ag')
         set grepprg=ag\ --vimgrep
@@ -263,7 +264,7 @@ The *vast* majority of files I edit expect indentation to be four spaces::
     set shiftwidth=4
 
 Disable :command:`vim`’s intro message, which would be displayed if
-``vim-startify`` is ever removed::
+:repo:`vim-startify <mhinz/vim-startify>` is ever removed::
 
     set shortmess+=I
 
@@ -287,8 +288,8 @@ hint::
 
     You can adjust the “flash time” with `'matchtime' <matchtime>`_.
 
-No need to display current mode as it vim-airline_ changes the statusline to
-indicate mode::
+No need to display current mode as it :repo:`vim-airline
+<vim-airline/vim-airline>` changes the statusline to indicate mode::
 
     set noshowmode
 
@@ -325,8 +326,8 @@ edits::
 
     set nostartofline
 
-Adjust completion to make ``.lua`` lower priority so that moonscript_ files
-are preferred::
+Adjust completion to make ``.lua`` lower priority so that :repo:`moonscript
+<leafo/moonscript>` files are preferred::
 
     set suffixes+=.lua,.pyc,.pyo
 
@@ -472,12 +473,7 @@ Custom foldtext setting::
     work; whitespace, ``&cms`` :abbr:`RegEx (Regular Expression)` escaping(C
     fex), ``&fdr``, no ``scanf()``, &c.
 
-.. _vim-cute-python: https://github.com/ehamberg/vim-cute-python/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
-.. _the_silver_searcher: https://github.com/ggreer/the_silver_searcher/
 .. _Python: https://www.python.org/
-.. _vim-startify: https://github.com/mhinz/vim-startify/
-.. _vim-airline: https://github.com/vim-airline/vim-airline/
-.. _moonscript: https://github.com/leafo/moonscript/
 .. _sqlite: https://sqlite.org/

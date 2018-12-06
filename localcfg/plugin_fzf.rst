@@ -1,7 +1,7 @@
 ``localcfg/plugin_fzf.vim``
 ===========================
 
-Use smaller than default fzf_ window::
+Use smaller than default :repo:`fzf <junegunn/fzf>` window::
 
     let g:fzf_layout = { 'down': '~30%' }
 
@@ -32,5 +32,4 @@ isn’t available::
         endif
     endif
 
-.. _fzf: https://github.com/junegunn/fzf/
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

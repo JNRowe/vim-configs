@@ -40,9 +40,10 @@ want to switch back.
 
 .. tip::
 
-    Fellow :command:`vim` users should really check out `evil-mode`_, it is an
-    incredibly usable vi-style layer for :command:`emacs`.  Many common
-    :command:`vim` plugins have been ported to work it too!
+    Fellow :command:`vim` users should really check out :repo:`evil-mode
+    <emacs-evil/evil>`, it is an incredibly usable vi-style layer for
+    :command:`emacs`.  Many common :command:`vim` plugins have been ported to
+    work it too!
 
 The dark years
 ''''''''''''''
@@ -115,6 +116,5 @@ the developers for the nudge that brought modern IPC to stock :command:`vim`.
 .. _MicroEMACS: ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/
 .. _GNU Emacs: https://www.gnu.org/software/emacs/
 .. _org-mode: http://www.orgmode.org/
-.. _evil-mode: https://github.com/emacs-evil/evil/
 .. _vim: http://www.vim.org/
 .. _NeoVim: https://neovim.io/
