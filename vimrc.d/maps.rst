@@ -255,14 +255,9 @@ Make insert mode maps for accessing all completion modes without needless hand
 stretching:::
 
     for s:key in split('lnkti]fdvuos', '\zs')
-        execute 'inoremap <silent> ,' . s:key . ' <C-x><C-' . s:key . '>'
+        execute 'inoremap <silent> <LocalLeader>,' . s:key .
+            \ ' <C-x><C-' . s:key . '>'
     endfor
-
-.. note::
-
-    In *my* usage there are few common occurrences of wanting to type a comma
-    immediately followed by a lowercase character, so this isn’t a problem.  It
-    may be for you depending on your coding style choices and such.
 
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
