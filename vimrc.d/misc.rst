@@ -75,4 +75,4 @@ sometimes it is nice to know the current base version state::
         endwhile
         return join([v:version / 100, v:version % 100, n - 1], '.')
     endfunction
-    command! Version :echo 'vim-' . Version()
+    command! Version echo 'vim-' . Version()
