@@ -1,7 +1,7 @@
 ``vimrc.d/dein.vim``
 ====================
 
-Make the dein_ submodule available to :command:`vim`::
+Make the :repo:`dein <Shougo/dein.vim>` submodule available to :command:`vim`::
 
     set runtimepath+=~/.vim/external/dein.vim/
 
@@ -49,6 +49,5 @@ Enable all the vim fanciness::
     filetype plugin indent on
     syntax enable
 
-.. _dein: https://github.com/Shougo/dein.vim
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 .. _system notifications: https://git.gnome.org/browse/libnotify

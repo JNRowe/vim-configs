@@ -4,7 +4,7 @@
 Don’t load unhelpful [to me] default plugins.  This can basically be summed up
 as the things which we don’t want(``vimball`` support), and things with far
 superior external alternatives(Pygments_ over ``2html``) or plugins with
-superior alternatives(dein_ over ``getscript``).
+superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 
 ::
 
@@ -20,4 +20,3 @@ superior alternatives(dein_ over ``getscript``).
     let g:loaded_zipPlugin = v:true
 
 .. _pygments: http://pygments.org/
-.. _dein: https://github.com/Shougo/dein.vim/

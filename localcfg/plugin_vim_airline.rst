@@ -46,7 +46,7 @@ Only use the extensions I actually want::
         \ 'wordcount',
     \ ]
 
-Enable ale_ extension::
+Enable :repo:`ale <w0rp/ale>` extension::
 
     if v:version >= 800 && has('signs')
         let g:airline_extensions += ['ale']
@@ -87,13 +87,11 @@ When :abbr:`CSV (Comma Separated Value)` files have a header, use it::
 
 .. note::
 
-    The ``csv`` extension uses the *excellent* csv.vim_ plugin by Christian
-    Brabandt.
+    The ``csv`` extension uses the *excellent* :repo:`csv.vim
+    <chrisbra/csv.vim>` plugin by Christian Brabandt.
 
 Allow spaces *after* tabs, but not in between::
 
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
-.. _ale: https://github.com/w0rp/ale/
 .. _git: https://www.git-scm.com/
-.. _csv.vim: https://github.com/chrisbra/csv.vim/
