@@ -24,7 +24,7 @@ Set up map to quickly move between buffers.
         let b:place = index(b:bufs, bufnr('%'))
         let b:buf = get(b:bufs, b:place + a:count,
             \           bufnr('%') == 1 ? bufnr('$') : b:bufs[0] )
-        execute "buffer " . b:buf
+        execute 'buffer ' . b:buf
     endfunction
 
     noremap <silent> <M-Left> :call <SID>switch_buf(-1)<CR>
@@ -81,7 +81,7 @@ Map Q to reformat paragraphs just like everyone else does::
 
 Easy access to man pages when using a custom ``keywordprg``::
 
-    nnoremap <C-?> :<C-U>execute "Man" v:count "<C-R><C-W>"<CR>
+    nnoremap <C-?> :<C-U>execute 'Man' v:count '<C-R><C-W>'<CR>
 
 Shift + arrows to select text like other applications::
 
@@ -232,7 +232,7 @@ when you’re showing code::
 
 Insert current buffer’s directory at command line::
 
-    cmap <M-.> <C-r>=expand('%:p:h') . "/"<CR>
+    cmap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
 
 Scroll wheel moves through undo list, and through branches with shift.  Can’t
 for the life of me remember who was demoing something similar as a feature, but
