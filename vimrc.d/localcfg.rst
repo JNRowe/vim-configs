@@ -17,8 +17,9 @@ Prepare localcfg_ to read all optional configs::
 … and dein_ managed packages::
 
     for s:bundle in values(dein#get())
+        let s:enabled = get(s:bundle, 'if', v:true)
         let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
-        let g:localcfg_cfgs += [(get(s:bundle, 'if', v:true) ? '' : 'not') . s:cfgname]
+        let g:localcfg_cfgs += [(s:enabled ? '' : 'not') . s:cfgname]
     endfor
 
 .. note::
