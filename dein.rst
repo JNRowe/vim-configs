@@ -127,9 +127,7 @@ preferences.
 
 ::
 
-    call dein#add('ConradIrwin/vim-bracketed-paste', {
-        \ 'if': !has('gui_running'),
-    \ })
+    call dein#add('ConradIrwin/vim-bracketed-paste')
 
 ``dwm.vim``
 '''''''''''
