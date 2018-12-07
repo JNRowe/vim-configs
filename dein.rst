@@ -78,6 +78,11 @@ Repositories
         \ 'if': v:version >= 800,
     \ })
 
+.. tip::
+
+    Repository names in the :func:`dein#add` calls below are links to their
+    source.
+
 .. _sideways.vim-config:
 
 ``sideways.vim``

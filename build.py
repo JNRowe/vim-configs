@@ -98,8 +98,14 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                pretty('RST2HTML $out', colour),
                '$out.d', deps='gcc')
 
+        # The ugliness of this sed is because we need the change to be
+        # idempotent as Sphinx only rebuilds modified files, and that may not
+        # include dein.html.
         n.rule('sphinx_build',
-               f'sphinx-build -M html {location} {location / ".build"}',
+               (f'sphinx-build -M html {location} {location / ".build"}; '
+                r"sed '/ dein#add</s,\(&#39;\)\([^<~]\+\)\(&#39;\),"
+                r"\1<a href=\"https://github.com/\2/\">\2</a>\3,' "
+                f'-i {location / ".build/html/dein.html"}'),
                pretty('SPHINX $out', colour))
 
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
