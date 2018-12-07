@@ -86,3 +86,15 @@ to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
     if has('toolbar')
         nnoremap <silent> <C-F4> :call ToggleFlag('guioptions', 'T')<CR>
     endif
+
+Hack to stop constant :repo:`dein <Shougo/dein.vim>` re-caching when switching
+between GUI and non-GUI :command:`vim`::
+
+    let g:loaded_bracketed_paste = v:true
+
+.. note::
+
+    This issue affects me so little it went unnoticed for four days, as I’m
+    always using ‘clientserver’ and :command:`gvim`.  However, an errant
+    :command:`git commit` from the wrong terminal causes a nearly three second
+    penalty for recaching.
