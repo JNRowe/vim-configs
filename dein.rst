@@ -112,7 +112,7 @@ Repositories
 ``switch.vim``
 ''''''''''''''
 
-   “Switch segments of text with predefined replacements”
+    “Switch segments of text with predefined replacements”
 
 Edit your config files like they had a fancy dialog box to fiddle with their
 preferences.
@@ -403,13 +403,13 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
 ``vim-ditto``
 '''''''''''''
 
-   “Highlight overused words”
+    “Highlight overused words”
 
 ::
 
-   call dein#add('dbmrq/vim-ditto', {
-      \ 'on_cmd': ['DittoFile', 'DittoOn'],
-   \ })
+    call dein#add('dbmrq/vim-ditto', {
+        \ 'on_cmd': ['DittoFile', 'DittoOn'],
+    \ })
 
 ``vim-table-mode``
 ''''''''''''''''''
@@ -612,14 +612,14 @@ jealous.
 ``vim-textobj-css``
 '''''''''''''''''''
 
-   “Text objects for working with CSS”
+    “Text objects for working with CSS”
 
 ::
 
-   call dein#add('jasonlong/vim-textobj-css', {
+    call dein#add('jasonlong/vim-textobj-css', {
         \ 'depends': 'vim-textobj-user',
         \ 'on_ft': ['css', 'html'],
-   \ })
+    \ })
 
 ``vim-editqf``
 ''''''''''''''
