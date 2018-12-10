@@ -62,9 +62,7 @@ settings while reading this file.
 
 ::
 
-    if filereadable(fnamemodify('~/.vim/vimrc.pre', ':p'))
-        source ~/.vim/vimrc.pre
-    endif
+    runtime! vimrc.pre
 
 Pull in remaining configs.
 
