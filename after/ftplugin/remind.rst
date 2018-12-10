@@ -6,6 +6,9 @@ this as it would break too many scripts that are relying on post-processing the
 remind_ data::
 
     setlocal commentstring=#%s
+    execute 'let b:undo_ftplugin ' .
+        \ (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
+        \ 'setlocal commentstring<"'
 
 .. note::
 
