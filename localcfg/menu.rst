@@ -178,7 +178,7 @@ For *some* editor::
     call s:define_menu('&vim', {
         \ '&dein': '~/.vim/dein.rst',
         \ 'r&c': '~/.vim/vimrc.rst',
-        \ 'rc-&local': '~/.vim/localcfg/' . $HOST . 'vim',
+        \ 'rc-&local': '~/.vim/localcfg/' . hostname() . '.vim',
     \ })
 
 For wget_::
