@@ -15,7 +15,6 @@ extensions = \
     + ['sphinxcontrib.%s' % ext for ext in []] \
     + ['sphinx_autodoc_typehints', 'sphinx_click.ext']  # type: List[str]
 
-
 if not on_rtd:
     # Only activate spelling if it is installed.  It is not required in the
     # general case and we don’t have the granularity to describe this in a
@@ -28,8 +27,9 @@ if not on_rtd:
         extensions.append('sphinxcontrib.spelling')
 
 with suppress(CalledProcessError):
-    proc = run(['git', 'log', "--pretty=format:%ad [%h]", '--date=short',
-                '-n1'],
+    proc = run([
+        'git', 'log', "--pretty=format:%ad [%h]", '--date=short', '-n1'
+    ],
                stdout=PIPE)
     html_last_updated_fmt = proc.stdout.decode()
 
@@ -59,7 +59,9 @@ pygments_style = 'sphinx'
 
 # Autodoc extension settings
 autoclass_content = 'init'
-autodoc_default_flags = ['members', ]  # type: List[str]
+autodoc_default_flags = [
+    'members',
+]  # type: List[str]
 
 # extlinks extension settings {{{
 extlinks = {
