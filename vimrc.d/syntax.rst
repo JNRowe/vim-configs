@@ -36,7 +36,7 @@ Use fancy conceal support for rust_::
 
 Enable folding support, but default to the global ``'foldlevel'``::
 
-    let g:rust_fold = 2
+    let g:rust_fold = 1
 
 Fold shell scripts as much as possible::
 
