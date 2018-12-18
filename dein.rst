@@ -59,10 +59,16 @@ available::
 
     let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
-``executable()`` doesn’t cache results, so we’ll do it ourselves for repeated
-calls::
+``executable()`` doesn’t cache results, so we’ll do it ourselves to handle
+repeated calls::
 
-    let s:has_git = executable('git')
+    let s:has_exec_cache = {}
+    function! s:has_exec(command)
+        if !has_key(s:has_exec_cache, a:command)
+            let s:has_exec_cache[a:command] = executable(a:command)
+        endif
+        return s:has_exec_cache[a:command]
+    endfunction
 
 Repositories
 ------------
@@ -235,7 +241,7 @@ language.
 ::
 
     call dein#add('airblade/vim-gitgutter', {
-        \ 'if': has('signs') && s:has_git,
+        \ 'if': has('signs') && s:has_exec('git'),
     \ })
 
 ``pytest.vim``
@@ -246,7 +252,7 @@ language.
 ::
 
     call dein#add('alfredodeza/pytest.vim', {
-        \ 'if': executable('pytest'),
+        \ 'if': s:has_exec('pytest'),
         \ 'on_cmd': 'Pytest',
         \ 'on_ft': 'python',
     \ })
@@ -606,7 +612,7 @@ jealous.
 ::
 
     call dein#add('jamessan/vim-gnupg', {
-        \ 'if': executable('gpg') || executable('gpg2'),
+        \ 'if': s:has_exec('gpg') || s:has_exec('gpg2'),
     \ })
 
 ``vim-textobj-css``
@@ -661,7 +667,7 @@ directly.
 
     call dein#add('jreybert/vimagit', {
         \ 'hook_post_source': s:airline_enable('vimagit'),
-        \ 'if': s:has_git,
+        \ 'if': s:has_exec('git'),
         \ 'on_cmd': 'Magit',
     \ })
 
@@ -673,7 +679,7 @@ directly.
 ::
 
     call dein#add('junegunn/fzf', {
-        \ 'if': executable('fzf'),
+        \ 'if': s:has_exec('fzf'),
         \ 'on_cmd': 'FZF',
         \ 'on_func': 'fzf#run',
     \ })
@@ -687,7 +693,7 @@ directly.
 
     call dein#add('junegunn/fzf.vim', {
         \ 'depends': 'fzf',
-        \ 'if': executable('fzf'),
+        \ 'if': s:has_exec('fzf'),
         \ 'on_cmd': s:prefix(
         \   'FZF',
         \   ['Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
@@ -917,7 +923,7 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('mileszs/ack.vim', {
-        \ 'if': executable('ag'),
+        \ 'if': s:has_exec('ag'),
         \ 'on_cmd': ['Ack', 'LAck'],
     \ })
 
@@ -1033,7 +1039,7 @@ user, how cool is that?
 ::
 
     call dein#add('rhysd/committia.vim', {
-        \ 'if': s:has_git,
+        \ 'if': s:has_exec('git'),
     \ })
 
 ``vim-radon``
@@ -1119,7 +1125,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('tell-k/vim-quick-radon', {
-        \ 'if': executable('radon'),
+        \ 'if': s:has_exec('radon'),
         \ 'on_cmd': 'QuickRadon',
     \ })
 
@@ -1153,7 +1159,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('timcharper/wordnet.vim', {
-        \ 'if': executable('wn'),
+        \ 'if': s:has_exec('wn'),
         \ 'on_map': '<Leader>wn',
     \ })
 
@@ -1240,7 +1246,7 @@ Replace most of your use of a shell when working on a project with just another
 ::
 
     call dein#add('tpope/vim-fugitive', {
-        \ 'if': s:has_git,
+        \ 'if': s:has_exec('git'),
     \ })
 
 ``vim-jdaddy``
@@ -1296,7 +1302,7 @@ your favourite plugin anyway.
 
     call dein#add('tpope/vim-rhubarb', {
         \ 'depends': 'vim-fugitive',
-        \ 'if': s:has_git,
+        \ 'if': s:has_exec('git'),
     \ })
 
 ``vim-rsi``
@@ -1528,7 +1534,7 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('zah/nim.vim', {
-        \ 'if': executable('nim'),
+        \ 'if': s:has_exec('nim'),
         \ 'on_ft': 'nim',
     \ })
 
