@@ -3,4 +3,6 @@
 
 Record video of replay sessions when possible::
 
-    let g:replay_record = v:true
+    if exists('$DISPLAY') && executable('ffmpeg')
+       let g:replay_record = v:true
+    endif
