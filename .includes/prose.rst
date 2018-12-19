@@ -17,4 +17,12 @@ If par_ is available we’ll use it::
         let b:undo_ftplugin .= '|setlocal formatprg<'
     endif
 
+Add dictionary from miscfiles_ if available::
+
+    if filereadable('/usr/share/dict/words')
+        setlocal complete+=k/usr/share/dict/words
+        let b:undo_ftplugin .= '|setlocal complete<'
+    endif
+
 .. _par: http://www.nicemice.net/par/
+.. _miscfiles: https://savannah.gnu.org/projects/miscfiles/

@@ -34,10 +34,6 @@ Enable :repo:`emmet-vim <mattn/emmet-vim>` where it will be useful::
 
         autocmd FileType css,html,xml EmmetInstall
 
-::
-
-        autocmd FileType rst setlocal complete+=k/usr/share/dict/words
-
 Attempt filetype detection after writing.::
 
         autocmd BufWritePost *
