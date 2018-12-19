@@ -596,15 +596,6 @@ jealous.
 
     call dein#add('itchyny/vim-cursorword')
 
-``vim-parenmatch``
-''''''''''''''''''
-
-    “Highlight matching parenthesis”
-
-::
-
-    call dein#add('itchyny/vim-parenmatch')
-
 ``vim-gnupg``
 '''''''''''''
 
