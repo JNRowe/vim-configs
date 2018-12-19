@@ -3,10 +3,13 @@
 
 Configure preferred order of completion::
 
-    inoremap <silent><Tab> <C-r>=CleverTab#Complete('start')<CR>
-        \<C-r>=CleverTab#Complete('tab')<CR>
-        \<C-r>=CleverTab#Complete('ultisnips')<CR>
-        \<C-r>=CleverTab#Complete('keyword')<CR>
-        \<C-r>=CleverTab#Complete('omni')<CR>
-        \<C-r>=CleverTab#Complete('stop')<CR>
-    inoremap <silent><S-Tab> <R-r>=CleverTab#Complete('prev')<CR>
+    let s:types = ['start', 'tab', 'keyword', 'omni', 'dictionary', 'stop']
+    if has('pythonx') && v:version >= 704
+        let s:types = insert(s:types, 'ultisnips', 2)
+    endif
+
+    execute "inoremap <silent> <Tab> " .
+        \ join(map(s:types,
+        \          {_, v -> '<C-r>=CleverTab#Complete("' . v . '")<CR>'}),
+        \      "")
+    inoremap <silent> <S-Tab> <C-r>=CleverTab#Complete('prev')<CR>
