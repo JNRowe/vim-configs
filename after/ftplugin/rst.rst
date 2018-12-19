@@ -18,6 +18,8 @@ This creates reST headings using *my* favourite definitions of ``=``, ``-`` and
         endfor
     endfor
 
+.. include:: ../../.includes/prose.rst
+
 .. include:: ../../.includes/thesaurus.rst
 
 Break undo sequence on sentence level punctuation.  This kind of feels better
