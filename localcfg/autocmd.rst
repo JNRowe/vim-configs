@@ -24,8 +24,7 @@ We don't want to edit patch backup files by accident [*again*]::
 Buffers that aren’t really for editing don’t need to have spelling errors
 highlighted::
 
-
-        autocmd FileType man,startify set nospell
+        autocmd FileType man,startify setlocal nospell
 
 Highlights for read only buffers aren’t interesting::
 
