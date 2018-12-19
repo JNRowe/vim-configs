@@ -49,7 +49,7 @@ Vim files
 '''''''''
 
 .. toctree::
-    :titlesonly:
+    :maxdepth: 1
 
     after/ftplugin/index
     ftdetect/index
