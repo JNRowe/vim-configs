@@ -121,6 +121,11 @@ buffer’s settings::
             \       execute 'source ' . b:meta_dir . '/abbr.vim' |
             \       let b:meta_abbr = v:true |
             \   endif |
+            \   if !exists('b:meta_vimrc')
+            \           && filereadable(b:meta_dir . '/vimrc') |
+            \       execute 'source ' . b:meta_dir . '/vimrc' |
+            \       let b:meta_vimrc = v:true |
+            \   endif |
             \ endif
 
 ::
