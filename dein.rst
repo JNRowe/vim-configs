@@ -163,7 +163,7 @@ This lightens the load of dealing with people who can’t follow :ref:`coding
 standards <editorconfig-plugin>` without allowing them free access to your
 :command:`vim` session.
 
-.. code-block:: vim
+::
 
     call dein#add('JNRowe/securemodelines')
 
@@ -185,7 +185,7 @@ standards <editorconfig-plugin>` without allowing them free access to your
 
     “Folding optimization”
 
-.. code-block:: vim
+::
 
     call dein#add('Konfekt/FastFold', {
         \ 'if': has('folding'),
