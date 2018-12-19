@@ -57,7 +57,8 @@ then I’ll look for replacements.
 ::
 
     let s:font_family = 'Consolas'
-    let &guifont = s:font_family . ' 13'
+    let s:font_size =  13
+    let &guifont = s:font_family . ' ' . s:font_size
 
 Add command to switch text size quickly.  Yeah, some of these are *huuuuuge*
 but I’ll often pop up a snippet for discussion in a meeting and this really
@@ -66,7 +67,7 @@ helps.
 ::
 
     function! s:font_complete(arglead, cmdline, cursorpos)
-        return [s:font_family . '\ 13', ]
+        return [s:font_family . '\ ' . s:font_size, ]
             \ + map(range(8), {n -> s:font_family . '\ ' . (n * 8 + 16)})
     endfunction
     command! -nargs=1 -complete=customlist,s:font_complete Fontsel
