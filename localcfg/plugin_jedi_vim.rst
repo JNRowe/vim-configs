@@ -9,13 +9,7 @@ Split “go to” to bottom::
 
     let g:jedi#use_splits_not_buffers = 'bottom'
 
-I almost never use Python_ 2 now::
-
-    let g:jedi#force_py_version=3
-
 I find :repo:`vim-clevertab <neitanod/vim-clevertab>` performs exactly how
 I want::
 
     let g:jedi#completions_enabled = v:false
-
-.. _Python: https://www.python.org/
