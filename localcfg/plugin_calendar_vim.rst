@@ -29,11 +29,12 @@ Use reST_ formatting for note files::
     let g:calendar_filetype = 'rst'
     let g:calendar_diary_extension = '.rst'
 
-We don’t care that the calendar has trailing whitespace::
+We don’t care that the dictionary doesn’t recognise abbreviated day names or
+that the calendar has trailing whitespace::
 
     if has('autocmd')
         augroup jnrowe_cal
-            autocmd FileType calendar HideBadWhitespace
+            autocmd FileType calendar setlocal nospell | HideBadWhitespace
         augroup END
     endif
 
