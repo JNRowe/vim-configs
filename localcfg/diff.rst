@@ -5,6 +5,14 @@ Ignore white space by default::
 
     set diffopt+=iwhite
 
+The remaining functionality is only useful when ``autocmd`` is available.
+
+::
+
+    if !has('autocmd')
+        finish
+    endif
+
 Add my bindings for diff mode::
 
     function! s:diff_maps()
