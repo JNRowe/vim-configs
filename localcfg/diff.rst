@@ -18,6 +18,8 @@ Add my bindings for diff mode::
     function! s:diff_maps()
         call MnemonicMap('diff', {'key': 'i', 'local': v:true})
 
+        noremap <buffer> [diff]w :call ToggleFlag('diffopt', 'iwhite')<CR>
+
         noremap <buffer> [diff]o :diffoff!<CR>
         noremap <buffer> [diff]p :diffput<CR>
         noremap <buffer> [diff]g :diffget<CR>
