@@ -41,7 +41,6 @@ Only use the extensions I actually want::
     let g:airline#extensions#disable_rtp_load = v:true
     let g:airline_extensions = [
         \ 'csv',
-        \ 'po',
         \ 'whitespace',
         \ 'wordcount',
     \ ]
