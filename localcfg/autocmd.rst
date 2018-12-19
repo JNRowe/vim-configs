@@ -6,15 +6,6 @@
     augroup jnrowe
         autocmd!
 
-Add a default function for ``'omnifunc``::
-
-        if exists('+omnifunc')
-            autocmd FileType *
-                \ if !exists('&omnifunc') |
-                \   setlocal omnifunc=syntaxcomplete#Complete |
-                \ endif
-        endif
-
 Create missing directories when saving files::
 
         autocmd BufWritePre *
