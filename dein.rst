@@ -1047,6 +1047,10 @@ user, how cool is that?
         \ 'on_ft': 'python',
     \ })
 
+.. note::
+
+    There is no radon_ check here, because it doesn’t actually use ``radon``.
+
 ``gundo.vim``
 '''''''''''''
 
