@@ -52,7 +52,6 @@ Contents
     plugin_fzf.vim
     plugin_goyo.vim
     plugin_gundo.vim
-    plugin_html5.vim
     plugin_jedi_vim
     plugin_molokai
     plugin_rainbow
