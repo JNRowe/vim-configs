@@ -32,7 +32,7 @@ Highlights for read only buffers aren’t interesting::
 
 Enable :repo:`emmet-vim <mattn/emmet-vim>` where it will be useful::
 
-        autocmd FileType css,html EmmetInstall
+        autocmd FileType css,html,xml EmmetInstall
 
 ::
 
