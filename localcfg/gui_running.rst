@@ -26,6 +26,13 @@ I don’t use the toolbar, and rarely want the menu::
 
 … but, add :ref:`maps for quick toggle <gui-toggles>`.
 
+Attempt to keep window size when toggling GUI items(menu, scrollbars, &c), as
+I find display layout more important than number of columns.
+
+::
+
+    set guioptions+=k
+
 Configure right mouse button to closer match the rest of my system::
 
     set mousemodel=popup_setpos
