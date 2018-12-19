@@ -86,7 +86,6 @@ Contents
     plugin_vim_obsession
     plugin_vim_omnipytent
     plugin_vim_orgmode
-    plugin_vim_parenmatch
     plugin_vim_projectionist
     plugin_vim_quick_radon
     plugin_vim_rhubarb
