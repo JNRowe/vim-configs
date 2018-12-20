@@ -109,24 +109,28 @@ buffer’s settings::
             endwhile
         endfunction
 
-        autocmd BufReadPost * if !exists('b:meta_dir') |
-            \   let b:meta_dir = s:meta_detect(expand('<afile>')) |
-            \ endif |
-            \ if type(b:meta_dir) == v:t_string
-            \       && index(split(&spellfile, ','),
-            \                b:meta_dir . '/en.utf-8.add') == -1 |
-            \   execute 'setlocal spellfile+=' . b:meta_dir . '/en.utf-8.add' |
-            \   if !exists('b:meta_abbr')
-            \           && filereadable(b:meta_dir . '/abbr.vim') |
-            \       execute 'source ' . b:meta_dir . '/abbr.vim' |
-            \       let b:meta_abbr = v:true |
-            \   endif |
-            \   if !exists('b:meta_vimrc')
-            \           && filereadable(b:meta_dir . '/vimrc') |
-            \       execute 'source ' . b:meta_dir . '/vimrc' |
-            \       let b:meta_vimrc = v:true |
-            \   endif |
-            \ endif
+        function! s:apply_project_locals()
+            if !exists('b:meta_dir')
+                let b:meta_dir = s:meta_detect(expand('<afile>'))
+            endif
+            if type(b:meta_dir) != v:t_string
+                return
+            endif
+            if !exists('b:meta_spell')
+                \ && index(split(&spellfile, ','), b:meta_dir . '/en.utf-8.add') == -1
+                execute 'setlocal spellfile+=' . b:meta_dir . '/en.utf-8.add'
+                let b:meta_spell = v:true
+            endif
+            for l:file in ['abbr.vim', 'vimrc']
+                let l:var = 'b:meta_' . fnamemodify(l:file, ':r')
+                if !exists(l:var) && filereadable(b:meta_dir . '/' . l:file)
+                    execute 'source ' . b:meta_dir . '/' . l:file
+                endif
+                execute 'let ' . l:var . ' = v:true'
+            endfor
+        endfunction
+
+        autocmd BufReadPost * call s:apply_project_locals()
 
 ::
 
