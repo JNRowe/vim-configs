@@ -101,6 +101,11 @@ buffer’s settings::
         function! s:meta_detect(file)
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
+            silent let l:output = systemlist('git -C ' . l:p . ' rev-parse --show-toplevel')
+            if v:shell_error == 0 && len(l:output) == 1
+                return l:output[0]
+            endif
+
             while l:p != '/'
                 if isdirectory(l:p . '/.meta')
                     return l:p . '/.meta'
