@@ -49,6 +49,12 @@ Only use the extensions I actually want::
         \ 'wordcount',
     \ ]
 
+.. attention::
+
+    This requires some vigilance over updates for finding fancy new toys,
+    but surely you’re not just blinding grabbing repositories from GitHub
+    anyway…
+
 Enable :repo:`ale <w0rp/ale>` extension::
 
     if v:version >= 800 && has('signs')
