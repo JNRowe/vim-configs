@@ -1,6 +1,9 @@
 ``after/ftplugin`` - filetype specific overrides
 ================================================
 
+The files under this directory are for filetype specific settings and
+overrides, many of which are purely personal preference.
+
 Contents
 --------
 
