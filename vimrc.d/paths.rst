@@ -13,9 +13,10 @@ Find `XDG basedir`_ compliant locations for data files::
 :command:`vim` specific paths honouring `XDG basedir`_::
 
     for s:name in ['cache', 'config', 'data']
-        execute 'let g:vim_' . s:name . '_dir = g:xdg_' . s:name . "_dir . '/vim'"
-        if !isdirectory(get(g:, 'vim_' . s:name . '_dir'))
-            call mkdir(get(g:, 'vim_' . s:name . '_dir'), 'p')
+        let s:path = 'vim_' . s:name . '_dir'
+        execute 'let g:' . s:path . ' = g:xdg_' . s:name . "_dir . '/vim'"
+        if !isdirectory(get(g:, s:path))
+            call mkdir(get(g:, s:path), 'p')
         endif
     endfor
 
