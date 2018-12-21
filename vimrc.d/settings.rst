@@ -369,9 +369,9 @@ compliant location::
         call mkdir(g:vim_data_dir . '/undo', 'p')
     endif
 
-Increase :command:`vim`’s default swap file write time interval::
+Double :command:`vim`’s default swap file write time interval::
 
-    set updatetime=7500
+    set updatetime=8000
 
 Store session files in `XDG basedir`_ compliant location::
 
