@@ -1,10 +1,6 @@
 ``localcfg/plugin_vim_textobj_quote.vim``
 =========================================
 
-::
-
-    let g:textobj#quote#matchit = v:true
-
 Enable for reST_ and text filetypes::
 
     augroup jnrowe_textobj_quote
