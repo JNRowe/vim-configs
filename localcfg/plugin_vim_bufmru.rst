@@ -1,10 +1,15 @@
 ``localcfg/plugin_vim_bufmru.vim``
 ==================================
 
+.. tip::
+
+    Imagine :kbd:`<Left>` and :kbd:`<Right>` are moving across a timeline of
+    used buffers.
+
 Use my custom maps::
 
     call MnemonicMap('bufmru')
 
-    nnoremap <silent> [bufmru]l  :BufMRU<CR>
-    nnoremap <silent> [bufmru]B  :BufMRUPrev<CR>
-    nnoremap <silent> [bufmru]b  :BufMRUNext<CR>
+    nnoremap <silent> [bufmru]l       :BufMRU<CR>
+    nnoremap <silent> [bufmru]<Left>  :BufMRUPrev<CR>
+    nnoremap <silent> [bufmru]<Right> :BufMRUNext<CR>
