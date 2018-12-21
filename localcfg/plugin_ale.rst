@@ -14,11 +14,15 @@ Disable lint on change as it is *far* too processor intensive for me::
 
 … but linting when leaving insert suits the way I work::
 
-    let g:ale_lint_on_insert_leave = v:true
+    let g:ale_lint_on_insert_leave = 1
 
 Open location list when errors exist::
 
-    let g:ale_open_list = v:true
+    let g:ale_open_list = 1
+
+.. note::
+
+    ``ale`` doesn’t support using ``v:true`` as ``1``.
 
 .. include:: ../.includes/fontawesome.rst
 
