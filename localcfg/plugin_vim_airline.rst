@@ -36,6 +36,10 @@ Configure symbols::
         let g:airline_symbols_ascii = v:true
     endif
 
+Only show unusual encodings::
+
+    let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
+
 Only use the extensions I actually want::
 
     let g:airline#extensions#disable_rtp_load = v:true
