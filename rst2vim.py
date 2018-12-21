@@ -38,7 +38,8 @@ def is_vim_code(node: Node):
 
 
 # Stub used Sphinx directives and roles, as we’re not using them in output
-directives.register_directive('envvar', StubDirective)
+for directive in ('envvar', 'todo'):
+    directives.register_directive(directive, StubDirective)
 for role in ('abbr', 'command', 'doc', 'envvar', 'file', 'func', 'kbd',
              'manpage', 'pypi', 'ref', 'repo', 'wikipedia'):
     roles.register_generic_role(role, nodes.comment)
