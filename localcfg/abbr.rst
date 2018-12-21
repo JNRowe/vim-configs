@@ -27,10 +27,11 @@ Date and time input, all of which could easily be replaced with equivalent
 snippets if I wasn’t so used to this now::
 
     for [s:key, s:fmt] in [['t', '%T'], ['d', '%F'], ['dt', '%FT%T%z']]
-        execute 'iabbrev <expr> _' . s:key . ' '
+        silent execute 'iabbrev <expr> _' . s:key . ' '
             \ (exists("*strftime") ? 'strftime("' : 'system("date + ')
             \ . s:fmt . '")'
-        execute 'iabbrev <expr> _u' . s:key . ' system("date -u +' . s:fmt . '")'
+        silent execute 'iabbrev <expr> _u' . s:key .
+            \ ' system("date -u +' . s:fmt . '")'
     endfor
 
 .. note::
