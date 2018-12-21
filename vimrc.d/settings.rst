@@ -133,7 +133,6 @@ Option           Use
 ::
 
     set formatoptions+=rnl1
-    set formatoptions-=wvb
 
 When :repo:`the_silver_searcher <ggreer/the_silver_searcher>` is installed
 *always* use it::
