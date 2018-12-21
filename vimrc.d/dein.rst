@@ -5,6 +5,12 @@ Make the :repo:`dein <Shougo/dein.vim>` submodule available to :command:`vim`::
 
     set runtimepath+=~/.vim/external/dein.vim/
 
+.. note::
+
+    I *hate* submodules, but this is the cleanest way to support standing up
+    a new machine that I can think of.  If you know a better way *please* `tell
+    me`_.
+
 Keep plugins and data in `XDG basedir`_ compliant location::
 
     let g:dein_state_dir = g:vim_cache_dir . '/dein'
@@ -49,5 +55,6 @@ Enable all the vim fanciness::
     filetype plugin indent on
     syntax enable
 
+.. _tell me: jnrowe@gmail.com
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 .. _system notifications: https://git.gnome.org/browse/libnotify
