@@ -1,10 +1,6 @@
 ``vimrc.d/syntax.vim``
 ======================
 
-More highlighting for Erlang_::
-
-    let g:erlang_highlight_special_atoms = v:true
-
 Support folding in manpages::
 
     let g:ft_man_folding_enable = v:true
