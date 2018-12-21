@@ -36,6 +36,13 @@ Open location list when errors exist::
         let g:ale_sign_style_warning = ''
     endif
 
+    if has('gui_running')
+        for s:k in ['Error', 'Info', 'Warning']
+            execute 'sign define ALE' . s:k . 'Sign icon=' .
+                \ expand('~/.vim/icons/' . tolower(s:k) . '.png')
+        endfor
+    endif
+
 ::
 
     call MnemonicMap('ale', {'local': v:true})
