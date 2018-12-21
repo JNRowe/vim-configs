@@ -56,7 +56,11 @@ then I’ll look for replacements.
 
 ::
 
-    let s:font_family = 'Consolas'
+    silent if len(systemlist('fc-list Inconsolata')) != 0
+        let s:font_family = 'Inconsolata'
+    else
+        let s:font_family = 'Consolas'
+    endif
     let s:font_size =  13
     let &guifont = s:font_family . ' ' . s:font_size
 
