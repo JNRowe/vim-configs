@@ -106,8 +106,6 @@ Visual mode indent that matches how it *feels* in insert::
 
 :kbd:`<Home>` darts between start of line and start of text::
 
-    inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
-    nnoremap <silent> <home> :call <SID>home_skip()<CR>
     function! s:home_skip()
         if col('.') != 1
             normal! 0
@@ -115,6 +113,8 @@ Visual mode indent that matches how it *feels* in insert::
             normal! ^
         endif
     endfunction
+    inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
+    nnoremap <silent> <home> :call <SID>home_skip()<CR>
 
 Utility function to choose between ninja_ and make_ for builds::
 
