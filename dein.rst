@@ -826,6 +826,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
     call dein#add('luochen1990/rainbow')
 
+.. _localcfg-config:
+
 ``localcfg``
 ''''''''''''
 

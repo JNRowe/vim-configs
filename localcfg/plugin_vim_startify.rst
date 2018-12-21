@@ -16,6 +16,12 @@ useful when started with arguments?
         \ '~/.vim/dein.rst',
     \ ]
 
+.. tip::
+
+    This setting is a prime candidate for configuring using :ref:`localcfg
+    <localcfg-config>`’s support for host specific configuration, such as
+    :file:`localcfg/$HOST.vim`.
+
 Define some quick commands to jump to help::
 
     let g:startify_commands = [
