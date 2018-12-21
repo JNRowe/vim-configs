@@ -118,8 +118,6 @@ Visual mode indent that matches how it *feels* in insert::
 
 Utility function to choose between ninja_ and make_ for builds::
 
-    nnoremap <silent> <F3> :set expandtab!<CR>
-    " <[SC]-F4> toggles menu/toolbar in gvim
     function! s:call_build(...)
         let l:make = filereadable('build.ninja') ? 'ninja' : 'make'
         execute l:make . ' -C ' . expand('%:p:h') . ' ' . get(a:, 1, '')
