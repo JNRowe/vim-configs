@@ -1,6 +1,10 @@
 ``localcfg/plugin_vim_sneak.vim``
 =================================
 
+Enable label mode::
+
+    let g:sneak#label = 1
+
 Disable cursor highlighting::
 
     function! s:sneak_enter()
