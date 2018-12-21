@@ -11,9 +11,9 @@ useful when started with arguments?
         \ g:xdg_config_dir . "/awesome/rc.moon",
         \ g:xdg_config_dir . "/awesome/themes/jnrowe/theme.moon",
         \ filereadable(g:xdg_config_dir . "/git/config") ? g:xdg_config_dir . "/git/config" : "~/.gitconfig",
-        \ '~/.vim/vimrc',
+        \ '~/.vim/vimrc.rst',
         \ '~/.vim/vimrc-local',
-        \ '~/.vim/dein.vim',
+        \ '~/.vim/dein.rst',
     \ ]
 
 Define some quick commands to jump to help::
