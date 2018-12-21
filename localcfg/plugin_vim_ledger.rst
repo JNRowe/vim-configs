@@ -48,4 +48,8 @@ Configure magic currency completion in ledger files::
             \ <C-r>=ledger#autocomplete_and_align()<CR>
     augroup END
 
+.. todo::
+
+    This should be in addition to :kbd:`<Tab>`, not a replacement.
+
 .. _ledger: https://www.ledger-cli.org/
