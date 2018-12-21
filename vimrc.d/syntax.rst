@@ -19,6 +19,15 @@ Highlight everything possible for Python_::
 
     let g:python_highlight_all = v:true
 
+Disable reST_’s default indentation rules::
+
+    let g:rst_style = v:false
+
+.. note::
+
+    The indentation rules *mostly* work, but occasionally don’t seem to do
+    the right thing… and that is *far* more annoying than always being wrong.
+
 Use fancy conceal support for rust_::
 
     let g:rust_conceal = v:true
