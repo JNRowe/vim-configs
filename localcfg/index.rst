@@ -6,23 +6,17 @@ The directory contains feature and plugin specific configuration data.
 FAQ
 ---
 
-Why do some filenames end with ``.vim.vim``
-'''''''''''''''''''''''''''''''''''''''''''
+.. contents::
+    :local:
 
-Filenames are made to closely match the plugin name, so that a simple ``git``
-commit hook can check that the external exists and that the config is named
-correctly.
+Why do some output filenames end with ``.vim.vim``
+''''''''''''''''''''''''''''''''''''''''''''''''''
 
-But yeah, I agree it is kind of ugly.
+Filenames are made to closely match the plugin name, so that a simple
+:command:`git` commit hook can check that the plugin exists and that the config
+is named correctly.
 
-Why all the dynamic expansion for ``loaded_*`` vars?
-''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-I'm glad you asked.  It takes practically no extra time at read, and means
-I can just template up new config files.
-
-The old ones are also that way to make it less effort to dive in to a random
-file.
+But yeah, I agree that it is kinda ugly.
 
 Contents
 --------
