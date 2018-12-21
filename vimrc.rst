@@ -64,9 +64,7 @@ settings while reading this file.
 
     runtime! vimrc.pre
 
-Pull in remaining configs.
-
-::
+Pull in remaining configs::
 
     runtime vimrc.d/paths.vim  " *Must* be early
 
