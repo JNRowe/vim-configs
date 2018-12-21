@@ -59,6 +59,11 @@ Enable :repo:`ale <w0rp/ale>` extension::
 
     if v:version >= 800 && has('signs')
         let g:airline_extensions += ['ale']
+        if has('gui_running')
+            let g:airline#extensions#ale#error_symbol = ''
+            let g:airline#extensions#ale#warning_symbol = ''
+        endif
+        let g:airline#extensions#ale#checking_symbol = '…'
     endif
 
 Use simple statusline for quickfix windows::
