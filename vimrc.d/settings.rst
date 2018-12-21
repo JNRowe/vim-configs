@@ -211,7 +211,7 @@ Show matching parenthesis for three tenths of a second::
 
     set matchtime=3
 
-Always include octal in ``'nrformats'`` as the :file:`defaults.vim` will
+Always include ``octal`` in ``'nrformats'`` as the :file:`defaults.vim` will
 unset on some systems::
 
     set nrformats+=octal
