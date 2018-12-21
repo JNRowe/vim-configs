@@ -15,4 +15,24 @@ Enable for reST_ and text filetypes::
     characters to things that expect :abbr:`ASCII (American Standard Code
     for Information Interchange)`.
 
+Configure quotes for current language::
+
+    function! s:select_quotes()
+        let l:current_lang = substitute(&spelllang, '_.*', '', '')
+        if l:current_lang == 'de'
+            let g:textobj#quote#doubleDefault = '„“'
+            let g:textobj#quote#singleDefault = '‚‘'
+        elseif l:current_lang == 'es'
+            let g:textobj#quote#doubleDefault = '«»'
+            let g:textobj#quote#singleDefault = '“”'
+        elseif l:current_lang == 'fr'
+            let g:textobj#quote#doubleDefault = '«»'
+            let g:textobj#quote#singleDefault = '‹›'
+        endif
+    endfunction
+
+    augroup jnrowe_vim_textobj_quote
+        autocmd BufEnter * call s:select_quotes()
+    augroup END
+
 .. _reST: http://docutils.sourceforge.net/rst.html
