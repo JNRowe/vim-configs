@@ -9,16 +9,11 @@ Prefer vertical splits for manpages::
 
     let g:ft_man_open_mode = 'vert'
 
-
 Default to bash_ for ``sh`` syntax, and POSIX_ is a more realistic default for
 me if ``g:is_bash`` is toggled::
 
     let g:is_bash = v:true
     let g:is_posix = v:true
-
-Default to groff_::
-
-    let g:nroff_is_groff = v:true
 
 Highlight everything possible for Python_::
 
@@ -68,7 +63,6 @@ Load a colour scheme, but only on first source::
 .. _erlang: https://www.erlang.org/
 .. _bash: http://tiswww.case.edu/php/chet/bash/bashtop.html
 .. _POSIX: http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
-.. _groff: https://www.gnu.org/software/groff/groff.html
 .. _Python: https://www.python.org/
 .. _reST: http://docutils.sourceforge.net/rst.html
 .. _rust: https://www.rust-lang.org/
