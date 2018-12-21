@@ -45,8 +45,3 @@ Configure layered maps for useful quickfix and location functions::
             call s:qf_key(s:t, s:key, s:cmd)
         endfor
     endfor
-
-Move up and down in the quickfix list with quick shortcut::
-
-    nnoremap <M-Down> :cnext<CR>
-    nnoremap <M-Up> :cprevious<CR>
