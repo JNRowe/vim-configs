@@ -46,3 +46,18 @@ Use a sign colour scheme that approximately matches my terminal diff output::
     highlight GitGutterChange                     guifg=#fce94f
     highlight GitGutterDelete                     guifg=#ef2929
     highlight GitGutterChangeDelete guibg=#ef2929 guifg=#fce94f
+
+Use fancy icons for signs if possible::
+
+    if has('gui_running')
+        for [s:icon, s:signs] in items({
+            \   'list-add': ['Added'],
+            \   'edit-copy': ['Modified'],
+            \   'list-remove': ['Removed', 'RemovedFirstLine', 'ModifiedRemoved']
+            \ })
+            for s:sign in s:signs
+                execute 'sign define GitGutterLine' . s:sign .
+                    \ ' icon=' . expand('~/.vim/icons/' . s:icon . '.png')
+            endfor
+        endfor
+    endif
