@@ -29,6 +29,10 @@ Poke around as best we can to discern the background colour::
         set background=light
     endif
 
+.. todo::
+
+    This is brittle, but I don’t know a foolproof way to handle it.  Thoughts?
+
 Change the cursor colour for insert mode on supported terminals::
 
     if &term =~? '^rxvt' && exists('&t_SI')
