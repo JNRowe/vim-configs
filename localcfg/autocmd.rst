@@ -145,6 +145,22 @@ Search for project specific :file:`vimrc` and support files::
     need not concern ourselves with the security implications of remote
     :file:`vimrc` snippets from random users and projects.
 
+Add command to more easily edit the project specific files::
+
+        function! s:edit_project_file(name)
+            let b:meta_dir = s:meta_detect(expand('<afile>'))
+            if type(b:meta_dir) != v:t_string
+                return
+            endif
+            call mkdir(b:meta_dir, 'p')
+            execute ':edit ' . b:meta_dir . '/' . a:name
+        endfunction
+        function! s:project_file(arglead, cmdline, cursorpos)
+            return ['abbr.vim', 'project.vim']
+        endfunction
+        command! -nargs=1 -complete=customlist,s:project_file
+            \ ProjectFile call s:edit_project_file(<q-args>)
+
 ::
 
     augroup END
