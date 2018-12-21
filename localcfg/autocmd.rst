@@ -94,30 +94,31 @@ Only highlight cursor line in active window::
         autocmd InsertEnter * setlocal nocursorline
         autocmd InsertLeave * setlocal cursorline
 
-Search upwards for a :file:`.meta` directory, and add any word
-list(:file:`en.utf8.add`) or abbreviations(:file:`abbr.vim`) found to the
-buffer’s settings::
+Search for project specific :file:`vimrc` and support files::
+
+        let s:project_env_dir = g:vim_data_dir . '/project_env/'
 
         function! s:meta_detect(file)
+            if exists('b:meta_dir')
+                return b:meta_dir
+            endif
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
             silent let l:output = systemlist('git -C ' . l:p . ' rev-parse --show-toplevel')
             if v:shell_error == 0 && len(l:output) == 1
-                return l:output[0]
+                return s:project_env_dir . l:output[0]
             endif
 
             while l:p != '/'
                 if isdirectory(l:p . '/.meta')
-                    return l:p . '/.meta'
+                    return s:project_env_dir . l:p . '/.meta'
                 endif
                 let l:p = fnamemodify(l:p, ':h')
             endwhile
         endfunction
 
         function! s:apply_project_locals()
-            if !exists('b:meta_dir')
-                let b:meta_dir = s:meta_detect(expand('<afile>'))
-            endif
+            let b:meta_dir = s:meta_detect(expand('<afile>'))
             if type(b:meta_dir) != v:t_string
                 return
             endif
@@ -126,7 +127,7 @@ buffer’s settings::
                 execute 'setlocal spellfile+=' . b:meta_dir . '/en.utf-8.add'
                 let b:meta_spell = v:true
             endif
-            for l:file in ['abbr.vim', 'vimrc']
+            for l:file in ['abbr.vim', 'project.vim']
                 let l:var = 'b:meta_' . fnamemodify(l:file, ':r')
                 if !exists(l:var) && filereadable(b:meta_dir . '/' . l:file)
                     execute 'source ' . b:meta_dir . '/' . l:file
@@ -135,8 +136,17 @@ buffer’s settings::
             endfor
         endfunction
 
-        autocmd BufReadPost * call s:apply_project_locals()
+        autocmd BufWinEnter * call s:apply_project_locals()
+
+.. note::
+
+    The reason we’re storing project specific files deep in
+    ``g:vim_data_dir`` instead of under the project itself is so that we
+    need not concern ourselves with the security implications of remote
+    :file:`vimrc` snippets from random users and projects.
 
 ::
 
     augroup END
+
+.. _git: https://www.git-scm.com/
