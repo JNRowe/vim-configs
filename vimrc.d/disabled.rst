@@ -8,15 +8,12 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 
 ::
 
-    let g:loaded_2html_plugin = v:true
-    let g:loaded_getscriptPlugin = v:true
-    let g:loaded_logipat = v:true
-    let g:loaded_netrw = v:true
-    let g:loaded_netrwPlugin = v:true
-    let g:loaded_rrhelper = v:true
-    let g:loaded_spellfile_plugin = v:true
-    let g:loaded_tarPlugin = v:true
-    let g:loaded_vimballPlugin = v:true
-    let g:loaded_zipPlugin = v:true
+    for s:plugin in [
+        \   "2html_plugin", "getscriptPlugin", "logipat", "netrw",
+        \   "netrwPlugin", "rrhelper", "spellfile_plugin", "tarPlugin",
+        \   "vimballPlugin", "zipPlugin",
+        \ ]
+        execute "let g:loaded_" . s:plugin . " = v:true"
+    endfor
 
 .. _pygments: http://pygments.org/
