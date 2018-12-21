@@ -20,7 +20,6 @@ Contents
     remind
     rst
     text
-    xml
 
 .. Hide symlinked docs.  Can’t hide them with orphan in the docs as it will
    hide the original too.
