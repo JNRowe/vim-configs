@@ -94,10 +94,6 @@ Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
     nnoremap Y y$
 
-Insert literal tab, for that once a year when it makes sense::
-
-    inoremap <silent> <S-Tab> <C-v><Tab>
-
 Re-grab selection after {de,in}dent for simpler repeating::
 
     vnoremap < <gv
