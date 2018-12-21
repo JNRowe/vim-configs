@@ -36,6 +36,8 @@ Configure symbols::
         let g:gitgutter_sign_modified_removed   = ''
     endif
 
+.. include:: ../.includes/fancy_symbols.rst
+
 I prefer my colour scheme’s sign column setup::
 
     let g:gitgutter_override_sign_column_highlight = v:false
