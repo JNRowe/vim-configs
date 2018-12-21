@@ -3,12 +3,15 @@
 
 Store data in `XDG basedir`_ compliant location::
 
+    function! s:set_data_files()
+        let l:base = g:vim_data_dir . "/%s/" .
+            \ expand('%:p:~:gs?/?_?:gs?%?%%?') . '.dat'
+        let g:editqf_saveqf_filename = printf(l:base, 'quickfix')
+        let g:editqf_saveloc_filename = printf(l:base, 'location')
+    endfunction
+
     augroup jnrowe_editqf
-        autocmd BufEnter *
-            \ let g:editqf_saveqf_filename = g:vim_data_dir . '/quickfix/' .
-            \   expand('%:p:~:gs?/?_?.dat') |
-            \ let g:editqf_saveloc_filename = g:vim_data_dir . '/location/' .
-            \   expand('%:p:~:gs?/?_?.dat')
+        autocmd BufEnter * call s:set_data_files()
     augroup END
 
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
