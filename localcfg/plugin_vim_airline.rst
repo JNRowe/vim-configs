@@ -36,6 +36,8 @@ Configure symbols::
         let g:airline_symbols_ascii = v:true
     endif
 
+.. include:: ../.includes/fancy_symbols.rst
+
 Only show unusual encodings::
 
     let g:airline#parts#ffenc#skip_expected_string = 'utf-8[unix]'
