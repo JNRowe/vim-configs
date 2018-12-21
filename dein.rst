@@ -907,18 +907,6 @@ Makes handling Python code far, far easier.
         \ 'on_map': {'n': '[bufmru]'},
     \ })
 
-``ack.vim``
-'''''''''''
-
-    “Run your favourite search tool from Vim, with an enhanced results list”
-
-::
-
-    call dein#add('mileszs/ack.vim', {
-        \ 'if': s:has_exec('ag'),
-        \ 'on_cmd': ['Ack', 'LAck'],
-    \ })
-
 ``vim-jinja``
 '''''''''''''
 

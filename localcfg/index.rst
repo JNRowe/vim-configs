@@ -34,7 +34,6 @@ Contents
     plugin_Colorizer
     plugin_Recover.vim
     plugin_Replay
-    plugin_ack.vim
     plugin_ale
     plugin_calendar_vim
     plugin_committia.vim
