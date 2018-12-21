@@ -253,5 +253,9 @@ stretching:::
             \ ' <C-x><C-' . s:key . '>'
     endfor
 
+Place cursor at the end of yanked region::
+
+    vmap y y`]
+
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
