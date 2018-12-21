@@ -123,8 +123,11 @@ Search for project specific :file:`vimrc` and support files::
                 return
             endif
             if !exists('b:meta_spell')
-                \ && index(split(&spellfile, ','), b:meta_dir . '/en.utf-8.add') == -1
-                execute 'setlocal spellfile+=' . b:meta_dir . '/en.utf-8.add'
+                let l:spf = b:meta_dir . &spelllang . '.' . &encoding . '.add'
+                if filereadable(l:spf)
+                    \ && index(split(&spellfile, ','), l:spf) == -1
+                    execute 'setlocal spellfile+=' . l:spf
+                endif
                 let b:meta_spell = v:true
             endif
             for l:file in ['abbr.vim', 'project.vim']
