@@ -18,6 +18,33 @@ is named correctly.
 
 But yeah, I agree that it is kinda ugly.
 
+The hook I use is *sadly* dependent on an internal tool, but a similar
+effect could be achieved with zsh_ in :file:`.git/hooks/pre-commit`:
+
+.. code-block:: zsh
+
+    extras=()
+    for f (localcfg/plugin_*.vim) {
+        plug_name=${f:t:r:s/plugin_//:gs/_/?/}
+        if [ -z "${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/*/*/${plug_name}(/N)" ] \
+            && [[ -z "~/.vim/internal/${plug_name}(/N)" ]]
+        then
+            extras+=$i
+        fi
+    }
+    if [[ ${#extras} -gt 0 ]]; then
+        echo "Extra config files:"
+        echo ${(F)extras}
+        exit 255
+    fi
+
+.. note::
+
+    I haven’t tested this beyond a quick shell session, but it is a start should
+    you wish to do something similar using just :file:`.git/hooks/pre-commit`.
+    [Co-workers: Vasily’s ``hookworm`` contains my hook in its examples
+    document.]
+
 Contents
 --------
 
@@ -92,3 +119,5 @@ Contents
     plugin_vimwiki
     plugin_wordnet.vim
     quickfix
+
+.. _zsh: https://www.zsh.org/
