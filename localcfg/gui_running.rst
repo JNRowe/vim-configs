@@ -71,8 +71,12 @@ helps.
 ::
 
     function! s:set_font(font)
-        let l:font = len(a:font) != 0 ? a:font
-            \ : s:font_family . '\ ' . s:font_size
+        if v:count1 != 1
+            let l:font = s:font_family . '\ ' . v:count1
+        else
+            let l:font = len(a:font) != 0 ? a:font
+                \ : s:font_family . '\ ' . s:font_size
+        endif
         execute 'set guifont=' . l:font
     endfunction
 
@@ -80,7 +84,7 @@ helps.
         return [s:font_family . '\ ' . s:font_size, ]
             \ + map(range(8), {n -> s:font_family . '\ ' . (n * 8 + 16)})
     endfunction
-    command! -nargs=? -complete=customlist,s:font_complete Fontsel
+    command! -nargs=? -count -complete=customlist,s:font_complete Fontsel
         \ call s:set_font(<q-args>)
 
 Include non-standard server names in the window title::
