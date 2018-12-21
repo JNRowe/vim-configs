@@ -339,7 +339,7 @@ edits::
 Adjust completion to make ``.lua`` lower priority so that :repo:`moonscript
 <leafo/moonscript>` files are preferred::
 
-    set suffixes+=.lua,.pyc,.pyo
+    set suffixes+=.lua
 
 Limit line length to 80 characters, but be aware that some filetypes will
 override this to match community standards::
@@ -425,13 +425,12 @@ visual, insert and replace::
     set whichwrap+=<,>,[,]
 
 Ignore files which we are unlikely to want to edit; PDF, :command:`vim`’s swap
-files, object and static library files, Python_’s byte compiled files, editor
-backups and sqlite_ databases.
+files, object and static library files, editor backups and sqlite_ databases.
 
 ::
 
     if has('wildignore')
-        set wildignore+=*.pdf,*.swp,*.[ao],*.py[co],*~,*.db
+        set wildignore+=*.pdf,*.swp,*.[ao],*~,*.db
     endif
 
 Insert longest common match by default::
