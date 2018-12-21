@@ -104,6 +104,12 @@ When :abbr:`CSV (Comma Separated Value)` files have a header, use it::
     The ``csv`` extension uses the *excellent* :repo:`csv.vim
     <chrisbra/csv.vim>` plugin by Christian Brabandt.
 
+Use a pretty symbol for :repo:`vim-obsession <tpope/vim-obsession>`::
+
+    if has('gui_running')
+        let g:airline#extensions#obsession#indicator_text = ''
+    endif
+
 Allow spaces *after* tabs, but not in between::
 
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
