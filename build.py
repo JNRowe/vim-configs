@@ -62,10 +62,11 @@ def wopt(name: str) -> str:
 @click.option('--libc-exclude', multiple=True, default=['qt5', ],
               metavar='PATH',
               help='Dirctories to exclude from libc tags file.')
+@click.option('--sphinx/--no-sphinx', help='Enable Sphinx build')
 @click.argument('file', type=click.Path(dir_okay=False, writable=True),
                 callback=lambda c, p, v: Path(v))
 def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
-              libc_exclude: List[str], file: Path) -> NoReturn:
+              libc_exclude: List[str], sphinx: bool, file: Path) -> NoReturn:
     """Write a ninja build configuration.
 
     Unless FILE is given this writes to ninja_’s default :file:`build.ninja`
@@ -87,7 +88,8 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
         n.rule('configure',
                ' '.join([f'{location / "build.py"} ', '$out']
                         + [wopt(s) for s in ['local', 'colour', 'rst2html',
-                                             'libc_langs', 'libc_exclude']]),
+                                             'libc_langs', 'libc_exclude',
+                                             'sphinx']]),
                pretty('CONFIG $out', colour),
                generator=True)
 
@@ -98,15 +100,16 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                pretty('RST2HTML $out', colour),
                '$out.d', deps='gcc')
 
-        # The ugliness of this sed is because we need the change to be
-        # idempotent as Sphinx only rebuilds modified files, and that may not
-        # include dein.html.
-        n.rule('sphinx_build',
-               (f'sphinx-build -M html {location} {location / ".build"}; '
-                r"sed '/ dein#add</s,\(&#39;\)\([^<~]\+\)\(&#39;\),"
-                r"\1<a href=\"https://github.com/\2/\">\2</a>\3,' "
-                f'-i {location / ".build/html/dein.html"}'),
-               pretty('SPHINX $out', colour))
+        if sphinx:
+            # The ugliness of this sed is because we need the change to be
+            # idempotent as Sphinx only rebuilds modified files, and that may
+            # not include dein.html.
+            n.rule('sphinx_build',
+                   (f'sphinx-build -M html {location} {location / ".build"}; '
+                    r"sed '/ dein#add</s,\(&#39;\)\([^<~]\+\)\(&#39;\),"
+                    r"\1<a href=\"https://github.com/\2/\">\2</a>\3,' "
+                    f'-i {location / ".build/html/dein.html"}'),
+                   pretty('SPHINX $out', colour))
 
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
         # dependency file.
@@ -133,10 +136,11 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
         rst_files = [p for p in location.glob('**/*.rst')
                      if '.includes' not in p.parts]
 
-        n.build(f'{location / ".build/html"}', 'sphinx_build',
-                [f'{location / "conf.py"}', ]
-                + [p.as_posix() for p in rst_files],
-                implicit=[which('sphinx-build'), ])
+        if sphinx:
+            n.build(f'{location / ".build/html"}', 'sphinx_build',
+                    [f'{location / "conf.py"}', ]
+                    + [p.as_posix() for p in rst_files],
+                    implicit=[which('sphinx-build'), ])
 
         for p in rst_files:
             if p.name == 'vimrc.rst':
