@@ -11,6 +11,11 @@ without pushing lines too long::
     44 was arrived at by :command:`grep`’ing ten years of ledger_ data, and
     adding 10% to the minimum *I* would need.  Your mileage may vary.
 
+… but when you open a shared ledger_ file you may want to visually set it to the
+current column::
+
+    command! LedgerAlignHere let g:ledger_align_at = getcurpos()[2]
+
 Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
     let g:ledger_date_format = '%F'
