@@ -87,6 +87,12 @@ helps.
     command! -nargs=? -count -complete=customlist,s:font_complete Fontsel
         \ call s:set_font(<q-args>)
 
+.. tip::
+
+    For minor size changes it often easier to use :kbd:`set
+    guifont=<Tab>`, while wishing that :kbd:`Ctrl-{a,x}` worked to
+    {in,de}crement the number in the command line too.
+
 Include non-standard server names in the window title::
 
     if has('title')  && has('clientserver')
