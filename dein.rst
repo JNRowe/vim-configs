@@ -1554,6 +1554,8 @@ I write my mail in reST.”  No, really.
         \ 'on_ft': ['mail', 'rst'],
     \ })
 
+.. _SyntaxRange-plugin:
+
 ``SyntaxRange``
 '''''''''''''''
 
