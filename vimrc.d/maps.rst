@@ -119,9 +119,18 @@ Visual mode indent that matches how it *feels* in insert::
 Utility function to choose between ninja_ and make_ for builds::
 
     function! s:call_build(...)
-        let l:make = filereadable('build.ninja') ? 'ninja' : 'make'
+        if filereadable('build.ninja')
+            let l:make = executable('samu') ? 'samu' : 'ninja'
+        else
+            let l:make = 'make'
+        endif
         execute l:make . ' -C ' . expand('%:p:h') . ' ' . get(a:, 1, '')
     endfunction
+
+.. note::
+
+    samurai_ is a :command:`ninja` reimplementation that turns up on
+    a few machines I use.
 
 Function keys are for executing common quick commands::
 
@@ -259,3 +268,4 @@ Place cursor at the end of yanked region::
 
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
+.. _samurai: https://github.com/michaelforney/samurai
