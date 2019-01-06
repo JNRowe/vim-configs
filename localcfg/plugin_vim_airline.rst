@@ -48,6 +48,7 @@ Only use the extensions I actually want::
     let g:airline_extensions = [
         \ 'csv',
         \ 'whitespace',
+        \ 'tabline',
         \ 'wordcount',
     \ ]
 
@@ -96,6 +97,10 @@ Enable git_ extension::
 ::
 
     endif
+
+Only show ``tabline`` when there are multiple buffers::
+
+    let g:airline#extensions#tabline#buffer_min_count = 2
 
 When :abbr:`CSV (Comma Separated Value)` files have a header, use it::
 
