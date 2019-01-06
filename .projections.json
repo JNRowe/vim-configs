@@ -18,7 +18,7 @@
             "``{file|dirname|basename}/{}``",
             "===",
             "",
-            ".. code-block:: vim",
+            "::",
             "",
             "    augroup jnrowe_ftdetect",
             "        autocmd BufRead,BufNewFile FIXME setfiletype FALLBACK FIXME",
@@ -34,7 +34,7 @@
             "",
             ".. include:: ../.includes/scriptencoding.rst",
             "",
-            ".. code-block:: vim",
+            "::",
             ""
         ],
         "type": "lconfig"
@@ -47,7 +47,7 @@
             "",
             ".. include:: ../.includes/scriptencoding.rst",
             "",
-            ".. code-block:: vim",
+            "::",
             "",
             "        call MnemonicMap('{capitalize}', {'buffer': v:true})"
         ],
@@ -61,7 +61,7 @@
             "",
             ".. include:: ../.includes/scriptencoding.rst",
             "",
-            ".. code-block:: vim",
+            "::",
             ""
         ],
         "type": "rconfig"
