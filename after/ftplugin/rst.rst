@@ -34,11 +34,13 @@ if it is too granular.
 
 Enable common — to me — highlighting support::
 
-    let g:rst_syntax_code_list = {
-        \ 'cpp': ['cpp', 'c++'],
-        \ 'lisp': ['emacs', 'lisp'],
-        \ 'python': ['python'],
-        \ 'sh': ['sh', 'zsh'],
-        \ 'vim': ['vim'],
-    \ }
-    let g:rst_use_emphasis_colors = v:true
+    if v:version >= 801
+        let g:rst_syntax_code_list = {
+            \ 'cpp': ['cpp', 'c++'],
+            \ 'lisp': ['emacs', 'lisp'],
+            \ 'python': ['python'],
+            \ 'sh': ['sh', 'zsh'],
+            \ 'vim': ['vim'],
+        \ }
+        let g:rst_use_emphasis_colors = v:true
+    endif
