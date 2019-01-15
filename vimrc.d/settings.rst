@@ -26,7 +26,7 @@ edits and the resulting *huge* backups are practically always useless to me.
 
 ::
 
-    set backupskip+=*.mht
+    set backupskip+=*.mht*
 
 Enable tooltips::
 
