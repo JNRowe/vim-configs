@@ -18,8 +18,11 @@ overwrite a :command:`cp --link` tree::
 
     set backup
     set backupcopy=auto,breakhardlink
-    let &backupdir = g:vim_cache_dir . '/backup//'
-    call mkdir(g:vim_cache_dir . '/backup', 'p')
+    let s:backupdir = g:vim_cache_dir . '/backup'
+    let &backupdir = s:backupdir . '//'
+    if !isdirectory(s:backupdir)
+        call mkdir(s:backupdir, 'p')
+    endif
 
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
 edits and the resulting *huge* backups are practically always useless to me.
@@ -94,8 +97,11 @@ If miscfiles_ is installed use its dictionary::
 
 Keep swap files in `XDG basedir`_ compliant location::
 
-    let &directory = g:vim_cache_dir . '/swap//,' . &directory
-    call mkdir(g:vim_cache_dir . '/swap', 'p')
+    let s:swapdir = g:vim_cache_dir . '/swap'
+    let &directory = s:swapdir . '//,' . &directory
+    if !isdirectory(s:swapdir)
+        call mkdir(s:swapdir, 'p')
+    endif
 
 :wikipedia:`UTF-8` should be default on all systems now, and :command:`vim` will
 pick that up via :envvar:`LANG`, but we’ll force it just in case::
@@ -375,8 +381,11 @@ compliant location::
 
     if has('persistent_undo')
         set undofile
-        let &undodir = g:vim_data_dir . '/undo//,' . &undodir
-        call mkdir(g:vim_data_dir . '/undo', 'p')
+        let s:undodir = g:vim_data_dir . '/undo'
+        let &undodir = s:undodir . '//,' . &undodir
+        if !isdirectory(s:undodir)
+            call mkdir(s:undodir, 'p')
+        endif
     endif
 
 Double :command:`vim`’s default swap file write time interval::
@@ -404,7 +413,12 @@ Option    Use
 
     if has('viminfo')
         set viminfo='5000,<1000,h
-        let &viminfofile = g:vim_cache_dir . '/viminfo'
+        let s:viminfofile = g:vim_cache_dir . '/viminfo'
+        if exists('&viminfofile')
+            let &viminfofile = s:viminfofile
+        else  " Hack for old vim versions
+            let &viminfo = &viminfo . ',n' . s:viminfofile
+        endif
     endif
 
 .. note::
