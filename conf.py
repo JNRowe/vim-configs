@@ -10,11 +10,10 @@ if not on_rtd:
     import sphinx_rtd_theme
 
 extensions = \
-    [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
-                                     'githubpages', 'intersphinx', 'todo']] \
-    + [f'sphinxcontrib.{ext}' for ext in []] \
+    ['sphinx.ext.%s' % ext for ext in ['autodoc', 'doctest', 'extlinks',
+                                       'githubpages', 'intersphinx', 'todo']] \
+    + ['sphinxcontrib.%s' % ext for ext in []] \
     + ['sphinx_autodoc_typehints', 'sphinx_click.ext']  # type: List[str]
-
 
 if not on_rtd:
     # Only activate spelling if it is installed.  It is not required in the
@@ -28,8 +27,9 @@ if not on_rtd:
         extensions.append('sphinxcontrib.spelling')
 
 with suppress(CalledProcessError):
-    proc = run(['git', 'log', "--pretty=format:%ad [%h]", '--date=short',
-                '-n1'],
+    proc = run([
+        'git', 'log', "--pretty=format:%ad [%h]", '--date=short', '-n1'
+    ],
                stdout=PIPE)
     html_last_updated_fmt = proc.stdout.decode()
 
@@ -59,7 +59,9 @@ pygments_style = 'sphinx'
 
 # Autodoc extension settings
 autoclass_content = 'init'
-autodoc_default_flags = ['members', ]  # type: List[str]
+autodoc_default_flags = [
+    'members',
+]  # type: List[str]
 
 # extlinks extension settings {{{
 extlinks = {
@@ -71,7 +73,7 @@ extlinks = {
 
 # intersphinx extension settings
 intersphinx_mapping = {
-    k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
+    k: (v, os.getenv('SPHINX_%s_OBJECTS' % k.upper()))
     for k, v in {
         'click': 'https://click.palletsprojects.com/en/7.x/',
         'python': 'https://docs.python.org/3/',
