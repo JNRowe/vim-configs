@@ -10,9 +10,9 @@ if not on_rtd:
     import sphinx_rtd_theme
 
 extensions = \
-    [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
-                                     'githubpages', 'intersphinx', 'todo']] \
-    + [f'sphinxcontrib.{ext}' for ext in []] \
+    ['sphinx.ext.%s' % ext for ext in ['autodoc', 'doctest', 'extlinks',
+                                       'githubpages', 'intersphinx', 'todo']] \
+    + ['sphinxcontrib.%s' % ext for ext in []] \
     + ['sphinx_autodoc_typehints', 'sphinx_click.ext']  # type: List[str]
 
 
@@ -71,7 +71,7 @@ extlinks = {
 
 # intersphinx extension settings
 intersphinx_mapping = {
-    k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
+    k: (v, os.getenv('SPHINX_%s_OBJECTS' % k.upper()))
     for k, v in {
         'click': 'https://click.palletsprojects.com/en/7.x/',
         'python': 'https://docs.python.org/3/',
