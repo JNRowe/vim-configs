@@ -57,6 +57,8 @@ highlight_language = 'vim'
 
 pygments_style = 'sphinx'
 
+html_copy_source = False
+
 # Autodoc extension settings
 autoclass_content = 'init'
 autodoc_default_flags = [
