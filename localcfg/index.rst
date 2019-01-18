@@ -116,7 +116,6 @@ Contents
     plugin_vim_table_mode
     plugin_vim_textobj_quote
     plugin_vim_vebugger
-    plugin_vimwiki
     plugin_wordnet.vim
     quickfix
 
