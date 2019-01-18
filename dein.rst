@@ -1448,18 +1448,6 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_map': ['[v', ']v'],
     \ })
 
-``vimwiki``
-'''''''''''
-
-    “A personal wiki”
-
-::
-
-    call dein#add('vimwiki/vimwiki', {
-        \ 'on_cmd': s:prefix('Vimwiki', ['DiaryIndex', 'Index', 'MakeDiaryNote']),
-        \ 'on_ft': 'vimwiki',
-    \ })
-
 ``targets.vim``
 '''''''''''''''
 
