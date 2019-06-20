@@ -367,7 +367,7 @@ said.
     “A plugin for handling unicode and digraphs characters”
 
 Be like me and annoy your co-workers/friends by littering your mails with
-Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
+Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
 ::
 

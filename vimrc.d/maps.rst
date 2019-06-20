@@ -30,9 +30,7 @@ Set up map to quickly move between buffers.
     noremap <silent> <M-Left> :call <SID>switch_buf(-1)<CR>
     noremap <silent> <M-Right> :call <SID>switch_buf(1)<CR>
 
-I hate you *so* much right now
-
-::
+I hate you *so* much right now::
 
     if exists('$VIM_DISABLE_CURSORS')
         nnoremap <Up> <nop>

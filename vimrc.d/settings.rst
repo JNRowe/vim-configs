@@ -240,7 +240,7 @@ unset on some systems::
     just as easily live with excluding ``octal`` as long it was *always*
     disabled.
 
-Disable line numbering by default, but `not in the GUI <gui-linenumbers>`_:
+Disable line numbering by default, but `not in the GUI <gui-linenumbers>`_::
 
     set nonumber
 
@@ -367,16 +367,15 @@ Set title in terminals::
 
     set title
 
-Use smoother redraws
+Use smoother redraws::
 
     set ttyfast
 
 .. note::
 
     This is enabled by :command:`vim` for most terminal types that would
-    support it, but the list command:`vim` uses is static and new terminals
+    support it, but the list :command:`vim` uses is static and new terminals
     I’m testing can’t be added to it.
-
 
 Enable undo files that cross sessions, and store those files in `XDG basedir`_
 compliant location::
