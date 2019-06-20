@@ -885,6 +885,17 @@ trying to impress their grandpa.  Which is a Good Thing™.
         \ 'on_cmd': 'UndotreeToggle',
     \ })
 
+``vim-cuesheet``
+''''''''''''''''
+
+    “Syntax highlighting of `cue sheet`_\”
+
+::
+
+    call dein#add('mgrabovsky/vim-cuesheet', {
+        \ 'on_ft': 'cuesheet',
+    \ })
+
 ``vim-startify``
 ''''''''''''''''
 
@@ -1646,6 +1657,7 @@ by deletion.
 .. _gpg: https://www.gnupg.org/
 .. _org-mode: http://orgmode.org/
 .. _ledger: https://www.ledger-cli.org/
+.. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
 .. _wordnet: http://wordnet.princeton.edu/
 .. _reST: http://docutils.sourceforge.net/rst.html
