@@ -244,19 +244,6 @@ language.
         \ 'if': has('signs') && s:has_exec('git'),
     \ })
 
-``pytest.vim``
-''''''''''''''
-
-    “Run pytest from within :command:`vim`\”
-
-::
-
-    call dein#add('alfredodeza/pytest.vim', {
-        \ 'if': s:has_exec('pytest'),
-        \ 'on_cmd': 'Pytest',
-        \ 'on_ft': 'python',
-    \ })
-
 ``vim-bad-whitespace``
 ''''''''''''''''''''''
 
