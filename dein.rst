@@ -397,7 +397,7 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
 ``jedi-vim``
 ''''''''''''
 
-    “A VIM binding to the jedi autocompletion library”
+    “A VIM binding to the :pypi:`jedi` autocompletion library”
 
 ::
 
@@ -448,7 +448,7 @@ Unicode.  It’s Really Exciting``U+2122<C-x><C-z>``.
 ``editorconfig-vim``
 ''''''''''''''''''''
 
-    “The EditorConfig plugin”
+    “The EditorConfig_ plugin”
 
 ::
 
@@ -599,7 +599,7 @@ jealous.
 ``vim-gnupg``
 '''''''''''''
 
-    “Transparent editing of gpg encrypted files”
+    “Transparent editing of gpg_ encrypted files”
 
 ::
 
@@ -640,7 +640,7 @@ directly.
 ``vim-orgmode``
 '''''''''''''''
 
-    “Text outlining and task management for Vim based on Emacs’ Org-Mode”
+    “Text outlining and task management for Vim based on Emacs’ `Org-Mode`_\”
 
 ::
 
@@ -912,7 +912,7 @@ Makes handling Python code far, far easier.
 ``vim-jinja``
 '''''''''''''
 
-    “Language support for jinja”
+    “Language support for :pypi:`jinja`\”
 
 ::
 
@@ -944,7 +944,7 @@ Makes handling Python code far, far easier.
 ``vim-beancount``
 '''''''''''''''''
 
-    “Filetype plugin for beancount files”
+    “Filetype plugin for :pypi:`beancount` files”
 
 ::
 
@@ -1140,7 +1140,7 @@ really daunting to wrap your head around.
 ``wordnet.vim``
 '''''''''''''''
 
-    “Look up word definitions with wordnet”
+    “Look up word definitions with wordnet_”
 
 ::
 
@@ -1534,7 +1534,7 @@ vim-scripts mirrors
 
     “An outline tree of a buffer”
 
-I write my mail in reST.”  No, really.
+I write my mail in reST_.  No, really.
 
 ::
 
@@ -1629,5 +1629,10 @@ by deletion.
 
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
+.. _EditorConfig: http://editorconfig.org/
+.. _gpg: https://www.gnupg.org/
+.. _org-mode: http://orgmode.org/
 .. _ledger: https://www.ledger-cli.org/
 .. _radon: https://radon.readthedocs.io/
+.. _wordnet: http://wordnet.princeton.edu/
+.. _reST: http://docutils.sourceforge.net/rst.html

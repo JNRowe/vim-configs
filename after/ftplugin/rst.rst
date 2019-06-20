@@ -5,7 +5,7 @@
 
     call MnemonicMap('Heading', {'buffer': v:true, 'local': v:true})
 
-This creates reST headings using *my* favourite definitions of ``=``, ``-`` and
+This creates reST_ headings using *my* favourite definitions of ``=``, ``-`` and
 ``'``::
 
     for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
@@ -44,3 +44,5 @@ Enable common — to me — highlighting support::
         \ }
         let g:rst_use_emphasis_colors = v:true
     endif
+
+.. _reST: http://docutils.sourceforge.net/rst.html

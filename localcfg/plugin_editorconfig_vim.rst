@@ -8,8 +8,8 @@ available::
         let g:EditorConfig_core_mode = 'external_command'
     endif
 
-We manage ``colorcolumn`` in :doc:`../vimrc.d/settings`, so disable this
-plugin’s support::
+We manage ``colorcolumn`` in :ref:`settings.vim <colorcolumn-config>`, so
+disable this plugin’s support::
 
     let g:EditorConfig_max_line_indicator = 'none'
 
