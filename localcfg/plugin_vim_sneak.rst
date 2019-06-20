@@ -5,7 +5,7 @@ Enable label mode::
 
     let g:sneak#label = 1
 
-Disable cursor highlighting::
+Disable cursor highlighting while ``vim-sneak`` is active::
 
     function! s:sneak_enter()
         let b:sneak_cursorcolumn = &cursorcolumn
