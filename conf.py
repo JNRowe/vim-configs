@@ -83,8 +83,11 @@ intersphinx_mapping = {
 }  # type: Dict[str, str]
 
 # spelling extension settings
+spelling_ignore_acronyms = False
 spelling_lang = 'en_GB'
 spelling_word_list_filename = '.meta/en.utf-8.add'
+spelling_ignore_python_builtins = False
+spelling_ignore_importable_modules = False
 
 # napoleon extension settings
 napoleon_numpy_docstring = False
