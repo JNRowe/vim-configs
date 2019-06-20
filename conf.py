@@ -27,10 +27,9 @@ if not on_rtd:
         extensions.append('sphinxcontrib.spelling')
 
 with suppress(CalledProcessError):
-    proc = run([
-        'git', 'log', "--pretty=format:%ad [%h]", '--date=short', '-n1'
-    ],
-               stdout=PIPE)
+    proc = run(
+        ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
+        stdout=PIPE)
     html_last_updated_fmt = proc.stdout.decode()
 
 source_suffix = '.rst'
@@ -46,7 +45,7 @@ version = ''
 # readthedocs.org handles this setup for their builds, but it is nice to see
 # approximately correct builds on the local system too
 if not on_rtd:
-    html_theme = "sphinx_rtd_theme"
+    html_theme = 'sphinx_rtd_theme'
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path(), ]  \
         # type: List[str]
 
