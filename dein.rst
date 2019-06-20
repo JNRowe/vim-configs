@@ -542,6 +542,17 @@ jealous.
         \ 'on_cmd': 'Dein',
     \ })
 
+``vim-hjson``
+'''''''''''''
+
+    “Hjson_ syntax support“
+
+::
+
+    call dein#add('hjson/vim-hjson', {
+        \ 'on_ft': 'hjson',
+    \ })
+
 ``vim-snippets``
 ''''''''''''''''
 
@@ -1631,6 +1642,7 @@ by deletion.
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
 .. _EditorConfig: http://editorconfig.org/
+.. _Hjson: https://hjson.org/
 .. _gpg: https://www.gnupg.org/
 .. _org-mode: http://orgmode.org/
 .. _ledger: https://www.ledger-cli.org/
