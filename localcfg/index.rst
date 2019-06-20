@@ -38,7 +38,7 @@ effect could be achieved with zsh_ in :file:`.git/hooks/pre-commit`:
         exit 255
     fi
 
-.. note::
+.. warning::
 
     I haven’t tested this beyond a quick shell session, but it is a start should
     you wish to do something similar using just :file:`.git/hooks/pre-commit`.
