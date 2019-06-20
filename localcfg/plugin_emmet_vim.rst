@@ -20,4 +20,12 @@ Override locale, and enable jinja_ as HTML::
         \ },
     \ }
 
+Enable automatically where it will be useful::
+
+    if has('autocmd')
+        augroup jnrowe_emmet
+            autocmd FileType css,html,xml EmmetInstall
+        augroup END
+    endif
+
 .. _jinja: http://jinja.pocoo.org/

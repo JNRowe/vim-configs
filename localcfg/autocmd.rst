@@ -30,10 +30,6 @@ Highlights for read only buffers aren’t interesting::
 
         autocmd FileType help,man setlocal colorcolumn=""
 
-Enable :repo:`emmet-vim <mattn/emmet-vim>` where it will be useful::
-
-        autocmd FileType css,html,xml EmmetInstall
-
 Attempt filetype detection after writing::
 
         autocmd BufWritePost *
