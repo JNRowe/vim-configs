@@ -64,7 +64,7 @@ I know I won‘t settle in to it.
 
 The very idea of a non-Free(note the capital F) text editor repulses me.  When
 you spend the amount of time *using* a tool that I do, then the thought that
-tomorrow it won‘t work is truly shocking [1]_.
+tomorrow it won‘t work is truly shocking [#]_.
 
 There is also the issue of customisability, not being able to fix and extend
 your tools is a frightening prospect.  I mean it offers *some* degree of
@@ -77,7 +77,7 @@ at the patches that are applied in the binaries installed on my work machine.
 It is buggy enough that the current package maintainer is willing to support
 a stack of no less than 15 very dirty patches, each of which have been
 painstakingly fixed without access to the source.  Interestingly they require
-vim_‘s :command:`xxd` to apply [2]_, almost as if to prove a point.
+vim_‘s :command:`xxd` to apply [#]_, almost as if to prove a point.
 
 I‘ve used it enough that I don‘t regret having my employer license a copy for
 me, and I even jumped through hoops to have them pony up for some mildly
@@ -110,9 +110,9 @@ Communication)` to stock :command:`vim`.
 
 .. rubric:: Footnotes
 
-.. [1] Or today if you‘re not capable of a few configuration hacks and are
+.. [#] Or today if you‘re not capable of a good few configuration hacks and are
        using a modern Linux distro.
-.. [2] Apparently, it is simply because :command:`xxd`` is *always* available
+.. [#] Apparently, it is simply because :command:`xxd` is *always* available
        and it wasn‘t a top choice option.
 
 .. _MicroEMACS: ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/
