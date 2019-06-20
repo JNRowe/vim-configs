@@ -3,9 +3,9 @@
 
 .. include:: .includes/scriptencoding.rst
 
-Recent :command:`vim` versions disable compatible when a :file:`vimrc` is
-found, but some distributions are disabling that change for a reason that is
-far beyond me.
+Recent :command:`vim` versions disable ``'compatible'`` when a :file:`vimrc` is
+found, but some distributions are disabling that change for a reason that is far
+beyond me.
 
 ::
 
@@ -26,7 +26,7 @@ pull requests which aren’t too invasive are most welcome.
     endif
 
 neovim_ is *never* tested, as it removes functionality I use.  Feel free to open
-pull requests for ``neovim`` support, *iff* they aren’t too invasive and don’t
+pull requests for ``neovim`` support, *iff* they aren’t too invasive *and* don’t
 break vim.
 
 ::
