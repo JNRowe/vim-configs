@@ -33,7 +33,6 @@ with suppress(CalledProcessError):
                stdout=PIPE)
     html_last_updated_fmt = proc.stdout.decode()
 
-master_doc = 'index'
 source_suffix = '.rst'
 
 exclude_patterns = ['.build', 'README.rst', '**/README.rst']
@@ -43,8 +42,6 @@ copyright = '2009-2019  James Rowe'  # NOQA: A001
 
 release = html_last_updated_fmt
 version = ''
-
-html_experimental_html5_writer = True
 
 # readthedocs.org handles this setup for their builds, but it is nice to see
 # approximately correct builds on the local system too
@@ -61,9 +58,9 @@ html_copy_source = False
 
 # Autodoc extension settings
 autoclass_content = 'init'
-autodoc_default_flags = [
-    'members',
-]  # type: List[str]
+autodoc_default_options = {
+    'members': True,
+}  # type: Dict[str, Union[str, bool]]
 
 # extlinks extension settings {{{
 extlinks = {
