@@ -95,8 +95,9 @@ For `GTK+`_ including dconf_::
 
 .. note::
 
-    I generate :file:`$XDG_CONFIG_HOME/dconf/user` from an ``INI`` file, as it
-    is more amenable to home directory version control.
+    I generate :file:`$XDG_CONFIG_HOME/dconf/user` from an ``INI`` file using
+    :command:`dconf load`, as it is more amenable to home directory version
+    control.
 
 For ledger_::
 
