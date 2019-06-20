@@ -109,17 +109,14 @@ Keep swap files in `XDG basedir`_ compliant location::
 pick that up via :envvar:`LANG`, but we’ll force it just in case::
 
     set encoding=utf-8
-
-Only files that *must* contain tabs(:file:`Makefile`) *should* contain tabs::
-
-    set expandtab
-
-::
-
     set fileencoding=utf-8
     if v:lang =~? 'utf-8'
         set fileencodings=utf-8,latin1,default
     endif
+
+Only files that *must* contain tabs(:file:`Makefile`) *should* contain tabs::
+
+    set expandtab
 
 If the term can support it use fancy Unicode for vertical split bar::
 
