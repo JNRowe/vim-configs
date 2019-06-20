@@ -1,7 +1,7 @@
 ``localcfg/plugin_jedi_vim.vim``
 ================================
 
-I like my 'completeopt' setting::
+I like my ``'completeopt'`` settings to be language independent::
 
     let g:jedi#auto_vim_configuration = v:false
 
