@@ -43,7 +43,7 @@ Open location list when errors exist::
         endfor
     endif
 
-::
+Use my custom maps::
 
     call MnemonicMap('ale', {'local': v:true})
 
