@@ -229,7 +229,10 @@ Ping the cursor position as a visual cue when returning to a session::
 Add map to toggle conceal support, which is useful when co-worker’s freak out
 when you’re showing code::
 
-    nnoremap <silent> <S-Space> :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
+    if has('conceal')
+        nnoremap <silent> <S-Space>
+            \ :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
+    endif
 
 Insert current buffer’s directory at command line::
 
