@@ -39,7 +39,13 @@ Attempt filetype detection after writing::
 
 Automatically :command:`chmod +x` shell scripts::
 
-        autocmd BufWritePost *.sh call setfperm(expand('%:p'), 'rwxr-xr-x')
+        autocmd BufWritePost *.sh call system('chmod +x ' . expand('%:p'))
+
+.. note::
+
+    Shelling out to :command:`chmod` is a lazy way to support
+    :manpage:`umask(2)` setting without having to resort to craziness with
+    ``getfperm()`` and ``setfperm()``
 
 Jump to the last known cursor position if possible::
 
