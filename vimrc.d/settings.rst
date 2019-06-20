@@ -130,7 +130,7 @@ If the term can support it use fancy Unicode for vertical split bar::
 Configure folding support including `fold display <custom-foldtext>`_::
 
     if has('folding')
-        set fillchars+=fold:\  " Intentional trailing space
+        set fillchars+=fold:\   " Intentional trailing space
         set foldcolumn=2
         set foldlevelstart=99
         set foldmethod=syntax
