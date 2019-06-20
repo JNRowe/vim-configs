@@ -38,4 +38,4 @@ snippets if I wasn’t so used to this now::
 
     We shell out to the system’s :command:`date` command for :abbr:`UTC
     (Coordinated Universal Time)` support because :command:`vim` doesn’t expose
-    :manpage:`gmtime()`.
+    :manpage:`gmtime(3)`.
