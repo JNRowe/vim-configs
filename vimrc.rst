@@ -13,7 +13,7 @@ far beyond me.
         set nocompatible
     endif
 
-Warn users with pre-v8 :command:`vim` that problems with occur, but note that
+Warn users with pre-v8 :command:`vim` that problems will occur, but note that
 pull requests which aren’t too invasive are most welcome.
 
 ::

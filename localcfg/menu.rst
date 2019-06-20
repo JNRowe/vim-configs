@@ -1,7 +1,7 @@
 ``localcfg/menu.vim``
 =====================
 
-We all know the menu bar **steals** valuable screen real estate, but
+We all know that the menu bar **steals** valuable screen real estate, but
 occasionally it can be useful for accessing hierarchical information.  Therefore
 we add a :ref:`toggle binding <gui-toggles>`, but also learn to use ``emenu``
 for even easier access.
@@ -185,7 +185,7 @@ For wget_::
 
     call s:define_menu('&wget', g:xdg_config_dir . '/wget/config')
 
-For X.org_’s main config files::
+For X.org_’s main user config files::
 
     let s:xorg_files = {
         \ 'X&modmap': '~/.Xmodmap',

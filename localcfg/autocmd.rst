@@ -34,7 +34,7 @@ Enable :repo:`emmet-vim <mattn/emmet-vim>` where it will be useful::
 
         autocmd FileType css,html,xml EmmetInstall
 
-Attempt filetype detection after writing.::
+Attempt filetype detection after writing::
 
         autocmd BufWritePost *
             \ if empty(&filetype) |
@@ -89,7 +89,7 @@ Only highlight cursor line in active window::
         autocmd WinLeave * setlocal nocursorline
         autocmd WinEnter * setlocal cursorline
 
-… and when in insert::
+… and not when in insert::
 
         autocmd InsertEnter * setlocal nocursorline
         autocmd InsertLeave * setlocal cursorline

@@ -3,8 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Setting suggestions much higher than twenty grinds things to a halt too
-often::
+All too often setting suggestions much higher than twenty grinds things to
+a halt::
 
     let g:ale_completion_max_suggestions = 20
 

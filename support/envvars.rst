@@ -33,25 +33,25 @@ These configs can be influenced by the following environment variables.
 
 .. envvar:: VIM_DISABLE_CURSORS
 
-    If set cursors keys are disabled.  This is entirely about `learning
-    motions`_, and not about being an “arrow keys are the devil’s plaything”
+    If set then cursors keys are disabled.  This is entirely about `learning
+    motions`_, and not about promoting an “arrow keys are the devil’s plaything”
     sentiment.
 
 .. envvar:: VIM_PROFILE
 
     Whether to enable profiling support.  If set to a filename it will profile
     all files under ``~/.vim``, and if specified as ``<filename>:<function>``
-    will profile only the specified functions.
+    will profile only the specified function.
 
 .. envvar:: XDG_CACHE_HOME
 
-    If set, configures the location for cache files.  See `XDG basedir`_ for how
-    to configure it, and defaults.
+    If set it configures the location for cache files.  See `XDG basedir`_ for
+    how to configure it, and defaults.
 
 .. envvar:: XDG_DATA_HOME
 
-    If set, configures the location for data files.  See `XDG basedir`_ for how
-    to configure it, and defaults.
+    If set it configures the location for data files.  See `XDG basedir`_ for
+    how to configure it, and defaults.
 
 .. _fzf: https://github.com/junegunn/fzf
 .. _learning motions: http://vimdoc.sourceforge.net/htmldoc/motion.html

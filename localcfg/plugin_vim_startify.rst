@@ -1,9 +1,9 @@
 ``localcfg/plugin_vim_startify.vim``
 ====================================
 
-These commonly [to me] edited config files are reasonable bookmarks for when
-I've started :command:`vim` without arguments, but perhaps others are more
-useful when started with arguments?
+These common, to me, config files are reasonable bookmarks for when I've started
+:command:`vim` without arguments, but perhaps others are more useful when
+started with arguments?
 
 ::
 

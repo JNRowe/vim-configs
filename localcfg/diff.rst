@@ -1,7 +1,7 @@
 ``localcfg/diff.vim``
 =====================
 
-Ignore white space by default::
+Ignore whitespace by default::
 
     set diffopt+=iwhite
 

@@ -194,7 +194,7 @@ Use :command:`vim`’s builtin manpage support by default::
 
     set keywordprg=:Man
 
-Don’t continually update screen when not executing interactive commands::
+Don’t continually update screen when executing non-interactive commands::
 
     set lazyredraw
 
@@ -303,8 +303,8 @@ hint::
 
     You can adjust the “flash time” with `'matchtime' <matchtime>`_.
 
-No need to display current mode as it :repo:`vim-airline
-<vim-airline/vim-airline>` changes the statusline to indicate mode::
+No need to display current mode as :repo:`vim-airline <vim-airline/vim-airline>`
+changes the statusline to indicate mode::
 
     set noshowmode
 
@@ -451,8 +451,7 @@ Insert longest common match by default::
 
     set wildmode^=longest
 
-Use fancy Unicode characters to to show for `wrapped lines
-<breakindentopt>`_::
+Use fancy Unicode characters to show for `wrapped lines <breakindentopt>`_::
 
     if has('linebreak')
         let &showbreak='» '

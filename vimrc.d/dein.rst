@@ -7,9 +7,8 @@ Make the :repo:`dein <Shougo/dein.vim>` submodule available to :command:`vim`::
 
 .. note::
 
-    I *hate* submodules, but this is the cleanest way to support standing up
-    a new machine that I can think of.  If you know a better way *please* `tell
-    me`_.
+    I *hate* bundling, but this is the cleanest way to support standing up a new
+    machine that I can think of.  If you know a better way *please* `tell me`_.
 
 Keep plugins and data in `XDG basedir`_ compliant location::
 
@@ -50,7 +49,7 @@ Issue a warning message if we’re missing plugins::
         endif
     endif
 
-Enable all the vim fanciness::
+Enable all the usual fanciness an editor should present::
 
     filetype plugin indent on
     syntax enable

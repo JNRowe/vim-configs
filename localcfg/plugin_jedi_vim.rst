@@ -5,7 +5,7 @@ I like my 'completeopt' setting::
 
     let g:jedi#auto_vim_configuration = v:false
 
-Split “go to” to bottom::
+Split “go to” windows to bottom::
 
     let g:jedi#use_splits_not_buffers = 'bottom'
 
