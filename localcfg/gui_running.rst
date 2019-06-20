@@ -45,7 +45,7 @@ on current line::
     set number
     set relativenumber
 
-Shift insert works the same as in a terminal::
+:kbd:`<S-Insert>` should work the same as in my terminals::
 
     noremap <S-Insert> <MiddleMouse>
     noremap! <S-Insert> <MiddleMouse>
@@ -89,9 +89,9 @@ helps.
 
 .. tip::
 
-    For minor size changes it often easier to use :kbd:`set
-    guifont=<Tab>`, while wishing that :kbd:`Ctrl-{a,x}` worked to
-    {in,de}crement the number in the command line too.
+    For minor size changes it often easier to use ``set guifont=<Tab>``, while
+    wishing that :kbd:`Ctrl-{a,x}` worked to {in,de}crement the number in the
+    command line too.
 
 Include non-standard server names in the window title::
 

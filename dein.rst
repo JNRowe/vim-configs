@@ -134,7 +134,7 @@ preferences.
 ``vim-bracketed-paste``
 '''''''''''''''''''''''
 
-    “Enables transparent pasting into vim”
+    “Enables transparent pasting into :command:`vim`\”
 
 ::
 
@@ -236,7 +236,7 @@ language.
 ``vim-gitgutter``
 '''''''''''''''''
 
-    “Show git diff status in the gutter”
+    “Show :command:`git diff` status in the gutter”
 
 ::
 
@@ -247,7 +247,7 @@ language.
 ``pytest.vim``
 ''''''''''''''
 
-    “Run pytest from within vim”
+    “Run pytest from within :command:`vim`\”
 
 ::
 
@@ -288,10 +288,10 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 
 .. note::
 
-    The filetype hooks are *my* hooks.  I often want highlighting in vim files
-    because I’m always editing my colour scheme, but I don’t need it for C in
-    general because it is relatively uncommon for my C file to actually be
-    dwm’s config.h.
+    The filetype hooks are *my* hooks.  I often want highlighting in
+    :command:`vim` files because I’m always editing my colour scheme, but
+    I don’t need it for C in general because it is relatively uncommon for my
+    C file to actually be :command:`dwm`\’s :file:`config.h`.
 
 ``NrrwRgn``
 '''''''''''
@@ -523,7 +523,7 @@ jealous.
 ``xterm-color-table.vim``
 '''''''''''''''''''''''''
 
-    “All 256 xterm colours with their RGB equivalents”
+    “All 256 :command:`xterm` colours with their RGB equivalents”
 
 ::
 
@@ -534,7 +534,7 @@ jealous.
 ``dein-command.vim``
 ''''''''''''''''''''
 
-    “Utility commands for dein.vim”
+    “Utility commands for ``dein.vim``”
 
 ::
 
@@ -610,7 +610,7 @@ jealous.
 ``vim-textobj-css``
 '''''''''''''''''''
 
-    “Text objects for working with CSS”
+    “Text objects for working with :abbr:`CSS (Cascading Style Sheets)`”
 
 ::
 
@@ -653,7 +653,7 @@ directly.
 ``vimagit``
 '''''''''''
 
-    “Ease your git workflow”
+    “Ease your :command:`git` workflow”
 
 ::
 
@@ -666,7 +666,7 @@ directly.
 ``fzf``
 '''''''
 
-    “Basic fzf integration”
+    “Basic :command:`fzf` integration”
 
 ::
 
@@ -679,7 +679,7 @@ directly.
 ``fzf.vim``
 '''''''''''
 
-    “Advanced fzf integration”
+    “Advanced :command:`fzf` integration”
 
 ::
 
@@ -840,7 +840,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ``calendar-vim``
 ''''''''''''''''
 
-    “A calendar window you can use within vim”
+    “A calendar window you can use within :command:`vim`\”
 
 ::
 
@@ -1039,7 +1039,8 @@ user, how cool is that?
 
 .. note::
 
-    There is no radon_ check here, because it doesn’t actually use ``radon``.
+    There is no radon_ check here, because it doesn’t actually use
+    :command:`radon`.
 
 ``gundo.vim``
 '''''''''''''
@@ -1081,7 +1082,7 @@ really daunting to wrap your head around.
 ``vim-vimlint``
 '''''''''''''''
 
-    “Linter for vim script”
+    “Linter for :command:`vim` script”
 
 ::
 
@@ -1391,7 +1392,7 @@ documentation a relatively painless task.
 ``vim-airline``
 '''''''''''''''
 
-    “Lean & mean status/tabline for vim that’s light as air”
+    “Lean & mean status/tabline for :command:`vim` that’s light as air”
 
 The main reason to use this is not “simply because it is pretty”, but mostly
 because you can dump heaps and heaps of custom code you've written in your
@@ -1429,7 +1430,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ``vim-man``
 '''''''''''
 
-    “Enhanced man support”
+    “Enhanced :command:`man` support”
 
 ::
 

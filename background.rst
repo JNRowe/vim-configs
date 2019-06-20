@@ -51,9 +51,10 @@ The dark years
 For a couple of years I attempted to use a variety of “best of breed” editors
 for different tasks.  It was awful.
 
-I can‘t understand how people do it.  I mean *iff* you only edit Java then sure
-a Java editor might be a good idea, but if you need five different Goliath IDEs
-installed to work on a single project then you‘re simply Doing It Wrong™.
+I can‘t understand how people do it.  I mean, *iff* you only edit Java, then
+sure a Java editor might be a good idea.  However, if you need five different
+Goliath :abbr:`IDE (Integrated Developer Environment)`\s installed to work on
+a single project then you‘re simply Doing It Wrong™.
 
 Sublime Text
 ''''''''''''
@@ -104,7 +105,8 @@ are breakages in my eyes.
 
 As I stated above, I am fickle and I‘ll change my mind in a heartbeat if it
 eventually brings some changes that are useful to me.  Right now I‘ll just thank
-the developers for the nudge that brought modern IPC to stock :command:`vim`.
+the developers for the nudge that brought modern :abbr:`IPC (Interprocess
+Communication)` to stock :command:`vim`.
 
 .. rubric:: Footnotes
 
