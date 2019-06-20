@@ -3,4 +3,4 @@
 
 Quick map to delete buffer, but keep window setup::
 
-    nnoremap <LocalLeader>q :Bdelete<CR>
+    nnoremap <silent> <LocalLeader>q :Bdelete<CR>
