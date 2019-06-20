@@ -14,8 +14,8 @@ has changed massively before we made it here.
 
 .. tip::
 
-    Names are from US :kbd:`<S-|digit|>` keymap(I know I’ll forget this by the
-    next time *I* open this file).
+    Key values are from a US :kbd:`<S-|digit|>`, and do not change when using
+    other layouts [#]_.
 
 ::
 
@@ -38,3 +38,8 @@ has changed massively before we made it here.
 
     This is brittle *and* dirty, but there isn't much way around it.  See
     ``47ceaf9cbd970450953bdf3e84e281473a579ac0``
+
+.. rubric:: Footnotes
+
+.. [#] I know *I’ll* forget the origin of the keys by the next time *I* open
+       his file.
