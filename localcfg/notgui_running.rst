@@ -22,23 +22,23 @@ If possible enable 24-bit colour::
 
 Poke around, as best we can, to discern the background colour::
 
-    if $TERM =~# '^\(linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$' ||
-        \ split($COLORFGBG . ';padding', ';')[0] == 15
+    let s:feature_terms = '^\(linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
+    if &term =~# s:feature_terms || split($COLORFGBG . ';padding', ';')[0] == 15
         set background=dark
     else
         set background=light
     endif
 
-.. todo::
+… and change the cursor colour for insert mode on supported terminals::
 
-    This is brittle, but I don’t know a foolproof way to handle it.  Thoughts?
-
-Change the cursor colour for insert mode on supported terminals::
-
-    if &term =~? '^rxvt' && exists('&t_SI')
+    if &term =~# s:feature_terms && exists('&t_SI')
         let &t_SI = "\<Esc>]12;purple\x7"
         let &t_EI = "\<Esc>]12;green\x7"
     endif
+
+.. todo::
+
+    This is brittle, but I don’t know a foolproof way to handle it.  Thoughts?
 
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn’t::
 
