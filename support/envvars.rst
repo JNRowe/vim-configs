@@ -16,8 +16,8 @@ These configs can be influenced by the following environment variables.
 
 .. envvar:: SHELL
 
-    Shell used by :command:`fzf` launcher, when :command:`vim` has not been
-    compiled with terminal support.
+    Shell used by fzf_ launcher, when :command:`vim` has not been compiled with
+    terminal support.
 
 .. envvar:: TERM
 

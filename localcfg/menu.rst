@@ -85,7 +85,7 @@ For git_::
         \ '&mailmap': g:xdg_config_dir . '/git/mailmap',
     \ })
 
-For GTK+_ including dconf_::
+For `GTK+`_ including dconf_::
 
     call s:define_menu('&GTK+', {
         \ 'GTK+ &2': '~/.gtkrc-2.0',
@@ -149,7 +149,7 @@ For readline_ and its numerous dependents::
 
     call s:define_menu('readline', [expand('$INPUTRC'), '~/.inputrc'])
 
-For :pypi:`rdial`, and my habitual editing of `run wrappers`::
+For :pypi:`rdial`, and my habitual editing of `run wrappers`_::
 
     call s:define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
 

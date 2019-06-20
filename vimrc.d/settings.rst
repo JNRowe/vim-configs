@@ -45,6 +45,8 @@ Keep indent between wrapped lines and display the pretty `'showbreak'
     set breakindent
     set breakindentopt=sbr
 
+.. _colorcolumn-config:
+
 Show a marker as maximum line length cue::
 
     set colorcolumn=+1
