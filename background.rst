@@ -20,10 +20,10 @@ Emacsen
 ``emacs``, or more truthfully AmigaOS‘s MicroEMACS_, was my first real editor.
 I loved it.  Absolutely. Loved. It.
 
-You have to understand that prior to it I‘d basically only seen what I would
-describe now as Notepad-esque things.  MicroEMACS_ was a breath of fresh air,
-even if it was alarming how little it conformed to the UI guidelines for the
-platform.
+You have to understand that prior to finding it I‘d basically only seen what
+I would describe now as Notepad-esque things.  MicroEMACS_ was a breath of fresh
+air, even if it was alarming how little it conformed to the UI guidelines for
+the platform.
 
 Later came `GNU Emacs`_, and in spite of how resource hungry it was, it was the
 only editor I wanted to use for an *incredibly* long time.  Then about the same
@@ -43,7 +43,7 @@ want to switch back.
     Fellow :command:`vim` users should really check out :repo:`evil-mode
     <emacs-evil/evil>`, it is an incredibly usable vi-style layer for
     :command:`emacs`.  Many common :command:`vim` plugins have been ported to
-    work it too!
+    work with it too!
 
 The dark years
 ''''''''''''''
@@ -66,7 +66,7 @@ you spend the amount of time *using* a tool that I do, then the thought that
 tomorrow it won‘t work is truly shocking [1]_.
 
 There is also the issue of customisability, not being able to fix and extend
-your tools is a frightening prospect for me.  I mean it offers *some* degree of
+your tools is a frightening prospect.  I mean it offers *some* degree of
 extensibility, but it is really quite limited.  The persistent undo package is
 a great example of just how much grief the restrictiveness causes, look at the
 ``undotree`` branch for some true scariness(also the incredible ingenuity).
@@ -74,7 +74,7 @@ a great example of just how much grief the restrictiveness causes, look at the
 An example of how ridiculous closed source editors are can be found by looking
 at the patches that are applied in the binaries installed on my work machine.
 It is buggy enough that the current package maintainer is willing to support
-a stack of no less than 15 very dirty patches, even of which have been
+a stack of no less than 15 very dirty patches, each of which have been
 painstakingly fixed without access to the source.  Interestingly they require
 vim_‘s :command:`xxd` to apply [2]_, almost as if to prove a point.
 
@@ -83,10 +83,10 @@ me, and I even jumped through hoops to have them pony up for some mildly
 interesting plugins too.
 
 So why do I play with it?  Simple, occasionally people show me some cool thing
-it can do and I want to play too.  Also, because for the past two years there
+it can do and I want to play too.  Also, because for the past few years there
 has been a constant promise of an Open Source clone floating around.
 
-I‘m not sure if a Open Source clone would be enough for me to switch, but
+I‘m not sure if an Open Source clone would be enough for me to switch, but
 I think it would make it plausible.  It might allow me, or someone else, to
 make a usable ``vi`` mode though(``vintage`` appears to be designed for people
 who think ``vi`` means “normal or insert”).

@@ -27,7 +27,7 @@ I don’t use the toolbar, and rarely want the menu::
 … but, add :ref:`maps for quick toggle <gui-toggles>`.
 
 Attempt to keep window size when toggling GUI items(menu, scrollbars, &c), as
-I find display layout more important than number of columns.
+I find display layout more important than the number of rows and columns.
 
 ::
 
@@ -50,9 +50,9 @@ Shift insert works the same as in a terminal::
     noremap <S-Insert> <MiddleMouse>
     noremap! <S-Insert> <MiddleMouse>
 
-Consolas is available on most of the systems I use, and feels reasonably nice.
-If :command:`gvim` starts supporting ligatures upstream or with a cleaner patch,
-then I’ll look for replacements.
+Consolas — or Inconsolata_ — are available on all of the systems I use, and
+*feel* really good.  If :command:`gvim` starts supporting ligatures upstream or
+with a cleaner patch, then I’ll immediately look for replacements.
 
 ::
 
@@ -105,8 +105,8 @@ Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn't::
 
 .. _gui-toggles:
 
-Occasionally the toolbar can be useful for pairing co-worker, and from time
-to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
+Occasionally the toolbar can be useful for pairing with a co-worker, and from
+time to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
 
     if has('menu')
         nnoremap <silent> <S-F4> :call ToggleFlag('guioptions', 'm')<CR>
@@ -123,6 +123,8 @@ between GUI and non-GUI :command:`vim`::
 .. note::
 
     This issue affects me so little it went unnoticed for four days, as I’m
-    always using ‘clientserver’ and :command:`gvim`.  However, an errant
-    :command:`git commit` from the wrong terminal causes a nearly three second
-    penalty for recaching.
+    always using :command:`vim`‘s ``clientserver`` support and :command:`gvim`.
+    However, an errant :command:`git commit` from the wrong terminal can cause
+    a nearly three second penalty for recaching without this kludge.
+
+.. _Inconsolata: http://www.levien.com/type/myfonts/inconsolata.html

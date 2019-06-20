@@ -8,7 +8,8 @@ It uses features introduced in version 8.0, but should work with later
 versions.  It will *not* work with neovim_, and that is unlikely to change in
 the near future.
 
-If you want a rambling backstory, see the :doc:`background` document.
+If you want a rambling backstory, see the :doc:`background <background>`
+document.
 
 If you find any problems with the files in this repository either file an
 issue_, or drop me an mail_.  However, please do not report problems when using
@@ -26,11 +27,12 @@ much to you:
     $ git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
     $ cd !$
     $ ./build.py  # Generate ninja build rules, see --help for options
-    $ ninja  # Rebuild generated language and documentation tag files
+    $ ninja  # Build, or update, generated files
 
 Scan over the generated ``.vim`` files and figure out what you wish to do with
 them.  The choices are: run with it, override some of them with your own
-``~/.vimrc``, or — most likely — simply cherry pick the parts of you like.
+``~/.vimrc``, or — most likely — to simply cherry pick the parts of you find
+least offensive.
 
 Contents
 --------

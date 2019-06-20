@@ -13,7 +13,7 @@ Why do some output filenames end with ``.vim.vim``
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
 Filenames are made to closely match the plugin name, so that a simple
-:command:`git` commit hook can check that the plugin exists and that the config
+:command:`git` commit hook can check that the plugin exists and that the file
 is named correctly.
 
 But yeah, I agree that it is kinda ugly.

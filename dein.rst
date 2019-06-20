@@ -194,7 +194,7 @@ standards <editorconfig-plugin>` without allowing them free access to your
 ``delimitMate``
 '''''''''''''''
 
-    “Automatic closing of quotes, parenthesis, brackets, &c”
+    “Automatic closing of quotes, parenthesis, brackets, etc”
 
 The number 1 “Love it or hate it” plugin, to use it well you’ll want to read its
 documentation and disable the defaults that get in the way of your favourite
@@ -1352,7 +1352,7 @@ sessions by at least fifteen orders of magnitude… or your money back.
 ``vim-surround``
 ''''''''''''''''
 
-    “Plugin for deleting, changing, and adding “surroundings””
+    “Plugin for deleting, changing, and adding ‘surroundings’”
 
 Make using :command:`ls -1` to produce the headings for your own :command:`vim`
 documentation a relatively painless task.
@@ -1418,7 +1418,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ``vim-line``
 ''''''''''''
 
-    ““inner line” text object”
+    “‘inner line’ text object”
 
 ::
 

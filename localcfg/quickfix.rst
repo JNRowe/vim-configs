@@ -47,5 +47,5 @@ Configure layered maps for useful quickfix and location functions::
 
 .. note::
 
-    7 lines for quickfix windows seems to be the magic number for *me*, but your
-    usage is sure to vary.
+    7 lines for popup windows, as seen in the :kbd:`wo` binding above, seems to
+    be the magic number for *me*.

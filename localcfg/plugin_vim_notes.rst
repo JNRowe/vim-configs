@@ -5,7 +5,7 @@ Disable options that clash with :ref:`buffer changes <switch-bufs>`::
 
     let g:notes_alt_indents = v:false
 
-I only use :command:`vim`’s builtin indent indent maps::
+I only use :command:`vim`’s builtin indent maps::
 
     let g:notes_tab_indents = v:false
 

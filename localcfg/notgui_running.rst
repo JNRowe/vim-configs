@@ -6,7 +6,7 @@ Set up the menus so ``:emenu`` works properly::
     runtime! ALL menu.vim
 
 Use system’s terminal capabilities database, as I’m in the unusual situation
-where :command:`vim`’s are worse on most of the systems I regularly use::
+where :command:`vim`’s are inferior on many of the systems I regularly use::
 
     set nottybuiltin
 
@@ -20,7 +20,7 @@ If possible enable 24-bit colour::
         set termguicolors
     endif
 
-Poke around as best we can to discern the background colour::
+Poke around, as best we can, to discern the background colour::
 
     if $TERM =~# '^\(linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$' ||
         \ split($COLORFGBG . ';padding', ';')[0] == 15

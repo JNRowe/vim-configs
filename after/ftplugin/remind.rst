@@ -13,6 +13,6 @@ remind_ data::
 .. note::
 
     I’m not saying this is a good idea, just that I don’t have write access to
-    fix the external tools to support the actual commenting features :/
+    fix the external tools to support the real commenting features :/
 
 .. _remind: http://www.roaringpenguin.com/products/remind

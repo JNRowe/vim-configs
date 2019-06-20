@@ -23,8 +23,8 @@ This creates reST headings using *my* favourite definitions of ``=``, ``-`` and
 .. include:: ../../.includes/thesaurus.rst
 
 Break undo sequence on sentence level punctuation.  This kind of feels better
-when editing prose and also making liberal use of ``undo-tree``.  Not yet sure
-if it is too granular.
+when editing prose and also when making liberal use of ``undo-tree``.  Not yet
+sure if it is too granular.
 
 ::
 
