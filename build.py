@@ -90,7 +90,7 @@ def wopt(name: str) -> str:
 def configure(
     local: bool, colour: bool, rst2html: str, libc_langs: str,
     libc_exclude: List[str], sphinx: bool, file: Path
-):
+) -> None:
     """Write a ninja build configuration.
 
     Unless FILE is given this writes to ninja_’s default :file:`build.ninja`
