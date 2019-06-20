@@ -1,8 +1,8 @@
 ``localcfg/plugin_vim-unimpaired.vim``
 ======================================
 
-Override :command:`vim`’s nasty page skipping mappings with useful line
-exchange::
+A fair few of the applications I use in my work support line or cell exchange
+via :kbd:`<M-{Up,Down}>`, configure :command:`vim` to match::
 
-    inoremap <S-Up> [e
-    inoremap <S-Down> ]e
+    nnoremap <M-Up> [e
+    nnoremap <M-Down> ]e
