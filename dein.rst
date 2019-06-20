@@ -48,7 +48,7 @@ Enable an airline extension.  This is purely to remove duplication in setup.
 ::
 
     function! s:airline_enable(extension)
-        return 'let g:airline_extensions += ["'. a:extension . '"]'
+        return 'let g:airline_extensions += ["' . a:extension . '"]'
     endfunction
 
 Support variables

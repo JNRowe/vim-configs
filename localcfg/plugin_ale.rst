@@ -57,5 +57,5 @@ Open location list when errors exist::
         \   ['<Down>', 'previous_wrap'],
         \   ['<Up>',   'next_wrap'],
         \ ]
-        execute 'nmap <silent> [ale]' . s:key . ' ' . '<Plug>(ale_' . s:cmd . ')'
+        execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
     endfor
