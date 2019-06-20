@@ -54,8 +54,8 @@ Open location list when errors exist::
         \   ['t',      'toggle'],
         \   ['<Home>', 'first'],
         \   ['<End>',  'last'],
-        \   ['<Down>', 'previous_wrap'],
-        \   ['<Up>',   'next_wrap'],
+        \   ['<Down>', 'next_wrap'],
+        \   ['<Up>',   'previous_wrap'],
         \ ]
         execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
     endfor
