@@ -17,6 +17,9 @@ has changed massively before we made it here.
     Key values are from a US :kbd:`<S-|digit|>`, and do not change when using
     other layouts [#]_.
 
+.. image:: /.static/vim_signature_icons.png
+   :alt: Screenshot of sign icons
+
 ::
 
     for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning', '#': 'error'})
