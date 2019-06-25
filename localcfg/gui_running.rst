@@ -45,6 +45,9 @@ on current line::
     set number
     set relativenumber
 
+.. image:: /.static/relative_numbering.png
+   :alt: Example of combined numbering
+
 :kbd:`<S-Insert>` should work the same as in my terminals::
 
     noremap <S-Insert> <MiddleMouse>
