@@ -495,6 +495,9 @@ Custom foldtext setting::
         endfunction
     endif
 
+.. image:: /.static/myfoldtext.png
+   :alt: Examples of MyFoldtext() display
+
 .. note::
 
     Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
