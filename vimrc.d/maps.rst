@@ -234,6 +234,9 @@ when you’re showing code::
             \ :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
     endif
 
+.. image:: /.static/conceal_flip.png
+   :alt: Screenshot of conceal mode toggling
+
 Insert current buffer’s directory at command line::
 
     cmap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
