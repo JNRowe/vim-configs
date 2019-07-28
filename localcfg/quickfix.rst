@@ -34,6 +34,7 @@ Configure layered maps for useful quickfix and location functions::
     for s:t in ['l', 'c']
         for [s:key, s:cmd] in [
             \   ['wc', 'close'],
+            "\ 7 lines seems to be the magic number for *me*
             \   ['wo', 'open 7<CR><C-w>p\'],
             \   ['b', 'bottom'],
             \   ['n', 'next'],
@@ -44,8 +45,3 @@ Configure layered maps for useful quickfix and location functions::
             call s:qf_key(s:t, s:key, s:cmd)
         endfor
     endfor
-
-.. note::
-
-    7 lines for popup windows, as seen in the :kbd:`wo` binding above, seems to
-    be the magic number for *me*.
