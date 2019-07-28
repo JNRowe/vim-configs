@@ -34,15 +34,13 @@ sure if it is too granular.
 
 Enable common — to me — highlighting support::
 
-    if v:version >= 801
-        let g:rst_syntax_code_list = {
-            \ 'cpp': ['cpp', 'c++'],
-            \ 'lisp': ['emacs', 'lisp'],
-            \ 'python': ['python'],
-            \ 'sh': ['sh', 'zsh'],
-            \ 'vim': ['vim'],
-        \ }
-        let g:rst_use_emphasis_colors = v:true
-    endif
+    let g:rst_syntax_code_list = {
+        \ 'cpp': ['cpp', 'c++'],
+        \ 'lisp': ['emacs', 'lisp'],
+        \ 'python': ['python'],
+        \ 'sh': ['sh', 'zsh'],
+        \ 'vim': ['vim'],
+    \ }
+    let g:rst_use_emphasis_colors = v:true
 
 .. _reST: http://docutils.sourceforge.net/rst.html
