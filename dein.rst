@@ -1306,7 +1306,7 @@ Replace most of your use of a shell when working on a project with just another
 
     “Repeat for plugin maps”
 
-Make ``.`` work how you think it works… once someone has hacked in support to
+Make :kbd:`.` work how you think it works… once someone has hacked in support to
 your favourite plugin anyway.
 
 ::
