@@ -230,7 +230,7 @@ language.
 
     call dein#add('SirVer/ultisnips', {
         \ 'depends': 'vim-snippets',
-        \ 'if': (has('python') || has('python3')) && v:version >= 704,
+        \ 'if': has('pythonx') && v:version >= 704,
     \ })
 
 ``vim-gitgutter``
@@ -389,7 +389,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('davidhalter/jedi-vim', {
-        \ 'if': has('python') || has('python3'),
+        \ 'if': has('pythonx'),
         \ 'on_cmd': 'JediClearCache',
         \ 'on_ft': 'python',
     \ })
@@ -440,7 +440,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('editorconfig/editorconfig-vim', {
-        \ 'if': has('python') || has('python3'),
+        \ 'if': has('pythonx'),
         \ 'on_event': 'InsertEnter',
         \ 'on_path': '.editorconfig',
     \ })
@@ -557,7 +557,7 @@ jealous.
 ::
 
     call dein#add('idanarye/vim-omnipytent', {
-        \ 'if': has('python') || has('python3'),
+        \ 'if': has('pythonx'),
         \ 'on_cmd': s:prefix('OP', ['edit', '2edit', '3edit']),
     \ })
 
@@ -1065,7 +1065,7 @@ user, how cool is that?
 ::
 
     call dein#add('rubik/vim-radon', {
-        \ 'if': has('signs') && (has('python') || has('python3')),
+        \ 'if': has('signs') && has('pythonx'),
         \ 'on_cmd': 'Radon',
         \ 'on_ft': 'python',
     \ })
@@ -1086,7 +1086,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('sjl/gundo.vim', {
-        \ 'if': (has('python') || has('python3')) && v:version >= 703,
+        \ 'if': has('pythonx') && v:version >= 703,
         \ 'on_cmd': 'GundoToggle',
     \ })
 

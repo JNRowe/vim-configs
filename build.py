@@ -44,13 +44,13 @@ def wopt(name: str) -> str:
     arg = name.replace('_', '-')
     val = locals_[name]
     if isinstance(val, bool):
-        text = '--' + ('' if val else 'no-') + arg
+        text = f'--{"" if val else "no-"}{arg}'
     else:
         if isinstance(val, str):
             val = [
                 val,
             ]
-        text = ' '.join('--%s=%s' % (arg, s) for s in val)
+        text = ' '.join(f'--{arg}={s}' for s in val)
     return text
 
 
@@ -99,7 +99,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
             n.newline()
 
         n.rule('configure',
-               ' '.join([str(location / 'build.py'), '$out'] + [
+               ' '.join([f'{location / "build.py"} ', '$out'] + [
                    wopt(s) for s in [
                        'local', 'colour', 'rst2html', 'libc_langs',
                        'libc_exclude', 'sphinx'
@@ -109,9 +109,10 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                generator=True)
 
         n.rule('rst_compile',
-               ('%s --record-dependencies $out.d.tmp $in $out; '
+               (f'{rst2html} --record-dependencies $out.d.tmp $in $out '
+                '|| exit 1; '
                 '[ -f $out.d.tmp ] && echo $out: $$(cat $out.d.tmp) > $out.d; '
-                'rm -f $out.d.tmp' % rst2html),
+                'rm -f $out.d.tmp'),
                pretty('RST2HTML $out', colour),
                '$out.d',
                deps='gcc')
@@ -121,37 +122,36 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
             # idempotent as Sphinx only rebuilds modified files, and that may
             # not include dein.html.
             n.rule('sphinx_build',
-                   ('sphinx-build -M html %s %s; '
+                   (f'sphinx-build -M html {location} {location / ".build"}; '
                     r"sed '/ dein#add</s,\(&#39;\)\([^<~]\+\)\(&#39;\),"
                     r"\1<a href=\"https://github.com/\2/\">\2</a>\3,' "
-                    '-i %s' % (location, location / '.build',
-                               location / '.build/html/dein.html')),
+                    f'-i {location / ".build/html/dein.html"}'),
                    pretty('SPHINX $out', colour))
 
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
         # dependency file.
         n.rule('rst_extract',
-               '%s -r $out.dep $in $out' % (location / 'rst2vim.py'),
+               f'{location / "rst2vim.py"} -r $out.dep $in $out',
                pretty('RST2VIM $out', colour),
                '$out.dep',
                deps='gcc')
 
         n.rule('symlink', 'ln -rsf $in $out', pretty('SYMLINK $out', colour))
 
-        n.rule(
-            'tags_gen',
-            '/usr/bin/ctags-exuberant --languages=$lang -R $exclude -f $out $in',
-            pretty('CTAGS $out', colour))
+        ctags_path = which('ctags-exuberant')
+        n.rule('tags_gen',
+               f'{ctags_path} --languages=$lang -R $exclude -f $out $in',
+               pretty('CTAGS $out', colour))
         n.newline()
 
-        n.build(str(location / file), 'configure', [
-            str(location / 'build.py'),
+        n.build(f'{location / file}', 'configure', [
+            f'{location / "build.py"}',
         ], [
             ninja_syntax.__file__,
         ])
 
-        n.build(str(location / 'README.html'), 'rst_compile', [
-            str(location / 'README.rst'),
+        n.build(f'{location / "README.html"}', 'rst_compile', [
+            f'{location / "README.rst"}',
         ], [
             which(rst2html),
         ])
@@ -161,9 +161,9 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
         ]
 
         if sphinx:
-            n.build(str(location / '.build/html'),
+            n.build(f'{location / ".build/html"}',
                     'sphinx_build', [
-                        str(location / 'conf.py'),
+                        f'{location / "conf.py"}',
                     ] + [p.as_posix() for p in rst_files],
                     implicit=[
                         which('sphinx-build'),
@@ -171,25 +171,23 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
 
         for p in rst_files:
             if p.name == 'vimrc.rst':
-                n.build(str(location / p.with_suffix('')), 'rst_extract', [
-                    str(location / p),
+                n.build(f'{location / p.with_suffix("")}', 'rst_extract', [
+                    f'{location / p }',
                 ], [
-                    str(location / 'rst2vim.py'),
+                    f'{location / "rst2vim.py"}',
                 ])
             elif p.parent.stem == 'support':
                 continue
             elif p.name not in ('FAQ.rst', 'README.rst', 'background.rst',
                                 'index.rst', 'todo.rst'):
-                n.build(str(location / p.with_suffix('.vim')), 'rst_extract', [
-                    str(location / p),
+                n.build(f'{location / p.with_suffix(".vim")}', 'rst_extract', [
+                    f'{location / p }',
                 ], [
-                    str(location / 'rst2vim.py'),
+                    f'{location / "rst2vim.py"}',
                 ])
 
         tags = location / 'tags'
-        ctags_path = which('ctags-exuberant')
-
-        n.build(str(tags / 'libc.ctags'),
+        n.build(f'{tags / "libc.ctags"}',
                 'tags_gen', [
                     '/usr/include',
                 ], [
@@ -197,7 +195,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 ],
                 variables={
                     'exclude':
-                    ' '.join('--exclude=$in/' + d for d in libc_exclude),
+                    ' '.join(f'--exclude=$in/{d}' for d in libc_exclude),
                     'lang': libc_langs,
                 })
 
@@ -209,7 +207,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
         for lang, path, glob, tags_name in lang_map:
             has_lang = False
             for p in sorted(Path(path).glob(glob)):
-                n.build('%s.ctags' % (tags / (tags_name % p.name)),
+                n.build(f'{tags / (tags_name % p.name)}.ctags',
                         'tags_gen', [
                             p.as_posix(),
                         ], [
@@ -218,8 +216,8 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                         variables={'lang': lang})
                 has_lang = True
             if has_lang:
-                n.build('%s/%s.ctags' % (tags, lang), 'symlink',
-                        '%s.ctags' % (tags / (tags_name % p.name)))
+                n.build(f'{tags}/{lang}.ctags', 'symlink',
+                        f'{tags / (tags_name % p.name)}.ctags')
 
 
 if __name__ == '__main__':
