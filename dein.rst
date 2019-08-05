@@ -629,6 +629,18 @@ jealous.
         \ 'on_ft': ['css', 'html'],
     \ })
 
+``semantic-highlight.vim``
+''''''''''''''''''''''''''
+
+    “Where every variable is a different color, an idea popularized by
+    `Evan Brooks`_ blog post.
+
+::
+
+    call dein#add('jaxbot/semantic-highlight.vim', {
+        \ 'on_cmd': 'SemanticHighlight',
+    \ })
+
 ``vim-editqf``
 ''''''''''''''
 
@@ -1655,6 +1667,7 @@ by deletion.
 .. _Hjson: https://hjson.org/
 .. _zim: http://zim-wiki.org/
 .. _gpg: https://www.gnupg.org/
+.. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
 .. _org-mode: http://orgmode.org/
 .. _ledger: https://www.ledger-cli.org/
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
