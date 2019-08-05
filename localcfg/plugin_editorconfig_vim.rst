@@ -1,13 +1,6 @@
 ``localcfg/plugin_editorconfig_vim.vim``
 ========================================
 
-Use the faster :repo:`C version <editorconfig/editorconfig-core-c>` when
-available::
-
-    if executable('editorconfig')
-        let g:EditorConfig_core_mode = 'external_command'
-    endif
-
 We manage ``colorcolumn`` in :ref:`settings.vim <colorcolumn-config>`, so
 disable this plugin’s support::
 
