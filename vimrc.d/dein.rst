@@ -15,6 +15,10 @@ Keep plugins and data in `XDG basedir`_ compliant location::
     let g:dein_state_dir = g:vim_cache_dir . '/dein'
     let g:dein_repos_dir = g:dein_state_dir . '/repos'
 
+Disable automatic re-caching::
+
+    let g:dein#auto_recache = v:false
+
 If possible, support `system notifications`_:
 
 ::
