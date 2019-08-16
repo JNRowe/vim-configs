@@ -77,6 +77,7 @@ Contents
     plugin_rainbow
     plugin_regex
     plugin_securemodelines
+    plugin_semantic_highlight.vim
     plugin_sideways.vim
     plugin_splitjoin.vim
     plugin_switch.vim
@@ -113,7 +114,6 @@ Contents
     plugin_vim_space
     plugin_vim_speeddating
     plugin_vim_startify
-    plugin_vim_table_mode
     plugin_vim_textobj_quote
     plugin_vim_vebugger
     plugin_wordnet.vim
