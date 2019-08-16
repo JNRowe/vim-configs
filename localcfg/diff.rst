@@ -5,6 +5,12 @@ Ignore whitespace by default::
 
     set diffopt+=iwhite
 
+Use histogram :command:`diff` method to match my git_ config::
+
+    if has("patch-8.1.0360")
+        set diffopt+=algorithm:histogram
+    endif
+
 The remaining functionality is only useful when ``autocmd`` is available.
 
 ::
@@ -33,3 +39,5 @@ Add my bindings for diff mode::
         autocmd!
         autocmd BufEnter * if &diff | call s:diff_maps() | endif
     augroup END
+
+.. _git: https://git-scm.com/
