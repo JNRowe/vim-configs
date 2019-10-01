@@ -508,6 +508,21 @@ jealous.
         \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
     \ })
 
+``vim-searchindex``
+'''''''''''''''''''
+
+    “Display current & total number of search matches”
+
+.. todo::
+
+    Not needed with ``shortmess``\’s ``-S``.
+
+::
+
+    call dein#add('google/vim-searchindex', {
+        \ 'on_map': {'n': ['/', '?', 'n', 'N']},
+    \ })
+
 ``xterm-color-table.vim``
 '''''''''''''''''''''''''
 
