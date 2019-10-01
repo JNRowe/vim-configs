@@ -186,7 +186,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
                 \            (&foldmethod == 'marker' ? ' fmr=' . &fmr : ''))
         endif
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
-        $put =substitute(substitute(l:x, '\ \+', ' ', 'g'), ' $', '', '')
+        $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
         call setpos('.', l:save_cursor)
     endfunction
 
