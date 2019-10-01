@@ -157,6 +157,9 @@ Folding support maps::
         nnoremap - zc
         nnoremap + zo
 
+        nnoremap z<Up> zk
+        nnoremap z<Down> zj
+
         vnoremap - zf
     endif
 
