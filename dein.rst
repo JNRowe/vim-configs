@@ -513,15 +513,18 @@ jealous.
 
     “Display current & total number of search matches”
 
-.. todo::
-
-    Not needed with ``shortmess``\’s ``-S``.
-
 ::
 
-    call dein#add('google/vim-searchindex', {
-        \ 'on_map': {'n': ['/', '?', 'n', 'N']},
-    \ })
+    if !has('patch-8.1.1270')
+        call dein#add('google/vim-searchindex', {
+            \ 'on_map': {'n': ['/', '?', 'n', 'N']},
+        \ })
+    endif
+
+.. note::
+
+    This is guarded with ``has()`` because recent releases support
+    this functionality `out of the box <matchpos>`_.
 
 ``xterm-color-table.vim``
 '''''''''''''''''''''''''
