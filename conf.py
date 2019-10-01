@@ -66,6 +66,7 @@ extlinks = {
     'pypi': ('https://pypi.org/project/%s/', ''),
     'repo': ('https://github.com/%s/', ''),
     'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', ''),
+    'vimdoc': ('https://vimhelp.org/%s', ''),
 }
 # }}}
 

@@ -33,9 +33,9 @@ These configs can be influenced by the following environment variables.
 
 .. envvar:: VIM_DISABLE_CURSORS
 
-    If set then cursors keys are disabled.  This is entirely about `learning
-    motions`_, and not about promoting an “arrow keys are the devil’s plaything”
-    sentiment.
+    If set then cursors keys are disabled.  This is entirely about
+    :vimdoc:`learning motions <motion.txt>`, and not about promoting an
+    “arrow keys are the devil’s plaything” sentiment.
 
 .. envvar:: VIM_PROFILE
 
@@ -54,5 +54,4 @@ These configs can be influenced by the following environment variables.
     how to configure it, and defaults.
 
 .. _fzf: https://github.com/junegunn/fzf
-.. _learning motions: http://vimdoc.sourceforge.net/htmldoc/motion.html
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
