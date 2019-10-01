@@ -73,6 +73,6 @@ sometimes it is nice to know the current base version state::
         while has('patch' . n)
             let l:n += 1
         endwhile
-        return join([v:version / 100, v:version % 100, n - 1], '.')
+        return printf('%d.%d.%04d', v:version / 100, v:version % 100, n - 1)
     endfunction
     command! Version echo 'vim-' . Version()
