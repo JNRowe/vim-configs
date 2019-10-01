@@ -714,7 +714,7 @@ directly.
         \ 'if': s:has_exec('fzf'),
         \ 'on_cmd': s:prefix(
         \   'FZF',
-        \   ['Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
+        \   ['Ag', 'Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
         \    'History', 'Lines', 'Maps', 'Marks', 'Snippets', 'Windows']),
     \ })
 
