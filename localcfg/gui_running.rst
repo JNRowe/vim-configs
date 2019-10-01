@@ -6,6 +6,15 @@ does, so disable the default::
 
     set guiheadroom=0
 
+Use a terminal window for command output::
+
+    set guioptions+=!
+
+.. note::
+
+    This is especially useful where you issue a :kbd:`:!` command and then
+    later decide you wish to interact with it.
+
 Use console dialogs instead of jarring popups::
 
     set guioptions+=c
