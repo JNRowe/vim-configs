@@ -276,6 +276,14 @@ Disable :command:`vim`’s intro message, which would be displayed if
 
     set shortmess+=I
 
+.. _matchpos:
+
+Show match position when searching::
+
+    if has('patch-8.1.1270')
+        set shortmess-=S
+    endif
+
 Always display partial commands::
 
     if has('cmdline_info') && has('showcmd')
