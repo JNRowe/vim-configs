@@ -595,18 +595,6 @@ jealous.
 
     call dein#add('itchyny/vim-cursorword')
 
-``vim-zim``
-'''''''''''
-
-    “Zim_ note wrapper”
-
-::
-
-    call dein#add('jakykong/vim-zim', {
-        \ 'on_cmd': 'ZimCd',
-        \ 'on_ft': ['css', 'html'],
-    \ })
-
 ``vim-gnupg``
 '''''''''''''
 
@@ -1666,7 +1654,6 @@ by deletion.
 .. _dwm: https://dwm.suckless.org/
 .. _EditorConfig: http://editorconfig.org/
 .. _Hjson: https://hjson.org/
-.. _zim: http://zim-wiki.org/
 .. _gpg: https://www.gnupg.org/
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
 .. _org-mode: http://orgmode.org/
