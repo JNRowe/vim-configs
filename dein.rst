@@ -718,6 +718,11 @@ directly.
         \    'History', 'Lines', 'Maps', 'Marks', 'Snippets', 'Windows']),
     \ })
 
+.. note::
+
+    This doesn’t list *all* the possible commands, just the ones I’d use enough
+    to want to tab complete on.
+
 ``goyo.vim``
 ''''''''''''
 
