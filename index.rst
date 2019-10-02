@@ -54,6 +54,7 @@ Vim files
     :maxdepth: 1
 
     after/ftplugin/index
+    compiler/index
     ftdetect/index
     ftplugin/index
     localcfg/index
