@@ -80,6 +80,7 @@ Repositories
     “A dark powered Vim/Neovim plugin manager”
 
 :repo: :repo:`dein.vim <Shougo/dein.vim>`
+:config: :doc:`vimrc.d/dein`
 
 ::
 
@@ -95,6 +96,7 @@ Repositories
     “Move an item in a delimiter-separated list left or right”
 
 :repo: :repo:`sideways.vim <AndrewRadev/sideways.vim>`
+:config: :doc:`localcfg/plugin_sideways.vim`
 
 ::
 
@@ -109,6 +111,7 @@ Repositories
     “Switch between single-line and multiline forms of code”
 
 :repo: :repo:`splitjoin.vim <AndrewRadev/splitjoin.vim>`
+:config: :doc:`localcfg/plugin_splitjoin.vim`
 
 ::
 
@@ -123,6 +126,7 @@ Repositories
     “Switch segments of text with predefined replacements”
 
 :repo: :repo:`switch.vim <AndrewRadev/switch.vim>`
+:config: :doc:`localcfg/plugin_switch.vim`
 
 Edit your config files like they had a fancy dialog box to fiddle with their
 preferences.
@@ -152,6 +156,7 @@ preferences.
     “Tiled Window Management for Vim”
 
 :repo: :repo:`dwm.vim <JNRowe/dwm.vim>`
+:config: :doc:`localcfg/plugin_dwm.vim`
 
 Excellent window management, it really does bring dwm_ simplicity to
 :command:`vim`!
@@ -168,6 +173,7 @@ Excellent window management, it really does bring dwm_ simplicity to
     “A secure alternative to modelines”
 
 :repo: :repo:`securemodelines <JNRowe/securemodelines>`
+:config: :doc:`localcfg/plugin_securemodelines`
 
 This lightens the load of dealing with people who can’t follow :ref:`coding
 standards <editorconfig-plugin>` without allowing them free access to your
@@ -183,6 +189,7 @@ standards <editorconfig-plugin>` without allowing them free access to your
     “Tango inspired colour scheme”
 
 :repo: :repo:`vim-jnrowe <JNRowe/vim-jnrowe>`
+:config: :doc:`localcfg/plugin_vim_jnrowe`
 
 .. image:: http://jnrowe.github.io/vim-jnrowe/_images/default.png
    :target: http://jnrowe.github.io/vim-jnrowe/_images/default.png
@@ -198,6 +205,7 @@ standards <editorconfig-plugin>` without allowing them free access to your
     “Folding optimization”
 
 :repo: :repo:`FastFold <Konfekt/FastFold>`
+:config: :doc:`localcfg/plugin_FastFold`
 
 ::
 
@@ -211,6 +219,7 @@ standards <editorconfig-plugin>` without allowing them free access to your
     “Automatic closing of quotes, parenthesis, brackets, etc”
 
 :repo: :repo:`delimitMate <Raimondi/delimitMate>`
+:config: :doc:`localcfg/plugin_delimitMate`
 
 The number 1 “Love it or hate it” plugin, to use it well you’ll want to read its
 documentation and disable the defaults that get in the way of your favourite
@@ -245,6 +254,7 @@ language.
     “The ultimate plugin for snippets”
 
 :repo: :repo:`ultisnips <SirVer/ultisnips>`
+:config: :doc:`localcfg/plugin_ultisnips`
 
 ::
 
@@ -259,6 +269,7 @@ language.
     “Show :command:`git diff` status in the gutter”
 
 :repo: :repo:`vim-gitgutter <airblade/vim-gitgutter>`
+:config: :doc:`localcfg/plugin_vim_gitgutter`
 
 ::
 
@@ -289,6 +300,7 @@ almost-kind-of-works solution from your :file:`.vimrc`.
     “Colour colour names and codes”
 
 :repo: :repo:`Colorizer <chrisbra/Colorizer>`
+:config: :doc:`localcfg/plugin_Colorizer`
 
 ::
 
@@ -331,6 +343,7 @@ a full editing session.
     “Show differences for recovered files”
 
 :repo: :repo:`Recover.vim <chrisbra/Recover.vim>`
+:config: :doc:`localcfg/plugin_Recover.vim`
 
 ::
 
@@ -344,6 +357,7 @@ a full editing session.
     “Record and replay your editing sessions”
 
 :repo: :repo:`Replay <chrisbra/Replay>`
+:config: :doc:`localcfg/plugin_Replay`
 
 ::
 
@@ -390,6 +404,7 @@ said.
     “A plugin for handling unicode and digraphs characters”
 
 :repo: :repo:`unicode.vim <chrisbra/unicode.vim>`
+:config: :doc:`localcfg/plugin_unicode.vim`
 
 Be like me and annoy your co-workers/friends by littering your mails with
 Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
@@ -427,6 +442,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
     “A VIM binding to the :pypi:`jedi` autocompletion library”
 
 :repo: :repo:`jedi-vim <davidhalter/jedi-vim>`
+:config: :doc:`localcfg/plugin_jedi_vim`
 
 ::
 
@@ -442,6 +458,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
     “Highlight overused words”
 
 :repo: :repo:`vim-ditto <dbmrq/vim-ditto>`
+:config: :doc:`localcfg/plugin_vim_ditto`
 
 ::
 
@@ -486,6 +503,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
     “The EditorConfig_ plugin”
 
 :repo: :repo:`editorconfig-vim <editorconfig/editorconfig-vim>`
+:config: :doc:`localcfg/plugin_editorconfig_vim`
 
 ::
 
@@ -537,6 +555,7 @@ decorating it with glyphs.
     “Allows you to test regular expressions”
 
 :repo: :repo:`regex <ervandew/regex>`
+:config: :doc:`localcfg/plugin_regex`
 
 Removes the need to jump to your language’s :abbr:`REPL (Read-Eval-Print Loop)`
 when writing ugly, ugly :abbr:`RegEx (Regular Expression)`.
@@ -630,6 +649,7 @@ jealous.
     “Snippet files for various programming languages”
 
 :repo: :repo:`vim-snippets <honza/vim-snippets>`
+:config: :doc:`localcfg/plugin_vim_snippets`
 
 ::
 
@@ -641,6 +661,7 @@ jealous.
     “All powerful Pythonic task runner”
 
 :repo: :repo:`vim-omnipytent <idanarye/vim-omnipytent>`
+:config: :doc:`localcfg/plugin_vim_omnipytent`
 
 ::
 
@@ -655,6 +676,7 @@ jealous.
     “Yet another debugger frontend plugin”
 
 :repo: :repo:`vim-vebugger <idanarye/vim-vebugger>`
+:config: :doc:`localcfg/plugin_vim_vebugger`
 
 ::
 
@@ -722,6 +744,7 @@ jealous.
     `Evan Brooks`_ blog post.
 
 :repo: :repo:`semantic-highlight.vim <jaxbot/semantic-highlight.vim>`
+:config: :doc:`localcfg/plugin_semantic_highlight.vim`
 
 ::
 
@@ -735,6 +758,7 @@ jealous.
     “Edit and store quickfix/location list entries”
 
 :repo: :repo:`vim-editqf <jceb/vim-editqf>`
+:config: :doc:`localcfg/plugin_vim_editqf`
 
 Save all the window hopping key bashes and fix all those compiler warnings
 directly.
@@ -755,6 +779,7 @@ directly.
     “Text outlining and task management for Vim based on Emacs’ `Org-Mode`_\”
 
 :repo: :repo:`vim-orgmode <jceb/vim-orgmode>`
+:config: :doc:`localcfg/plugin_vim_orgmode`
 
 ::
 
@@ -785,6 +810,7 @@ directly.
     “Basic :command:`fzf` integration”
 
 :repo: :repo:`fzf <junegunn/fzf>`
+:config: :doc:`localcfg/plugin_fzf`
 
 ::
 
@@ -800,6 +826,7 @@ directly.
     “Advanced :command:`fzf` integration”
 
 :repo: :repo:`fzf.vim <junegunn/fzf.vim>`
+:config: :doc:`localcfg/plugin_fzf.vim`
 
 ::
 
@@ -823,6 +850,7 @@ directly.
     “Distraction-free writing in Vim.”
 
 :repo: :repo:`goyo.vim <junegunn/goyo.vim>`
+:config: :doc:`localcfg/plugin_goyo.vim`
 
 ::
 
@@ -849,6 +877,7 @@ directly.
     “Automatically resizes your windows”
 
 :repo: :repo:`vim-eighties <justincampbell/vim-eighties>`
+:config: :doc:`localcfg/plugin_vim_eighties`
 
 ::
 
@@ -862,6 +891,7 @@ directly.
     “Motion improved”
 
 :repo: :repo:`vim-sneak <justinmk/vim-sneak>`
+:config: :doc:`localcfg/plugin_vim_sneak`
 
 ::
 
@@ -881,6 +911,7 @@ directly.
     “Enhanced Python folding”
 
 :repo: :repo:`vim-coiled-snake <kalekundert/vim-coiled-snake>`
+:config: :doc:`localcfg/plugin_vim_coiled_snake`
 
 ::
 
@@ -921,6 +952,7 @@ directly.
     “A plugin to place, toggle and display marks”
 
 :repo: :repo:`vim-signature <kshenoy/vim-signature>`
+:config: :doc:`localcfg/plugin_vim_signature`
 
 ::
 
@@ -949,6 +981,7 @@ directly.
     “Language support for ledger_”
 
 :repo: :repo:`vim-ledger <ledger/vim-ledger>`
+:config: :doc:`localcfg/plugin_vim_ledger`
 
 Combine this with :ref:`csv.vim <csv.vim-plugin>`, and it makes importing and
 editing your accounts/expenses an almost nice-ish experience.
@@ -965,6 +998,7 @@ editing your accounts/expenses an almost nice-ish experience.
     “Help read complex code by showing parentheses in different colours”
 
 :repo: :repo:`rainbow <luochen1990/rainbow>`
+:config: :doc:`localcfg/plugin_rainbow`
 
 Make your ``vim`` sessions feel like they have been painted by a three year old
 trying to impress their grandpa.  Which is a Good Thing™.
@@ -981,6 +1015,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     “Help for customising based on features”
 
 :repo: :repo:`localcfg <magus/localcfg>`
+:config: :doc:`vimrc.d/localcfg`
 
 ::
 
@@ -992,6 +1027,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     “A calendar window you can use within :command:`vim`\”
 
 :repo: :repo:`calendar-vim <mattn/calendar-vim>`
+:config: :doc:`localcfg/plugin_calendar_vim`
 
 ::
 
@@ -1007,6 +1043,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     (Cascading Style Sheets)` hi-speed coding”
 
 :repo: :repo:`emmet-vim <mattn/emmet-vim>`
+:config: :doc:`localcfg/plugin_emmet_vim`
 
 ::
 
@@ -1021,6 +1058,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     “Display your undo history in a graph”
 
 :repo: :repo:`undotree <mbbill/undotree>`
+:config: :doc:`localcfg/plugin_undotree`
 
 ::
 
@@ -1048,6 +1086,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     “The fancy start screen”
 
 :repo: :repo:`vim-startify <mhinz/vim-startify>`
+:config: :doc:`localcfg/plugin_vim_startify`
 
 ::
 
@@ -1075,6 +1114,7 @@ Makes handling Python code far, far easier.
     “Order buffers in Most Recently Used order”
 
 :repo: :repo:`vim-bufmru <mildred/vim-bufmru>`
+:config: :doc:`localcfg/plugin_vim_bufmru`
 
 ::
 
@@ -1089,6 +1129,7 @@ Makes handling Python code far, far easier.
     “Language support for :pypi:`jinja`\”
 
 :repo: :repo:`vim-jinja <mitsuhiko/vim-jinja>`
+:config: :doc:`localcfg/plugin_vim_jinja`
 
 ::
 
@@ -1102,6 +1143,7 @@ Makes handling Python code far, far easier.
     “Delete buffers without breaking your layout”
 
 :repo: :repo:`vim-bbye <moll/vim-bbye>`
+:config: :doc:`localcfg/plugin_vim_bbye`
 
 ::
 
@@ -1116,6 +1158,7 @@ Makes handling Python code far, far easier.
     “A plugin for visually displaying indent levels”
 
 :repo: :repo:`vim-indent-guides <nathanaelkane/vim-indent-guides>`
+:config: :doc:`localcfg/plugin_vim_indent_guides`
 
 ::
 
@@ -1140,6 +1183,7 @@ Makes handling Python code far, far easier.
     “Tiny replacement for Supertab”
 
 :repo: :repo:`vim-clevertab <neitanod/vim-clevertab>`
+:config: :doc:`localcfg/plugin_vim_clevertab`
 
 Makes you feel more like a smart :abbr:`IDE (Integrated Developer Environment)`
 user, how cool is that?
@@ -1181,6 +1225,7 @@ user, how cool is that?
     “Better support for typographic (‘curly’) quote characters”
 
 :repo: :repo:`vim-textobj-quote <reedes/vim-textobj-quote>`
+:config: :doc:`localcfg/plugin_vim_textobj_quote`
 
 ::
 
@@ -1211,6 +1256,7 @@ user, how cool is that?
     “More pleasant editing on commit message”
 
 :repo: :repo:`committia.vim <rhysd/committia.vim>`
+:config: :doc:`localcfg/plugin_committia.vim`
 
 ::
 
@@ -1244,6 +1290,7 @@ user, how cool is that?
     “Graph your undo tree”
 
 :repo: :repo:`gundo.vim <sjl/gundo.vim>`
+:config: :doc:`localcfg/plugin_gundo.vim`
 
 Finally grasp the :command:`vim` ``undo-tree``, without this the feature can be
 really daunting to wrap your head around.
@@ -1274,6 +1321,7 @@ really daunting to wrap your head around.
     “Smart space key”
 
 :repo: :repo:`vim-space <spiiph/vim-space>`
+:config: :doc:`localcfg/plugin_vim_space`
 
 ::
 
@@ -1302,6 +1350,7 @@ really daunting to wrap your head around.
     “Maximizes and restores the current window”
 
 :repo: :repo:`vim-maximizer <szw/vim-maximizer>`
+:config: :doc:`localcfg/plugin_vim_maximizer`
 
 ::
 
@@ -1316,6 +1365,7 @@ really daunting to wrap your head around.
     “Applies radon_ to your current file”
 
 :repo: :repo:`vim-quick-radon <tell-k/vim-quick-radon>`
+:config: :doc:`localcfg/plugin_vim_quick_radon`
 
 ::
 
@@ -1356,6 +1406,7 @@ really daunting to wrap your head around.
     “Look up word definitions with wordnet_”
 
 :repo: :repo:`wordnet.vim <timcharper/wordnet.vim>`
+:config: :doc:`localcfg/plugin_wordnet.vim`
 
 ::
 
@@ -1370,6 +1421,7 @@ really daunting to wrap your head around.
     “Vim port of the monokai theme for TextMate”
 
 :repo: :repo:`molokai <tomasr/molokai>`
+:config: :doc:`localcfg/plugin_molokai`
 
 ::
 
@@ -1381,6 +1433,7 @@ really daunting to wrap your head around.
     “Easy text exchange operator”
 
 :repo: :repo:`vim-exchange <tommcdo/vim-exchange>`
+:config: :doc:`localcfg/plugin_vim_exchange`
 
 ::
 
@@ -1454,6 +1507,7 @@ power of ``gcc``.
     “A Git wrapper so awesome, it should be illegal”
 
 :repo: :repo:`vim-fugitive <tpope/vim-fugitive>`
+:config: :doc:`localcfg/plugin_vim_fugitive`
 
 Replace most of your use of a shell when working on a project with just another
 :command:`vim` buffer.
@@ -1497,6 +1551,7 @@ Replace most of your use of a shell when working on a project with just another
     “Project configuration”
 
 :repo: :repo:`vim-projectionist <tpope/vim-projectionist>`
+:config: :doc:`localcfg/plugin_vim_projectionist`
 
 ::
 
@@ -1522,6 +1577,7 @@ your favourite plugin anyway.
     “If fugitive.vim is the Git, rhubarb.vim is the Hub”
 
 :repo: :repo:`vim-rhubarb <tpope/vim-rhubarb>`
+:config: :doc:`localcfg/plugin_vim_rhubarb`
 
 ::
 
@@ -1585,6 +1641,7 @@ Automagic indentation configuration, that just works.
     “Increment dates, times, and more”
 
 :repo: :repo:`vim-speeddating <tpope/vim-speeddating>`
+:config: :doc:`localcfg/plugin_vim_speeddating`
 
 Speed up those ``y`` and ``p`` based :ref:`ledger <ledger-plugin>` entry writing
 sessions by at least fifteen orders of magnitude… or your money back.
@@ -1623,6 +1680,7 @@ documentation a relatively painless task.
     “Pairs of handy mappings”
 
 :repo: :repo:`vim-unimpaired <tpope/vim-unimpaired>`
+:config: :doc:`localcfg/plugin_vim_unimpaired`
 
 ::
 
@@ -1647,6 +1705,7 @@ documentation a relatively painless task.
     “Lean & mean status/tabline for :command:`vim` that’s light as air”
 
 :repo: :repo:`vim-airline <vim-airline/vim-airline>`
+:config: :doc:`localcfg/plugin_vim_airline`
 
 The main reason to use this is not “simply because it is pretty”, but mostly
 because you can dump heaps and heaps of custom code you've written in your
@@ -1730,6 +1789,7 @@ because you can dump heaps and heaps of custom code you've written in your
     “Asynchronous Lint Engine”
 
 :repo: :repo:`ale <w0rp/ale>`
+:config: :doc:`localcfg/plugin_ale`
 
 Start your mind boggling every time someone moans about having to switch from
 WingIDE to a real editor when they edit files of different types.
@@ -1762,6 +1822,7 @@ WingIDE to a real editor when they edit files of different types.
     “Easy note taking in Vim”
 
 :repo: :repo:`vim-notes <xolox/vim-notes>`
+:config: :doc:`localcfg/plugin_vim_notes`
 
 ::
 
