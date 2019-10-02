@@ -3,7 +3,7 @@
 
 .. tip::
 
-    Modeline is set so that :kbd`:Exconfig <C-r><C-f>` works on plugin names
+    Modeline is set so that :kbd:`:Exconfig <C-r><C-f>` works on plugin names
     throughout this file [#]_::
 
         " vim: set isfname-=/:
