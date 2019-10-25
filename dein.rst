@@ -939,6 +939,20 @@ directly.
         \ 'on_ft': 'python',
     \ })
 
+``vim-textobj-fold``
+''''''''''''''''''''
+
+    “Text objects for folds”
+
+:repo: :repo:`vim-textobj-fold <kana/vim-textobj-fold>`
+
+::
+
+    call dein#add('kana/vim-textobj-fold', {
+        \ 'depends': 'vim-textobj-user',
+        \ 'on_func': 'textobj',
+    \ })
+
 ``vim-textobj-user``
 ''''''''''''''''''''
 
