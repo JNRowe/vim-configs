@@ -102,6 +102,10 @@ Only show ``tabline`` when there are multiple buffers::
 
     let g:airline#extensions#tabline#buffer_min_count = 2
 
+Use unique names for buffers in tabline::
+
+    let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 When :abbr:`CSV (Comma Separated Value)` files have a header, use it::
 
     let g:airline#extensions#csv#column_display = 'Name'
