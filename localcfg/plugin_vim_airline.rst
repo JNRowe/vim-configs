@@ -102,6 +102,10 @@ Only show ``tabline`` when there are multiple buffers::
 
     let g:airline#extensions#tabline#buffer_min_count = 2
 
+Prettier overflow::
+
+    let g:airline#extensions#tabline#overflow_marker = '…'
+
 Use unique names for buffers in tabline::
 
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
