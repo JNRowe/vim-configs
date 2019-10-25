@@ -58,7 +58,7 @@ Only use the extensions I actually want::
     but surely you’re not just blinding grabbing repositories from GitHub
     anyway…
 
-Enable :repo:`ale <w0rp/ale>` extension::
+Enable :repo:`ale <dense-analysis/ale>` extension::
 
     if v:version >= 800 && has('signs')
         let g:airline_extensions += ['ale']

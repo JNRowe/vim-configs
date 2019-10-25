@@ -466,6 +466,25 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
         \ 'on_cmd': ['DittoFile', 'DittoOn'],
     \ })
 
+.. _ale-plugin:
+
+``ale``
+'''''''
+
+    “Asynchronous Lint Engine”
+
+:repo: :repo:`ale <dense-analysis/ale>`
+:config: :doc:`localcfg/plugin_ale`
+
+Start your mind boggling every time someone moans about having to switch from
+WingIDE to a real editor when they edit files of different types.
+
+::
+
+    call dein#add('dense-analysis/ale', {
+        \ 'if': v:version >= 800 && has('signs'),
+    \ })
+
 ``vim-table-mode``
 ''''''''''''''''''
 
@@ -1780,25 +1799,6 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('wellle/targets.vim')
-
-.. _ale-plugin:
-
-``ale``
-'''''''
-
-    “Asynchronous Lint Engine”
-
-:repo: :repo:`ale <w0rp/ale>`
-:config: :doc:`localcfg/plugin_ale`
-
-Start your mind boggling every time someone moans about having to switch from
-WingIDE to a real editor when they edit files of different types.
-
-::
-
-    call dein#add('w0rp/ale', {
-        \ 'if': v:version >= 800 && has('signs'),
-    \ })
 
 ``vim-misc``
 ''''''''''''
