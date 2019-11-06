@@ -1732,6 +1732,20 @@ documentation a relatively painless task.
 
     call dein#add('tpope/vim-unimpaired')
 
+``braceless.vim``
+'''''''''''''''''
+
+    “Text objects, folding, and more for Python and other indented languages”
+
+:repo: :repo:`tweekmonster/braceless.vim`
+
+::
+
+    call dein#add('tweekmonster/braceless.vim', {
+        \ 'on_cmd': 'BracelessEnable',
+        \ 'on_ft': ['nim', 'python', 'yaml'],
+    \ })
+
 ``startuptime.vim``
 '''''''''''''''''''
 
