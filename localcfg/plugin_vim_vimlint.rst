@@ -1,6 +1,10 @@
 ``localcfg/vim_vimlint``
 ========================
 
-Don’t show timing info::
+I prefer quickfix integration::
+
+    let g:vimlint#config = {"output": "quickfix"}
+
+… and don’t need to see timing info::
 
     let g:vimlint#config["quiet"] = v:true
