@@ -6,15 +6,6 @@ does, so disable the default::
 
     set guiheadroom=0
 
-Use a terminal window for command output::
-
-    set guioptions+=!
-
-.. note::
-
-    This is especially useful where you issue a :kbd:`:!` command and then
-    later decide you wish to interact with it.
-
 Use console dialogs instead of jarring popups::
 
     set guioptions+=c
@@ -126,6 +117,16 @@ time to time I use the menu myself.  So, we’ll add maps to quickly toggle them
     if has('toolbar')
         nnoremap <silent> <C-F4> :call ToggleFlag('guioptions', 'T')<CR>
     endif
+
+Use a terminal window for command output::
+
+    nnoremap <silent> <C-F1> :call ToggleFlag('guioptions', '!')<CR>
+
+.. note::
+
+    This isn’t set for the full session as it can interact badly with
+    plugins that don’t expect a full terminal window, and result in
+    annoying interaction.
 
 Hack to stop constant :repo:`dein <Shougo/dein.vim>` re-caching when switching
 between GUI and non-GUI :command:`vim`::
