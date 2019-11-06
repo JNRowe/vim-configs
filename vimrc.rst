@@ -1,6 +1,10 @@
 ``vimrc`` - Basic setup
 =======================
 
+First use of ``scriptencoding`` must be after an initial encoding is set::
+
+    set encoding=utf-8
+
 .. include:: .includes/scriptencoding.rst
 
 Recent :command:`vim` versions disable ``'compatible'`` when a :file:`vimrc` is
