@@ -306,17 +306,15 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 
     call dein#add('chrisbra/Colorizer', {
         \ 'on_cmd':
-        \   s:prefix('Color', ['Highlight', 'Toggle'])
-        \   + ['RGB2Term', ],
-        \ 'on_ft': ['css', 'less', 'moon', 'python', 'vim', 'xdefaults'],
+        \   s:prefix('Color', ['Highlight', 'Toggle']) + ['RGB2Term', ],
     \ })
 
 .. note::
 
-    The filetype hooks are *my* hooks.  I often want highlighting in
-    :command:`vim` files because I’m always editing my colour scheme, but
-    I don’t need it for C in general because it is relatively uncommon for my
-    C file to actually be :command:`dwm`\’s :file:`config.h`.
+    I don’t automatically enable this on specific filetypes because it
+    *severely* slows down vim, enough to make you regret enabling it sometimes.
+    However, when it is useful it is *incredibly* useful and definitely worth
+    the slow down.
 
 ``NrrwRgn``
 '''''''''''
