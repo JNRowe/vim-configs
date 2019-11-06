@@ -436,6 +436,19 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
         \ 'if': v:version >= 600,
     \ })
 
+``vim-capnp``
+'''''''''''''
+
+    “Syntax highlighting, folding and indentation rules for `Cap'n Proto`_”
+
+:repo: :repo:`vim-capnp <cstrahan/vim-capnp>`
+
+::
+
+    call dein#add('cstrahan/vim-capnp', {
+        \ 'on_ft': 'capnp',
+    \ })
+
 ``jedi-vim``
 ''''''''''''
 
@@ -1993,6 +2006,7 @@ by deletion.
 
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
+.. _Cap'n Proto: https://capnproto.org/
 .. _EditorConfig: http://editorconfig.org/
 .. _Hjson: https://hjson.org/
 .. _gpg: https://www.gnupg.org/
