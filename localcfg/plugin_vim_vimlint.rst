@@ -8,3 +8,7 @@ I prefer quickfix integration::
 … and don’t need to see timing info::
 
     let g:vimlint#config["quiet"] = v:true
+
+… and need a push to use ``abort``::
+
+    let g:vimlint#config["func_abort"] = v:true
