@@ -4,16 +4,17 @@
 import os
 from contextlib import suppress
 from subprocess import CalledProcessError, PIPE, run
+from typing import Dict, List, Tuple, Union
 
 on_rtd = 'READTHEDOCS' in os.environ
 if not on_rtd:
     import sphinx_rtd_theme
 
-extensions = \
-    ['sphinx.ext.%s' % ext for ext in ['autodoc', 'doctest', 'extlinks',
-                                       'githubpages', 'intersphinx', 'todo']] \
-    + ['sphinxcontrib.%s' % ext for ext in []] \
-    + ['sphinx_autodoc_typehints', 'sphinx_click.ext']  # type: List[str]
+extensions: List[str] = \
+    [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
+                                     'githubpages', 'intersphinx', 'todo']] \
+    + [f'sphinxcontrib.{ext}' for ext in []] \
+    + [f'sphinx_autodoc_typehints', 'sphinx_click.ext']
 
 if not on_rtd:
     # Only activate spelling if it is installed.  It is not required in the
@@ -34,7 +35,7 @@ with suppress(CalledProcessError):
 
 source_suffix = '.rst'
 
-exclude_patterns = ['.build', 'README.rst', '**/README.rst']
+exclude_patterns: List[str] = ['.build', 'README.rst', '**/README.rst']
 
 project = 'vim-configs'
 copyright = '2009-2019  James Rowe'  # NOQA: A001
@@ -46,8 +47,9 @@ version = ''
 # approximately correct builds on the local system too
 if not on_rtd:
     html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path(), ]  \
-        # type: List[str]
+    html_theme_path: List[str] = [
+        sphinx_rtd_theme.get_html_theme_path(),
+    ]
 
 highlight_language = 'vim'
 
@@ -57,12 +59,12 @@ html_copy_source = False
 
 # Autodoc extension settings
 autoclass_content = 'init'
-autodoc_default_options = {
+autodoc_default_options: Dict[str, Union[str, bool]] = {
     'members': True,
-}  # type: Dict[str, Union[str, bool]]
+}
 
 # extlinks extension settings {{{
-extlinks = {
+extlinks: Dict[str, Tuple[str, str]] = {
     'pypi': ('https://pypi.org/project/%s/', ''),
     'repo': ('https://github.com/%s/', ''),
     'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', ''),
@@ -71,13 +73,13 @@ extlinks = {
 # }}}
 
 # intersphinx extension settings
-intersphinx_mapping = {
-    k: (v, os.getenv('SPHINX_%s_OBJECTS' % k.upper()))
+intersphinx_mapping: Dict[str, str] = {
+    k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
     for k, v in {
         'click': 'https://click.palletsprojects.com/en/7.x/',
         'python': 'https://docs.python.org/3/',
     }.items()
-}  # type: Dict[str, str]
+}
 
 # spelling extension settings
 spelling_ignore_acronyms = False
