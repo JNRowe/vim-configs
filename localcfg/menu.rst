@@ -23,7 +23,7 @@ Signature        Maps to
         for l:f in sort(a:files)
             let l:f = expand(l:f)
             if filereadable(l:f) || isdirectory(l:f)
-                execute 'amenu L&ocations.' . a:heading . ' :e ' . l:f . '<CR>'
+                execute 'amenu L&ocations.' . escape(a:heading, ' ') . ' :e ' . l:f . '<CR>'
                 break
             endif
         endfor
