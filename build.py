@@ -5,7 +5,7 @@
 
     I get that this looks *massively* over engineered for a :file:`~/.vim`
     build script, but it fits in nicely with my ``subninja``-based home
-    directory management… but yeah, it is probably overkill ;)
+    directory management… but yeah, that is probably overkill ;)
 """
 
 from inspect import stack
