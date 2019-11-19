@@ -228,7 +228,7 @@ Ping the cursor position as a visual cue when returning to a session::
     endfunction
     nmap <silent> <C-Space> :call <SID>cursor_ping()<CR>
 
-Add map to toggle conceal support, which is useful when co-worker’s freak out
+Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
 
     if has('conceal')
