@@ -3,6 +3,10 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+Use a low priority for spawned commands::
+
+    let g:ale_command_wrapper = 'nice -n5'
+
 All too often setting suggestions much higher than twenty grinds things to
 a halt::
 
