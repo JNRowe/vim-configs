@@ -31,5 +31,6 @@ Use scrollwheel, or emulated key, to move through history in window::
         nmap <buffer><ScrollWheelUp> O
     endfunction
     augroup jnrowe_git_messenger
+        autocmd!
         autocmd FileType gitmessengerpopup call <SID>setup_gitmessengerpopup()
     augroup END
