@@ -3,8 +3,8 @@
 
 Find highlight group of the given location::
 
-    function! GetHighlightGroup(...)
-        let [l:lnum, l:col] = getpos(get(a:, 1, '.')[1:2]
+    function! GetHighlightGroup(...) abort
+        let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
 
         let s:synname = {synid -> synIDattr(synid, 'name')}
 
@@ -29,7 +29,7 @@ Show highlight group of the current location::
 
 Flag toggling function::
 
-    function! ToggleFlag(option, flag)
+    function! ToggleFlag(option, flag) abort
         let l:optstr = eval('&' . a:option)
         if stridx(l:optstr, ',') == -1
             " Simple char options like 'fo'
@@ -48,7 +48,7 @@ User email address, as used by various plugins::
 
 Mnemonic mapping setup function::
 
-    function! MnemonicMap(name, ...)
+    function! MnemonicMap(name, ...) abort
         let l:extra = get(a:, 1, {})
         let l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
         let l:key = get(l:extra, 'key', tolower(a:name[0]))
@@ -68,7 +68,7 @@ Mnemonic mapping setup function::
 Many distributions package :command:`vim` with cherry picked patches, and
 sometimes it is nice to know the current base version state::
 
-    function! Version()
+    function! Version() abort
         let l:n = 1
         while has('patch' . n)
             let l:n += 1

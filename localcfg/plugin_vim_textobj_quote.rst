@@ -17,7 +17,7 @@ Enable for reST_ and text filetypes::
 
 Configure quotes for current language::
 
-    function! s:select_quotes()
+    function! s:select_quotes() abort
         let l:current_lang = substitute(&spelllang, '_.*', '', '')
         if l:current_lang == 'de'
             let g:textobj#quote#doubleDefault = '„“'

@@ -15,7 +15,7 @@ Set up map to quickly move between buffers.
 
 ::
 
-    function! s:switch_buf(count)
+    function! s:switch_buf(count) abort
         let b:bufs = filter(range(1, bufnr('$')),
             \               'buflisted(v:val) && bufname(v:val) != ""')
         if len(b:bufs) < 2
@@ -104,7 +104,7 @@ Visual mode indent that matches how it *feels* in insert::
 
 :kbd:`<Home>` darts between start of line and start of text::
 
-    function! s:home_skip()
+    function! s:home_skip() abort
         if col('.') != 1
             normal! 0
         else
@@ -116,7 +116,7 @@ Visual mode indent that matches how it *feels* in insert::
 
 Utility function to choose between ninja_ and make_ for builds::
 
-    function! s:call_build(...)
+    function! s:call_build(...) abort
         if filereadable('build.ninja')
             let l:make = executable('samu') ? 'samu' : 'ninja'
         else
@@ -175,7 +175,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
 ::
 
     " Adapted from godlygeek’s vimrc
-    function! s:modeline_stub()
+    function! s:modeline_stub() abort
         let l:save_cursor = getcurpos()
         let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
         if v:count > 1
@@ -215,7 +215,7 @@ for shortcuts::
 
 Ping the cursor position as a visual cue when returning to a session::
 
-    function! s:cursor_ping()
+    function! s:cursor_ping() abort
         let l:cursorline = &cursorline
         let l:cursorcolumn = &cursorcolumn
         for _ in range(5)

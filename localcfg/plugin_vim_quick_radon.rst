@@ -12,7 +12,7 @@ Configure my custom maps::
 
 Display radon_ output if possible::
 
-    function! s:radon_open()
+    function! s:radon_open() abort
         if &filetype == 'python'
             QuickRadon
         endif
@@ -21,7 +21,7 @@ Display radon_ output if possible::
 
 Add map to close radon_ window from anywhere::
 
-    function! s:radon_close_win()
+    function! s:radon_close_win() abort
         if bufnr("quick_radon") > -1
             exec bufnr("quick_radon") . "bdelete!"
         endif
