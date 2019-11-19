@@ -18,5 +18,8 @@ Disable cursor highlighting while ``vim-sneak`` is active::
         unlet b:sneak_cursorcolumn b:sneak_cursorline
     endfunction
 
-    autocmd User SneakEnter call <SID>sneak_enter()
-    autocmd User SneakLeave call <SID>sneak_leave()
+    augroup jnrowe_vim_sneak
+        autocmd!
+        autocmd User SneakEnter call <SID>sneak_enter()
+        autocmd User SneakLeave call <SID>sneak_leave()
+    augroup END
