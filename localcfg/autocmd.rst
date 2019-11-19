@@ -141,7 +141,7 @@ Search for project specific :file:`vimrc` and support files::
             endfor
         endfunction
 
-        autocmd BufWinEnter * call s:apply_project_locals()
+        autocmd BufWinEnter * call <SID>apply_project_locals()
 
 .. note::
 
@@ -163,8 +163,8 @@ Add command to more easily edit the project specific files::
         function! s:project_file(arglead, cmdline, cursorpos)
             return ['abbr.vim', 'project.vim']
         endfunction
-        command! -nargs=1 -complete=customlist,s:project_file
-            \ ProjectFile call s:edit_project_file(<q-args>)
+        command! -nargs=1 -complete=customlist,<SID>project_file
+            \ ProjectFile call <SID>edit_project_file(<q-args>)
 
 ::
 

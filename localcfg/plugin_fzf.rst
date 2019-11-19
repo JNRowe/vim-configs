@@ -20,7 +20,7 @@ Hide status line::
         endfunction
 
         augroup jnrowe_fzf
-            autocmd FileType fzf call s:fzf_status()
+            autocmd FileType fzf call <SID>fzf_status()
         augroup END
     endif
 

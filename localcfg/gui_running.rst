@@ -88,7 +88,7 @@ helps.
             \ + map(range(8), {n -> s:font_family . '\ ' . (n * 8 + 16)})
     endfunction
     command! -nargs=? -count -complete=customlist,s:font_complete Fontsel
-        \ call s:set_font(<q-args>)
+        \ call SID>set_font(<q-args>)
 
 .. tip::
 

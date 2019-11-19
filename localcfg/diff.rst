@@ -37,7 +37,7 @@ Add my bindings for diff mode::
 
     augroup jnrowe_diff
         autocmd!
-        autocmd BufEnter * if &diff | call s:diff_maps() | endif
+        autocmd BufEnter * if &diff | call <SID>diff_maps() | endif
     augroup END
 
 .. _git: https://git-scm.com/
