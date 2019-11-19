@@ -199,20 +199,6 @@ standards <editorconfig-plugin>` without allowing them free access to your
 
     call dein#add('JNRowe/vim-jnrowe')
 
-``FastFold``
-''''''''''''
-
-    “Folding optimization”
-
-:repo: :repo:`FastFold <Konfekt/FastFold>`
-:config: :doc:`localcfg/plugin_FastFold`
-
-::
-
-    call dein#add('Konfekt/FastFold', {
-        \ 'if': has('folding'),
-    \ })
-
 ``delimitMate``
 '''''''''''''''
 
