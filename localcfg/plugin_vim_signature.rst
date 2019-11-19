@@ -23,7 +23,7 @@ has changed massively before we made it here.
 ::
 
     for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning', '#': 'error'})
-        if type(s:v) == v:t_list
+        if type(s:v) is v:t_list
             let s:icon = s:v[0]
             let s:hl = s:v[1]
         else
