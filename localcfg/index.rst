@@ -75,6 +75,7 @@ Contents
     plugin_gundo.vim
     plugin_jedi_vim
     plugin_molokai
+    plugin_patchreview_vim
     plugin_rainbow
     plugin_regex
     plugin_securemodelines
