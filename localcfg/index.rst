@@ -71,6 +71,7 @@ Contents
     plugin_emmet_vim
     plugin_fzf
     plugin_fzf.vim
+    plugin_git_messenger.vim
     plugin_goyo.vim
     plugin_gundo.vim
     plugin_jedi_vim
