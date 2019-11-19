@@ -23,6 +23,10 @@ Configure symbols::
         let g:airline_left_sep = '╗'
         let g:airline_right_sep = '╔'
 
+        if !exists('g:airline_symbols')
+            let g:airline_symbols = {}
+        endif
+
         let g:airline_symbols = {
             \ 'branch': '',
             \ 'crypt': '',
