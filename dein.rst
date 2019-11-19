@@ -1308,6 +1308,22 @@ user, how cool is that?
         \ 'if': s:has_exec('git'),
     \ })
 
+``git-messenger.vim``
+'''''''''''''''''''''
+
+    “Reveal the hidden message by :command:`git` under the cursor quickly”
+
+:repo: :repo:`git-messenger.vim <rhysd/git-messenger.vim>`
+:config: :doc:`localcfg/plugin_git_messenger.vim`
+
+::
+
+    call dein#add('rhysd/git-messenger.vim', {
+        \ 'if': s:has_exec('git'),
+        \ 'on_cmd': 'GitMessenger',
+        \ 'on_map': {'n': '[messenger]'},
+    \ })
+
 ``vim-radon``
 '''''''''''''
 
