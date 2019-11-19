@@ -887,6 +887,21 @@ directly.
         \ 'on_func': 'emoji',
     \ })
 
+``patchreview-vim``
+'''''''''''''''''''
+
+    “Single, multi-patch or diff code reviews”
+
+:repo: :repo:`patchreview-vim <junkblocker/patchreview-vim>`
+:config: :doc:`localcfg/plugin_patchreview_vim`
+
+::
+
+    call dein#add('junkblocker/patchreview-vim', {
+        \ 'on_cmd': s:suffix('Review',
+        \                    ['Diff', 'Patch', 'ReversePatchReview']),
+    \ })
+
 ``vim-eighties``
 ''''''''''''''''
 
