@@ -11,6 +11,7 @@ Store data in `XDG basedir`_ compliant location::
     endfunction
 
     augroup jnrowe_editqf
+        autocmd!
         autocmd BufEnter * call s:set_data_files()
     augroup END
 
