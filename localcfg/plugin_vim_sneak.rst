@@ -13,9 +13,8 @@ Disable cursor highlighting while ``vim-sneak`` is active::
         set nocursorcolumn nocursorline
     endfunction
     function! s:sneak_leave() abort
-        execute 'set ' .
-            \ (b:sneak_cursorcolumn ? '' : 'no') . 'cursorcolumn ' .
-            \ (b:sneak_cursorline ? '' : 'no') . 'cursorline'
+        let &cursorcolumn = b:sneak_cursorcolumn
+        let &cursorline = b:sneak_cursorline
         unlet b:sneak_cursorcolumn b:sneak_cursorline
     endfunction
 
