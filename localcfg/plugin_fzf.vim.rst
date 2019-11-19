@@ -8,6 +8,10 @@ to remember [#]_.
 
     let g:fzf_command_prefix = 'FZF'
 
+Jump to existing windows when possible::
+
+    let g:fzf_buffers_jump = 1
+
 Configure convenience mappings for common command usage::
 
     call MnemonicMap('fzf', {'key': '`'})
