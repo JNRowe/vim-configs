@@ -32,7 +32,7 @@ Configure quotes for current language::
     endfunction
 
     augroup jnrowe_vim_textobj_quote
-        autocmd BufEnter * call s:select_quotes()
+        autocmd BufEnter * call <SID>select_quotes()
     augroup END
 
 .. _reST: http://docutils.sourceforge.net/rst.html

@@ -187,7 +187,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
         $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
         call setpos('.', l:save_cursor)
     endfunction
-    command! Modeline call s:modeline_stub()
+    command! Modeline call <SID>modeline_stub()
 
 Help related maps::
 

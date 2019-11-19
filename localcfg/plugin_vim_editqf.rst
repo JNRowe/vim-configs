@@ -12,7 +12,7 @@ Store data in `XDG basedir`_ compliant location::
 
     augroup jnrowe_editqf
         autocmd!
-        autocmd BufEnter * call s:set_data_files()
+        autocmd BufEnter * call <SID>set_data_files()
     augroup END
 
 .. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

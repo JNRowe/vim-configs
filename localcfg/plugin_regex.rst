@@ -11,5 +11,5 @@ Add completion based on installed languages::
             \         '!empty(exepath(v:val))')
     endfun
     command! -nargs=?
-        \ -complete=customlist,s:regex_complete
+        \ -complete=customlist,<SID>regex_complete
         \ Regex call regex#regex#OpenTestWindow(<q-args>)
