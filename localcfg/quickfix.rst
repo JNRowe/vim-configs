@@ -10,7 +10,7 @@ Configure my custom maps::
 
 A utility function to add new map commands::
 
-    function! s:qf_key(type, key, cmd)
+    function! s:qf_key(type, key, cmd) abort
         let l:group = a:type == 'l' ? 'location' : 'quickfix'
         " Commands ending with backslash don't have <CR> appended
         if a:cmd[len(a:cmd)-1] == '\'

@@ -36,11 +36,11 @@ my opinion.
 
 ::
 
-    function! s:prefix(str, args)
+    function! s:prefix(str, args) abort
         return map(a:args, {_, s -> a:str . s})
     endfunction
 
-    function! s:suffix(str, args)
+    function! s:suffix(str, args) abort
         return map(a:args, {_, s -> s . a:str})
     endfunction
 
@@ -48,7 +48,7 @@ Enable an airline extension.  This is purely to remove duplication in setup.
 
 ::
 
-    function! s:airline_enable(extension)
+    function! s:airline_enable(extension) abort
         return 'let g:airline_extensions += ["' . a:extension . '"]'
     endfunction
 
@@ -64,7 +64,7 @@ available::
 repeated calls::
 
     let s:has_exec_cache = {}
-    function! s:has_exec(command)
+    function! s:has_exec(command) abort
         if !has_key(s:has_exec_cache, a:command)
             let s:has_exec_cache[a:command] = executable(a:command)
         endif

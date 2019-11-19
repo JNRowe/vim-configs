@@ -3,7 +3,7 @@
 
 Add map to close wordnet_ window from anywhere::
 
-    function! s:wordnet_close_win()
+    function! s:wordnet_close_win() abort
         if bufnr("__WordNet__") > -1
             exec bufnr("__WordNet__") . "bdelete!"
         endif

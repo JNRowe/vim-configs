@@ -19,7 +19,7 @@ Signature        Maps to
 
 ::
 
-    function! s:add_menu_items(heading, files)
+    function! s:add_menu_items(heading, files) abort
         for l:f in sort(a:files)
             let l:f = expand(l:f)
             if filereadable(l:f) || isdirectory(l:f)
@@ -29,7 +29,7 @@ Signature        Maps to
         endfor
     endfunction
 
-    function! s:define_menu(heading, items)
+    function! s:define_menu(heading, items) abort
         if type(a:items) == v:t_dict
             for [l:k, l:v] in sort(items(a:items))
                 let l:files = type(l:v) == v:t_string ? split(l:v) : l:v

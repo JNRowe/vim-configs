@@ -73,7 +73,7 @@ helps.
 
 ::
 
-    function! s:set_font(font)
+    function! s:set_font(font) abort
         if v:count1 != 1
             let l:font = s:font_family . '\ ' . v:count1
         else
@@ -83,7 +83,7 @@ helps.
         execute 'set guifont=' . l:font
     endfunction
 
-    function! s:font_complete(arglead, cmdline, cursorpos)
+    function! s:font_complete(arglead, cmdline, cursorpos) abort
         return [s:font_family . '\ ' . s:font_size, ]
             \ + map(range(8), {n -> s:font_family . '\ ' . (n * 8 + 16)})
     endfunction
