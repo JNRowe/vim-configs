@@ -6,6 +6,10 @@
 .. image:: /.static/vim_airline_powerlineish.png
    :alt: powerlineish theme screenshot
 
+Attempt to cache highlighting groups changes::
+
+    let g:airline_highlighting_cache = v:true
+
 Configure look::
 
     let g:airline_theme = 'powerlineish'
