@@ -174,8 +174,6 @@ verbose modeline.  Think of it as analogous to the behaviour of
 
 ::
 
-    nnoremap <silent> <Leader>ml :<C-u>call <SID>modeline_stub()<CR>
-
     " Adapted from godlygeek’s vimrc
     function! s:modeline_stub()
         let l:save_cursor = getcurpos()
@@ -189,6 +187,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
         $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
         call setpos('.', l:save_cursor)
     endfunction
+    command! Modeline call s:modeline_stub()
 
 Help related maps::
 
