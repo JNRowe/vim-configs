@@ -1,5 +1,5 @@
-``localcfg/semantic-highlight.vim``
-===================================
+``localcfg/semantic-highlight.vim.vim``
+=======================================
 
 Keep cache in `XDG basedir`_ compliant location::
 

@@ -1,5 +1,5 @@
-``localcfg/vim_vimlint``
-========================
+``localcfg/plugin_vim_vimlint.vim``
+===================================
 
 I prefer quickfix integration::
 
