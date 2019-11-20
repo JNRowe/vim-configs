@@ -118,6 +118,7 @@ Contents
     plugin_vim_startify
     plugin_vim_textobj_quote
     plugin_vim_vebugger
+    plugin_vim_vimlint
     plugin_wordnet.vim
     quickfix
 
