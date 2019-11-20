@@ -189,6 +189,8 @@ verbose modeline.  Think of it as analogous to the behaviour of
     endfunction
     command! Modeline call <SID>modeline_stub()
 
+.. _help-custom-maps:
+
 Help related maps::
 
     call MnemonicMap('Help', {'key': '?'})

@@ -1,6 +1,8 @@
 ``localcfg/plugin_calendar_vim.vim``
 ====================================
 
+.. _calendar-vim-custom-maps:
+
 Use my custom maps::
 
     let g:calendar_no_mappings = v:true

@@ -1,6 +1,8 @@
 ``after/ftplugin/rst.vim``
 ==========================
 
+.. _rst-custom-maps:
+
 ::
 
     call MnemonicMap('Heading', {'buffer': v:true, 'local': v:true})

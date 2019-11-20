@@ -46,6 +46,7 @@ Help
     background
     FAQ
     support/envvars
+    support/leader_maps
 
 Vim files
 '''''''''

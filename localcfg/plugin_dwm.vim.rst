@@ -1,6 +1,8 @@
 ``localcfg/plugin_dwm.vim.vim``
 ===============================
 
+.. _dwm-custom-maps:
+
 Use my custom maps::
 
     let g:dwm_map_keys = v:false

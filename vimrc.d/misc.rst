@@ -46,6 +46,8 @@ User email address, as used by various plugins::
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
         \ ' <' . systemlist('git -C ~ config user.email')[0] . '>'
 
+.. _Mnemonic-Map:
+
 Mnemonic mapping setup function::
 
     function! MnemonicMap(name, ...) abort

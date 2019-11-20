@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. _vim-gitgutter-custom-maps:
+
 Use my custom maps::
 
     call MnemonicMap('gitgutter')

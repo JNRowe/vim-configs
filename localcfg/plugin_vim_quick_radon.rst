@@ -1,6 +1,8 @@
 ``localcfg/plugin_vim_quick_radon.vim``
 =======================================
 
+.. _vim-quick-radon-custom-maps:
+
 Configure my custom maps::
 
     call MnemonicMap('radon', {'key': 'p', 'local': v:true})

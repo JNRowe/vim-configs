@@ -12,6 +12,8 @@ Jump to existing windows when possible::
 
     let g:fzf_buffers_jump = 1
 
+.. _fzf-vim-custom-maps:
+
 Configure convenience mappings for common command usage::
 
     call MnemonicMap('fzf', {'key': '`'})

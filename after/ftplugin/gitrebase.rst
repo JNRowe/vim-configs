@@ -1,6 +1,8 @@
 ``after/ftplugin/gitrebase.vim``
 ================================
 
+.. _gitrebase-custom-maps:
+
 Use my custom maps::
 
     call MnemonicMap('rebase', {'buffer': v:true, 'local': v:true})
