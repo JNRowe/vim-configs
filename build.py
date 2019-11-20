@@ -73,7 +73,7 @@ def wopt(name: str) -> str:
                   'qt5',
               ],
               metavar='PATH',
-              help='Dirctories to exclude from libc tags file.')
+              help='Directories to exclude from libc tags file.')
 @click.option('--sphinx/--no-sphinx', help='Enable Sphinx build')
 @click.argument('file',
                 type=click.Path(dir_okay=False, writable=True),
