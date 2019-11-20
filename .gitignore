@@ -4,10 +4,10 @@
 /.issues/
 /tags/
 
-README.html
 *.vim
 !internal/tearoff/plugin/tearoff.vim
 
+/README.html
 /build.ninja
 /abbr-local
 /vimrc
