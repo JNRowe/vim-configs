@@ -47,6 +47,8 @@ Open location list when errors exist::
         endfor
     endif
 
+.. _ale-custom-maps:
+
 Use my custom maps::
 
     call MnemonicMap('ale', {'local': v:true})

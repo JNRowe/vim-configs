@@ -20,6 +20,8 @@ Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
     let g:ledger_date_format = '%F'
 
+.. _vim-ledger-custom-maps:
+
 Use my custom maps::
 
     call MnemonicMap('Ledger', {'buffer': v:true, 'local': v:true})

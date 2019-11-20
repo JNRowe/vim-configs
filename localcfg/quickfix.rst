@@ -3,9 +3,16 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. _quickfix-custom-maps:
+
 Configure my custom maps::
 
     call MnemonicMap('quickfix', {'key': 'f', 'local': v:true})
+
+.. _location-list-custom-maps:
+
+::
+
     call MnemonicMap('location', {'local': v:true})
 
 A utility function to add new map commands::

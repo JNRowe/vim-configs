@@ -1,6 +1,8 @@
 ``localcfg/plugin_sideways.vim.vim``
 ====================================
 
+.. _sideways-vim-custom-maps:
+
 Use my custom maps::
 
     call MnemonicMap('sideways', {'local': v:true})

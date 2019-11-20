@@ -19,6 +19,8 @@ The remaining functionality is only useful when ``autocmd`` is available.
         finish
     endif
 
+.. _diff-custom-maps:
+
 Add my bindings for diff mode::
 
     function! s:diff_maps() abort

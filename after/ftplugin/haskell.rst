@@ -1,6 +1,8 @@
 ``after/ftplugin/haskell.vim``
 ==============================
 
+.. _haskell-custom-maps:
+
 Use ``:Tabularize`` to do simple lazy code formatting, as this is far quicker
 than doing a complete pretty print
 

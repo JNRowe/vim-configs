@@ -1,6 +1,8 @@
 ``after/ftplugin/gitcommit.vim``
 ================================
 
+.. _gitcommit-custom-maps:
+
 Configure maps to insert common info to commit messages::
 
     call MnemonicMap('Trailer', {'buffer': v:true, 'local': v:true})

@@ -1,6 +1,8 @@
 ``localcfg/plugin_vim_bufmru.vim``
 ==================================
 
+.. _vim-bufmru-custom-maps:
+
 Use my custom maps::
 
     call MnemonicMap('bufmru')

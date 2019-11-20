@@ -1,6 +1,8 @@
 ``localcfg/plugin_git_messenger.vim.vim``
 =========================================
 
+.. _git-messenger-vim-custom-maps:
+
 Use my custom maps::
 
     let g:git_messenger_no_default_mappings = v:true
