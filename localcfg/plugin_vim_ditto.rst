@@ -1,5 +1,5 @@
-``localcfg/plugin_vim_ditto``
-=============================
+``localcfg/plugin_vim_ditto.vim``
+=================================
 
 Store data in user’s system data directory::
 
