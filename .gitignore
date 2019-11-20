@@ -1,6 +1,7 @@
 /doc/tags
 
 /.build/
+/.issues/
 /tags/
 
 README.html
