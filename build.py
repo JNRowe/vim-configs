@@ -60,9 +60,9 @@ def wopt(name: str) -> str:
               default=True,
               help='Generate coloured output.')
 @click.option('--rst2html',
-              default='rst2html.py',
+              default='rst2html',
               metavar='COMMAND',
-              help='Path to rst2html.py.')
+              help='Path to rst2html.')
 @click.option('--libc-langs',
               default='C,C++',
               metavar='LANGS',
