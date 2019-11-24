@@ -249,6 +249,7 @@ language.
     call dein#add('SirVer/ultisnips', {
         \ 'depends': 'vim-snippets',
         \ 'if': has('pythonx') && v:version >= 704,
+        \ 'on_event': 'InsertEnter',
     \ })
 
 ``vim-gitgutter``
@@ -672,7 +673,12 @@ jealous.
 
 ::
 
-    call dein#add('honza/vim-snippets')
+    call dein#add('honza/vim-snippets', {
+        \ 'if': has('pythonx') && v:version >= 704,
+        \ 'on_event': 'InsertEnter',
+    \ })
+
+.. include:: .includes/lazy_rdep.rst
 
 ``vim-omnipytent``
 ''''''''''''''''''
