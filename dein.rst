@@ -52,14 +52,6 @@ Enable an airline extension.  This is purely to remove duplication in setup.
         return 'let g:airline_extensions += ["' . a:extension . '"]'
     endfunction
 
-Support variables
------------------
-
-Used in ternaries for fallbacks to upstream sources when ``vcs_cst`` isn’t
-available::
-
-    let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
-
 ``executable()`` doesn’t cache results, so we’ll do it ourselves to handle
 repeated calls::
 
@@ -70,6 +62,14 @@ repeated calls::
         endif
         return s:has_exec_cache[a:command]
     endfunction
+
+Support variables
+-----------------
+
+Used in ternaries for fallbacks to upstream sources when ``vcs_cst`` isn’t
+available::
+
+    let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
 
 Repositories
 ------------
