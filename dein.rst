@@ -1302,7 +1302,7 @@ user, how cool is that?
     call dein#add('reedes/vim-textobj-quote', {
         \ 'depends': 'vim-textobj-user',
         \ 'on_cmd': 'ToggleEducate',
-        \ 'on_ft': ['gitcommit', 'mail', 'rst', 'text'],
+        \ 'on_ft': ['gitcommit', 'gitrebase', 'mail', 'rst', 'text'],
     \ })
 
 ``vim-qlist``
