@@ -418,6 +418,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
     call dein#add('chrisbra/vim_faq', {
         \ 'if': v:version >= 600,
+        \ 'lazy': v:true,
     \ })
 
 ``vim-capnp``
