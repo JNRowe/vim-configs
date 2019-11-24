@@ -8,8 +8,6 @@ to handle this.
 
 ::
 
-    augroup jnrowe_ftdetect
-        autocmd BufRead,BufNewFile ~/.reminders.d/* setfiletype remind
-    augroup END
+    autocmd BufRead,BufNewFile ~/.reminders.d/* setfiletype remind
 
 .. _remind: http://www.roaringpenguin.com/products/remind

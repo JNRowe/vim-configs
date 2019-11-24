@@ -3,10 +3,8 @@
 
 Treat :wikipedia:`MHTML` documents as :abbr:`HTML (HyperText Markup Language)`::
 
-    augroup jnrowe_ftdetect
-        autocmd BufRead,BufNewFile *.mht setfiletype FALLBACK html
-        autocmd BufRead,BufNewFile *.mhtml set filetype=html
-    augroup END
+    autocmd BufRead,BufNewFile *.mht setfiletype FALLBACK html
+    autocmd BufRead,BufNewFile *.mhtml set filetype=html
 
 .. note::
 
