@@ -434,6 +434,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('cstrahan/vim-capnp', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'capnp',
     \ })
 
@@ -547,6 +548,7 @@ decorating it with glyphs.
 
     call dein#add('ehamberg/vim-cute-python', {
         \ 'if': has('conceal') && v:version >= 703,
+        \ 'lazy': v:false,
         \ 'on_ft': 'python',
         \ 'rev': 'moresymbols',
     \ })
@@ -660,6 +662,7 @@ jealous.
 ::
 
     call dein#add('hjson/vim-hjson', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'hjson',
     \ })
 
@@ -893,6 +896,7 @@ directly.
 ::
 
     call dein#add('junegunn/vim-emoji', {
+        \ 'lazy': v:false,
         \ 'on_func': 'emoji',
     \ })
 
@@ -957,6 +961,7 @@ directly.
 
     call dein#add('kalekundert/vim-coiled-snake', {
         \ 'if': has('folding'),
+        \ 'lazy': v:false,
         \ 'on_ft': 'python',
     \ })
 
@@ -1024,6 +1029,7 @@ directly.
 ::
 
     call dein#add('leafo/moonscript-vim', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'moon',
     \ })
 
@@ -1043,6 +1049,7 @@ editing your accounts/expenses an almost nice-ish experience.
 ::
 
     call dein#add('ledger/vim-ledger', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'ledger',
     \ })
 
@@ -1131,6 +1138,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mgrabovsky/vim-cuesheet', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'cuesheet',
     \ })
 
@@ -1228,6 +1236,7 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('nathangrigg/vim-beancount', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'beancount',
     \ })
 
@@ -1256,6 +1265,7 @@ user, how cool is that?
 ::
 
     call dein#add('nvie/vim_bridge', {
+        \ 'lazy': v:false,
         \ 'on_cmd': 'python',
     \ })
 
@@ -1270,6 +1280,7 @@ user, how cool is that?
 ::
 
     call dein#add('othree/html5.vim', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'html',
     \ })
 
@@ -1345,6 +1356,7 @@ user, how cool is that?
 
     call dein#add('rubik/vim-radon', {
         \ 'if': has('signs') && has('pythonx'),
+        \ 'lazy': v:false,
         \ 'on_cmd': 'Radon',
         \ 'on_ft': 'python',
     \ })
@@ -1410,6 +1422,7 @@ really daunting to wrap your head around.
 
     call dein#add('syngan/vim-vimlint', {
         \ 'depends': 'vim-vimlparser',
+        \ 'lazy': v:false,
         \ 'on_cmd': 'VimLint',
         \ 'on_ft': 'vim',
     \ })
@@ -1441,6 +1454,7 @@ really daunting to wrap your head around.
 
     call dein#add('tell-k/vim-quick-radon', {
         \ 'if': s:has_exec('radon'),
+        \ 'lazy': v:false,
         \ 'on_cmd': 'QuickRadon',
     \ })
 
@@ -1908,6 +1922,7 @@ because you can dump heaps and heaps of custom code you've written in your
 
     call dein#add('zah/nim.vim', {
         \ 'if': s:has_exec('nim'),
+        \ 'lazy': v:false,
         \ 'on_ft': 'nim',
     \ })
 
@@ -1981,6 +1996,7 @@ I write my mail in reST_.  No, really.
 ::
 
     call dein#add('vim-scripts/bnf.vim', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'bnf',
     \ })
 
@@ -1996,6 +2012,7 @@ I write my mail in reST_.  No, really.
 ::
 
     call dein#add('vim-scripts/ebnf.vim', {
+        \ 'lazy': v:false,
         \ 'on_ft': 'ebnf',
     \ })
 
