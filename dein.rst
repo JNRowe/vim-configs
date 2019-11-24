@@ -817,6 +817,11 @@ directly.
         \ 'on_ft': 'org',
     \ })
 
+.. note::
+
+    This is artificially set to lazy load, because of the interaction with the
+    ``NrrwRgn`` hooks which would otherwise raise an error.
+
 ``vimagit``
 '''''''''''
 
