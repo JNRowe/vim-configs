@@ -2031,7 +2031,7 @@ by deletion.
 .. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
        supported via :repo:`projectionist <tpope/vim-projectionist>`.
 .. [#] I tend to ignore plugins that aren’t available in this manner, because
-       the effort required to manage them normally exceeds their usefulness.
+       the effort required to manage them otherwise exceeds their usefulness.
 
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
