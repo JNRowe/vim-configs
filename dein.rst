@@ -148,7 +148,9 @@ preferences.
 
 ::
 
-    call dein#add('ConradIrwin/vim-bracketed-paste')
+    call dein#add('ConradIrwin/vim-bracketed-paste', {
+        \ 'on_event': 'InsertEnter',
+    \ })
 
 ``dwm.vim``
 '''''''''''
