@@ -66,7 +66,7 @@ settings while reading this file.
 
 ::
 
-    runtime! vimrc.pre
+    silent runtime! vimrc.pre
 
 Pull in remaining configs::
 
