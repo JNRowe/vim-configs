@@ -1,9 +1,7 @@
 ``after/ftplugin/c.vim``
 ========================
 
-Use ``:make`` to compile C/C++, even without a Makefile
-
-::
+Use ``:make`` to compile C/C++, even without a Makefile::
 
     if !filereadable('Makefile')
         setlocal makeprg=gcc\ -o\ %<\ %
