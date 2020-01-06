@@ -1,6 +1,8 @@
 ``localcfg/abbr.vim``
 =====================
 
+.. include:: ../.includes/scriptencoding.rst
+
 Common-ish mail abbreviations, that may also appear occasionally in other
 contexts too::
 

@@ -1,6 +1,8 @@
 ``localcfg/plugin_vim_textobj_quote.vim``
 =========================================
 
+.. include:: ../.includes/scriptencoding.rst
+
 Enable for reST_ and text filetypes::
 
     augroup jnrowe_vim_textobj_quote
