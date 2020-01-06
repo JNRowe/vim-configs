@@ -17,7 +17,7 @@ Set up map to quickly move between buffers.
 
     function! s:switch_buf(count) abort
         let b:bufs = filter(range(1, bufnr('$')),
-            \               'buflisted(v:val) && bufname(v:val) != ""')
+            \               'buflisted(v:val) && bufname(v:val) !=# ""')
         if len(b:bufs) < 2
             return
         endif
@@ -181,7 +181,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
         if v:count > 1
             let l:x .= printf(' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop, &shiftwidth,
                 \             &textwidth, &foldmethod,
-                \            (&foldmethod == 'marker' ? ' fmr=' . &fmr : ''))
+                \            (&foldmethod ==# 'marker' ? ' fmr=' . &fmr : ''))
         endif
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
         $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
@@ -252,7 +252,7 @@ a feature, but thanks for the idea!
 ::
 
     for s:m in ['i', 'n']
-        let s:break_insert = s:m == 'i' ? '<C-o>' : ''
+        let s:break_insert = s:m ==# 'i' ? '<C-o>' : ''
         for [s:mod, s:key, s:cmd] in [
             \  ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
             \  ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']

@@ -15,7 +15,7 @@ Configure my custom maps::
 Display radon_ output if possible::
 
     function! s:radon_open() abort
-        if &filetype == 'python'
+        if &filetype ==# 'python'
             QuickRadon
         endif
     endfunction

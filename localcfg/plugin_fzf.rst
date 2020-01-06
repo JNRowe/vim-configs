@@ -38,9 +38,9 @@ Jump through hoops to find a valid way to run :command:`fzf` if ``:terminal``
 isn’t available::
 
     if !has('terminal')
-        if $TERMINAL == 'st' || $TERMINAL == 'urxvtc'
+        if $TERMINAL ==# 'st' || $TERMINAL ==# 'urxvtc'
             let g:fzf_launcher = $TERMINAL . ' -e ' . $SHELL . ' -c %s'
-        elseif $TERMINAL == 'xterm'
+        elseif $TERMINAL ==# 'xterm'
             let g:fzf_launcher = 'xterm -e ' . $SHELL . ' -ic %s'
         elseif executable('st')
             let g:fzf_launcher = 'st -e ' . $SHELL . ' -c %s'

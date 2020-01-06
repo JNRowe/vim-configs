@@ -27,7 +27,7 @@ Use my custom maps::
         if stridx(s:cmd, '(') == -1
             let s:cmd .= '()'
         endif
-        if s:cmd[0] != ':'
+        if s:cmd[0] !=# ':'
             let s:cmd = 'call DWM_' . s:cmd
         else
             let s:cmd = s:cmd[1:]

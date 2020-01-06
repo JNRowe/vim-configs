@@ -111,7 +111,7 @@ Search for project specific :file:`vimrc` and support files::
                 return s:project_env_dir . l:output[0]
             endif
 
-            while l:p != '/'
+            while l:p !=# '/'
                 if isdirectory(l:p . '/.meta')
                     return s:project_env_dir . l:p . '/.meta'
                 endif
