@@ -1,5 +1,3 @@
-/doc/tags
-
 /.build/
 /.issues/
 /tags/
@@ -7,6 +5,7 @@
 *.vim
 !internal/tearoff/plugin/tearoff.vim
 
+/doc/tags
 /external/README.html
 /icons/README.html
 /internal/README.html
