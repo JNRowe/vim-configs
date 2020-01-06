@@ -42,6 +42,23 @@ has changed massively before we made it here.
     This is brittle *and* dirty, but there isn't much way around it.  See
     ``47ceaf9cbd970450953bdf3e84e281473a579ac0``
 
+.. todo::
+
+    This could use fancy colourful emojis both as a replacement for the textual
+    notes, but also for the icons.  For example:
+
+    =======  ===========
+    Current  Replacement
+    =======  ===========
+    ``II``   💡
+    ``WW``   ⚠
+    ``EE``   ⛔
+    =======  ===========
+
+    There is the not so-minor-issue of dealing with old terminals that can’t
+    display emoji, or display them poorly when their cells are non-uniform in
+    size.
+
 .. rubric:: Footnotes
 
 .. [#] I know *I’ll* forget the origin of the keys by the next time *I* open
