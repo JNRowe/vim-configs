@@ -102,7 +102,9 @@ Keep swap files in `XDG basedir`_ compliant location::
 :wikipedia:`UTF-8` should be default on all systems now, and :command:`vim` will
 pick that up via :envvar:`LANG`, but we’ll force it just in case::
 
+    " vint: -ProhibitEncodingOptionAfterScriptEncoding
     set encoding=utf-8
+    " vint: +ProhibitEncodingOptionAfterScriptEncoding
     set fileencoding=utf-8
     if v:lang =~? 'utf-8'
         set fileencodings=utf-8,latin1,default

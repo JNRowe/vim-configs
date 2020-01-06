@@ -8,6 +8,8 @@ to handle this.
 
 ::
 
+    " vint: -ProhibitAutocmdWithNoGroup
     autocmd BufRead,BufNewFile ~/.reminders.d/* setfiletype remind
+    " vint: +ProhibitAutocmdWithNoGroup
 
 .. _remind: http://www.roaringpenguin.com/products/remind
