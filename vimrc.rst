@@ -13,9 +13,11 @@ beyond me.
 
 ::
 
+    " vint: -ProhibitSetNoCompatible
     if &compatible
         set nocompatible
     endif
+    " vint: +ProhibitSetNoCompatible
 
 Warn users with pre-v8 :command:`vim` that problems will occur, but note that
 pull requests which aren’t too invasive are most welcome.

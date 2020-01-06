@@ -3,8 +3,10 @@
 
 Treat :wikipedia:`MHTML` documents as :abbr:`HTML (HyperText Markup Language)`::
 
+    " vint: -ProhibitAutocmdWithNoGroup
     autocmd BufRead,BufNewFile *.mht setfiletype FALLBACK html
     autocmd BufRead,BufNewFile *.mhtml set filetype=html
+    " vint: +ProhibitAutocmdWithNoGroup
 
 .. note::
 
