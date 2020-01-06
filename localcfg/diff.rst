@@ -7,7 +7,7 @@ Ignore whitespace by default::
 
 Use histogram :command:`diff` method to match my git_ config::
 
-    if has("patch-8.1.0360")
+    if has('patch-8.1.0360')
         set diffopt+=algorithm:histogram,indent-heuristic
     endif
 

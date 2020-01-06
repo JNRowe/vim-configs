@@ -194,7 +194,7 @@ For X.org_’s main user config files::
         \ 'Xinitr&c': '~/.xinitrc',
     \ }
     for s:fn in glob('~/.xinitrc.d/*', v:false, v:true)
-        let s:xorg_files[fnamemodify(s:fn, ":t:gs?\.?_?")] = s:fn
+        let s:xorg_files[fnamemodify(s:fn, ':t:gs?\.?_?')] = s:fn
     endfor
     call s:define_menu('&xorg', s:xorg_files)
 
