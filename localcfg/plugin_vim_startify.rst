@@ -8,9 +8,9 @@ started with arguments?
 ::
 
     let g:startify_bookmarks = [
-        \ g:xdg_config_dir . "/awesome/rc.moon",
-        \ g:xdg_config_dir . "/awesome/themes/jnrowe/theme.moon",
-        \ filereadable(g:xdg_config_dir . "/git/config") ? g:xdg_config_dir . "/git/config" : "~/.gitconfig",
+        \ g:xdg_config_dir . '/awesome/rc.moon',
+        \ g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
+        \ filereadable(g:xdg_config_dir . '/git/config') ? g:xdg_config_dir . '/git/config' : '~/.gitconfig',
         \ '~/.vim/vimrc.rst',
         \ '~/.vim/vimrc-local',
         \ '~/.vim/dein.rst',

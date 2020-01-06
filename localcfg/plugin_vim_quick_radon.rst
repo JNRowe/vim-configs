@@ -24,8 +24,8 @@ Display radon_ output if possible::
 Add map to close radon_ window from anywhere::
 
     function! s:radon_close_win() abort
-        if bufnr("quick_radon") > -1
-            exec bufnr("quick_radon") . "bdelete!"
+        if bufnr('quick_radon') > -1
+            exec bufnr('quick_radon') . 'bdelete!'
         endif
     endfunction
 
