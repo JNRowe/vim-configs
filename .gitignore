@@ -7,6 +7,9 @@
 *.vim
 !internal/tearoff/plugin/tearoff.vim
 
+/external/README.html
+/icons/README.html
+/internal/README.html
 /README.html
 /build.ninja
 /abbr-local
