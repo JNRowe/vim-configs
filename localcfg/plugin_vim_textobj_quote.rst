@@ -21,13 +21,13 @@ Configure quotes for current language::
 
     function! s:select_quotes() abort
         let l:current_lang = substitute(&spelllang, '_.*', '', '')
-        if l:current_lang == 'de'
+        if l:current_lang ==# 'de'
             let g:textobj#quote#doubleDefault = '„“'
             let g:textobj#quote#singleDefault = '‚‘'
-        elseif l:current_lang == 'es'
+        elseif l:current_lang ==# 'es'
             let g:textobj#quote#doubleDefault = '«»'
             let g:textobj#quote#singleDefault = '“”'
-        elseif l:current_lang == 'fr'
+        elseif l:current_lang ==# 'fr'
             let g:textobj#quote#doubleDefault = '«»'
             let g:textobj#quote#singleDefault = '‹›'
         endif
