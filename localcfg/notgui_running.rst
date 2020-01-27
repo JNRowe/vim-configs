@@ -43,3 +43,13 @@ Poke around, as best we can, to discern the background colour::
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn’t::
 
     inoremap <Nul> <C-x><C-o>
+
+kitty_ and :command:`vim` `interact poorly`_ with background repainting, the
+following works around it::
+
+    if $TERM ==# 'xterm-kitty'
+        let &t_ut=''
+    endif
+
+.. _kitty: https://sw.kovidgoyal.net/kitty/
+.. _interact poorly: https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
