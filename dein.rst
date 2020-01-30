@@ -405,7 +405,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
         \   ['DigraphNew', 'Digraphs']
         \   + s:prefix('Unicode', ['Name', 'Search', 'Table']),
         \ 'on_map': {
-        \   'i': ['<C-x><C-z>', '<C-x><C-g>'],
+        \   'i': ['<C-x><C-z>', '<C-x><C-g>', '<C-x><C-b>'],
         \   'n': '<Plug>(UnicodeGA)',
         \ },
     \ })
