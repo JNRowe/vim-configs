@@ -472,18 +472,18 @@ Use buffer and command name in window title::
 Custom foldtext setting::
 
     if has('folding')
-        function! MyFoldText()
-            function! s:shorten(text, line_str)
-                let l:text = a:text
-                " Non-getline() text length
-                let l:base = 19
-                let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
-                if strlen(l:text) > l:text_width
-                    let l:text = l:text[:l:text_width] . '…'
-                endif
-                return l:text
-            endfunction
+        function! s:shorten(text, line_str)
+            let l:text = a:text
+            " Non-getline() text length
+            let l:base = 19
+            let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+            if strlen(l:text) > l:text_width
+                let l:text = l:text[:l:text_width] . '…'
+            endif
+            return l:text
+        endfunction
 
+        function! MyFoldText()
             return substitute(foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
                 \             {m -> repeat('─', v:foldlevel) . ' ' .
                 \                   s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
