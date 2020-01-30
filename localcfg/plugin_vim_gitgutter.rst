@@ -19,12 +19,17 @@ Use my custom maps::
             \ ':GitGutter' . s:cmd . '<CR>'
     endfor
     nnoremap <silent> [gitgutter]p :GitGutterPreviewHunk<CR>
+    nnoremap <silent> [gitgutter]q :GitGutterQuickFix<CR>
 
 If you have more than 100 edits you probably need to commit!
 
 ::
 
     let g:gitgutter_max_signs = 100
+
+Use location list for ``:GitGutterQuickFix`` output::
+
+    let g:gitgutter_use_location_list = v:true
 
 .. include:: ../.includes/fontawesome.rst
 
