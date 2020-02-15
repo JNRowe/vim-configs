@@ -424,6 +424,21 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
         \ 'lazy': v:true,
     \ })
 
+``vim-codereview``
+''''''''''''''''''
+
+    “GitHub pull request-based code reviews”
+
+:repo: :repo:`vim-codereview <codegram/vim-codereview>`
+
+::
+
+    call dein#add('codegram/vim-codereview', {
+        \ 'depends': 'patchreview-vim',
+        \ 'if': has('ruby') && s:has_exec('curl'),
+        \ 'on_cmd': 'CodeReview',
+    \ })
+
 ``vim-capnp``
 '''''''''''''
 
