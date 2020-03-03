@@ -18,7 +18,7 @@ they may make your life far simpler!
 
     I record requirements even when they’re clearly met because I like to know
     what *may* break if I make changes.  For example, version checks for cases
-    where :repo:`dein <Shougo/dein.vim>` wouldn't work anyway or using
+    where :repo:`dein.vim <Shougo/dein.vim>` wouldn't work anyway or using
     ``has('patch-x.x.x')`` for versions prior to 7.4.237.
 
 .. note::
@@ -2075,7 +2075,7 @@ by deletion.
 .. rubric:: Footnotes
 
 .. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
-       supported via :repo:`projectionist <tpope/vim-projectionist>`.
+       supported via :repo:`vim-projectionist <tpope/vim-projectionist>`.
 .. [#] I tend to ignore plugins that aren’t available in this manner, because
        the effort required to manage them otherwise exceeds their usefulness.
 
