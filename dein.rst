@@ -442,7 +442,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ``vim-capnp``
 '''''''''''''
 
-    “Syntax highlighting, folding and indentation rules for `Cap'n Proto`_”
+    “Syntax highlighting, folding and indentation rules for `Cap'n Proto`_\”
 
 :repository: :repo:`cstrahan/vim-capnp`
 
@@ -657,7 +657,7 @@ jealous.
 ``dein-command.vim``
 ''''''''''''''''''''
 
-    “Utility commands for ``dein.vim``”
+    “Utility commands for ``dein.vim``\”
 
 :repository: :repo:`haya14busa/dein-command.vim`
 
@@ -769,7 +769,7 @@ jealous.
 ``vim-textobj-css``
 '''''''''''''''''''
 
-    “Text objects for working with :abbr:`CSS (Cascading Style Sheets)`”
+    “Text objects for working with :abbr:`CSS (Cascading Style Sheets)`\”
 
 :repository: :repo:`jasonlong/vim-textobj-css`
 
