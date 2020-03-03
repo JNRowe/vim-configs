@@ -55,11 +55,11 @@ has changed massively before we made it here.
     ``EE``   ⛔
     =======  ===========
 
-    There is the not so-minor-issue of dealing with old terminals that can’t
+    There is the not-so-minor-issue of dealing with old terminals that can’t
     display emoji, or display them poorly when their cells are non-uniform in
     size.
 
 .. rubric:: Footnotes
 
 .. [#] I know *I’ll* forget the origin of the keys by the next time *I* open
-       his file.
+       this file.
