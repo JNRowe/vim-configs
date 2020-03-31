@@ -283,6 +283,19 @@ almost-kind-of-works solution from your :file:`.vimrc`.
         \ 'on_event': 'InsertEnter',
     \ })
 
+``vim-toml``
+''''''''''''
+
+    “Syntax for TOML_\”
+
+:repository: :repo:`cespare/vim-toml`
+
+::
+
+    call dein#add('cespare/vim-toml', {
+        \ 'on_ft': 'toml',
+    \ })
+
 ``Colorizer``
 '''''''''''''
 
@@ -2081,6 +2094,7 @@ by deletion.
 
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
+.. _TOML: https://github.com/toml-lang/toml
 .. _Cap'n Proto: https://capnproto.org/
 .. _EditorConfig: http://editorconfig.org/
 .. _Hjson: https://hjson.org/
