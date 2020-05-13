@@ -24,7 +24,7 @@ def pretty(string: str, colour: bool = True) -> str:
         string: Text to prettify
         colour: Colourise output
     """
-    head, tail = string.rsplit()
+    head, tail = string.rsplit(maxsplit=1)
     space = ' ' * (9 - len(head))
     if colour:
         return ''.join(
