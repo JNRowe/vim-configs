@@ -1944,21 +1944,6 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_map': {'ov': '<LocalLeader>en'},
     \ })
 
-``nim.vim``
-'''''''''''
-
-    “Nim language support”
-
-:repository: :repo:`zah/nim.vim`
-
-::
-
-    call dein#add('zah/nim.vim', {
-        \ 'if': s:has_exec('nim'),
-        \ 'lazy': v:false,
-        \ 'on_ft': 'nim',
-    \ })
-
 ``vim-vimlparser``
 ''''''''''''''''''
 
@@ -1974,6 +1959,21 @@ because you can dump heaps and heaps of custom code you've written in your
     \ })
 
 .. include:: .includes/lazy_rdep.rst
+
+``nim.vim``
+'''''''''''
+
+    “Nim language support”
+
+:repository: :repo:`zah/nim.vim`
+
+::
+
+    call dein#add('zah/nim.vim', {
+        \ 'if': s:has_exec('nim'),
+        \ 'lazy': v:false,
+        \ 'on_ft': 'nim',
+    \ })
 
 vim-scripts mirrors
 -------------------
