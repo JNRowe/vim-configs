@@ -13,3 +13,9 @@ Match keywords with those used by co-workers::
         \ '|',
         \ 'DONE(d)', 'CANCELLED(c)', 'REJECTED(r)',
     \]
+
+
+I really like conceal in all buffers, but in ``.org`` files they’re
+essential::
+
+    let g:org_aggressive_conceal = v:true
