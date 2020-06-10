@@ -8,3 +8,10 @@
 .. tip::
 
     If for some reason you want the default output ``:ascii`` does that.
+
+Store data in `XDG basedir`_ compliant location::
+
+    let g:Unicode_cache_directory = g:vim_cache_dir . '/unicode.vim'
+    let g:Unicode_data_directory = g:vim_data_dir . '/unicode.vim'
+
+.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
