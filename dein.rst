@@ -1977,6 +1977,20 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_ft': 'nim',
     \ })
 
+``zig.vim``
+'''''''''''
+
+    “File detection and syntax highlighting for the zig_ programming language.”
+
+:repository: :repo:`ziglang/zig.vim`
+
+::
+
+    call dein#add('ziglang/zig.vim', {
+        \ 'if': s:has_exec('zig'),
+        \ 'on_ft': 'zig',
+    \ })
+
 vim-scripts mirrors
 -------------------
 
@@ -2106,5 +2120,6 @@ by deletion.
 .. _ledger: https://www.ledger-cli.org/
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
+.. _zig: https://ziglang.org/
 .. _wordnet: http://wordnet.princeton.edu/
 .. _reST: http://docutils.sourceforge.net/rst.html
