@@ -413,17 +413,27 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
 ::
 
-    call dein#add('chrisbra/unicode.vim', {
+    let s:unicode_opts = {
         \ 'hook_post_source': s:airline_enable('unicode'),
         \ 'if': v:version >= 704,
         \ 'on_cmd':
         \   ['DigraphNew', 'Digraphs']
-        \   + s:prefix('Unicode', ['Name', 'Search', 'Table']),
+        \    + s:prefix('Unicode', ['Name', 'Search', 'Table']),
         \ 'on_map': {
         \   'i': ['<C-x><C-z>', '<C-x><C-g>', '<C-x><C-b>'],
         \   'n': '<Plug>(UnicodeGA)',
-        \ },
-    \ })
+        \ }
+    \ }
+    if s:has_exec('fzf')
+        let s:unicode_opts['depends'] = 'fzf'
+        let s:unicode_opts['on_map']['i'] += ['<C-g><C-f>', ]
+    endif
+    call dein#add('chrisbra/unicode.vim', s:unicode_opts)
+
+.. note::
+
+    The extra hoops here are to allow the ``unicode.vim`` setup to
+    function irrespective of the availablity of ``fzf``.
 
 ``vim_faq``
 '''''''''''
