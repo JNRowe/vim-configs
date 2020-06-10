@@ -20,8 +20,12 @@ Configure look::
 Configure symbols::
 
     if has('gui_running')
-        let g:airline_left_sep = '╗'
-        let g:airline_right_sep = '╔'
+        if index(split(&guifont), 'NF') != -1
+            let g:airline_powerline_fonts = v:true
+        else
+            let g:airline_left_sep = '╗'
+            let g:airline_right_sep = '╔'
+        endif
 
         if !exists('g:airline_symbols')
             let g:airline_symbols = {}
