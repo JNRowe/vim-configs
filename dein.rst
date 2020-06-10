@@ -318,6 +318,8 @@ almost-kind-of-works solution from your :file:`.vimrc`.
     However, when it is useful it is *incredibly* useful and definitely worth
     the slow down.
 
+.. _nrrwrgn-plugin:
+
 ``NrrwRgn``
 '''''''''''
 
@@ -845,10 +847,10 @@ directly.
         \ 'on_ft': 'org',
     \ })
 
-.. note::
+.. warning::
 
     This is artificially set to lazy load, because of the interaction with the
-    ``NrrwRgn`` hooks which would otherwise raise an error.
+    :ref:`NrrwRgn <nrrwrgn-plugin>` hooks which would otherwise raise an error.
 
 ``vimagit``
 '''''''''''
