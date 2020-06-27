@@ -888,6 +888,7 @@ directly.
 ::
 
     call dein#add('junegunn/fzf', {
+        \ 'hook_post_source': s:airline_enable('fzf'),
         \ 'if': s:has_exec('fzf'),
         \ 'on_cmd': 'FZF',
         \ 'on_func': 'fzf#run',
