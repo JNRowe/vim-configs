@@ -1473,21 +1473,6 @@ really daunting to wrap your head around.
         \ 'on_ft': 'vim',
     \ })
 
-``vim-maximizer``
-'''''''''''''''''
-
-    “Maximizes and restores the current window”
-
-:repository: :repo:`szw/vim-maximizer`
-:config: :doc:`localcfg/plugin_vim_maximizer`
-
-::
-
-    call dein#add('szw/vim-maximizer', {
-        \ 'on_cmd': 'MaximizerToggle',
-        \ 'on_map': {'n': '<C-w>o'},
-    \ })
-
 ``vim-quick-radon``
 '''''''''''''''''''
 
@@ -1815,6 +1800,21 @@ documentation a relatively painless task.
 ::
 
     call dein#add('tpope/vim-unimpaired')
+
+``zoomwintab.vim``
+''''''''''''''''''
+
+    “A simple zoom window plugin”
+
+:repository: :repo:`troydm/zoomwintab.vim`
+
+::
+
+    call dein#add('troydm/zoomwintab.vim', {
+        \ 'hook_post_source': s:airline_enable('zoomwintab'),
+        \ 'on_cmd': 'ZoomWinTabToggle',
+        \ 'on_map': {'n': '<C-w>o'},
+    \ })
 
 ``braceless.vim``
 '''''''''''''''''
