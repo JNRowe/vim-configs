@@ -11,6 +11,7 @@ Contents
 .. toctree::
     :titlesonly:
 
+    git-fiddle
     mht
     pypi
     redo
