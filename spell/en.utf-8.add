@@ -1,17 +1,38 @@
 /encoding=utf-8
 
-Airbus
+# Valid words, but confusing to some
+inflammable/?
+
+# Computer-y jargon.
 API/=
-ChangeLog
-ElementTree
-GPL/=
-JNRowe/=
+ChangeLog/=
+GNU/=
 JSON/=
+OAuth/=
+PyPI/=
 RESTful/=
+TOML/=
 XML/=
+Xfce/=
+YAML/=
 plugin
 plugins
-reStructuredText/=
 setup
+systemd/=
 tarball
 whitespace
+
+# Language specific jargon, shame there isn’t a simple way to tie this to
+# a document
+D-Bus/=
+ElementTree/=
+GObject/=
+GPL/=
+Lua/=
+OCaml/=
+PostgreSQL/=
+reStructuredText/=
+
+# Personal words
+Airbus/=
+JNRowe/=
