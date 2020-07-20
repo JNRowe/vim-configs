@@ -122,5 +122,6 @@ Contents
     plugin_vimwiki
     plugin_wordnet.vim
     quickfix
+    spell
 
 .. _zsh: https://www.zsh.org/
