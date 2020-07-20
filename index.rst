@@ -72,6 +72,14 @@ Development
 
     todo
 
+Future
+''''''
+
+.. toctree::
+    :titlesonly:
+
+    upgrades
+
 Indices and tables
 ''''''''''''''''''
 
