@@ -270,6 +270,22 @@ language.
         \ 'if': has('signs') && s:has_exec('git'),
     \ })
 
+.. _vim-matchup-plugin:
+
+``vim-matchup``
+'''''''''''''''
+
+    “Visualize, navigate, and operate on matching sets of text”
+
+:repository: :repo:`andymass/vim-matchup`
+
+::
+
+    call dein#add('andymass/vim-matchup', {
+        \ 'if': v:version >= 704,
+        \ 'on_event': 'InsertEnter',
+    \ })
+
 ``vim-bad-whitespace``
 ''''''''''''''''''''''
 
