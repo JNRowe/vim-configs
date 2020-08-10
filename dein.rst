@@ -304,9 +304,9 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 .. note::
 
     I don’t automatically enable this on specific filetypes because it
-    *severely* slows down vim, enough to make you regret enabling it sometimes.
-    However, when it is useful it is *incredibly* useful and definitely worth
-    the slow down.
+    *severely* slows down :command:`vim`, enough to make you regret enabling it
+    sometimes.  However, when it is useful it is *incredibly* useful and
+    definitely worth the slow down.
 
 .. _nrrwrgn-plugin:
 
