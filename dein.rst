@@ -284,9 +284,7 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 
 ::
 
-    call dein#add('cespare/vim-toml', {
-        \ 'on_ft': 'toml',
-    \ })
+    call dein#add('cespare/vim-toml')
 
 ``Colorizer``
 '''''''''''''
