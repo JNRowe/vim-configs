@@ -846,8 +846,7 @@ jealous.
 :repository: :repo:`jceb/vim-editqf`
 :config: :doc:`localcfg/plugin_vim_editqf`
 
-Save all the window hopping key bashes and fix all those compiler warnings
-directly.
+Add your own TODO entries to the quickfix list, and hold them across sessions.
 
 ::
 
