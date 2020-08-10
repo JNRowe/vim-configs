@@ -839,6 +839,7 @@ directly.
         \ 'on_cmd':
         \   s:prefix('Loc', ['AddNote', 'Load', 'Save'])
         \   + s:prefix('QF', ['AddNote', 'Load', 'Save']),
+        \ 'on_ft': 'qf',
         \ 'on_map': {'n': '<LocalLeader>n'},
     \ })
 
@@ -1338,6 +1339,7 @@ user, how cool is that?
     call dein#add('romainl/vim-qlist', {
         \ 'if': has('quickfix'),
         \ 'on_cmd': s:suffix('list', ['D', 'I']),
+        \ 'on_ft': 'qf',
         \ 'on_map': {'n': ['[D', ']D', 'I', ']I']},
     \ })
 
