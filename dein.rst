@@ -738,9 +738,20 @@ jealous.
 
 ::
 
+    let s:vebugger_commands = []
+    for [s:cmd, s:arg] in [
+        \ ['gdb', v:null],
+        \ ['lldb', v:null],
+        \ ['python3', 'PDB3'],
+        \ ['ruby', 'RDebug'],
+    \ ]
+        if s:has_exec(s:cmd)
+            let s:vebugger_commands += [s:arg != v:null ? s:arg : toupper(s:cmd)]
+        endif
+    endfor
     call dein#add('idanarye/vim-vebugger', {
         \ 'depends': 'vimproc',
-        \ 'on_cmd': ['VBGstartGDB', 'VBGstartLLDB', 'VBGstartPDB3'],
+        \ 'on_cmd': s:prefix('VBGstart', s:vebugger_commands),
         \ 'on_func': 'vebugger',
     \ })
 
