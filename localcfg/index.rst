@@ -99,6 +99,7 @@ Contents
     plugin_vim_exchange
     plugin_vim_fugitive
     plugin_vim_gitgutter
+    plugin_vim_illuminate
     plugin_vim_indent_guides
     plugin_vim_jinja
     plugin_vim_jnrowe

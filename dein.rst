@@ -193,6 +193,18 @@ standards <editorconfig-plugin>` without allowing them free access to your
 
     call dein#add('JNRowe/vim-jnrowe')
 
+``vim-illuminate``
+''''''''''''''''''
+
+    “Selectively illuminate other uses of the current word”
+
+:repository: :repo:`RRethy/vim-illuminate`
+:config: :doc:`localcfg/plugin_vim_illuminate`
+
+::
+
+    call dein#add('RRethy/vim-illuminate')
+
 ``delimitMate``
 '''''''''''''''
 
@@ -767,17 +779,6 @@ jealous.
     call dein#add('idanarye/vim-yankitute', {
         \ 'on_cmd': 'Yankitute',
     \ })
-
-``vim-cursorword``
-''''''''''''''''''
-
-    “Underline the word under the cursor”
-
-:repository: :repo:`itchyny/vim-cursorword`
-
-::
-
-    call dein#add('itchyny/vim-cursorword')
 
 ``vim-gnupg``
 '''''''''''''
