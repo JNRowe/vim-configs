@@ -63,14 +63,6 @@ repeated calls::
         return s:has_exec_cache[a:command]
     endfunction
 
-Support variables
------------------
-
-Used in ternaries for fallbacks to upstream sources when ``vcs_cst`` isn’t
-available::
-
-    let s:vcs_cst = dein#util#_get_type('vcs_cst') != {}
-
 Repositories
 ------------
 
