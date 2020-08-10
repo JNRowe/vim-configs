@@ -105,7 +105,6 @@ Contents
     plugin_vim_ledger
     plugin_vim_notes
     plugin_vim_omnipytent
-    plugin_vim_orgmode
     plugin_vim_projectionist
     plugin_vim_quick_radon
     plugin_vim_rhubarb
