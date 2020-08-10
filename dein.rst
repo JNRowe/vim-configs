@@ -495,7 +495,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('dbmrq/vim-ditto', {
-        \ 'on_cmd': ['DittoFile', 'DittoOn'],
+        \ 'on_cmd': s:prefix('Ditto', ['File', 'On']),
     \ })
 
 .. _ale-plugin:
@@ -725,7 +725,7 @@ jealous.
 
     call dein#add('idanarye/vim-omnipytent', {
         \ 'if': has('pythonx'),
-        \ 'on_cmd': s:prefix('OP', ['edit', '2edit', '3edit']),
+        \ 'on_cmd': s:prefix('OP', s:suffix('edit', ['', '2', '3'])),
     \ })
 
 ``vim-vebugger``
