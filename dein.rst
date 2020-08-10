@@ -1702,7 +1702,7 @@ your favourite plugin anyway.
 ``vim-rsi``
 '''''''''''
 
-    “Readline style insertion”
+    “Readline_ style insertion”
 
 :repository: :repo:`tpope/vim-rsi`
 
@@ -2142,6 +2142,7 @@ by deletion.
 .. _ledger: https://www.ledger-cli.org/
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
+.. _Readline: http://www.gnu.org/software/readline/
 .. _zig: https://ziglang.org/
 .. _wordnet: http://wordnet.princeton.edu/
 .. _reST: http://docutils.sourceforge.net/rst.html
