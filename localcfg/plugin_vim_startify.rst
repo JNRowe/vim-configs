@@ -1,6 +1,11 @@
 ``localcfg/plugin_vim_startify.vim``
 ====================================
 
+Use a smaller decoration in the header, so that the important data is
+immediately visible in short windows::
+
+    let g:startify_custom_header = 'startify#center(startify#fortune#boxed())'
+
 These common, to me, config files are reasonable bookmarks for when I've started
 :command:`vim` without arguments, but perhaps others are more useful when
 started with arguments?
