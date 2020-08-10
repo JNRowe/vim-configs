@@ -842,27 +842,6 @@ directly.
         \ 'on_map': {'n': '<LocalLeader>n'},
     \ })
 
-``vim-orgmode``
-'''''''''''''''
-
-    “Text outlining and task management for Vim based on Emacs’ `Org-Mode`_\”
-
-:repository: :repo:`jceb/vim-orgmode`
-:config: :doc:`localcfg/plugin_vim_orgmode`
-
-::
-
-    call dein#add('jceb/vim-orgmode', {
-        \ 'depends': ['NrrwRgn', 'SyntaxRange', 'calendar-vim', 'vim-repeat',
-        \             'vim-speeddating'],
-        \ 'on_ft': 'org',
-    \ })
-
-.. warning::
-
-    This is artificially set to lazy load, because of the interaction with the
-    :ref:`NrrwRgn <nrrwrgn-plugin>` hooks which would otherwise raise an error.
-
 ``vimagit``
 '''''''''''
 
@@ -2142,7 +2121,6 @@ by deletion.
 .. _Hjson: https://hjson.org/
 .. _gpg: https://www.gnupg.org/
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
-.. _org-mode: http://orgmode.org/
 .. _ledger: https://www.ledger-cli.org/
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
