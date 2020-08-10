@@ -45,4 +45,11 @@ Enable common — to me — highlighting support::
     \ }
     let g:rst_use_emphasis_colors = v:true
 
+The *vast* majority of the time I spend editing reST_ documents I am actually
+editing files from a Sphinx_ project.  It would be nice if I could ``gf`` when
+in a ``:doc:`` role or ``toctree`` directive::
+
+    setlocal suffixesadd+=.rst
+
 .. _reST: http://docutils.sourceforge.net/rst.html
+.. _Sphinx: http://sphinx-doc.org/
