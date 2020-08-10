@@ -1216,7 +1216,7 @@ Makes handling Python code far, far easier.
 ``vim-bufmru``
 ''''''''''''''
 
-    “Order buffers in Most Recently Used order”
+    “Order buffers in :abbr:`MRU (Most Recently Used)` order”
 
 :repository: :repo:`mildred/vim-bufmru`
 :config: :doc:`localcfg/plugin_vim_bufmru`
