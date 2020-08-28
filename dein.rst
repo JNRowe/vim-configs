@@ -1313,6 +1313,8 @@ user, how cool is that?
         \ 'on_ft': 'html',
     \ })
 
+.. _vim-textobj-quote-plugin:
+
 ``vim-textobj-quote``
 '''''''''''''''''''''
 
@@ -1326,7 +1328,7 @@ user, how cool is that?
     call dein#add('reedes/vim-textobj-quote', {
         \ 'depends': 'vim-textobj-user',
         \ 'on_cmd': 'ToggleEducate',
-        \ 'on_ft': ['gitcommit', 'gitrebase', 'mail', 'rst', 'text'],
+        \ 'on_ft': ['gitcommit', 'gitrebase', 'mail', 'note', 'rst', 'text'],
     \ })
 
 ``vim-qlist``

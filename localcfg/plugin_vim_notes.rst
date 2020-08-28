@@ -17,3 +17,8 @@ Dive in to the ``dein`` cache to set up documentation::
 We don’t require backwards compatibility, so respect word boundaries::
 
     let g:notes_word_boundaries = v:true
+
+I prefer the exact behaviour of :ref:`vim-textobj-quote
+<vim-textobj-quote-plugin>`::
+
+    let g:notes_smart_quotes = v:false
