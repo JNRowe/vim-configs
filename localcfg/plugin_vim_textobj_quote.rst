@@ -7,7 +7,7 @@ Enable for reST_ and text filetypes::
 
     augroup jnrowe_vim_textobj_quote
         autocmd!
-        autocmd FileType gitcommit,gitrebase,rst call textobj#quote#init()
+        autocmd FileType gitcommit,gitrebase,note,rst call textobj#quote#init()
         autocmd FileType text call textobj#quote#init({'educate': 0})
     augroup END
 
