@@ -710,20 +710,6 @@ jealous.
         \ 'on_cmd': 'Dein',
     \ })
 
-``vim-hjson``
-'''''''''''''
-
-    “Hjson_ syntax support“
-
-:repository: :repo:`hjson/vim-hjson`
-
-::
-
-    call dein#add('hjson/vim-hjson', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'hjson',
-    \ })
-
 ``vim-snippets``
 ''''''''''''''''
 
@@ -2122,7 +2108,6 @@ by deletion.
 .. _TOML: https://github.com/toml-lang/toml
 .. _Cap'n Proto: https://capnproto.org/
 .. _EditorConfig: http://editorconfig.org/
-.. _Hjson: https://hjson.org/
 .. _gpg: https://www.gnupg.org/
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
 .. _ledger: https://www.ledger-cli.org/
