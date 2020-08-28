@@ -7,16 +7,6 @@ Set useful defaults for formatting prose::
     setlocal textwidth=72
     let b:undo_ftplugin .= '|setlocal textwidth<'
 
-If par_ is available we’ll use it::
-
-    if executable('par-format')
-        setlocal formatprg=par-format\ -w72eq
-        let b:undo_ftplugin .= '|setlocal formatprg<'
-    elseif executable('par')
-        setlocal formatprg=par\ -w72eq
-        let b:undo_ftplugin .= '|setlocal formatprg<'
-    endif
-
 Add dictionary from miscfiles_ if available::
 
     if filereadable('/usr/share/dict/words')
@@ -24,5 +14,4 @@ Add dictionary from miscfiles_ if available::
         let b:undo_ftplugin .= '|setlocal complete<'
     endif
 
-.. _par: http://www.nicemice.net/par/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
