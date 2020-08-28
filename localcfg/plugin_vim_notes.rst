@@ -9,6 +9,11 @@ I only use :command:`vim`’s builtin indent maps::
 
     let g:notes_tab_indents = v:false
 
+Use a personal notes directory that can be version-controlled separately::
+
+    let g:notes_directories = [g:xdg_data_dir . '/vim-notes']
+    call mkdir(g:notes_directories[0], 'p')
+
 Dive in to the ``dein`` cache to set up documentation::
 
     let g:notes_shadowdir = g:dein_repos_dir .
