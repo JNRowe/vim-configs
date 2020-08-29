@@ -278,6 +278,10 @@ Disable :command:`vim`’s intro message, which would be displayed if
 
     set shortmess+=I
 
+Don’t show ``ins-completion-menu`` messages, they’re obvious from context::
+
+    set shortmess+=c
+
 .. _matchpos:
 
 Show match position when searching::
