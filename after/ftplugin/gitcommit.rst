@@ -12,3 +12,11 @@ Configure maps to insert common info to commit messages::
             \ ' :%!git interpret-trailers --trailer ' . shellescape(s:type . '-by') .
             \ '=' . shellescape(g:user_email) . '<CR>'
     endfor
+
+A few co-workers are now decorating the commits with emojis for expressing
+their types, and I’ll *try* to do so when committing to them::
+
+    for [s:key, s:char] in [['new', '🌟'], ['del', '❌'], ['fix', '🐛'],
+        \                   ['ref', '⟳']]
+        silent execute 'iabbrev <buffer> _' . s:key . ' ' . s:char
+    endfor
