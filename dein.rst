@@ -234,8 +234,7 @@ language.
 
     call dein#add('Shougo/vimproc', {
         \ 'build': 'make',
-        \ 'on_cmd': s:prefix('VBGstart', ['GBB', 'LLDB', 'PDB3']),
-        \ 'on_func': 'vebugger',
+        \ 'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -722,7 +721,7 @@ jealous.
 
     call dein#add('honza/vim-snippets', {
         \ 'if': has('pythonx') && v:version >= 704,
-        \ 'on_event': 'InsertEnter',
+        \ 'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -1921,8 +1920,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('xolox/vim-misc', {
-        \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
-        \ 'on_map': {'ov': '<LocalLeader>en'},
+        \ 'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -1953,8 +1951,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('ynkdir/vim-vimlparser', {
-        \ 'on_cmd': 'VimLint',
-        \ 'on_ft': 'vim',
+        \ 'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
