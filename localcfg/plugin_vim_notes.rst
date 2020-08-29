@@ -34,6 +34,15 @@ We don’t require backwards compatibility, so respect word boundaries::
 
     let g:notes_word_boundaries = v:true
 
+Find a markdown processor::
+
+    for s:p in ['markdown2', 'markdown.py', 'markdown-calibre']
+        if executable(s:p)
+            let g:notes_markdown_program = s:p
+            break
+        endif
+    endfor
+
 I prefer the exact behaviour of :ref:`vim-textobj-quote
 <vim-textobj-quote-plugin>`::
 
