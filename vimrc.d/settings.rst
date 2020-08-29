@@ -455,7 +455,7 @@ files, object and static library files, editor backups and sqlite_ databases.
 
 Insert longest common match by default::
 
-    set wildmode^=longest
+    set wildmode^=longest:full
 
 Use fancy Unicode characters to show for `wrapped lines <breakindentopt>`_::
 
