@@ -21,4 +21,21 @@ every one to take part, but they have become popular in work mail::
 .. include:: ../../.includes/thesaurus.rst
 .. include:: ../../.includes/prose.rst
 
+Kill from current line to signature, as a quick way to scrub large chunks of
+quoted text::
+
+    function! s:kill_to_signature()
+        let l:sig = search('^-- $', 'cnW')
+        if l:sig != 0
+            execute line('.') . ',' . (l:sig - 1) . 'd'
+        else
+            let v:warningmsg = 'Signature not found!'
+            echohl WarningMsg
+            echomsg v:warningmsg
+            echohl none
+        endif
+    endfunction
+    inoremap <silent> <C-k> <C-o>:call <SID>kill_to_signature()<CR>
+    nnoremap <silent> <C-k> :call <SID>kill_to_signature()<CR>
+
 .. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
