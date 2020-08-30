@@ -35,6 +35,10 @@ needs_sphinx = '3.1'
 
 nitpicky = True
 
+exclude_patterns: List[str] = ['.build', 'README.rst', '**/README.rst']
+# }}}
+
+# Project information {{{
 with suppress(CalledProcessError):
     proc = run(
         ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
@@ -42,8 +46,6 @@ with suppress(CalledProcessError):
     html_last_updated_fmt = proc.stdout.decode()
 
 source_suffix = '.rst'
-
-exclude_patterns: List[str] = ['.build', 'README.rst', '**/README.rst']
 
 project = 'vim-configs'
 copyright = '2009-2020  James Rowe'  # NOQA: A001
