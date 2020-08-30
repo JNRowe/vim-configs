@@ -45,8 +45,6 @@ with suppress(CalledProcessError):
         stdout=PIPE)
     html_last_updated_fmt = proc.stdout.decode()
 
-source_suffix = '.rst'
-
 project = 'vim-configs'
 copyright = '2009-2020  James Rowe'  # NOQA: A001
 
