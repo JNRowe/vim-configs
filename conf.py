@@ -61,8 +61,6 @@ if not on_rtd:
 
 highlight_language = 'vim'
 
-pygments_style = 'sphinx'
-
 html_copy_source = False
 # }}}
 
