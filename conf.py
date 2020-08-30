@@ -10,6 +10,7 @@ on_rtd = 'READTHEDOCS' in os.environ
 if not on_rtd:
     import sphinx_rtd_theme
 
+# General configuration {{{
 extensions: List[str] = \
     [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
                                      'githubpages', 'intersphinx', 'todo']] \
@@ -42,7 +43,9 @@ copyright = '2009-2020  James Rowe'  # NOQA: A001
 
 release = html_last_updated_fmt
 version = ''
+# }}}
 
+# Options for HTML output {{{
 # readthedocs.org handles this setup for their builds, but it is nice to see
 # approximately correct builds on the local system too
 if not on_rtd:
@@ -56,12 +59,14 @@ highlight_language = 'vim'
 pygments_style = 'sphinx'
 
 html_copy_source = False
+# }}}
 
-# Autodoc extension settings
+# autodoc extension settings {{{
 autoclass_content = 'init'
 autodoc_default_options: Dict[str, Union[str, bool]] = {
     'members': True,
 }
+# }}}
 
 # extlinks extension settings {{{
 extlinks: Dict[str, Tuple[str, str]] = {
@@ -72,7 +77,7 @@ extlinks: Dict[str, Tuple[str, str]] = {
 }
 # }}}
 
-# intersphinx extension settings
+# intersphinx extension settings {{{
 intersphinx_mapping: Dict[str, str] = {
     k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
     for k, v in {
@@ -80,16 +85,20 @@ intersphinx_mapping: Dict[str, str] = {
         'python': 'https://docs.python.org/3/',
     }.items()
 }
+# }}}
 
-# spelling extension settings
+# spelling extension settings {{{
 spelling_ignore_acronyms = False
 spelling_lang = 'en_GB'
 spelling_word_list_filename = '.meta/en.utf-8.add'
 spelling_ignore_python_builtins = False
 spelling_ignore_importable_modules = False
+# }}}
 
-# napoleon extension settings
+# napoleon extension settings {{{
 napoleon_numpy_docstring = False
+# }}}
 
-# todo extension settings
+# todo extension settings {{{
 todo_include_todos = True
+# }}}
