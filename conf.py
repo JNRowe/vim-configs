@@ -31,6 +31,8 @@ if not on_rtd:
     else:
         extensions.append('sphinxcontrib.spelling')
 
+needs_sphinx = '3.1'
+
 with suppress(CalledProcessError):
     proc = run(
         ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
