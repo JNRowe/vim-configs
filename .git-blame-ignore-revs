@@ -1,0 +1,16 @@
+# Most of this file is generated from git’s log output, but feel free to
+# customise it!  If you make improvements, open a pull request against
+# ‘JNRowe/vim-configs’ with your super changes attached.
+
+### BLAME_IGNORE_TAG: Generated from master {{{
+
+#[QA] Reformat with yapf
+fb80cae72664b7242e876aa042d960d8c98c68cb
+
+#[QA] Reformat with yapf
+acd54c4d1017620bd486845ed97be8ef459ef8b9
+
+#[Tr] Drop f-string usage
+60cbc08df628344d47b7a0de6351b251107497e6
+
+### BLAME_IGNORE_TAG: Generated from master }}}
