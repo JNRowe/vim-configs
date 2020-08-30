@@ -1156,6 +1156,19 @@ trying to impress their grandpa.  Which is a Good Thing™.
         \ 'on_cmd': 'UndotreeToggle',
     \ })
 
+``meson``
+'''''''''
+
+    “Meson build system support”
+
+:repository: :repo:`mesonbuild/meson`
+
+::
+
+    call dein#add('mesonbuild/meson', {
+        \ 'rtp': 'data/syntax-highlighting/vim',
+    \ })
+
 ``vim-cuesheet``
 ''''''''''''''''
 
