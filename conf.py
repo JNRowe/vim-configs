@@ -39,14 +39,14 @@ exclude_patterns: List[str] = ['.build', 'README.rst', '**/README.rst']
 # }}}
 
 # Project information {{{
+project = 'vim-configs'
+copyright = '2009-2020  James Rowe'  # NOQA: A001
+
 with suppress(CalledProcessError):
     proc = run(
         ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
         stdout=PIPE)
     html_last_updated_fmt = proc.stdout.decode()
-
-project = 'vim-configs'
-copyright = '2009-2020  James Rowe'  # NOQA: A001
 
 release = html_last_updated_fmt
 version = ''
