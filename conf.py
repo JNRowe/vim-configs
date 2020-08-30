@@ -33,6 +33,8 @@ if not on_rtd:
 
 needs_sphinx = '3.1'
 
+nitpicky = True
+
 with suppress(CalledProcessError):
     proc = run(
         ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
