@@ -46,6 +46,8 @@ copyright = '2009-2020  James Rowe'  # NOQA: A001
 
 release = html_last_updated_fmt
 version = ''
+
+trim_footnote_reference_space = True
 # }}}
 
 # Options for HTML output {{{
