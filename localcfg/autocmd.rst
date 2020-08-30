@@ -120,6 +120,7 @@ Search for project specific :file:`vimrc` and support files::
                 let l:break = l:p
                 let l:p = fnamemodify(l:p, ':h')
             endwhile
+            return v:none
         endfunction
 
         function! s:apply_project_locals()
