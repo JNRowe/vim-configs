@@ -15,7 +15,7 @@ extensions: List[str] = \
     [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
                                      'githubpages', 'intersphinx', 'todo']] \
     + [f'sphinxcontrib.{ext}' for ext in []] \
-    + [f'sphinx_autodoc_typehints', 'sphinx_click.ext']
+    + ['sphinx_autodoc_typehints', 'sphinx_click.ext']
 
 if not on_rtd:
     # Only activate spelling if it is installed.  It is not required in the
