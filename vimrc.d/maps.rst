@@ -3,17 +3,7 @@
 
 .. _switch-bufs:
 
-Set up map to quickly move between buffers.
-
-.. note::
-
-    I *love* ``hidden``, as it really suits the way I work.  However, it also
-    means I occasionally have to skip through things I don’t care about in
-    ``:bnext`` and I don’t love that.  The following function skips the buffers
-    I wouldn’t care about and provides a more useful *to me* version of buffer
-    cycling.
-
-::
+Set up map to quickly move between buffers::
 
     function! s:switch_buf(count) abort
         let b:bufs = filter(range(1, bufnr('$')),
@@ -29,6 +19,14 @@ Set up map to quickly move between buffers.
 
     noremap <silent> <M-Left> :call <SID>switch_buf(-1)<CR>
     noremap <silent> <M-Right> :call <SID>switch_buf(1)<CR>
+
+.. note::
+
+    I *love* ``hidden``, as it really suits the way I work.  However, it also
+    means I occasionally have to skip through things I don’t care about in
+    ``:bnext`` and I don’t love that.  The previous skips the buffers
+    I wouldn’t care about and provides a more useful *to me* version of
+    buffer cycling.
 
 I hate you *so* much right now::
 
