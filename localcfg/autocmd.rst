@@ -13,6 +13,10 @@ Create missing directories when saving files::
             \   call mkdir(expand('%:h', v:true), 'p') |
             \ endif
 
+Don’t write undo data for temporary files::
+
+        autocmd BufWritePre /tmp/*,$TMP/*,~/.cache/** setlocal noundofile
+
 Use :command:`vim`’s help for these documents::
 
         autocmd BufRead ~/.vim/**.rst setlocal keywordprg=:help
