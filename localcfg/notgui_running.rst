@@ -61,6 +61,18 @@ workaround this::
         set t_ti= t_te=
     endif
 
+kitty_ can display undercurls for fancier spelling error highlighting that
+closely matches my setup in :command:`gvim`::
+
+    if $TERM ==# 'xterm-kitty'
+        let &t_Cs = "\e[4:3m"
+        let &t_Ce = "\e[4:0m"
+        highlight clear SpellBad
+        highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
+        autocmd ColorScheme * highlight clear SpellBad |
+            \ highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
+    endif
+
 .. _kitty: https://sw.kovidgoyal.net/kitty/
 .. _interact poorly: https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 .. _kittens: https://sw.kovidgoyal.net/kitty/#kittens
