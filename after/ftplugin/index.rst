@@ -19,6 +19,7 @@ Contents
     make
     remind
     rst
+    sh
     text
 
 .. Hide symlinked docs.  Can’t hide them with orphan in the docs as it will
@@ -28,3 +29,4 @@ Contents
    :hidden:
 
    cpp
+   zsh
