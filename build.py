@@ -125,7 +125,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
         # dependency file.
         n.rule('rst_extract',
-               f'{location / "rst2vim.py"} -r $out.dep $in $out',
+               f'{location / "tools/rst2vim.py"} -r $out.dep $in $out',
                pretty('RST2VIM $out', colour),
                '$out.dep',
                deps='gcc')
@@ -168,7 +168,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 n.build(f'{location / p.with_suffix("")}', 'rst_extract', [
                     f'{location / p }',
                 ], [
-                    f'{location / "rst2vim.py"}',
+                    f'{location / "tools/rst2vim.py"}',
                 ])
             elif p.parent.stem == 'support':
                 continue
@@ -177,7 +177,7 @@ def configure(local: bool, colour: bool, rst2html: str, libc_langs: str,
                 n.build(f'{location / p.with_suffix(".vim")}', 'rst_extract', [
                     f'{location / p }',
                 ], [
-                    f'{location / "rst2vim.py"}',
+                    f'{location / "tools/rst2vim.py"}',
                 ])
 
         tags = location / 'tags'
