@@ -19,7 +19,7 @@ overwrite a :command:`cp --link` tree::
     set backup
     set backupcopy=auto,breakhardlink
     let &backupdir = g:vim_cache_dir . '/backup//'
-    call mkdir(g:vim_cache_dir . '/backup', 'p')
+    call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
 
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
 edits and the resulting *huge* backups are practically always useless to me.
@@ -97,7 +97,7 @@ If miscfiles_ is installed use its dictionary::
 Keep swap files in `XDG basedir`_ compliant location::
 
     let &directory = g:vim_cache_dir . '/swap//,' . &directory
-    call mkdir(g:vim_cache_dir . '/swap', 'p')
+    call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
 
 :wikipedia:`UTF-8` should be default on all systems now, and :command:`vim` will
 pick that up via :envvar:`LANG`, but we’ll force it just in case::
@@ -388,7 +388,7 @@ compliant location::
     if has('persistent_undo')
         set undofile
         let &undodir = g:vim_data_dir . '/undo//,' . &undodir
-        call mkdir(g:vim_data_dir . '/undo', 'p')
+        call mkdir(g:vim_data_dir . '/undo', 'p', 0700)
     endif
 
 .. warning::
@@ -407,6 +407,7 @@ Store session files in `XDG basedir`_ compliant location::
 
     if has('mksession')
         let &viewdir = g:vim_cache_dir . '/view'
+        call mkdir(&viewdir, 'p', 0700)
     endif
 
 Configure ``'viminfo'`` and store :file:`viminfo` files in `XDG basedir`_
