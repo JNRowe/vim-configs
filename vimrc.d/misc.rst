@@ -89,3 +89,17 @@ debugging, by printing the entirety of options::
     EOF
     endfunction
     command! InsertOptions call <SID>insert_options()
+
+Add on-hover word definitions, which can be useful for prose editing::
+
+    function! s:wordnet_balloon() abort
+        return systemlist('wn ' . v:beval_text . ' -over')
+    endfunction
+    if has('gui_running') && executable('wn')
+        command WordNetBalloon setlocal balloonexpr=<SID>wordnet_balloon()
+    endif
+
+.. note::
+
+    This is only enabled for :command:`gvim` as I have the mouse configured in
+    a way which would be problematic for use with ``balloonevalterm``.
