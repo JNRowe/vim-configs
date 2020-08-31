@@ -40,9 +40,9 @@ Configure layered maps for useful quickfix and location functions::
 
     for s:t in ['l', 'c']
         for [s:key, s:cmd] in [
-            \   ['wc', 'close'],
+            \   ['c', 'close'],
             "\ 7 lines seems to be the magic number for *me*
-            \   ['wo', 'open 7<CR><C-w>p\'],
+            \   ['o', 'open 7<CR><C-w>p\'],
             \   ['b', 'bottom'],
             \   ['n', 'next'],
             \   ['p', 'previous'],
