@@ -467,8 +467,20 @@ Use fancy Unicode characters to show for `wrapped lines <breakindentopt>`_::
 Use buffer and command name in window title::
 
     if has('title') && (has('gui_running') || &title)
+        function! RelativeName() abort
+            " Dig in to projectionist’s data for project root
+            let l:p = get(b:, 'projectionist', {})
+            if l:p != {}
+                return substitute(expand('%:p'),
+                    \             '^' . keys(l:p)[0] . '/',
+                    \             '',
+                    \             '')
+            else
+                return expand('%')
+            endif
+        endfunction
         set titlestring=
-        set titlestring+=%F " File name
+        set titlestring+=%{RelativeName()}  " File name
         set titlestring+=\ -\ %{v:progname} " Program name
     endif
 
