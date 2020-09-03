@@ -100,8 +100,8 @@ The attempt to modernise :command:`vim` is wonderful, but sadly they‘ve done i
 at the expense of half a dozen or so features I rely on.
 
 I‘m starting to believe it may be the future of vim_ though, and that bothers me
-a little.  The additions over stock vim_ are not my cup of tea, and the removals
-are breakages in my eyes.
+a little.  Many of the additions over stock vim_ are not my cup of tea, and
+a few of the removals are breakages in my eyes.
 
 As I stated above, I am fickle and I‘ll change my mind in a heartbeat if it
 eventually brings some changes that are useful to me.  Right now I‘ll just thank
