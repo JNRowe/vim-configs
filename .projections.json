@@ -9,9 +9,10 @@
         "type": "readme"
     },
     "dein.rst": {
-        "alternate": "{}.vim",
+        "alternate": "dein.vim",
         "type": "dein"
     },
+    "dein.vim": { "alternate": "dein.rst" },
     "ftdetect/*.rst": {
         "alternate": "ftdetect/{}.vim",
         "template": [
@@ -26,6 +27,7 @@
         ],
         "type": "fconfig"
     },
+    "ftdetect/*.vim": { "alternate": "ftdetect/{}.rst" },
     "localcfg/*.rst": {
         "alternate": "localcfg/{}.vim",
         "template": [
@@ -39,6 +41,7 @@
         ],
         "type": "lconfig"
     },
+    "localcfg/*.vim": { "alternate": "localcfg/{}.rst" },
     "localcfg/plugin_*.rst": {
         "alternate": "localcfg/{}.vim",
         "template": [
@@ -66,8 +69,10 @@
         ],
         "type": "rconfig"
     },
+    "vimrc.d/*.vim": { "alternate": "vimrc.d/{}.rst" },
     "vimrc.rst": {
-        "alternate": "{}.vim",
+        "alternate": "vimrc",
         "type": "rc"
-    }
+    },
+    "vimrc": { "alternate": "vimrc.rst" }
 }
