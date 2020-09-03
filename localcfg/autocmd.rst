@@ -62,8 +62,8 @@ Jump to the last known cursor position if possible::
 
 .. note::
 
-    Doesn’t restore saved position for git buffers as that tends to not be
-    useful.
+    Doesn’t restore saved position for :command:`git` buffers as that tends
+    to not be useful.
 
 Make stdin buffers temporary by default.  Potentially dangerous, but
 I only use them this way.
