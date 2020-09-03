@@ -90,13 +90,19 @@ debugging, by printing the entirety of options::
     endfunction
     command! InsertOptions call <SID>insert_options()
 
+A helper for simple ``balloonexpr`` usage that simply calls an external
+command::
+
+    function! CommandBalloon(cmd) abort
+        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
+        return systemlist(printf(l:cmd, v:beval_text))
+    endfunction
+
 Add on-hover word definitions, which can be useful for prose editing::
 
-    function! s:wordnet_balloon() abort
-        return systemlist('wn ' . v:beval_text . ' -over')
-    endfunction
     if has('gui_running') && executable('wn')
-        command WordNetBalloon setlocal balloonexpr=<SID>wordnet_balloon()
+        command WordNetBalloon
+            \ setlocal balloonexpr=CommandBalloon('wn\ %s\ -over')
     endif
 
 .. note::
