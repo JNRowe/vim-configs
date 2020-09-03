@@ -114,7 +114,7 @@ Only files that *must* contain tabs(:file:`Makefile`) *should* contain tabs::
 
     set expandtab
 
-If the term can support it use fancy Unicode for vertical split bar::
+If the term can support it, use fancy Unicode for vertical split bar::
 
     if &termencoding ==# 'utf-8' || has('gui_running')
         set fillchars+=vert:│
