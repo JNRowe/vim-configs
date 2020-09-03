@@ -3,11 +3,9 @@
 
 Add on-hover command definitions::
 
-    function! s:command_balloon() abort
-        return systemlist('whatis ' . v:beval_text)
-    endfunction
     if has('gui_running')
-        command CommandBalloon! setlocal balloonexpr=<SID>command_balloon()
+        command! CommandBalloon
+            \ setlocal balloonexpr=CommandBalloon('whatis')
     endif
 
 .. note::
