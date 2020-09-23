@@ -16,7 +16,7 @@ This creates reST_ headings using *my* favourite definitions of ``=``, ``-`` and
             \ ['s', 'k'],
         \ ]
             execute 'nnoremap <buffer> <silent> [Heading]' . s:cmd . s:key .
-                \ ' yyp<C-v>$r' . s:sym . s:post
+                \ ' yypVr' . s:sym . s:post
         endfor
     endfor
 
