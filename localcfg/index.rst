@@ -62,6 +62,7 @@ Contents
     plugin_Recover.vim
     plugin_Replay
     plugin_ale
+    plugin_black
     plugin_calendar_vim
     plugin_committia.vim
     plugin_delimitMate
