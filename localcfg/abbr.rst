@@ -46,4 +46,5 @@ snippets if I wasn’t so used to this now::
       :wikipedia:`ISO-8601 <ISO_8601>` styling
 
     If these were fixed we could switch to using :command:`vim`’s ``strftime``
-    function.
+    function, with the caveat that format strings are non-portable and
+    that we’d need to be conditional on ``exists('*strftime')``.
