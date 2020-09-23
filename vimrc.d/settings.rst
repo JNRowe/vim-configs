@@ -233,6 +233,15 @@ unset it on some systems::
     just as easily live with excluding ``octal`` as long it was *always*
     disabled.
 
+Support increment and decrement on single characters too::
+
+    set nrformats+=alpha
+
+.. note::
+
+    I’m unsure if I want this, but I’m playing with it for lists in text.
+    Should it only be in :file:`prose.rst`?
+
 Disable line numbering by default, but `not in the GUI <gui-linenumbers>`_::
 
     set nonumber
