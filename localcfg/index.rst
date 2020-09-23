@@ -73,7 +73,6 @@ Contents
     plugin_fzf.vim
     plugin_git_messenger.vim
     plugin_goyo.vim
-    plugin_gundo.vim
     plugin_jedi_vim
     plugin_molokai
     plugin_patchreview_vim
@@ -105,6 +104,7 @@ Contents
     plugin_vim_jinja
     plugin_vim_jnrowe
     plugin_vim_ledger
+    plugin_vim_mundo
     plugin_vim_notes
     plugin_vim_omnipytent
     plugin_vim_peekaboo
