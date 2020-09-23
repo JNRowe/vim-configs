@@ -1437,22 +1437,22 @@ user, how cool is that?
     There is no radon_ check here, because it doesn’t actually use
     :command:`radon`.
 
-``gundo.vim``
+``vim-mundo``
 '''''''''''''
 
-    “Graph your undo tree”
+    “Visualizes the Vim undo tree”
 
-:repository: :repo:`sjl/gundo.vim`
-:config: :doc:`localcfg/plugin_gundo.vim`
+:repository: :repo:`simnalamburt/vim-mundo`
+:config: :doc:`localcfg/plugin_vim_mundo`
 
 Finally grasp the :command:`vim` ``undo-tree``, without this the feature can be
 really daunting to wrap your head around.
 
 ::
 
-    call dein#add('sjl/gundo.vim', {
+    call dein#add('simnalamburt/vim-mundo', {
         \ 'if': has('pythonx') && v:version >= 703,
-        \ 'on_cmd': 'GundoToggle',
+        \ 'on_cmd': 'MundoToggle',
     \ })
 
 ``splice.vim``
