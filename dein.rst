@@ -928,6 +928,18 @@ Add your own TODO entries to the quickfix list, and hold them across sessions.
         \ 'on_func': 'emoji',
     \ })
 
+``vim-peekaboo``
+''''''''''''''''
+
+    “Preview support for registers”
+
+:repository: :repo:`junegunn/vim-peekaboo`
+:config: :doc:`localcfg/plugin_vim_peekaboo`
+
+::
+
+    call dein#add('junegunn/vim-peekaboo')
+
 ``patchreview-vim``
 '''''''''''''''''''
 
