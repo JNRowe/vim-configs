@@ -11,11 +11,20 @@ if not on_rtd:
     import sphinx_rtd_theme
 
 # General configuration {{{
-extensions: List[str] = \
-    [f'sphinx.ext.{ext}' for ext in ['autodoc', 'doctest', 'extlinks',
-                                     'githubpages', 'intersphinx', 'todo']] \
-    + [f'sphinxcontrib.{ext}' for ext in []] \
-    + ['sphinx_autodoc_typehints', 'sphinx_click.ext']
+extensions: List[str] = [
+    f'sphinx.ext.{ext}'
+    for ext in [
+        'autodoc',
+        'doctest',
+        'extlinks',
+        'githubpages',
+        'intersphinx',
+        'todo',
+    ]
+] + [f'sphinxcontrib.{ext}' for ext in []] + [
+    'sphinx_autodoc_typehints',
+    'sphinx_click.ext',
+]
 
 if not on_rtd:
     # Showing document build durations is only valuable when writing, so we’ll
@@ -45,7 +54,8 @@ copyright = '2009-2020  James Rowe'  # NOQA: A001
 with suppress(CalledProcessError):
     proc = run(
         ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
-        stdout=PIPE)
+        stdout=PIPE,
+    )
     html_last_updated_fmt = proc.stdout.decode()
 
 release = html_last_updated_fmt
