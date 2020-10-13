@@ -40,8 +40,20 @@ def is_vim_code(node: Node):
 # Stub used Sphinx directives and roles, as we’re not using them in output
 for directive in ('envvar', 'todo'):
     directives.register_directive(directive, StubDirective)
-for role in ('abbr', 'command', 'doc', 'envvar', 'file', 'func', 'kbd',
-             'manpage', 'pypi', 'ref', 'repo', 'wikipedia'):
+for role in (
+    'abbr',
+    'command',
+    'doc',
+    'envvar',
+    'file',
+    'func',
+    'kbd',
+    'manpage',
+    'pypi',
+    'ref',
+    'repo',
+    'wikipedia',
+):
     roles.register_generic_role(role, nodes.comment)
 
 p = ArgumentParser()
@@ -57,9 +69,9 @@ settings = {
 }
 
 with open(args.input) as f:
-    doctree = publish_doctree(f.read(),
-                              args.input,
-                              settings_overrides=settings)
+    doctree = publish_doctree(
+        f.read(), args.input, settings_overrides=settings
+    )
 
 code_blocks = doctree.traverse(condition=is_vim_code)
 
