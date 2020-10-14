@@ -1,1 +1,1 @@
-/home/james/.vim/after/ftplugin/sh.rst
+sh.rst
