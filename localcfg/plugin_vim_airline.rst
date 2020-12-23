@@ -17,7 +17,7 @@ Configure look::
 
 .. include:: ../.includes/fontawesome.rst
 
-Configure symbols::
+Configure symbols for :command:`gvim`::
 
     if has('gui_running')
         if index(split(&guifont), 'NF') != -1
@@ -44,11 +44,20 @@ Configure symbols::
             \ 'spell': '',
             \ 'whitespace': 'Ξ',
         \ }
+
+.. note::
+
+    The test ``NF`` is to enable less common replacements that may only be
+    available with the nerd-fonts_ packages.
+
+.. include:: ../.includes/fancy_symbols.rst
+
+and use simple :abbr:`ASCII (American Standard Code for Information
+Interchange)` replacements in a terminal::
+
     else
         let g:airline_symbols_ascii = v:true
     endif
-
-.. include:: ../.includes/fancy_symbols.rst
 
 Only show unusual encodings::
 
@@ -145,4 +154,5 @@ Allow spaces *after* tabs, but not in between::
 
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
+.. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
 .. _git: https://www.git-scm.com/
