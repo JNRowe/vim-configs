@@ -53,7 +53,7 @@ exclude_patterns: List[str] = ['.build', 'README.rst', '**/README.rst']
 
 # Project information {{{
 project = 'vim-configs'
-copyright = '2009-2020  James Rowe'  # NOQA: A001
+copyright = '2009-2021  James Rowe'  # NOQA: A001
 
 with suppress(CalledProcessError):
     proc = run(
