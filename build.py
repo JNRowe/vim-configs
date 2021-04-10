@@ -74,7 +74,9 @@ def wopt(name: str) -> str:
 @click.option(
     '--libc-exclude',
     multiple=True,
-    default=['qt5',],
+    default=[
+        'qt5',
+    ],
     metavar='PATH',
     help='Directories to exclude from libc tags file.',
 )
@@ -174,15 +176,23 @@ def configure(
         n.build(
             f'{location / file}',
             'configure',
-            [f'{location / "build.py"}',],
-            [ninja_syntax.__file__,],
+            [
+                f'{location / "build.py"}',
+            ],
+            [
+                ninja_syntax.__file__,
+            ],
         )
 
         n.build(
             f'{location / "README.html"}',
             'rst_compile',
-            [f'{location / "README.rst"}',],
-            [which(rst2html),],
+            [
+                f'{location / "README.rst"}',
+            ],
+            [
+                which(rst2html),
+            ],
         )
 
         rst_files = [
@@ -193,9 +203,13 @@ def configure(
             n.build(
                 f'{location / ".build/html"}',
                 'sphinx_build',
-                [f'{location / "conf.py"}',]
+                [
+                    f'{location / "conf.py"}',
+                ]
                 + [p.as_posix() for p in rst_files],
-                implicit=[which('sphinx-build'),],
+                implicit=[
+                    which('sphinx-build'),
+                ],
             )
 
         for p in rst_files:
@@ -218,16 +232,24 @@ def configure(
                 n.build(
                     f'{location / p.with_suffix(".vim")}',
                     'rst_extract',
-                    [f'{location / p }',],
-                    [f'{location / "tools/rst2vim.py"}',],
+                    [
+                        f'{location / p }',
+                    ],
+                    [
+                        f'{location / "tools/rst2vim.py"}',
+                    ],
                 )
 
         tags = location / 'tags'
         n.build(
             f'{tags / "libc.ctags"}',
             'tags_gen',
-            ['/usr/include',],
-            [ctags_path,],
+            [
+                '/usr/include',
+            ],
+            [
+                ctags_path,
+            ],
             variables={
                 'exclude': ' '.join(
                     f'--exclude=$in/{d}' for d in libc_exclude
@@ -247,8 +269,12 @@ def configure(
                 n.build(
                     f'{tags / (tags_name % p.name)}.ctags',
                     'tags_gen',
-                    [p.as_posix(),],
-                    [ctags_path,],
+                    [
+                        p.as_posix(),
+                    ],
+                    [
+                        ctags_path,
+                    ],
                     variables={'lang': lang},
                 )
                 has_lang = True
