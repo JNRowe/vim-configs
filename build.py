@@ -146,12 +146,11 @@ def configure(
             deps='gcc',
         )
 
-        if sphinx:
-            n.rule(
-                'sphinx_build',
-                f'sphinx-build -M html {location} {location / ".build"}',
-                pretty('SPHINX $out', colour),
-            )
+        n.rule(
+            'sphinx_build',
+            f'sphinx-build -M html {location} {location / ".build"}',
+            pretty('SPHINX $out', colour),
+        )
 
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
         # dependency file.
