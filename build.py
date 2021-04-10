@@ -212,14 +212,7 @@ def configure(
             )
 
         for p in rst_files:
-            if p.name == 'vimrc.rst':
-                n.build(
-                    f'{location / p.with_suffix("")}',
-                    'rst_extract',
-                    [f'{location / p }',],
-                    [f'{location / "tools/rst2vim.py"}',],
-                )
-            elif p.parent.stem == 'support':
+            if p.parent.stem == 'support':
                 continue
             elif p.name not in (
                 'FAQ.rst',
@@ -227,9 +220,14 @@ def configure(
                 'background.rst',
                 'index.rst',
                 'todo.rst',
+                'vimrc.rst',
             ):
+                if p.name == 'vimrc.rst':  # No suffix on main vimrc file
+                    output = f'{location / p.with_suffix("")}'
+                else:
+                    output = f'{location / p.with_suffix(".vim")}'
                 n.build(
-                    f'{location / p.with_suffix(".vim")}',
+                    output,
                     'rst_extract',
                     [
                         f'{location / p }',
