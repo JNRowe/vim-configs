@@ -22,6 +22,8 @@ Configure symbols for :command:`gvim`::
     if has('gui_running')
         if index(split(&guifont), 'NF') != -1
             let g:airline_powerline_fonts = v:true
+            let g:airline_left_sep = ''
+            let g:airline_right_sep = ''
         else
             let g:airline_left_sep = '╗'
             let g:airline_right_sep = '╔'
