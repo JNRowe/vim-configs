@@ -152,7 +152,7 @@ def configure(
             pretty('SPHINX $out', colour),
         )
 
-        # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s
+        # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s default
         # dependency file.
         n.rule(
             'rst_extract',
