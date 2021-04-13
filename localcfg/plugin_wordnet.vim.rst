@@ -9,7 +9,7 @@ Add map to close wordnet_ window from anywhere::
         endif
     endfunction
 
-    nnoremap <silent> <Leader>wnq :call <SID>wordnet_close_win()<CR>
+    nnoremap <silent> <Leader>wnc :call <SID>wordnet_close_win()<CR>
 
 We don’t care that the dictionary buffer has trailing whitespace::
 
