@@ -120,6 +120,7 @@ Contents
     plugin_vim_textobj_quote
     plugin_vim_vebugger
     plugin_vim_vimlint
+    plugin_vim_visual_multi
     plugin_wordnet.vim
     quickfix
     spell

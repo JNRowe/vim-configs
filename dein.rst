@@ -1527,17 +1527,18 @@ really daunting to wrap your head around.
         \ 'on_map': {'nv': ['+', '-']},
     \ })
 
-``vim-multiple-cursors``
-''''''''''''''''''''''''
+``vim-visual-multi``
+''''''''''''''''''''
 
-    “True Sublime Text multiple selection”
+    “Multiple selections/cursors”
 
-:repository: :repo:`terryma/vim-multiple-cursors`
+:repository: :repo:`mg979/vim-visual-multi`
 
 ::
 
-    call dein#add('terryma/vim-multiple-cursors', {
-        \ 'on_map': '<C-n>',
+    call dein#add('mg979/vim-visual-multi', {
+        \ 'if': has('pythonx') && v:version >= 800,
+        \ 'on_map': ['<C-n>', '<C-Down>', '<C-Up>'],
     \ })
 
 ``wordnet.vim``
