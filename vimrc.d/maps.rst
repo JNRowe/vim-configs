@@ -54,14 +54,6 @@ Navigate tags with keys I find less annoying::
     noremap <C-S-Left> <C-T>
     noremap <C-S-Right> <C-]>
 
-Add oddly *verbose* maps to skip paragraphs::
-
-    nnoremap <C-Up> {
-    nnoremap <C-Down> }
-
-… it may seem strange but when you’re diving about :kbd:`<C-Up>` is often easier
-to hit.
-
 Begin new line from anywhere::
 
     inoremap <S-CR> <C-o>o
