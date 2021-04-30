@@ -102,7 +102,7 @@ helps.
 
 Include non-standard server names in the window title::
 
-    if has('title')  && has('clientserver')
+    if has('title') && has('clientserver')
         set titlestring+=%{v:servername!='GVIM'?'\ ['.v:servername.']':''}
     endif
 
