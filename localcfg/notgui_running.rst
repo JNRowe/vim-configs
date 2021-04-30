@@ -36,9 +36,9 @@ Poke around, as best we can, to discern the background colour::
 … and change the cursor colour for insert mode on supported terminals::
 
     if &term =~# s:feature_terms && exists('&t_SI')
-        let &t_SI = "\<Esc>]12;purple\x7"
         let &t_EI = "\<Esc>]12;green\x7"
-    endif
+        let &t_SI = "\<Esc>]12;purple\x7"
+        let &t_SR = "\<Esc>]12;red\x7"
 
 .. todo::
 
