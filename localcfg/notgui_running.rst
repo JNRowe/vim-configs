@@ -44,6 +44,13 @@ Poke around, as best we can, to discern the background colour::
 
     This is brittle, but I don’t know a foolproof way to handle it.  Thoughts?
 
+… and match cursor types to :command:`gvim`::
+
+        let &t_EI .= "\<Esc>[2 q"
+        let &t_SI .= "\<Esc>[6 q"
+        let &t_SR .= "\<Esc>[4 q"
+    endif
+
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn’t::
 
     inoremap <Nul> <C-x><C-o>
