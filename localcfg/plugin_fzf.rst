@@ -8,7 +8,7 @@ Use smaller than default :repo:`fzf <junegunn/fzf>` window::
 Hide status line::
 
     if has('autocmd')
-        function! s:fzf_status()
+        function! s:fzf_status() abort
             let l:laststatus = &laststatus
             let l:ruler = &ruler
             let l:showmode = &showmode
