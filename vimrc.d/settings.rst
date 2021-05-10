@@ -493,6 +493,11 @@ Use buffer and command name in window title::
         set titlestring+=\ -\ %{v:progname} " Program name
     endif
 
+The default minimum window height of one line is not useful enough to be
+worthwhile, so allow window borders to touch::
+
+    set winminheight=0
+
 .. _custom-foldtext:
 
 Custom foldtext setting::
