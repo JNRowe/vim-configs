@@ -9,7 +9,16 @@ Add map to close wordnet_ window from anywhere::
         endif
     endfunction
 
-    nnoremap <silent> <Leader>wnc :call <SID>wordnet_close_win()<CR>
+Use my custom maps::
+
+    call MnemonicMap('wordnet')
+
+    for [s:key, s:cmd] in [
+        \   ['o', 'wyiw:call WordNetOverviews(@w)'],
+        \   ['c', ':call <SID>wordnet_close_win()'],
+        \ ]
+        execute 'nmap <silent> [wordnet]' . s:key . ' ' . s:cmd . '<CR>'
+    endfor
 
 We don’t care that the dictionary buffer has trailing whitespace::
 

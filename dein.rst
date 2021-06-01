@@ -1553,6 +1553,7 @@ really daunting to wrap your head around.
 
     call dein#add('timcharper/wordnet.vim', {
         \ 'if': s:has_exec('wn'),
+        \ 'on_func': 'WordNetOverviews',
         \ 'on_map': '<Leader>wn',
     \ })
 
