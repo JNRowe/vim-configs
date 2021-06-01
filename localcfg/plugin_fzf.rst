@@ -9,9 +9,8 @@ Hide status line::
 
     if has('autocmd')
         function! s:fzf_status() abort
-            let l:laststatus = &laststatus
-            let l:ruler = &ruler
-            let l:showmode = &showmode
+            let [l:laststatus, l:ruler, l:showmode] =
+                \ [&laststatus, &ruler, &showmode]
             autocmd FileType fzf set laststatus=0 noshowmode noruler
             execute 'autocmd BufLeave <buffer> set ' .
                 \ 'laststatus=' . l:laststatus ' ' .

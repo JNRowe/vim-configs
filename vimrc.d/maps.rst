@@ -208,15 +208,13 @@ for shortcuts::
 Ping the cursor position as a visual cue when returning to a session::
 
     function! s:cursor_ping() abort
-        let l:cursorline = &cursorline
-        let l:cursorcolumn = &cursorcolumn
+        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
         for _ in range(5)
             set cursorline! cursorcolumn!
             redraw
             sleep 15m
         endfor
-        let &cursorline = l:cursorline
-        let &cursorcolumn = l:cursorcolumn
+        let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
     endfunction
     nmap <silent> <C-Space> :call <SID>cursor_ping()<CR>
 
