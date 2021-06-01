@@ -7,17 +7,21 @@ Configure styling::
     if has('gui_running')
         let g:indent_guides_guide_size = 1
         let g:indent_guides_start_level = 2
-        hi IndentGuidesOdd guibg=#007700
-        hi IndentGuidesEven guibg=#00ff00
-    else
-        if &t_Co >= 88
-            hi IndentGuidesOdd  ctermbg=236
-            hi IndentGuidesEven ctermbg=240
-        else
-            hi IndentGuidesOdd  ctermbg=0
-            hi IndentGuidesEven ctermbg=8
-        endif
     endif
+    let s:guide_gui = {'even': '#00ff00', 'odd': '#007700'}
+    if &t_Co >= 88
+        let s:guide_term = {'even': 240, 'odd': 236}
+    else
+        let s:guide_term = {'even': 8, 'odd': 0}
+    endif
+    augroup jnrowe_vim_indent_guides
+        for s:k in ['even', 'odd']
+            execute 'autocmd Colorscheme,VimEnter * highlight ' .
+                \ 'IndentGuides' . TitleWord(s:k) .
+                \ ' ctermbg=' . s:guide_term[s:k] .
+                \ ' guibg=' . s:guide_gui[s:k]
+        endfor
+    augroup END
 
 .. todo::
 
