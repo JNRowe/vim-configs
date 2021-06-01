@@ -22,7 +22,7 @@ If possible enable 24-bit colour::
 
 Poke around, as best we can, to discern the background colour::
 
-    let s:feature_terms = '^\(linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
+    let s:feature_terms = '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
     if &term =~# s:feature_terms || split($COLORFGBG . ';padding', ';')[0] == 15
         if &background != 'dark'
             set background=dark
