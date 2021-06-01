@@ -27,7 +27,7 @@ has changed massively before we made it here.
             let [s:icon, s:hl] = [s:v[0], s:v[1]]
         else
             let s:icon = s:v
-            let s:hl = toupper(s:v[0]) . s:v[1:] . 'MSG'
+            let s:hl = TitleWord(s:v) . 'MSG'
         endif
         unlet s:v
         execute 'sign define ' .

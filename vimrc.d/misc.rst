@@ -67,6 +67,12 @@ Mnemonic mapping setup function::
 
     This adds a :kbd:`?` binding to display the map list for ``name``.
 
+Convenience function to apply title case to a word::
+
+    function! TitleWord(word) abort
+        return toupper(a:word[0]) . a:word[1:]
+    endfunction
+
 Many distributions package :command:`vim` with cherry picked patches, and
 sometimes it is nice to know the current base version state::
 
