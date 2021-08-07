@@ -33,7 +33,7 @@ pull requests which aren’t too invasive are most welcome.
 
 neovim_ is *never* tested, as it removes functionality I use.  Feel free to open
 pull requests for ``neovim`` support, *iff* they aren’t too invasive *and* don’t
-break vim.
+break :command:`vim`.
 
 ::
 

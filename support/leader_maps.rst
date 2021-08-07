@@ -31,5 +31,5 @@ Key        Local  Buffer  Maps
 
 .. tip::
 
-    ``MnemonicMap()`` adds a :kbd:`?` map to all groups that will show a list of
-    defined mappings.
+    :ref:`MnemonicMap() <MnemonicMap>` adds a :kbd:`?` map to all groups that
+    will show a list of defined mappings.

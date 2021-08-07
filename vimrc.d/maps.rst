@@ -63,7 +63,7 @@ Make :kbd:`<C-g>` verbose by default::
 
     nnoremap <C-g> 2<C-g>
 
-Map Q to reformat paragraphs just like everyone else does::
+Map :kbd:`Q` to reformat paragraphs just like everyone else does::
 
     nnoremap Q gqap
 
@@ -71,7 +71,7 @@ Easy access to man pages when using a custom ``keywordprg``::
 
     nnoremap <C-?> :<C-U>execute 'Man' v:count '<C-R><C-W>'<CR>
 
-Shift + arrows to select text like other applications::
+:kbd:`Shift` + arrows to select text like other applications::
 
     nnoremap <S-Left> vh
     nnoremap <S-Right> vl
