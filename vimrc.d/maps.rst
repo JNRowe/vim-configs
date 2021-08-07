@@ -165,7 +165,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
         if v:count > 1
             let l:x .= printf(' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop, &shiftwidth,
                 \             &textwidth, &foldmethod,
-                \            (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : ''))
+                \             (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : ''))
         endif
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
         $put =trim(substitute(l:x, '\ \+', ' ', 'g'))

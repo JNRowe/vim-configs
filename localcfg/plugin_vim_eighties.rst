@@ -14,4 +14,3 @@ should be treated as static window layouts::
 A little wiggle room “feels” nicer::
 
     let g:eighties_extra_width = 3
-
