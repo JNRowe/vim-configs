@@ -9,8 +9,10 @@ skip portrait displays.
     if has('vertsplit')
         if !exists('g:display_portrait')
             if executable('xdotool')
-                silent let s:geo = split(system('xdotool getdisplaygeometry'))
-                let g:display_portrait = s:geo[0] < s:geo[1]
+                silent let [s:width, s:height] =
+                    \ map(split(system('xdotool getdisplaygeometry')),
+                    \     'str2nr(v:val)')
+                let g:display_portrait = s:width < s:height
             else
                 let g:display_portrait = v:none
             endif
