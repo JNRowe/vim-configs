@@ -31,16 +31,10 @@ Set up map to quickly move between buffers::
 I hate you *so* much right now::
 
     if exists('$VIM_DISABLE_CURSORS')
-        nnoremap <Up> <nop>
-        inoremap <Up> <nop>
-
-        nnoremap <down> <nop>
-        inoremap <down> <nop>
-
-        nnoremap <Left> <nop>
-        nnoremap <Right> <nop>
-        inoremap <Left> <nop>
-        inoremap <Right> <nop>
+        for s:k in ['Up', 'Down', 'Left', 'Right']
+            execute 'nnoremap <' . s:k . '> <nop>'
+            execute 'inoremap <' . s:k . '> <nop>'
+        endfor
     endif
 
 .. note::
