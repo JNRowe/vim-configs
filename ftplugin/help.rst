@@ -17,7 +17,7 @@ skip portrait displays.
                 let g:display_portrait = v:none
             endif
         endif
-        if !g:display_portrait
+        if g:display_portrait == v:false && winnr('$') > 1
             wincmd L
         endif
     endif
