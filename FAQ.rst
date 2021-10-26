@@ -41,5 +41,23 @@ I’d pay the cost if the cycle time was even close to a second, but it isn’t.
 Plus, combined with ``mksession`` the editor pops back up as if we were using
 live reloading.
 
+Post 2020, when will in-person tutorials begin again?
+-----------------------------------------------------
+
+Frankly, I have no idea.  I *really* miss presenting, so they’ll return as soon
+as possible.  The original venue is no longer an option for non-pandemic
+reasons, and new venues are currently hard to pin down for pandemic reasons.
+
+In the meantime should you have questions feel free to ask by mail_.
+I genuinely do enjoy replying to them, as I often learn something new along the
+way.
+
+.. note::
+
+    **Co-workers**:  You can find recordings of old sessions on µfilm under
+    ``JNRowe/vim``, and you should feel free to ask :command:`vim` questions by
+    the other methods in my contact details too!
+
 .. _Debian: https://debian.org/
 .. _packaged in Debian Stable: https://packages.debian.org/vim
+.. _mail: jnrowe@gmail.com
