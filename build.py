@@ -197,7 +197,7 @@ def configure(
         rst_files = [
             p
             for p in location.glob('**/*.rst')
-            if '.includes' not in p.parts and not '.github' in p.parts
+            if '.includes' not in p.parts and '.github' not in p.parts
         ]
 
         if sphinx:
