@@ -2,15 +2,33 @@
 # customise it!  If you make improvements, open a pull request against
 # ‘JNRowe/vim-configs’ with your super changes attached.
 
-### BLAME_IGNORE_TAG: Generated from master {{{
+### BLAME_IGNORE_TAG: Generated from main {{{
 
-#[QA] Reformat with yapf
+# [Tr] Minor whitespace fix
+025cbec9469b13f080d42277ed577458ea68e8fb
+
+# [QA] Minor whitespace fixes
+fdee7c7fa3fe09a8c38a8be19bb9ee335c258965
+
+# [QA] Reformat with black
+0d27f355bb1f6f0fa4a517577749346aef05a449
+
+# [QA] Reformat with black
+383f119fe3dbe0bd386488b4e323e71d981deab6
+
+# [Tr] Unify quote style
+8f476ef800428325c695b73f9cea9dcc27b37c51
+
+# [Tr] Whitespace fix
+cbee01c945c73688e55017039870290eaf5c094a
+
+# [QA] Reformat with yapf
 fb80cae72664b7242e876aa042d960d8c98c68cb
 
-#[QA] Reformat with yapf
-acd54c4d1017620bd486845ed97be8ef459ef8b9
-
-#[Tr] Drop f-string usage
+# [Tr] Drop f-string usage
 60cbc08df628344d47b7a0de6351b251107497e6
 
-### BLAME_IGNORE_TAG: Generated from master }}}
+# [QA] Reformat with yapf
+acd54c4d1017620bd486845ed97be8ef459ef8b9
+
+### BLAME_IGNORE_TAG: Generated from main }}}
