@@ -101,7 +101,8 @@ at the expense of half a dozen or so features I rely on.
 
 I’m starting to believe it may be the future of vim_ though, and that bothers me
 a little.  Many of the additions over stock vim_ are not my cup of tea, and
-a few of the removals are breakages in my eyes.
+a few of the removals are breakages in my eyes.  Note that I’m *not* complaining
+about the actual project, they’re free to do *whatever* they want.
 
 As I stated above, I am fickle and I’ll change my mind in a heartbeat if it
 eventually brings some changes that are useful to me.  Right now I’ll just thank
