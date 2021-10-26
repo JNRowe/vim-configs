@@ -222,7 +222,6 @@ def configure(
                 'background.rst',
                 'index.rst',
                 'todo.rst',
-                'vimrc.rst',
             ):
                 if p.name == 'vimrc.rst':  # No suffix on main vimrc file
                     output = f'{location / p.with_suffix("")}'
