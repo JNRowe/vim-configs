@@ -60,6 +60,12 @@ def wopt(name: str) -> str:
     '--colour/--no-colour', default=True, help='Generate coloured output.'
 )
 @click.option(
+    '--ctags',
+    default='ctags-universal',
+    metavar='COMMAND',
+    help='Path to ctags.',
+)
+@click.option(
     '--rst2html',
     default='rst2html',
     metavar='COMMAND',
@@ -89,6 +95,7 @@ def wopt(name: str) -> str:
 def configure(
     local: bool,
     colour: bool,
+    ctags: str,
     rst2html: str,
     libc_langs: str,
     libc_exclude: List[str],
@@ -122,6 +129,7 @@ def configure(
                     for s in [
                         'local',
                         'colour',
+                        'ctags',
                         'rst2html',
                         'libc_langs',
                         'libc_exclude',
@@ -164,7 +172,7 @@ def configure(
 
         n.rule('symlink', 'ln -rsf $in $out', pretty('SYMLINK $out', colour))
 
-        ctags_path = which('ctags-exuberant')
+        ctags_path = which(ctags)
         n.rule(
             'tags_gen',
             f'{ctags_path} --languages=$lang -R $exclude -f $out $in',
