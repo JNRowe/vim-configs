@@ -21,6 +21,10 @@
         ],
         "type": "afconfig"
     },
+    "build.py": {
+        "alternate": "build.ninja",
+        "type": "build"
+    },
     "dein.rst": {
         "alternate": "dein.vim",
         "type": "dein"
