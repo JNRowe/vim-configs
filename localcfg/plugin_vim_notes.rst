@@ -36,7 +36,7 @@ We don’t require backwards compatibility, so respect word boundaries::
 
 Find a markdown processor::
 
-    for s:p in ['markdown2', 'markdown.py', 'markdown-calibre']
+    for s:p in ['pulldown-cmark', 'cmark', 'markdown2']
         if executable(s:p)
             let g:notes_markdown_program = s:p
             break
