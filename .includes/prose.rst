@@ -4,8 +4,6 @@ Set useful defaults for formatting prose::
     execute 'let b:undo_ftplugin ' .
         \ (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
         \ 'setlocal formatoptions<"'
-    setlocal textwidth=72
-    let b:undo_ftplugin .= '|setlocal textwidth<'
 
 Add dictionary from miscfiles_ if available::
 
