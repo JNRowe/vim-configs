@@ -11,7 +11,7 @@ Add map to close wordnet_ window from anywhere::
 
 Use my custom maps::
 
-    call MnemonicMap('wordnet')
+    call misc#MnemonicMap('wordnet')
 
     for [s:key, s:cmd] in [
         \   ['o', 'wyiw:call WordNetOverviews(@w)'],

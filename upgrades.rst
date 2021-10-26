@@ -34,7 +34,7 @@ I upgrade.
 .. todo::
 
     Use default functions arguments where it makes sense(such as in
-    ``MnemonicMap()``), see 8.1.1310.
+    ``misc#MnemonicMap()``), see 8.1.1310.
 
 .. todo::
 

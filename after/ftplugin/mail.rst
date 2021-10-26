@@ -8,7 +8,7 @@
 Add maps to insert `X-Advice headers`_.  Obviously we’re not going to convince
 every one to take part, but they have become popular in work mail::
 
-    call MnemonicMap('Advice', {'buffer': v:true, 'local': v:true})
+    call misc#MnemonicMap('Advice', {'buffer': v:true, 'local': v:true})
 
     for s:prio in ['perhaps', 'should', 'must']
         for s:due in ['now', 'soon', 'whenever']

@@ -51,7 +51,7 @@ Open location list when errors exist::
 
 Use my custom maps::
 
-    call MnemonicMap('ale', {'local': v:true})
+    call misc#MnemonicMap('ale', {'local': v:true})
 
     for [s:key, s:cmd] in [
         \   ['d',      'detail'],

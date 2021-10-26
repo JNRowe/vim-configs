@@ -7,7 +7,7 @@ Use my custom maps::
 
     let g:dwm_map_keys = v:false
 
-    call MnemonicMap('dwm')
+    call misc#MnemonicMap('dwm')
 
 .. tip::
 

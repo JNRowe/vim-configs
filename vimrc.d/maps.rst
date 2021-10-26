@@ -179,7 +179,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
 
 Help related maps::
 
-    call MnemonicMap('Help', {'key': '?'})
+    call misc#MnemonicMap('Help', {'key': '?'})
 
     for s:t in ['pattern', 'quickref', 'registers']
         execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'

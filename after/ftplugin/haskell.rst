@@ -8,7 +8,7 @@ than doing a complete pretty print
 
 ::
 
-    call MnemonicMap('Haskell', {
+    call misc#MnemonicMap('Haskell', {
         \ 'buffer': v:true,
         \ 'local': v:true,
         \ 'mode': 'v',

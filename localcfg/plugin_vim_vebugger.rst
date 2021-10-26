@@ -5,7 +5,7 @@
 
 Use my custom maps::
 
-    call MnemonicMap('vebugger', {'local': v:true})
+    call misc#MnemonicMap('vebugger', {'local': v:true})
     let g:vebugger_leader='[vebugger]'
 
 Configure symbols::

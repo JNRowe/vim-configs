@@ -24,7 +24,7 @@ The remaining functionality is only useful when ``autocmd`` is available.
 Add my bindings for :command:`diff` mode::
 
     function! s:diff_maps() abort
-        call MnemonicMap('diff', {'key': 'i', 'local': v:true})
+        call misc#MnemonicMap('diff', {'key': 'i', 'local': v:true})
 
         noremap <buffer> [diff]w :call ToggleFlag('diffopt', 'iwhite')<CR>
 
