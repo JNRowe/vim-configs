@@ -1,6 +1,8 @@
 ``after/ftplugin/gitcommit.vim``
 ================================
 
+.. include:: ../../.includes/scriptencoding.rst
+
 .. _gitcommit-custom-maps:
 
 Configure maps to insert common info to commit messages::
