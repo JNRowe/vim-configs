@@ -108,7 +108,9 @@ Include non-standard server names in the window title::
 
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn't::
 
-    inoremap <C-Space> <C-x><C-o>
+    if has('insert_expand')
+        inoremap <C-Space> <C-x><C-o>
+    endif
 
 .. _gui-toggles:
 

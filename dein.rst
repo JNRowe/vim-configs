@@ -251,7 +251,7 @@ language.
 
     call dein#add('SirVer/ultisnips', {
         \ 'depends': 'vim-snippets',
-        \ 'if': has('pythonx') && v:version >= 704,
+        \ 'if': has('insert_expand') && has('pythonx') && v:version >= 704,
         \ 'on_event': 'InsertEnter',
     \ })
 
@@ -735,7 +735,7 @@ jealous.
 ::
 
     call dein#add('honza/vim-snippets', {
-        \ 'if': has('pythonx') && v:version >= 704,
+        \ 'if': has('insert_expand') && has('pythonx') && v:version >= 704,
         \ 'lazy': v:true,
     \ })
 
@@ -1164,7 +1164,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mattn/emmet-vim', {
-        \ 'if': v:version >= 700,
+        \ 'if': has('insert_expand') && v:version >= 700,
         \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
 
@@ -1321,7 +1321,9 @@ user, how cool is that?
 
 ::
 
-    call dein#add('neitanod/vim-clevertab')
+    call dein#add('neitanod/vim-clevertab', {
+        \ 'if': has('insert_expand'),
+    \ })
 
 ``vim_bridge``
 ''''''''''''''

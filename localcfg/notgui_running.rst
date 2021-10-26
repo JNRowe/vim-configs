@@ -53,7 +53,9 @@ Poke around, as best we can, to discern the background colour::
 
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn’t::
 
-    inoremap <Nul> <C-x><C-o>
+    if has('insert_expand')
+        inoremap <Nul> <C-x><C-o>
+    endif
 
 kitty_ and :command:`vim` `interact poorly`_ with background repainting, the
 following works around it::

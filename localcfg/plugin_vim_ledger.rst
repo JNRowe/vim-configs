@@ -45,11 +45,14 @@ Use my custom maps::
 
 Configure magic currency completion in ledger files::
 
-    augroup jnrowe_vim_ledger
-        autocmd!
-        autocmd FileType ledger inoremap <silent> <Tab>
-            \ <C-r>=ledger#autocomplete_and_align()<CR>
-    augroup END
+
+    if has('insert_expand')
+        augroup jnrowe_vim_ledger
+            autocmd!
+            autocmd FileType ledger inoremap <silent> <Tab>
+                \ <C-r>=ledger#autocomplete_and_align()<CR>
+        augroup END
+    endif
 
 .. todo::
 

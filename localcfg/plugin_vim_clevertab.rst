@@ -4,7 +4,7 @@
 Configure preferred order of completion::
 
     let s:types = ['start', 'tab', 'keyword', 'omni', 'dictionary', 'stop']
-    if has('pythonx') && v:version >= 704
+    if has('insert_expand') && has('pythonx') && v:version >= 704
         let s:types = insert(s:types, 'ultisnips', 2)
     endif
 

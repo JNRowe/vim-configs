@@ -249,10 +249,12 @@ a feature, but thanks for the idea!
 Make insert mode maps for accessing all completion modes without needless hand
 stretching:::
 
-    for s:key in split('lnkti]fdvuos', '\zs')
-        execute 'inoremap <silent> <LocalLeader>,' . s:key .
-            \ ' <C-x><C-' . s:key . '>'
-    endfor
+    if has('insert_expand')
+        for s:key in split('lnkti]fdvuos', '\zs')
+            execute 'inoremap <silent> <LocalLeader>,' . s:key .
+                \ ' <C-x><C-' . s:key . '>'
+        endfor
+    endif
 
 Place cursor at the end of yanked region::
 
