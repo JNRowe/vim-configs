@@ -14,4 +14,14 @@ Add dictionary from miscfiles_ if available::
         let b:undo_ftplugin .= '|setlocal complete<'
     endif
 
+Break undo sequence on sentence level punctuation.  This kind of feels better
+when editing prose and also when making liberal use of ``undo-tree``.  Not yet
+sure if it is too granular.
+
+::
+
+    for s:key in split(',.!?:;', '\zs')
+        execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
+    endfor
+
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/

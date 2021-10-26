@@ -24,16 +24,6 @@ This creates reST_ headings using *my* favourite definitions of ``=``, ``-`` and
 
 .. include:: ../../.includes/thesaurus.rst
 
-Break undo sequence on sentence level punctuation.  This kind of feels better
-when editing prose and also when making liberal use of ``undo-tree``.  Not yet
-sure if it is too granular.
-
-::
-
-    for s:key in split(',.!?:;', '\zs')
-        execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
-    endfor
-
 Enable common — to me — highlighting support::
 
     let g:rst_syntax_code_list = {
