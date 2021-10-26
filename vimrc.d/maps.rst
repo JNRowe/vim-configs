@@ -1,6 +1,8 @@
 ``vimrc.d/maps.vim``
 ====================
 
+.. include:: ../.includes/scriptencoding.rst
+
 .. _switch-bufs:
 
 Set up map to quickly move between buffers::

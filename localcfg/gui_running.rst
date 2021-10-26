@@ -140,7 +140,7 @@ between GUI and non-GUI :command:`vim`::
 .. note::
 
     This issue affects me so little it went unnoticed for four days, as I’m
-    always using :command:`vim`‘s ``clientserver`` support and :command:`gvim`.
+    always using :command:`vim`’s ``clientserver`` support and :command:`gvim`.
     However, an errant :command:`git commit` from the wrong terminal can cause
     a nearly three second penalty for recaching without this kludge.
 

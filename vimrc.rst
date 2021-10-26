@@ -84,7 +84,7 @@ Pull in remaining configs::
         runtime vimrc.d/packages.vim
     else
         " There may be other things in packages.vim, but this is *the* thing
-        " I can't do without.
+        " I can’t do without.
         if !exists('*EditExisting')
             runtime macros/editexisting.vim
         endif
