@@ -3,11 +3,11 @@
 
 Store data in `XDG basedir`_ compliant location::
 
+    let s:base = g:vim_data_dir . '/%s/' .
+        \ expand('%:p:~:gs?/?_?:gs?%?%%?') . '.dat'
     function! s:set_data_files() abort
-        let l:base = g:vim_data_dir . '/%s/' .
-            \ expand('%:p:~:gs?/?_?:gs?%?%%?') . '.dat'
-        let g:editqf_saveqf_filename = printf(l:base, 'quickfix')
-        let g:editqf_saveloc_filename = printf(l:base, 'location')
+        let g:editqf_saveqf_filename = printf(s:base, 'quickfix')
+        let g:editqf_saveloc_filename = printf(s:base, 'location')
     endfunction
 
     augroup jnrowe_editqf
