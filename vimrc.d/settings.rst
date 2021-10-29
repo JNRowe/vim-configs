@@ -105,7 +105,10 @@ pick that up via :envvar:`LANG`, but we’ll force it just in case::
     " vint: -ProhibitEncodingOptionAfterScriptEncoding
     set encoding=utf-8
     " vint: +ProhibitEncodingOptionAfterScriptEncoding
-    set fileencoding=utf-8
+    if &modifiable
+        " This is per buffer, and breaks when using stdin as buffer for example
+        set fileencoding=utf-8
+    endif
     if v:lang =~? 'utf-8'
         set fileencodings=utf-8,latin1,default
     endif
