@@ -31,12 +31,16 @@ A utility function to add new map commands::
 Display occurrences of current word::
 
     nnoremap <silent> [quickfix]sw :vimgrep <C-r>=expand('<cword>')<CR> %<CR>
+    nnoremap <silent> [quickfix]sW :grep <C-r>=expand('<cword>')<CR><CR>
     nnoremap <silent> [location]sw :lvimgrep <C-r>=expand('<cword>')<CR> %<CR>
+    nnoremap <silent> [location]sW :lgrep <C-r>=expand('<cword>')<CR><CR>
 
 … and last search::
 
     nnoremap <silent> [quickfix]ss :vimgrep /<C-r>=getreg('/')<CR>/g %<CR>
+    nnoremap <silent> [quickfix]sS :grep /<C-r>=getreg('/')<CR>/g<CR>
     nnoremap <silent> [location]ss :lvimgrep /<C-r>getreg('/')<CR>/g %<CR>
+    nnoremap <silent> [location]sS :lgrep /<C-r>=getreg('/')<CR>/g<CR>
 
 Configure layered maps for useful quickfix and location functions::
 
