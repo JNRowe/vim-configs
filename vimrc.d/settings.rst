@@ -428,18 +428,20 @@ Store session files in `XDG basedir`_ compliant location::
 Configure ``'viminfo'`` and store :file:`viminfo` files in `XDG basedir`_
 compliant location:
 
-========= =====================================================
-Option    Use
-========= =====================================================
-``'5000`` Store marks for 5000 files
-``<1000`` Save up to 1000 lines for registers
-``h``     Disable ``'hlsearch'`` when :file:`viminfo` is loaded
-========= =====================================================
+=========== =====================================================
+Option      Use
+=========== =====================================================
+``'5000``   Store marks for 5000 files
+``<1000``   Save up to 1000 lines for registers
+``h``       Disable ``'hlsearch'`` when :file:`viminfo` is loaded
+``r/media`` Ignore /media
+``r/tmp``   Ignore /tmp
+=========== =====================================================
 
 ::
 
     if has('viminfo')
-        set viminfo='5000,<1000,h
+        set viminfo='5000,<1000,h,r/media,r/tmp
         let &viminfofile = g:vim_cache_dir . '/viminfo'
     endif
 
