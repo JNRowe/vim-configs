@@ -187,7 +187,7 @@ Help related maps::
 
     call misc#MnemonicMap('Help', {'key': '?'})
 
-    for s:t in ['pattern', 'quickref', 'registers']
+    for s:t in ['function-list', 'pattern', 'quickref', 'registers']
         execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
     endfor
 
