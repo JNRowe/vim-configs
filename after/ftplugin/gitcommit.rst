@@ -11,7 +11,7 @@ Configure maps to insert common metadata in to commit messages::
 
     for s:type in ['Acked', 'Reviewed', 'Signed-off', 'Tested']
         execute 'nnoremap <buffer> <silent> [Trailer]' . tolower(s:type[0]) .
-            \ ' :%!git interpret-trailers --trailer ' . shellescape(s:type . '-by') .
+            \ ' :silent %!git interpret-trailers --trailer ' . s:type . '-by' .
             \ '=' . shellescape(g:user_email) . '<CR>'
     endfor
 
