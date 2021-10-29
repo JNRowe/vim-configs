@@ -267,6 +267,12 @@ Keep cursor line centred::
 
     set scrolloff=100
 
+Include terminal windows in sessions where possible::
+
+    if has('mksession')
+        set sessionoptions+=terminal
+    endif
+
 While *marginally* less secure using temporary files allows better handling of
 encoding for pipes::
 
