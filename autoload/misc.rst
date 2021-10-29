@@ -21,3 +21,11 @@ Mnemonic mapping setup function::
 .. tip::
 
     This adds a :kbd:`?` binding to display the map list for ``name``.
+
+A helper for simple ``balloonexpr`` usage that simply calls an external
+command::
+
+    function! misc#CommandBalloon(cmd) abort
+        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
+        return systemlist(printf(l:cmd, shellescape(v:beval_text)))
+    endfunction
