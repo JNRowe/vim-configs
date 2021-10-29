@@ -1,7 +1,12 @@
 /encoding=utf-8
+/regions=usgb
 
 # Valid words, but confusing to some
 inflammable/?
+
+# Locale-specific stuff
+color/1
+colour/2
 
 # Computer-y jargon.
 API/=
