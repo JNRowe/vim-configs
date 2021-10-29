@@ -112,7 +112,7 @@ Search for project specific :file:`vimrc` and support files::
             endif
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
-            silent let l:output = systemlist('git -C ' . l:p . ' rev-parse --show-toplevel')
+            silent let l:output = systemlist('git -C ' . shellescape(l:p) . ' rev-parse --show-toplevel')
             if v:shell_error == 0 && len(l:output) == 1
                 return s:project_env_dir . l:output[0]
             endif
