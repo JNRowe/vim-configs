@@ -1,27 +1,11 @@
 ``vimrc.d/misc.vim``
 ====================
 
-Find highlight group of the given location::
-
-    function! GetHighlightGroup(...) abort
-        let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
-
-        let s:synname = {synid -> synIDattr(synid, 'name')}
-
-        let l:groups = []
-        for l:id in synstack(l:lnum, l:col)
-            let l:groups += [{
-                \ 'high': s:synname(l:id),
-                \ 'tran': s:synname(synIDtrans(l:id)),
-            \ }]
-        endfor
-        return l:groups
-    endfunction
-
-Show highlight group of the current location::
+Show highlight group of the :ref:`current location
+<GetHighlightGroup-function>`::
 
     command! ShowHighlightGroups
-        \ echo join(map(GetHighlightGroup(),
+        \ echo join(map(misc#GetHighlightGroup(),
         \               {k, v -> join(values(map(v,
         \                                        {k, v -> k . ':' . v})),
         \                             ', ')}),
