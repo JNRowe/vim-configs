@@ -40,6 +40,13 @@ debugging, by printing the entirety of options::
     endfunction
     command! InsertOptions call <SID>insert_options()
 
+.. note::
+
+    This is different to ``:mkexrc`` in that it displays *all* options, not
+    just the ones you have changed.  This is far nicer behaviour when you’ve
+    upgraded and want to see what has changed.  It is also different to using
+    ``:set`` with ``:redir`` as the output is easier to diff.
+
 Add on-hover word definitions, which can be useful for prose editing::
 
     if has('gui_running') && executable('wn')
