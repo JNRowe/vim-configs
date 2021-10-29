@@ -101,7 +101,7 @@ For `GTK+`_ including dconf_::
 
 For ledger_::
 
-    call s:define_menu('&ledger', g:xdg_data_dir . '/ledger/ledger.dat.gpg')
+    call s:define_menu('&ledger', g:xdg_data_dir . '/ledger/ledger.org.gpg')
 
 For mail tools; mailirproc_, mpop_, and msmtp_::
 
