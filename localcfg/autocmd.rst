@@ -54,8 +54,8 @@ Automatically :command:`chmod +x` shell scripts::
 Jump to the last known cursor position if possible::
 
         autocmd BufReadPost *
-            \ if &filetype =~# '^git' |
-            \   execute 'normal gg' |
+            \ if &filetype =~# '^git' && &filetype != 'gitconfig' |
+            \   execute 'normal! gg' |
             \ else |
             \   call setpos('.', getpos("'\"")) |
             \ endif
