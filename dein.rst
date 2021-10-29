@@ -1675,6 +1675,8 @@ Replace most of your use of a shell when working on a project with just another
         \ 'on_ft': 'json',
     \ })
 
+.. _vim-obsession-plugin:
+
 ``vim-obsession``
 '''''''''''''''''
 

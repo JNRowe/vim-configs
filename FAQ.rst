@@ -38,8 +38,9 @@ reloading, especially given how annoying it is to handle all the tiny corner
 cases that make the process a complete nightmare to debug.
 
 I’d pay the cost if the cycle time was even close to a second, but it isn’t.
-Plus, combined with ``mksession`` the editor pops back up as if we were using
-live reloading.
+Plus, combined with :vimdoc:`mksession <starting.txt#mks>`/:ref:`vim-obsession
+<vim-obsession-plugin>` plugin the editor pops back up as if we were using live
+reloading.
 
 Post 2020, when will in-person tutorials begin again?
 -----------------------------------------------------
