@@ -125,6 +125,10 @@ Only show ``tabline`` when there are multiple buffers::
 
     let g:airline#extensions#tabline#buffer_min_count = 2
 
+Show buffer number for quicker switching::
+
+    let g:airline#extensions#tabline#buffer_nr_show = v:true
+
 Prettier overflow::
 
     let g:airline#extensions#tabline#overflow_marker = '…'
