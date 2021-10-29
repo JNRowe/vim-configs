@@ -20,9 +20,16 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
         call s:disable_plugin(s:plugin)
     endfor
 
+.. note::
+
+    For archive specific plugins archivemount_ is *much* better alternative to
+    the :command:`vim` plugins; it supports more formats, is a great deal faster
+    and allows seamless processing with external tools while editing.
+
 Forcibly disable ``matchit``, as we’re using the :ref:`vim-matchup
 <vim-matchup-plugin>` plugin::
 
     call s:disable_plugin('matchit')
 
 .. _pygments: http://pygments.org/
+.. _archivemount: http://www.cybernoia.de/software/archivemount/
