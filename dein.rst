@@ -901,13 +901,21 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 ::
 
+    let s:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
+        \ 'History', 'Lines', 'Maps', 'Marks', 'Windows']
+    if s:has_exec('ag')
+        let s:fzf_commands += ['Ag', ]
+    endif
+    if s:has_exec('git')
+        let s:fzf_commands += ['GFiles', ]
+    endif
+    if has('insert_expand')
+        let s:fzf_commands += ['Snippets', ]
+    endif
     call dein#add('junegunn/fzf.vim', {
         \ 'depends': 'fzf',
         \ 'if': s:has_exec('fzf'),
-        \ 'on_cmd': s:prefix(
-        \   'FZF',
-        \   ['Ag', 'Buffers', 'Colors', 'Commands', 'Files', 'GFiles',
-        \    'History', 'Lines', 'Maps', 'Marks', 'Snippets', 'Windows']),
+        \ 'on_cmd': s:prefix('FZF', s:fzf_commands),
     \ })
 
 .. note::
