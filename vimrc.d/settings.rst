@@ -346,7 +346,7 @@ with :kbd:`zg`::
 
     if has('spell')
         set spell
-        let s:lang = substitute($LANG, '\..*', '', '')
+        let s:lang = split(v:lang, '\.')[0]
         execute 'set spellfile=~/.vim/spell/' . s:lang . '.utf-8.add'
         execute 'set spelllang=' . tolower(s:lang)
     endif
