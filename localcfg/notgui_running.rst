@@ -82,8 +82,11 @@ closely matches my setup in :command:`gvim`::
         let &t_Ce = "\e[4:0m"
         highlight clear SpellBad
         highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
-        autocmd ColorScheme * highlight clear SpellBad |
-            \ highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
+        augroup jnrowe_kitty
+            autocmd!
+            autocmd ColorScheme * highlight clear SpellBad |
+                \ highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
+        augroup END
     endif
 
 .. _kitty: https://sw.kovidgoyal.net/kitty/
