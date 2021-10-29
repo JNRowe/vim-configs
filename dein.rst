@@ -1438,7 +1438,7 @@ user, how cool is that?
 ::
 
     call dein#add('rubik/vim-radon', {
-        \ 'if': has('signs') && has('pythonx'),
+        \ 'if': has('signs') && has('python'),
         \ 'lazy': v:false,
         \ 'on_cmd': 'Radon',
         \ 'on_ft': 'python',
