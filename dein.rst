@@ -838,6 +838,8 @@ jealous.
         \ 'on_cmd': 'SemanticHighlight',
     \ })
 
+.. _vim-editqf-plugin:
+
 ``vim-editqf``
 ''''''''''''''
 

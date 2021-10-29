@@ -54,3 +54,15 @@ Configure layered maps for useful quickfix and location functions::
             call s:qf_key(s:t, s:key, s:cmd)
         endfor
     endfor
+
+Shortcut command to rename current list:::
+
+    command! -bar -nargs=1 QFRename
+        \ call setqflist([], 'a', {'title': <q-args>}) | redrawstatus!
+    command! -bar -nargs=1 LocRename
+        \ call setloclist(0, [], 'a', {'title': <q-args>}) | redrawstatus!
+
+.. note::
+
+    The prefixes were chosen to match :ref:`vim-editqf <vim-editqf-plugin>`’s
+    naming.
