@@ -15,4 +15,4 @@ Configure symbols::
 
 Use :command:`python3` as default Python::
 
-    let g:vebugger_path_python_lldb = "python3"
+    let g:vebugger_path_python_lldb = 'python3'

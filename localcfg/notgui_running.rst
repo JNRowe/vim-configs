@@ -24,11 +24,11 @@ Poke around, as best we can, to discern the background colour::
 
     let s:feature_terms = '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
     if &term =~# s:feature_terms || split($COLORFGBG . ';padding', ';')[0] == 15
-        if &background != 'dark'
+        if &background !=# 'dark'
             set background=dark
         endif
     else
-        if &background != 'light'
+        if &background !=# 'light'
             set background=light
         endif
     endif
