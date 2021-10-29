@@ -433,6 +433,7 @@ Option      Use
 =========== =====================================================
 ``'5000``   Store marks for 5000 files
 ``<1000``   Save up to 1000 lines for registers
+``%``       Store buffer list, which is nice for cycling sessions
 ``h``       Disable ``'hlsearch'`` when :file:`viminfo` is loaded
 ``r/media`` Ignore /media
 ``r/tmp``   Ignore /tmp
@@ -441,7 +442,7 @@ Option      Use
 ::
 
     if has('viminfo')
-        set viminfo='5000,<1000,h,r/media,r/tmp
+        set viminfo='5000,<1000,%,h,r/media,r/tmp
         let &viminfofile = g:vim_cache_dir . '/viminfo'
     endif
 
