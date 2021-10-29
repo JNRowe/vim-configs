@@ -11,15 +11,16 @@ Use my custom maps::
     let g:gitgutter_map_keys = v:false
 
     for [s:key, s:cmd] in [
-        \   ['Down',  'NextHunk'],
-        \   ['Up',    'PrevHunk'],
-        \   ['Space', 'Toggle'],
+        \   ['<Down>',  'NextHunk'],
+        \   ['<Up>',    'PrevHunk'],
+        \   ['<Space>', 'Toggle'],
+        \   ['f',       'Fold'],
+        \   ['p',       'PreviewHunk'],
+        \   ['q',       'QuickFix'],
         \ ]
         execute 'nnoremap <silent> [gitgutter]<' . s:key . '> '
             \ ':GitGutter' . s:cmd . '<CR>'
     endfor
-    nnoremap <silent> [gitgutter]p :GitGutterPreviewHunk<CR>
-    nnoremap <silent> [gitgutter]q :GitGutterQuickFix<CR>
 
 If you have more than 100 edits you probably need to commit!
 
