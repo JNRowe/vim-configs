@@ -47,7 +47,7 @@ Automatically :command:`chmod +x` shell scripts::
 
 .. note::
 
-    Shelling out to :command:`chmod` is a lazy way to support
+    Shelling out to :command:`chmod` is a lazy way to support the user’s
     :manpage:`umask(2)` setting without having to resort to craziness with
     ``getfperm()`` and ``setfperm()``
 
@@ -65,8 +65,8 @@ Jump to the last known cursor position if possible::
     Doesn’t restore saved position for :command:`git` buffers as that tends
     to not be useful.
 
-Make stdin buffers temporary by default.  Potentially dangerous, but
-I only use them this way.
+Make stdin buffers temporary by default.  Potentially dangerous as it
+could cause data loss, but I only use them this way.
 
 ::
 
@@ -84,7 +84,7 @@ Always do a full syntax refresh, as this is still fast enough on a netbook::
 
         autocmd BufEnter * syntax sync fromstart
 
-Open quickfix window, if there are any entries::
+Open ``quickfix`` window, if there are any entries::
 
         autocmd QuickFixCmdPost * belowright cwindow 5
 

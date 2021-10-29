@@ -96,9 +96,9 @@ helps.
 
 .. tip::
 
-    For minor size changes it often easier to use ``set guifont=<Tab>``, while
-    wishing that :kbd:`Ctrl-{a,x}` worked to {in,de}crement the number in the
-    command line too.
+    For minor size changes it is often easier to use ``set guifont=<Tab>``,
+    while wishing that :kbd:`<C-{a,x}>` worked to {in,de}crement the number in
+    the command line too.
 
 Include non-standard server names in the window title::
 

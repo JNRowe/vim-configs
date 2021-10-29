@@ -2,8 +2,8 @@
 =======================================
 
 I need only :rfc:`2822`, :command:`git` and a limited collection of
-:wikipedia:`ISO-8601 <ISO_8601>` variants.  One mismatch happened *once*, and
-here we are…
+:wikipedia:`ISO-8601 <ISO_8601>` variants.  One annoying mismatch happened
+*once*, and here we are…
 
 ::
 

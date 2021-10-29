@@ -33,7 +33,7 @@ Poke around, as best we can, to discern the background colour::
         endif
     endif
 
-… and change the cursor colour for insert mode on supported terminals::
+… and change the cursor colour depending on mode on supported terminals::
 
     if &term =~# s:feature_terms && exists('&t_SI')
         let &t_EI = "\<Esc>]12;green\x7"

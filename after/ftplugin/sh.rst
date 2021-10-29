@@ -12,4 +12,4 @@ Add on-hover command definitions::
 
     This isn’t the default as :ref:`ale <ale-plugin>` provides a nice general
     usage for balloons, however occasionally when dipping in to a shell script
-    on an unususal this can be useful.
+    on an unususal system this can be useful.

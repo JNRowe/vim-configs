@@ -6,6 +6,6 @@ annoying flash, so skip the display in that instance::
 
     let g:peekaboo_delay = 250
 
-The full register listing feels with useful whitespace cleaner to me::
+The full register listing with its extra whitespace *feels* cleaner to me::
 
     let g:peekaboo_compact = v:false

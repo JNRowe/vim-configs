@@ -5,7 +5,7 @@
 
 .. _switch-bufs:
 
-Set up map to quickly move between buffers::
+Set up map to quickly move among buffers::
 
     function! s:switch_buf(count) abort
         let b:bufs = filter(range(1, bufnr('$')),
@@ -26,7 +26,7 @@ Set up map to quickly move between buffers::
 
     I *love* ``hidden``, as it really suits the way I work.  However, it also
     means I occasionally have to skip through things I don’t care about in
-    ``:bnext`` and I don’t love that.  The previous skips the buffers
+    ``:bnext`` and I don’t love that.  The above function skips the buffers
     I wouldn’t care about and provides a more useful *to me* version of
     buffer cycling.
 
@@ -59,7 +59,7 @@ Make :kbd:`<C-g>` verbose by default::
 
     nnoremap <C-g> 2<C-g>
 
-Map :kbd:`Q` to reformat paragraphs just like everyone else does::
+Map :kbd:`Q` to reformat paragraphs just as everyone else does::
 
     nnoremap Q gqap
 

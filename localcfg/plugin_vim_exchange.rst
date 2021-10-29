@@ -13,6 +13,5 @@ Add command to toggle indentation option for the current buffer::
 .. tip::
 
     For parameter and argument reordering :ref:`sideways.vim
-    <sideways.vim-config>` is often a better solution, as operations
-    such as :kbd:`cxiwWcxiw` and :kbd:`cxiw2bcxiw` will only work in
-    very simple cases.
+    <sideways.vim-config>` is often a better solution, as operations such as
+    :kbd:`cxiwWcxiw` and :kbd:`cxiw2bcxiw` will only work in very simple cases.

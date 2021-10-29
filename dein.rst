@@ -213,9 +213,9 @@ standards <editorconfig-plugin>` without allowing them free access to your
 :repository: :repo:`Raimondi/delimitMate`
 :config: :doc:`localcfg/plugin_delimitMate`
 
-The number 1 “Love it or hate it” plugin, to use it well you’ll want to read its
-documentation and disable the defaults that get in the way of your favourite
-language.
+The number 1 “love it or hate it” plugin, to use it well you’ll want to read its
+documentation and disable the defaults that get in the way of your chosen
+languages.
 
 ::
 
@@ -846,7 +846,7 @@ jealous.
 :repository: :repo:`jceb/vim-editqf`
 :config: :doc:`localcfg/plugin_vim_editqf`
 
-Add your own TODO entries to the quickfix list, and hold them across sessions.
+Add your own “todo” entries to the quickfix list, and hold them across sessions.
 
 ::
 

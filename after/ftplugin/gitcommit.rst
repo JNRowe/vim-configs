@@ -5,7 +5,7 @@
 
 .. _gitcommit-custom-maps:
 
-Configure maps to insert common info to commit messages::
+Configure maps to insert common metadata in to commit messages::
 
     call misc#MnemonicMap('Trailer', {'buffer': v:true, 'local': v:true})
 
@@ -28,7 +28,7 @@ Add a mapping for Sponsored-by_ header::
         endfunction
         nnoremap <buffer> <silent> [Trailer]p :call <SID>insert_sponsor()<CR>
 
-A few co-workers are now decorating the commits with emojis for expressing
+A few co-workers are now decorating their commits with emojis for expressing
 their types, and I’ll *try* to do so when committing to them::
 
     for [s:key, s:char] in [['new', '🌟'], ['del', '❌'], ['fix', '🐛'],

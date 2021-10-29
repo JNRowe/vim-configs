@@ -1,8 +1,8 @@
 Pending changes
 ===============
 
-This file list the things that are coming down the pipeline that interest me.
-It should be noted that all of them already exist in released patches, but
+This document lists the things that are coming down the pipeline that interest
+me.  It should be noted that all of them already exist in released patches, but
 they’re not available in the environments I use yet.  I keep this file around to
 remind me of the things I’m missing out on, and what I need to work on when
 I upgrade.

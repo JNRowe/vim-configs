@@ -14,7 +14,7 @@ Add binding to enable jinja_ support in the current file::
 
 .. tip::
 
-    This is quick way to enable template editing support in a file while
+    This is a quick way to enable template editing support in a file while
     maintaining the current filetype’s syntax highlighting using the
     :ref:`SyntaxRange <SyntaxRange-plugin>` plugin.
 

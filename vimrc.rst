@@ -32,8 +32,8 @@ pull requests which aren’t too invasive are most welcome.
     endif
 
 neovim_ is *never* tested, as it removes functionality I use.  Feel free to open
-pull requests for ``neovim`` support, *iff* they aren’t too invasive *and* don’t
-break :command:`vim`.
+pull requests for ``neovim`` support, *iff* they aren’t too invasive *and* they
+don’t break :command:`vim`.
 
 ::
 
@@ -49,7 +49,7 @@ Enable profiler if :envvar:`VIM_PROFILE` is set.  For example,
 ``VIM_PROFILE=$TMPDIR/vim.prof`` will profile all files under ``~/.vim`` and
 ``VIM_PROFILE=$TMPDIR/vim.prof:dein#*`` will profile all ``dein`` function
 calls.  In both cases, output will be written to :file:`vim.prof` under
-:envvar:`TMPDIR`.
+:envvar:`$TMPDIR`.
 
 ::
 
