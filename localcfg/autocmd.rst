@@ -43,7 +43,7 @@ Attempt filetype detection after writing::
 
 Automatically :command:`chmod +x` shell scripts::
 
-        autocmd BufWritePost *.sh call system('chmod +x ' . expand('%:p'))
+        autocmd BufWritePost *.sh silent call system('chmod +x -- ' . expand('%:p:S'))
 
 .. note::
 
