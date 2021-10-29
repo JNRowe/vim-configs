@@ -14,10 +14,10 @@ Use my custom maps::
     call misc#MnemonicMap('wordnet')
 
     for [s:key, s:cmd] in [
-        \   ['o', 'wyiw:call WordNetOverviews(@w)'],
-        \   ['c', ':call <SID>wordnet_close_win()'],
+        \   ['o', 'WordNetOverviews(expand("<cword>"))'],
+        \   ['c', '<SID>wordnet_close_win()'],
         \ ]
-        execute 'nmap <silent> [wordnet]' . s:key . ' ' . s:cmd . '<CR>'
+        execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
     endfor
 
 We don’t care that the dictionary buffer has trailing whitespace::
