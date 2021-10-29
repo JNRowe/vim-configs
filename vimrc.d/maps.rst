@@ -110,11 +110,11 @@ Utility function to choose between ninja_ and make_ for builds::
 
     function! s:call_build(...) abort
         if filereadable('build.ninja')
-            let l:make = executable('samu') ? 'samu' : 'ninja'
+            let &makeprg = executable('samu') ? 'samu' : 'ninja'
         else
-            let l:make = 'make'
+            set makeprg=make
         endif
-        execute l:make . ' -C ' . expand('%:p:h') . ' ' . get(a:, 1, '')
+        execute 'make -C ' . getcwd() . ' ' . get(a:, 1, '')
     endfunction
 
 .. note::
