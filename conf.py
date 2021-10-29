@@ -48,7 +48,13 @@ needs_sphinx = '3.1'
 
 nitpicky = True
 
-exclude_patterns: List[str] = ['.build', 'README.rst', '**/README.rst']
+exclude_patterns: List[str] = [
+    '.build',
+    '.github',
+    'maybe',
+    'README.rst',
+    '**/README.rst',
+]
 # }}}
 
 # Project information {{{
