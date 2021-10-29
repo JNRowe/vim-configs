@@ -36,8 +36,8 @@ Add my bindings for :command:`diff` mode::
             execute 'nnoremap <silent> <buffer> [diff]' . s:key . ' :' . s:cmd . '<CR>'
         endfor
 
-        vnoremap <buffer> < :diffget<CR>
-        vnoremap <buffer> > :diffput<CR>
+        vnoremap <silent> <buffer> < :diffget<CR>
+        vnoremap <silent> <buffer> > :diffput<CR>
     endfunction
 
     augroup jnrowe_diff
