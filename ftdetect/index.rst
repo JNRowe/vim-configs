@@ -14,5 +14,6 @@ Contents
     git-fiddle
     mht
     pypi
+    qmv
     redo
     reminders
