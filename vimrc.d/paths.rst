@@ -3,12 +3,16 @@
 
 Find `XDG basedir`_ compliant locations for data files::
 
-    let g:xdg_cache_dir = expand(empty($XDG_CACHE_HOME)
-        \                        ? '~/.cache' : '$XDG_CACHE_HOME')
-    let g:xdg_config_dir = expand(empty($XDG_CONFIG_HOME)
-        \                         ? '~/.config' : '$XDG_CONFIG_HOME')
-    let g:xdg_data_dir = expand(empty($XDG_DATA_HOME)
-        \                       ? '~/.local/share' : '$XDG_DATA_HOME')
+    for [s:type, s:path] in [
+        \   ['cache', '~/.cache'],
+        \   ['config', '~/.config'],
+        \   ['data', '~/.local/share'],
+        \ ]
+        let s:var = 'g:xdg_' . s:type . '_dir'
+        let s:envvar = '$XDG_' . toupper(s:type) . '_HOME'
+        execute 'let ' . s:var . ' = '
+            \ 'expand(empty(' . s:envvar . ') ? "' . s:path . '" : "' . s:envvar . '")'
+    endfor
 
 :command:`vim` specific paths honouring `XDG basedir`_::
 
