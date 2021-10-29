@@ -16,15 +16,19 @@ If toggled on, limit the horizontal scroll bar size::
 
 Disable the left *and* right scrollbars::
 
-    set guioptions-=L
-    set guioptions-=r
+    set guioptions-=L guioptions-=r
 
 I don’t use the toolbar, and rarely want the menu::
 
-    set guioptions-=T
-    set guioptions-=m
+    set guioptions-=T guioptions-=m
 
 … but, add :ref:`maps for quick toggle <gui-toggles>`.
+
+.. note::
+
+    The repeated use of ``guioptions`` above is required because using multiple
+    characters with ``-=`` will only work if characters are consective, which
+    can not be guaranteed.
 
 Attempt to keep window size when toggling GUI items(menu, scrollbars, &c), as
 I find display layout more important than the number of rows and columns.
