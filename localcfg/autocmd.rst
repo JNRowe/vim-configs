@@ -15,7 +15,7 @@ Create missing directories when saving files::
 
 Don’t write undo data for temporary files::
 
-        autocmd BufWritePre /tmp/*,$TMP/*,~/.cache/** setlocal noundofile
+        execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* setlocal noundofile'
 
 Use :command:`vim`’s help for these documents::
 
