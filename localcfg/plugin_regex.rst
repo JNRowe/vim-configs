@@ -8,8 +8,8 @@ Add completion based on installed languages::
             return filter(map(glob(g:dein_repos_dir .
                 \                  '/github.com/ervandew/regex/autoload/regex/lang/*.vim',
                 \                  v:false, v:true),
-                \             "fnamemodify(v:val, ':t:r')"),
-                \         '!empty(exepath(v:val))')
+                \             {_, s -> fnamemodify(s, ':t:r')}),
+                \         {_, s -> !empty(exepath(s))})
         endfun
         command! -nargs=?
             \ -complete=customlist,<SID>regex_complete

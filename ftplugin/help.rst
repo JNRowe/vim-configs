@@ -11,7 +11,7 @@ skip portrait displays.
             if executable('xdotool')
                 silent let [s:width, s:height] =
                     \ map(split(system('xdotool getdisplaygeometry')),
-                    \     'str2nr(v:val)')
+                    \     {_, s -> str2nr(s)})
                 let g:display_portrait = s:width < s:height
             else
                 let g:display_portrait = v:none

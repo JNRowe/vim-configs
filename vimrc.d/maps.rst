@@ -9,7 +9,7 @@ Set up map to quickly move among buffers::
 
     function! s:switch_buf(count) abort
         let b:bufs = filter(range(1, bufnr('$')),
-            \               'buflisted(v:val) && bufname(v:val) !=# ""')
+            \               {_, n -> buflisted(n) && !empty(bufname(n))})
         if len(b:bufs) < 2
             return
         endif
