@@ -34,4 +34,10 @@ I’ve never toggled guides off, so make it permanent::
 
 Highlights for read only buffers aren’t interesting::
 
-    let g:indent_guides_exclude_filetypes = ['help', 'man']
+    let g:indent_guides_exclude_filetypes = [
+        \ 'calendar',
+        \ 'gitmessengerpopup',
+        \ 'help',
+        \ 'man',
+        \ 'startify'
+    \ ]
