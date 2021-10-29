@@ -25,6 +25,11 @@ contexts too::
     iabbrev WIBNI wouldn’t it be nice if
     iabbrev YMMV your mileage may vary
 
+.. note::
+
+    The main reason these are here despite their common use *as* abbreviations
+    is for communicating with people who don’t normally experience mail.
+
 Date and time input, all of which could easily be replaced with equivalent
 snippets if I wasn’t so used to this now::
 
