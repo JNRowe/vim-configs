@@ -79,20 +79,27 @@ helps.
 
     function! s:set_font(font) abort
         if v:count1 != 1
-            let l:font = s:font_family . '\ ' . v:count1
+            let l:font = s:font_family . ' ' . v:count1
         else
-            let l:font = len(a:font) != 0 ? a:font
-                \ : s:font_family . '\ ' . s:font_size
+            if len(a:font) == 0
+                let l:font = s:font_family . ' ' . s:font_size
+            else
+                let l:font = substitute(a:font, '\\', '', 'g')
+            endif
         endif
-        execute 'set guifont=' . l:font
+        execute 'set guifont=' . fnameescape(l:font)
     endfunction
 
     function! s:font_complete(arglead, cmdline, cursorpos) abort
-        return [s:font_family . '\ ' . s:font_size, ]
-            \ + map(range(8), {n -> s:font_family . '\ ' . (n * 8 + 16)})
+        return join(
+            \   [escape(s:font_family . ' ' . s:font_size, ' '), ]
+            \   + map(range(8),
+            \         {n -> escape(s:font_family . ' ' . (n * 8 + 16), ' ')}),
+            \   "\n"
+            \ )
     endfunction
-    command! -nargs=? -count -complete=customlist,s:font_complete Fontsel
-        \ call SID>set_font(<q-args>)
+    command! -nargs=? -count -complete=custom,s:font_complete Fontsel
+        \ call <SID>set_font(<q-args>)
 
 .. tip::
 
