@@ -63,7 +63,9 @@ Jump to the last known cursor position if possible::
 .. note::
 
     Doesn’t restore saved position for :command:`git` buffers as that tends
-    to not be useful.
+    to not be useful.  If you are re-editing a :command:`git` buffer where
+    it would be useful, such as when issuing a :command:`git commit
+    --amend`, you can always jump manually using the ``'"`` mark.
 
 Make stdin buffers temporary by default.  Potentially dangerous as it
 could cause data loss, but I only use them this way.
