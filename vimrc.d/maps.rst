@@ -78,6 +78,12 @@ Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
     nnoremap Y y$
 
+.. note::
+
+    This makes so much sense that it is even described in the ``Y`` help
+    text, and excellently describes the *benefit* of breaking backwards
+    compatibility.
+
 Re-grab selection after {de,in}dent for simpler repeating::
 
     vnoremap < <gv
