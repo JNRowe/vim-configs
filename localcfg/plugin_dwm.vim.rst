@@ -19,10 +19,10 @@ Use my custom maps::
         \   ['n',       'New'],
         \   ['c',       ':exe DWM_Close'],
         \   ['f',       'Focus'],
-        \   ['<left>',  'Rotate(0)'],
-        \   ['<right>', 'Rotate(1)'],
-        \   ['<up>',    'New'],
-        \   ['<down>',  ':exe DWM_Close'],
+        \   ['<Left>',  'Rotate(0)'],
+        \   ['<Right>', 'Rotate(1)'],
+        \   ['<Up>',    'New'],
+        \   ['<Down>',  ':exe DWM_Close'],
         \ ]
         if stridx(s:cmd, '(') == -1
             let s:cmd .= '()'
