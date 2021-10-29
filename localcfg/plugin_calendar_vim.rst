@@ -36,7 +36,7 @@ that the calendar has trailing whitespace::
 
     if has('autocmd')
         augroup jnrowe_cal
-            autocmd FileType calendar setlocal nospell | HideBadWhitespace
+            autocmd BufEnter *Calendar setlocal nospell | HideBadWhitespace
         augroup END
     endif
 
