@@ -27,7 +27,7 @@ has changed massively before we made it here.
             let [s:icon, s:hl] = [s:v[0], s:v[1]]
         else
             let s:icon = s:v
-            let s:hl = misc#TitleWord(s:v) . 'MSG'
+            let s:hl = misc#titleword(s:v) . 'MSG'
         endif
         unlet s:v
         execute 'sign define ' .

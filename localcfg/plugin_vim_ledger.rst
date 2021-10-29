@@ -24,7 +24,7 @@ Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
 Use my custom maps::
 
-    call misc#MnemonicMap('Ledger', {'buffer': v:true, 'local': v:true})
+    call misc#mnemonicmap('Ledger', {'buffer': v:true, 'local': v:true})
 
     for [s:key, s:cmd] in [
         \   ['a',       ':LedgerAlign'],

@@ -1,11 +1,11 @@
 ``autoload/misc.vim``
 =====================
 
-.. _GetHighlightGroup-function:
+.. _gethighlightgroup-function:
 
 Find highlight group of the given location::
 
-    function! misc#GetHighlightGroup(...) abort
+    function! misc#gethighlightgroup(...) abort
         let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
 
         let s:synname = {synid -> synIDattr(synid, 'name')}
@@ -22,7 +22,7 @@ Find highlight group of the given location::
 
 Flag toggling function::
 
-    function! misc#ToggleFlag(option, flag) abort
+    function! misc#toggleflag(option, flag) abort
         let l:optstr = eval('&' . a:option)
         if stridx(l:optstr, ',') == -1
             " Simple char options like 'fo'
@@ -38,7 +38,7 @@ Flag toggling function::
 
 Mnemonic mapping setup function::
 
-    function! misc#MnemonicMap(name, ...) abort
+    function! misc#mnemonicmap(name, ...) abort
         let l:extra = get(a:, 1, {})
         let l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
         let l:key = get(l:extra, 'key', tolower(a:name[0]))
@@ -57,14 +57,14 @@ Mnemonic mapping setup function::
 
 Convenience function to apply title case to a word::
 
-    function! misc#TitleWord(word) abort
+    function! misc#titleword(word) abort
         return toupper(a:word[0]) . a:word[1:]
     endfunction
 
 A helper for simple ``balloonexpr`` usage that simply calls an external
 command::
 
-    function! misc#CommandBalloon(cmd) abort
+    function! misc#commandballoon(cmd) abort
         let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction

@@ -185,7 +185,7 @@ verbose modeline.  Think of it as analogous to the behaviour of
 
 Help related maps::
 
-    call misc#MnemonicMap('Help', {'key': '?'})
+    call misc#mnemonicmap('Help', {'key': '?'})
 
     for s:t in ['function-list', 'pattern', 'quickref', 'registers']
         execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'

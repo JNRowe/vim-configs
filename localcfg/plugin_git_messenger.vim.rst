@@ -7,7 +7,7 @@ Use my custom maps::
 
     let g:git_messenger_no_default_mappings = v:true
 
-    call misc#MnemonicMap('messenger')
+    call misc#mnemonicmap('messenger')
 
     for [s:key, s:cmd] in [
         \   ['o',          ''],

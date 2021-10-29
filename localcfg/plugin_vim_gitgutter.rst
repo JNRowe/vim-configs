@@ -7,7 +7,7 @@
 
 Use my custom maps::
 
-    call misc#MnemonicMap('gitgutter')
+    call misc#mnemonicmap('gitgutter')
     let g:gitgutter_map_keys = v:false
 
     for [s:key, s:cmd] in [

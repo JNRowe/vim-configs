@@ -2,10 +2,10 @@
 ====================
 
 Show highlight group of the :ref:`current location
-<GetHighlightGroup-function>`::
+<gethighlightgroup-function>`::
 
     command! ShowHighlightGroups
-        \ echo join(map(misc#GetHighlightGroup(),
+        \ echo join(map(misc#gethighlightgroup(),
         \               {k, v -> join(values(map(v,
         \                                        {k, v -> k . ':' . v})),
         \                             ', ')}),
@@ -51,7 +51,7 @@ Add on-hover word definitions, which can be useful for prose editing::
 
     if has('gui_running') && executable('wn')
         command WordNetBalloon
-            \ setlocal balloonexpr=misc#CommandBalloon('wn\ %s\ -over')
+            \ setlocal balloonexpr=misc#commandballoon('wn\ %s\ -over')
     endif
 
 .. note::

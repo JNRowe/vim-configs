@@ -7,7 +7,7 @@
 
 Configure maps to insert common metadata in to commit messages::
 
-    call misc#MnemonicMap('Trailer', {'buffer': v:true, 'local': v:true})
+    call misc#mnemonicmap('Trailer', {'buffer': v:true, 'local': v:true})
 
     for s:type in ['Acked', 'Reviewed', 'Signed-off', 'Tested']
         execute 'nnoremap <buffer> <silent> [Trailer]' . tolower(s:type[0]) .

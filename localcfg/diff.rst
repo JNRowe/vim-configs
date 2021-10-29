@@ -24,10 +24,10 @@ The remaining functionality is only useful when ``autocmd`` is available.
 Add my bindings for :command:`diff` mode::
 
     function! s:diff_maps() abort
-        call misc#MnemonicMap('diff', {'key': 'i', 'local': v:true})
+        call misc#mnemonicmap('diff', {'key': 'i', 'local': v:true})
 
         for [s:key, s:cmd] in [
-            \   ['w', 'call misc#ToggleFlag("diffopt", "iwhite")'],
+            \   ['w', 'call misc#toggleflag("diffopt", "iwhite")'],
             \   ['o', 'diffoff!'],
             \   ['p', 'diffput'],
             \   ['g', 'diffget'],

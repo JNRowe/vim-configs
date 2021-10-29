@@ -17,7 +17,7 @@ Configure styling::
     augroup jnrowe_vim_indent_guides
         for s:k in ['even', 'odd']
             execute 'autocmd Colorscheme,VimEnter * highlight ' .
-                \ 'IndentGuides' . misc#TitleWord(s:k) .
+                \ 'IndentGuides' . misc#titleword(s:k) .
                 \ ' ctermbg=' . s:guide_term[s:k] .
                 \ ' guibg=' . s:guide_gui[s:k]
         endfor

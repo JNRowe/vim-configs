@@ -5,7 +5,7 @@
 
 ::
 
-    call misc#MnemonicMap('Heading', {'buffer': v:true, 'local': v:true})
+    call misc#mnemonicmap('Heading', {'buffer': v:true, 'local': v:true})
 
 This creates reST_ headings using *my* favourite definitions of ``=``, ``-`` and
 ``'``::

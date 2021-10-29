@@ -5,7 +5,7 @@
 
 Use my custom maps::
 
-    call misc#MnemonicMap('rebase', {'buffer': v:true, 'local': v:true})
+    call misc#mnemonicmap('rebase', {'buffer': v:true, 'local': v:true})
 
     for s:verb in ['Cycle', 'Edit', 'Fixup', 'Pick', 'Reword', 'Squash']
         execute 'nnoremap <buffer> <silent> [rebase]' . tolower(s:verb[0]) .
