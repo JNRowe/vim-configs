@@ -4,5 +4,5 @@
 ::
 
     " vint: -ProhibitAutocmdWithNoGroup
-    autocmd BufNewFile,BufRead ~/.pypirc setfiletype FALLBACK dosini
+    autocmd BufRead,BufNewFile ~/.pypirc setfiletype FALLBACK dosini
     " vint: +ProhibitAutocmdWithNoGroup
