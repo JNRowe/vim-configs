@@ -21,6 +21,8 @@ contexts too::
     iabbrev IMO in my opinion
     iabbrev OTOH on the other hand
     iabbrev RTFM read the friendly manual
+    iabbrev TPTB the powers that be
+    iabbrev TPTW the powers that were
     iabbrev WDYT what do you think?
     iabbrev WIBNI wouldn’t it be nice if
     iabbrev YMMV your mileage may vary
