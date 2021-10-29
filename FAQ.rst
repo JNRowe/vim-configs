@@ -59,6 +59,16 @@ way.
     ``JNRowe/vim``, and you should feel free to ask :command:`vim` questions by
     the other methods in my contact details too!
 
+Why are the commit messages littered with emoji?
+------------------------------------------------
+
+Co-workers.
+
+Less flippantly, it is the style in a couple of projects I’m working on and I’m
+struggling to get used it.  The simplest way forward was to force myself to do
+so in an unimportant repository, using :ref:`custom maps
+<gitcommit-emoji-commits>` to simplify input.
+
 .. _Debian: https://debian.org/
 .. _packaged in Debian Stable: https://packages.debian.org/vim
 .. _mail: jnrowe@gmail.com

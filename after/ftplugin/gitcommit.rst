@@ -28,6 +28,8 @@ Add a mapping for Sponsored-by_ header::
         endfunction
         nnoremap <buffer> <silent> [Trailer]p :call <SID>insert_sponsor()<CR>
 
+.. _gitcommit-emoji-commits:
+
 A few co-workers are now decorating their commits with emojis for expressing
 their types, and I’ll *try* to do so when committing to them::
 
