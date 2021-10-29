@@ -30,11 +30,11 @@ A utility function to add new map commands::
 
 Display occurrences of current word in quickfix window::
 
-    nnoremap <silent> [quickfix]sw :execute 'vimgrep ' . expand('<cword>') . ' %'<CR>
+    nnoremap <silent> [quickfix]sw :vimgrep <C-r>=expand('<cword>')<CR> %<CR>
 
 … and last search::
 
-    nnoremap <silent> [quickfix]ss :execute 'vimgrep /' . getreg('/') . '/g %'<CR>
+    nnoremap <silent> [quickfix]ss :vimgrep /<C-r>=getreg('/')<CR>/g %<CR>
 
 Configure layered maps for useful quickfix and location functions::
 
