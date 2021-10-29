@@ -33,6 +33,11 @@ Poke around, as best we can, to discern the background colour::
         endif
     endif
 
+.. note::
+
+    We purposely check that we’re changing the background setting, as it can
+    cause an ugly redraw or reissue ``autocmd``\s.
+
 … and change the cursor colour depending on mode on supported terminals::
 
     if &term =~# s:feature_terms && exists('&t_SI')
