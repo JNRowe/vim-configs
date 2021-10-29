@@ -55,6 +55,12 @@ Mnemonic mapping setup function::
 
     This adds a :kbd:`?` binding to display the map list for ``name``.
 
+Convenience function to apply title case to a word::
+
+    function! misc#TitleWord(word) abort
+        return toupper(a:word[0]) . a:word[1:]
+    endfunction
+
 A helper for simple ``balloonexpr`` usage that simply calls an external
 command::
 
