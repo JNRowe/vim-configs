@@ -11,19 +11,6 @@ Show highlight group of the :ref:`current location
         \                             ', ')}),
         \           ' | ')
 
-Flag toggling function::
-
-    function! ToggleFlag(option, flag) abort
-        let l:optstr = eval('&' . a:option)
-        if stridx(l:optstr, ',') == -1
-            " Simple char options like 'fo'
-            let l:flip = '+-'[l:optstr =~# a:flag]
-        else
-            " Comma lists options like 'cot'
-            let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
-        endif
-        execute 'set ' . a:option . l:flip . '=' . a:flag
-    endfunction
 
 User email address, as used by various plugins::
 

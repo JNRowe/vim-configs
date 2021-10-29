@@ -118,15 +118,15 @@ Occasionally the toolbar can be useful for pairing with a co-worker, and from
 time to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
 
     if has('menu')
-        nnoremap <silent> <S-F4> :call ToggleFlag('guioptions', 'm')<CR>
+        nnoremap <silent> <S-F4> :call misc#ToggleFlag('guioptions', 'm')<CR>
     endif
     if has('toolbar')
-        nnoremap <silent> <C-F4> :call ToggleFlag('guioptions', 'T')<CR>
+        nnoremap <silent> <C-F4> :call misc#ToggleFlag('guioptions', 'T')<CR>
     endif
 
 Use a terminal window for command output::
 
-    nnoremap <silent> <C-F1> :call ToggleFlag('guioptions', '!')<CR>
+    nnoremap <silent> <C-F1> :call misc#ToggleFlag('guioptions', '!')<CR>
 
 .. note::
 

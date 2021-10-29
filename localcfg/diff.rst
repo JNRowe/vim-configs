@@ -26,7 +26,7 @@ Add my bindings for :command:`diff` mode::
     function! s:diff_maps() abort
         call misc#MnemonicMap('diff', {'key': 'i', 'local': v:true})
 
-        noremap <buffer> [diff]w :call ToggleFlag('diffopt', 'iwhite')<CR>
+        noremap <buffer> [diff]w :call misc#ToggleFlag('diffopt', 'iwhite')<CR>
 
         noremap <buffer> [diff]o :diffoff!<CR>
         noremap <buffer> [diff]p :diffput<CR>
