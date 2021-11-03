@@ -134,6 +134,11 @@ Prettier overflow::
 
     let g:airline#extensions#tabline#overflow_marker = '…'
 
+Make the rounded separators display correctly in the tabline::
+
+    let g:airline#extensions#tabline#alt_sep = v:true
+    let g:airline#extensions#tabline#left_alt_sep = ''
+
 Use unique names for buffers in tabline::
 
     let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
