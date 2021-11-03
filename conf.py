@@ -4,11 +4,11 @@
 import os
 from contextlib import suppress
 from subprocess import CalledProcessError, PIPE, run
-from typing import Dict, List, Tuple, Union
+from typing import Dict, List, Optional, Tuple, Union
 
 on_rtd = 'READTHEDOCS' in os.environ
 if not on_rtd:
-    import sphinx_rtd_theme
+    import sphinx_rtd_theme  # type: ignore
 
 # General configuration {{{
 extensions: List[str] = (
@@ -38,10 +38,11 @@ if not on_rtd:
     # general case and we don’t have the granularity to describe this in a
     # clean way
     try:
-        from sphinxcontrib import spelling  # NOQA: F401
+        from sphinxcontrib import spelling  # type: ignore
     except ImportError:
         pass
     else:
+        spelling  # Dirty hack to silence F401 and type error
         extensions.append('sphinxcontrib.spelling')
 
 needs_sphinx = '3.1'
@@ -105,7 +106,7 @@ extlinks: Dict[str, Tuple[str, str]] = {
 # }}}
 
 # intersphinx extension settings {{{
-intersphinx_mapping: Dict[str, str] = {
+intersphinx_mapping: Dict[str, Tuple[str, Optional[str]]] = {
     k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
     for k, v in {
         'click': 'https://click.palletsprojects.com/en/7.x/',
