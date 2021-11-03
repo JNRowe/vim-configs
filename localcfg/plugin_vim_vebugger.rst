@@ -1,6 +1,8 @@
 ``localcfg/plugin_vim_vebugger.vim``
 ====================================
 
+.. include:: ../.includes/scriptencoding.rst
+
 .. _vim-vebugger-custom-maps:
 
 Use my custom maps::
