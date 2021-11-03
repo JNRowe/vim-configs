@@ -129,6 +129,8 @@ Function keys are for executing common quick commands::
     nnoremap <S-F10> :call <SID>call_build('check')<CR>
     nnoremap <silent> <C-F11> :let @/ = ''<CR>
 
+.. _window-management-maps:
+
 Window management::
 
     nnoremap <C-w><Bar> <C-w>v
