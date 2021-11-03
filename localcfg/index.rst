@@ -65,6 +65,7 @@ Contents
     plugin_black
     plugin_calendar_vim
     plugin_committia.vim
+    plugin_csv.vim
     plugin_delimitMate
     plugin_dwm.vim
     plugin_editorconfig_vim
