@@ -34,9 +34,10 @@ Configure symbols for :command:`gvim`::
         endif
 
         let g:airline_symbols = {
-            \ 'branch': '',
-            \ 'crypt': '',
-            \ 'linenr': '⏎',
+            \ 'branch': '',
+            \ 'colnr': '℅',
+            \ 'crypt': '',
+            \ 'linenr': '',
             \ 'maxlinenr': '⌇',
             \ 'modified': '+',
             \ 'notexists': 'Ɇ',
@@ -110,7 +111,7 @@ Enable git_ extension::
 … use nice symbols where possible::
 
         if has('gui_running')
-            let g:airline#extensions#hunks#hunk_symbols = ['➕ ', '≔ ', '➖ ']
+            let g:airline#extensions#hunks#hunk_symbols = ['➕ ', ' ', '➖ ']
         endif
 
 … don’t display symbol and count when zero::
