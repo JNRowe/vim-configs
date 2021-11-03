@@ -45,7 +45,7 @@ if not on_rtd:
         spelling  # Dirty hack to silence F401 and type error
         extensions.append('sphinxcontrib.spelling')
 
-needs_sphinx = '3.1'
+needs_sphinx = '3.5'
 
 nitpicky = True
 
