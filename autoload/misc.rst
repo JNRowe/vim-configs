@@ -68,3 +68,26 @@ command::
         let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction
+
+Issue an immediate “shift to right” for a window, with an attempt made to skip
+portrait displays.
+
+::
+
+    function! misc#split_to_right() abort
+        if has('vertsplit')
+            if !exists('g:display_portrait')
+                if executable('xdotool')
+                    silent let [s:width, s:height] =
+                        \ map(split(system('xdotool getdisplaygeometry')),
+                        \     {_, s -> str2nr(s)})
+                    let g:display_portrait = s:width < s:height
+                else
+                    let g:display_portrait = v:none
+                endif
+            endif
+            if g:display_portrait == v:false && winnr('$') > 1
+                wincmd L
+            endif
+        endif
+    endfunction

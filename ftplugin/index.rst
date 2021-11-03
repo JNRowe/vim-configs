@@ -11,4 +11,3 @@ Contents
     :titlesonly:
 
     changelog
-    help

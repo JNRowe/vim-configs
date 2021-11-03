@@ -34,6 +34,10 @@ Highlights for read only buffers aren’t interesting::
 
         autocmd FileType help,man setlocal colorcolumn=""
 
+Issue an immediate “split to right” for documentation buffers::
+
+        autocmd FileType help,man call misc#split_to_right()
+
 Attempt filetype detection after writing::
 
         autocmd BufWritePost *
