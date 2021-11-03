@@ -64,6 +64,10 @@ Configure layered maps for useful quickfix and location functions::
         \ :call setqflist([], "r", {"items": [], "title": getqflist({"title": v:true}).title})<CR>'
     execute 'nnoremap <silent> [location]x
         \ :call setloclist(0, [], "r", {"items": [], "title": getloclist(0, {"title": v:true}).title})<CR>'
+    execute 'nnoremap <silent> [quickfix]X
+        \ :call setqflist([], "f", {"title": ""})<CR>'
+    execute 'nnoremap <silent> [location]X
+        \ :call setloclist(0, [], "f", {"title": ""})<CR>'
 
 Shortcut command to rename current list:::
 
