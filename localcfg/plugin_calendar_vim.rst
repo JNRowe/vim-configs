@@ -24,7 +24,7 @@ Configure look::
     let g:calendar_mark = 'left-fit'
     let g:calendar_monday = v:true
     let g:calendar_weeknm = 1
-    let g:calendar_datetime = 'statusline'
+    let g:calendar_datetime = ''
 
 Use reST_ formatting for note files::
 
