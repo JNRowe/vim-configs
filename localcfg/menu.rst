@@ -29,7 +29,7 @@ Signature        Maps to
         endfor
     endfunction
 
-    function! s:define_menu(heading, items) abort
+    function! s:define_menu(heading, items, ...) abort
         if type(a:items) is v:t_dict
             for [l:k, l:v] in sort(items(a:items))
                 let l:files = type(l:v) is v:t_string ? split(l:v) : l:v
@@ -39,6 +39,10 @@ Signature        Maps to
             let l:files = type(a:items) is v:t_string ? [a:items] : a:items
             call s:add_menu_items(a:heading, l:files)
         endif
+        for l:group in get(a:, 1, [])
+            execute 'amenu L&ocations.' . escape(a:heading, ' ') . '.-Sep- :<CR>'
+            call s:define_menu(a:heading, l:group)
+        endfor
     endfunction
 
 .. tip::
@@ -156,15 +160,16 @@ For :pypi:`rdial`, and my habitual editing of `run wrappers`_::
 
 For remind_ and the excellent wyrd_ frontend to it::
 
-    let s:remind_files = {
-        \ '&config': '~/.reminders',
-        \ '&wyrd': '~/.wyrdrc',
-        \ '-Sep-': ':',
-    \ }
+    let s:remind_files = {}
     for s:fn in glob('~/.reminders.d/*', v:false, v:true)
         let s:remind_files[fnamemodify(s:fn, ':t:gs?\.?_?')] = s:fn
     endfor
-    call s:define_menu('r&emind', s:remind_files)
+    call s:define_menu('r&emind', {
+        \ '&config': '~/.reminders',
+        \ '&wyrd': '~/.wyrdrc',
+        \ },
+        \ [s:remind_files, ]
+    \ )
 
 For taskwarrior_::
 
