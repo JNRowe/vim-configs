@@ -19,7 +19,7 @@ Don’t write undo data for temporary files::
 
 Use :command:`vim`’s help for these documents::
 
-        autocmd BufRead ~/.vim/**.rst setlocal keywordprg=:help
+        autocmd BufRead ~/.vim/*.rst setlocal keywordprg=:help
 
 We don't want to edit patch backup files by accident [*again*]::
 
