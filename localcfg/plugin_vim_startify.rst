@@ -1,6 +1,8 @@
 ``localcfg/plugin_vim_startify.vim``
 ====================================
 
+.. include:: ../.includes/scriptencoding.rst
+
 Use a smaller decoration in the header, so that the important data is
 immediately visible in short windows::
 
