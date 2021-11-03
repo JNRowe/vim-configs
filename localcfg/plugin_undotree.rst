@@ -3,7 +3,7 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Make diff output more readable::
+Make :command:`diff` output more readable::
 
     let g:undotree_DiffCommand = 'diff -pud --label earlier --label later'
 

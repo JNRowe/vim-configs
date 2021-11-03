@@ -49,7 +49,7 @@ Enable profiler if :envvar:`VIM_PROFILE` is set.  For example,
 ``VIM_PROFILE=$TMPDIR/vim.prof`` will profile all files under ``~/.vim`` and
 ``VIM_PROFILE=$TMPDIR/vim.prof:dein#*`` will profile all ``dein`` function
 calls.  In both cases, output will be written to :file:`vim.prof` under
-:envvar:`$TMPDIR`.
+:envvar:`TMPDIR`.
 
 ::
 
