@@ -6,13 +6,6 @@
     augroup jnrowe
         autocmd!
 
-Create missing directories when saving files::
-
-        autocmd BufWritePre *
-            \ if !isdirectory(expand('%:h', v:true)) |
-            \   call mkdir(expand('%:h', v:true), 'p') |
-            \ endif
-
 Don’t write undo data for temporary files::
 
         execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* setlocal noundofile'
