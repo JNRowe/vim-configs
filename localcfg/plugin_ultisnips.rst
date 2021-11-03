@@ -13,6 +13,10 @@ expansion::
     you have ``'complete'`` configured with a large wordlist and/or
     thesaurus, such as when editing prose.
 
+Open snippet editor in a separate window::
+
+    let g:UltiSnipsEditSplit = 'context'
+
 Disable :repo:`ale <dense-analysis/ale>` while editing snippet output::
 
     function! s:change_ale_state(enable) abort
