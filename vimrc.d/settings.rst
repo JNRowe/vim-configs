@@ -475,6 +475,16 @@ files, object and static library files, editor backups and sqlite_ databases.
         set wildignore+=*.pdf,*.swp,*.[ao],*~,*.db
     endif
 
+Ignore case when completing files::
+
+    set wildignorecase
+
+.. note::
+
+    It is a real shame this doesn’t honour the ``smartcase`` configuration and
+    style.  The behaviour of this option is much closer to the less useful — in
+    my eyes — ``ignorecase``.
+
 Insert longest common match by default::
 
     set wildmode^=longest:full
