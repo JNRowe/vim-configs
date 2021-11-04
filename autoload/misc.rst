@@ -91,3 +91,18 @@ portrait displays.
             endif
         endif
     endfunction
+
+Insert a modeline on the last line of a buffer::
+
+    function! misc#modeline_stub(verbose) abort
+        let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
+        if a:verbose
+            let l:x .= printf(' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop, &shiftwidth,
+                \             &textwidth, &foldmethod,
+                \             (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : ''))
+        endif
+        let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
+        let l:save_cursor = getcurpos()
+        $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
+        call setpos('.', l:save_cursor)
+    endfunction

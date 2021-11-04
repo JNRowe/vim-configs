@@ -167,27 +167,6 @@ Folding support maps::
     The previous mappings may not be to your liking, but I never use :kbd:`[+-]`
     for line movement.
 
-Insert a modeline on the last line.  Given a count of 2 or more, write a longer
-verbose modeline.  Think of it as analogous to the behaviour of
-``[count]<C-g>``.
-
-::
-
-    " Adapted from godlygeek’s vimrc
-    function! s:modeline_stub() abort
-        let l:save_cursor = getcurpos()
-        let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
-        if v:count > 1
-            let l:x .= printf(' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop, &shiftwidth,
-                \             &textwidth, &foldmethod,
-                \             (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : ''))
-        endif
-        let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
-        $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
-        call setpos('.', l:save_cursor)
-    endfunction
-    command! Modeline call <SID>modeline_stub()
-
 .. _help-custom-maps:
 
 Help related maps::

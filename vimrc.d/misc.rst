@@ -58,3 +58,11 @@ Add on-hover word definitions, which can be useful for prose editing::
 
     This is only enabled for :command:`gvim` as I have the mouse configured in
     a way which would be problematic for use with ``balloonevalterm``.
+
+Insert a modeline on the last line::
+
+    command! -bang Modeline call misc#modeline_stub(<bang>0)
+
+.. note::
+
+    When executed with a ``!`` write a fuller and more verbose modeline.
