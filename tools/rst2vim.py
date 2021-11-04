@@ -57,9 +57,9 @@ for role in (
     roles.register_generic_role(role, nodes.comment)
 
 p = ArgumentParser()
-p.add_argument('-r')
-p.add_argument('input')
-p.add_argument('output')
+p.add_argument('-r', help='record dependencies', metavar='file')
+p.add_argument('input', help='reST file to process')
+p.add_argument('output', help='vim file to generate')
 args = p.parse_args()
 
 dl = DependencyList()
