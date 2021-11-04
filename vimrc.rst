@@ -39,9 +39,7 @@ don’t break :command:`vim`.
 
     if has('nvim')
         let v:errmsg = 'This config will *NOT* work with nvim'
-        echohl ErrorMsg
         echoerr v:errmsg
-        echohl none
         cquit
     endif
 
