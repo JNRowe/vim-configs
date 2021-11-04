@@ -127,6 +127,13 @@ Function keys are for executing common quick commands::
     nnoremap <F10> :call <SID>call_build()<CR>
     nnoremap <S-F10> :call <SID>call_build('check')<CR>
 
+Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
+
+    if executable('xdg-open')
+        nnoremap <silent> gx
+            \ :execute "!xdg-open " . shellescape(expand("<cfile>:p"), 1) . " &"<CR>
+    endif
+
 .. _window-management-maps:
 
 Window management::
