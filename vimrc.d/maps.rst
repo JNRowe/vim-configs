@@ -124,10 +124,8 @@ Utility function to choose between ninja_ and make_ for builds::
 
 Function keys are for executing common quick commands::
 
-    nnoremap <silent> <F3> :set expandtab!<CR>
     nnoremap <F10> :call <SID>call_build()<CR>
     nnoremap <S-F10> :call <SID>call_build('check')<CR>
-    nnoremap <silent> <C-F11> :let @/ = ''<CR>
 
 .. _window-management-maps:
 
