@@ -91,6 +91,7 @@ def wopt(name: str) -> str:
     'file',
     type=click.Path(dir_okay=False, writable=True),
     callback=lambda c, p, v: Path(v),
+    default=Path('build.ninja'),
 )
 def configure(
     local: bool,
@@ -102,10 +103,7 @@ def configure(
     sphinx: bool,
     file: Path,
 ) -> None:
-    """Write a ninja build configuration.
-
-    Unless FILE is given this writes to ninja_’s default :file:`build.ninja`
-    file.
+    """Write a ninja_ build configuration.
 
     .. _ninja: https://ninja-build.org/
     """
