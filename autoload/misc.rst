@@ -102,7 +102,5 @@ Insert a modeline on the last line of a buffer::
                 \             (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : ''))
         endif
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
-        let l:save_cursor = getcurpos()
-        $put =trim(substitute(l:x, '\ \+', ' ', 'g'))
-        call setpos('.', l:save_cursor)
+        call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
