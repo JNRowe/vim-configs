@@ -35,10 +35,11 @@ def is_vim_code(node: Node) -> bool:
         :file:`conf.py`.
 
     """
-    if not node.tagname == 'literal_block':
-        return False
-    if node.attributes['classes'] == [] or 'vim' in node.attributes['classes']:
-        return True
+    if node.tagname == 'literal_block':
+        classes = node.attributes['classes']
+        if classes == [] or 'vim' in classes:
+            return True
+    return False
 
 
 # Stub used Sphinx directives and roles, as we’re not using them in output
