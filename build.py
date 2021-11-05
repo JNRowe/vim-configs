@@ -162,7 +162,7 @@ def configure(
         # dependency file.
         n.rule(
             'rst_extract',
-            f'{location / "tools/rst2vim.py"} -r $out.dep $in $out',
+            f'{location / "tools/rst2vim"} -r $out.dep $in $out',
             pretty('RST2VIM $out', colour),
             '$out.dep',
             deps='gcc',
@@ -244,7 +244,7 @@ def configure(
                         f'{location / p }',
                     ],
                     [
-                        f'{location / "tools/rst2vim.py"}',
+                        f'{location / "tools/rst2vim"}',
                     ],
                 )
 
