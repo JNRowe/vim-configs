@@ -154,7 +154,7 @@ def configure(
 
         n.rule(
             'sphinx_build',
-            f'sphinx-build -M html {location} {location / ".build"}',
+            f'sphinx-build -M $builder {location} {location / ".build"}',
             pretty('SPHINX $out', colour),
         )
 
@@ -214,6 +214,9 @@ def configure(
                     f'{location / "conf.py"}',
                 ]
                 + [p.as_posix() for p in rst_files],
+                variables={
+                    'builder': 'html',
+                },
                 implicit=[
                     which('sphinx-build'),
                 ],
