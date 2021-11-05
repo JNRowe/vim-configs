@@ -7,6 +7,7 @@ more.
 """
 
 from argparse import ArgumentParser
+from typing import List
 
 from docutils.core import publish_doctree
 from docutils.nodes import Node
@@ -15,13 +16,16 @@ from docutils.utils import DependencyList
 
 
 class StubDirective(Directive):
+
+    """No-op class to mock out Sphinx-specific directives."""
+
     has_content = True
 
-    def run(self):
+    def run(self) -> List:
         return []
 
 
-def is_vim_code(node: Node):
+def is_vim_code(node: Node) -> bool:
     """Filter function to extract code blocks.
 
     .. note::
