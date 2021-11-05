@@ -208,7 +208,7 @@ Ping the cursor position as a visual cue when returning to a session::
         endfor
         let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
     endfunction
-    nmap <silent> <C-Space> :call <SID>cursor_ping()<CR>
+    nnoremap <silent> <C-Space> :call <SID>cursor_ping()<CR>
 
 Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
