@@ -34,6 +34,8 @@ def is_vim_code(node: Node) -> bool:
         all plain literals are vim code, as we’ve set ``highlight_language`` in
         :file:`conf.py`.
 
+    Args:
+        node: Docutils object to filter
     """
     if node.tagname == 'literal_block':
         classes = node.attributes['classes']
