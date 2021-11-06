@@ -65,45 +65,20 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
     for s:name in ['Inconsolata', 'Consolas', 'monospace']
         if len(systemlist('fc-list "' . s:name . ' NF"')) != 0
-            let s:font_family = s:name . ' NF'
+            let g:font_family = s:name . ' NF'
             break
         elseif len(systemlist('fc-list "' . s:name . '"')) != 0
-            let s:font_family = s:name
+            let g:font_family = s:name
             break
         endif
     endfor
-    let s:font_size =  13
-    let &guifont = s:font_family . ' ' . s:font_size
+    let g:font_size =  13
+    let &guifont = g:font_family . ' ' . g:font_size
 
-Add command to switch text size quickly.  Yeah, some of these are *huuuuuge*
-but I’ll often pop up a snippet for discussion in a meeting and this really
-helps.
+Add command to switch text size quickly::
 
-::
-
-    function! s:set_font(font) abort
-        if v:count1 != 1
-            let l:font = s:font_family . ' ' . v:count1
-        else
-            if len(a:font) == 0
-                let l:font = s:font_family . ' ' . s:font_size
-            else
-                let l:font = substitute(a:font, '\\', '', 'g')
-            endif
-        endif
-        execute 'set guifont=' . fnameescape(l:font)
-    endfunction
-
-    function! s:font_complete(arglead, cmdline, cursorpos) abort
-        return join(
-            \   [escape(s:font_family . ' ' . s:font_size, ' '), ]
-            \   + map(range(8),
-            \         {n -> escape(s:font_family . ' ' . (n * 8 + 16), ' ')}),
-            \   "\n"
-            \ )
-    endfunction
-    command! -nargs=? -count -complete=custom,s:font_complete Fontsel
-        \ call <SID>set_font(<q-args>)
+    command! -nargs=? -count -complete=custom,gui#font_complete Fontsel
+        \ call gui#set_font(<q-args>)
 
 .. tip::
 
