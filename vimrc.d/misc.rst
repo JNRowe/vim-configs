@@ -19,17 +19,9 @@ User email address, as used by various plugins::
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
         \ ' <' . systemlist('git -C ~ config user.email')[0] . '>'
 
-Many distributions package :command:`vim` with cherry picked patches, and
-sometimes it is nice to know the current base version state::
+Display current base version::
 
-    function! Version() abort
-        let l:n = 1
-        while has('patch' . n)
-            let l:n += 1
-        endwhile
-        return printf('%d.%d.%04d', v:version / 100, v:version % 100, n - 1)
-    endfunction
-    command! Version echo 'vim-' . Version()
+    command! Version echo 'vim-' . misc#version()
 
 Make it easy to :command:`diff` options between sessions, which can be nice for
 debugging, by printing the entirety of options::

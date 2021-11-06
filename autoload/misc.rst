@@ -85,3 +85,14 @@ Flag toggling function::
         endif
         execute 'set ' . a:option . l:flip . '=' . a:flag
     endfunction
+
+Many distributions package :command:`vim` with cherry picked patches, and
+sometimes it is nice to know the current base version state::
+
+    function! misc#version() abort
+        let l:n = 1
+        while has('patch' . n)
+            let l:n += 1
+        endwhile
+        return printf('%d.%d.%04d', v:version / 100, v:version % 100, n - 1)
+    endfunction
