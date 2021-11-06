@@ -28,6 +28,15 @@ Find highlight group of the given location::
         return l:groups
     endfunction
 
+Insert all :command:`vim` options in to the current buffer::
+
+    function! misc#insert_options() abort
+        python3 << EOF
+    for k in sorted(vim.options):
+        vim.current.buffer.append(f'{k}={vim.options[k]!r}')
+    EOF
+    endfunction
+
 Insert a modeline on the last line of a buffer::
 
     function! misc#modeline_stub(verbose) abort

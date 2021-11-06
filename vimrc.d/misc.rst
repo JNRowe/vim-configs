@@ -26,13 +26,7 @@ Display current base version::
 Make it easy to :command:`diff` options between sessions, which can be nice for
 debugging, by printing the entirety of options::
 
-    function! s:insert_options() abort
-        python3 << EOF
-    for k in sorted(vim.options):
-        vim.current.buffer.append(f'{k}={vim.options[k]!r}')
-    EOF
-    endfunction
-    command! InsertOptions call <SID>insert_options()
+    command! InsertOptions call misc#insert_options()
 
 .. note::
 
