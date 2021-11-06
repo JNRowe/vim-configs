@@ -73,13 +73,6 @@ Easy access to man pages when using a custom ``keywordprg``::
 
     nnoremap <C-?> :<C-U>execute 'Man ' . v:count . ' <C-R><C-W>'<CR>
 
-:kbd:`Shift` + arrows to select text like other applications::
-
-    nnoremap <S-Left> vh
-    nnoremap <S-Right> vl
-    nnoremap <S-Up> Vk
-    nnoremap <S-Down> Vj
-
 Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
     nnoremap Y y$
