@@ -9,7 +9,7 @@ Configure maps to insert common metadata in to commit messages::
 
     call misc#mnemonicmap('Trailer', {'buffer': v:true, 'local': v:true})
 
-    for s:type in ['Acked', 'Reviewed', 'Signed-off', 'Tested']
+    for s:type in ['Acked', 'Co-authored', 'Reviewed', 'Signed-off', 'Tested']
         execute 'nnoremap <buffer> <silent> [Trailer]' . tolower(s:type[0]) .
             \ ' :silent %!git interpret-trailers --trailer ' . s:type . '-by' .
             \ '=' . shellescape(g:user_email) . '<CR>'
