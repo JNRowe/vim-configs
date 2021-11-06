@@ -104,3 +104,23 @@ Insert a modeline on the last line of a buffer::
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
+
+Insert a git_ trailer::
+
+    function! misc#add_git_trailer(key, ...) abort
+        let l:value = get(a:, 1)
+        if l:value == v:none
+            call inputsave()
+            let l:value = input(a:key . '? ')
+            call inputrestore()
+        endif
+        if l:value ==# ''
+            return
+        endif
+        let l:save_cursor = getcurpos()
+        execute ':%!git interpret-trailers ' .
+            \ '--trailer ' . a:key . '-by=' . shellescape(l:value)
+        call setpos('.', l:save_cursor)
+    endfunction
+
+.. _git: https://www.git-scm.com/

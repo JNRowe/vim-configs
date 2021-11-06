@@ -11,22 +11,23 @@ Configure maps to insert common metadata in to commit messages::
 
     for s:type in ['Acked', 'Co-authored', 'Reviewed', 'Signed-off', 'Tested']
         execute 'nnoremap <buffer> <silent> [Trailer]' . tolower(s:type[0]) .
-            \ ' :silent %!git interpret-trailers --trailer ' . s:type . '-by' .
-            \ '=' . shellescape(g:user_email) . '<CR>'
+            \ ' :call misc#add_git_trailer("' . s:type . '", ' .
+            \                              '"' . g:user_email . '")<CR>'
+        execute 'nnoremap <buffer> <silent> [Trailer]q' . tolower(s:type[0]) .
+            \ ' :call misc#add_git_trailer("' . s:type . '")<CR>'
     endfor
+
+.. note::
+
+    This adds two bindings for each type.  For example, using ``[trailer]a``
+    with add an ``Acked-by`` trailer with the :ref:`default user
+    <default-user-identifier>`, whereas ``[trailer]qa`` binding will **q**\uery
+    for the user.
 
 Add a mapping for Sponsored-by_ header::
 
-        function! s:insert_sponsor() abort
-            call inputsave()
-            let l:sponsor = input('Sponsor? ')
-            call inputrestore()
-            if l:sponsor ==# ''
-                return
-            endif
-            execute ':silent %!git interpret-trailers --trailer Sponsored-by=' . shellescape(l:sponsor)
-        endfunction
-        nnoremap <buffer> <silent> [Trailer]p :call <SID>insert_sponsor()<CR>
+    nnoremap <buffer> <silent> [Trailer]qp
+        \ :call misc#add_git_trailer('Sponsored')<CR>
 
 .. _gitcommit-emoji-commits:
 

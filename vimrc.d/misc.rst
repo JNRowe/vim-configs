@@ -12,6 +12,8 @@ Show highlight group of the :ref:`current location
         \           ' | ')
 
 
+.. _default-user-identifier:
+
 User email address, as used by various plugins::
 
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
