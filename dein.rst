@@ -590,6 +590,12 @@ WingIDE to a real editor when they edit files of different types.
         \ 'on_ft': ['gitcommit', 'rst'],
     \ })
 
+.. note::
+
+    We set ``g:bullets_enabled_file_types`` in a post source hook as the
+    option isn’t additive, and this allows us to catch updates to the
+    supported filetypes in the plugin.
+
 .. _editorconfig-plugin:
 
 ``editorconfig-vim``
