@@ -7,26 +7,8 @@
 
 Set up map to quickly move among buffers::
 
-    function! s:switch_buf(count) abort
-        let l:bufs = filter(
-            \   range(1, bufnr('$')),
-            \   {_, n -> buflisted(n) && !empty(bufname(n))}
-            \ )
-        if len(l:bufs) < 2
-            return
-        endif
-        let l:current = index(l:bufs, bufnr('%'))
-        if abs(a:count) > 1
-            let l:default = a:count < 1 ? l:bufs[0] : bufnr('$')
-        else
-            let l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
-        endif
-        let l:buf = get(l:bufs, l:current + a:count, l:default)
-        execute 'buffer ' . l:buf
-    endfunction
-
-    noremap <silent> <M-Left> :<C-u>call <SID>switch_buf(v:count1 * -1)<CR>
-    noremap <silent> <M-Right> :<C-u>call <SID>switch_buf(v:count1 * 1)<CR>
+    noremap <silent> <M-Left> :<C-u>call misc#switch_buf(v:count1 * -1)<CR>
+    noremap <silent> <M-Right> :<C-u>call misc#switch_buf(v:count1 * 1)<CR>
 
 .. note::
 

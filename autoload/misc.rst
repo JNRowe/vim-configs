@@ -157,6 +157,26 @@ Ping the cursor position::
         let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
     endfunction
 
+Relative buffer switching while ignoring scratch buffers::
+
+    function! misc#switch_buf(count) abort
+        let l:bufs = filter(
+            \   range(1, bufnr('$')),
+            \   {_, n -> buflisted(n) && !empty(bufname(n))}
+            \ )
+        if len(l:bufs) < 2
+            return
+        endif
+        let l:current = index(l:bufs, bufnr('%'))
+        if abs(a:count) > 1
+            let l:default = a:count < 1 ? l:bufs[0] : bufnr('$')
+        else
+            let l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
+        endif
+        let l:buf = get(l:bufs, l:current + a:count, l:default)
+        execute 'buffer ' . l:buf
+    endfunction
+
 .. _git: https://www.git-scm.com/
 .. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
 .. _mutt: http://www.mutt.org/
