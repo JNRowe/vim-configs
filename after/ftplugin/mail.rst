@@ -6,7 +6,9 @@
 .. _mail-custom-maps:
 
 Add maps to insert `X-Advice headers`_.  Obviously we’re not going to convince
-every one to take part, but they have become popular in work mail::
+every one to take part, but they have become popular in work mail.
+
+::
 
     call misc#mnemonicmap('Advice', {'buffer': v:true, 'local': v:true})
 
@@ -14,8 +16,8 @@ every one to take part, but they have become popular in work mail::
         for s:due in ['now', 'soon', 'whenever']
             execute 'nnoremap <buffer> <silent> ' .
                 \ '[Advice]' . s:prio[0] . s:due[0] .
-                \ ' mxgg/^$/<CR>iX-advice: ' . s:prio . ' read ' . s:due .
-                \ '<CR><Esc>`x'
+                \ ' :call misc#add_advice_header("' . s:prio . '", "' .
+                \ s:due . '")<CR>'
         endfor
     endfor
 
