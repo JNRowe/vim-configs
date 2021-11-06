@@ -9,6 +9,8 @@ Add map to close wordnet_ window from anywhere::
         endif
     endfunction
 
+.. _wordnet-vim-custom-maps:
+
 Use my custom maps::
 
     call misc#mnemonicmap('wordnet')

@@ -15,18 +15,19 @@ Key        Local  Buffer  Maps
 :kbd:`c`   ❌     ❌      :ref:`calendar <calendar-vim-custom-maps>`
 :kbd:`d`   ❌     ❌      :ref:`dwm <dwm-custom-maps>`
 :kbd:`f`   ✅     ❌      :ref:`+quickfix feature <quickfix-custom-maps>`
-:kbd:`g`   ✅     ✅      :ref:`gitcommit filetype <gitcommit-custom-maps>`
-:kbd:`g`   ✅     ✅      :ref:`gitrebase <gitrebase-custom-maps>`
 :kbd:`g`   ❌     ❌      :ref:`vim-gitgutter <vim-gitgutter-custom-maps>`
 :kbd:`h`   ✅     ❌      :ref:`haskell filetype <haskell-custom-maps>`
+:kbd:`h`   ✅     ✅      :ref:`rst filetype <rst-custom-maps>`
 :kbd:`i`   ✅     ❌      :ref:`+diff feature <diff-custom-maps>`
 :kbd:`l`   ✅     ✅      :ref:`vim-ledger <vim-ledger-custom-maps>`
 :kbd:`l`   ✅     ❌      :ref:`location list <location-list-custom-maps>`
 :kbd:`m`   ❌     ❌      :ref:`git-messenger.vim <git-messenger-vim-custom-maps>`
 :kbd:`p`   ✅     ❌      :ref:`vim-quick-radon <vim-quick-radon-custom-maps>`
-:kbd:`r`   ✅     ✅      :ref:`rst filetype <rst-custom-maps>`
+:kbd:`r`   ✅     ✅      :ref:`gitrebase <gitrebase-custom-maps>`
 :kbd:`s`   ✅     ❌      :ref:`sideways.vim <sideways-vim-custom-maps>`
+:kbd:`t`   ✅     ✅      :ref:`gitcommit filetype <gitcommit-custom-maps>`
 :kbd:`v`   ✅     ❌      :ref:`vim-vebugger <vim-vebugger-custom-maps>`
+:kbd:`w`   ❌     ❌      :ref:`wordnet.vim <wordnet-vim-custom-maps>`
 =========  =====  ======  ========================================================
 
 .. tip::
