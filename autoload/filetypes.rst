@@ -39,6 +39,26 @@ Insert a git_ trailer::
         call setpos('.', l:save_cursor)
     endfunction
 
+Configure ``+diff`` specific keymaps::
+
+    function! filetypes#diff_maps() abort
+        call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})
+
+        for [s:key, s:cmd] in [
+            \   ['w', 'call misc#toggleflag("diffopt", "iwhite")'],
+            \   ['o', 'diffoff!'],
+            \   ['p', 'diffput'],
+            \   ['g', 'diffget'],
+            \   ['u', 'diffupdate'],
+            \ ]
+            execute 'nnoremap <silent> <buffer> [diff]' . s:key . ' :' .
+                \ s:cmd . '<CR>'
+        endfor
+
+        vnoremap <silent> <buffer> < :diffget<CR>
+        vnoremap <silent> <buffer> > :diffput<CR>
+    endfunction
+
 .. _X-Advice header: http://www.nicemice.net/amc/advice-header/
 .. _mutt: http://www.mutt.org/
 .. _git: https://www.git-scm.com/
