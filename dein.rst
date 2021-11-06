@@ -275,6 +275,7 @@ languages.
     “The uncompromising Python code formatter”
 
 :repository: :repo:`ambv/black`
+:config: :doc:`localcfg/plugin_black`
 
 ::
 
@@ -421,6 +422,7 @@ a full editing session.
     “A filetype plugin for :abbr:`CSV (Comma-separated values)` files”
 
 :repository: :repo:`chrisbra/csv.vim`
+:config: :doc:`localcfg/plugin_csv.vim`
 
 Disturbingly cool editing for :abbr:`CSV (Comma-separated values)` files, ‘nuff
 said.
@@ -1500,6 +1502,7 @@ really daunting to wrap your head around.
     “Linter for :command:`vim` script”
 
 :repository: :repo:`syngan/vim-vimlint`
+:config: :doc:`localcfg/plugin_vim_vimlint`
 
 ::
 
@@ -1545,6 +1548,7 @@ really daunting to wrap your head around.
     “Multiple selections/cursors”
 
 :repository: :repo:`mg979/vim-visual-multi`
+:config: doc:`localcfg/plugin_vim_vimlint`
 
 ::
 
