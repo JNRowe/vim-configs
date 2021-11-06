@@ -43,6 +43,24 @@ Insert a modeline on the last line of a buffer::
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
 
+Search for paths without all the escaping required by ``/``::
+
+    function! misc#path_search(...) abort
+        call inputsave()
+        let @/ = input('Path? ', get(a:, 1, expand('%:p:h')), 'file')
+        call inputrestore()
+        if getreg('/') ==# ''
+            return
+        endif
+        normal! n
+    endfunction
+
+.. note::
+
+    This feels like exactly the kind of thing ``:promptfind`` would be
+    useful for in :command:`gvim`, but it doesn’t support vim’s completion
+    functionality.
+
 Issue an “shift to right” for a window, with an attempt made to skip portrait
 displays.
 
