@@ -1793,6 +1793,7 @@ Automagic indentation configuration, that just works.
 
     call dein#add('tpope/vim-sleuth', {
         \ 'on_cmd': 'Sleuth',
+        \ 'on_func': 'SleuthIndicator',
     \ })
 
 ``vim-speeddating``
