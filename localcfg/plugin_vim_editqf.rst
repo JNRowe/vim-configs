@@ -15,4 +15,5 @@ Store data in `XDG basedir`_ compliant location::
         autocmd BufEnter * call <SID>set_data_files()
     augroup END
 
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+.. _XDG basedir:
+    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

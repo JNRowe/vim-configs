@@ -25,7 +25,8 @@ A utility function to add new map commands::
         else
             let l:cmd = a:cmd . '<CR>'
         endif
-        execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' . a:type . l:cmd
+        execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' .
+            \ a:type . l:cmd
     endfunction
 
 Display occurrences of current word::
@@ -61,9 +62,14 @@ Configure layered maps for useful quickfix and location functions::
         endfor
     endfor
     execute 'nnoremap <silent> [quickfix]x
-        \ :call setqflist([], "r", {"items": [], "title": getqflist({"title": v:true}).title})<CR>'
+        \ :call setqflist([], "r",
+        \                 {"items": [],
+        \                  "title": getqflist({"title": v:true}).title})<CR>'
     execute 'nnoremap <silent> [location]x
-        \ :call setloclist(0, [], "r", {"items": [], "title": getloclist(0, {"title": v:true}).title})<CR>'
+        \ :call setloclist(
+        \   0, [], "r",
+        \   {"items": [],
+        \    "title": getloclist(0, {"title": v:true}).title})<CR>'
     execute 'nnoremap <silent> [quickfix]X
         \ :call setqflist([], "f", {"title": ""})<CR>'
     execute 'nnoremap <silent> [location]X

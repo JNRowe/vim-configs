@@ -97,9 +97,11 @@ Insert a modeline on the last line of a buffer::
     function! misc#modeline_stub(verbose) abort
         let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
         if a:verbose
-            let l:x .= printf(' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop, &shiftwidth,
-                \             &textwidth, &foldmethod,
-                \             (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : ''))
+            let l:x .= printf(
+                \   ' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop,
+                \   &shiftwidth, &textwidth, &foldmethod,
+                \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
+                \ )
         endif
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))

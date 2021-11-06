@@ -156,7 +156,8 @@ When :repo:`the_silver_searcher <ggreer/the_silver_searcher>` is installed
         set grepformat=%f:%l:%c:%m
     else
         let &grepprg = 'grep -nH '
-            \ . '--exclude-from=' . g:xdg_data_dir . '/grep_excludes $* /dev/null'
+            \ . '--exclude-from=' . g:xdg_data_dir . '/grep_excludes '
+            \ . '$* /dev/null'
     endif
 
 .. note::
@@ -529,7 +530,8 @@ Custom foldtext setting::
             let l:text = a:text
             " Non-getline() text length
             let l:base = 19
-            let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+            let l:text_width =
+                \ winwidth(0) - v:foldlevel - len(a:line_str) - l:base
             if strlen(l:text) > l:text_width
                 let l:text = l:text[:l:text_width] . '…'
             endif
@@ -537,10 +539,12 @@ Custom foldtext setting::
         endfunction
 
         function! MyFoldText() abort
-            return substitute(foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
-                \             {m -> repeat('─', v:foldlevel) . ' ' .
-                \                   s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
-                \             '')
+            return substitute(
+                \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
+                \   {m -> repeat('─', v:foldlevel) . ' ' .
+                \         s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
+                \   ''
+                \ )
         endfunction
     endif
 

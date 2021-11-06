@@ -8,8 +8,10 @@
 Set up map to quickly move among buffers::
 
     function! s:switch_buf(count) abort
-        let l:bufs = filter(range(1, bufnr('$')),
-            \               {_, n -> buflisted(n) && !empty(bufname(n))})
+        let l:bufs = filter(
+            \   range(1, bufnr('$')),
+            \   {_, n -> buflisted(n) && !empty(bufname(n))}
+            \ )
         if len(l:bufs) < 2
             return
         endif
@@ -135,7 +137,7 @@ Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
     if executable('xdg-open')
         nnoremap <silent> gx
-            \ :execute "!xdg-open " . shellescape(expand("<cfile>:p"), 1) . " &"<CR>
+            \ :call system('xdg-open ' . shellescape(expand('<cfile>:p')))<CR>
     endif
 
 .. _window-management-maps:

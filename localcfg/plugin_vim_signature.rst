@@ -22,7 +22,8 @@ has changed massively before we made it here.
 
 ::
 
-    for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning', '#': 'error'})
+    for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning',
+        \                    '#': 'error'})
         if type(s:v) is v:t_list
             let [s:icon, s:hl] = [s:v[0], s:v[1]]
         else

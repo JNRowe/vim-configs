@@ -4,9 +4,9 @@ Leader maps
 This set of config files layers its ``<Leader>`` and ``<LocalLeader>`` maps
 using :ref:`misc#mnemonicmap() <mnemonic-map>`.
 
-=========  =====  ======  ========================================================
+=========  =====  ======  ====================================================
 Key        Local  Buffer  Maps
-=========  =====  ======  ========================================================
+=========  =====  ======  ====================================================
 :kbd:`?`   ❌     ❌      :ref:`vim help <help-custom-maps>`
 :kbd:`\``  ❌     ❌      :ref:`fzf.vim <fzf-vim-custom-maps>`
 :kbd:`a`   ✅     ✅      :ref:`mail filetype <mail-custom-maps>`
@@ -21,16 +21,17 @@ Key        Local  Buffer  Maps
 :kbd:`i`   ✅     ❌      :ref:`+diff feature <diff-custom-maps>`
 :kbd:`l`   ✅     ✅      :ref:`vim-ledger <vim-ledger-custom-maps>`
 :kbd:`l`   ✅     ❌      :ref:`location list <location-list-custom-maps>`
-:kbd:`m`   ❌     ❌      :ref:`git-messenger.vim <git-messenger-vim-custom-maps>`
+:kbd:`m`   ❌     ❌      :ref:`git-messenger.vim
+                          <git-messenger-vim-custom-maps>`
 :kbd:`p`   ✅     ❌      :ref:`vim-quick-radon <vim-quick-radon-custom-maps>`
 :kbd:`r`   ✅     ✅      :ref:`gitrebase <gitrebase-custom-maps>`
 :kbd:`s`   ✅     ❌      :ref:`sideways.vim <sideways-vim-custom-maps>`
 :kbd:`t`   ✅     ✅      :ref:`gitcommit filetype <gitcommit-custom-maps>`
 :kbd:`v`   ✅     ❌      :ref:`vim-vebugger <vim-vebugger-custom-maps>`
 :kbd:`w`   ❌     ❌      :ref:`wordnet.vim <wordnet-vim-custom-maps>`
-=========  =====  ======  ========================================================
+=========  =====  ======  ====================================================
 
 .. tip::
 
-    :ref:`misc#mnemonicmap() <mnemonic-map>` adds a :kbd:`?` map to all groups that
-    will show a list of defined mappings.
+    :ref:`misc#mnemonicmap() <mnemonic-map>` adds a :kbd:`?` map to all groups
+    that will show a list of defined mappings.

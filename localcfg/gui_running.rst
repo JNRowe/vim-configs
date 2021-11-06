@@ -114,7 +114,8 @@ helps.
 Include non-standard server names in the window title::
 
     if has('title') && has('clientserver')
-        let &titlestring .= '%{v:servername != "GVIM" ? " [" . v:servername . "]" : ""}'
+        let &titlestring .=
+            \ '%{v:servername != "GVIM" ? " [" . v:servername . "]" : ""}'
     endif
 
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn't::

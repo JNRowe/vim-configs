@@ -33,7 +33,8 @@ Add my bindings for :command:`diff` mode::
             \   ['g', 'diffget'],
             \   ['u', 'diffupdate'],
             \ ]
-            execute 'nnoremap <silent> <buffer> [diff]' . s:key . ' :' . s:cmd . '<CR>'
+            execute 'nnoremap <silent> <buffer> [diff]' . s:key . ' :' .
+                \ s:cmd . '<CR>'
         endfor
 
         vnoremap <silent> <buffer> < :diffget<CR>

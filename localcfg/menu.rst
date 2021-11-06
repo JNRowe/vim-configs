@@ -23,7 +23,8 @@ Signature        Maps to
         for l:f in sort(a:files)
             let l:f = expand(l:f)
             if filereadable(l:f) || isdirectory(l:f)
-                execute 'amenu L&ocations.' . escape(a:heading, ' ') . ' :e ' . l:f . '<CR>'
+                execute 'amenu L&ocations.' . escape(a:heading, ' ') .
+                    \ ' :e ' . l:f . '<CR>'
                 break
             endif
         endfor
@@ -40,7 +41,8 @@ Signature        Maps to
             call s:add_menu_items(a:heading, l:files)
         endif
         for l:group in get(a:, 1, [])
-            execute 'amenu L&ocations.' . escape(a:heading, ' ') . '.-Sep- :<CR>'
+            execute 'amenu L&ocations.' . escape(a:heading, ' ') .
+                \ '.-Sep- :<CR>'
             call s:define_menu(a:heading, l:group)
         endfor
     endfunction
@@ -224,13 +226,15 @@ For zsh_::
 .. _mpop: https://marlam.de/mpop/
 .. _msmtp: https://marlam.de/msmtp/
 .. _neomutt: https://neomutt.org/
-.. _per-terminal themeing for neomutt: https://jnrowe.github.io/articles/tips/Theming_mutt.html
+.. _per-terminal themeing for neomutt:
+    https://jnrowe.github.io/articles/tips/Theming_mutt.html
 .. _openbox: http://openbox.org/
 .. _python: https://www.python.org/
 .. _flake8: https://gitlab.com/pycqa/flake8/
 .. _pip: https://pip.pypa.io/
 .. _readline: http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
-.. _run wrappers: https://rdial.readthedocs.io/en/latest/config.html#run-wrappers-section
+.. _run wrappers:
+    https://rdial.readthedocs.io/en/latest/config.html#run-wrappers-section
 .. _remind: http://www.roaringpenguin.com/products/remind
 .. _wyrd: http://pessimization.com/software/wyrd/
 .. _taskwarrior: https://taskwarrior.org/

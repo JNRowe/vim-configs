@@ -48,4 +48,5 @@ Based on an example from the documentation, add a binding to populate the
       \ 'ctrl-v': 'vsplit'
     \ }
 
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+.. _XDG basedir:
+    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

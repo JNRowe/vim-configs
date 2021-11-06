@@ -17,8 +17,8 @@ Jump to existing windows when possible::
 Configure convenience mappings for common command usage::
 
     call misc#mnemonicmap('fzf', {'key': '`'})
-    for s:cmd in ['Ag', 'Buffers', 'Commands', 'Files', 'GFiles',
-        \         'Lines', 'Maps', 'Marks', 'Windows']
+    for s:cmd in ['Ag', 'Buffers', 'Commands', 'Files', 'GFiles', 'Lines',
+        \         'Maps', 'Marks', 'Windows']
         execute 'nmap <silent> [fzf]' . tolower(s:cmd[0]) . ' ' .
         \   ':FZF' . s:cmd . '<CR>'
     endfor

@@ -22,7 +22,8 @@ If possible enable 24-bit colour::
 
 Poke around, as best we can, to discern the background colour::
 
-    let s:feature_terms = '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
+    let s:feature_terms =
+        \ '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
     if &term =~# s:feature_terms || split($COLORFGBG . ';padding', ';')[0] == 15
         if &background !=# 'dark'
             set background=dark
@@ -95,5 +96,6 @@ closely matches my setup in :command:`gvim`::
     endif
 
 .. _kitty: https://sw.kovidgoyal.net/kitty/
-.. _interact poorly: https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+.. _interact poorly:
+    https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 .. _kittens: https://sw.kovidgoyal.net/kitty/#kittens

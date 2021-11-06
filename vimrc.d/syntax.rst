@@ -71,7 +71,8 @@ Load a colour scheme, but only on first source::
 
 .. _erlang: https://www.erlang.org/
 .. _bash: http://tiswww.case.edu/php/chet/bash/bashtop.html
-.. _POSIX: http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
+.. _POSIX:
+    http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
 .. _Python: https://www.python.org/
 .. _reST: http://docutils.sourceforge.net/rst.html
 .. _rust: https://www.rust-lang.org/

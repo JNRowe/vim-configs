@@ -64,7 +64,8 @@ Use fancy icons for signs if possible::
         for [s:icon, s:signs] in items({
             \   'list-add': ['Added'],
             \   'edit-copy': ['Modified'],
-            \   'list-remove': ['Removed', 'RemovedFirstLine', 'ModifiedRemoved']
+            \   'list-remove': ['Removed', 'RemovedFirstLine',
+            \                   'ModifiedRemoved']
             \ })
             for s:sign in s:signs
                 execute 'sign define GitGutterLine' . s:sign .

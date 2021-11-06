@@ -23,12 +23,12 @@ effect could be achieved with zsh_ in :file:`.git/hooks/pre-commit`:
 
 .. code-block:: zsh
 
+    dein_repos=${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos
     extras=()
     for f (localcfg/plugin_*.vim) {
         plug_name=${f:t:r:s/plugin_//:gs/_/?/}
-        if [ -z "${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/*/*/${plug_name}(/N)" ] \
-            && [[ -z "~/.vim/internal/${plug_name}(/N)" ]]
-        then
+        if [ -z "${dein_repos}/*/*/${plug_name}(/N)" ] \
+            && [[ -z "~/.vim/internal/${plug_name}(/N)" ]]; then
             extras+=$i
         fi
     }

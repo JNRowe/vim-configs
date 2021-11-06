@@ -14,4 +14,5 @@ All the Python projects I contribute to are the *exact* opposite of
 
     let g:black_string_normalization = v:false
 
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+.. _XDG basedir:
+    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

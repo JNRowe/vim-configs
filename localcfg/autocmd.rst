@@ -8,7 +8,8 @@
 
 Don’t write undo data for temporary files::
 
-        execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* setlocal noundofile'
+        execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* ' .
+            \ 'setlocal noundofile'
 
 Use :command:`vim`’s help for these documents::
 
@@ -40,7 +41,8 @@ Attempt filetype detection after writing::
 
 Automatically :command:`chmod +x` shell scripts::
 
-        autocmd BufWritePost *.sh silent call system('chmod +x -- ' . expand('%:p:S'))
+        autocmd BufWritePost *.sh
+            \ silent call system('chmod +x -- ' . expand('%:p:S'))
 
 .. note::
 
@@ -109,7 +111,8 @@ Search for project specific :file:`vimrc` and support files::
             endif
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
-            silent let l:output = systemlist('git -C ' . shellescape(l:p) . ' rev-parse --show-toplevel')
+            silent let l:output = systemlist('git -C ' . shellescape(l:p) .
+                \                            ' rev-parse --show-toplevel')
             if v:shell_error == 0 && len(l:output) == 1
                 return s:project_env_dir . l:output[0]
             endif

@@ -52,7 +52,8 @@ calls.  In both cases, output will be written to :file:`vim.prof` under
 ::
 
     if exists('$VIM_PROFILE')
-        let [s:profile_file, s:profile_func] = (split($VIM_PROFILE, ':') + [v:none])[:1]
+        let [s:profile_file, s:profile_func] =
+            \ (split($VIM_PROFILE, ':') + [v:none])[:1]
         execute 'profile start ' . s:profile_file
         if s:profile_func is v:none
             profile file ~/.vim/*

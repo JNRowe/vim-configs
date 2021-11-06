@@ -8,7 +8,10 @@ Re-indent lines following exchange::
 Add command to toggle indentation option for the current buffer::
 
     command! ExchangeIndentToggle
-        \ let b:exchange_indent = get(b:, "exchange_indent", g:exchange_indent) is v:true ? '==' : v:true
+        \ let b:exchange_indent =
+        \   get(b:, "exchange_indent", g:exchange_indent) is v:true
+        \   ? '=='
+        \   : v:true
 
 .. tip::
 

@@ -10,8 +10,8 @@ Find `XDG basedir`_ compliant locations for data files::
         \ ]
         let s:var = 'g:xdg_' . s:type . '_dir'
         let s:envvar = '$XDG_' . toupper(s:type) . '_HOME'
-        execute 'let ' . s:var . ' = '
-            \ 'expand(empty(' . s:envvar . ') ? "' . s:path . '" : "' . s:envvar . '")'
+        let s:value = expand(exists(s:envvar) ? s:envvar : s:path)
+        execute 'let ' . s:var . ' = s:value'
     endfor
 
 :command:`vim` specific paths honouring `XDG basedir`_::
