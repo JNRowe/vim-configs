@@ -1211,9 +1211,11 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
 ::
 
-    call dein#add('mesonbuild/meson', {
-        \ 'rtp': 'data/syntax-highlighting/vim',
-    \ })
+    if !has('patch-8.1.2175')
+        call dein#add('mesonbuild/meson', {
+            \ 'rtp': 'data/syntax-highlighting/vim',
+        \ })
+    endif
 
 ``vim-cuesheet``
 ''''''''''''''''
