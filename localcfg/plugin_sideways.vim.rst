@@ -5,7 +5,7 @@
 
 Use my custom maps::
 
-    call misc#mnemonicmap('sideways', {'local': v:true})
+    call keymaps#mnemonic_map('sideways', {'local': v:true})
 
     for s:key in ['Left', 'Right']
         execute 'nnoremap <silent> [sideways]<' . s:key . '>' .

@@ -5,7 +5,7 @@
 
 Use my custom maps::
 
-    call misc#mnemonicmap('bufmru')
+    call keymaps#mnemonic_map('bufmru')
 
     nnoremap <silent> [bufmru]l       :BufMRU<CR>
     nnoremap <silent> [bufmru]<Left>  :BufMRUPrev<CR>

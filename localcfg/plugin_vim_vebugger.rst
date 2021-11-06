@@ -7,7 +7,7 @@
 
 Use my custom maps::
 
-    call misc#mnemonicmap('vebugger', {'local': v:true})
+    call keymaps#mnemonic_map('vebugger', {'local': v:true})
     let g:vebugger_leader='[vebugger]'
 
 Configure symbols::

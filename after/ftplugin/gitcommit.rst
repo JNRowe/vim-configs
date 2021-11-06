@@ -7,14 +7,14 @@
 
 Configure maps to insert common metadata in to commit messages::
 
-    call misc#mnemonicmap('Trailer', {'buffer': v:true, 'local': v:true})
+    call keymaps#mnemonic_map('Trailer', {'buffer': v:true, 'local': v:true})
 
     for s:type in ['Acked', 'Co-authored', 'Reviewed', 'Signed-off', 'Tested']
         execute 'nnoremap <buffer> <silent> [Trailer]' . tolower(s:type[0]) .
-            \ ' :call misc#add_git_trailer("' . s:type . '", ' .
-            \                              '"' . g:user_email . '")<CR>'
+            \ ' :call filetypes#add_git_trailer("' . s:type . '", ' .
+            \                                   '"' . g:user_email . '")<CR>'
         execute 'nnoremap <buffer> <silent> [Trailer]q' . tolower(s:type[0]) .
-            \ ' :call misc#add_git_trailer("' . s:type . '")<CR>'
+            \ ' :call filetypes#add_git_trailer("' . s:type . '")<CR>'
     endfor
 
 .. note::
@@ -27,7 +27,7 @@ Configure maps to insert common metadata in to commit messages::
 Add a mapping for Sponsored-by_ header::
 
     nnoremap <buffer> <silent> [Trailer]qp
-        \ :call misc#add_git_trailer('Sponsored')<CR>
+        \ :call filetypes#add_git_trailer('Sponsored')<CR>
 
 .. _gitcommit-emoji-commits:
 

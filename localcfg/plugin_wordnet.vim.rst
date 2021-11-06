@@ -13,7 +13,7 @@ Add map to close wordnet_ window from anywhere::
 
 Use my custom maps::
 
-    call misc#mnemonicmap('wordnet')
+    call keymaps#mnemonic_map('wordnet')
 
     for [s:key, s:cmd] in [
         \   ['o', 'WordNetOverviews(expand("<cword>"))'],

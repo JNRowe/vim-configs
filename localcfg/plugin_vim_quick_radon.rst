@@ -5,7 +5,7 @@
 
 Configure my custom maps::
 
-    call misc#mnemonicmap('radon', {'key': 'p', 'local': v:true})
+    call keymaps#mnemonic_map('radon', {'key': 'p', 'local': v:true})
 
 .. note::
 

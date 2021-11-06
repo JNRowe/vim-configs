@@ -8,7 +8,7 @@ than doing a complete pretty print
 
 ::
 
-    call misc#mnemonicmap('Haskell', {
+    call keymaps#mnemonic_map('Haskell', {
         \ 'buffer': v:true,
         \ 'local': v:true,
         \ 'mode': 'v',

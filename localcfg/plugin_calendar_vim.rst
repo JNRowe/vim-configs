@@ -7,7 +7,7 @@ Use my custom maps::
 
     let g:calendar_no_mappings = v:true
 
-    call misc#mnemonicmap('Calendar')
+    call keymaps#mnemonic_map('Calendar')
 
     for [s:key, s:cmd] in [
         \   ['v', ''],

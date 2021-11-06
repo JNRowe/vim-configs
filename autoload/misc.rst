@@ -1,6 +1,14 @@
 ``autoload/misc.vim``
 =====================
 
+A helper for simple ``balloonexpr`` usage that simply calls an external
+command::
+
+    function! misc#commandballoon(cmd) abort
+        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
+        return systemlist(printf(l:cmd, shellescape(v:beval_text)))
+    endfunction
+
 .. _gethighlightgroup-function:
 
 Find highlight group of the given location::
@@ -20,57 +28,23 @@ Find highlight group of the given location::
         return l:groups
     endfunction
 
-Flag toggling function::
+Insert a modeline on the last line of a buffer::
 
-    function! misc#toggleflag(option, flag) abort
-        let l:optstr = eval('&' . a:option)
-        if stridx(l:optstr, ',') == -1
-            " Simple char options like 'fo'
-            let l:flip = '+-'[l:optstr =~# a:flag]
-        else
-            " Comma lists options like 'cot'
-            let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
+    function! misc#modeline_stub(verbose) abort
+        let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
+        if a:verbose
+            let l:x .= printf(
+                \   ' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop,
+                \   &shiftwidth, &textwidth, &foldmethod,
+                \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
+                \ )
         endif
-        execute 'set ' . a:option . l:flip . '=' . a:flag
+        let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
+        call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
 
-.. _Mnemonic-Map:
-
-Mnemonic mapping setup function::
-
-    function! misc#mnemonicmap(name, ...) abort
-        let l:extra = get(a:, 1, {})
-        let l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
-        let l:key = get(l:extra, 'key', tolower(a:name[0]))
-        let l:leader = get(l:extra, 'local', v:false) ? 'Local' : ''
-        let l:mode = get(l:extra, 'mode', 'n')
-        execute l:mode . 'noremap ' . l:buffer . ' [' . a:name . '] <Nop>'
-        execute l:mode . 'map ' . l:buffer . ' <' . l:leader . 'Leader>'
-            \ . l:key . ' [' . a:name . ']'
-        execute l:mode . 'noremap <silent> [' . a:name . ']?'
-            \ ' :' . l:mode . 'map [' . a:name . ']<CR>'
-    endfunction
-
-.. tip::
-
-    This adds a :kbd:`?` binding to display the map list for ``name``.
-
-Convenience function to apply title case to a word::
-
-    function! misc#titleword(word) abort
-        return toupper(a:word[0]) . a:word[1:]
-    endfunction
-
-A helper for simple ``balloonexpr`` usage that simply calls an external
-command::
-
-    function! misc#commandballoon(cmd) abort
-        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
-        return systemlist(printf(l:cmd, shellescape(v:beval_text)))
-    endfunction
-
-Issue an immediate “shift to right” for a window, with an attempt made to skip
-portrait displays.
+Issue an “shift to right” for a window, with an attempt made to skip portrait
+displays.
 
 ::
 
@@ -92,91 +66,22 @@ portrait displays.
         endif
     endfunction
 
-Insert a modeline on the last line of a buffer::
+Convenience function to apply title case to a word::
 
-    function! misc#modeline_stub(verbose) abort
-        let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
-        if a:verbose
-            let l:x .= printf(
-                \   ' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop,
-                \   &shiftwidth, &textwidth, &foldmethod,
-                \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
-                \ )
-        endif
-        let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
-        call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
+    function! misc#titleword(word) abort
+        return toupper(a:word[0]) . a:word[1:]
     endfunction
 
-Insert a git_ trailer::
+Flag toggling function::
 
-    function! misc#add_git_trailer(key, ...) abort
-        let l:value = get(a:, 1)
-        if l:value == v:none
-            call inputsave()
-            let l:value = input(a:key . '? ')
-            call inputrestore()
-        endif
-        if l:value ==# ''
-            return
-        endif
-        let l:save_cursor = getcurpos()
-        execute ':%!git interpret-trailers ' .
-            \ '--trailer ' . a:key . '-by=' . shellescape(l:value)
-        call setpos('.', l:save_cursor)
-    endfunction
-
-Insert a `X-Advice header`_ above the first non-black line::
-
-    function! misc#add_advice_header(prio, due) abort
-        let l:save_cursor = getcurpos()
-        call cursor(1, 1)
-        let l:body_sep = search('^$', 'c')
-        if l:body_sep != 0
-            call append(l:body_sep - 1,
-                \       'X-advice: ' . a:prio . ' read ' . a:due)
-            let l:save_cursor[1] += 1
-        endif
-        call setpos('.', l:save_cursor)
-    endfunction
-
-.. warning::
-
-    This only works when your buffer contains headers, such as when mutt_’s
-    ``edit_headers`` option is set.  If your buffer doesn’t contain headers,
-    then this will simply insert a body line to your email.
-
-Ping the cursor position::
-
-    function! misc#cursor_ping() abort
-        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
-        for _ in range(5)
-            set cursorline! cursorcolumn!
-            redraw
-            sleep 15m
-        endfor
-        let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
-    endfunction
-
-Relative buffer switching while ignoring scratch buffers::
-
-    function! misc#switch_buf(count) abort
-        let l:bufs = filter(
-            \   range(1, bufnr('$')),
-            \   {_, n -> buflisted(n) && !empty(bufname(n))}
-            \ )
-        if len(l:bufs) < 2
-            return
-        endif
-        let l:current = index(l:bufs, bufnr('%'))
-        if abs(a:count) > 1
-            let l:default = a:count < 1 ? l:bufs[0] : bufnr('$')
+    function! misc#toggleflag(option, flag) abort
+        let l:optstr = eval('&' . a:option)
+        if stridx(l:optstr, ',') == -1
+            " Simple char options like 'fo'
+            let l:flip = '+-'[l:optstr =~# a:flag]
         else
-            let l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
+            " Comma lists options like 'cot'
+            let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
         endif
-        let l:buf = get(l:bufs, l:current + a:count, l:default)
-        execute 'buffer ' . l:buf
+        execute 'set ' . a:option . l:flip . '=' . a:flag
     endfunction
-
-.. _git: https://www.git-scm.com/
-.. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
-.. _mutt: http://www.mutt.org/

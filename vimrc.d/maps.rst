@@ -7,8 +7,8 @@
 
 Set up map to quickly move among buffers::
 
-    noremap <silent> <M-Left> :<C-u>call misc#switch_buf(v:count1 * -1)<CR>
-    noremap <silent> <M-Right> :<C-u>call misc#switch_buf(v:count1 * 1)<CR>
+    noremap <silent> <M-Left> :<C-u>call keymaps#switch_buf(v:count1 * -1)<CR>
+    noremap <silent> <M-Right> :<C-u>call keymaps#switch_buf(v:count1 * 1)<CR>
 
 .. note::
 
@@ -152,7 +152,7 @@ Folding support maps::
 
 Help related maps::
 
-    call misc#mnemonicmap('Help', {'key': '?'})
+    call keymaps#mnemonic_map('Help', {'key': '?'})
 
     for s:t in ['function-list', 'pattern', 'quickref', 'registers']
         execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
@@ -176,7 +176,7 @@ for shortcuts::
 
 Ping the cursor position as a visual cue when returning to a session::
 
-    nnoremap <silent> <C-Space> :call misc#cursor_ping()<CR>
+    nnoremap <silent> <C-Space> :call keymaps#cursor_ping()<CR>
 
 Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::

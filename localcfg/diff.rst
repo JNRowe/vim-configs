@@ -24,7 +24,7 @@ The remaining functionality is only useful when ``autocmd`` is available.
 Add my bindings for :command:`diff` mode::
 
     function! s:diff_maps() abort
-        call misc#mnemonicmap('diff', {'key': 'i', 'local': v:true})
+        call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})
 
         for [s:key, s:cmd] in [
             \   ['w', 'call misc#toggleflag("diffopt", "iwhite")'],

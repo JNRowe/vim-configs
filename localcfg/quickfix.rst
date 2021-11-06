@@ -7,13 +7,13 @@
 
 Configure my custom maps::
 
-    call misc#mnemonicmap('quickfix', {'key': 'f', 'local': v:true})
+    call keymaps#mnemonic_map('quickfix', {'key': 'f', 'local': v:true})
 
 .. _location-list-custom-maps:
 
 ::
 
-    call misc#mnemonicmap('location', {'local': v:true})
+    call keymaps#mnemonic_map('location', {'local': v:true})
 
 A utility function to add new map commands::
 

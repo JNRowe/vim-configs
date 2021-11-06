@@ -10,13 +10,13 @@ every one to take part, but they have become popular in work mail.
 
 ::
 
-    call misc#mnemonicmap('Advice', {'buffer': v:true, 'local': v:true})
+    call keymaps#mnemonic_map('Advice', {'buffer': v:true, 'local': v:true})
 
     for s:prio in ['perhaps', 'should', 'must']
         for s:due in ['now', 'soon', 'whenever']
             execute 'nnoremap <buffer> <silent> ' .
                 \ '[Advice]' . s:prio[0] . s:due[0] .
-                \ ' :call misc#add_advice_header("' . s:prio . '", "' .
+                \ ' :call filetypes#add_advice_header("' . s:prio . '", "' .
                 \ s:due . '")<CR>'
         endfor
     endfor
