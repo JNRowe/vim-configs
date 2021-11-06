@@ -145,6 +145,18 @@ Insert a `X-Advice header`_ above the first non-black line::
     ``edit_headers`` option is set.  If your buffer doesn’t contain headers,
     then this will simply insert a body line to your email.
 
+Ping the cursor position::
+
+    function! misc#cursor_ping() abort
+        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
+        for _ in range(5)
+            set cursorline! cursorcolumn!
+            redraw
+            sleep 15m
+        endfor
+        let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
+    endfunction
+
 .. _git: https://www.git-scm.com/
 .. _X-Advice headers: http://www.nicemice.net/amc/advice-header/
 .. _mutt: http://www.mutt.org/

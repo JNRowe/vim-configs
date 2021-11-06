@@ -194,16 +194,7 @@ for shortcuts::
 
 Ping the cursor position as a visual cue when returning to a session::
 
-    function! s:cursor_ping() abort
-        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
-        for _ in range(5)
-            set cursorline! cursorcolumn!
-            redraw
-            sleep 15m
-        endfor
-        let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
-    endfunction
-    nnoremap <silent> <C-Space> :call <SID>cursor_ping()<CR>
+    nnoremap <silent> <C-Space> :call misc#cursor_ping()<CR>
 
 Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
