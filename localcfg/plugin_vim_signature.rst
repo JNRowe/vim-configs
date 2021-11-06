@@ -46,13 +46,13 @@ has changed massively before we made it here.
     This could use fancy colourful emojis both as a replacement for the textual
     notes, but also for the icons.  For example:
 
-    =======  ===========
+    =======  ==============
     Current  Replacement
-    =======  ===========
-    ``II``   💡
-    ``WW``   ⚠
-    ``EE``   ⛔
-    =======  ===========
+    =======  ==============
+    ``II``   💡 ``U+1F4A1``
+    ``WW``   ⚠ ``U+26A0``
+    ``EE``   ⛔ ``U+26D4``
+    =======  ==============
 
     There is the not-so-minor-issue of dealing with old terminals that can’t
     display emoji, or display them poorly when their cells are non-uniform in
