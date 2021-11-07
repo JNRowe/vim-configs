@@ -94,7 +94,7 @@ If miscfiles_ is installed use its dictionary::
         set dictionary^=/usr/share/dict/words
     endif
 
-Keep swap files in `XDG basedir`_ compliant location::
+Keep swap files in |XDG basedir| compliant location::
 
     let &directory = g:vim_cache_dir . '/swap//,' . &directory
     call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
@@ -257,7 +257,7 @@ unusable::
         set pumheight=10
     endif
 
-If available default to Python_ 3::
+If available default to |Python| 3::
 
     if has('pythonx') && has('python3')
         set pyxversion=3
@@ -401,7 +401,7 @@ Use smoother redraws::
     support it, but the list :command:`vim` uses is static and new terminals
     I’m testing can’t be added to it.
 
-Enable undo files that cross sessions, and store those files in `XDG basedir`_
+Enable undo files that cross sessions, and store those files in |XDG basedir|
 compliant location::
 
     if has('persistent_undo')
@@ -422,14 +422,14 @@ Double :command:`vim`’s default swap file write time interval::
 
     set updatetime=8000
 
-Store session files in `XDG basedir`_ compliant location::
+Store session files in |XDG basedir| compliant location::
 
     if has('mksession')
         let &viewdir = g:vim_cache_dir . '/view'
         call mkdir(&viewdir, 'p', 0700)
     endif
 
-Configure ``'viminfo'`` and store :file:`viminfo` files in `XDG basedir`_
+Configure ``'viminfo'`` and store :file:`viminfo` files in |XDG basedir|
 compliant location:
 
 =========== =====================================================
@@ -554,10 +554,8 @@ Custom foldtext setting::
 .. note::
 
     Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
-    work; whitespace, ``&cms`` :abbr:`RegEx (Regular Expression)` escaping(C
-    fex), ``&fdr``, no ``scanf()``, &c.
+    work; whitespace, ``&cms`` |RegEx| escaping(C fex), ``&fdr``, no
+    ``scanf()``, &c.
 
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
-.. _Python: https://www.python.org/
 .. _sqlite: https://sqlite.org/

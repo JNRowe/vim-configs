@@ -7,8 +7,8 @@
 
     call keymaps#mnemonic_map('Heading', {'buffer': v:true, 'local': v:true})
 
-This creates reST_ headings using *my* favourite definitions of ``=``, ``-`` and
-``'``::
+This creates |reST| headings using *my* favourite definitions of ``=``, ``-``
+and ``'``::
 
     for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
         for [s:cmd, s:post] in [
@@ -35,11 +35,10 @@ Enable common — to me — highlighting support::
     \ }
     let g:rst_use_emphasis_colors = v:true
 
-The *vast* majority of the time I spend editing reST_ documents I am actually
+The *vast* majority of the time I spend editing |reST| documents I am actually
 editing files from a Sphinx_ project.  It would be nice if I could ``gf`` when
 in a ``:doc:`` role or ``toctree`` directive::
 
     setlocal suffixesadd+=.rst
 
-.. _reST: http://docutils.sourceforge.net/rst.html
 .. _Sphinx: http://sphinx-doc.org/

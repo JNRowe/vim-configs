@@ -419,13 +419,12 @@ a full editing session.
 ``csv.vim``
 '''''''''''
 
-    “A filetype plugin for :abbr:`CSV (Comma-separated values)` files”
+    “A filetype plugin for |CSV| files”
 
 :repository: :repo:`chrisbra/csv.vim`
 :config: :doc:`localcfg/plugin_csv.vim`
 
-Disturbingly cool editing for :abbr:`CSV (Comma-separated values)` files, ‘nuff
-said.
+Disturbingly cool editing for |CSV| files, ‘nuff said.
 
 ::
 
@@ -660,7 +659,7 @@ decorating it with glyphs.
 :config: :doc:`localcfg/plugin_regex`
 
 Removes the need to jump to your language’s :abbr:`REPL (Read-Eval-Print Loop)`
-when writing ugly, ugly :abbr:`RegEx (Regular Expression)`.
+when writing ugly, ugly |RegEx|.
 
 ::
 
@@ -795,7 +794,7 @@ jealous.
 ``vim-yankitute``
 '''''''''''''''''
 
-    “:abbr:`RegEx (Regular Expression)` powered yank and substitute”
+    “|RegEx| powered yank and substitute”
 
 :repository: :repo:`idanarye/vim-yankitute`
 
@@ -1112,7 +1111,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ``vim-ledger``
 ''''''''''''''
 
-    “Language support for ledger_”
+    “Language support for |ledger|\”
 
 :repository: :repo:`ledger/vim-ledger`
 :config: :doc:`localcfg/plugin_vim_ledger`
@@ -1174,8 +1173,8 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ``emmet-vim``
 '''''''''''''
 
-    “Plugins for :abbr:`HTML (HyperText Markup Language)` and :abbr:`CSS
-    (Cascading Style Sheets)` hi-speed coding”
+    “Plugins for |HTML| and :abbr:`CSS (Cascading Style Sheets)` hi-speed
+    coding”
 
 :repository: :repo:`mattn/emmet-vim`
 :config: :doc:`localcfg/plugin_emmet_vim`
@@ -1363,7 +1362,7 @@ user, how cool is that?
 ``html5.vim``
 '''''''''''''
 
-    “:abbr:`HTML (HyperText Markup Language)`\5 + inline :abbr:`SVG (Scalable
+    “|HTML|\5 + inline :abbr:`SVG (Scalable
     Vector Graphics)` omnicomplete function, indent and syntax”
 
 :repository: :repo:`othree/html5.vim`
@@ -2065,7 +2064,7 @@ vim-scripts mirrors
 
 :repository: :repo:`vim-scripts/DotOutlineTree`
 
-I write my mail in reST_.  No, really.
+I write my mail in |reST|.  No, really.
 
 ::
 
@@ -2179,10 +2178,8 @@ by deletion.
 .. _EditorConfig: http://editorconfig.org/
 .. _gpg: https://www.gnupg.org/
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
-.. _ledger: https://www.ledger-cli.org/
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
 .. _Readline: http://www.gnu.org/software/readline/
 .. _zig: https://ziglang.org/
 .. _wordnet: http://wordnet.princeton.edu/
-.. _reST: http://docutils.sourceforge.net/rst.html

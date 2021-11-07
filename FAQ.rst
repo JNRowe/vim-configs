@@ -49,7 +49,7 @@ Frankly, I have no idea.  I *really* miss presenting, so they’ll return as soo
 as possible.  The original venue is no longer an option for non-pandemic
 reasons, and new venues are currently hard to pin down for pandemic reasons.
 
-In the meantime should you have questions feel free to ask by mail_.
+In the meantime should you have questions feel free to ask by |mail|.
 I genuinely do enjoy replying to them, as I often learn something new along the
 way.
 
@@ -71,4 +71,3 @@ so in an unimportant repository, using :ref:`custom maps
 
 .. _Debian: https://debian.org/
 .. _packaged in Debian Stable: https://packages.debian.org/vim
-.. _mail: jnrowe@gmail.com

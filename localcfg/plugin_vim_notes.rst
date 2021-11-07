@@ -14,7 +14,7 @@ Use a personal notes directory that can be version-controlled separately::
     let g:notes_directories = [g:xdg_data_dir . '/vim-notes']
     call mkdir(g:notes_directories[0], 'p')
 
-Store indexes in `XDG basedir`_ compliant location::
+Store indexes in |XDG basedir| compliant location::
 
     let s:notes_cache_dir = g:vim_cache_dir . '/vim-notes'
     call mkdir(s:notes_cache_dir, 'p')
@@ -47,5 +47,3 @@ I prefer the exact behaviour of :ref:`vim-textobj-quote
 <vim-textobj-quote-plugin>`::
 
     let g:notes_smart_quotes = v:false
-
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

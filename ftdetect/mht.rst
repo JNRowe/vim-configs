@@ -1,7 +1,7 @@
 ``ftdetect/mht.vim``
 ====================
 
-Treat :wikipedia:`MHTML` documents as :abbr:`HTML (HyperText Markup Language)`::
+Treat :wikipedia:`MHTML` documents as |HTML|::
 
     " vint: -ProhibitAutocmdWithNoGroup
     autocmd BufRead,BufNewFile *.mht setfiletype FALLBACK html

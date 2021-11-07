@@ -21,7 +21,7 @@ Insert a `X-Advice header`_ above the first non-black line::
     ``edit_headers`` option is set.  If your buffer doesn’t contain headers,
     then this will simply insert a body line to your email.
 
-Insert a git_ trailer::
+Insert a |git| trailer::
 
     function! filetypes#add_git_trailer(key, ...) abort
         let l:value = get(a:, 1)
@@ -61,4 +61,3 @@ Configure ``+diff`` specific keymaps::
 
 .. _X-Advice header: http://www.nicemice.net/amc/advice-header/
 .. _mutt: http://www.mutt.org/
-.. _git: https://www.git-scm.com/

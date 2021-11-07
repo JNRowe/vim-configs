@@ -45,6 +45,25 @@ if not on_rtd:
         spelling  # Dirty hack to silence F401 and type error
         extensions.append('sphinxcontrib.spelling')
 
+rst_epilog = """
+.. |CSV| replace:: :abbr:`CSV (Comma-separated values)`
+.. |HTML| replace:: :abbr:`HTML (HyperText Markup Language)`
+.. |Regex| replace:: :abbr:`RegEx (Regular Expression)`
+.. |Python| replace:: `Python <https://www.python.org/>`__
+.. |XDG basedir| replace:: `XDG base directory specification
+   <http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__
+.. |git| replace:: `git <https://www.git-scm.com/>`__
+.. |issue| replace:: `issue <https://github.com/JNRowe/vim-configs/issues/>`__
+.. |ledger| replace:: `ledger <https://www.ledger-cli.org/>`__
+.. |mail| replace:: `mail <jnrowe@gmail.com>`__
+.. |neovim| replace:: `neovim <https://neovim.io/>`__
+.. |reST| replace:: `reST <http://docutils.sourceforge.net/rst.html>`__
+.. |remind| replace:: `remind
+   <http://www.roaringpenguin.com/products/remind>`__
+.. |vim| replace:: `vim <http://www.vim.org/>`__
+.. |zsh| replace:: `zsh <https://www.zsh.org/>`__
+"""
+
 needs_sphinx = '3.5'
 
 nitpicky = True
@@ -64,7 +83,15 @@ copyright = '2009-2021  James Rowe'  # NOQA: A001
 
 with suppress(CalledProcessError):
     proc = run(
-        ['git', 'log', '--pretty=format:%ad [%h]', '--date=short', '-n1'],
+        [
+            'git',
+            '-C',
+            os.path.dirname(__file__),
+            'log',
+            '--pretty=format:%ad [%h]',
+            '--date=short',
+            '-n1',
+        ],
         stdout=PIPE,
     )
     html_last_updated_fmt = proc.stdout.decode()

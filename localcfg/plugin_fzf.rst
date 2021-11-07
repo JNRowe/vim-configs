@@ -11,7 +11,7 @@ Override default prompt colour::
         \ 'prompt':  ['fg', 'Conditional'],
     \ }
 
-Keep history in `XDG basedir`_ compliant location::
+Keep history in |XDG basedir| compliant location::
 
     let g:fzf_history_dir = g:vim_cache_dir . '/fzf-history'
 
@@ -47,6 +47,3 @@ Based on an example from the documentation, add a binding to populate the
       \ 'ctrl-x': 'split',
       \ 'ctrl-v': 'vsplit'
     \ }
-
-.. _XDG basedir:
-    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

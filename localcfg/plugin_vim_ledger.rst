@@ -8,11 +8,11 @@ without pushing lines too long::
 
 .. note::
 
-    44 was arrived at by :command:`grep`’ing ten years of ledger_ data, and
+    44 was arrived at by :command:`grep`’ing ten years of |ledger| data, and
     adding 10% to the minimum *I* would need.  Your mileage may vary.
 
-… but when you open a shared ledger_ file you may want to visually set it to the
-current column::
+… but when you open a shared |ledger| file you may want to visually set it to
+the current column::
 
     command! LedgerAlignHere let g:ledger_align_at = getcurpos()[2]
 
@@ -57,5 +57,3 @@ Configure magic currency completion in ledger files::
 .. todo::
 
     This should be in addition to :kbd:`<Tab>`, not a replacement.
-
-.. _ledger: https://www.ledger-cli.org/

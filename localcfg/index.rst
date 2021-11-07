@@ -18,8 +18,8 @@ is named correctly.
 
 But yeah, I agree that it is kinda ugly.
 
-The hook I use is *sadly* dependent on an internal tool, but a similar
-effect could be achieved with zsh_ in :file:`.git/hooks/pre-commit`:
+The hook I use is *sadly* dependent on an internal tool, but a similar effect
+could be achieved with |zsh| in :file:`.git/hooks/pre-commit`:
 
 .. code-block:: zsh
 
@@ -125,5 +125,3 @@ Contents
     plugin_wordnet.vim
     quickfix
     spell
-
-.. _zsh: https://www.zsh.org/

@@ -99,7 +99,7 @@ Use simple statusline for quickfix windows::
         let g:airline_extensions += ['quickfix']
     endif
 
-Enable git_ extension::
+Enable |git| extension::
 
     if executable('git')
         let g:airline_extensions += ['branch', 'hunks']
@@ -147,7 +147,7 @@ Show simple reading time estimate::
 
     let g:airline#extensions#wordcount#formatter = 'readingtime'
 
-When :abbr:`CSV (Comma Separated Value)` files have a header, use it::
+When |CSV| files have a header, use it::
 
     let g:airline#extensions#csv#column_display = 'Name'
 
@@ -167,4 +167,3 @@ Allow spaces *after* tabs, but not in between::
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 .. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
-.. _git: https://www.git-scm.com/

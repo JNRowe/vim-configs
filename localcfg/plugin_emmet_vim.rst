@@ -9,7 +9,7 @@ Don’t create global maps::
 
     let g:user_emmet_install_global = v:false
 
-Override locale, and enable jinja_ as HTML::
+Override locale, and enable jinja_ as |HTML|::
 
     let g:iser_emmet_settings = {
         \ 'variables': {

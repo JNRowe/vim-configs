@@ -26,7 +26,7 @@ Configure look::
     let g:calendar_weeknm = 1
     let g:calendar_datetime = ''
 
-Use reST_ formatting for note files::
+Use |reST| formatting for note files::
 
     let g:calendar_filetype = 'rst'
     let g:calendar_diary_extension = '.rst'
@@ -39,5 +39,3 @@ that the calendar has trailing whitespace::
             autocmd BufEnter *Calendar setlocal nospell | HideBadWhitespace
         augroup END
     endif
-
-.. _reST: http://docutils.sourceforge.net/rst.html

@@ -3,7 +3,7 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Enable for reST_ and text filetypes::
+Enable for |reST| and text filetypes::
 
     augroup jnrowe_vim_textobj_quote
         autocmd!
@@ -39,5 +39,3 @@ Configure quotes for current language::
     augroup jnrowe_vim_textobj_quote
         autocmd BufEnter * call <SID>select_quotes()
     augroup END
-
-.. _reST: http://docutils.sourceforge.net/rst.html

@@ -5,7 +5,7 @@ Ignore whitespace by default::
 
     set diffopt+=iwhite
 
-Use histogram :command:`diff` method to match my git_ config::
+Use histogram :command:`diff` method to match my |git| config::
 
     if has('patch-8.1.0360')
         set diffopt+=algorithm:histogram,indent-heuristic
@@ -27,5 +27,3 @@ Add my bindings for :command:`diff` mode::
         autocmd!
         autocmd BufEnter * if &diff | call filetypes#diff_maps() | endif
     augroup END
-
-.. _git: https://git-scm.com/

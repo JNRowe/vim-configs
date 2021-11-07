@@ -244,6 +244,7 @@ def configure(
                         f'{location / p }',
                     ],
                     [
+                        f'{location / "conf.py"}',  # Required for rst_epilog
                         f'{location / "tools/rst2vim"}',
                     ],
                 )

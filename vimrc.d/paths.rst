@@ -1,7 +1,7 @@
 ``vimrc.d/paths.vim``
 =====================
 
-Find `XDG basedir`_ compliant locations for data files::
+Find |XDG basedir| compliant locations for data files::
 
     for [s:type, s:path] in [
         \   ['cache', '~/.cache'],
@@ -14,7 +14,7 @@ Find `XDG basedir`_ compliant locations for data files::
         execute 'let ' . s:var . ' = s:value'
     endfor
 
-:command:`vim` specific paths honouring `XDG basedir`_::
+:command:`vim` specific paths honouring |XDG basedir|::
 
     for s:name in ['cache', 'config', 'data']
         let s:path = 'vim_' . s:name . '_dir'
@@ -23,5 +23,3 @@ Find `XDG basedir`_ compliant locations for data files::
             call mkdir(get(g:, s:path), 'p')
         endif
     endfor
-
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

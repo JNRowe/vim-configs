@@ -8,9 +8,10 @@ Make the :repo:`dein <Shougo/dein.vim>` submodule available to :command:`vim`::
 .. note::
 
     I *hate* bundling, but this is the cleanest way to support standing up a new
-    machine that I can think of.  If you know a better way *please* `tell me`_.
+    machine that I can think of.  If you know a better way *please* drop me
+    a |mail|.
 
-Keep plugins and data in `XDG basedir`_ compliant location::
+Keep plugins and data in |XDG basedir| compliant location::
 
     let g:dein_state_dir = g:vim_cache_dir . '/dein'
     let g:dein_repos_dir = g:dein_state_dir . '/repos'
@@ -61,6 +62,4 @@ Enable all the usual fanciness an editor should present::
     filetype plugin indent on
     syntax enable
 
-.. _tell me: jnrowe@gmail.com
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 .. _system notifications: https://git.gnome.org/browse/libnotify

@@ -45,13 +45,12 @@ These configs can be influenced by the following environment variables.
 
 .. envvar:: XDG_CACHE_HOME
 
-    If set it configures the location for cache files.  See `XDG basedir`_ for
+    If set it configures the location for cache files.  See |XDG basedir| for
     how to configure it, and defaults.
 
 .. envvar:: XDG_DATA_HOME
 
-    If set it configures the location for data files.  See `XDG basedir`_ for
+    If set it configures the location for data files.  See |XDG basedir| for
     how to configure it, and defaults.
 
 .. _fzf: https://github.com/junegunn/fzf
-.. _XDG basedir: http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

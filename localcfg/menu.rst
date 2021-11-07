@@ -80,7 +80,7 @@ For fontconfig_::
         \ ],
     \ )
 
-For git_::
+For |git|::
 
     call s:define_menu('&git', {
         \ '&config': [
@@ -105,7 +105,7 @@ For `GTK+`_ including dconf_::
     :command:`dconf load`, as it is more amenable to home directory version
     control.
 
-For ledger_::
+For |ledger|::
 
     call s:define_menu('&ledger', g:xdg_data_dir . '/ledger/ledger.org.gpg')
 
@@ -160,7 +160,7 @@ For :pypi:`rdial`, and my habitual editing of `run wrappers`_::
 
     call s:define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
 
-For remind_ and the excellent wyrd_ frontend to it::
+For |remind| and the excellent wyrd_ frontend to it::
 
     let s:remind_files = {}
     for s:fn in glob('~/.reminders.d/*', v:false, v:true)
@@ -205,7 +205,7 @@ For X.org_’s main user config files::
     endfor
     call s:define_menu('&xorg', s:xorg_files)
 
-For zsh_::
+For |zsh|::
 
     call s:define_menu('&zsh', {
         \ 'co&mpletions': '~/.no_my_zsh/completion/',
@@ -218,10 +218,8 @@ For zsh_::
 .. _awesomewm: https://awesomewm.org/
 .. _dwm: https://dwm.suckless.org/
 .. _fontconfig: https://fontconfig.org/
-.. _git: https://www.git-scm.com/
 .. _GTK+: https://www.gtk.org/
 .. _dconf: https://wiki.gnome.org/action/show/Projects/dconf
-.. _ledger: https://www.ledger-cli.org/
 .. _mailirproc: http://joel.rosdahl.net/maildirproc/
 .. _mpop: https://marlam.de/mpop/
 .. _msmtp: https://marlam.de/msmtp/
@@ -235,9 +233,7 @@ For zsh_::
 .. _readline: http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
 .. _run wrappers:
     https://rdial.readthedocs.io/en/latest/config.html#run-wrappers-section
-.. _remind: http://www.roaringpenguin.com/products/remind
 .. _wyrd: http://pessimization.com/software/wyrd/
 .. _taskwarrior: https://taskwarrior.org/
 .. _wget: https://www.gnu.org/software/wget/
 .. _X.org: https://www.x.org/
-.. _zsh: https://www.zsh.org/

@@ -179,5 +179,3 @@ Add command to more easily edit the project specific files::
 ::
 
     augroup END
-
-.. _git: https://www.git-scm.com/

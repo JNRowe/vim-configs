@@ -1,7 +1,7 @@
 ``localcfg/plugin_vim_editqf.vim``
 ==================================
 
-Store data in `XDG basedir`_ compliant location::
+Store data in |XDG basedir| compliant location::
 
     let s:base = g:vim_data_dir . '/%s/' .
         \ expand('%:p:~:gs?/?_?:gs?%?%%?') . '.dat'
@@ -14,6 +14,3 @@ Store data in `XDG basedir`_ compliant location::
         autocmd!
         autocmd BufEnter * call <SID>set_data_files()
     augroup END
-
-.. _XDG basedir:
-    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

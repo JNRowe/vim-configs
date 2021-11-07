@@ -7,12 +7,17 @@ more.
 """
 
 from argparse import ArgumentParser
+from os.path import dirname, split as split_path
+from sys import path
 from typing import List
 
 from docutils.core import publish_doctree
 from docutils.nodes import Node
 from docutils.parsers.rst import Directive, directives, nodes, roles
 from docutils.utils import DependencyList
+
+path.insert(0, dirname(split_path(__file__)[0]))
+from conf import rst_epilog  # NOQA: E402
 
 
 class StubDirective(Directive):
@@ -48,7 +53,6 @@ def is_vim_code(node: Node) -> bool:
 for directive in ('envvar', 'todo'):
     directives.register_directive(directive, StubDirective)
 for role in (
-    'abbr',
     'command',
     'doc',
     'envvar',
@@ -62,6 +66,8 @@ for role in (
     'wikipedia',
 ):
     roles.register_generic_role(role, nodes.comment)
+# Separate handling of abbr to workaround conf.py's rst_epilog usage
+roles.register_generic_role('abbr', nodes.literal)
 
 p = ArgumentParser()
 p.add_argument('-r', help='record dependencies', metavar='file')
@@ -77,7 +83,7 @@ settings = {
 
 with open(args.input) as f:
     doctree = publish_doctree(
-        f.read(), args.input, settings_overrides=settings
+        f.read() + rst_epilog, args.input, settings_overrides=settings
     )
 
 code_blocks = doctree.traverse(condition=is_vim_code)

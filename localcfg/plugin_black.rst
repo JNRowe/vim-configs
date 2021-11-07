@@ -1,7 +1,7 @@
 ``localcfg/plugin_black``
 =========================
 
-Install :command:`black` in `XDG basedir`_ compliant location::
+Install :command:`black` in |XDG basedir| compliant location::
 
     let g:black_virtualenv = g:vim_cache_dir . '/black'
 
@@ -13,6 +13,3 @@ All the Python projects I contribute to are the *exact* opposite of
 :command:`black`’s quote formatting::
 
     let g:black_string_normalization = v:false
-
-.. _XDG basedir:
-    http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html

@@ -3,7 +3,7 @@ Background
 
 I spend *literally* hours a day using a text editor, and so it matters to me
 that it works well; fast, featureful, and — most importantly of all — stable.
-vim_ fits the bill nicely…
+|vim| fits the bill nicely…
 
 That said, I am fickle, and I’d switch in a heartbeat if another editor improved
 my workflow in the slightest.
@@ -77,7 +77,7 @@ at the patches that are applied in the binaries installed on my work machine.
 It is buggy enough that the current package maintainer is willing to support
 a stack of no less than 15 very dirty patches, each of which have been
 painstakingly fixed without access to the source.  Interestingly they require
-vim_’s :command:`xxd` to apply [#]_, almost as if to prove a point.
+|vim|’s :command:`xxd` to apply [#]_, almost as if to prove a point.
 
 I’ve used it enough that I don’t regret having my employer license a copy for
 me, and I even jumped through hoops to have them pony up for some mildly
@@ -95,12 +95,12 @@ who think ``vi`` means “normal or insert”).
 NotquiteVIM
 '''''''''''
 
-The NeoViM_ fork is interesting in a sort of not-:command:`vim` kind of way.
+The |NeoViM| fork is interesting in a sort of not-:command:`vim` kind of way.
 The attempt to modernise :command:`vim` is wonderful, but sadly they’ve done it
 at the expense of half a dozen or so features I rely on.
 
-I’m starting to believe it may be the future of vim_ though, and that bothers me
-a little.  Many of the additions over stock vim_ are not my cup of tea, and
+I’m starting to believe it may be the future of |vim| though, and that bothers
+me a little.  Many of the additions over stock |vim| are not my cup of tea, and
 a few of the removals are breakages in my eyes.  Note that I’m *not* complaining
 about the actual project, they’re free to do *whatever* they want.
 
@@ -119,5 +119,3 @@ Communication)` to stock :command:`vim`.
 .. _MicroEMACS: ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/
 .. _GNU Emacs: https://www.gnu.org/software/emacs/
 .. _org-mode: http://www.orgmode.org/
-.. _vim: http://www.vim.org/
-.. _NeoVim: https://neovim.io/
