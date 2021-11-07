@@ -17,7 +17,7 @@ Insert a `X-Advice header`_ above the first non-black line::
 
 .. warning::
 
-    This only works when your buffer contains headers, such as when mutt_’s
+    This only works when your buffer contains headers, such as when neomutt_’s
     ``edit_headers`` option is set.  If your buffer doesn’t contain headers,
     then this will simply insert a body line to your email.
 
@@ -60,4 +60,4 @@ Configure ``+diff`` specific keymaps::
     endfunction
 
 .. _X-Advice header: http://www.nicemice.net/amc/advice-header/
-.. _mutt: http://www.mutt.org/
+.. _neomutt: http://www.neomutt.org/
