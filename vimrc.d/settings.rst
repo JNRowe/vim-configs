@@ -88,11 +88,18 @@ Highlight the current line but only `when it will be useful
 
     set cursorline
 
-If miscfiles_ is installed use its dictionary::
+If a wordlist is available use it as the completion dictionary::
 
     if filereadable('/usr/share/dict/words')
         set dictionary^=/usr/share/dict/words
     endif
+
+.. note::
+
+    On Debian_ systems this file tends to be provided by packages from the
+    wordlist_ project(see ``aptitude search '~Pwordlist'`` for options).  On
+    other systems, and optionally on Debian, it is often provided by GNU’s
+    miscfiles_ package.
 
 Keep swap files in |XDG basedir| compliant location::
 
@@ -557,5 +564,7 @@ Custom foldtext setting::
     work; whitespace, ``&cms`` |RegEx| escaping(C fex), ``&fdr``, no
     ``scanf()``, &c.
 
+.. _Debian: https://debian.org/
+.. _wordlist: http://wordlist.sourceforge.net/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
 .. _sqlite: https://sqlite.org/
