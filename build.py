@@ -135,7 +135,7 @@ def configure(
                     ]
                 ]
             ),
-            pretty('CONFIG $out', colour),
+            description=pretty('CONFIG $out', colour),
             generator=True,
         )
 
@@ -147,15 +147,15 @@ def configure(
                 '[ -f $out.d.tmp ] && echo $out: $$(cat $out.d.tmp) > $out.d; '
                 'rm -f $out.d.tmp'
             ),
-            pretty('RST2HTML $out', colour),
-            '$out.d',
+            description=pretty('RST2HTML $out', colour),
+            depfile='$out.d',
             deps='gcc',
         )
 
         n.rule(
             'sphinx_build',
             f'sphinx-build -M $builder {location} {location / ".build"}',
-            pretty('SPHINX $out', colour),
+            description=pretty('SPHINX $out', colour),
         )
 
         # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s default
@@ -163,28 +163,32 @@ def configure(
         n.rule(
             'rst_extract',
             f'{location / "tools/rst2vim"} -r $out.dep $in $out',
-            pretty('RST2VIM $out', colour),
-            '$out.dep',
+            description=pretty('RST2VIM $out', colour),
+            depfile='$out.dep',
             deps='gcc',
         )
 
-        n.rule('symlink', 'ln -rsf $in $out', pretty('SYMLINK $out', colour))
+        n.rule(
+            'symlink',
+            'ln -rsf $in $out',
+            description=pretty('SYMLINK $out', colour),
+        )
 
         ctags_path = which(ctags)
         n.rule(
             'tags_gen',
             f'{ctags_path} --languages=$lang -R $exclude -f $out $in',
-            pretty('CTAGS $out', colour),
+            description=pretty('CTAGS $out', colour),
         )
         n.newline()
 
         n.build(
             f'{location / file}',
             'configure',
-            [
+            inputs=[
                 f'{location / "build.py"}',
             ],
-            [
+            implicit=[
                 ninja_syntax.__file__,
             ],
         )
@@ -192,10 +196,10 @@ def configure(
         n.build(
             f'{location / "README.html"}',
             'rst_compile',
-            [
+            inputs=[
                 f'{location / "README.rst"}',
             ],
-            [
+            implicit=[
                 which(rst2html),
             ],
         )
@@ -210,16 +214,16 @@ def configure(
             n.build(
                 f'{location / ".build/html"}',
                 'sphinx_build',
-                [
+                inputs=[
                     f'{location / "conf.py"}',
                 ]
                 + [p.as_posix() for p in rst_files],
-                variables={
-                    'builder': 'html',
-                },
                 implicit=[
                     which('sphinx-build'),
                 ],
+                variables={
+                    'builder': 'html',
+                },
             )
 
         for p in rst_files:
@@ -240,10 +244,10 @@ def configure(
                 n.build(
                     output,
                     'rst_extract',
-                    [
+                    inputs=[
                         f'{location / p }',
                     ],
-                    [
+                    implicit=[
                         f'{location / "conf.py"}',  # Required for rst_epilog
                         f'{location / "tools/rst2vim"}',
                     ],
@@ -253,10 +257,10 @@ def configure(
         n.build(
             f'{tags / "libc.ctags"}',
             'tags_gen',
-            [
+            inputs=[
                 '/usr/include',
             ],
-            [
+            implicit=[
                 ctags_path,
             ],
             variables={
@@ -278,10 +282,10 @@ def configure(
                 n.build(
                     f'{tags / (tags_name % p.name)}.ctags',
                     'tags_gen',
-                    [
+                    inputs=[
                         p.as_posix(),
                     ],
-                    [
+                    implicit=[
                         ctags_path,
                     ],
                     variables={'lang': lang},
@@ -291,7 +295,7 @@ def configure(
                 n.build(
                     f'{tags}/{lang}.ctags',
                     'symlink',
-                    f'{tags / (tags_name % p.name)}.ctags',
+                    inputs=f'{tags / (tags_name % p.name)}.ctags',
                 )
 
 
