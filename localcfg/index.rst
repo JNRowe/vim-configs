@@ -32,11 +32,11 @@ could be achieved with |zsh| in :file:`.git/hooks/pre-commit`:
             extras+=$i
         fi
     }
-    if [[ ${#extras} -gt 0 ]]; then
+    if [[ ${#extras} -gt 0 ]] {
         echo "Extra config files:"
         echo ${(F)extras}
         exit 255
-    fi
+    }
 
 .. warning::
 
