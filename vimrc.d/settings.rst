@@ -421,9 +421,8 @@ compliant location::
 
     You should give *serious* consideration to persistent undo before enabling
     it, as it quite clearly can lead to making all manner of previously
-    ephemeral personal data persistent.  And, don’t forget that if you do
-    choose to enable it then you can still disable it on a per-filetype basis if
-    the need arises.
+    ephemeral personal data persistent.  And, don’t forget that you can
+    still :ref:`disable it locally <disable-undo-file>` if the need arises.
 
 Double :command:`vim`’s default swap file write time interval::
 

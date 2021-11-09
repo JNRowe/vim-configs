@@ -6,6 +6,8 @@
     augroup jnrowe
         autocmd!
 
+.. _disable-undo-file:
+
 Don’t write undo data for temporary files::
 
         execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* ' .
