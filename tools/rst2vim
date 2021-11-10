@@ -53,6 +53,7 @@ def is_vim_code(node: Node) -> bool:
 for directive in ('envvar', 'todo'):
     directives.register_directive(directive, StubDirective)
 for role in (
+    'class',
     'command',
     'doc',
     'envvar',
