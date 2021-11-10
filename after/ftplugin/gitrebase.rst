@@ -12,11 +12,6 @@ Use my custom maps::
             \ ' :' . s:verb .'<CR>'
     endfor
 
-.. note::
-
-    Only those :command:`git rebase` options which are used regularly are
-    enabled, others can rely on ``:Cycle``.
-
 Add quick bindings to cycle available options using ``switch.vim`` as it
 supports directions::
 
