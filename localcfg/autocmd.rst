@@ -71,6 +71,11 @@ Make ``stdin`` buffers temporary by default::
 
         autocmd StdinReadPost * set buftype=nofile
 
+.. warning::
+
+    This is potentially dangerous as it could cause data loss, but I only use
+    ``stdin`` buffers when *viewing* files.
+
 Turn off search highlighting when entering a buffer::
 
         autocmd BufEnter * nohlsearch
