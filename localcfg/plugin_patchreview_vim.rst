@@ -4,5 +4,5 @@
 If the *awesome* :command:`wormpatch` is available use it::
 
     if executable('wpatch')
-        let g:patchreview_patch = '/usr/bin/wpatch'
+        let g:patchreview_patch = exepath('wpatch')
     endif
