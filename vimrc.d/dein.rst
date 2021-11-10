@@ -38,11 +38,17 @@ Handle initial plugin setup::
             \ ['~/.vim/vimrc', '~/.vim/dein.vim', expand('<sfile>')]
         \ )
 
+Source the main plugin configuration::
+
         source ~/.vim/dein.vim
+
+Complete setup and save state::
 
         call dein#end()
         call dein#save_state()
     endif
+
+Manually fire hooks::
 
     call dein#call_hook('source')
     call dein#call_hook('post_source')
