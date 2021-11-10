@@ -23,6 +23,13 @@ Configure convenience mappings for common command usage::
         \   ':FZF' . s:cmd . '<CR>'
     endfor
 
+.. tip::
+
+    I use :kbd:`grave` as my binding for :command:`fzf` commands to reflect my
+    use of :kbd:`<Mod4-\`>` to open a drop down terminal in my window manager.
+    The pattern here and throughout these configuration files is an extremely
+    useful as a way to remember bindings.
+
 .. rubric:: Footnotes
 
 .. [#] By which I clearly mean “blindly tab complete”.
