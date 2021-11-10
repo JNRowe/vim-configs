@@ -80,7 +80,7 @@ with a cleaner patch, then I’ll immediately look for replacements.
     The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
     a font if available.
 
-Add command to switch text size quickly::
+Add command to :func:`switch text size <set_font>` quickly::
 
     command! -nargs=? -count -complete=custom,gui#font_complete Fontsel
     \   call gui#set_font(<q-args>)

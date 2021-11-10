@@ -5,7 +5,8 @@
 
 .. _gitcommit-custom-maps:
 
-Configure maps to insert common metadata in to commit messages::
+Configure maps to :func:`insert common metadata <add_git_trailer>` in to commit
+messages::
 
     call keymaps#mnemonic_map('Trailer', {'buffer': v:true, 'local': v:true})
 

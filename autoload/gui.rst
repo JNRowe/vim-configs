@@ -1,10 +1,17 @@
 ``autoload/gui.vim``
 ====================
 
-Change :abbr:`GUI (Graphical User Interface)` fonts, using the following rules:
+.. function:: set_font(font: Union[int, str])
 
-* Use the default font, if only a size if given via ``v:count``
-* Switch to default font and size, if called with an empty argument
+
+    Change :abbr:`GUI (Graphical User Interface)` fonts.
+
+    Using the following rules:
+
+    * Use the default font, if only a size if given via ``v:count``
+    * Switch to default font and size, if called with an empty argument
+
+    :param font: Font to switch to
 
 ::
 
@@ -24,7 +31,17 @@ Change :abbr:`GUI (Graphical User Interface)` fonts, using the following rules:
         execute 'set guifont=' . fnameescape(l:font)
     endfunction
 
-    function! gui#font_complete(arglead, cmdline, cursorpos) abort
+.. function:: font_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
+
+    Completion options for :func:`set_font`.
+
+    .. note::
+
+        The standard completion callback arguments are unused.
+
+::
+
+    function! gui#font_complete(_, _2, _3) abort
         return join(
         \   [escape(g:font_family . ' ' . g:font_size, ' '), ]
         \   + map(range(8),

@@ -1,8 +1,7 @@
 ``vimrc.d/misc.vim``
 ====================
 
-Show highlight group of the :ref:`current location
-<gethighlightgroup-function>`::
+Show highlight group of the :func:`current location <gethighlightgroup>`::
 
     command! ShowHighlightGroups
     \   echo join(map(misc#gethighlightgroup(),
@@ -19,12 +18,12 @@ User email address, as used by various plugins::
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
     \   ' <' . systemlist('git -C ~ config user.email')[0] . '>'
 
-Display current base version::
+Display :func:`base version <version>`::
 
     command! Version echo 'vim-' . misc#version()
 
 Make it easy to :command:`diff` options between sessions, which can be nice for
-debugging, by printing the entirety of options::
+debugging, by :func:`printing the entirety of options <insert_options>`::
 
     command! InsertOptions call misc#insert_options()
 
@@ -48,11 +47,12 @@ Add on-hover word definitions, which can be useful for prose editing::
     This is only enabled for :command:`gvim` as I have the mouse configured in
     a way which would be problematic for use with ``balloonevalterm``.
 
-Search for paths with easy access to completion at the prompt::
+:func:`Search for paths <path_search>` with easy access to completion at the
+prompt::
 
     command PathSearch call misc#path_search()
 
-Insert a modeline on the last line::
+:func:`Insert a modeline <modeline_stub>` on the last line::
 
     command! -bang Modeline call misc#modeline_stub(<bang>0)
 

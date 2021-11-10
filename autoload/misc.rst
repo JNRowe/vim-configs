@@ -1,17 +1,30 @@
 ``autoload/misc.vim``
 =====================
 
-A helper for simple ``balloonexpr`` usage that simply calls an external
-command::
+.. function:: commandballoon(cmd: str) -> List[str]
+
+    A helper for simple ``balloonexpr`` usage that simply calls an external
+    command.
+
+    :param cmd: If string contains ``%s`` then it will be replaced with
+        ``v:beval_text``, else ``v:beval_text`` is appended
+    :returns: Command output.
+
+::
 
     function! misc#commandballoon(cmd) abort
         let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction
 
-.. _gethighlightgroup-function:
+.. function:: gethighlightgroup(mark: Optional[str]) -> List[Dict[str, str]]
 
-Find syntax highlighting in use at the given location::
+    Find syntax highlighting in use at the given location.
+
+    :param mark: Location to display highlighting information for
+    :returns: All highlighting rules active at location
+
+::
 
     function! misc#gethighlightgroup(...) abort
         let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
@@ -28,7 +41,11 @@ Find syntax highlighting in use at the given location::
         return l:groups
     endfunction
 
-Insert all :command:`vim` options in to the current buffer::
+.. function:: insert_options() -> None
+
+    Insert all :command:`vim` options in to the current buffer.
+
+::
 
     function! misc#insert_options() abort
         python3 << EOF
@@ -37,7 +54,13 @@ Insert all :command:`vim` options in to the current buffer::
     EOF
     endfunction
 
-Insert a modeline on the last line of a buffer::
+.. function:: modeline_stub(verbose: bool) -> None
+
+    Insert a modeline on the last line of a buffer
+
+    :param verbose: If truthy, return a verbose modeline
+
+::
 
     function! misc#modeline_stub(verbose) abort
         let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
@@ -52,7 +75,11 @@ Insert a modeline on the last line of a buffer::
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
 
-Search for paths without all the escaping required by ``/``::
+.. function:: path_search(path: Optional[str]) -> None
+
+    Search for paths without all the escaping required by ``/``.
+
+::
 
     function! misc#path_search(...) abort
         call inputsave()
@@ -70,8 +97,12 @@ Search for paths without all the escaping required by ``/``::
     useful for in :command:`gvim`, but it doesn’t support vim’s completion
     functionality.
 
-Issue a “shift to right” for a window, with an attempt made to skip portrait
-displays.
+.. function:: split_to_right()
+
+    Issue a “shift to right” for a window.
+
+    There is an attempt made to ignore this directive when a portrait display
+    can be detected.
 
 ::
 
@@ -93,13 +124,27 @@ displays.
         endif
     endfunction
 
-Convenience function to apply title case to a word::
+.. function:: titleword(word: str) -> str
+
+    Convenience function to apply title case to a word.
+
+    :param word: Text to operate on
+    :returns: Title-cased input
+
+::
 
     function! misc#titleword(word) abort
         return toupper(a:word[0]) . a:word[1:]
     endfunction
 
-Toggle an option::
+.. function:: toggleflag(option: str, flag: str) -> None
+
+    Toggle an option.
+
+    :param option: Option to toggle
+    :param flag: Flag to change on given option
+
+::
 
     function! misc#toggleflag(option, flag) abort
         let l:optstr = eval('&' . a:option)
@@ -113,8 +158,16 @@ Toggle an option::
         execute 'set ' . a:option . l:flip . '=' . a:flag
     endfunction
 
-Many distributions package :command:`vim` with cherry picked patches, and
-sometimes it is nice to know the current base version::
+.. function:: version() -> str
+
+    Find :command:`vim`’s base version.
+
+    Many distributions package :command:`vim` with cherry picked patches, and
+    sometimes it is nice to know the current base version.
+
+    :returns: :command:`vim` version including the maximum consective patch
+
+::
 
     function! misc#version() abort
         let l:n = 1

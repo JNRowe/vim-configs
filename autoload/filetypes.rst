@@ -1,7 +1,14 @@
 ``autoload/filetypes.vim``
 ==========================
 
-Insert a `X-Advice header`_ above the first non-black line::
+.. function:: add_advice_header(prio: str, due: str) -> None
+
+    Insert a `X-Advice header`_ above the first non-black line.
+
+    :param prio: Priority value
+    :param due: Timeframe value
+
+::
 
     function! filetypes#add_advice_header(prio, due) abort
         let l:save_cursor = getcurpos()
@@ -21,7 +28,14 @@ Insert a `X-Advice header`_ above the first non-black line::
     ``edit_headers`` option is set.  If your buffer doesn’t contain headers,
     then this will simply insert a body line in to your email.
 
-Insert a |git| trailer::
+.. function:: add_git_trailer(key: str, value: Optional[str]) -> None
+
+    Insert a |git| trailer.
+
+    :param key: Trailer to define
+    :param value: Value to assign to trailer
+
+::
 
     function! filetypes#add_git_trailer(key, ...) abort
         let l:value = get(a:, 1)
@@ -39,7 +53,11 @@ Insert a |git| trailer::
         call setpos('.', l:save_cursor)
     endfunction
 
-Configure ``+diff`` specific keymaps::
+.. function:: diff_maps() -> None
+
+    Configure ``+diff`` specific keymaps.
+
+::
 
     function! filetypes#diff_maps() abort
         call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})

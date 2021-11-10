@@ -1,7 +1,11 @@
 ``autoload/keymaps.vim``
 ========================
 
-Ping the cursor position::
+.. function:: cursor_ping() -> None
+
+    Ping the cursor position.
+
+::
 
     function! keymaps#cursor_ping() abort
         let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
@@ -13,9 +17,17 @@ Ping the cursor position::
         let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
     endfunction
 
-.. _mnemonic-map:
+.. function:: mnemonic_map(name: str, buffer: Optional[bool] = False, key: Optional[str], leader: Optional[bool] = False, mode: Optional[str] = 'n') -> None
 
-Mnemonic mapping setup function::
+    Mnemonic mapping setup function.
+
+    :param name: Name to give to map group
+    :param buffer: Maps are specific to the buffer
+    :param key: Key to use for map, defaults to first character of ``name``
+    :param leader: If truthy, use ``LocalLeader`` for map
+    :param mode: Mode to apply map group to
+
+::
 
     function! keymaps#mnemonic_map(name, ...) abort
         let l:extra = get(a:, 1, {})
@@ -34,7 +46,13 @@ Mnemonic mapping setup function::
 
     This adds a :kbd:`?` binding to display the map list for ``name``.
 
-Relative buffer switching while ignoring scratch buffers::
+.. function:: switch_buf(count: int) -> None
+
+    Relative buffer switching while ignoring scratch buffers.
+
+    :param count: Number of buffers to move through
+
+::
 
     function! keymaps#switch_buf(count) abort
         let l:bufs = filter(

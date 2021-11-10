@@ -35,7 +35,8 @@ Highlights for read only buffers aren’t interesting::
 
         autocmd FileType help,man setlocal colorcolumn=""
 
-Issue an immediate “split to right” for documentation buffers::
+Issue an immediate :func:`“split to right” <split_to_right>` for documentation
+buffers::
 
         autocmd FileType help,man call misc#split_to_right()
 

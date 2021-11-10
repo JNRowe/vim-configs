@@ -28,7 +28,7 @@ The remaining functionality is only useful when ``autocmd`` is available.
 
 .. _diff-custom-maps:
 
-Add my bindings for :command:`diff` mode::
+Add :func:`my bindings <diff_maps>` for :command:`diff` mode::
 
     augroup jnrowe_diff
         autocmd!

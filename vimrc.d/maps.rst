@@ -5,7 +5,7 @@
 
 .. _switch-bufs:
 
-Set up map to quickly move among buffers::
+Set up map to quickly :func:`move among buffers <switch_buf>`::
 
     noremap <silent> <M-Left> :<C-u>call keymaps#switch_buf(v:count1 * -1)<CR>
     noremap <silent> <M-Right> :<C-u>call keymaps#switch_buf(v:count1 * 1)<CR>
@@ -155,7 +155,8 @@ for shortcuts::
     cnoremap <C-h> help<Space>
     cnoremap <C-S-h> vert help<Space>
 
-Ping the cursor position as a visual cue when returning to a session::
+:func:`Ping the cursor position <cursor_ping>` as a visual cue when returning to
+a session::
 
     nnoremap <silent> <C-Space> :call keymaps#cursor_ping()<CR>
 
