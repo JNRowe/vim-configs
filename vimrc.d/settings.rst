@@ -347,7 +347,7 @@ addition to `ignorecase <set-ignorecase>`_::
 
 Make insert mode :kbd:`<Tab>` perform indentation aware movement::
 
-    set softtabstop=4
+    set softtabstop=-1
 
 Configure spell checking and include a personal spell checking list for use
 with :kbd:`zg`::
