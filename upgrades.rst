@@ -50,4 +50,4 @@ work on when I upgrade.
 
     Switch to the *far* nicer ``#{key: value}`` syntax, see 8.1.1683.
 
-.. last seen: 1685
+.. last seen: 8.1.1685
