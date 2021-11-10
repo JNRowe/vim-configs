@@ -155,6 +155,12 @@ For readline_ and its numerous dependents::
 
     call s:define_menu('readline', [expand('$INPUTRC'), '~/.inputrc'])
 
+.. tip::
+
+    You can configure custom bindings for tools that use readline_ by using
+    ``$if`` guards.  You can find examples for imv_ and bash_ in my `tips
+    series`_.
+
 For :pypi:`rdial`, and my habitual editing of `run wrappers`_::
 
     call s:define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
@@ -231,6 +237,9 @@ For |zsh|::
 .. _flake8: https://gitlab.com/pycqa/flake8/
 .. _pip: https://pip.pypa.io/
 .. _readline: http://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
+.. _imv: https://jnrowe.github.io/articles/tips/readline_rename_imv.html
+.. _bash: https://jnrowe.github.io/articles/tips/Beyond_tab_completion.html
+.. _tips series: https://jnrowe.github.io/articles/tips/
 .. _run wrappers:
     https://rdial.readthedocs.io/en/latest/config.html#run-wrappers-section
 .. _wyrd: http://pessimization.com/software/wyrd/
