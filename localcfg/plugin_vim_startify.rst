@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. _vim-startify-intro:
+
 Don’t run on startup so that we can resume previous editing session with ease::
 
     let g:startify_disable_at_vimenter = v:true

@@ -300,6 +300,11 @@ Disable :command:`vim`’s intro message::
 
     set shortmess+=I
 
+.. tip::
+
+    If you’d like an intro screen, :repo:`vim-startify <mhinz/vim-startify>` is
+    a :ref:`great replacement <vim-startify-intro>`.
+
 Don’t show ``ins-completion-menu`` messages, they’re obvious from context and
 the use of menu completion::
 
