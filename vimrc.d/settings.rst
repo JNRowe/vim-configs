@@ -30,8 +30,10 @@ Enable tooltips::
 Keep indent between wrapped lines and display the pretty `'showbreak'
 <showbreak>`_ indicator::
 
-    set breakindent
-    set breakindentopt=sbr
+    if has('linebreak')
+        set breakindent
+        set breakindentopt=sbr
+    endif
 
 .. _colorcolumn-config:
 
