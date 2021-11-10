@@ -17,6 +17,7 @@ Contents
     help
     mail
     make
+    man
     markdown
     remind
     rst
