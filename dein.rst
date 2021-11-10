@@ -352,9 +352,9 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 
 :repository: :repo:`chrisbra/NrrwRgn`
 
-If, like me, you’re a partial :command:`emacs` convert ``:NrrwRgn`` is
-wonderful.  If you’re not then simply imagine being able to work in a visual
-mode hunk for a full editing session.
+If, like me, you’re a partial emacs_ convert ``:NrrwRgn`` is wonderful.  If
+you’re not then simply imagine being able to work in a visual mode hunk for
+a full editing session.
 
 ::
 
@@ -2166,6 +2166,7 @@ by deletion.
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
 .. _TOML: https://github.com/toml-lang/toml
+.. _emacs: https://www.gnu.org/software/emacs/
 .. _Cap'n Proto: https://capnproto.org/
 .. _EditorConfig: http://editorconfig.org/
 .. _gpg: https://www.gnupg.org/
