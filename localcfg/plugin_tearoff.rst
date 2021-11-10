@@ -1,6 +1,6 @@
 ``localcfg/plugin_tearoff.vim``
 ===============================
 
-Use :manpage:`git-mailinfo(1)` compatible markers::
+Use :command:`git mailinfo` compatible markers::
 
     let g:tearoff_git_scissors = v:true

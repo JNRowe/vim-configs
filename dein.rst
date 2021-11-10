@@ -1645,7 +1645,7 @@ really daunting to wrap your head around.
 :repository: :repo:`tpope/vim-commentary`
 
 Comment out those abusive remarks you wrote about a vim plugin with the simple
-power of ``gcc``.
+power of :kbd:`gcc`.
 
 ::
 
@@ -1812,8 +1812,8 @@ Automagic indentation configuration, that just works.
 :repository: :repo:`tpope/vim-speeddating`
 :config: :doc:`localcfg/plugin_vim_speeddating`
 
-Speed up those ``y`` and ``p`` based :ref:`ledger <ledger-plugin>` entry writing
-sessions by at least fifteen orders of magnitude… or your money back.
+Speed up those :kbd:`y` and :kbd:`p` based :ref:`ledger <ledger-plugin>` entry
+writing sessions by at least fifteen orders of magnitude… or your money back.
 
 ::
 

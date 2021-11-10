@@ -14,7 +14,7 @@ has changed massively before we made it here.
 
 .. note::
 
-    Key values are from a US :kbd:`<S-|digit|>`, and do not change when using
+    Key values are from a US :kbd:`<S-[digit]>`, and do not change when using
     other layouts [#]_.
 
 .. image:: /.static/vim_signature_icons.png

@@ -1,7 +1,7 @@
 ``autoload/gui.vim``
 ====================
 
-Change :abbr:`GUI <Graphical User Interface>` fonts, using the following rules:
+Change :abbr:`GUI (Graphical User Interface)` fonts, using the following rules:
 
 * Use the default font, if only a size if given via ``v:count``
 * Switch to default font and size, if called with an empty argument
