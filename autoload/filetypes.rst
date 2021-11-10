@@ -27,7 +27,7 @@ Insert a |git| trailer::
         let l:value = get(a:, 1)
         if l:value == v:none
             call inputsave()
-            let l:value = input(a:key . '? ')
+            let l:value = input(a:key . '-by? ')
             call inputrestore()
         endif
         if l:value ==# ''
