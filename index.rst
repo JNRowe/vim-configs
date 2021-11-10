@@ -52,6 +52,8 @@ Help
     support/leader_maps
     support/why
 
+Also see the :ref:`glossary <genindex>`.
+
 Vim files
 '''''''''
 
@@ -84,12 +86,6 @@ Future
     :titlesonly:
 
     upgrades
-
-Indices and tables
-''''''''''''''''''
-
-* :ref:`genindex`
-* :ref:`search`
 
 Contributors
 ------------
