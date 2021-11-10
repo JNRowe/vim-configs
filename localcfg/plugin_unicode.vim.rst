@@ -1,7 +1,18 @@
 ``localcfg/plugin_unicode.vim.vim``
 ===================================
 
-``:UnicodeName`` output is far more useful, and in my opinion easier to read::
+``:UnicodeName`` output is far more useful than :command:`vim`’s :kbd:`ga`, and
+in my opinion it is also easier to read.
+
+================ =========================================================
+Command          Output
+================ =========================================================
+``:ascii``       ``<> 61486, Hex f02e, Octal 170056``
+``:UnicodeName`` ``'' U+F02E Dec:61486 Private Use Zone &#xF02E; /\%uf02e
+                 "\uf02e"``
+================ =========================================================
+
+So, we’ll override the :kbd:`ga` mapping::
 
     nmap ga <Plug>(UnicodeGA)
 
