@@ -11,6 +11,16 @@ overwrite a :command:`cp --link` tree::
     let &backupdir = g:vim_cache_dir . '/backup//'
     call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
 
+Remove duplicates entries for readability::
+
+    let &backupskip = join(uniq(split(&backupskip, ',')), ',')
+
+.. note::
+
+    The duplicates occur because :command:`vim` defaults to including
+    ``$TEMP``, ``$TMPDIR`` and ``$TMP`` which are often symlinks to the same
+    locations.
+
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
 edits and the resulting often *huge* backups are practically always useless to
 me.
