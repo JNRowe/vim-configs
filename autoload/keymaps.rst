@@ -25,9 +25,9 @@ Mnemonic mapping setup function::
         let l:mode = get(l:extra, 'mode', 'n')
         execute l:mode . 'noremap ' . l:buffer . ' [' . a:name . '] <Nop>'
         execute l:mode . 'map ' . l:buffer . ' <' . l:leader . 'Leader>'
-            \ . l:key . ' [' . a:name . ']'
-        execute l:mode . 'noremap <silent> [' . a:name . ']?'
-            \ ' :' . l:mode . 'map [' . a:name . ']<CR>'
+        \   . l:key . ' [' . a:name . ']'
+        execute l:mode . 'noremap <silent> [' . a:name . ']? '
+        \   . ':' . l:mode . 'map [' . a:name . ']<CR>'
     endfunction
 
 .. tip::
@@ -38,9 +38,9 @@ Relative buffer switching while ignoring scratch buffers::
 
     function! keymaps#switch_buf(count) abort
         let l:bufs = filter(
-            \   range(1, bufnr('$')),
-            \   {_, n -> buflisted(n) && !empty(bufname(n))}
-            \ )
+        \   range(1, bufnr('$')),
+        \   {_, n -> buflisted(n) && !empty(bufname(n))}
+        \ )
         if len(l:bufs) < 2
             return
         endif

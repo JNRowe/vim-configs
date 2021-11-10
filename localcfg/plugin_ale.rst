@@ -43,7 +43,7 @@ Open location list when errors exist::
     if has('gui_running')
         for s:k in ['Error', 'Info', 'Warning']
             execute 'sign define ALE' . s:k . 'Sign icon=' .
-                \ expand('~/.vim/icons/' . tolower(s:k) . '.png')
+            \   expand('~/.vim/icons/' . tolower(s:k) . '.png')
         endfor
     endif
 
@@ -54,15 +54,15 @@ Use my custom maps::
     call keymaps#mnemonic_map('ale', {'local': v:true})
 
     for [s:key, s:cmd] in [
-        \   ['d',      'detail'],
-        \   ['f',      'fix'],
-        \   ['l',      'lint'],
-        \   ['t',      'toggle'],
-        \   ['<Home>', 'first'],
-        \   ['<End>',  'last'],
-        \   ['<Down>', 'next_wrap'],
-        \   ['<Up>',   'previous_wrap'],
-        \ ]
+    \   ['d',      'detail'],
+    \   ['f',      'fix'],
+    \   ['l',      'lint'],
+    \   ['t',      'toggle'],
+    \   ['<Home>', 'first'],
+    \   ['<End>',  'last'],
+    \   ['<Down>', 'next_wrap'],
+    \   ['<Up>',   'previous_wrap'],
+    \ ]
         execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
     endfor
 
@@ -70,5 +70,5 @@ Disable ``ALE`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 
     let g:ale_pattern_options = {
-        \ '\.mht\(ml\)\?$': {'ale_enabled': v:false}
+    \   '\.mht\(ml\)\?$': {'ale_enabled': v:false}
     \ }

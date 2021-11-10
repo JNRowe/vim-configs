@@ -118,7 +118,7 @@ Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
     if executable('xdg-open')
         nnoremap <silent> gx
-            \ :call system('xdg-open ' . shellescape(expand('<cfile>:p')))<CR>
+        \   :call system('xdg-open ' . shellescape(expand('<cfile>:p')))<CR>
     endif
 
 .. _window-management-maps:
@@ -164,7 +164,7 @@ when you’re showing code::
 
     if has('conceal')
         nnoremap <silent> <M-Space>
-            \ :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
+        \   :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
     endif
 
 .. image:: /.static/conceal_flip.png
@@ -185,11 +185,11 @@ a feature, but thanks for the idea!
     for s:m in ['i', 'n']
         let s:break_insert = s:m ==# 'i' ? '<C-o>' : ''
         for [s:mod, s:key, s:cmd] in [
-            \  ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
-            \  ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']
-            \ ]
+        \   ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
+        \   ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']
+        \ ]
             execute s:m . 'noremap <' . s:mod . 'ScrollWheel' . s:key . '> '
-                \ . s:break_insert . s:cmd
+            \   . s:break_insert . s:cmd
         endfor
     endfor
 
@@ -199,7 +199,7 @@ stretching:::
     if has('insert_expand')
         for s:key in split('lnkti]fdvuos', '\zs')
             execute 'inoremap <silent> <LocalLeader>,' . s:key .
-                \ ' <C-x><C-' . s:key . '>'
+            \   ' <C-x><C-' . s:key . '>'
         endfor
     endif
 

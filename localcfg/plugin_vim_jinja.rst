@@ -9,8 +9,8 @@ Disable automatic detection as it occasionally produces false positives::
 Add binding to enable rough jinja_ support in the current file::
 
     nmap <buffer> <LocalLeader>j
-        \ :call SyntaxRange#Include('{{', '}}', 'jinja')<CR>
-        \ :call SyntaxRange#Include('{%', '%}', 'jinja')<CR>
+    \   :call SyntaxRange#Include('{{', '}}', 'jinja')<CR>
+    \   :call SyntaxRange#Include('{%', '%}', 'jinja')<CR>
 
 .. tip::
 

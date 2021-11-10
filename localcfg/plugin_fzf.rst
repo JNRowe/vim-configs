@@ -7,9 +7,7 @@ Use smaller than default :repo:`fzf <junegunn/fzf>` window::
 
 Override default prompt colour::
 
-    let g:fzf_colors = {
-        \ 'prompt':  ['fg', 'Conditional'],
-    \ }
+    let g:fzf_colors = {'prompt':  ['fg', 'Conditional']}
 
 Keep history in |XDG basedir| compliant location::
 
@@ -40,8 +38,8 @@ Based on an example from the documentation, add a binding to populate the
     endfunction
 
     let g:fzf_action = {
-      \ 'ctrl-q': function('s:build_quickfix_list'),
-      \ 'ctrl-t': 'tab split',
-      \ 'ctrl-x': 'split',
-      \ 'ctrl-v': 'vsplit'
+    \   'ctrl-q': function('s:build_quickfix_list'),
+    \   'ctrl-t': 'tab split',
+    \   'ctrl-x': 'split',
+    \   'ctrl-v': 'vsplit'
     \ }

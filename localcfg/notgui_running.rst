@@ -23,7 +23,7 @@ If possible enable 24-bit colour::
 Poke around, as best we can, to discern the background colour::
 
     let s:feature_terms =
-        \ '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
+    \   '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
     if &term =~# s:feature_terms || split($COLORFGBG . ';padding', ';')[0] == 15
         if &background !=# 'dark'
             set background=dark
@@ -91,7 +91,7 @@ closely matches my setup in :command:`gvim`::
         augroup jnrowe_kitty
             autocmd!
             autocmd ColorScheme * highlight clear SpellBad |
-                \ highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
+            \   highlight SpellBad ctermfg=1 term=undercurl cterm=undercurl
         augroup END
     endif
 

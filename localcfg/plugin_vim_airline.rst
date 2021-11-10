@@ -34,18 +34,18 @@ Configure symbols for :command:`gvim`::
         endif
 
         let g:airline_symbols = {
-            \ 'branch': '',
-            \ 'colnr': '℅',
-            \ 'crypt': '',
-            \ 'linenr': '',
-            \ 'maxlinenr': '⌇',
-            \ 'modified': '+',
-            \ 'notexists': 'Ɇ',
-            \ 'paste': 'ρ',
-            \ 'readonly': '',
-            \ 'space': ' ',
-            \ 'spell': '',
-            \ 'whitespace': 'Ξ',
+        \   'branch': '',
+        \   'colnr': '℅',
+        \   'crypt': '',
+        \   'linenr': '',
+        \   'maxlinenr': '⌇',
+        \   'modified': '+',
+        \   'notexists': 'Ɇ',
+        \   'paste': 'ρ',
+        \   'readonly': '',
+        \   'space': ' ',
+        \   'spell': '',
+        \   'whitespace': 'Ξ',
         \ }
 
 .. note::
@@ -69,12 +69,7 @@ Only show unusual encodings::
 Only use the extensions I actually want::
 
     let g:airline#extensions#disable_rtp_load = v:true
-    let g:airline_extensions = [
-        \ 'csv',
-        \ 'tabline',
-        \ 'whitespace',
-        \ 'wordcount',
-    \ ]
+    let g:airline_extensions = ['csv', 'tabline', 'whitespace', 'wordcount']
 
 .. attention::
 

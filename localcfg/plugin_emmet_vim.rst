@@ -12,16 +12,14 @@ Don’t create global maps::
 Override locale::
 
     let g:user_emmet_settings = {
-        \ 'variables': {
-        \   'locale': 'en-GB',
-        \ },
+    \   'variables': {
+    \       'locale': 'en-GB',
+    \   },
     \ }
 
 Treat jinja_ as |HTML|::
 
-    let g:user_emmet_settings['htmljinja'] = {
-        \ 'extends': 'html',
-    \ }
+    let g:user_emmet_settings['htmljinja'] = {'extends': 'html', }
 
 Enable automatically where it will be useful::
 

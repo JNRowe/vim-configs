@@ -9,7 +9,7 @@ Configure preferred order of completion::
     endif
 
     execute 'inoremap <silent> <Tab> ' .
-        \ join(map(s:types,
-        \          {_, v -> '<C-r>=CleverTab#Complete("' . v . '")<CR>'}),
-        \      '')
+    \   join(map(s:types,
+    \            {_, v -> '<C-r>=CleverTab#Complete("' . v . '")<CR>'}),
+    \        '')
     inoremap <silent> <S-Tab> <C-r>=CleverTab#Complete('prev')<CR>

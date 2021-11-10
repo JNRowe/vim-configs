@@ -24,7 +24,7 @@ Store indexes in |XDG basedir| compliant location::
 Dive in to the ``dein`` cache to set up documentation::
 
     let g:notes_shadowdir = g:dein_repos_dir .
-        \ '/github.com/xolox/vim-notes/misc/notes/shadow'
+    \   '/github.com/xolox/vim-notes/misc/notes/shadow'
 
 Add an extension to saved notes so that filtering from a shell is easier::
 

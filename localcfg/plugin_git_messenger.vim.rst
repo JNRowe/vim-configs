@@ -10,16 +10,16 @@ Use my custom maps::
     call keymaps#mnemonic_map('messenger')
 
     for [s:key, s:cmd] in [
-        \   ['o',          ''],
-        \   ['c',          '-close'],
-        \   ['i',          '-into-popup'],
-        \   ['<Down>',     '-scroll-down-1'],
-        \   ['<Up>',       '-scroll-up-1'],
-        \   ['<PageDown>', '-scroll-down-page'],
-        \   ['<PageUp>',   '-scroll-up-page'],
-        \ ]
+    \   ['o',          ''],
+    \   ['c',          '-close'],
+    \   ['i',          '-into-popup'],
+    \   ['<Down>',     '-scroll-down-1'],
+    \   ['<Up>',       '-scroll-up-1'],
+    \   ['<PageDown>', '-scroll-down-page'],
+    \   ['<PageUp>',   '-scroll-up-page'],
+    \ ]
         execute 'nmap <silent> [messenger]' . s:key .
-            \ ' <Plug>(git-messenger' . s:cmd . ')'
+        \   ' <Plug>(git-messenger' . s:cmd . ')'
     endfor
 
 Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::

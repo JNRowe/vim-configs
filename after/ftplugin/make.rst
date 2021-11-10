@@ -6,5 +6,5 @@ waiting to happen, such as a :file:`Makefile`::
 
     setlocal nosmarttab
     execute 'let b:undo_ftplugin ' .
-        \ (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
-        \ 'setlocal smarttab<"'
+    \   (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
+    \   'setlocal smarttab<"'

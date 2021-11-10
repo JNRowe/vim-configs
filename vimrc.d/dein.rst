@@ -34,8 +34,8 @@ Handle initial plugin setup::
 
     if dein#load_state(g:dein_state_dir)
         call dein#begin(
-            \ g:dein_state_dir,
-            \ ['~/.vim/vimrc', '~/.vim/dein.vim', expand('<sfile>')]
+        \   g:dein_state_dir,
+        \   ['~/.vim/vimrc', '~/.vim/dein.vim', expand('<sfile>')]
         \ )
 
 Source the main plugin configuration::

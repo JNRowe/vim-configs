@@ -6,7 +6,7 @@ used to that setup in browsers::
 
     if get(dein#get('vim-man'), 'if', v:true)
         nnoremap <buffer> <CR>
-            \ :call man#get_page_from_cword('horizontal', v:count)<CR>
+        \   :call man#get_page_from_cword('horizontal', v:count)<CR>
         nnoremap <buffer> <BS> :call <SID>PopPage()<CR>
     else
         nnoremap <buffer> <CR> :<C-u>call <SID>PreGetPage(v:count)<CR>

@@ -18,7 +18,7 @@ Configure convenience mappings for common command usage::
 
     call keymaps#mnemonic_map('fzf', {'key': '`'})
     for s:cmd in ['Ag', 'Buffers', 'Commands', 'Files', 'GFiles', 'Lines',
-        \         'Maps', 'Marks', 'Windows']
+    \             'Maps', 'Marks', 'Windows']
         execute 'nmap <silent> [fzf]' . tolower(s:cmd[0]) . ' ' .
         \   ':FZF' . s:cmd . '<CR>'
     endfor

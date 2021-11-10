@@ -26,11 +26,11 @@ Change :abbr:`GUI (Graphical User Interface)` fonts, using the following rules:
 
     function! gui#font_complete(arglead, cmdline, cursorpos) abort
         return join(
-            \   [escape(g:font_family . ' ' . g:font_size, ' '), ]
-            \   + map(range(8),
-            \         {n -> escape(g:font_family . ' ' . (n * 8 + 16), ' ')}),
-            \   "\n"
-            \ )
+        \   [escape(g:font_family . ' ' . g:font_size, ' '), ]
+        \   + map(range(8),
+        \         {n -> escape(g:font_family . ' ' . (n * 8 + 16), ' ')}),
+        \   "\n"
+        \ )
     endfunction
 
 .. note::

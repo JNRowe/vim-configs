@@ -83,7 +83,7 @@ with a cleaner patch, then I’ll immediately look for replacements.
 Add command to switch text size quickly::
 
     command! -nargs=? -count -complete=custom,gui#font_complete Fontsel
-        \ call gui#set_font(<q-args>)
+    \   call gui#set_font(<q-args>)
 
 .. tip::
 
@@ -98,7 +98,7 @@ Include non-standard server names in the window title::
 
     if has('title') && has('clientserver')
         let &titlestring .=
-            \ '%{v:servername != "GVIM" ? " [" . v:servername . "]" : ""}'
+        \   '%{v:servername != "GVIM" ? " [" . v:servername . "]" : ""}'
     endif
 
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn't::

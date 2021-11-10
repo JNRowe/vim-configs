@@ -16,9 +16,9 @@ Use my custom maps::
     call keymaps#mnemonic_map('wordnet')
 
     for [s:key, s:cmd] in [
-        \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-        \   ['c', '<SID>wordnet_close_win()'],
-        \ ]
+    \   ['o', 'WordNetOverviews(expand("<cword>"))'],
+    \   ['c', '<SID>wordnet_close_win()'],
+    \ ]
         execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
     endfor
 

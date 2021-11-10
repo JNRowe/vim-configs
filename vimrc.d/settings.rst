@@ -157,8 +157,8 @@ When :repo:`the_silver_searcher <ggreer/the_silver_searcher>` is installed
         set grepformat=%f:%l:%c:%m
     else
         let &grepprg = 'grep -nH '
-            \ . '--exclude-from=' . g:xdg_data_dir . '/grep_excludes '
-            \ . '$* /dev/null'
+        \   . '--exclude-from=' . g:xdg_data_dir . '/grep_excludes '
+        \   . '$* /dev/null'
     endif
 
 .. note::
@@ -510,10 +510,8 @@ Use buffer and command name in window title::
             " Dig in to projectionist’s data for project root
             let l:p = get(b:, 'projectionist', {})
             if l:p != {}
-                return substitute(expand('%:p'),
-                    \             '^' . keys(l:p)[0] . '/',
-                    \             '',
-                    \             '')
+                return substitute(expand('%:p'), '^' . keys(l:p)[0] . '/',
+                \                 '', '')
             else
                 return expand('%')
             endif
@@ -538,7 +536,7 @@ Custom foldtext setting::
             " Non-getline() text length
             let l:base = 19
             let l:text_width =
-                \ winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+            \   winwidth(0) - v:foldlevel - len(a:line_str) - l:base
             if strlen(l:text) > l:text_width
                 let l:text = l:text[:l:text_width] . '…'
             endif
@@ -547,11 +545,11 @@ Custom foldtext setting::
 
         function! MyFoldText() abort
             return substitute(
-                \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
-                \   {m -> repeat('─', v:foldlevel) . ' ' .
-                \         s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
-                \   ''
-                \ )
+            \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
+            \   {m -> repeat('─', v:foldlevel) . ' ' .
+            \         s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
+            \   ''
+            \ )
         endfunction
     endif
 

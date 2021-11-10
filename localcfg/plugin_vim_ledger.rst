@@ -27,12 +27,12 @@ Use my custom maps::
     call keymaps#mnemonic_map('Ledger', {'buffer': v:true, 'local': v:true})
 
     for [s:key, s:cmd] in [
-        \   ['a',       ':LedgerAlign'],
-        \   ['d',       'align_amount_at_cursor()'],
-        \   ['n',       'entry()'],
-        \   ['s',       'transaction_state_toggle(line("."), " *?!")'],
-        \   ['t',       'transaction_date_set(".", "auxiliary")'],
-        \ ]
+    \   ['a', ':LedgerAlign'],
+    \   ['d', 'align_amount_at_cursor()'],
+    \   ['n', 'entry()'],
+    \   ['s', 'transaction_state_toggle(line("."), " *?!")'],
+    \   ['t', 'transaction_date_set(".", "auxiliary")'],
+    \ ]
         if s:cmd[0] !=# ':'
             let s:cmd = 'call ledger#' . s:cmd
         else
@@ -40,7 +40,7 @@ Use my custom maps::
         endif
 
         execute 'autocmd Filetype ledger nnoremap <silent> [Ledger]' .
-            \ s:key . ' :' . s:cmd . '<CR>'
+        \   s:key . ' :' . s:cmd . '<CR>'
     endfor
 
 Configure magic currency completion in ledger files::
@@ -50,7 +50,7 @@ Configure magic currency completion in ledger files::
         augroup jnrowe_vim_ledger
             autocmd!
             autocmd FileType ledger inoremap <silent> <Tab>
-                \ <C-r>=ledger#autocomplete_and_align()<CR>
+            \   <C-r>=ledger#autocomplete_and_align()<CR>
         augroup END
     endif
 

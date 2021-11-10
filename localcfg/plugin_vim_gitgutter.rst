@@ -11,15 +11,15 @@ Use my custom maps::
     let g:gitgutter_map_keys = v:false
 
     for [s:key, s:cmd] in [
-        \   ['<Down>',  'NextHunk'],
-        \   ['<Up>',    'PrevHunk'],
-        \   ['<Space>', 'Toggle'],
-        \   ['f',       'Fold'],
-        \   ['p',       'PreviewHunk'],
-        \   ['q',       'QuickFix'],
-        \ ]
+    \   ['<Down>',  'NextHunk'],
+    \   ['<Up>',    'PrevHunk'],
+    \   ['<Space>', 'Toggle'],
+    \   ['f',       'Fold'],
+    \   ['p',       'PreviewHunk'],
+    \   ['q',       'QuickFix'],
+    \ ]
         execute 'nnoremap <silent> [gitgutter]<' . s:key . '> '
-            \ ':GitGutter' . s:cmd . '<CR>'
+        \   ':GitGutter' . s:cmd . '<CR>'
     endfor
 
 If you have more than one-hundred edits you need to commit, not look at symbols!
@@ -62,14 +62,14 @@ Use fancy icons for signs, if possible::
 
     if has('gui_running')
         for [s:icon, s:signs] in items({
-            \   'list-add': ['Added'],
-            \   'edit-copy': ['Modified'],
-            \   'list-remove': ['Removed', 'RemovedFirstLine',
-            \                   'ModifiedRemoved']
-            \ })
+        \   'list-add': ['Added'],
+        \   'edit-copy': ['Modified'],
+        \   'list-remove': ['Removed', 'RemovedFirstLine',
+        \                   'ModifiedRemoved']
+        \ })
             for s:sign in s:signs
                 execute 'sign define GitGutterLine' . s:sign .
-                    \ ' icon=' . expand('~/.vim/icons/' . s:icon . '.png')
+                \   ' icon=' . expand('~/.vim/icons/' . s:icon . '.png')
             endfor
         endfor
     endif

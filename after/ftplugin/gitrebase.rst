@@ -9,7 +9,7 @@ Use my custom maps::
 
     for s:verb in ['Cycle', 'Edit', 'Fixup', 'Pick', 'Reword', 'Squash']
         execute 'nnoremap <buffer> <silent> [rebase]' . tolower(s:verb[0]) .
-            \ ' :' . s:verb .'<CR>'
+        \   ' :' . s:verb .'<CR>'
     endfor
 
 Add quick bindings to cycle available options using ``switch.vim`` as it

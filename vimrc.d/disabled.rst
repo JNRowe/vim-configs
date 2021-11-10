@@ -13,10 +13,10 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
     endfunction
 
     for s:plugin in [
-        \   '2html_plugin', 'getscriptPlugin', 'logipat', 'netrw',
-        \   'netrwPlugin', 'rrhelper', 'spellfile_plugin', 'tarPlugin',
-        \   'vimballPlugin', 'zipPlugin',
-        \ ]
+    \   '2html_plugin', 'getscriptPlugin', 'logipat', 'netrw',
+    \   'netrwPlugin', 'rrhelper', 'spellfile_plugin', 'tarPlugin',
+    \   'vimballPlugin', 'zipPlugin',
+    \ ]
         call s:disable_plugin(s:plugin)
     endfor
 

@@ -11,7 +11,7 @@
 Don’t write undo data for temporary files::
 
         execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* ' .
-            \ 'setlocal noundofile'
+        \   'setlocal noundofile'
 
 Use :command:`vim`’s help for these documents::
 
@@ -36,15 +36,12 @@ Issue an immediate “split to right” for documentation buffers::
 
 Attempt filetype detection after writing::
 
-        autocmd BufWritePost *
-            \ if empty(&filetype) |
-            \   filetype detect |
-            \ endif
+        autocmd BufWritePost * if empty(&filetype) | filetype detect | endif
 
 Automatically :command:`chmod +x` shell scripts::
 
         autocmd BufWritePost *.sh
-            \ silent call system('chmod +x -- ' . expand('%:p:S'))
+        \   silent call system('chmod +x -- ' . expand('%:p:S'))
 
 .. note::
 
@@ -54,11 +51,11 @@ Automatically :command:`chmod +x` shell scripts::
 Jump to the last known cursor position if possible::
 
         autocmd BufReadPost *
-            \ if &filetype =~# '^git' && &filetype != 'gitconfig' |
-            \   execute 'normal! gg' |
-            \ else |
-            \   call setpos('.', getpos("'\"")) |
-            \ endif
+        \   if &filetype =~# '^git' && &filetype != 'gitconfig' |
+        \       execute 'normal! gg' |
+        \   else |
+        \       call setpos('.', getpos("'\"")) |
+        \   endif
 
 .. note::
 
@@ -126,7 +123,7 @@ Search for project specific :file:`vimrc` and support files::
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
             silent let l:output = systemlist('git -C ' . shellescape(l:p) .
-                \                            ' rev-parse --show-toplevel')
+            \                                ' rev-parse --show-toplevel')
             if v:shell_error == 0 && len(l:output) == 1
                 return s:project_env_dir . l:output[0]
             endif
@@ -151,7 +148,7 @@ Search for project specific :file:`vimrc` and support files::
             if !exists('b:meta_spell')
                 let l:spf = b:meta_dir . &spelllang . '.' . &encoding . '.add'
                 if filereadable(l:spf)
-                    \ && index(split(&spellfile, ','), l:spf) == -1
+                \   && index(split(&spellfile, ','), l:spf) == -1
                     execute 'setlocal spellfile+=' . l:spf
                 endif
                 let b:meta_spell = v:true
@@ -188,7 +185,7 @@ Add command to more easily edit the project specific files::
             return ['abbr.vim', 'project.vim']
         endfunction
         command! -nargs=1 -complete=customlist,<SID>project_file
-            \ ProjectFile call <SID>edit_project_file(<q-args>)
+        \   ProjectFile call <SID>edit_project_file(<q-args>)
 
 ::
 

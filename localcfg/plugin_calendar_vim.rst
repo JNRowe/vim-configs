@@ -10,13 +10,13 @@ Use my custom maps::
     call keymaps#mnemonic_map('Calendar')
 
     for [s:key, s:cmd] in [
-        \   ['v', ''],
-        \   ['h', 'H'],
-        \   ['f', 'T'],
-        \   ['r', 'VR'],
-        \ ]
+    \   ['v', ''],
+    \   ['h', 'H'],
+    \   ['f', 'T'],
+    \   ['r', 'VR'],
+    \ ]
         execute 'nnoremap <silent> [Calendar]' . s:key . ' '
-            \ ':Calendar' . s:cmd . '<CR>'
+        \   ':Calendar' . s:cmd . '<CR>'
     endfor
 
 Configure look::

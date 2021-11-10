@@ -9,7 +9,7 @@ Insert a `X-Advice header`_ above the first non-black line::
         let l:body_sep = search('^$', 'c')
         if l:body_sep != 0
             call append(l:body_sep - 1,
-                \       'X-advice: ' . a:prio . ' read ' . a:due)
+            \           'X-advice: ' . a:prio . ' read ' . a:due)
             let l:save_cursor[1] += 1
         endif
         call setpos('.', l:save_cursor)
@@ -35,7 +35,7 @@ Insert a |git| trailer::
         endif
         let l:save_cursor = getcurpos()
         execute ':%!git interpret-trailers ' .
-            \ '--trailer ' . a:key . '-by=' . shellescape(l:value)
+        \   '--trailer ' . a:key . '-by=' . shellescape(l:value)
         call setpos('.', l:save_cursor)
     endfunction
 
@@ -45,14 +45,14 @@ Configure ``+diff`` specific keymaps::
         call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})
 
         for [s:key, s:cmd] in [
-            \   ['w', 'call misc#toggleflag("diffopt", "iwhite")'],
-            \   ['o', 'diffoff!'],
-            \   ['p', 'diffput'],
-            \   ['g', 'diffget'],
-            \   ['u', 'diffupdate'],
-            \ ]
+        \   ['w', 'call misc#toggleflag("diffopt", "iwhite")'],
+        \   ['o', 'diffoff!'],
+        \   ['p', 'diffput'],
+        \   ['g', 'diffget'],
+        \   ['u', 'diffupdate'],
+        \ ]
             execute 'nnoremap <silent> <buffer> [diff]' . s:key . ' :' .
-                \ s:cmd . '<CR>'
+            \   s:cmd . '<CR>'
         endfor
 
         vnoremap <silent> <buffer> < :diffget<CR>

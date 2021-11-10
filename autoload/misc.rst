@@ -21,8 +21,8 @@ Find syntax highlighting in use at the given location::
         let l:groups = []
         for l:id in synstack(l:lnum, l:col)
             let l:groups += [{
-                \ 'hi': s:synname(l:id),
-                \ 'gr': s:synname(synIDtrans(l:id)),
+            \   'hi': s:synname(l:id),
+            \   'gr': s:synname(synIDtrans(l:id)),
             \ }]
         endfor
         return l:groups
@@ -43,10 +43,10 @@ Insert a modeline on the last line of a buffer::
         let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
         if a:verbose
             let l:x .= printf(
-                \   ' ts=%d sw=%d tw=%d fdm=%s%s', &tabstop,
-                \   &shiftwidth, &textwidth, &foldmethod,
-                \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
-                \ )
+            \   ' ts=%d sw=%d tw=%d fdm=%s%s',
+            \   &tabstop, &shiftwidth, &textwidth, &foldmethod,
+            \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
+            \ )
         endif
         let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
@@ -80,8 +80,8 @@ displays.
             if !exists('g:display_portrait')
                 if executable('xdotool')
                     silent let [s:width, s:height] =
-                        \ map(split(system('xdotool getdisplaygeometry')),
-                        \     {_, s -> str2nr(s)})
+                    \   map(split(system('xdotool getdisplaygeometry')),
+                    \       {_, s -> str2nr(s)})
                     let g:display_portrait = s:width < s:height
                 else
                     let g:display_portrait = v:none

@@ -70,7 +70,7 @@ Repositories
 ::
 
     call dein#add(expand('~/.vim/external/dein.vim'), {
-        \ 'if': v:version >= 800,
+    \   'if': v:version >= 800,
     \ })
 
 .. _sideways.vim-config:
@@ -86,8 +86,8 @@ Repositories
 ::
 
     call dein#add('AndrewRadev/sideways.vim', {
-        \ 'on_cmd': s:prefix('Sideways', ['Left', 'Right']),
-        \ 'on_map': {'n': '[sideways]'},
+    \   'on_cmd': s:prefix('Sideways', ['Left', 'Right']),
+    \   'on_map': {'n': '[sideways]'},
     \ })
 
 ``splitjoin.vim``
@@ -101,8 +101,8 @@ Repositories
 ::
 
     call dein#add('AndrewRadev/splitjoin.vim', {
-        \ 'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
-        \ 'on_map': {'n': ['gJ', 'gS']},
+    \   'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
+    \   'on_map': {'n': ['gJ', 'gS']},
     \ })
 
 ``switch.vim``
@@ -119,9 +119,9 @@ preferences.
 ::
 
     call dein#add('AndrewRadev/switch.vim', {
-        \ 'on_cmd': 'Switch',
-        \ 'on_func': 'switch#Switch',
-        \ 'on_map': {'n': 'gs'},
+    \   'on_cmd': 'Switch',
+    \   'on_func': 'switch#Switch',
+    \   'on_map': {'n': 'gs'},
     \ })
 
 ``vim-bracketed-paste``
@@ -134,7 +134,7 @@ preferences.
 ::
 
     call dein#add('ConradIrwin/vim-bracketed-paste', {
-        \ 'on_event': 'InsertEnter',
+    \   'on_event': 'InsertEnter',
     \ })
 
 ``dwm.vim``
@@ -151,7 +151,7 @@ Excellent window management, it really does bring dwm_ simplicity to
 ::
 
     call dein#add('JNRowe/dwm.vim', {
-        \ 'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
+    \   'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
     \ })
 
 ``securemodelines``
@@ -213,7 +213,7 @@ languages.
 ::
 
     call dein#add('Raimondi/delimitMate', {
-        \ 'on_event': 'InsertEnter',
+    \   'on_event': 'InsertEnter',
     \ })
 
 ``vimproc``
@@ -226,8 +226,8 @@ languages.
 ::
 
     call dein#add('Shougo/vimproc', {
-        \ 'build': 'make',
-        \ 'lazy': v:true,
+    \   'build': 'make',
+    \   'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -243,9 +243,9 @@ languages.
 ::
 
     call dein#add('SirVer/ultisnips', {
-        \ 'depends': 'vim-snippets',
-        \ 'if': has('insert_expand') && has('pythonx') && v:version >= 704,
-        \ 'on_event': 'InsertEnter',
+    \   'depends': 'vim-snippets',
+    \   'if': has('insert_expand') && has('pythonx') && v:version >= 704,
+    \   'on_event': 'InsertEnter',
     \ })
 
 ``vim-gitgutter``
@@ -259,7 +259,7 @@ languages.
 ::
 
     call dein#add('airblade/vim-gitgutter', {
-        \ 'if': has('signs') && s:has_exec('git'),
+    \   'if': has('signs') && s:has_exec('git'),
     \ })
 
 ``black``
@@ -273,9 +273,9 @@ languages.
 ::
 
     call dein#add('ambv/black', {
-        \ 'if': v:version >= 704 && has('python3') && s:has_exec('black'),
-        \ 'on_cmd': 'Black',
-        \ 'on_ft': 'python',
+    \   'if': v:version >= 704 && has('python3') && s:has_exec('black'),
+    \   'on_cmd': 'Black',
+    \   'on_ft': 'python',
     \ })
 
 .. _vim-matchup-plugin:
@@ -290,8 +290,8 @@ languages.
 ::
 
     call dein#add('andymass/vim-matchup', {
-        \ 'if': v:version >= 704,
-        \ 'on_event': 'InsertEnter',
+    \   'if': v:version >= 704,
+    \   'on_event': 'InsertEnter',
     \ })
 
 ``vim-bad-whitespace``
@@ -307,8 +307,8 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 ::
 
     call dein#add('bitc/vim-bad-whitespace', {
-        \ 'on_cmd': s:suffix('BadWhitespace', ['Erase', 'Hide', 'Toggle']),
-        \ 'on_event': 'InsertEnter',
+    \   'on_cmd': s:suffix('BadWhitespace', ['Erase', 'Hide', 'Toggle']),
+    \   'on_event': 'InsertEnter',
     \ })
 
 ``vim-toml``
@@ -333,8 +333,7 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 ::
 
     call dein#add('chrisbra/Colorizer', {
-        \ 'on_cmd':
-        \   s:prefix('Color', ['Highlight', 'Toggle']) + ['RGB2Term', ],
+    \   'on_cmd': s:prefix('Color', ['Highlight', 'Toggle']) + ['RGB2Term', ],
     \ })
 
 .. note::
@@ -360,9 +359,9 @@ mode hunk for a full editing session.
 ::
 
     call dein#add('chrisbra/NrrwRgn', {
-        \ 'hook_post_source': s:airline_enable('nrrwrgn'),
-        \ 'if': v:version >= 704,
-        \ 'on_cmd': ['NUD', 'NR', 'NW']
+    \   'hook_post_source': s:airline_enable('nrrwrgn'),
+    \   'if': v:version >= 704,
+    \   'on_cmd': ['NUD', 'NR', 'NW']
     \ })
 
 ``Recover``
@@ -376,7 +375,7 @@ mode hunk for a full editing session.
 ::
 
     call dein#add('chrisbra/Recover.vim', {
-        \ 'if': v:version >= 703,
+    \   'if': v:version >= 703,
     \ })
 
 ``Replay``
@@ -390,7 +389,7 @@ mode hunk for a full editing session.
 ::
 
     call dein#add('chrisbra/Replay', {
-        \ 'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
+    \   'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
     \ })
 
 ``SaveSigns.vim``
@@ -403,8 +402,8 @@ mode hunk for a full editing session.
 ::
 
     call dein#add('chrisbra/SaveSigns.vim', {
-        \ 'if': has('signs'),
-        \ 'on_cmd': 'SaveSigns',
+    \   'if': has('signs'),
+    \   'on_cmd': 'SaveSigns',
     \ })
 
 .. _csv.vim-plugin:
@@ -422,8 +421,8 @@ Disturbingly cool editing for |CSV| files, ‘nuff said.
 ::
 
     call dein#add('chrisbra/csv.vim', {
-        \ 'hook_post_source': "call csv#Init(1, line('$'))",
-        \ 'on_ft': 'csv',
+    \   'hook_post_source': "call csv#Init(1, line('$'))",
+    \   'on_ft': 'csv',
     \ })
 
 ``unicode.vim``
@@ -440,15 +439,15 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     let s:unicode_opts = {
-        \ 'hook_post_source': s:airline_enable('unicode'),
-        \ 'if': v:version >= 704,
-        \ 'on_cmd':
-        \   ['DigraphNew', 'Digraphs']
-        \    + s:prefix('Unicode', ['Name', 'Search', 'Table']),
-        \ 'on_map': {
-        \   'i': ['<C-x><C-z>', '<C-x><C-g>', '<C-x><C-b>'],
-        \   'n': '<Plug>(UnicodeGA)',
-        \ }
+    \   'hook_post_source': s:airline_enable('unicode'),
+    \   'if': v:version >= 704,
+    \   'on_cmd':
+    \       ['DigraphNew', 'Digraphs']
+    \       + s:prefix('Unicode', ['Name', 'Search', 'Table']),
+    \   'on_map': {
+    \       'i': ['<C-x><C-z>', '<C-x><C-g>', '<C-x><C-b>'],
+    \       'n': '<Plug>(UnicodeGA)',
+    \   }
     \ }
     if s:has_exec('fzf')
         let s:unicode_opts['depends'] = 'fzf'
@@ -471,8 +470,8 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('chrisbra/vim_faq', {
-        \ 'if': v:version >= 600,
-        \ 'lazy': v:true,
+    \   'if': v:version >= 600,
+    \   'lazy': v:true,
     \ })
 
 ``vim-codereview``
@@ -485,9 +484,9 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('codegram/vim-codereview', {
-        \ 'depends': 'patchreview-vim',
-        \ 'if': has('ruby') && s:has_exec('curl'),
-        \ 'on_cmd': 'CodeReview',
+    \   'depends': 'patchreview-vim',
+    \   'if': has('ruby') && s:has_exec('curl'),
+    \   'on_cmd': 'CodeReview',
     \ })
 
 ``vim-capnp``
@@ -500,8 +499,8 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('cstrahan/vim-capnp', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'capnp',
+    \   'lazy': v:false,
+    \   'on_ft': 'capnp',
     \ })
 
 ``jedi-vim``
@@ -515,9 +514,9 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('davidhalter/jedi-vim', {
-        \ 'if': has('pythonx'),
-        \ 'on_cmd': 'JediClearCache',
-        \ 'on_ft': 'python',
+    \   'if': has('pythonx'),
+    \   'on_cmd': 'JediClearCache',
+    \   'on_ft': 'python',
     \ })
 
 ``vim-ditto``
@@ -531,7 +530,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('dbmrq/vim-ditto', {
-        \ 'on_cmd': s:prefix('Ditto', ['File', 'On']),
+    \   'on_cmd': s:prefix('Ditto', ['File', 'On']),
     \ })
 
 .. _ale-plugin:
@@ -550,7 +549,7 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('dense-analysis/ale', {
-        \ 'if': v:version >= 800 && has('signs'),
+    \   'if': v:version >= 800 && has('signs'),
     \ })
 
 ``vim-table-mode``
@@ -563,9 +562,9 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('dhruvasagar/vim-table-mode', {
-        \ 'on_cmd': s:prefix('Table', ['ModeToggle', 'ize']),
-        \ 'on_ft': 'rst',
-        \ 'on_map': '<LocalLeader>t',
+    \   'on_cmd': s:prefix('Table', ['ModeToggle', 'ize']),
+    \   'on_ft': 'rst',
+    \   'on_map': '<LocalLeader>t',
     \ })
 
 ``bullets.vim``
@@ -578,8 +577,8 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('dkarter/bullets.vim', {
-        \ 'hook_post_source': 'let g:bullets_enabled_file_types += ["rst"]',
-        \ 'on_ft': ['gitcommit', 'rst'],
+    \   'hook_post_source': 'let g:bullets_enabled_file_types += ["rst"]',
+    \   'on_ft': ['gitcommit', 'rst'],
     \ })
 
 .. note::
@@ -601,9 +600,9 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('editorconfig/editorconfig-vim', {
-        \ 'if': has('pythonx'),
-        \ 'on_event': 'InsertEnter',
-        \ 'on_path': '.editorconfig',
+    \   'if': has('pythonx'),
+    \   'on_event': 'InsertEnter',
+    \   'on_path': '.editorconfig',
     \ })
 
 ``vim-cute-python``
@@ -619,10 +618,10 @@ decorating it with glyphs.
 ::
 
     call dein#add('ehamberg/vim-cute-python', {
-        \ 'if': has('conceal') && v:version >= 703,
-        \ 'lazy': v:false,
-        \ 'on_ft': 'python',
-        \ 'rev': 'moresymbols',
+    \   'if': has('conceal') && v:version >= 703,
+    \   'lazy': v:false,
+    \   'on_ft': 'python',
+    \   'rev': 'moresymbols',
     \ })
 
 .. tip::
@@ -640,7 +639,7 @@ decorating it with glyphs.
 ::
 
     call dein#add('elazar/visSum.vim', {
-        \ 'on_map': {'x': '<LocalLeader>su'},
+    \   'on_map': {'x': '<LocalLeader>su'},
     \ })
 
 ``regex``
@@ -657,7 +656,7 @@ when writing ugly, ugly |RegEx|.
 ::
 
     call dein#add('ervandew/regex', {
-        \ 'on_cmd': 'Regex',
+    \   'on_cmd': 'Regex',
     \ })
 
 ``tabular``
@@ -675,7 +674,7 @@ jealous.
 ::
 
     call dein#add('godlygeek/tabular', {
-        \ 'on_cmd': ['Tabularize', 'AddTabularPipeline'],
+    \   'on_cmd': ['Tabularize', 'AddTabularPipeline'],
     \ })
 
 ``vim-searchindex``
@@ -689,7 +688,7 @@ jealous.
 
     if !has('patch-8.1.1270')
         call dein#add('google/vim-searchindex', {
-            \ 'on_map': {'n': ['/', '?', 'n', 'N']},
+        \   'on_map': {'n': ['/', '?', 'n', 'N']},
         \ })
     endif
 
@@ -708,7 +707,7 @@ jealous.
 ::
 
     call dein#add('guns/xterm-color-table.vim', {
-        \ 'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
+    \   'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
     \ })
 
 ``dein-command.vim``
@@ -721,7 +720,7 @@ jealous.
 ::
 
     call dein#add('haya14busa/dein-command.vim', {
-        \ 'on_cmd': 'Dein',
+    \   'on_cmd': 'Dein',
     \ })
 
 ``vim-snippets``
@@ -735,8 +734,8 @@ jealous.
 ::
 
     call dein#add('honza/vim-snippets', {
-        \ 'if': has('insert_expand') && has('pythonx') && v:version >= 704,
-        \ 'lazy': v:true,
+    \   'if': has('insert_expand') && has('pythonx') && v:version >= 704,
+    \   'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -752,8 +751,8 @@ jealous.
 ::
 
     call dein#add('idanarye/vim-omnipytent', {
-        \ 'if': has('pythonx'),
-        \ 'on_cmd': s:prefix('OP', s:suffix('edit', ['', '2', '3'])),
+    \   'if': has('pythonx'),
+    \   'on_cmd': s:prefix('OP', s:suffix('edit', ['', '2', '3'])),
     \ })
 
 ``vim-vebugger``
@@ -768,10 +767,10 @@ jealous.
 
     let s:vebugger_commands = []
     for [s:cmd, s:arg] in [
-        \ ['gdb', v:null],
-        \ ['lldb', v:null],
-        \ ['python3', 'PDB3'],
-        \ ['ruby', 'RDebug'],
+    \   ['gdb', v:null],
+    \   ['lldb', v:null],
+    \   ['python3', 'PDB3'],
+    \   ['ruby', 'RDebug'],
     \ ]
         if s:has_exec(s:cmd)
             let s:vebugger_commands +=
@@ -779,9 +778,9 @@ jealous.
         endif
     endfor
     call dein#add('idanarye/vim-vebugger', {
-        \ 'depends': 'vimproc',
-        \ 'on_cmd': s:prefix('VBGstart', s:vebugger_commands),
-        \ 'on_func': 'vebugger',
+    \   'depends': 'vimproc',
+    \   'on_cmd': s:prefix('VBGstart', s:vebugger_commands),
+    \   'on_func': 'vebugger',
     \ })
 
 ``vim-yankitute``
@@ -794,7 +793,7 @@ jealous.
 ::
 
     call dein#add('idanarye/vim-yankitute', {
-        \ 'on_cmd': 'Yankitute',
+    \   'on_cmd': 'Yankitute',
     \ })
 
 ``vim-gnupg``
@@ -807,7 +806,7 @@ jealous.
 ::
 
     call dein#add('jamessan/vim-gnupg', {
-        \ 'if': s:has_exec('gpg') || s:has_exec('gpg2'),
+    \   'if': s:has_exec('gpg') || s:has_exec('gpg2'),
     \ })
 
 ``vim-textobj-css``
@@ -820,8 +819,8 @@ jealous.
 ::
 
     call dein#add('jasonlong/vim-textobj-css', {
-        \ 'depends': 'vim-textobj-user',
-        \ 'on_ft': ['css', 'html'],
+    \   'depends': 'vim-textobj-user',
+    \   'on_ft': ['css', 'html'],
     \ })
 
 ``semantic-highlight.vim``
@@ -836,7 +835,7 @@ jealous.
 ::
 
     call dein#add('jaxbot/semantic-highlight.vim', {
-        \ 'on_cmd': 'SemanticHighlight',
+    \   'on_cmd': 'SemanticHighlight',
     \ })
 
 .. _vim-editqf-plugin:
@@ -854,12 +853,12 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('jceb/vim-editqf', {
-        \ 'if': has('quickfix'),
-        \ 'on_cmd':
-        \   s:prefix('Loc', ['AddNote', 'Load', 'Save'])
-        \   + s:prefix('QF', ['AddNote', 'Load', 'Save']),
-        \ 'on_ft': 'qf',
-        \ 'on_map': {'n': '<LocalLeader>n'},
+    \   'if': has('quickfix'),
+    \   'on_cmd':
+    \       s:prefix('Loc', ['AddNote', 'Load', 'Save'])
+    \       + s:prefix('QF', ['AddNote', 'Load', 'Save']),
+    \   'on_ft': 'qf',
+    \   'on_map': {'n': '<LocalLeader>n'},
     \ })
 
 ``vimagit``
@@ -872,9 +871,9 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('jreybert/vimagit', {
-        \ 'hook_post_source': s:airline_enable('vimagit'),
-        \ 'if': s:has_exec('git'),
-        \ 'on_cmd': 'Magit',
+    \   'hook_post_source': s:airline_enable('vimagit'),
+    \   'if': s:has_exec('git'),
+    \   'on_cmd': 'Magit',
     \ })
 
 ``fzf``
@@ -888,10 +887,10 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/fzf', {
-        \ 'hook_post_source': s:airline_enable('fzf'),
-        \ 'if': s:has_exec('fzf'),
-        \ 'on_cmd': 'FZF',
-        \ 'on_func': 'fzf#run',
+    \   'hook_post_source': s:airline_enable('fzf'),
+    \   'if': s:has_exec('fzf'),
+    \   'on_cmd': 'FZF',
+    \   'on_func': 'fzf#run',
     \ })
 
 ``fzf.vim``
@@ -905,7 +904,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     let s:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
-        \ 'History', 'Lines', 'Maps', 'Marks', 'Windows']
+    \   'History', 'Lines', 'Maps', 'Marks', 'Windows']
     if s:has_exec('ag')
         let s:fzf_commands += ['Ag', ]
     endif
@@ -916,9 +915,9 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
         let s:fzf_commands += ['Snippets', ]
     endif
     call dein#add('junegunn/fzf.vim', {
-        \ 'depends': 'fzf',
-        \ 'if': s:has_exec('fzf'),
-        \ 'on_cmd': s:prefix('FZF', s:fzf_commands),
+    \   'depends': 'fzf',
+    \   'if': s:has_exec('fzf'),
+    \   'on_cmd': s:prefix('FZF', s:fzf_commands),
     \ })
 
 .. note::
@@ -937,7 +936,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/goyo.vim', {
-        \ 'on_cmd': 'Goyo',
+    \   'on_cmd': 'Goyo',
     \ })
 
 ``vim-emoji``
@@ -950,8 +949,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/vim-emoji', {
-        \ 'lazy': v:false,
-        \ 'on_func': 'emoji',
+    \   'lazy': v:false,
+    \   'on_func': 'emoji',
     \ })
 
 ``vim-peekaboo``
@@ -977,8 +976,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junkblocker/patchreview-vim', {
-        \ 'on_cmd': s:suffix('Review',
-        \                    ['Diff', 'Patch', 'ReversePatchReview']),
+    \   'on_cmd': s:suffix('Review',
+    \                      ['Diff', 'Patch', 'ReversePatchReview']),
     \ })
 
 ``vim-eighties``
@@ -992,7 +991,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('justincampbell/vim-eighties', {
-        \ 'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
+    \   'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
     \ })
 
 ``vim-sneak``
@@ -1006,13 +1005,13 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('justinmk/vim-sneak', {
-        \ 'depends': 'vim-repeat',
-        \ 'if': v:version >= 703,
-        \ 'on_map': {
-        \   'n': ['S', 's'],
-        \   'o': ['Z', 'z'],
-        \   'x': ['Z', 's'],
-        \ },
+    \   'depends': 'vim-repeat',
+    \   'if': v:version >= 703,
+    \   'on_map': {
+    \       'n': ['S', 's'],
+    \       'o': ['Z', 'z'],
+    \       'x': ['Z', 's'],
+    \   },
     \ })
 
 ``vim-coiled-snake``
@@ -1026,9 +1025,9 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('kalekundert/vim-coiled-snake', {
-        \ 'if': has('folding'),
-        \ 'lazy': v:false,
-        \ 'on_ft': 'python',
+    \   'if': has('folding'),
+    \   'lazy': v:false,
+    \   'on_ft': 'python',
     \ })
 
 ``vim-textobj-fold``
@@ -1041,8 +1040,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('kana/vim-textobj-fold', {
-        \ 'depends': 'vim-textobj-user',
-        \ 'on_func': 'textobj',
+    \   'depends': 'vim-textobj-user',
+    \   'on_func': 'textobj',
     \ })
 
 ``vim-textobj-user``
@@ -1055,7 +1054,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('kana/vim-textobj-user', {
-        \ 'on_func': 'textobj',
+    \   'on_func': 'textobj',
     \ })
 
 ``nyancat-vim``
@@ -1068,7 +1067,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('koron/nyancat-vim', {
-        \ 'on_cmd': s:prefix('Nyancat', ['', '2']),
+    \   'on_cmd': s:prefix('Nyancat', ['', '2']),
     \ })
 
 ``vim-signature``
@@ -1082,7 +1081,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('kshenoy/vim-signature', {
-        \ 'if': has('signs'),
+    \   'if': has('signs'),
     \ })
 
 ``moonscript-vim``
@@ -1095,8 +1094,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('leafo/moonscript-vim', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'moon',
+    \   'lazy': v:false,
+    \   'on_ft': 'moon',
     \ })
 
 .. _ledger-plugin:
@@ -1115,8 +1114,8 @@ editing your accounts/expenses an almost nice-ish experience.
 ::
 
     call dein#add('ledger/vim-ledger', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'ledger',
+    \   'lazy': v:false,
+    \   'on_ft': 'ledger',
     \ })
 
 ``rainbow``
@@ -1159,8 +1158,8 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mattn/calendar-vim', {
-        \ 'on_cmd': s:suffix('Calendar', ['', 'H', 'T', 'VR']),
-        \ 'on_map': {'n': '[calendar]'},
+    \   'on_cmd': s:suffix('Calendar', ['', 'H', 'T', 'VR']),
+    \   'on_map': {'n': '[calendar]'},
     \ })
 
 ``emmet-vim``
@@ -1175,8 +1174,8 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mattn/emmet-vim', {
-        \ 'if': has('insert_expand') && v:version >= 700,
-        \ 'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
+    \   'if': has('insert_expand') && v:version >= 700,
+    \   'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
 
 ``undotree``
@@ -1190,8 +1189,8 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mbbill/undotree', {
-        \ 'if': v:version >= 700,
-        \ 'on_cmd': 'UndotreeToggle',
+    \   'if': v:version >= 700,
+    \   'on_cmd': 'UndotreeToggle',
     \ })
 
 ``meson``
@@ -1205,7 +1204,7 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 
     if !has('patch-8.1.2175')
         call dein#add('mesonbuild/meson', {
-            \ 'rtp': 'data/syntax-highlighting/vim',
+        \   'rtp': 'data/syntax-highlighting/vim',
         \ })
     endif
 
@@ -1219,8 +1218,8 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mgrabovsky/vim-cuesheet', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'cuesheet',
+    \   'lazy': v:false,
+    \   'on_ft': 'cuesheet',
     \ })
 
 ``vim-startify``
@@ -1247,8 +1246,8 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('michaeljsmith/vim-indent-object', {
-        \ 'on_ft': ['ledger', 'moon', 'nim', 'python'],
-        \ 'on_map': {'ov': ['aI', 'ai', 'iI', 'ii']},
+    \   'on_ft': ['ledger', 'moon', 'nim', 'python'],
+    \   'on_map': {'ov': ['aI', 'ai', 'iI', 'ii']},
     \ })
 
 ``vim-bufmru``
@@ -1262,8 +1261,8 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('mildred/vim-bufmru', {
-        \ 'on_cmd': 'BufMRU',
-        \ 'on_map': {'n': '[bufmru]'},
+    \   'on_cmd': 'BufMRU',
+    \   'on_map': {'n': '[bufmru]'},
     \ })
 
 ``vim-jinja``
@@ -1277,7 +1276,7 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('mitsuhiko/vim-jinja', {
-        \ 'on_ft': 'jinja',
+    \   'on_ft': 'jinja',
     \ })
 
 ``vim-bbye``
@@ -1291,8 +1290,8 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('moll/vim-bbye', {
-        \ 'on_cmd': ['Bdelete', 'Bwipeout'],
-        \ 'on_map': {'n': '<LocalLeader>q'},
+    \   'on_cmd': ['Bdelete', 'Bwipeout'],
+    \   'on_map': {'n': '<LocalLeader>q'},
     \ })
 
 ``vim-indent-guides``
@@ -1317,8 +1316,8 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('nathangrigg/vim-beancount', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'beancount',
+    \   'lazy': v:false,
+    \   'on_ft': 'beancount',
     \ })
 
 ``vim-clevertab``
@@ -1335,7 +1334,7 @@ user, how cool is that?
 ::
 
     call dein#add('neitanod/vim-clevertab', {
-        \ 'if': has('insert_expand'),
+    \   'if': has('insert_expand'),
     \ })
 
 ``vim_bridge``
@@ -1348,8 +1347,8 @@ user, how cool is that?
 ::
 
     call dein#add('nvie/vim_bridge', {
-        \ 'lazy': v:false,
-        \ 'on_cmd': 'python',
+    \   'lazy': v:false,
+    \   'on_cmd': 'python',
     \ })
 
 ``html5.vim``
@@ -1363,8 +1362,8 @@ user, how cool is that?
 ::
 
     call dein#add('othree/html5.vim', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'html',
+    \   'lazy': v:false,
+    \   'on_ft': 'html',
     \ })
 
 .. _vim-textobj-quote-plugin:
@@ -1380,9 +1379,9 @@ user, how cool is that?
 ::
 
     call dein#add('reedes/vim-textobj-quote', {
-        \ 'depends': 'vim-textobj-user',
-        \ 'on_cmd': 'ToggleEducate',
-        \ 'on_ft': ['gitcommit', 'gitrebase', 'mail', 'note', 'rst', 'text'],
+    \   'depends': 'vim-textobj-user',
+    \   'on_cmd': 'ToggleEducate',
+    \   'on_ft': ['gitcommit', 'gitrebase', 'mail', 'note', 'rst', 'text'],
     \ })
 
 ``vim-qlist``
@@ -1395,10 +1394,10 @@ user, how cool is that?
 ::
 
     call dein#add('romainl/vim-qlist', {
-        \ 'if': has('quickfix'),
-        \ 'on_cmd': s:suffix('list', ['D', 'I']),
-        \ 'on_ft': 'qf',
-        \ 'on_map': {'n': ['[D', ']D', 'I', ']I']},
+    \   'if': has('quickfix'),
+    \   'on_cmd': s:suffix('list', ['D', 'I']),
+    \   'on_ft': 'qf',
+    \   'on_map': {'n': ['[D', ']D', 'I', ']I']},
     \ })
 
 ``committia.vim``
@@ -1412,7 +1411,7 @@ user, how cool is that?
 ::
 
     call dein#add('rhysd/committia.vim', {
-        \ 'if': s:has_exec('git'),
+    \   'if': s:has_exec('git'),
     \ })
 
 ``git-messenger.vim``
@@ -1426,9 +1425,9 @@ user, how cool is that?
 ::
 
     call dein#add('rhysd/git-messenger.vim', {
-        \ 'if': s:has_exec('git'),
-        \ 'on_cmd': 'GitMessenger',
-        \ 'on_map': {'n': '[messenger]'},
+    \   'if': s:has_exec('git'),
+    \   'on_cmd': 'GitMessenger',
+    \   'on_map': {'n': '[messenger]'},
     \ })
 
 ``vim-radon``
@@ -1441,10 +1440,10 @@ user, how cool is that?
 ::
 
     call dein#add('rubik/vim-radon', {
-        \ 'if': has('signs') && has('python'),
-        \ 'lazy': v:false,
-        \ 'on_cmd': 'Radon',
-        \ 'on_ft': 'python',
+    \   'if': has('signs') && has('python'),
+    \   'lazy': v:false,
+    \   'on_cmd': 'Radon',
+    \   'on_ft': 'python',
     \ })
 
 .. note::
@@ -1466,8 +1465,8 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('simnalamburt/vim-mundo', {
-        \ 'if': has('pythonx') && v:version >= 703,
-        \ 'on_cmd': 'MundoToggle',
+    \   'if': has('pythonx') && v:version >= 703,
+    \   'on_cmd': 'MundoToggle',
     \ })
 
 ``splice.vim``
@@ -1480,7 +1479,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('sjl/splice.vim', {
-        \ 'on_cmd': 'SpliceInit',
+    \   'on_cmd': 'SpliceInit',
     \ })
 
 ``vim-space``
@@ -1494,7 +1493,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('spiiph/vim-space', {
-        \ 'on_map': {'n': '<space>'},
+    \   'on_map': {'n': '<space>'},
     \ })
 
 ``vim-vimlint``
@@ -1508,10 +1507,10 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('syngan/vim-vimlint', {
-        \ 'depends': 'vim-vimlparser',
-        \ 'lazy': v:false,
-        \ 'on_cmd': 'VimLint',
-        \ 'on_ft': 'vim',
+    \   'depends': 'vim-vimlparser',
+    \   'lazy': v:false,
+    \   'on_cmd': 'VimLint',
+    \   'on_ft': 'vim',
     \ })
 
 ``vim-quick-radon``
@@ -1525,9 +1524,9 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('tell-k/vim-quick-radon', {
-        \ 'if': s:has_exec('radon'),
-        \ 'lazy': v:false,
-        \ 'on_cmd': 'QuickRadon',
+    \   'if': s:has_exec('radon'),
+    \   'lazy': v:false,
+    \   'on_cmd': 'QuickRadon',
     \ })
 
 ``vim-expand-region``
@@ -1540,7 +1539,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('terryma/vim-expand-region', {
-        \ 'on_map': {'v': ['+', '_']},
+    \   'on_map': {'v': ['+', '_']},
     \ })
 
 ``vim-visual-multi``
@@ -1554,8 +1553,8 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('mg979/vim-visual-multi', {
-        \ 'if': has('pythonx') && v:version >= 800,
-        \ 'on_map': ['<C-n>', '<C-Down>', '<C-Up>'],
+    \   'if': has('pythonx') && v:version >= 800,
+    \   'on_map': ['<C-n>', '<C-Down>', '<C-Up>'],
     \ })
 
 ``wordnet.vim``
@@ -1569,9 +1568,9 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('timcharper/wordnet.vim', {
-        \ 'if': s:has_exec('wn'),
-        \ 'on_func': 'WordNetOverviews',
-        \ 'on_map': '<Leader>wn',
+    \   'if': s:has_exec('wn'),
+    \   'on_func': 'WordNetOverviews',
+    \   'on_map': '<Leader>wn',
     \ })
 
 ``molokai``
@@ -1597,10 +1596,10 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('tommcdo/vim-exchange', {
-        \ 'on_map': {
-        \   'n': 'cx',
-        \   'v': 'X',
-        \ },
+    \   'on_map': {
+    \       'n': 'cx',
+    \       'v': 'X',
+    \   },
     \ })
 
 ``vim-lion``
@@ -1613,7 +1612,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('tommcdo/vim-lion', {
-        \ 'on_map': {'n': ['gl', 'gL']},
+    \   'on_map': {'n': ['gl', 'gL']},
     \ })
 
 ``vim-abolish``
@@ -1626,8 +1625,8 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('tpope/vim-abolish', {
-        \ 'on_cmd': ['Abolish', 'S'],
-        \ 'on_map': {'n': 'cr'},
+    \   'on_cmd': ['Abolish', 'S'],
+    \   'on_map': {'n': 'cr'},
     \ })
 
 ``vim-commentary``
@@ -1643,8 +1642,8 @@ power of :kbd:`gcc`.
 ::
 
     call dein#add('tpope/vim-commentary', {
-        \ 'on_cmd': 'Commentary',
-        \ 'on_map': 'gc',
+    \   'on_cmd': 'Commentary',
+    \   'on_map': 'gc',
     \ })
 
 ``vim-endwise``
@@ -1657,7 +1656,7 @@ power of :kbd:`gcc`.
 ::
 
     call dein#add('tpope/vim-endwise', {
-        \ 'on_event': 'InsertEnter',
+    \   'on_event': 'InsertEnter',
     \ })
 
 ``vim-fugitive``
@@ -1674,7 +1673,7 @@ Replace most of your use of a shell when working on a project with just another
 ::
 
     call dein#add('tpope/vim-fugitive', {
-        \ 'if': s:has_exec('git'),
+    \   'if': s:has_exec('git'),
     \ })
 
 ``vim-jdaddy``
@@ -1687,7 +1686,7 @@ Replace most of your use of a shell when working on a project with just another
 ::
 
     call dein#add('tpope/vim-jdaddy', {
-        \ 'on_ft': 'json',
+    \   'on_ft': 'json',
     \ })
 
 .. _vim-obsession-plugin:
@@ -1702,8 +1701,8 @@ Replace most of your use of a shell when working on a project with just another
 ::
 
     call dein#add('tpope/vim-obsession', {
-        \ 'hook_post_source': s:airline_enable('obsession'),
-        \ 'on_cmd': 'Obsession',
+    \   'hook_post_source': s:airline_enable('obsession'),
+    \   'on_cmd': 'Obsession',
     \ })
 
 ``vim-projectionist``
@@ -1743,8 +1742,8 @@ your favourite plugin anyway.
 ::
 
     call dein#add('tpope/vim-rhubarb', {
-        \ 'depends': 'vim-fugitive',
-        \ 'if': s:has_exec('git'),
+    \   'depends': 'vim-fugitive',
+    \   'if': s:has_exec('git'),
     \ })
 
 ``vim-rsi``
@@ -1757,7 +1756,7 @@ your favourite plugin anyway.
 ::
 
     call dein#add('tpope/vim-rsi', {
-        \ 'on_event': ['CmdlineEnter', 'InsertEnter'],
+    \   'on_event': ['CmdlineEnter', 'InsertEnter'],
     \ })
 
 ``vim-sensible``
@@ -1773,7 +1772,7 @@ Sane defaults for :command:`vim`, tracking this repo might make your
 ::
 
     call dein#add('tpope/vim-sensible', {
-        \ 'rev': 'v1.2',
+    \   'rev': 'v1.2',
     \ })
 
 .. attention::
@@ -1793,8 +1792,8 @@ Automagic indentation configuration, that just works.
 ::
 
     call dein#add('tpope/vim-sleuth', {
-        \ 'on_cmd': 'Sleuth',
-        \ 'on_func': 'SleuthIndicator',
+    \   'on_cmd': 'Sleuth',
+    \   'on_func': 'SleuthIndicator',
     \ })
 
 ``vim-speeddating``
@@ -1811,8 +1810,8 @@ writing sessions by at least fifteen orders of magnitude… or your money back.
 ::
 
     call dein#add('tpope/vim-speeddating', {
-        \ 'depends': 'vim-repeat',
-        \ 'on_map': {'n': ['<C-a>', '<C-x>']},
+    \   'depends': 'vim-repeat',
+    \   'on_map': {'n': ['<C-a>', '<C-x>']},
     \ })
 
 ``vim-surround``
@@ -1828,12 +1827,12 @@ documentation a relatively painless task.
 ::
 
     call dein#add('tpope/vim-surround', {
-        \ 'depends': 'vim-repeat',
-        \ 'on_map': {
-        \   'i': ['<C-g>S', '<C-g>s', '<C-s>'],
-        \   'n': ['cS', 'cs', 'ds', 'yS', 'ys'],
-        \   'x': 'S',
-        \ },
+    \   'depends': 'vim-repeat',
+    \   'on_map': {
+    \       'i': ['<C-g>S', '<C-g>s', '<C-s>'],
+    \       'n': ['cS', 'cs', 'ds', 'yS', 'ys'],
+    \       'x': 'S',
+    \   },
     \ })
 
 ``vim-unimpaired``
@@ -1858,9 +1857,9 @@ documentation a relatively painless task.
 ::
 
     call dein#add('troydm/zoomwintab.vim', {
-        \ 'hook_post_source': s:airline_enable('zoomwintab'),
-        \ 'on_cmd': 'ZoomWinTabToggle',
-        \ 'on_map': {'n': '<C-w>o'},
+    \   'hook_post_source': s:airline_enable('zoomwintab'),
+    \   'on_cmd': 'ZoomWinTabToggle',
+    \   'on_map': {'n': '<C-w>o'},
     \ })
 
 ``braceless.vim``
@@ -1873,8 +1872,8 @@ documentation a relatively painless task.
 ::
 
     call dein#add('tweekmonster/braceless.vim', {
-        \ 'on_cmd': 'BracelessEnable',
-        \ 'on_ft': ['nim', 'python', 'yaml'],
+    \   'on_cmd': 'BracelessEnable',
+    \   'on_ft': ['nim', 'python', 'yaml'],
     \ })
 
 ``startuptime.vim``
@@ -1887,7 +1886,7 @@ documentation a relatively painless task.
 ::
 
     call dein#add('tweekmonster/startuptime.vim', {
-        \ 'on_cmd': 'StartupTime',
+    \   'on_cmd': 'StartupTime',
     \ })
 
 ``vim-airline``
@@ -1905,10 +1904,10 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('vim-airline/vim-airline', {
-        \ 'depends': [
-        \   'vim-airline-themes',
-        \   'vim-fugitive',
-        \ ],
+    \   'depends': [
+    \       'vim-airline-themes',
+    \       'vim-fugitive',
+    \   ],
     \ })
 
 ``vim-airline-themes``
@@ -1932,7 +1931,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('vim-utils/vim-line', {
-        \ 'on_map': {'ov': '_'},
+    \   'on_map': {'ov': '_'},
     \ })
 
 .. _vim-man-plugin:
@@ -1947,7 +1946,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('vim-utils/vim-man', {
-        \ 'on_cmd': ['Man', 'Mangrep', 'Vman'],
+    \   'on_cmd': ['Man', 'Mangrep', 'Vman'],
     \ })
 
 ``vim-vertical-move``
@@ -1960,7 +1959,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('vim-utils/vim-vertical-move', {
-        \ 'on_map': ['[v', ']v'],
+    \   'on_map': ['[v', ']v'],
     \ })
 
 ``targets.vim``
@@ -1984,7 +1983,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('xolox/vim-misc', {
-        \ 'lazy': v:true,
+    \   'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -2000,9 +1999,9 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('xolox/vim-notes', {
-        \ 'depends': 'vim-misc',
-        \ 'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
-        \ 'on_map': {'ov': '<LocalLeader>en'},
+    \   'depends': 'vim-misc',
+    \   'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
+    \   'on_map': {'ov': '<LocalLeader>en'},
     \ })
 
 ``vim-vimlparser``
@@ -2015,7 +2014,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('ynkdir/vim-vimlparser', {
-        \ 'lazy': v:true,
+    \   'lazy': v:true,
     \ })
 
 .. include:: .includes/lazy_rdep.rst
@@ -2030,9 +2029,9 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('zah/nim.vim', {
-        \ 'if': s:has_exec('nim'),
-        \ 'lazy': v:false,
-        \ 'on_ft': 'nim',
+    \   'if': s:has_exec('nim'),
+    \   'lazy': v:false,
+    \   'on_ft': 'nim',
     \ })
 
 ``zig.vim``
@@ -2045,8 +2044,8 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('ziglang/zig.vim', {
-        \ 'if': s:has_exec('zig'),
-        \ 'on_ft': 'zig',
+    \   'if': s:has_exec('zig'),
+    \   'on_ft': 'zig',
     \ })
 
 vim-scripts mirrors
@@ -2064,7 +2063,7 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/DotOutlineTree', {
-        \ 'on_ft': ['mail', 'rst'],
+    \   'on_ft': ['mail', 'rst'],
     \ })
 
 .. _SyntaxRange-plugin:
@@ -2079,7 +2078,7 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/SyntaxRange', {
-        \ 'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
+    \   'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
     \ })
 
 ``TaQua``
@@ -2103,8 +2102,8 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/bnf.vim', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'bnf',
+    \   'lazy': v:false,
+    \   'on_ft': 'bnf',
     \ })
 
 ``ebnf.vim``
@@ -2119,8 +2118,8 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/ebnf.vim', {
-        \ 'lazy': v:false,
-        \ 'on_ft': 'ebnf',
+    \   'lazy': v:false,
+    \   'on_ft': 'ebnf',
     \ })
 
 ``summerfruit256.vim``
@@ -2144,7 +2143,7 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/uri-ref', {
-        \ 'on_ft': 'mail',
+    \   'on_ft': 'mail',
     \ })
 
 Nasty bundled packages
@@ -2156,7 +2155,7 @@ by deletion.
 ::
 
     call dein#local('~/.vim/internal/', {
-        \ 'on_cmd': 'Snip',
+    \   'on_cmd': 'Snip',
     \ })
 
 .. rubric:: Footnotes

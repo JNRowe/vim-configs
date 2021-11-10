@@ -11,8 +11,8 @@ Prepare localcfg_ to read all optional configuration files::
         let g:localcfg_cfgs += ['abbr']
     endif
     let g:localcfg_features = [
-        \ 'autocmd', 'diff', 'gui_macvim', 'gui_running', 'menu', 'quickfix',
-        \ 'spell'
+    \   'autocmd', 'diff', 'gui_macvim', 'gui_running', 'menu', 'quickfix',
+    \   'spell'
     \ ]
 
 … and :repo:`dein <Shougo/dein.vim>` managed packages::

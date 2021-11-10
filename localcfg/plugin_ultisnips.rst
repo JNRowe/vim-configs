@@ -36,7 +36,7 @@ Disable :repo:`ale <dense-analysis/ale>` while editing snippet output::
     augroup jnrowe_ultisnips
         autocmd!
         autocmd User UltiSnipsEnterFirstSnippet
-            \ call <SID>change_ale_state(v:false)
+        \   call <SID>change_ale_state(v:false)
         autocmd User UltiSnipsExitLastSnippet
-            \ call <SID>change_ale_state(v:true)
+        \   call <SID>change_ale_state(v:true)
     augroup END

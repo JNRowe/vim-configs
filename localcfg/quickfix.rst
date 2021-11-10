@@ -26,7 +26,7 @@ A utility function to add new map commands::
             let l:cmd = a:cmd . '<CR>'
         endif
         execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' .
-            \ a:type . l:cmd
+        \   a:type . l:cmd
     endfunction
 
 Display occurrences of current word::
@@ -47,40 +47,39 @@ Configure layered maps for useful quickfix and location functions::
 
     for s:t in ['l', 'c']
         for [s:key, s:cmd] in [
-            \   ['c',          'close'],
-            "\ 5 lines seems to be the magic number for *me*
-            \   ['o',          'open 5<CR><C-w>p\'],
-            \   ['b',          'bottom'],
-            \   ['n',          'next'],
-            \   ['p',          'previous'],
-            \   ['<PageUp>',   'newer'],
-            \   ['<PageDown>', 'older'],
-            \   ['r',          'rewind'],
-            \   ['l',          'last'],
-            \ ]
+        \   ['c',          'close'],
+        "\ 5 lines seems to be the magic number for *me*
+        \   ['o',          'open 5<CR><C-w>p\'],
+        \   ['b',          'bottom'],
+        \   ['n',          'next'],
+        \   ['p',          'previous'],
+        \   ['<PageUp>',   'newer'],
+        \   ['<PageDown>', 'older'],
+        \   ['r',          'rewind'],
+        \   ['l',          'last'],
+        \ ]
             call s:qf_key(s:t, s:key, s:cmd)
         endfor
     endfor
     execute 'nnoremap <silent> [quickfix]x
-        \ :call setqflist([], "r",
-        \                 {"items": [],
-        \                  "title": getqflist({"title": v:true}).title})<CR>'
+    \   :call setqflist([], "r",
+    \                   {"items": [],
+    \                    "title": getqflist({"title": v:true}).title})<CR>'
     execute 'nnoremap <silent> [location]x
-        \ :call setloclist(
-        \   0, [], "r",
-        \   {"items": [],
-        \    "title": getloclist(0, {"title": v:true}).title})<CR>'
+    \   :call setloclist(0, [], "r",
+    \                    {"items": [],
+    \                     "title": getloclist(0, {"title": v:true}).title})<CR>'
     execute 'nnoremap <silent> [quickfix]X
-        \ :call setqflist([], "f", {"title": ""})<CR>'
+    \   :call setqflist([], "f", {"title": ""})<CR>'
     execute 'nnoremap <silent> [location]X
-        \ :call setloclist(0, [], "f", {"title": ""})<CR>'
+    \   :call setloclist(0, [], "f", {"title": ""})<CR>'
 
 Shortcut command to rename current list:::
 
     command! -bar -nargs=1 QFRename
-        \ call setqflist([], 'a', {'title': <q-args>}) | redrawstatus!
+    \   call setqflist([], 'a', {'title': <q-args>}) | redrawstatus!
     command! -bar -nargs=1 LocRename
-        \ call setloclist(0, [], 'a', {'title': <q-args>}) | redrawstatus!
+    \   call setloclist(0, [], 'a', {'title': <q-args>}) | redrawstatus!
 
 .. note::
 

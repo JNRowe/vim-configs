@@ -5,11 +5,11 @@ Show highlight group of the :ref:`current location
 <gethighlightgroup-function>`::
 
     command! ShowHighlightGroups
-        \ echo join(map(misc#gethighlightgroup(),
-        \               {k, v -> join(values(map(v,
-        \                                        {k, v -> k . ':' . v})),
-        \                             ', ')}),
-        \           ' | ')
+    \   echo join(map(misc#gethighlightgroup(),
+    \                 {k, v -> join(values(map(v,
+    \                                          {k, v -> k . ':' . v})),
+    \                               ', ')}),
+    \             ' | ')
 
 
 .. _default-user-identifier:
@@ -17,7 +17,7 @@ Show highlight group of the :ref:`current location
 User email address, as used by various plugins::
 
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
-        \ ' <' . systemlist('git -C ~ config user.email')[0] . '>'
+    \   ' <' . systemlist('git -C ~ config user.email')[0] . '>'
 
 Display current base version::
 
@@ -40,7 +40,7 @@ Add on-hover word definitions, which can be useful for prose editing::
 
     if has('gui_running') && executable('wn')
         command WordNetBalloon
-            \ setlocal balloonexpr=misc#commandballoon('wn\ %s\ -over')
+        \   setlocal balloonexpr=misc#commandballoon('wn\ %s\ -over')
     endif
 
 .. note::

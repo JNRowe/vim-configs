@@ -26,15 +26,15 @@ started with arguments?
 ::
 
     let s:git_config = filereadable(g:xdg_config_dir . '/git/config')
-        \ ? g:xdg_config_dir . '/git/config'
-        \ : '~/.gitconfig'
+    \   ? g:xdg_config_dir . '/git/config'
+    \   : '~/.gitconfig'
     let g:startify_bookmarks = [
-        \ g:xdg_config_dir . '/awesome/rc.moon',
-        \ g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
-        \ s:git_config,
-        \ '~/.vim/vimrc.rst',
-        \ '~/.vim/vimrc-local',
-        \ '~/.vim/dein.rst',
+    \   g:xdg_config_dir . '/awesome/rc.moon',
+    \   g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
+    \   s:git_config,
+    \   '~/.vim/vimrc.rst',
+    \   '~/.vim/vimrc-local',
+    \   '~/.vim/dein.rst',
     \ ]
 
 .. tip::
@@ -46,9 +46,9 @@ started with arguments?
 Define some quick commands to jump to help::
 
     let g:startify_commands = [
-        \ ['Version', ':version'],
-        \ ['Reference', ':help reference'],
-        \ ['FAQ', ':help Vim-FAQ'],
+    \   ['Version', ':version'],
+    \   ['Reference', ':help reference'],
+    \   ['FAQ', ':help Vim-FAQ'],
     \ ]
 
 .. tip::
@@ -69,11 +69,11 @@ Use fancy boxes for fortunes::
 Configure default chunks with fancy symbols::
 
     let g:startify_lists = [
-        \ {'type': 'files', 'header': ['']},
-        \ {'type': 'dir', 'header': ['']},
-        \ {'type': 'sessions', 'header': ['']},
-        \ {'type': 'commands', 'header': ['']},
-        \ {'type': 'bookmarks', 'header': ['']},
+    \   {'type': 'files', 'header': ['']},
+    \   {'type': 'dir', 'header': ['']},
+    \   {'type': 'sessions', 'header': ['']},
+    \   {'type': 'commands', 'header': ['']},
+    \   {'type': 'bookmarks', 'header': ['']},
     \ ]
 
 We don’t need full filenames::

@@ -17,7 +17,7 @@ has changed massively before we made it here.
 ::
 
     for [s:k, s:v] in items({'!': ['info', 'Todo'], '@': 'warning',
-        \                    '#': 'error'})
+    \                        '#': 'error'})
         if type(s:v) is v:t_list
             let [s:icon, s:hl] = [s:v[0], s:v[1]]
         else
@@ -26,9 +26,9 @@ has changed massively before we made it here.
         endif
         unlet s:v
         execute 'sign define ' .
-            \ 'Signature_' . s:k . '_SignatureMarkerText_SignatureMarkerLine' .
-            \ ' icon=' . expand('~/.vim/icons/' . s:icon . '.png') .
-            \ ' text=' . toupper(s:icon[0] . s:icon[0]) . ' texthl=' . s:hl
+        \   'Signature_' . s:k . '_SignatureMarkerText_SignatureMarkerLine' .
+        \   ' icon=' . expand('~/.vim/icons/' . s:icon . '.png') .
+        \   ' text=' . toupper(s:icon[0] . s:icon[0]) . ' texthl=' . s:hl
     endfor
 
 .. note::

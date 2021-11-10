@@ -12,14 +12,14 @@ Use my custom maps::
 Configure maps to match, to some degree, my window manager’s config::
 
     for [s:key, s:cmd] in [
-        \   ['n',       'New'],
-        \   ['c',       ':exe DWM_Close'],
-        \   ['f',       'Focus'],
-        \   ['<Left>',  'Rotate(0)'],
-        \   ['<Right>', 'Rotate(1)'],
-        \   ['<Up>',    'New'],
-        \   ['<Down>',  ':exe DWM_Close'],
-        \ ]
+    \   ['n',       'New'],
+    \   ['c',       ':exe DWM_Close'],
+    \   ['f',       'Focus'],
+    \   ['<Left>',  'Rotate(0)'],
+    \   ['<Right>', 'Rotate(1)'],
+    \   ['<Up>',    'New'],
+    \   ['<Down>',  ':exe DWM_Close'],
+    \ ]
         if stridx(s:cmd, '(') == -1
             let s:cmd .= '()'
         endif

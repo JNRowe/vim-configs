@@ -4,10 +4,10 @@
 Find |XDG basedir| compliant locations for data files::
 
     for [s:type, s:path] in [
-        \   ['cache', '~/.cache'],
-        \   ['config', '~/.config'],
-        \   ['data', '~/.local/share'],
-        \ ]
+    \   ['cache', '~/.cache'],
+    \   ['config', '~/.config'],
+    \   ['data', '~/.local/share'],
+    \ ]
         let s:var = 'g:xdg_' . s:type . '_dir'
         let s:envvar = '$XDG_' . toupper(s:type) . '_HOME'
         let s:value = expand(exists(s:envvar) ? s:envvar : s:path)

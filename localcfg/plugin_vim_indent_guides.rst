@@ -17,9 +17,9 @@ Configure styling::
     augroup jnrowe_vim_indent_guides
         for s:k in ['even', 'odd']
             execute 'autocmd Colorscheme,VimEnter * highlight ' .
-                \ 'IndentGuides' . misc#titleword(s:k) .
-                \ ' ctermbg=' . s:guide_term[s:k] .
-                \ ' guibg=' . s:guide_gui[s:k]
+            \   'IndentGuides' . misc#titleword(s:k) .
+            \   ' ctermbg=' . s:guide_term[s:k] .
+            \   ' guibg=' . s:guide_gui[s:k]
         endfor
     augroup END
 
@@ -35,9 +35,9 @@ I’ve never switched guides off, so make it permanent::
 Highlights for read only buffers aren’t interesting::
 
     let g:indent_guides_exclude_filetypes = [
-        \ 'calendar',
-        \ 'gitmessengerpopup',
-        \ 'help',
-        \ 'man',
-        \ 'startify'
+    \   'calendar',
+    \   'gitmessengerpopup',
+    \   'help',
+    \   'man',
+    \   'startify'
     \ ]
