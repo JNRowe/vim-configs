@@ -142,23 +142,6 @@ Maps to jump Window management::
     Imagine that :kbd:`<C-w>|` and :kbd:`<C-w>-` are cleaving the window to
     match the key.
 
-Folding support maps::
-
-    if has('folding')
-        nnoremap - zc
-        nnoremap + zo
-
-        nnoremap z<Up> zk
-        nnoremap z<Down> zj
-
-        vnoremap - zf
-    endif
-
-.. note::
-
-    The previous mappings may not be to your liking, but I never use :kbd:`[+-]`
-    for line movement.
-
 .. _help-custom-maps:
 
 Help related maps::
