@@ -210,7 +210,7 @@ stretching:::
 
 Place cursor at the end of yanked region::
 
-    vmap y y`]
+    vmap y yg`]
 
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
