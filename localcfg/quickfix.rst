@@ -48,8 +48,8 @@ Configure layered maps for useful quickfix and location functions::
     for s:t in ['l', 'c']
         for [s:key, s:cmd] in [
             \   ['c',          'close'],
-            "\ 7 lines seems to be the magic number for *me*
-            \   ['o',          'open 7<CR><C-w>p\'],
+            "\ 5 lines seems to be the magic number for *me*
+            \   ['o',          'open 5<CR><C-w>p\'],
             \   ['b',          'bottom'],
             \   ['n',          'next'],
             \   ['p',          'previous'],

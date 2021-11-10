@@ -92,6 +92,11 @@ Open ``quickfix`` window, if there are any entries::
 
         autocmd QuickFixCmdPost * belowright cwindow 5
 
+.. note::
+
+    Five lines seems to be the magic number for *me*, as it provides both
+    reasonable context on entries and doesn’t fill the screen.
+
 .. _dynamic-cursorline:
 
 Only highlight cursor line in active window::
