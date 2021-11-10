@@ -10,8 +10,13 @@
 
 Don’t write undo data for temporary files::
 
-        execute 'autocmd BufWritePre /tmp/*,$TMP/*,' . g:xdg_cache_dir . '/* ' .
-        \   'setlocal noundofile'
+        execute 'autocmd BufWritePre ' . &backupskip . ' setlocal noundofile'
+
+.. caution::
+
+    Using the value of ``'backupskip'`` is a simple way to synchronise these
+    settings, but it does mean one needs to be aware of the :ref:`sourcing order
+    <sourcing-order>` to prevent mistakes.
 
 Use :command:`vim`’s help for these documents::
 

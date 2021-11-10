@@ -70,6 +70,8 @@ Pull in semi-private local settings::
 
     This should only be used for settings required while reading *this* file.
 
+.. _sourcing-order:
+
 Pull in remaining configuration files::
 
     runtime vimrc.d/paths.vim  " *Must* be early
