@@ -1088,7 +1088,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ``moonscript-vim``
 ''''''''''''''''''
 
-    “Language support for moonscript”
+    “Language support for :repo:`moonscript <leafo/moonscript>`\”
 
 :repository: :repo:`leafo/moonscript-vim`
 
