@@ -496,7 +496,11 @@ Insert longest common match when completing::
 Set string to show `wrapped lines <breakindentopt>`_::
 
     if has('linebreak')
-        let &showbreak='» '
+        if &termencoding ==# 'utf-8' || has('gui_running')
+            let &showbreak='» '
+        else
+            let &showbreak='> '
+        endif
     endif
 
 Use buffer and command name in window title::
