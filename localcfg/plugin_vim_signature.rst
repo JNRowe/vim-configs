@@ -1,7 +1,7 @@
 ``localcfg/plugin_vim_signature.vim``
 =====================================
 
-::
+This won’t work without signs support in :command:`vim`::
 
     if !has('signs')
         finish
