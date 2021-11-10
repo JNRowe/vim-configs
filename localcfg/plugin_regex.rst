@@ -12,7 +12,7 @@ Only complete on installed languages::
             return filter(map(l:lang_files,
                 \             {_, s -> fnamemodify(s, ':t:r')}),
                 \         {_, s -> !empty(exepath(s))})
-        endfun
+        endfunction
         command! -nargs=?
             \ -complete=customlist,<SID>regex_complete
             \ Regex call regex#regex#OpenTestWindow(<q-args>)
