@@ -56,6 +56,11 @@ Map :kbd:`Q` to reformat paragraphs just as everyone else does::
 
     nnoremap Q gqap
 
+.. tip::
+
+    Should you have reason to need ``Ex`` mode, then you’ll probably find the
+    :kbd:`gQ` interface nicer anyhow.
+
 Easy access to man pages when using a custom ``keywordprg``::
 
     nnoremap <C-?> :<C-U>execute 'Man ' . v:count . ' <C-R><C-W>'<CR>
