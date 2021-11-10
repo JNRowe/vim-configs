@@ -54,8 +54,16 @@ on current line::
 
 :kbd:`<S-Insert>` should work the same as in my terminals::
 
-    noremap <S-Insert> <MiddleMouse>
-    noremap! <S-Insert> <MiddleMouse>
+    if empty(maparg('<S-Insert>', 'n'))
+        noremap <S-Insert> <MiddleMouse>
+        noremap! <S-Insert> <MiddleMouse>
+    endif
+
+.. note::
+
+    This is default behaviour on Debian-based systems(see
+    :file:`/usr/share/vim/vim*/debian.vim`), but is not common on other
+    systems.
 
 Consolas — or Inconsolata_ — are available on all of the systems I use, and
 *feel* really good.  If :command:`gvim` starts supporting ligatures upstream or
