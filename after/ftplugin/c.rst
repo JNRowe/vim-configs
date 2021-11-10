@@ -13,3 +13,4 @@ Use ``:make`` to compile C/C++, even without a Makefile::
 Add a little whitespace to comments::
 
     setlocal commentstring=/*\ %s\ */
+    let b:undo_ftplugin .= '|setlocal commentstring<'
