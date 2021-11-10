@@ -9,11 +9,7 @@ Use my custom maps::
 
     call keymaps#mnemonic_map('dwm')
 
-.. tip::
-
-    Imagine :kbd:`<Up>` increases window count, and :kbd:`<Down>`… well, yeah.
-
-::
+Configure maps to match, to some degree, my window manager’s config::
 
     for [s:key, s:cmd] in [
         \   ['n',       'New'],
@@ -35,3 +31,7 @@ Use my custom maps::
 
         execute 'nnoremap <silent> [dwm]' . s:key . ' :<C-u>' . s:cmd . '<CR>'
     endfor
+
+.. tip::
+
+    Imagine :kbd:`<Up>` increases window count, and :kbd:`<Down>`… well, yeah.
