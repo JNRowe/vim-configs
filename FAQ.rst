@@ -71,6 +71,44 @@ struggling to get used it.  The simplest way forward was to force myself to do
 so in an unimportant repository, using :ref:`custom maps
 <gitcommit-emoji-commits>` to simplify input.
 
+.. _vim-vim-filenames:
+
+Why do some output filenames end with ``.vim.vim``
+--------------------------------------------------
+
+Filenames are made to closely match the plugin name, so that a simple
+:command:`git` commit hook can check that the plugin exists and that the file is
+named correctly.
+
+But yeah, I agree that it is kinda ugly.
+
+The hook I use is *sadly* dependent on an internal tool, but a similar effect
+could be achieved with |zsh| in :file:`.git/hooks/pre-commit`:
+
+.. code-block:: zsh
+
+    dein_repos=${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos
+    extras=()
+    for f (localcfg/plugin_*.vim) {
+        plug_name=${f:t:r:s/plugin_//:gs/_/?/}
+        if [ -z "${dein_repos}/*/*/${plug_name}(/N)" ] \
+            && [[ -z "~/.vim/internal/${plug_name}(/N)" ]]; then
+            extras+=$i
+        fi
+    }
+    if [[ ${#extras} -gt 0 ]] {
+        echo "Extra config files:"
+        echo ${(F)extras}
+        exit 255
+    }
+
+.. warning::
+
+    I haven’t tested this beyond a quick shell session, but it is a start should
+    you wish to do something similar using just :file:`.git/hooks/pre-commit`.
+    [Co-workers: Vasily’s ``hookworm`` contains my hook in its examples
+    document.]
+
 Why does using the mouse scroll wheel breaks my file
 ----------------------------------------------------
 
