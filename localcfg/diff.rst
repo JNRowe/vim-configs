@@ -19,6 +19,13 @@ The remaining functionality is only useful when ``autocmd`` is available.
         finish
     endif
 
+.. note::
+
+    While this may seem like an odd thing to test here, some builds of
+    :command:`vim` are incredibly bare.  This is often the case for console-only
+    builds, which are sometimes the default for tools such as :command:`git
+    difftool`.
+
 .. _diff-custom-maps:
 
 Add my bindings for :command:`diff` mode::
