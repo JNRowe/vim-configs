@@ -1540,7 +1540,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('terryma/vim-expand-region', {
-        \ 'on_map': {'nv': ['+', '-']},
+        \ 'on_map': {'v': ['+', '_']},
     \ })
 
 ``vim-visual-multi``
