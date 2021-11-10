@@ -194,6 +194,8 @@ Insert current buffer’s directory at command line::
 
     cmap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
 
+.. _scroll-wheel-override:
+
 Scroll wheel moves through undo list, and through branches with :kbd:`<Shift>`.
 Can’t for the life of me remember who was demoing something similar as
 a feature, but thanks for the idea!

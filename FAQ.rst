@@ -71,5 +71,15 @@ struggling to get used it.  The simplest way forward was to force myself to do
 so in an unimportant repository, using :ref:`custom maps
 <gitcommit-emoji-commits>` to simplify input.
 
+Why does using the mouse scroll wheel breaks my file
+----------------------------------------------------
+
+There are many, many ways to :vimdoc:`move through a buffer
+<motion.txt#text-objects>` in vim.  Once you’ve learned them, keys such as
+:kbd:`PageUp` and the mouse in general become very weak means for navigation.
+
+If we’re not using the mouse for its normal purpose, we may aswell use it for
+something :ref:`far more cool <scroll-wheel-override>`
+
 .. _Debian: https://debian.org/
 .. _packaged in Debian Stable: https://packages.debian.org/vim
