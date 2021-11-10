@@ -12,8 +12,8 @@ If you find any problems with the files in this repository either file an
 issue_, or drop me an mail_.  However, please do not report problems when using
 neovim_, pull requests are fine though.
 
-Poke around in the ``.rst`` files to see how things work, and be forewarned
-that it isn’t for the faint of heart!
+Poke around in the ``.rst`` files to see how things work, and be forewarned that
+it isn’t for the faint of heart!
 
 Contributors
 ------------

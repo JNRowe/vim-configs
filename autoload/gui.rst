@@ -35,5 +35,5 @@ Change :abbr:`GUI <Graphical User Interface>` fonts, using the following rules:
 
 .. note::
 
-    Yeah, some of these are *huuuuuge* but I’ll often pop up a snippet for
+    Yeah, some of these are *huuuuuge*, but I’ll often pop up a snippet for
     discussion in a meeting and this really helps.

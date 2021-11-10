@@ -11,7 +11,7 @@ command::
 
 .. _gethighlightgroup-function:
 
-Find highlight group of the given location::
+Find syntax highlighting in use at the given location::
 
     function! misc#gethighlightgroup(...) abort
         let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
@@ -70,7 +70,7 @@ Search for paths without all the escaping required by ``/``::
     useful for in :command:`gvim`, but it doesn’t support vim’s completion
     functionality.
 
-Issue an “shift to right” for a window, with an attempt made to skip portrait
+Issue a “shift to right” for a window, with an attempt made to skip portrait
 displays.
 
 ::
@@ -99,7 +99,7 @@ Convenience function to apply title case to a word::
         return toupper(a:word[0]) . a:word[1:]
     endfunction
 
-Flag toggling function::
+Toggle an option::
 
     function! misc#toggleflag(option, flag) abort
         let l:optstr = eval('&' . a:option)
@@ -114,7 +114,7 @@ Flag toggling function::
     endfunction
 
 Many distributions package :command:`vim` with cherry picked patches, and
-sometimes it is nice to know the current base version state::
+sometimes it is nice to know the current base version::
 
     function! misc#version() abort
         let l:n = 1

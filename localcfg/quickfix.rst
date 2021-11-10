@@ -5,13 +5,13 @@
 
 .. _quickfix-custom-maps:
 
-Configure my custom maps::
+Configure my custom maps for quickfix::
 
     call keymaps#mnemonic_map('quickfix', {'key': 'f', 'local': v:true})
 
 .. _location-list-custom-maps:
 
-::
+… and location lists::
 
     call keymaps#mnemonic_map('location', {'local': v:true})
 

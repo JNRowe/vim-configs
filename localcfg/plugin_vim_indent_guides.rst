@@ -25,10 +25,10 @@ Configure styling::
 
 .. todo::
 
-    These settings are incredibly dependent on the colour schemes being
-    used.  There must be a better way to handle it.
+    These settings are incredibly dependent on the colour schemes being used.
+    There must be a better way to handle it.
 
-I’ve never toggled guides off, so make it permanent::
+I’ve never switched guides off, so make it permanent::
 
     let g:indent_guides_enable_on_vim_startup = v:true
 

@@ -1,7 +1,7 @@
 ``vimrc.d/localcfg.vim``
 ========================
 
-Prepare localcfg_ to read all optional configs::
+Prepare localcfg_ to read all optional configuration files::
 
     let g:localcfg_cfgs = []
 
@@ -26,9 +26,10 @@ Prepare localcfg_ to read all optional configs::
 .. note::
 
     The logic here is that packages with requirements can have optional negative
-    configs that trigger alternative functionality when they’re not available.
+    configuration files that trigger alternative functionality when they’re not
+    available.
 
-Read defined configs::
+Read defined configuration files::
 
     call localcfg#docfg()
 

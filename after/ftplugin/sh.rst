@@ -10,6 +10,6 @@ Add on-hover command definitions::
 
 .. note::
 
-    This isn’t the default as :ref:`ale <ale-plugin>` provides a nice general
-    usage for balloons, however occasionally when dipping in to a shell script
-    on an unususal system this can be useful.
+    This isn’t set as the global default as :ref:`ale <ale-plugin>` provides
+    a nice general balloon interface.  However, when dipping in to a shell
+    script on an unususal system this can be useful.

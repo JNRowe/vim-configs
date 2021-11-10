@@ -1,8 +1,8 @@
 ``localcfg/plugin_vim_projectionist.vim``
 =========================================
 
-:envvar:`PKG_LICENSE_DIR` is set on most of the systems I use to a
-distro-specific location for licenses; :file:`/usr/share/licenses`,
+:envvar:`PKG_LICENSE_DIR` is set on many of the systems I use to
+a distro-specific location for licenses; :file:`/usr/share/licenses`,
 ``/var/lib/repos/gentoo/licenses``, &c.  This allows us to set up some global
 templates for licence generation at a project’s top level::
 

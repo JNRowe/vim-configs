@@ -13,4 +13,5 @@ this as it would break too many scripts that are relying on post-processing the
 .. note::
 
     I’m not saying this is a good idea, just that I don’t have write access to
-    fix the external tools to support the real commenting features :/
+    fix the external tools to support the full range of commenting features in
+    |remind|.

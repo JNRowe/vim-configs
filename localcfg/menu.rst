@@ -3,7 +3,7 @@
 
 We all know that the menu bar **steals** valuable screen real estate, but
 occasionally it can be useful for accessing hierarchical information.  Therefore
-we add a :ref:`toggle binding <gui-toggles>`, but also learn to use ``emenu``
+we add a :ref:`toggle binding <gui-toggles>`, but also learn to use ``:emenu``
 for even easier access.
 
 Function to generate common file menu.  Items can be specified as:

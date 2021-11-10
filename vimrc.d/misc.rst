@@ -30,10 +30,11 @@ debugging, by printing the entirety of options::
 
 .. note::
 
-    This is different to ``:mkexrc`` in that it displays *all* options, not
-    just the ones you have changed.  This is far nicer behaviour when you’ve
-    upgraded and want to see what has changed.  It is also different to using
-    ``:set`` with ``:redir`` as the output is easier to diff.
+    This is different to ``:mkexrc`` in that it displays *all* options, not just
+    the ones you have changed.  This is far nicer behaviour when you’ve upgraded
+    :command:`vim` and want to see what has changed.  It is also different to
+    using ``:set`` with ``:redir`` as the output is easier to read in
+    :command:`diff`’s output.
 
 Add on-hover word definitions, which can be useful for prose editing::
 
@@ -57,4 +58,4 @@ Insert a modeline on the last line::
 
 .. note::
 
-    When executed with a ``!`` write a fuller and more verbose modeline.
+    When executed with ``!`` write a fuller and more verbose modeline.

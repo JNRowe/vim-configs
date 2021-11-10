@@ -21,8 +21,10 @@ Configure maps to insert common metadata in to commit messages::
 
     This adds two bindings for each type.  For example, using ``[trailer]a``
     with add an ``Acked-by`` trailer with the :ref:`default user
-    <default-user-identifier>`, whereas ``[trailer]qa`` binding will **q**\uery
-    for the user.
+    <default-user-identifier>`, whereas the ``[trailer]qa`` binding will
+    **q**\uery for the user data.
+
+.. todo:: Add screenshot for query mode
 
 Add a mapping for Sponsored-by_ header::
 
@@ -32,7 +34,7 @@ Add a mapping for Sponsored-by_ header::
 .. _gitcommit-emoji-commits:
 
 A few co-workers are now decorating their commits with emojis for expressing
-their types, and I’ll *try* to do so when committing to them::
+their types, and I’ll *try* to do so when committing to those projects::
 
     for [s:key, s:char] in [['new', '🌟'], ['del', '❌'], ['fix', '🐛'],
         \                   ['ref', '⟳'], ['tool', '🔨']]

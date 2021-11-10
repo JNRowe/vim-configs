@@ -347,9 +347,9 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 .. note::
 
     I don’t automatically enable this on specific filetypes because it
-    *severely* slows down :command:`vim`, enough to make you regret enabling it
-    sometimes.  However, when it is useful it is *incredibly* useful and
-    definitely worth the slow down.
+    *severely* slows down :command:`vim`, sometimes even enough to make you
+    regret enabling it.  However, it is *incredibly* useful and definitely worth
+    the slow down when you’re editing themes.
 
 .. _nrrwrgn-plugin:
 
@@ -360,9 +360,9 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 
 :repository: :repo:`chrisbra/NrrwRgn`
 
-If, like me, you’re a partial :command:`emacs` convert ``NrrwRgn`` is wonderful.
-If you’re not then simply imagine being able to work in a visual mode hunk for
-a full editing session.
+If, like me, you’re a partial :command:`emacs` convert ``:NrrwRgn`` is
+wonderful.  If you’re not then simply imagine being able to work in a visual
+mode hunk for a full editing session.
 
 ::
 
@@ -436,7 +436,7 @@ Disturbingly cool editing for |CSV| files, ‘nuff said.
 ``unicode.vim``
 '''''''''''''''
 
-    “A plugin for handling unicode and digraphs characters”
+    “A plugin for handling Unicode and digraphs characters”
 
 :repository: :repo:`chrisbra/unicode.vim`
 :config: :doc:`localcfg/plugin_unicode.vim`
@@ -465,8 +465,8 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
 .. note::
 
-    The extra hoops here are to allow the ``unicode.vim`` setup to
-    function irrespective of the availablity of ``fzf``.
+    The extra hoops here are to allow the ``unicode.vim`` setup to function
+    irrespective of the availablity of :command:`fzf`.
 
 ``vim_faq``
 '''''''''''
@@ -591,9 +591,9 @@ WingIDE to a real editor when they edit files of different types.
 
 .. note::
 
-    We set ``g:bullets_enabled_file_types`` in a post source hook as the
-    option isn’t additive, and this allows us to catch updates to the
-    supported filetypes in the plugin.
+    We set ``g:bullets_enabled_file_types`` in a post source hook as the option
+    isn’t additive, and this allows us to catch updates to the supported
+    filetypes in the plugin.
 
 .. _editorconfig-plugin:
 
@@ -702,8 +702,8 @@ jealous.
 
 .. note::
 
-    This is guarded with ``has()`` because recent releases support
-    this functionality `out of the box <matchpos>`_.
+    This is guarded with ``has()`` because recent releases support this
+    functionality `out of the box <matchpos>`_.
 
 ``xterm-color-table.vim``
 '''''''''''''''''''''''''
@@ -1134,8 +1134,8 @@ editing your accounts/expenses an almost nice-ish experience.
 :repository: :repo:`luochen1990/rainbow`
 :config: :doc:`localcfg/plugin_rainbow`
 
-Make your ``vim`` sessions feel like they have been painted by a three year old
-trying to impress their grandpa.  Which is a Good Thing™.
+Make your :command:`vim` sessions feel like they have been painted by a three
+year old trying to impress their grandpa.  Which is a Good Thing™.
 
 ::
 
@@ -1362,8 +1362,8 @@ user, how cool is that?
 ``html5.vim``
 '''''''''''''
 
-    “|HTML|\5 + inline :abbr:`SVG (Scalable
-    Vector Graphics)` omnicomplete function, indent and syntax”
+    “|HTML|\5 + inline :abbr:`SVG (Scalable Vector Graphics)` omnicomplete
+    function, indent and syntax”
 
 :repository: :repo:`othree/html5.vim`
 

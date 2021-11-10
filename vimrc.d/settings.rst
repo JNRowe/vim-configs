@@ -22,7 +22,8 @@ overwrite a :command:`cp --link` tree::
     call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
 
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
-edits and the resulting *huge* backups are practically always useless to me.
+edits and the resulting often *huge* backups are practically always useless to
+me.
 
 ::
 
@@ -83,7 +84,7 @@ weakened encryption::
         endif
     endif
 
-Highlight the current line but only `when it will be useful
+Highlight the current line, but only `when it will be useful
 <dynamic-cursorline>`_::
 
     set cursorline
@@ -98,7 +99,7 @@ If a wordlist is available use it as the completion dictionary::
 
     On Debian_ systems this file tends to be provided by packages from the
     wordlist_ project(see ``aptitude search '~Pwordlist'`` for options).  On
-    other systems, and optionally on Debian, it is often provided by GNU’s
+    other systems, and possibly on Debian too, it may be provided by GNU’s
     miscfiles_ package.
 
 Keep swap files in |XDG basedir| compliant location::
@@ -124,7 +125,8 @@ Only files that *must* contain tabs(:file:`Makefile`) *should* contain tabs::
 
     set expandtab
 
-If the term can support it, use fancy Unicode for vertical split bar::
+If the term can support it, use box drawing character for unbroken vertical
+split bar::
 
     if &termencoding ==# 'utf-8' || has('gui_running')
         set fillchars+=vert:│
@@ -188,7 +190,7 @@ Ignore case in searches, working in conjunction with `smartcase
 
     set ignorecase
 
-Make completion use the case of currently inserted text::
+Use the case of the inserted text to choose the case of completed text::
 
     set infercase
 
@@ -196,11 +198,11 @@ Having ``=`` in filename matches are more trouble then they’re worth::
 
     set isfname-=\=
 
-Use :command:`vim`’s builtin manpage support by default::
+Use :command:`vim`’s builtin manpage support::
 
     set keywordprg=:Man
 
-Don’t continually update screen when executing non-interactive commands::
+Don’t continually update the screen when executing non-interactive commands::
 
     set lazyredraw
 
@@ -257,7 +259,7 @@ Disable line numbering by default, but `not in the GUI <gui-linenumbers>`_::
 
     set nonumber
 
-Set an upper limit to the popup menu, as full screen height “feels” quite
+Set an upper limit to the popup menu, as full screen height *feels* quite
 unusable::
 
     if has('insert_expand')
@@ -291,7 +293,7 @@ encoding for pipes::
         set noshelltemp
     endif
 
-Make indentation always use user’s defined width::
+Make indentation always honour the user defined width::
 
     set shiftround
 
@@ -299,12 +301,12 @@ The *vast* majority of files I edit expect indentation to be four spaces::
 
     set shiftwidth=4
 
-Disable :command:`vim`’s intro message, which would be displayed if
-:repo:`vim-startify <mhinz/vim-startify>` is ever removed::
+Disable :command:`vim`’s intro message::
 
     set shortmess+=I
 
-Don’t show ``ins-completion-menu`` messages, they’re obvious from context::
+Don’t show ``ins-completion-menu`` messages, they’re obvious from context and
+the use of menu completion::
 
     set shortmess+=c
 
@@ -322,8 +324,8 @@ Always display partial commands::
         set showcmd
     endif
 
-Make completion popups show complete matches which can often be used as call
-tip::
+Make completion popups show complete matches that may include call tips and
+other useful information::
 
     set showfulltag
 
@@ -343,12 +345,12 @@ changes the statusline to indicate mode::
 
 .. _set-smartcase:
 
-Make searches case in sensitive when an upper case character is typed, working
-in conjunction with `ignorecase <set-ignorecase>`_::
+Make searches case insensitive when an upper case character is typed, as an
+addition to `ignorecase <set-ignorecase>`_::
 
     set smartcase
 
-Pretend that :kbd:`<Tab>` is four spaces::
+Make insert mode :kbd:`<Tab>` perform indentation aware movement::
 
     set softtabstop=4
 
@@ -362,7 +364,7 @@ with :kbd:`zg`::
         execute 'set spelllang=' . tolower(s:lang)
     endif
 
-Prefer horizontal splits toward the bottom of the screen::
+Prefer making horizontal splits toward the bottom of the screen::
 
     set splitbelow
 
@@ -370,7 +372,7 @@ Prefer horizontal splits toward the bottom of the screen::
 
     set splitright
 
-Don’t jump to the start of line when changing buffers or issuing linewise
+Don’t jump to the start of a line when changing buffers or issuing linewise
 edits::
 
     set nostartofline
@@ -469,7 +471,7 @@ Allow moving to “empty” blocks in visual block mode::
     endif
 
 Allow moving over lines with :kbd:`<Left>` and :kbd:`<Right>` in normal,
-visual, insert and replace::
+visual, insert and replace modes::
 
     set whichwrap+=<,>,[,]
 
@@ -489,14 +491,14 @@ Ignore case when completing files::
 .. note::
 
     It is a real shame this doesn’t honour the ``smartcase`` configuration and
-    style.  The behaviour of this option is much closer to the less useful — in
+    style.  The behaviour of this option is closer to the less useful — in
     my eyes — ``ignorecase``.
 
-Insert longest common match by default::
+Insert longest common match when completing::
 
     set wildmode^=longest:full
 
-Use fancy Unicode characters to show for `wrapped lines <breakindentopt>`_::
+Set string to show `wrapped lines <breakindentopt>`_::
 
     if has('linebreak')
         let &showbreak='» '

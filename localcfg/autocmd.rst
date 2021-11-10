@@ -48,8 +48,7 @@ Automatically :command:`chmod +x` shell scripts::
 
 .. note::
 
-    Shelling out to :command:`chmod` is a lazy way to support the user’s
-    :manpage:`umask(2)` setting without having to resort to craziness with
+    This shells out to :command:`chmod` as a lazy way to avoid craziness with
     ``getfperm()`` and ``setfperm()``
 
 Jump to the last known cursor position if possible::
@@ -63,15 +62,12 @@ Jump to the last known cursor position if possible::
 
 .. note::
 
-    Doesn’t restore saved position for :command:`git` buffers as that tends
-    to not be useful.  If you are re-editing a :command:`git` buffer where
-    it would be useful, such as when issuing a :command:`git commit
-    --amend`, you can always jump manually using the ``'"`` mark.
+    Doesn’t restore saved position for :command:`git` buffers as that tends to
+    not be useful.  If you are re-editing a :command:`git` buffer where it would
+    be useful, such as when issuing a :command:`git commit --amend`, you can
+    always jump manually using the ``'"`` mark.
 
-Make stdin buffers temporary by default.  Potentially dangerous as it
-could cause data loss, but I only use them this way.
-
-::
+Make ``stdin`` buffers temporary by default::
 
         autocmd StdinReadPost * set buftype=nofile
 
@@ -157,10 +153,10 @@ Search for project specific :file:`vimrc` and support files::
 
 .. note::
 
-    The reason we’re storing project specific files deep in
-    ``g:vim_data_dir`` instead of under the project itself is so that we
-    need not concern ourselves with the security implications of remote
-    :file:`vimrc` snippets from random users and projects.
+    The reason we’re storing project specific files deep in ``g:vim_data_dir``
+    instead of under the project itself is so that we need not concern ourselves
+    with the security implications of remote :file:`vimrc` snippets from random
+    users and projects.
 
 Add command to more easily edit the project specific files::
 

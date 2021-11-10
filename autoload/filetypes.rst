@@ -19,7 +19,7 @@ Insert a `X-Advice header`_ above the first non-black line::
 
     This only works when your buffer contains headers, such as when neomutt_’s
     ``edit_headers`` option is set.  If your buffer doesn’t contain headers,
-    then this will simply insert a body line to your email.
+    then this will simply insert a body line in to your email.
 
 Insert a |git| trailer::
 

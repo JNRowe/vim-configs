@@ -1,7 +1,7 @@
 ``autoload`` - On-demand loaded files
 =====================================
 
-The files under this directory are for autoload use.
+The files under this directory are for :command:`vim`’s ``autoload`` use.
 
 Contents
 --------

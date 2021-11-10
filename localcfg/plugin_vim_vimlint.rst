@@ -9,6 +9,6 @@ I prefer quickfix integration::
 
     let g:vimlint#config.quiet = v:true
 
-… and need a push to use ``abort``::
+… and need a push to remember to use ``abort``::
 
     let g:vimlint#config.func_abort = v:true

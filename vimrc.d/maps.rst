@@ -14,9 +14,9 @@ Set up map to quickly move among buffers::
 
     I *love* ``hidden``, as it really suits the way I work.  However, it also
     means I occasionally have to skip through things I don’t care about in
-    ``:bnext`` and I don’t love that.  The above function skips the buffers
-    I wouldn’t care about and provides a more useful *to me* version of
-    buffer cycling.
+    ``:bnext``, and I don’t love that.  The above mapping skips the buffers
+    I wouldn’t care about and provides a more useful *to me* version of buffer
+    cycling.
 
 I hate you *so* much right now::
 
@@ -38,7 +38,7 @@ Navigate tags with keys I find less annoying::
     noremap <C-S-Left> <C-T>
     noremap <C-S-Right> <C-]>
 
-Begin new line from anywhere::
+Begin new line easily from within insert mode::
 
     inoremap <S-CR> <C-o>o
     inoremap <C-CR> <C-o>O
@@ -62,10 +62,10 @@ Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 .. note::
 
     This makes so much sense that it is even described in the ``Y`` help
-    text, and excellently describes the *benefit* of breaking backwards
-    compatibility.
+    text, and excellently describes the *benefit* that would come from breaking
+    backwards compatibility.
 
-Re-grab selection after {de,in}dent for simpler repeating::
+Re-grab selection after {de,in}dent for easier repeating::
 
     vnoremap < <gv
     vnoremap > >gv
@@ -100,10 +100,11 @@ Utility function to choose between ninja_ and make_ for builds::
 
 .. note::
 
-    samurai_ is a :command:`ninja` reimplementation that turns up on
-    a few machines I use.
+    samurai_ is a :command:`ninja` reimplementation that turns up on a few
+    machines I use.
 
-Function keys are for executing common quick commands::
+Add :kbd:`<F10>` build bindings that are muscle memory reminders of my
+childhood::
 
     nnoremap <F10> :call <SID>call_build()<CR>
     nnoremap <S-F10> :call <SID>call_build('check')<CR>
@@ -117,7 +118,7 @@ Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
 .. _window-management-maps:
 
-Window management::
+Maps to jump Window management::
 
     nnoremap <C-w><Bar> <C-w>v
     nnoremap <C-w>- <C-w>s

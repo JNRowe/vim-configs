@@ -6,7 +6,7 @@
 .. image:: /.static/vim_airline_powerlineish.png
    :alt: powerlineish theme screenshot
 
-Attempt to cache highlighting groups changes::
+Attempt to cache highlighting group changes::
 
     let g:airline_highlighting_cache = v:true
 
@@ -50,8 +50,8 @@ Configure symbols for :command:`gvim`::
 
 .. note::
 
-    The test ``NF`` is to enable less common replacements that may only be
-    available with the nerd-fonts_ packages.
+    The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
+    a font if available.
 
 .. include:: ../.includes/fancy_symbols.rst
 
@@ -78,9 +78,8 @@ Only use the extensions I actually want::
 
 .. attention::
 
-    This requires some vigilance over updates for finding fancy new toys,
-    but surely you’re not just blinding grabbing repositories from GitHub
-    anyway…
+    This requires some vigilance over updates for finding fancy new toys, but
+    surely you’re not just blinding grabbing repositories from GitHub anyway…
 
 Enable :repo:`ale <dense-analysis/ale>` extension::
 
@@ -99,12 +98,12 @@ Use simple statusline for quickfix windows::
         let g:airline_extensions += ['quickfix']
     endif
 
-Enable |git| extension::
+Enable |git| extension, if possible::
 
     if executable('git')
         let g:airline_extensions += ['branch', 'hunks']
 
-… truncate all but the “basename” of branch names::
+… truncate all but the :command:`basename`-equivalent of branch names::
 
         let g:airline#extensions#branch#format = 2
 
@@ -114,7 +113,7 @@ Enable |git| extension::
             let g:airline#extensions#hunks#hunk_symbols = ['➕ ', ' ', '➖ ']
         endif
 
-… don’t display symbol and count when zero::
+… don’t display symbol and count when there are no changes::
 
         let g:airline#extensions#hunks#non_zero_only = v:true
 

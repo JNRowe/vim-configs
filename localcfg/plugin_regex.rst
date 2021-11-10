@@ -1,7 +1,7 @@
 ``localcfg/plugin_regex.vim``
 =============================
 
-Add completion based on installed languages::
+Only complete on installed languages::
 
     if has('cmdline_compl')
         function! s:regex_complete(arglead, cmdline, cursorpos) abort

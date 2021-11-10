@@ -1,7 +1,8 @@
 ``vimrc.d/dein.vim``
 ====================
 
-Make the :repo:`dein <Shougo/dein.vim>` submodule available to :command:`vim`::
+Make the :repo:`dein.vim <Shougo/dein.vim>` :command:`git` submodule available
+to :command:`vim`::
 
     set runtimepath+=~/.vim/external/dein.vim/
 
@@ -29,7 +30,7 @@ If possible, support `system notifications`_:
         let g:dein#notification_icon = '~/.vim/icons/editor.svg'
     endif
 
-Handle initial plugin configuration::
+Handle initial plugin setup::
 
     if dein#load_state(g:dein_state_dir)
         call dein#begin(

@@ -7,14 +7,14 @@ they’re useful to you too, or — better yet — you’ll spot *and* fix a bug
 .. image:: /.static/hero.png
    :alt: Sample screenshot of configuration
 
-It uses features introduced in version 8.0, but should work with later
-versions.  It will *not* work with |neovim|, and that is unlikely to change in
-the near future.
+It uses features introduced in :ref:`version 8.0 <supported-vim-version>`, but
+should work with later versions.  It will *not* work with |neovim|, and that is
+unlikely to change in the near future.
 
-If you want a rambling backstory, see the :doc:`background <background>`
-document.
+If you want a rambling backstory, see the :doc:`background document
+<background>`.
 
-If you find any problems with the files in this repository either file an
+If you find any problems with the files in this repository please either file an
 |issue|, or drop me an |mail|.  However, please do not report problems when
 using |neovim|, pull requests are fine though.
 
@@ -34,8 +34,8 @@ much to you:
 
 Scan over the generated ``.vim`` files and figure out what you wish to do with
 them.  The choices are: run with it, override some of them with your own
-``~/.vimrc``, or — most likely — to simply cherry pick the parts of you find
-least offensive.
+``~/.vimrc``, or — most likely — to simply cherry pick the parts you find least
+offensive.
 
 Contents
 --------

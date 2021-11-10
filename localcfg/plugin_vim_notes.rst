@@ -43,7 +43,7 @@ Find a markdown processor::
         endif
     endfor
 
-I prefer the exact behaviour of :ref:`vim-textobj-quote
-<vim-textobj-quote-plugin>`::
+I prefer using :ref:`vim-textobj-quote <vim-textobj-quote-plugin>` as it works
+across filetypes::
 
     let g:notes_smart_quotes = v:false

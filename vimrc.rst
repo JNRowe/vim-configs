@@ -62,14 +62,15 @@ calls.  In both cases, output will be written to :file:`vim.prof` under
         endif
     endif
 
-Pull in semi-private local settings.  This is only for locally required
-settings while reading this file.
-
-::
+Pull in semi-private local settings::
 
     silent runtime! vimrc.pre
 
-Pull in remaining configs::
+.. caution::
+
+    This should only be used for settings required while reading *this* file.
+
+Pull in remaining configuration files::
 
     runtime vimrc.d/paths.vim  " *Must* be early
 

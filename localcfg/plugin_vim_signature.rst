@@ -7,8 +7,8 @@
         finish
     endif
 
-This replaces my custom info/warn/error sign code with [1-3] markers, basically
-just a convenience because I'm really used to the icons.  See
+This replaces my custom info/warn/error sign code with [1-3] markers, which is
+basically just a convenience because I'm really used to the icons.  See
 ``c150ea3da3effcdc4043f55aac6129b0df99d77f`` for the original idea, although it
 has changed massively before we made it here.
 

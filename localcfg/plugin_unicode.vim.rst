@@ -7,7 +7,8 @@
 
 .. tip::
 
-    If for some reason you want the default output ``:ascii`` does that.
+    If for some reason you want the default :kbd:`ga` output ``:ascii`` still
+    does that.
 
 Store data in |XDG basedir| compliant location::
 

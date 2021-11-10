@@ -22,7 +22,7 @@ Use my custom maps::
             \ ':GitGutter' . s:cmd . '<CR>'
     endfor
 
-If you have more than 100 edits you probably need to commit!
+If you have more than one-hundred edits you need to commit, not look at symbols!
 
 ::
 
@@ -58,7 +58,7 @@ output::
     highlight GitGutterDelete                     guifg=#ef2929
     highlight GitGutterChangeDelete guibg=#ef2929 guifg=#fce94f
 
-Use fancy icons for signs if possible::
+Use fancy icons for signs, if possible::
 
     if has('gui_running')
         for [s:icon, s:signs] in items({

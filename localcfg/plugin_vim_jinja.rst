@@ -6,7 +6,7 @@ Disable automatic detection as it occasionally produces false positives::
     let g:htmljinja_disable_detection = v:true
     let g:htmljinja_disable_html_upgrade = v:true
 
-Add binding to enable jinja_ support in the current file::
+Add binding to enable rough jinja_ support in the current file::
 
     nmap <buffer> <LocalLeader>j
         \ :call SyntaxRange#Include('{{', '}}', 'jinja')<CR>

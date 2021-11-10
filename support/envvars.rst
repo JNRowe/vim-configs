@@ -1,7 +1,8 @@
 Environment variables
 =====================
 
-These configs can be influenced by the following environment variables.
+These configuration files can be influenced by the following environment
+variables.
 
 .. envvar:: LANG
 

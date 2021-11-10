@@ -10,5 +10,11 @@ Treat :wikipedia:`MHTML` documents as |HTML|::
 
 .. note::
 
-    This is hardly a good interface for editing ``.mht{,ml}`` files, but for my
-    use case of a quick edit it works fine.
+    This overrides detection for ``*.mhtml`` files as :command:`vim` will select
+    the ``mason`` filetype(which I’ve never seen in the wild).
+
+.. note::
+
+    This is hardly a good interface for editing ``.mht{,ml}`` files given
+    that their contents are :abbr:`MIME (Multipurpose Internet Mail
+    Extension)` encoded, but for my use case of a quick edit it works fine.

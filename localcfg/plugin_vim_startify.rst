@@ -3,14 +3,14 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Don’t run on startup so that we can resume previous editing session::
+Don’t run on startup so that we can resume previous editing session with ease::
 
     let g:startify_disable_at_vimenter = v:true
 
 .. note::
 
-    A simple shell alias with ``vim +Startify`` is a nice way to make
-    a command to open at the startify window.
+    A simple shell alias with ``vim +Startify`` is a simple way to make
+    :command:`vim` open at the startify window.
 
 Use a smaller decoration in the header, so that the important data is
 immediately visible in short windows::

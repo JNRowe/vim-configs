@@ -1,8 +1,8 @@
 ``localcfg/plugin_vim_ledger.vim``
 ==================================
 
-Use a shorter than default column width to allow for larger expressions
-without pushing lines too long::
+Use a lower than default column width to allow for larger expressions without
+lines growing too much::
 
     let g:ledger_align_at = 44
 

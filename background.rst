@@ -18,7 +18,7 @@ Emacsen
 '''''''
 
 ``emacs``, or more truthfully AmigaOS’s MicroEMACS_, was my first real editor.
-I loved it.  Absolutely. Loved. It.
+I loved it.  *Absolutely. Loved. It.*
 
 You have to understand that prior to finding it I’d basically only seen what
 I would describe now as Notepad-esque things.  MicroEMACS_ was a breath of fresh
@@ -35,7 +35,7 @@ languages, and it just felt somehow really dated.
 Most of that has changed.  `GNU Emacs`_ can look and feel modern with a little
 effort.  I still use it from time to time when working at a co-worker’s desk,
 and occasionally consider switching back to it full time.  In all honesty, it
-is probably only org-mode_ and proportional fonts for comments that make me
+is probably only org-mode_ and proportional fonts for code comments that make me
 want to switch back.
 
 .. tip::
@@ -62,7 +62,7 @@ Sublime Text
 Every now and then I play with `Sublime Text`_, but in the back of my mind
 I know I won’t settle in to it.
 
-The very idea of a non-Free(note the capital F) text editor repulses me.  When
+The very idea of a non-Free(note the capital “F”) text editor repulses me.  When
 you spend the amount of time *using* a tool that I do, then the thought that
 tomorrow it won’t work is truly shocking [#]_.
 

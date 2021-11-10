@@ -1,7 +1,8 @@
 ``localcfg/plugin_vim_fugitive.vim``
 ====================================
 
-Add map to jump to ``git`` project root::
+Add map to change directory to ``git`` project root using
+:repo:`vim-projectionist <tpope/vim-projectionist>`::
 
     nmap <silent> <C-p> :Gcd<CR>
 

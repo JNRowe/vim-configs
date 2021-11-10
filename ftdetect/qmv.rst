@@ -1,8 +1,8 @@
 ``ftdetect/qmv.vim``
 ====================
 
-Switch directory to shell’s current directory when editing renameutils_
-buffers to make completion work correctly::
+Change to shell’s current directory when editing renameutils_ buffers to make
+completion work correctly in the face of ``'autochdir'``::
 
     " vint: -ProhibitAutocmdWithNoGroup
     autocmd BufRead $TMP/qmv* cd $PWD | set noautochdir

@@ -3,7 +3,7 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Enable for |reST| and text filetypes::
+Enable for |reST| and other largely prose filetypes::
 
     augroup jnrowe_vim_textobj_quote
         autocmd!

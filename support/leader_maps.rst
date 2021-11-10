@@ -1,8 +1,9 @@
 Leader maps
 ===========
 
-This set of config files layers its ``<Leader>`` and ``<LocalLeader>`` maps
-using :ref:`keymaps#mnemonic_map() <mnemonic-map>`.
+This set of configuration files layers its ``<Leader>`` and ``<LocalLeader>``
+maps using :ref:`keymaps#mnemonic_map() <mnemonic-map>`.  The configured
+bindings are:
 
 =========  =====  ======  ====================================================
 Key        Local  Buffer  Maps

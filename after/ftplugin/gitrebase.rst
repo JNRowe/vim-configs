@@ -26,5 +26,4 @@ supports directions::
 .. note::
 
     This obviously shadows *immensely* useful bindings, but they aren’t very
-    useful in this particular filetype because of the :command:`git rebase`
-    template.
+    useful in this instance because of the :command:`git rebase` template.
