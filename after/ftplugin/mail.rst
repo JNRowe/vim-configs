@@ -28,7 +28,7 @@ Kill from current line to signature, as a quick way to scrub large chunks of
 quoted text::
 
     function! s:kill_to_signature() abort
-        let l:sig = search('^-- $', 'cnW')
+        let l:sig = search('^-- $', 'nW')
         if l:sig != 0
             execute line('.') . ',' . (l:sig - 1) . 'd "_'
         else
