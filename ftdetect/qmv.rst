@@ -2,7 +2,7 @@
 ====================
 
 Change to shell’s current directory when editing renameutils_ buffers to make
-completion work correctly in the face of ``'autochdir'``::
+completion work better::
 
     " vint: -ProhibitAutocmdWithNoGroup
     autocmd BufRead $TMP/qmv* cd $PWD | set noautochdir

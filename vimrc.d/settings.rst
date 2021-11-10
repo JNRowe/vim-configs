@@ -3,16 +3,6 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Change to current buffer’s directory::
-
-    set autochdir
-
-.. note::
-
-    Many people seem to really dislike this option, but it seems to really
-    suit the way I work.  If I want paths anchored from my project root
-    I can always switch to the build terminal and open them from there.
-
 I want backups, but not in the project tree and I never want to accidentally
 overwrite a :command:`cp --link` tree::
 
