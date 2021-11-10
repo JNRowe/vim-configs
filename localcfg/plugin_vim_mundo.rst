@@ -1,7 +1,7 @@
 ``localcfg/plugin_vim_mundo.vim``
 =================================
 
-::
+Use my custom maps::
 
     nnoremap <LocalLeader># :MundoToggle<CR>
 
