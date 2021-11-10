@@ -99,6 +99,12 @@ Only highlight cursor line in active window::
         autocmd InsertEnter * setlocal nocursorline
         autocmd InsertLeave * setlocal cursorline
 
+Remove ``/`` from filename matches so that :kbd:`:Exconfig <C-r><C-f>` [#]_
+works on plugin names in :doc:`dein plugin configuration <../dein>`::
+
+        autocmd BufEnter ~/.vim/dein.rst set isfname-=/
+        autocmd BufLeave ~/.vim/dein.rst set isfname+=/
+
 Search for project specific :file:`vimrc` and support files::
 
         let s:project_env_dir = g:vim_data_dir . '/project_env/'
@@ -177,3 +183,8 @@ Add command to more easily edit the project specific files::
 ::
 
     augroup END
+
+.. rubric:: Footnotes
+
+.. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
+       supported via :repo:`vim-projectionist <tpope/vim-projectionist>`.

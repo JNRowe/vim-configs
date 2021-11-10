@@ -1,13 +1,6 @@
 ``dein.vim`` - ``dein.vim`` plugins configuration
 =================================================
 
-.. tip::
-
-    Modeline is set so that :kbd:`:Exconfig <C-r><C-f>` works on plugin names
-    throughout this file [#]_::
-
-        " vim: set isfname-=/:
-
 These are all hosted on GitHub_ [#]_.  You should try at least a few of them,
 they may make your life far simpler!
 
@@ -2166,8 +2159,6 @@ by deletion.
 
 .. rubric:: Footnotes
 
-.. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
-       supported via :repo:`vim-projectionist <tpope/vim-projectionist>`.
 .. [#] I tend to ignore plugins that aren’t available in this manner, because
        the effort required to manage them otherwise exceeds their usefulness.
 
