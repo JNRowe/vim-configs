@@ -64,6 +64,9 @@ Enable common — to me — highlighting support::
     \   vim: ['vim', ],
     \ }
 
+.. image:: /.static/rst_code_block.png
+   :alt: Example of code block highlighting
+
 .. todo::
 
     This should probably be configured more locally as it includes the full
