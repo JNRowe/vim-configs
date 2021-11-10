@@ -168,7 +168,7 @@ Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
 
     if has('conceal')
-        nnoremap <silent> <S-Space>
+        nnoremap <silent> <M-Space>
             \ :let &conceallevel = &conceallevel == 0 ? 2 : 0<CR>
     endif
 
