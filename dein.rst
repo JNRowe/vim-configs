@@ -2173,8 +2173,8 @@ by deletion.
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
+.. _wordnet: http://wordnet.princeton.edu/
 .. _Readline: http://www.gnu.org/software/readline/
 .. _this commit:
     https://github.com/tpope/vim-sensible/commit/2c57c5f4c5446865db532064c763a6a67db2d0bb
 .. _zig: https://ziglang.org/
-.. _wordnet: http://wordnet.princeton.edu/
