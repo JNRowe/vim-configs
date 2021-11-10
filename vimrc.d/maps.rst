@@ -33,11 +33,6 @@ I hate you *so* much right now::
     interested in that argument.  This is entirely about forcing me to use text
     objects more often.
 
-Navigate tags with keys I find less annoying::
-
-    noremap <C-S-Left> <C-T>
-    noremap <C-S-Right> <C-]>
-
 Begin new line easily from within insert mode::
 
     inoremap <C-CR> <C-o>o
