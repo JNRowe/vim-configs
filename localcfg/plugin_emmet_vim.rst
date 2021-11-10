@@ -27,7 +27,7 @@ Enable automatically where it will be useful::
 
     if has('autocmd')
         augroup jnrowe_emmet
-            autocmd FileType css,html,xml EmmetInstall
+            autocmd FileType css,html,xml,xslt EmmetInstall
         augroup END
     endif
 
