@@ -1,5 +1,5 @@
-``dein.vim`` - ``dein`` plugins configuration
-=============================================
+``dein.vim`` - ``dein.vim`` plugins configuration
+=================================================
 
 .. tip::
 

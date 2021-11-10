@@ -1,5 +1,5 @@
-``localcfg/vim-visual-multi``
-=============================
+``localcfg/plugin_vim_visual_multi.vim``
+========================================
 
 Store registers across sessions::
 

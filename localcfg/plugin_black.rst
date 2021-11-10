@@ -1,5 +1,5 @@
-``localcfg/plugin_black``
-=========================
+``localcfg/plugin_black.vim``
+=============================
 
 Install :command:`black` in |XDG basedir| compliant location::
 

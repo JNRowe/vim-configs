@@ -1,5 +1,5 @@
-``localcfg/plugin_csv.vim``
-===========================
+``localcfg/plugin_csv.vim.vim``
+===============================
 
 When guessing delimiters fails assume comma::
 

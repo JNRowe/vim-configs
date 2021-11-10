@@ -1,5 +1,5 @@
-``localcfg/spell``
-==================
+``localcfg/spell.vim``
+======================
 
 .. include:: ../.includes/scriptencoding.rst
 
