@@ -95,7 +95,7 @@ If a wordlist is available use it as the completion dictionary::
         set dictionary^=/usr/share/dict/words
     endif
 
-.. note::
+.. tip::
 
     On Debian_ systems this file tends to be provided by packages from the
     wordlist_ project(see ``aptitude search '~Pwordlist'`` for options).  On
@@ -334,7 +334,7 @@ hint::
 
     set showmatch
 
-.. note::
+.. tip::
 
     You can adjust the “flash time” with `'matchtime' <matchtime>`_.
 

@@ -56,6 +56,6 @@ Insert a modeline on the last line::
 
     command! -bang Modeline call misc#modeline_stub(<bang>0)
 
-.. note::
+.. tip::
 
     When executed with ``!`` write a fuller and more verbose modeline.

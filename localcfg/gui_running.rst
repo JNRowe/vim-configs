@@ -24,7 +24,7 @@ I don’t use the toolbar, and rarely want the menu::
 
 … but, add :ref:`maps for quick toggle <gui-toggles>`.
 
-.. note::
+.. tip::
 
     The repeated use of ``guioptions`` above is required because using multiple
     characters with ``-=`` will only work if characters are consective, which

@@ -1783,7 +1783,7 @@ Sane defaults for :command:`vim`, tracking this repo might make your
         \ 'rev': 'v1.2',
     \ })
 
-.. note::
+.. attention::
 
     This is pinned as it can massively affect functionality, see
     tpope/vim-sensible@2c57c5f4 for an example.

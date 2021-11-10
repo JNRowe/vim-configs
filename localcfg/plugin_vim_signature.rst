@@ -12,7 +12,7 @@ basically just a convenience because I'm really used to the icons.  See
 ``c150ea3da3effcdc4043f55aac6129b0df99d77f`` for the original idea, although it
 has changed massively before we made it here.
 
-.. tip::
+.. note::
 
     Key values are from a US :kbd:`<S-|digit|>`, and do not change when using
     other layouts [#]_.

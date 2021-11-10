@@ -24,7 +24,7 @@ Open location list when errors exist::
 
     let g:ale_open_list = 1
 
-.. note::
+.. caution::
 
     ``ale`` doesn’t support using ``v:true`` as ``1``.
 

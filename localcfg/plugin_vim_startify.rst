@@ -7,7 +7,7 @@ Don’t run on startup so that we can resume previous editing session with ease:
 
     let g:startify_disable_at_vimenter = v:true
 
-.. note::
+.. tip::
 
     A simple shell alias with ``vim +Startify`` is a simple way to make
     :command:`vim` open at the startify window.

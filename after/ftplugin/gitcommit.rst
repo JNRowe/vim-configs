@@ -17,7 +17,7 @@ Configure maps to insert common metadata in to commit messages::
             \ ' :call filetypes#add_git_trailer("' . s:type . '")<CR>'
     endfor
 
-.. note::
+.. tip::
 
     This adds two bindings for each type.  For example, using ``[trailer]a``
     with add an ``Acked-by`` trailer with the :ref:`default user

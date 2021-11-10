@@ -55,7 +55,7 @@ In the meantime should you have questions feel free to ask by |mail|.
 I genuinely do enjoy replying to them, as I often learn something new along the
 way.
 
-.. note::
+.. tip::
 
     **Co-workers**:  You can find recordings of old sessions on µfilm under
     ``JNRowe/vim``, and you should feel free to ask :command:`vim` questions by

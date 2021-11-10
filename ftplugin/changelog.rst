@@ -8,7 +8,7 @@ For old fashioned projects with hand crafted :file:`ChangeLog` files,
 
     let g:changelog_username = g:user_email
 
-.. note::
+.. tip::
 
     You can also fiddle with the ``g:changelog_new_date_format`` and
     ``g:changelog_new_entry_format`` to make it match various different formats

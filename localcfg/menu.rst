@@ -125,7 +125,7 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
         \ '&theme': g:xdg_config_dir . '/neomutt/colour_' . $TERM . '.rc',
     \ })
 
-.. note::
+.. tip::
 
     I use `per-terminal themeing for neomutt`_ by adding ``source
     $my_cfgdir/colour_$TERM.rc`` to my main config file.  This makes it easier
