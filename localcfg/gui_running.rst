@@ -89,7 +89,10 @@ Add command to switch text size quickly::
 
     For minor size changes it is often easier to use ``set guifont=<Tab>``,
     while wishing that :kbd:`<C-{a,x}>` worked to {in,de}crement the number in
-    the command line too.
+    the command line too.  If you’re super lazy — like me — and are simply
+    trying to find the appropriate size for a new display then using ``:set
+    guifont=<Tab><C-f>`` to open the command window will allow you to use
+    :kbd:`<C-{a,x}>` to fiddle with sizes.
 
 Include non-standard server names in the window title::
 
