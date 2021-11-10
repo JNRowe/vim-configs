@@ -154,14 +154,6 @@ Help related maps::
 
     nnoremap <silent> [Help]c :helpclose<CR>
 
-Perform word-ish searches in a new window, so we can maintain position in the
-current window::
-
-    for s:k in ['*', '#']
-        execute 'nnoremap <C-w>' . s:k  . ' <C-w>s' . s:k
-        execute 'nnoremap <C-w>g' . s:k  . ' <C-w>sg' . s:k
-    endfor
-
 I don't use :command:`vi` movement keys in command-line mode, so we can use them
 for shortcuts::
 
