@@ -1777,8 +1777,8 @@ Sane defaults for :command:`vim`, tracking this repo might make your
 
 .. attention::
 
-    This is pinned as it can massively affect functionality, see
-    tpope/vim-sensible@2c57c5f4 for an example.
+    This is pinned as it can massively affect functionality, see `this commit`_
+    for an example.
 
 ``vim-sleuth``
 ''''''''''''''
@@ -2174,5 +2174,7 @@ by deletion.
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
 .. _Readline: http://www.gnu.org/software/readline/
+.. _this commit:
+    https://github.com/tpope/vim-sensible/commit/2c57c5f4c5446865db532064c763a6a67db2d0bb
 .. _zig: https://ziglang.org/
 .. _wordnet: http://wordnet.princeton.edu/
