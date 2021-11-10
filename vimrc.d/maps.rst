@@ -40,8 +40,13 @@ Navigate tags with keys I find less annoying::
 
 Begin new line easily from within insert mode::
 
-    inoremap <S-CR> <C-o>o
-    inoremap <C-CR> <C-o>O
+    inoremap <C-CR> <C-o>o
+    inoremap <S-CR> <C-o>O
+
+.. tip::
+
+    The mnemonic here is :kbd:`<Shift>` opens *above* and :kbd:`<Ctrl>` open
+    *below*, much like their position on many keyboards.
 
 Make :kbd:`<C-g>` verbose by default::
 
