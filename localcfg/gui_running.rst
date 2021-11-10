@@ -64,16 +64,21 @@ with a cleaner patch, then I’ll immediately look for replacements.
 ::
 
     for s:name in ['Inconsolata', 'Consolas', 'monospace']
-        if len(systemlist('fc-list "' . s:name . ' NF"')) != 0
+        if len(systemlist('fc-list ' . shellescape(s:name . ' NF'))) != 0
             let g:font_family = s:name . ' NF'
             break
-        elseif len(systemlist('fc-list "' . s:name . '"')) != 0
+        elseif len(systemlist('fc-list ' . shellescape(s:name))) != 0
             let g:font_family = s:name
             break
         endif
     endfor
     let g:font_size =  13
     let &guifont = g:font_family . ' ' . g:font_size
+
+.. note::
+
+    The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
+    a font if available.
 
 Add command to switch text size quickly::
 
@@ -134,3 +139,4 @@ between GUI and non-GUI :command:`vim`::
     a nearly three second penalty for recaching without this kludge.
 
 .. _Inconsolata: http://www.levien.com/type/myfonts/inconsolata.html
+.. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
