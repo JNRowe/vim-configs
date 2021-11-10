@@ -21,8 +21,8 @@ Find syntax highlighting in use at the given location::
         let l:groups = []
         for l:id in synstack(l:lnum, l:col)
             let l:groups += [{
-                \ 'high': s:synname(l:id),
-                \ 'tran': s:synname(synIDtrans(l:id)),
+                \ 'hi': s:synname(l:id),
+                \ 'gr': s:synname(synIDtrans(l:id)),
             \ }]
         endfor
         return l:groups
