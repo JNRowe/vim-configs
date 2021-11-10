@@ -283,13 +283,6 @@ Include terminal windows in sessions where possible::
         set sessionoptions+=terminal
     endif
 
-While *marginally* less secure using temporary files allows better handling of
-encoding for pipes::
-
-    if has('filterpipe')
-        set noshelltemp
-    endif
-
 Make indentation always honour the user defined width::
 
     set shiftround
