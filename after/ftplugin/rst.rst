@@ -39,5 +39,6 @@ editing files from a Sphinx_ project.  It is nice being able to :kbd:`gf` when
 in a ``:doc:`` role or ``toctree`` directive::
 
     setlocal suffixesadd+=.rst
+    let b:undo_ftplugin .= '|setlocal suffixesadd<'
 
 .. _Sphinx: http://sphinx-doc.org/
