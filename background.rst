@@ -1,6 +1,12 @@
 Background
 ==========
 
+.. note::
+
+    This document is taken from my notes for a |vim| talk I semi-regulary give.
+    It lacks a little context, but is hopefully helpful in understanding where
+    this repository comes from.
+
 I spend *literally* hours a day using a text editor, and so it matters to me
 that it works well; fast, featureful, and — most importantly of all — stable.
 |vim| fits the bill nicely…
