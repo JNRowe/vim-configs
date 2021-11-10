@@ -59,8 +59,8 @@ rst_epilog = """
 .. |neovim| replace:: `neovim <https://neovim.io/>`__
 .. |reST| replace:: `reST <http://docutils.sourceforge.net/rst.html>`__
 .. |remind| replace:: `remind
-   <http://www.roaringpenguin.com/products/remind>`__
-.. |vim| replace:: `vim <http://www.vim.org/>`__
+   <https://www.roaringpenguin.com/products/remind>`__
+.. |vim| replace:: `vim <https://www.vim.org/>`__
 .. |zsh| replace:: `zsh <https://www.zsh.org/>`__
 """
 

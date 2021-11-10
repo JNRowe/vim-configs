@@ -41,7 +41,7 @@ Ideas
 If I’ve forgotten to include your name I wholeheartedly apologise.  Just drop me
 a mail_ and I’ll update the list!
 
-.. _vim: http://www.vim.org/
+.. _vim: https://www.vim.org/
 .. _neovim: https://neovim.io/
 .. _issue: https://github.com/JNRowe/vim-configs/issues/
 .. _mail: jnrowe@gmail.com
