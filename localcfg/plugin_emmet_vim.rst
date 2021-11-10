@@ -9,15 +9,18 @@ Don’t create global maps::
 
     let g:user_emmet_install_global = v:false
 
-Override locale, and enable jinja_ as |HTML|::
+Override locale::
 
-    let g:iser_emmet_settings = {
+    let g:user_emmet_settings = {
         \ 'variables': {
         \   'locale': 'en-GB',
         \ },
-        \ 'htmljinja': {
-        \   'extends': 'html',
-        \ },
+    \ }
+
+Treat jinja_ as |HTML|::
+
+    let g:user_emmet_settings['htmljinja'] = {
+        \ 'extends': 'html',
     \ }
 
 Enable automatically where it will be useful::
