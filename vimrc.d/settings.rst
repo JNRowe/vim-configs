@@ -202,6 +202,11 @@ Use :command:`vim`’s builtin manpage support::
 
     set keywordprg=:Man
 
+.. note::
+
+    When :ref:`vim-man <vim-man-plugin>` is installed it overrides the ``:Man``
+    command with an enhanced version.
+
 Don’t continually update the screen when executing non-interactive commands::
 
     set lazyredraw

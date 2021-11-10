@@ -1935,6 +1935,8 @@ because you can dump heaps and heaps of custom code you've written in your
         \ 'on_map': {'ov': '_'},
     \ })
 
+.. _vim-man-plugin:
+
 ``vim-man``
 '''''''''''
 
