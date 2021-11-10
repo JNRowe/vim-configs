@@ -26,11 +26,12 @@ This creates |reST| headings using *my* favourite adornments::
 Enable common — to me — highlighting support::
 
     let g:rst_syntax_code_list = {
+    \   'c': ['c', ],
     \   'cpp': ['cpp', 'c++'],
     \   'lisp': ['emacs', 'lisp'],
-    \   'python': ['python'],
+    \   'python': ['python', ],
     \   'sh': ['sh', 'zsh'],
-    \   'vim': ['vim'],
+    \   'vim': ['vim', ],
     \ }
     let g:rst_use_emphasis_colors = v:true
 
