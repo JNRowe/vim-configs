@@ -210,7 +210,7 @@ Place cursor at the end of yanked region::
 
 Add mappings to highlight lines::
 
-    call keymaps#mnemonic_map('Display', {'key': 'D'})
+    call keymaps#mnemonic_map('Display', {'key': 'D', 'modes': 'nv'})
     nnoremap <silent> [Display]lh :call display#add_line_highlight()<CR>
     nnoremap <silent> [Display]lc :call display#clear_line_highlights()<CR>
 
@@ -219,6 +219,14 @@ Add mappings to highlight lines::
     This is extremely useful for showing other people code, and unlike simply
     using linewise visual mode you can maintain the highlights whilst doing
     other things.
+
+Highlight matches for last search only within visual region::
+
+    if has('extra_search')
+        vnoremap <silent> [Display]ms
+        \   :<C-u>execute 'match Search /\%V' . getreg('/') . '\%V/'<CR>
+        nnoremap <silent> [Display]mc :match none<CR>
+    endif
 
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html

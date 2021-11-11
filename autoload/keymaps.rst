@@ -1,7 +1,7 @@
 ``autoload/keymaps.vim``
 ========================
 
-.. function:: mnemonic_map(name: str, buffer: Optional[bool] = False, key: Optional[str], local: Optional[bool] = False, mode: Optional[str] = 'n') -> None
+.. function:: mnemonic_map(name: str, buffer: Optional[bool] = False, key: Optional[str], local: Optional[bool] = False, modes: Optional[str] = 'n') -> None
 
     Mnemonic mapping setup function.
 
@@ -9,7 +9,7 @@
     :param buffer: Maps are specific to the buffer
     :param key: Key to use for map, defaults to first character of ``name``
     :param local: If truthy, use ``LocalLeader`` for map
-    :param mode: Mode to apply map group to
+    :param modes: Modes to apply map group to
 
 ::
 
@@ -18,12 +18,13 @@
         let l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
         let l:key = get(l:extra, 'key', tolower(a:name[0]))
         let l:local = get(l:extra, 'local', v:false) ? 'Local' : ''
-        let l:mode = get(l:extra, 'mode', 'n')
-        execute l:mode . 'noremap ' . l:buffer . ' [' . a:name . '] <Nop>'
-        execute l:mode . 'map ' . l:buffer . ' <' . l:local . 'Leader>'
-        \   . l:key . ' [' . a:name . ']'
-        execute l:mode . 'noremap <silent> [' . a:name . ']? '
-        \   . ':' . l:mode . 'map [' . a:name . ']<CR>'
+        let l:modes = get(l:extra, 'modes', 'n')
+        for l:mode in split(l:modes, '\zs')
+            execute l:mode . 'noremap ' . l:buffer . ' [' . a:name . '] <Nop>'
+            execute l:mode . 'map ' . l:buffer . ' <' . l:local . 'Leader>'
+            \   . l:key . ' [' . a:name . ']'
+        endfor
+        execute 'noremap <silent> [' . a:name . ']? :map [' . a:name . ']<CR>'
     endfunction
 
 .. tip::
