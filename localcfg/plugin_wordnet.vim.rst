@@ -1,14 +1,6 @@
 ``localcfg/plugin_wordnet.vim.vim``
 ===================================
 
-Add map to close wordnet_ window from anywhere::
-
-    function! s:wordnet_close_win() abort
-        if bufnr('__WordNet__') > -1
-            exec bufnr('__WordNet__') . 'bdelete!'
-        endif
-    endfunction
-
 .. _wordnet-vim-custom-maps:
 
 Use my custom maps::
@@ -17,7 +9,7 @@ Use my custom maps::
 
     for [s:key, s:cmd] in [
     \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-    \   ['c', '<SID>wordnet_close_win()'],
+    \   ['c', 'misc#wordnet_close_win()'],
     \ ]
         execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
     endfor
@@ -29,5 +21,3 @@ We don’t care that the dictionary buffer has trailing whitespace::
             autocmd BufNewFile __WordNet__ HideBadWhitespace
         augroup END
     endif
-
-.. _wordnet: https://wordnet.princeton.edu/
