@@ -152,8 +152,7 @@ Help related maps::
 I don't use :command:`vi` movement keys in command-line mode, so we can use them
 for shortcuts::
 
-    cnoremap <C-h> help<Space>
-    cnoremap <C-S-h> vert help<Space>
+    cnoremap <C-h> vert help<Space>
 
 :func:`Ping the cursor position <cursor_ping>` as a visual cue when returning to
 a session::
