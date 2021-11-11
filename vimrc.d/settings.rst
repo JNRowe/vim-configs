@@ -71,8 +71,8 @@ Ask instead of just failing when there are edited buffers and you call
 
     set confirm
 
-Select a *safer* encryption default method if available or warn about
-weakened encryption::
+Select a :vimdoc:`safer encryption method <options.txt#blowfish2>` if available
+or warn about weakened encryption::
 
     if has('cryptv')
         if has('patch-7.4.401')
@@ -85,6 +85,13 @@ weakened encryption::
             set cryptmethod=blowfish
         endif
     endif
+
+.. tip::
+
+    While the built-in encryption support can be useful at times, a better
+    solution is probably to use an external tool that can be accessed outside
+    :command:`vim`.  For instance, gnupg_ which can be supported transparently
+    via :repo:`vim-gnupg <jamessan/vim-gnupg>`.
 
 Highlight the current line, but only `when it will be useful
 <dynamic-cursorline>`_::
@@ -572,6 +579,7 @@ Custom foldtext setting::
     work; whitespace, ``&cms`` |RegEx| escaping(C fex), ``&fdr``, no
     ``scanf()``, &c.
 
+.. _gnupg: https://www.gnupg.org/
 .. _Debian: https://debian.org/
 .. _wordlist: http://wordlist.sourceforge.net/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
