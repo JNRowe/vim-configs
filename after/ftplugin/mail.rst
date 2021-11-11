@@ -11,8 +11,8 @@ in work mail.
 
 ::
 
-    call keymaps#mnemonic_map('Advice', {'buffer': v:true, 'local': v:true})
-
+    call keymaps#mnemonic_map('Advice',
+    \                         {'buffer': v:true, 'key': 'A', 'local': v:true})
     for s:prio in ['perhaps', 'should', 'must']
         for s:due in ['now', 'soon', 'whenever']
             execute 'nnoremap <buffer> <silent> ' .
