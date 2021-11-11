@@ -64,6 +64,7 @@ for role in (
     'pypi',
     'ref',
     'repo',
+    'vimdoc',
     'wikipedia',
 ):
     roles.register_generic_role(role, nodes.comment)

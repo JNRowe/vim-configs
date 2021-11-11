@@ -30,8 +30,8 @@ I hate you *so* much right now::
 .. note::
 
     I’ll add that this isn’t about :kbd:`[hjkl]` purism, I’m truly not
-    interested in that argument.  This is entirely about forcing me to use text
-    objects more often.
+    interested in that argument.  This is entirely about forcing me to use
+    :vimdoc:`text objects <motion.txt#text-objects>` more often.
 
 Begin new line easily from within insert mode::
 
