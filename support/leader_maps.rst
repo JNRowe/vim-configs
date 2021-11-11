@@ -10,6 +10,7 @@ Key        Local  Buffer  Maps
 :kbd:`?`   ❌     ❌      :ref:`vim help <help-custom-maps>`
 :kbd:`\``  ❌     ❌      :ref:`fzf.vim <fzf-vim-custom-maps>`
 :kbd:`a`   ✅     ✅      :ref:`mail filetype <mail-custom-maps>`
+:kbd:`D`   ✅     ❌      :ref:`display tools <display-custom-maps>`
 :kbd:`a`   ✅     ❌      :ref:`ale <ale-custom-maps>`
 :kbd:`b`   ❌     ❌      :ref:`vim-bufmru <vim-bufmru-custom-maps>`
 :kbd:`c`   ❌     ❌      :ref:`calendar <calendar-vim-custom-maps>`

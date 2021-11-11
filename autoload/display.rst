@@ -1,6 +1,35 @@
 ``autoload/display.vim``
 ========================
 
+.. function:: add_line_highlight() -> None
+
+    Highlight line.
+
+::
+
+    highlight link LineHighlight Search
+    function! display#add_line_highlight() abort
+        if !exists('w:line_highlights')
+            let w:line_highlights = []
+        endif
+        let w:line_highlights += [
+        \   matchaddpos('LineHighlight', [line('.'), ], 1000),
+        \ ]
+    endfunction
+
+.. function:: clear_line_highlights() -> None
+
+    Clear highlights created by :func:`add_line_highlight`
+
+::
+
+    function! display#clear_line_highlights() abort
+        for l:id in w:line_highlights
+            call matchdelete(l:id)
+        endfor
+        unlet w:line_highlights
+    endfunction
+
 .. function:: commandballoon(cmd: str) -> List[str]
 
     A helper for simple ``balloonexpr`` usage that simply calls an external

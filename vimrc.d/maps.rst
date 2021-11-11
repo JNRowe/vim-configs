@@ -206,6 +206,20 @@ Place cursor at the end of yanked region::
 
     vmap y yg`]
 
+.. _display-custom-maps:
+
+Add mappings to highlight lines::
+
+    call keymaps#mnemonic_map('Display', {'key': 'D'})
+    nnoremap <silent> [Display]lh :call display#add_line_highlight()<CR>
+    nnoremap <silent> [Display]lc :call display#clear_line_highlights()<CR>
+
+.. tip::
+
+    This is extremely useful for showing other people code, and unlike simply
+    using linewise visual mode you can maintain the highlights whilst doing
+    other things.
+
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
 .. _samurai: https://github.com/michaelforney/samurai
