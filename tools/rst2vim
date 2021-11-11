@@ -94,6 +94,6 @@ if len(code_blocks) >= 1:
     with open(args.output, 'w') as f:
         for block in code_blocks:
             f.write(block.astext() + '\n')
-    if args.r:
+    if args.r and dl.list:
         with open(args.r, 'w') as f:
             f.write(f'{args.output}: {" ".join(dl.list)}\n')
