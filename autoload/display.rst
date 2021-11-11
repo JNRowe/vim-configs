@@ -9,13 +9,21 @@
 
 ::
 
-    highlight link LineHighlight Search
+    highlight link LineHighlightPrefix Search
+    highlight link LineHighlightText Visual
     function! display#add_line_highlight() abort
         if !exists('w:line_highlights')
             let w:line_highlights = []
         endif
+        if getline('.')[0] =~# '\s'
+            let w:line_highlights += [
+            \   matchadd('LineHighlightPrefix', '\%' . line('.') . 'l^\s\+',
+            \            1000),
+            \ ]
+        endif
         let w:line_highlights += [
-        \   matchaddpos('LineHighlight', [line('.'), ], 1000),
+        \   matchadd('LineHighlightText', '\%' . line('.') . 'l^\s*\zs.*$',
+        \            1000),
         \ ]
     endfunction
 
