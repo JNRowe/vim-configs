@@ -17,6 +17,22 @@
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction
 
+.. function:: conceal_toggle() -> None
+
+    Toggle conceal on and off.
+
+::
+
+    function misc#conceal_toggle() abort
+        if &conceallevel == 0 && get(w:, 'orig_conceallevel')
+            let &conceallevel = w:orig_conceallevel
+            unlet w:orig_conceallevel
+        else
+            let w:orig_conceallevel = &conceallevel
+            set conceallevel=0
+        endif
+    endfunction
+
 .. function:: gethighlightgroup(mark: Optional[str]) -> List[Dict[str, str]]
 
     Find syntax highlighting in use at the given location.
