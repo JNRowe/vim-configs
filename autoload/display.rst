@@ -30,7 +30,7 @@
         unlet w:line_highlights
     endfunction
 
-.. function:: commandballoon(cmd: str) -> List[str]
+.. function:: command_balloon(cmd: str) -> List[str]
 
     A helper for simple ``balloonexpr`` usage that simply calls an external
     command.
@@ -41,7 +41,7 @@
 
 ::
 
-    function! display#commandballoon(cmd) abort
+    function! display#command_balloon(cmd) abort
         let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction

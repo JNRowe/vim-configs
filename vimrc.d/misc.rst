@@ -39,7 +39,7 @@ Add on-hover word definitions, which can be useful for prose editing::
 
     if has('gui_running') && executable('wn')
         command WordNetBalloon
-        \   setlocal balloonexpr=display#commandballoon('wn\ %s\ -over')
+        \   setlocal balloonexpr=display#command_balloon('wn\ %s\ -over')
     endif
 
 .. note::
