@@ -17,17 +17,10 @@ Prepare localcfg_ to read all optional configuration files::
 
 … and :repo:`dein <Shougo/dein.vim>` managed packages::
 
-    for s:bundle in values(dein#get())
-        let s:enabled = get(s:bundle, 'if', v:true)
-        let s:cfgname = 'plugin_' . substitute(s:bundle.name, '-', '_', 'g')
-        let g:localcfg_cfgs += [(s:enabled ? '' : 'not') . s:cfgname]
+    for s:name in keys(dein#get())
+        let s:cfgname = 'plugin_' . substitute(s:name, '-', '_', 'g')
+        let g:localcfg_cfgs += [s:cfgname, ]
     endfor
-
-.. note::
-
-    The logic here is that packages with requirements can have optional negative
-    configuration files that trigger alternative functionality when they’re not
-    available.
 
 Read defined configuration files::
 
