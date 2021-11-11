@@ -36,6 +36,12 @@ Display occurrences of current word::
     nnoremap <silent> [location]sw :lvimgrep <C-r>=expand('<cword>')<CR> %<CR>
     nnoremap <silent> [location]sW :lgrep <C-r>=expand('<cword>')<CR><CR>
 
+.. note::
+
+    This functionality is provided in part with :kbd:`[I` or more closely via
+    :repo:`vim-qlist <romainl/vim-qlist>`, but I like the specific buffer only
+    usage and the reflection of my other ``quickfix`` maps.
+
 … and last search::
 
     nnoremap <silent> [quickfix]ss :vimgrep /<C-r>=getreg('/')<CR>/g %<CR>
