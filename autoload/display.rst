@@ -1,6 +1,8 @@
 ``autoload/display.vim``
 ========================
 
+.. include:: ../.includes/scriptencoding.rst
+
 .. function:: add_line_highlight() -> None
 
     Highlight line.
@@ -77,6 +79,38 @@
         endfor
         let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
     endfunction
+
+.. function:: fold_text() -> str
+
+    Custom foldtext formatting.
+
+::
+
+    function! s:shorten(text, line_str) abort
+        let l:text = a:text
+        " Non-getline() text length
+        let l:base = 19
+        let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+        if strlen(l:text) > l:text_width
+            let l:text = l:text[:l:text_width] . '…'
+        endif
+        return l:text
+    endfunction
+
+    function! display#fold_text() abort
+        return substitute(
+        \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
+        \   {m -> repeat('─', v:foldlevel) . ' ' .
+        \         <SID>shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
+        \   ''
+        \ )
+    endfunction
+
+.. note::
+
+    Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
+    work; whitespace, ``&cms`` |RegEx| escaping(C fex), ``&fdr``, no
+    ``scanf()``, &c.
 
 .. function:: gethighlightgroup(mark: Optional[str]) -> List[Dict[str, str]]
 

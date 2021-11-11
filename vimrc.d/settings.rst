@@ -141,15 +141,20 @@ split bar::
         set fillchars+=vert:│
     endif
 
-Configure folding support including `fold display <custom-foldtext>`_::
+.. _custom-foldtext:
+
+Configure folding support::
 
     if has('folding')
         set fillchars+=fold:\   " Intentional trailing space
         set foldcolumn=2
         set foldlevelstart=99
         set foldmethod=syntax
-        set foldtext=MyFoldText()
+        set foldtext=display#fold_text()
     endif
+
+.. image:: /.static/fold_text.png
+   :alt: Examples of display#fold_text() display
 
 Configure formatting:
 
@@ -542,42 +547,6 @@ The default minimum window height of one line is not useful enough to be
 worthwhile, so allow window borders to touch::
 
     set winminheight=0
-
-.. _custom-foldtext:
-
-Custom foldtext setting::
-
-    if has('folding')
-        function! s:shorten(text, line_str) abort
-            let l:text = a:text
-            " Non-getline() text length
-            let l:base = 19
-            let l:text_width =
-            \   winwidth(0) - v:foldlevel - len(a:line_str) - l:base
-            if strlen(l:text) > l:text_width
-                let l:text = l:text[:l:text_width] . '…'
-            endif
-            return l:text
-        endfunction
-
-        function! MyFoldText() abort
-            return substitute(
-            \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
-            \   {m -> repeat('─', v:foldlevel) . ' ' .
-            \         s:shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
-            \   ''
-            \ )
-        endfunction
-    endif
-
-.. image:: /.static/myfoldtext.png
-   :alt: Examples of MyFoldtext() display
-
-.. note::
-
-    Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
-    work; whitespace, ``&cms`` |RegEx| escaping(C fex), ``&fdr``, no
-    ``scanf()``, &c.
 
 .. _gnupg: https://www.gnupg.org/
 .. _Debian: https://debian.org/
