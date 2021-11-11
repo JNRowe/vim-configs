@@ -9,6 +9,7 @@ Contents
 .. toctree::
     :titlesonly:
 
+    display
     filetypes
     gui
     keymaps

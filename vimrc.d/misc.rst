@@ -4,7 +4,7 @@
 Show highlight group of the :func:`current location <gethighlightgroup>`::
 
     command! ShowHighlightGroups
-    \   echo join(map(misc#gethighlightgroup(),
+    \   echo join(map(display#gethighlightgroup(),
     \                 {k, v -> join(values(map(v,
     \                                          {k, v -> k . ':' . v})),
     \                               ', ')}),
@@ -39,7 +39,7 @@ Add on-hover word definitions, which can be useful for prose editing::
 
     if has('gui_running') && executable('wn')
         command WordNetBalloon
-        \   setlocal balloonexpr=misc#commandballoon('wn\ %s\ -over')
+        \   setlocal balloonexpr=display#commandballoon('wn\ %s\ -over')
     endif
 
 .. note::

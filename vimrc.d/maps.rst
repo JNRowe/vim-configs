@@ -157,13 +157,13 @@ for shortcuts::
 :func:`Ping the cursor position <cursor_ping>` as a visual cue when returning to
 a session::
 
-    nnoremap <silent> <C-Space> :call keymaps#cursor_ping()<CR>
+    nnoremap <silent> <C-Space> :call display#cursor_ping()<CR>
 
 Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
 
     if has('conceal')
-        nnoremap <silent> <M-Space> :call misc#conceal_toggle()<CR>
+        nnoremap <silent> <M-Space> :call display#conceal_toggle()<CR>
     endif
 
 .. image:: /.static/conceal_flip.png

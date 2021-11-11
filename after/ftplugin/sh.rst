@@ -5,7 +5,7 @@ Add on-hover command definitions::
 
     if has('gui_running')
         command! -buffer CommandBalloon
-        \   setlocal balloonexpr=misc#commandballoon('whatis')
+        \   setlocal balloonexpr=display#commandballoon('whatis')
     endif
 
 .. note::

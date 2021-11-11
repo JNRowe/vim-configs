@@ -1,22 +1,6 @@
 ``autoload/keymaps.vim``
 ========================
 
-.. function:: cursor_ping() -> None
-
-    Ping the cursor position.
-
-::
-
-    function! keymaps#cursor_ping() abort
-        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
-        for _ in range(5)
-            set cursorline! cursorcolumn!
-            redraw
-            sleep 15m
-        endfor
-        let [&cursorline, &cursorcolumn] = [l:cursorline, l:cursorcolumn]
-    endfunction
-
 .. function:: mnemonic_map(name: str, buffer: Optional[bool] = False, key: Optional[str], leader: Optional[bool] = False, mode: Optional[str] = 'n') -> None
 
     Mnemonic mapping setup function.

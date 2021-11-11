@@ -38,7 +38,7 @@ Highlights for read only buffers aren’t interesting::
 Issue an immediate :func:`“split to right” <split_to_right>` for documentation
 buffers::
 
-        autocmd FileType help,man call misc#split_to_right()
+        autocmd FileType help,man call display#split_to_right()
 
 Attempt filetype detection after writing::
 
