@@ -35,6 +35,9 @@ Key        Local  Buffer  Maps
                           <spelling-correction-custom-maps>`
 =========  =====  ======  ====================================================
 
+.. image:: /.static/leader_map_help.png
+   :alt: Output from gitgutter map help
+
 .. tip::
 
     :func:`mnemonic_map` adds a :kbd:`?` map to all groups that will show a list
