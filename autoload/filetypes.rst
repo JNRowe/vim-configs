@@ -11,15 +11,15 @@
 ::
 
     function! filetypes#add_advice_header(prio, due) abort
-        let l:save_cursor = getcurpos()
+        let l:view = winsaveview()
         call cursor(1, 1)
         let l:body_sep = search('^$', 'c')
         if l:body_sep != 0
             call append(l:body_sep - 1,
             \           'X-advice: ' . a:prio . ' read ' . a:due)
-            let l:save_cursor[1] += 1
+            let l:view.lnum += 1
         endif
-        call setpos('.', l:save_cursor)
+        call winrestview(l:view)
     endfunction
 
 .. warning::
@@ -47,10 +47,10 @@
         if l:value ==# ''
             return
         endif
-        let l:save_cursor = getcurpos()
+        let l:view = winsaveview()
         execute ':%!git interpret-trailers ' .
         \   '--trailer ' . a:key . '-by=' . shellescape(l:value)
-        call setpos('.', l:save_cursor)
+        call winrestcmd(l:view)
     endfunction
 
 .. function:: diff_maps() -> None
