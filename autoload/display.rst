@@ -62,7 +62,7 @@
 
 ::
 
-    function display#conceal_toggle() abort
+    function! display#conceal_toggle() abort
         if &conceallevel == 0 && get(w:, 'orig_conceallevel')
             let &conceallevel = w:orig_conceallevel
             unlet w:orig_conceallevel
