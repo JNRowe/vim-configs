@@ -17,3 +17,4 @@ Contents
     qmv
     redo
     reminders
+    xresources
