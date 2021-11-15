@@ -57,6 +57,19 @@
     useful for in :command:`gvim`, but it doesn’t support vim’s completion
     functionality.
 
+.. function:: print_option(option: str) -> None
+
+    Pretty print an option’s value.
+
+    :param option: Option to display
+
+::
+
+    function! misc#print_option(value) abort
+        let l:value = eval(a:value[0] ==# '&' ? a:value : '&' . a:value)
+        echo join(split(l:value, ','), "\n")
+    endfunction
+
 .. function:: titleword(word: str) -> str
 
     Convenience function to apply title case to a word.

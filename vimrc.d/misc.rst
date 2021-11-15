@@ -59,3 +59,8 @@ prompt::
 .. tip::
 
     When executed with ``!`` write a fuller and more verbose modeline.
+
+Pretty print an option’s value to make it easier to read::
+
+    command! -complete=option -nargs=1 PrintOption
+    \   call misc#print_option(<q-args>)
