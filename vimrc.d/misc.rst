@@ -4,7 +4,7 @@
 Show highlight group of the current location::
 
     command! ShowHighlightGroups
-    \   echo join(map(display#gethighlightgroup(),
+    \   echo join(map(display#get_highlight_group(),
     \                 {k, v -> join(values(map(v,
     \                                          {k, v -> k . ':' . v})),
     \                               ', ')}),
@@ -12,7 +12,7 @@ Show highlight group of the current location::
 
 .. seealso::
 
-    * :func:`display#gethighlightgroup() <gethighlightgroup>`
+    * :func:`display#get_highlight_group() <get_highlight_group>`
 
 .. _default-user-identifier:
 
@@ -85,7 +85,7 @@ Pretty print an option’s value to make it easier to read::
 
 Convenience command to build a given target with full completion::
 
-    command! -nargs=* -complete=customlist,completion#build_completion Make
+    command! -nargs=* -complete=customlist,completion#build_complete Make
     \   :call misc#call_build(<q-args>)<CR>
 
 .. seealso::

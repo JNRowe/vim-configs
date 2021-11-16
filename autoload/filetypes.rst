@@ -61,7 +61,7 @@
         call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})
 
         for [s:key, s:cmd] in [
-        \   ['w', 'call misc#toggleflag("diffopt", "iwhite")'],
+        \   ['w', 'call misc#toggle_flag("diffopt", "iwhite")'],
         \   ['o', 'diffoff!'],
         \   ['p', 'diffput'],
         \   ['g', 'diffget'],
@@ -74,6 +74,10 @@
         vnoremap <silent> <buffer> < :diffget<CR>
         vnoremap <silent> <buffer> > :diffput<CR>
     endfunction
+
+.. seealso::
+
+    * :func:`misc#toggle_flag <toggle_flag>`
 
 .. function:: kill_to_signature() -> None
 

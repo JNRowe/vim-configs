@@ -126,23 +126,23 @@ Occasionally the toolbar can be useful for pairing with a co-worker, and from
 time to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
 
     if has('menu')
-        nnoremap <silent> <S-F4> :call misc#toggleflag('guioptions', 'm')<CR>
+        nnoremap <silent> <S-F4> :call misc#toggle_flag('guioptions', 'm')<CR>
     endif
     if has('toolbar')
-        nnoremap <silent> <C-F4> :call misc#toggleflag('guioptions', 'T')<CR>
+        nnoremap <silent> <C-F4> :call misc#toggle_flag('guioptions', 'T')<CR>
     endif
 
 .. seealso::
 
-    * :func:`misc#toggleflag() <toggleflag>`
+    * :func:`misc#toggle_flag() <toggle_flag>`
 
 Use a terminal window for command output::
 
-    nnoremap <silent> <C-F1> :call misc#toggleflag('guioptions', '!')<CR>
+    nnoremap <silent> <C-F1> :call misc#toggle_flag('guioptions', '!')<CR>
 
 .. seealso::
 
-    * :func:`misc#toggleflag() <toggleflag>`
+    * :func:`misc#toggle_flag() <toggle_flag>`
 
 .. note::
 

@@ -213,7 +213,7 @@
         echo join(split(l:value, ','), "\n")
     endfunction
 
-.. function:: titleword(word: str) -> str
+.. function:: title_word(word: str) -> str
 
     Convenience function to apply title case to a word.
 
@@ -222,11 +222,11 @@
 
 ::
 
-    function! misc#titleword(word) abort
+    function! misc#title_word(word) abort
         return toupper(a:word[0]) . a:word[1:]
     endfunction
 
-.. function:: toggleflag(option: str, flag: str) -> None
+.. function:: toggle_flag(option: str, flag: str) -> None
 
     Toggle an option.
 
@@ -235,7 +235,7 @@
 
 ::
 
-    function! misc#toggleflag(option, flag) abort
+    function! misc#toggle_flag(option, flag) abort
         let l:optstr = eval('&' . a:option)
         if stridx(l:optstr, ',') == -1
             " Simple char options like 'fo'

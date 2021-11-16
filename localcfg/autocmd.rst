@@ -133,7 +133,7 @@ Search for project specific :file:`vimrc` and support files::
 Add command to more easily edit the project specific files::
 
         command! -nargs=1
-        \   -complete=customlist,completion#project_file_completion
+        \   -complete=customlist,completion#project_file_complete
         \   ProjectFile call misc#edit_project_file(<q-args>)
 
 .. seealso::

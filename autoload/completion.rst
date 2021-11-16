@@ -1,7 +1,7 @@
 ``autoload/completion.vim``
 ===========================
 
-.. function:: build_completion(arglead: str, cmdline: str, cursorpos: int) -> List[str]
+.. function:: build_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
 
     Completion targets from active project.
 
@@ -15,7 +15,7 @@
 
 ::
 
-    function! completion#build_completion(arglead, cmdline, cursorpos)
+    function! completion#build_complete(arglead, cmdline, cursorpos)
         if filereadable('build.ninja')
             let l:targets = systemlist(
             \   'sed -n "s,^build \([^:]\+\): .*,\1,p" build.ninja'
@@ -51,7 +51,7 @@
     Yeah, some of these are *huuuuuge*, but I’ll often pop up a snippet for
     discussion in a meeting and this really helps.
 
-.. function:: project_file_completion(arglead: str, cmdline: str, cursorpos: int) -> List[str]
+.. function:: project_file_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
 
     Completion targets for project-specific configuration files.
 
@@ -62,7 +62,7 @@
 
 ::
 
-    function! completion#project_file_completion(arglead, cmdline, cursorpos)
+    function! completion#project_file_complete(arglead, cmdline, cursorpos)
         return sort(filter(['abbr.vim', 'project.vim'],
         \                  {_, s -> s =~? '^' . a:arglead}))
     endfunction
