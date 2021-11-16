@@ -82,6 +82,20 @@
     useful for in :command:`gvim`, but it doesn’t support vim’s completion
     functionality.
 
+.. function:: preserve_layout(command: str) -> None
+
+    Execute command and preserve original layout.
+
+    :param command: Command to execute
+
+::
+
+    function! misc#preserve_layout(command) abort
+        let l:view = winsaveview()
+        execute a:command
+        call winrestview(l:view)
+    endfunction
+
 .. function:: print_option(option: str) -> None
 
     Pretty print an option’s value.

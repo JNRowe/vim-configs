@@ -47,10 +47,8 @@
         if l:value ==# ''
             return
         endif
-        let l:view = winsaveview()
-        execute ':%!git interpret-trailers ' .
-        \   '--trailer ' . a:key . '-by=' . shellescape(l:value)
-        call winrestcmd(l:view)
+        call misc#preserve_layout(':%!git interpret-trailers ' .
+        \   '--trailer ' . a:key . '-by=' . shellescape(l:value))
     endfunction
 
 .. function:: diff_maps() -> None
