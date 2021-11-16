@@ -1646,19 +1646,6 @@ power of :kbd:`gcc`.
     \   'on_map': 'gc',
     \ })
 
-``vim-endwise``
-'''''''''''''''
-
-    “Automatically insert block closing structures”
-
-:repository: :repo:`tpope/vim-endwise`
-
-::
-
-    call dein#add('tpope/vim-endwise', {
-    \   'on_event': 'InsertEnter',
-    \ })
-
 ``vim-fugitive``
 ''''''''''''''''
 
