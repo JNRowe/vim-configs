@@ -9,7 +9,7 @@ available::
         let g:EditorConfig_exec_path = 'editorconfig'
     endif
 
-We manage ``colorcolumn`` in :ref:`settings.vim <colorcolumn-config>`, so
+We manage ``'colorcolumn'`` in :ref:`settings.vim <colorcolumn-config>`, so
 disable this plugin’s support::
 
     let g:EditorConfig_max_line_indicator = 'none'

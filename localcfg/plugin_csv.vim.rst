@@ -16,4 +16,4 @@ Use strict column mode as the default::
 .. note::
 
     While the non-strict mode is useful in certain cases, it is easy to
-    ``unlet`` this when the need arises.
+    ``:unlet`` this when the need arises.

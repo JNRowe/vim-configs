@@ -1749,7 +1749,7 @@ your favourite plugin anyway.
 ``vim-sensible``
 ''''''''''''''''
 
-    “One step above ``nocompatible`` mode”
+    “One step above ``'nocompatible'`` mode”
 
 :repository: :repo:`tpope/vim-sensible`
 

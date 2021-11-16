@@ -37,7 +37,7 @@ Poke around, as best we can, to discern the background colour::
 .. note::
 
     We purposely check that we’re changing the background setting, as it can
-    cause an ugly redraw or reissue ``autocmd``\s.
+    cause an ugly redraw or reissue ``:autocmd``\s.
 
 … and change the cursor colour depending on mode on supported terminals::
 

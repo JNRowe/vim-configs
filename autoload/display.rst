@@ -42,8 +42,8 @@
 
 .. function:: command_balloon(cmd: str) -> List[str]
 
-    A helper for simple ``balloonexpr`` usage that simply calls an external
-    command.
+    A helper for simple ``'balloonexpr'`` usage that simply calls an
+    external command.
 
     :param cmd: If string contains ``%s`` then it will be replaced with
         ``v:beval_text``, else ``v:beval_text`` is appended
@@ -117,8 +117,8 @@
 .. note::
 
     Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
-    work; whitespace, ``&cms`` |RegEx| escaping(``C`` for example), ``&fdr``, no
-    ``scanf()``, &c.
+    work; whitespace, ``'commentstring'`` |RegEx| escaping(``C`` for
+    example), ``'foldlevel'``, no ``scanf()``, &c.
 
 .. function:: gethighlightgroup(mark: Optional[str]) -> List[Dict[str, str]]
 

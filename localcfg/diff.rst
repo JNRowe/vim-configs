@@ -11,7 +11,7 @@ Use histogram :command:`diff` method to match my |git| configuration::
         set diffopt+=algorithm:histogram,indent-heuristic
     endif
 
-The remaining functionality is only useful when ``autocmd`` is available.
+The remaining functionality is only useful when ``:autocmd`` is available.
 
 ::
 

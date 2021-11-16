@@ -527,9 +527,9 @@ Ignore case when completing files::
 
 .. note::
 
-    It is a real shame this doesn’t honour the ``smartcase`` configuration and
+    It is a real shame this doesn’t honour the ``'smartcase'`` configuration and
     style.  The behaviour of this option is closer to the less useful — in
-    my eyes — ``ignorecase``.
+    my eyes — ``'ignorecase'``.
 
 Insert longest common match when completing::
 

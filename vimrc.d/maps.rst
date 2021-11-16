@@ -12,7 +12,7 @@ Set up map to quickly :func:`move among buffers <switch_buf>`::
 
 .. note::
 
-    I *love* ``hidden``, as it really suits the way I work.  However, it also
+    I *love* ``'hidden'``, as it really suits the way I work.  However, it also
     means I occasionally have to skip through things I don’t care about in
     ``:bnext``, and I don’t love that.  The above mapping skips the buffers
     I wouldn’t care about and provides a more useful *to me* version of buffer
@@ -56,7 +56,7 @@ Map :kbd:`Q` to reformat paragraphs just as everyone else does::
     Should you have reason to need ``Ex`` mode, then you’ll probably find the
     :kbd:`gQ` interface nicer anyhow.
 
-Easy access to man pages when using a custom ``keywordprg``::
+Easy access to man pages when using a custom ``'keywordprg'``::
 
     nnoremap <C-?> :<C-U>execute 'Man ' . v:count . ' <C-R><C-W>'<CR>
 

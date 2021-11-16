@@ -26,9 +26,9 @@ I don’t use the toolbar, and rarely want the menu::
 
 .. tip::
 
-    The repeated use of ``guioptions`` above is required because using multiple
-    characters with ``-=`` will only work if characters are consecutive, which
-    can not be guaranteed.
+    The repeated use of ``'guioptions'`` above is required because using
+    multiple characters with ``-=`` will only work if characters are
+    consecutive, which can not be guaranteed.
 
 Attempt to keep window size when toggling GUI items(menu, scrollbars, &c), as
 I find display layout more important than the number of rows and columns.
@@ -95,7 +95,7 @@ Add command to :func:`switch text size <set_font>` quickly::
 
 .. tip::
 
-    For minor size changes it is often easier to use ``set guifont=<Tab>``,
+    For minor size changes it is often easier to use ``:set guifont=<Tab>``,
     while wishing that :kbd:`<C-{a,x}>` worked to {in,de}crement the number in
     the command line too.  If you’re super lazy — like me — and are simply
     trying to find the appropriate size for a new display then using ``:set

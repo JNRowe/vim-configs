@@ -1,7 +1,7 @@
 ``vimrc`` - Basic setup
 =======================
 
-First use of ``scriptencoding`` must be after an initial encoding is set::
+First use of ``:scriptencoding`` must be after an initial encoding is set::
 
     set encoding=utf-8
 

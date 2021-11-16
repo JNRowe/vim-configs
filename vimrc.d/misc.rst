@@ -45,7 +45,7 @@ Add on-hover word definitions, which can be useful for prose editing::
 .. note::
 
     This is only enabled for :command:`gvim` as I have the mouse configured in
-    a way which would be problematic for use with ``balloonevalterm``.
+    a way which would be problematic for use with ``'balloonevalterm'``.
 
 :func:`Search for paths <path_search>` with easy access to completion at the
 prompt::
