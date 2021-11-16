@@ -4,7 +4,7 @@
 Detect redo_ files::
 
     " vint: -ProhibitAutocmdWithNoGroup
-    autocmd BufRead,BufNewFile *.do set filetype=sh
+    autocmd BufRead,BufNewFile *.do setfiletype sh
     " vint: +ProhibitAutocmdWithNoGroup
 
 .. warning::

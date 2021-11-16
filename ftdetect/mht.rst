@@ -5,7 +5,7 @@ Treat :wikipedia:`MHTML` documents as |HTML|::
 
     " vint: -ProhibitAutocmdWithNoGroup
     autocmd BufRead,BufNewFile *.mht setfiletype FALLBACK html
-    autocmd BufRead,BufNewFile *.mhtml set filetype=html
+    autocmd BufRead,BufNewFile *.mhtml setfiletype html
     " vint: +ProhibitAutocmdWithNoGroup
 
 .. note::
