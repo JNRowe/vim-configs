@@ -30,29 +30,3 @@
         endif
         execute 'set guifont=' . fnameescape(l:font)
     endfunction
-
-.. function:: font_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
-
-    Completion options for :func:`set_font`.
-
-    .. note::
-
-        The standard completion callback arguments are unused.
-
-::
-
-    function! gui#font_complete(arglead, cmdline, cursorpos) abort
-        let l:fonts =
-        \   [escape(g:font_family . ' ' . g:font_size, ' '), ]
-        \   + map(range(8),
-        \         {n -> escape(g:font_family . ' ' . (n * 8 + 16), ' ')})
-        return sort(
-        \   filter(l:fonts,
-        \          {_, s -> strpart(s, 0, len(a:arglead)) ==# a:arglead})
-        \ )
-    endfunction
-
-.. note::
-
-    Yeah, some of these are *huuuuuge*, but I’ll often pop up a snippet for
-    discussion in a meeting and this really helps.

@@ -90,12 +90,13 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
 Add command to switch text size quickly::
 
-    command! -nargs=? -count -complete=customlist,gui#font_complete Fontsel
+    command! -nargs=? -count
+    \   -complete=customlist,completion#set_font_complete Fontsel
     \   call gui#set_font(<q-args>)
 
 .. seealso::
 
-    * :func:`gui#font_complete() <font_complete>`
+    * :func:`completion#set_font_complete() <set_font_complete>`
 
 .. tip::
 
