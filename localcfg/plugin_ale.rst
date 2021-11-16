@@ -28,6 +28,11 @@ Open location list when errors exist::
 
     ``ale`` doesn’t support using ``v:true`` as ``1``.
 
+Limit initial window size to five lines, which appears to be *my* magic
+number::
+
+    let g:ale_list_window_size = 5
+
 .. include:: ../.includes/fontawesome.rst
 
 ::
