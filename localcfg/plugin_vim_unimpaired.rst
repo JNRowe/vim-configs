@@ -4,5 +4,7 @@
 A fair few of the applications I use in my work support line or cell exchange
 via :kbd:`<M-{Up,Down}>`, configure :command:`vim` to match::
 
+    imap <M-Up> <C-o><Plug>unimpairedMoveUp
+    imap <M-Down> <C-o><Plug>unimpairedMoveDown
     nnoremap <M-Up> [e
     nnoremap <M-Down> ]e
