@@ -6,5 +6,5 @@ via :kbd:`<M-{Up,Down}>`, configure :command:`vim` to match::
 
     imap <M-Up> <C-o><Plug>unimpairedMoveUp
     imap <M-Down> <C-o><Plug>unimpairedMoveDown
-    nnoremap <M-Up> [e
-    nnoremap <M-Down> ]e
+    nmap <M-Up> <Plug>unimpairedMoveUp
+    nmap <M-Down> <Plug>unimpairedMoveDown
