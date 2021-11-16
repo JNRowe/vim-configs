@@ -31,6 +31,10 @@ it here.
         \   ' text=' . toupper(s:icon[0] . s:icon[0]) . ' texthl=' . s:hl
     endfor
 
+.. seealso::
+
+    * :func:`misc#titleword() <titleword>`
+
 .. todo::
 
     This could use fancy colourful emojis both as a replacement for the textual

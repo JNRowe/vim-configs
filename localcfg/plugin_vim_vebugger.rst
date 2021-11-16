@@ -10,6 +10,10 @@ Use my custom maps::
     call keymaps#mnemonic_map('vebugger', {'local': v:true})
     let g:vebugger_leader='[vebugger]'
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Configure symbols::
 
     let g:vebugger_breakpoint_text = '⇒'

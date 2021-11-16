@@ -3,11 +3,9 @@
 
 .. _rst-custom-maps:
 
-::
+This creates |reST| headings using *my* favourite adornments::
 
     call keymaps#mnemonic_map('Heading', {'buffer': v:true, 'local': v:true})
-
-This creates |reST| headings using *my* favourite adornments::
 
     for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
         for [s:cmd, s:post] in [
@@ -18,6 +16,10 @@ This creates |reST| headings using *my* favourite adornments::
             \   ' yypVr' . s:sym . s:post
         endfor
     endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 .. include:: ../../.includes/prose.rst
 

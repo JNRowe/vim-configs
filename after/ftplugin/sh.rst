@@ -8,6 +8,10 @@ Add on-hover command definitions::
         \   setlocal balloonexpr=display#command_balloon('whatis')
     endif
 
+.. seealso::
+
+    * :func:`display#command_balloon() <command_balloon>`
+
 .. note::
 
     This isn’t set as the global default as :ref:`ale <ale-plugin>` provides

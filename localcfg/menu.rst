@@ -6,6 +6,10 @@ occasionally it can be useful for accessing hierarchical information.  Therefore
 we add a :ref:`toggle binding <gui-toggles>`, but also learn to use ``:emenu``
 for even easier access.
 
+.. seealso::
+
+    * :doc:`autoloaded functions <../autoload/menu>` used in this file
+
 .. tip::
 
     We’ll try to keep a speedy mnemonic for nested menus where we can:

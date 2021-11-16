@@ -9,6 +9,10 @@ Use my custom maps::
 
     call keymaps#mnemonic_map('dwm')
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Configure maps to match, to some degree, my window manager’s configuration::
 
     for [s:key, s:cmd] in [

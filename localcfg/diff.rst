@@ -28,9 +28,13 @@ The remaining functionality is only useful when ``:autocmd`` is available.
 
 .. _diff-custom-maps:
 
-Add :func:`my bindings <diff_maps>` for :command:`diff` mode::
+Add my bindings for :command:`diff` mode::
 
     augroup jnrowe_diff
         autocmd!
         autocmd BufEnter * if &diff | call filetypes#diff_maps() | endif
     augroup END
+
+.. seealso::
+
+    * :func:`filetypes#diff_maps() <diff_maps>`

@@ -37,3 +37,7 @@ Based on an example from the documentation, add a binding to populate the
     \   'ctrl-x': 'split',
     \   'ctrl-v': 'vsplit'
     \ }
+
+.. seealso::
+
+    * :func:`plugins#fzf#build_quickfix_list() <build_quickfix_list>`

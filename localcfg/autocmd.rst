@@ -36,10 +36,13 @@ Highlights for read only buffers aren’t interesting::
         autocmd FileType help,man
         \   if &modifiable | setlocal colorcolumn="" | endif
 
-Issue an immediate :func:`“split to right” <split_to_right>` for documentation
-buffers::
+Issue an immediate “split to right” for documentation buffers::
 
         autocmd FileType help,man call display#split_to_right()
+
+.. seealso::
+
+    * :func:`display#split_to_right() <split_to_right>`
 
 Attempt filetype detection after writing::
 
@@ -123,11 +126,19 @@ Search for project specific :file:`vimrc` and support files::
 
         autocmd BufWinEnter * call misc#apply_project_locals()
 
+.. seealso::
+
+    * :func:`misc#apply_project_locals() <apply_project_locals>`
+
 Add command to more easily edit the project specific files::
 
         command! -nargs=1
         \   -complete=customlist,completion#project_file_completion
         \   ProjectFile call misc#edit_project_file(<q-args>)
+
+.. seealso::
+
+    * :func:`misc#edit_project_file() <edit_project_file>`
 
 ::
 

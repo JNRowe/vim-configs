@@ -5,10 +5,14 @@
 
 .. _switch-bufs:
 
-Set up map to quickly :func:`move among buffers <switch_buf>`::
+Set up map to quickly move among buffers::
 
     noremap <silent> <M-Left> :<C-u>call keymaps#switch_buf(v:count1 * -1)<CR>
     noremap <silent> <M-Right> :<C-u>call keymaps#switch_buf(v:count1 * 1)<CR>
+
+.. seealso::
+
+    * :func:`keymaps#switch_buf() <switch_buf>`
 
 .. note::
 
@@ -85,11 +89,19 @@ Visual mode indent that matches how it *feels* in insert::
     inoremap <silent> <home> <C-o>:call keymaps#home_skip()<CR>
     nnoremap <silent> <home> :call keymaps#home_skip()<CR>
 
+.. seealso::
+
+    * :func:`keymaps#home_skip() <home_skip>`
+
 Add :kbd:`<F10>` build bindings that are muscle memory reminders of my
 childhood::
 
     nnoremap <F10> :call misc#call_build()<CR>
     nnoremap <S-F10> :call misc#call_build('check')<CR>
+
+.. seealso::
+
+    * :func:`misc#call_build() <call_build>`
 
 Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
@@ -126,15 +138,22 @@ Help related maps::
 
     nnoremap <silent> [Help]c :helpclose<CR>
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 I don't use :command:`vi` movement keys in command-line mode, so we can use them
 for shortcuts::
 
     cnoremap <C-h> vert help<Space>
 
-:func:`Ping the cursor position <cursor_ping>` as a visual cue when returning to
-a session::
+Ping the cursor position as a visual cue when returning to a session::
 
     nnoremap <silent> <C-Space> :call display#cursor_ping()<CR>
+
+.. seealso::
+
+    * :func:`display#cursor_ping() <cursor_ping>`
 
 Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
@@ -145,6 +164,10 @@ when you’re showing code::
 
 .. image:: /.static/conceal_flip.png
    :alt: Screenshot of conceal mode toggling
+
+.. seealso::
+
+    * :func:`display#conceal_toggle() <conceal_toggle>`
 
 Insert current buffer’s directory at command line::
 
@@ -190,6 +213,12 @@ Add mappings to highlight lines::
     call keymaps#mnemonic_map('Display', {'key': 'D', 'modes': 'nv'})
     nnoremap <silent> [Display]lh :call display#add_line_highlight()<CR>
     nnoremap <silent> [Display]lc :call display#clear_line_highlights()<CR>
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+    * :func:`display#add_line_highlight() <add_line_highlight>`
+    * :func:`display#clear_line_highlights() <clear_line_highlights>`
 
 .. tip::
 

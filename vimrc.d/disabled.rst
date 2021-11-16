@@ -16,6 +16,10 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
         call misc#disable_plugin(s:plugin)
     endfor
 
+.. seealso::
+
+    * :func:`misc#disable_plugin() <disable_plugin>`
+
 .. note::
 
     Compared to the archive format plugins, using archivemount_ is a *much*
@@ -26,6 +30,10 @@ Forcibly disable ``matchit``, as we’re using the :ref:`vim-matchup
 <vim-matchup-plugin>` plugin::
 
     call misc#disable_plugin('matchit')
+
+.. seealso::
+
+    * :func:`misc#disable_plugin() <disable_plugin>`
 
 .. _pygments: http://pygments.org/
 .. _archivemount: http://www.cybernoia.de/software/archivemount/

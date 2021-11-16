@@ -43,6 +43,10 @@ Use my custom maps::
         \   s:key . ' :' . s:cmd . '<CR>'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Configure magic currency completion in ledger files::
 
 

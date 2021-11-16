@@ -22,6 +22,10 @@ Use my custom maps::
         \   ' <Plug>(git-messenger' . s:cmd . ')'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
     let g:git_messenger_date_format = '%FT%T'

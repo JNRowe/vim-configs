@@ -23,6 +23,10 @@ Configure styling::
         endfor
     augroup END
 
+.. seealso::
+
+    * :func:`misc#titleword() <titleword>`
+
 .. todo::
 
     These settings are incredibly dependent on the colour schemes being used.

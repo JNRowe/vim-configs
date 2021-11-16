@@ -71,6 +71,10 @@ Use my custom maps::
         execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 

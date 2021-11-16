@@ -21,3 +21,7 @@ Configure quotes for current language::
     augroup jnrowe_vim_textobj_quote
         autocmd BufEnter * call plugins#vim_textobj_quote#select_quotes()
     augroup END
+
+.. seealso::
+
+    * :func:`plugins#vim_textobj_quote#select_quotes() <select_quotes>`

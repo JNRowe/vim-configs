@@ -22,6 +22,10 @@ Use my custom maps::
         \   ':GitGutter' . s:cmd . '<CR>'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 If you have more than one-hundred edits you need to commit, not look at symbols!
 
 ::

@@ -50,7 +50,7 @@ def is_vim_code(node: Node) -> bool:
 
 
 # Stub used Sphinx directives and roles, as we’re not using them in output
-for directive in ('envvar', 'function', 'spelling', 'todo'):
+for directive in ('envvar', 'function', 'seealso', 'spelling', 'todo'):
     directives.register_directive(directive, StubDirective)
 for role in (
     'class',

@@ -11,6 +11,10 @@ Use my custom maps::
     nnoremap <silent> [bufmru]<Left>  :BufMRUPrev<CR>
     nnoremap <silent> [bufmru]<Right> :BufMRUNext<CR>
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 .. tip::
 
     Imagine :kbd:`<Left>` and :kbd:`<Right>` are moving across a timeline of

@@ -5,8 +5,7 @@
 
 .. _gitcommit-custom-maps:
 
-Configure maps to :func:`insert common metadata <add_git_trailer>` in to commit
-messages::
+Configure maps to insert common metadata in to commit messages::
 
     call keymaps#mnemonic_map('Trailer', {'buffer': v:true, 'local': v:true})
 
@@ -17,6 +16,11 @@ messages::
         execute 'nnoremap <buffer> <silent> [Trailer]q' . tolower(s:type[0]) .
         \   ' :call filetypes#add_git_trailer("' . s:type . '")<CR>'
     endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+    * :func:`filetypes#add_git_trailer() <add_git_trailer>`
 
 .. tip::
 
@@ -31,6 +35,10 @@ Add a mapping for Sponsored-by_ header::
 
     nnoremap <buffer> <silent> [Trailer]qp
     \   :call filetypes#add_git_trailer('Sponsored')<CR>
+
+.. seealso::
+
+    * :func:`filetypes#add_git_trailer() <add_git_trailer>`
 
 .. _gitcommit-emoji-commits:
 

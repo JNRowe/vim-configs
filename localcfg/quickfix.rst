@@ -9,11 +9,19 @@ Configure my custom maps for quickfix::
 
     call keymaps#mnemonic_map('quickfix', {'key': 'f', 'local': v:true})
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 .. _location-list-custom-maps:
 
 … and location lists::
 
     call keymaps#mnemonic_map('location', {'local': v:true})
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 Display occurrences of current word::
 
@@ -65,6 +73,10 @@ Configure layered maps for useful quickfix and location functions::
     \   :call setqflist([], "f", {"title": ""})<CR>'
     execute 'nnoremap <silent> [location]X
     \   :call setloclist(0, [], "f", {"title": ""})<CR>'
+
+.. seealso::
+
+    * :func:`keymaps#quickfix_key() <quickfix_key>`
 
 Shortcut command to rename current list:::
 

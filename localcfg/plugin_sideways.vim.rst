@@ -13,3 +13,7 @@ Use my custom maps::
         execute 'nnoremap <silent> [sideways]<S-' . s:key . '>' .
         \   ' :<C-u>SidewaysJump' . s:key . '<CR>'
     endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`

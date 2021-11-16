@@ -14,6 +14,11 @@ Use my custom maps::
         execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+    * :func:`misc#wordnet_close_win() <wordnet_close_win>`
+
 We don’t care that the dictionary buffer has trailing whitespace::
 
     if has('autocmd')

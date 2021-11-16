@@ -21,6 +21,10 @@ they may make your life far simpler!
     to have tab completion available for the commands that I use from the
     outset.
 
+.. seealso::
+
+    * :doc:`autoloaded functions <autoload/plugins/dein>` used in this file
+
 Repositories
 ------------
 

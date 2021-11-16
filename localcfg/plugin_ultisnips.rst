@@ -26,3 +26,7 @@ Disable :repo:`ale <dense-analysis/ale>` while editing snippet output::
         autocmd User UltiSnipsExitLastSnippet
         \   call plugins#ultisnips#toggle_ale_state(v:true)
     augroup END
+
+.. seealso::
+
+    * :func:`plugins#ultisnips#toggle_ale_state() <toggle_ale_state>`

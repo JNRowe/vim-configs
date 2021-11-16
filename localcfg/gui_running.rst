@@ -88,10 +88,14 @@ with a cleaner patch, then I’ll immediately look for replacements.
     The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
     a font if available.
 
-Add command to :func:`switch text size <set_font>` quickly::
+Add command to switch text size quickly::
 
     command! -nargs=? -count -complete=customlist,gui#font_complete Fontsel
     \   call gui#set_font(<q-args>)
+
+.. seealso::
+
+    * :func:`gui#font_complete() <font_complete>`
 
 .. tip::
 
@@ -127,9 +131,17 @@ time to time I use the menu myself.  So, we’ll add maps to quickly toggle them
         nnoremap <silent> <C-F4> :call misc#toggleflag('guioptions', 'T')<CR>
     endif
 
+.. seealso::
+
+    * :func:`misc#toggleflag() <toggleflag>`
+
 Use a terminal window for command output::
 
     nnoremap <silent> <C-F1> :call misc#toggleflag('guioptions', '!')<CR>
+
+.. seealso::
+
+    * :func:`misc#toggleflag() <toggleflag>`
 
 .. note::
 

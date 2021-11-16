@@ -19,6 +19,10 @@ Use my custom maps::
         \   ':Calendar' . s:cmd . '<CR>'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Configure look::
 
     let g:calendar_mark = 'left-fit'

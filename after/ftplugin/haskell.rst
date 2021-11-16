@@ -15,3 +15,7 @@ than doing a complete pretty print::
     vnoremap <buffer> [Haskell]= :Tabularize /=<CR>
     vnoremap <buffer> [Haskell]: :Tabularize /::<CR>
     vnoremap <buffer> [Haskell]- :Tabularize /-><CR>
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`

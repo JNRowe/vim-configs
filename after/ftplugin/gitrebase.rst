@@ -12,6 +12,10 @@ Use my custom maps::
         \   ' :' . s:verb .'<CR>'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 Add quick bindings to cycle available options using ``switch.vim`` as it
 supports directions::
 

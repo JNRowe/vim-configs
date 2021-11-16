@@ -23,6 +23,10 @@ Configure convenience mappings for common command usage::
         \   ':FZF' . s:cmd . '<CR>'
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 .. tip::
 
     I use :kbd:`grave` as my binding for :command:`fzf` commands to reflect my
