@@ -41,8 +41,8 @@ variables.
 .. envvar:: VIM_PROFILE
 
     Whether to enable profiling support.  If set to a filename it will profile
-    all files under ``~/.vim``, and if specified as ``<filename>:<function>``
-    will profile only the specified function.
+    all files under :file:`~/.vim`, and if specified as
+    ``<filename>:<function>`` will profile only the specified function.
 
 .. envvar:: XDG_CACHE_HOME
 

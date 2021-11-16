@@ -71,7 +71,7 @@ following works around it::
     endif
 
 kitty_ has some really cool features, called kittens_, that can do all kinds of
-magic; ``icat``, for example, can display images inline.  However,
+magic; :command:`icat`, for example, can display images inline.  However,
 :command:`vim` works in the alternate screen where the images will not be
 displayed.  The following snippet disables the alternate screen, which is a poor
 solution to workaround this::

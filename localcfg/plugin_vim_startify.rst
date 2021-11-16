@@ -11,7 +11,7 @@ Don’t run on startup so that we can resume previous editing session with ease:
 
 .. tip::
 
-    A simple shell alias with ``vim +Startify`` is a simple way to make
+    A simple shell alias with :command:`vim +Startify` is a simple way to make
     :command:`vim` open at the startify window.
 
 Use a smaller decoration in the header, so that the important data is

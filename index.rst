@@ -34,8 +34,8 @@ much to you:
 
 Scan over the generated ``.vim`` files and figure out what you wish to do with
 them.  The choices are: run with it, override some of them with your own
-``~/.vimrc``, or — most likely — to simply cherry pick the parts you find least
-offensive.
+:file:`~/.vim/vimrc`, or — most likely — to simply cherry pick the parts you
+find least offensive.
 
 Contents
 --------

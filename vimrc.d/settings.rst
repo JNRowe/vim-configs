@@ -484,8 +484,8 @@ Option      Use
 ``<1000``   Save up to 1000 lines for registers
 ``%``       Store buffer list, which is nice for cycling sessions
 ``h``       Disable ``'hlsearch'`` when :file:`viminfo` is loaded
-``r/media`` Ignore /media
-``r/tmp``   Ignore /tmp
+``r/media`` Ignore :file:`/media`
+``r/tmp``   Ignore :file:`/tmp`
 =========== =====================================================
 
 ::
@@ -579,4 +579,3 @@ worthwhile, so allow window borders to touch::
 
     keycodes
     linewise
-    tmp

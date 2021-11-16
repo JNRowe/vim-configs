@@ -92,7 +92,7 @@ Support folding for |zsh| too, including the excellent alternative syntax::
 
     let g:zsh_fold_enable = v:true
 
-.. todo: Link to zsh’s alternative syntax
+.. todo:: Link to zsh’s alternative syntax
 
 .. _Lua: http://www.lua.org/
 .. _Ruby: https://www.ruby-lang.org/

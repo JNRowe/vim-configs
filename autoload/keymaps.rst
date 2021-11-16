@@ -8,7 +8,7 @@
     :param name: Name to give to map group
     :param buffer: Maps are specific to the buffer
     :param key: Key to use for map, defaults to first character of ``name``
-    :param local: If truthy, use ``LocalLeader`` for map
+    :param local: If truthy, use ``<LocalLeader>`` for map
     :param modes: Modes to apply map group to
 
 ::
