@@ -1,3 +1,3 @@
-Don’t be afraid to use Unicode::
+Don’t limit ourselves to plain |ASCII| encoding::
 
     scriptencoding utf-8

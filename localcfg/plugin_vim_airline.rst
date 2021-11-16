@@ -55,8 +55,7 @@ Configure symbols for :command:`gvim`::
 
 .. include:: ../.includes/fancy_symbols.rst
 
-and use simple :abbr:`ASCII (American Standard Code for Information
-Interchange)` replacements in a terminal::
+and use simple |ASCII| replacements in a terminal::
 
     else
         let g:airline_symbols_ascii = v:true

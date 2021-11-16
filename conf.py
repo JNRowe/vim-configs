@@ -46,6 +46,8 @@ if not on_rtd:
         extensions.append('sphinxcontrib.spelling')
 
 rst_epilog = """
+.. |ASCII| replace::
+   :abbr:`ASCII (American Standard Code for Information Interchange)`
 .. |CSV| replace:: :abbr:`CSV (Comma-separated values)`
 .. |HTML| replace:: :abbr:`HTML (HyperText Markup Language)`
 .. |Regex| replace:: :abbr:`RegEx (Regular Expression)`

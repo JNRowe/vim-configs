@@ -14,8 +14,7 @@ Enable for |reST| and other largely prose filetypes::
 .. note::
 
     We enable, but don’t force, for plain text so that we don’t send fancy
-    characters to things that expect :abbr:`ASCII (American Standard Code
-    for Information Interchange)`.
+    characters to things that expect |ASCII|.
 
 Configure quotes for current language::
 
