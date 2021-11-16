@@ -66,7 +66,7 @@ Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
 .. note::
 
-    This makes so much sense that it is even described in the ``Y`` help
+    This makes so much sense that it is even described in the :kbd:`Y` help
     text, and excellently describes the *benefit* that would come from breaking
     backwards compatibility.
 

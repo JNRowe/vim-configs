@@ -20,10 +20,10 @@ messages::
 
 .. tip::
 
-    This adds two bindings for each type.  For example, using ``[trailer]a``
-    with add an ``Acked-by`` trailer with the :ref:`default user
-    <default-user-identifier>`, whereas the ``[trailer]qa`` binding will
-    **q**\uery for the user data.
+    This adds two bindings for each type.  For example, using
+    :kbd:`[trailer]a` with add an ``Acked-by`` trailer with the
+    :ref:`default user <default-user-identifier>`, whereas the
+    :kbd:`[trailer]qa` binding will **q**\uery for the user data.
 
 .. todo:: Add screenshot for query mode
 

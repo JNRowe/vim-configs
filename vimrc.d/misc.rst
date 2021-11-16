@@ -58,7 +58,7 @@ prompt::
 
 .. tip::
 
-    When executed with ``!`` write a fuller and more verbose modeline.
+    When executed with :kbd:`!` write a fuller and more verbose modeline.
 
 Pretty print an option’s value to make it easier to read::
 
