@@ -14,4 +14,6 @@ Contents
     filetypes
     gui
     keymaps
+    menu
     misc
+    plugins/index

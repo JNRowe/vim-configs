@@ -6,47 +6,6 @@ occasionally it can be useful for accessing hierarchical information.  Therefore
 we add a :ref:`toggle binding <gui-toggles>`, but also learn to use ``:emenu``
 for even easier access.
 
-Function to generate common file menu.  Items can be specified as:
-
-================ ========================================
-Signature        Maps to
-================ ========================================
-``str``          Potential filename
-``[str]``        List of potential filenames
-``{str: str}``   Submenu with potential filename
-``{str: [str]}`` Submenu with list of potential filenames
-================ ========================================
-
-::
-
-    function! s:add_menu_items(heading, files) abort
-        for l:f in sort(a:files)
-            let l:f = expand(l:f)
-            if filereadable(l:f) || isdirectory(l:f)
-                execute 'amenu L&ocations.' . escape(a:heading, ' ') .
-                \   ' :e ' . l:f . '<CR>'
-                break
-            endif
-        endfor
-    endfunction
-
-    function! s:define_menu(heading, items, ...) abort
-        if type(a:items) is v:t_dict
-            for [l:k, l:v] in sort(items(a:items))
-                let l:files = type(l:v) is v:t_string ? split(l:v) : l:v
-                call s:add_menu_items(a:heading . '.' . l:k, l:files)
-            endfor
-        else
-            let l:files = type(a:items) is v:t_string ? [a:items] : a:items
-            call s:add_menu_items(a:heading, l:files)
-        endif
-        for l:group in get(a:, 1, [])
-            execute 'amenu L&ocations.' . escape(a:heading, ' ') .
-            \   '.-Sep- :<CR>'
-            call s:define_menu(a:heading, l:group)
-        endfor
-    endfunction
-
 .. tip::
 
     We’ll try to keep a speedy mnemonic for nested menus where we can:
@@ -60,28 +19,28 @@ Signature        Maps to
 
 For awesomewm_::
 
-    call s:define_menu('&awesome', {
+    call menu#define_menu('&awesome', {
     \   'r&c': g:xdg_config_dir . '/awesome/rc.moon',
     \   '&theme':  g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
     \ })
 
 For dwm_::
 
-    call s:define_menu('&dwm', {
+    call menu#define_menu('&dwm', {
     \   '&config.h': g:xdg_config_dir . '/dwm/config.h',
     \   '&theme':  g:xdg_config_dir . '/dwm/themes/theme.h',
     \ })
 
 For fontconfig_::
 
-    call s:define_menu('&fontconfig', [
+    call menu#define_menu('&fontconfig', [
     \   g:xdg_config_dir . '/fontconfig/fonts.conf',
     \   '~/.fonts.conf',
     \ ])
 
 For |git|::
 
-    call s:define_menu('&git', {
+    call menu#define_menu('&git', {
     \   '&config': [
     \       g:xdg_config_dir . '/git/config',
     \       '~/.gitconfig',
@@ -92,7 +51,7 @@ For |git|::
 
 For `GTK+`_ including dconf_::
 
-    call s:define_menu('&GTK+', {
+    call menu#define_menu('&GTK+', {
     \   'GTK+ &2': '~/.gtkrc-2.0',
     \   'GTK+ &3': g:xdg_config_dir . '/gtk-3.0/settings.ini',
     \   '&dconf': g:xdg_config_dir . '/dconf/user.ini',
@@ -106,11 +65,11 @@ For `GTK+`_ including dconf_::
 
 For |ledger|::
 
-    call s:define_menu('&ledger', g:xdg_data_dir . '/ledger/ledger.org.gpg')
+    call menu#define_menu('&ledger', g:xdg_data_dir . '/ledger/ledger.org.gpg')
 
 For mail tools; mailirproc_, mpop_, and msmtp_::
 
-    call s:define_menu('&mail', {
+    call menu#define_menu('&mail', {
     \   'maildirpro&c': '~/.maildirproc/default.rc',
     \   'm&pop': '~/.mpoprc',
     \   'm&smtp': '~/.msmtprc',
@@ -118,7 +77,7 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
 
 … oh, and neomutt_::
 
-    call s:define_menu('&neomutt', {
+    call menu#define_menu('&neomutt', {
     \   '&config': g:xdg_config_dir . '/neomutt/neomuttrc',
     \   'colours': g:xdg_config_dir . '/neomutt/colour_defaults.rc',
     \   '&theme': g:xdg_config_dir . '/neomutt/colour_' . $TERM . '.rc',
@@ -132,7 +91,7 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
 
 For openbox_::
 
-    call s:define_menu('&openbox', {
+    call menu#define_menu('&openbox', {
     \   '&autostart': g:xdg_config_dir . '/openbox/autostart.sh',
     \   '&menu': g:xdg_config_dir . '/openbox/menu.xml',
     \   'r&c': g:xdg_config_dir . '/openbox/rc.xml',
@@ -141,7 +100,7 @@ For openbox_::
 Python related tools; python_’s interactive configuration, flake8_, pip_, and
 the amazing :pypi:`ptpython`::
 
-    call s:define_menu('&python', {
+    call menu#define_menu('&python', {
     \   '&config': [
     \       expand('$PYTHONSTARTUP'),
     \       g:xdg_config_dir . '/python/rc',
@@ -153,7 +112,7 @@ the amazing :pypi:`ptpython`::
 
 For readline_ and its numerous dependents::
 
-    call s:define_menu('readline', [expand('$INPUTRC'), '~/.inputrc'])
+    call menu#define_menu('readline', [expand('$INPUTRC'), '~/.inputrc'])
 
 .. tip::
 
@@ -163,7 +122,7 @@ For readline_ and its numerous dependents::
 
 For :pypi:`rdial`, and my habitual editing of `run wrappers`_::
 
-    call s:define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
+    call menu#define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
 
 For |remind| and the excellent wyrd_ frontend to it::
 
@@ -171,7 +130,7 @@ For |remind| and the excellent wyrd_ frontend to it::
     for s:fn in glob('~/.reminders.d/*', v:false, v:true)
         let s:remind_files[fnamemodify(s:fn, ':t:gs?\.?_?')] = s:fn
     endfor
-    call s:define_menu('r&emind',
+    call menu#define_menu('r&emind',
     \   {
     \       '&config': '~/.reminders',
     \       '&wyrd': '~/.wyrdrc',
@@ -181,7 +140,7 @@ For |remind| and the excellent wyrd_ frontend to it::
 
 For taskwarrior_::
 
-    call s:define_menu('&taskwarrior', {
+    call menu#define_menu('&taskwarrior', {
     \   '&alias': g:xdg_config_dir . '/taskwarrior/alias.rc',
     \   '&config': g:xdg_config_dir . '/taskwarrior/defaults.rc',
     \   '&theme': g:xdg_config_dir . '/taskwarrior/terminal.rc',
@@ -189,7 +148,7 @@ For taskwarrior_::
 
 For *some* editor::
 
-    call s:define_menu('&vim', {
+    call menu#define_menu('&vim', {
     \   '&dein': '~/.vim/dein.rst',
     \   'r&c': '~/.vim/vimrc.rst',
     \   'rc-&local': '~/.vim/localcfg/' . hostname() . '.vim',
@@ -197,7 +156,7 @@ For *some* editor::
 
 For wget_::
 
-    call s:define_menu('&wget', g:xdg_config_dir . '/wget/config')
+    call menu#define_menu('&wget', g:xdg_config_dir . '/wget/config')
 
 For X.org_’s main user configuration files::
 
@@ -209,11 +168,11 @@ For X.org_’s main user configuration files::
     for s:fn in glob('~/.xinitrc.d/*', v:false, v:true)
         let s:xorg_files[fnamemodify(s:fn, ':t:gs?\.?_?')] = s:fn
     endfor
-    call s:define_menu('&xorg', s:xorg_files)
+    call menu#define_menu('&xorg', s:xorg_files)
 
 For |zsh|::
 
-    call s:define_menu('&zsh', {
+    call menu#define_menu('&zsh', {
     \   'co&mpletions': '~/.no_my_zsh/completion/',
     \   'confi&gs': '~/.no_my_zsh/config/',
     \   '&plugins': '~/.no_my_zsh/plugin/',

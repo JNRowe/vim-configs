@@ -29,5 +29,21 @@
         return sort(filter(l:targets, {_, s -> s =~? '^' . a:arglead}))
     endfunction
 
+.. function:: project_file_completion(arglead: str, cmdline: str, cursorpos: int) -> List[str]
+
+    Completion targets for project-specific configuration files.
+
+    :param arglead: Text of argument being completed
+    :param cmdline: Text of the command line
+    :param cursorpos: Location within command line
+    :returns: Completion candidates
+
+::
+
+    function! completion#project_file_completion(arglead, cmdline, cursorpos)
+        return sort(filter(['abbr.vim', 'project.vim'],
+        \                  {_, s -> s =~? '^' . a:arglead}))
+    endfunction
+
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html

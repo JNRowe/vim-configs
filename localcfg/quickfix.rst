@@ -15,20 +15,6 @@ Configure my custom maps for quickfix::
 
     call keymaps#mnemonic_map('location', {'local': v:true})
 
-A utility function to add new map commands::
-
-    function! s:qf_key(type, key, cmd) abort
-        let l:group = a:type ==# 'l' ? 'location' : 'quickfix'
-        " Commands ending with backslash don’t have <CR> appended
-        if a:cmd[len(a:cmd)-1] ==# '\'
-            let l:cmd = a:cmd[:len(a:cmd)-2]
-        else
-            let l:cmd = a:cmd . '<CR>'
-        endif
-        execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' .
-        \   a:type . l:cmd
-    endfunction
-
 Display occurrences of current word::
 
     nnoremap <silent> [quickfix]sw :vimgrep <C-r>=expand('<cword>')<CR> %<CR>
@@ -64,7 +50,7 @@ Configure layered maps for useful quickfix and location functions::
         \   ['r',          'rewind'],
         \   ['l',          'last'],
         \ ]
-            call s:qf_key(s:t, s:key, s:cmd)
+            call keymaps#quickfix_key(s:t, s:key, s:cmd)
         endfor
     endfor
     execute 'nnoremap <silent> [quickfix]x

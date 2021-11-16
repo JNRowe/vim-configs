@@ -21,41 +21,6 @@ they may make your life far simpler!
     to have tab completion available for the commands that I use from the
     outset.
 
-Utility functions
------------------
-
-Add a pre- or suffix to a list of strings.  This greatly improves readability in
-my opinion.
-
-::
-
-    function! s:prefix(str, args) abort
-        return map(a:args, {_, s -> a:str . s})
-    endfunction
-
-    function! s:suffix(str, args) abort
-        return map(a:args, {_, s -> s . a:str})
-    endfunction
-
-Enable an airline extension.  This is purely to remove duplication in setup.
-
-::
-
-    function! s:airline_enable(extension) abort
-        return 'let g:airline_extensions += ["' . a:extension . '"]'
-    endfunction
-
-``executable()`` doesn’t cache results, so we’ll do it ourselves to handle
-repeated calls::
-
-    let s:has_exec_cache = {}
-    function! s:has_exec(command) abort
-        if !has_key(s:has_exec_cache, a:command)
-            let s:has_exec_cache[a:command] = executable(a:command)
-        endif
-        return s:has_exec_cache[a:command]
-    endfunction
-
 Repositories
 ------------
 
@@ -86,7 +51,7 @@ Repositories
 ::
 
     call dein#add('AndrewRadev/sideways.vim', {
-    \   'on_cmd': s:prefix('Sideways', ['Left', 'Right']),
+    \   'on_cmd': plugins#dein#prefix('Sideways', ['Left', 'Right']),
     \   'on_map': {'n': '[sideways]'},
     \ })
 
@@ -101,7 +66,7 @@ Repositories
 ::
 
     call dein#add('AndrewRadev/splitjoin.vim', {
-    \   'on_cmd': s:prefix('Splitjoin', ['Join', 'Split']),
+    \   'on_cmd': plugins#dein#prefix('Splitjoin', ['Join', 'Split']),
     \   'on_map': {'n': ['gJ', 'gS']},
     \ })
 
@@ -151,7 +116,8 @@ Excellent window management, it really does bring dwm_ simplicity to
 ::
 
     call dein#add('JNRowe/dwm.vim', {
-    \   'on_func': s:prefix('DWM_', ['Close', 'Focus', 'New', 'Rotate']),
+    \   'on_func': plugins#dein#prefix('DWM_',
+    \                                  ['Close', 'Focus', 'New', 'Rotate']),
     \ })
 
 ``securemodelines``
@@ -259,7 +225,7 @@ languages.
 ::
 
     call dein#add('airblade/vim-gitgutter', {
-    \   'if': has('signs') && s:has_exec('git'),
+    \   'if': has('signs') && plugins#dein#has_exec('git'),
     \ })
 
 ``black``
@@ -273,7 +239,8 @@ languages.
 ::
 
     call dein#add('ambv/black', {
-    \   'if': v:version >= 704 && has('python3') && s:has_exec('black'),
+    \   'if': v:version >= 704 && has('python3') &&
+    \       plugins#dein#has_exec('black'),
     \   'on_cmd': 'Black',
     \   'on_ft': 'python',
     \ })
@@ -307,7 +274,8 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 ::
 
     call dein#add('bitc/vim-bad-whitespace', {
-    \   'on_cmd': s:suffix('BadWhitespace', ['Erase', 'Hide', 'Toggle']),
+    \   'on_cmd': plugins#dein#suffix('BadWhitespace',
+    \                                 ['Erase', 'Hide', 'Toggle']),
     \   'on_event': 'InsertEnter',
     \ })
 
@@ -333,7 +301,8 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 ::
 
     call dein#add('chrisbra/Colorizer', {
-    \   'on_cmd': s:prefix('Color', ['Highlight', 'Toggle']) + ['RGB2Term', ],
+    \   'on_cmd': plugins#dein#prefix('Color',
+    \                                 ['Highlight', 'Toggle']) + ['RGB2Term', ],
     \ })
 
 .. note::
@@ -359,7 +328,7 @@ a full editing session.
 ::
 
     call dein#add('chrisbra/NrrwRgn', {
-    \   'hook_post_source': s:airline_enable('nrrwrgn'),
+    \   'hook_post_source': plugins#dein#airline_enable('nrrwrgn'),
     \   'if': v:version >= 704,
     \   'on_cmd': ['NUD', 'NR', 'NW']
     \ })
@@ -439,17 +408,17 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     let s:unicode_opts = {
-    \   'hook_post_source': s:airline_enable('unicode'),
+    \   'hook_post_source': plugins#dein#airline_enable('unicode'),
     \   'if': v:version >= 704,
     \   'on_cmd':
     \       ['DigraphNew', 'Digraphs']
-    \       + s:prefix('Unicode', ['Name', 'Search', 'Table']),
+    \       + plugins#dein#prefix('Unicode', ['Name', 'Search', 'Table']),
     \   'on_map': {
     \       'i': ['<C-x><C-z>', '<C-x><C-g>', '<C-x><C-b>'],
     \       'n': '<Plug>(UnicodeGA)',
     \   }
     \ }
-    if s:has_exec('fzf')
+    if plugins#dein#has_exec('fzf')
         let s:unicode_opts['depends'] = 'fzf'
         let s:unicode_opts['on_map']['i'] += ['<C-g><C-f>', ]
     endif
@@ -485,7 +454,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
     call dein#add('codegram/vim-codereview', {
     \   'depends': 'patchreview-vim',
-    \   'if': has('ruby') && s:has_exec('curl'),
+    \   'if': has('ruby') && plugins#dein#has_exec('curl'),
     \   'on_cmd': 'CodeReview',
     \ })
 
@@ -530,7 +499,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('dbmrq/vim-ditto', {
-    \   'on_cmd': s:prefix('Ditto', ['File', 'On']),
+    \   'on_cmd': plugins#dein#prefix('Ditto', ['File', 'On']),
     \ })
 
 .. _ale-plugin:
@@ -562,7 +531,7 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('dhruvasagar/vim-table-mode', {
-    \   'on_cmd': s:prefix('Table', ['ModeToggle', 'ize']),
+    \   'on_cmd': plugins#dein#prefix('Table', ['ModeToggle', 'ize']),
     \   'on_ft': 'rst',
     \   'on_map': '<LocalLeader>t',
     \ })
@@ -707,7 +676,7 @@ jealous.
 ::
 
     call dein#add('guns/xterm-color-table.vim', {
-    \   'on_cmd': s:suffix('XtermColorTable', ['', 'V']),
+    \   'on_cmd': plugins#dein#suffix('XtermColorTable', ['', 'V']),
     \ })
 
 ``dein-command.vim``
@@ -752,7 +721,9 @@ jealous.
 
     call dein#add('idanarye/vim-omnipytent', {
     \   'if': has('pythonx'),
-    \   'on_cmd': s:prefix('OP', s:suffix('edit', ['', '2', '3'])),
+    \   'on_cmd':
+    \       plugins#dein#prefix('OP',
+    \                           plugins#dein#suffix('edit', ['', '2', '3'])),
     \ })
 
 ``vim-vebugger``
@@ -772,14 +743,14 @@ jealous.
     \   ['python3', 'PDB3'],
     \   ['ruby', 'RDebug'],
     \ ]
-        if s:has_exec(s:cmd)
+        if plugins#dein#has_exec(s:cmd)
             let s:vebugger_commands +=
                 \ [s:arg != v:null ? s:arg : toupper(s:cmd)]
         endif
     endfor
     call dein#add('idanarye/vim-vebugger', {
     \   'depends': 'vimproc',
-    \   'on_cmd': s:prefix('VBGstart', s:vebugger_commands),
+    \   'on_cmd': plugins#dein#prefix('VBGstart', s:vebugger_commands),
     \   'on_func': 'vebugger',
     \ })
 
@@ -806,7 +777,7 @@ jealous.
 ::
 
     call dein#add('jamessan/vim-gnupg', {
-    \   'if': s:has_exec('gpg') || s:has_exec('gpg2'),
+    \   'if': plugins#dein#has_exec('gpg') || plugins#dein#has_exec('gpg2'),
     \ })
 
 ``vim-textobj-css``
@@ -855,8 +826,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     call dein#add('jceb/vim-editqf', {
     \   'if': has('quickfix'),
     \   'on_cmd':
-    \       s:prefix('Loc', ['AddNote', 'Load', 'Save'])
-    \       + s:prefix('QF', ['AddNote', 'Load', 'Save']),
+    \       plugins#dein#prefix('Loc', ['AddNote', 'Load', 'Save'])
+    \       + plugins#dein#prefix('QF', ['AddNote', 'Load', 'Save']),
     \   'on_ft': 'qf',
     \   'on_map': {'n': '<LocalLeader>n'},
     \ })
@@ -871,8 +842,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('jreybert/vimagit', {
-    \   'hook_post_source': s:airline_enable('vimagit'),
-    \   'if': s:has_exec('git'),
+    \   'hook_post_source': plugins#dein#airline_enable('vimagit'),
+    \   'if': plugins#dein#has_exec('git'),
     \   'on_cmd': 'Magit',
     \ })
 
@@ -887,8 +858,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/fzf', {
-    \   'hook_post_source': s:airline_enable('fzf'),
-    \   'if': s:has_exec('fzf'),
+    \   'hook_post_source': plugins#dein#airline_enable('fzf'),
+    \   'if': plugins#dein#has_exec('fzf'),
     \   'on_cmd': 'FZF',
     \   'on_func': 'fzf#run',
     \ })
@@ -905,10 +876,10 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
     let s:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
     \   'History', 'Lines', 'Maps', 'Marks', 'Windows']
-    if s:has_exec('ag')
+    if plugins#dein#has_exec('ag')
         let s:fzf_commands += ['Ag', ]
     endif
-    if s:has_exec('git')
+    if plugins#dein#has_exec('git')
         let s:fzf_commands += ['GFiles', ]
     endif
     if has('insert_expand')
@@ -916,8 +887,8 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     endif
     call dein#add('junegunn/fzf.vim', {
     \   'depends': 'fzf',
-    \   'if': s:has_exec('fzf'),
-    \   'on_cmd': s:prefix('FZF', s:fzf_commands),
+    \   'if': plugins#dein#has_exec('fzf'),
+    \   'on_cmd': plugins#dein#prefix('FZF', s:fzf_commands),
     \ })
 
 .. note::
@@ -976,7 +947,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junkblocker/patchreview-vim', {
-    \   'on_cmd': s:suffix('Review',
+    \   'on_cmd': plugins#dein#suffix('Review',
     \                      ['Diff', 'Patch', 'ReversePatchReview']),
     \ })
 
@@ -991,7 +962,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('justincampbell/vim-eighties', {
-    \   'on_cmd': s:prefix('Eighties', ['Disable', 'Enable']),
+    \   'on_cmd': plugins#dein#prefix('Eighties', ['Disable', 'Enable']),
     \ })
 
 ``vim-sneak``
@@ -1067,7 +1038,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('koron/nyancat-vim', {
-    \   'on_cmd': s:prefix('Nyancat', ['', '2']),
+    \   'on_cmd': plugins#dein#prefix('Nyancat', ['', '2']),
     \ })
 
 ``vim-signature``
@@ -1158,7 +1129,7 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mattn/calendar-vim', {
-    \   'on_cmd': s:suffix('Calendar', ['', 'H', 'T', 'VR']),
+    \   'on_cmd': plugins#dein#suffix('Calendar', ['', 'H', 'T', 'VR']),
     \   'on_map': {'n': '[calendar]'},
     \ })
 
@@ -1395,7 +1366,7 @@ user, how cool is that?
 
     call dein#add('romainl/vim-qlist', {
     \   'if': has('quickfix'),
-    \   'on_cmd': s:suffix('list', ['D', 'I']),
+    \   'on_cmd': plugins#dein#suffix('list', ['D', 'I']),
     \   'on_ft': 'qf',
     \   'on_map': {'n': ['[D', ']D', 'I', ']I']},
     \ })
@@ -1411,7 +1382,7 @@ user, how cool is that?
 ::
 
     call dein#add('rhysd/committia.vim', {
-    \   'if': s:has_exec('git'),
+    \   'if': plugins#dein#has_exec('git'),
     \ })
 
 ``git-messenger.vim``
@@ -1425,7 +1396,7 @@ user, how cool is that?
 ::
 
     call dein#add('rhysd/git-messenger.vim', {
-    \   'if': s:has_exec('git'),
+    \   'if': plugins#dein#has_exec('git'),
     \   'on_cmd': 'GitMessenger',
     \   'on_map': {'n': '[messenger]'},
     \ })
@@ -1524,7 +1495,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('tell-k/vim-quick-radon', {
-    \   'if': s:has_exec('radon'),
+    \   'if': plugins#dein#has_exec('radon'),
     \   'lazy': v:false,
     \   'on_cmd': 'QuickRadon',
     \ })
@@ -1568,7 +1539,7 @@ really daunting to wrap your head around.
 ::
 
     call dein#add('timcharper/wordnet.vim', {
-    \   'if': s:has_exec('wn'),
+    \   'if': plugins#dein#has_exec('wn'),
     \   'on_func': 'WordNetOverviews',
     \   'on_map': '<Leader>wn',
     \ })
@@ -1660,7 +1631,7 @@ Replace most of your use of a shell when working on a project with just another
 ::
 
     call dein#add('tpope/vim-fugitive', {
-    \   'if': s:has_exec('git'),
+    \   'if': plugins#dein#has_exec('git'),
     \ })
 
 ``vim-jdaddy``
@@ -1688,7 +1659,7 @@ Replace most of your use of a shell when working on a project with just another
 ::
 
     call dein#add('tpope/vim-obsession', {
-    \   'hook_post_source': s:airline_enable('obsession'),
+    \   'hook_post_source': plugins#dein#airline_enable('obsession'),
     \   'on_cmd': 'Obsession',
     \ })
 
@@ -1730,7 +1701,7 @@ your favourite plugin anyway.
 
     call dein#add('tpope/vim-rhubarb', {
     \   'depends': 'vim-fugitive',
-    \   'if': s:has_exec('git'),
+    \   'if': plugins#dein#has_exec('git'),
     \ })
 
 ``vim-rsi``
@@ -1844,7 +1815,7 @@ documentation a relatively painless task.
 ::
 
     call dein#add('troydm/zoomwintab.vim', {
-    \   'hook_post_source': s:airline_enable('zoomwintab'),
+    \   'hook_post_source': plugins#dein#airline_enable('zoomwintab'),
     \   'on_cmd': 'ZoomWinTabToggle',
     \   'on_map': {'n': '<C-w>o'},
     \ })
@@ -2016,7 +1987,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('zah/nim.vim', {
-    \   'if': s:has_exec('nim'),
+    \   'if': plugins#dein#has_exec('nim'),
     \   'lazy': v:false,
     \   'on_ft': 'nim',
     \ })
@@ -2031,7 +2002,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('ziglang/zig.vim', {
-    \   'if': s:has_exec('zig'),
+    \   'if': plugins#dein#has_exec('zig'),
     \   'on_ft': 'zig',
     \ })
 
@@ -2065,7 +2036,7 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/SyntaxRange', {
-    \   'on_cmd': s:prefix('Syntax', ['Ignore', 'Include']),
+    \   'on_cmd': plugins#dein#prefix('Syntax', ['Ignore', 'Include']),
     \ })
 
 ``TaQua``

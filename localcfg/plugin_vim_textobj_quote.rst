@@ -18,23 +18,6 @@ Enable for |reST| and other largely prose filetypes::
 
 Configure quotes for current language::
 
-    function! s:select_quotes() abort
-        let l:current_lang = split(&spelllang, '_')[0]
-        if l:current_lang ==# 'de'
-            let g:textobj#quote#doubleDefault = '„“'
-            let g:textobj#quote#singleDefault = '‚‘'
-        elseif l:current_lang ==# 'en'
-            let g:textobj#quote#doubleDefault = '“”'
-            let g:textobj#quote#singleDefault = '‘’'
-        elseif l:current_lang =~# '^\(es|it\)$'
-            let g:textobj#quote#doubleDefault = '«»'
-            let g:textobj#quote#singleDefault = '“”'
-        elseif l:current_lang ==# 'fr'
-            let g:textobj#quote#doubleDefault = '«»'
-            let g:textobj#quote#singleDefault = '‹›'
-        endif
-    endfunction
-
     augroup jnrowe_vim_textobj_quote
-        autocmd BufEnter * call <SID>select_quotes()
+        autocmd BufEnter * call plugins#vim_textobj_quote#select_quotes()
     augroup END

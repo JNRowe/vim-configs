@@ -32,13 +32,11 @@ Don’t automatically close window::
 
 Use scrollwheel, or emulated key, to move through history in window::
 
-    function! s:setup_gitmessengerpopup() abort
-        nmap <buffer> <ScrollWheelDown> o
-        nmap <buffer> <ScrollWheelUp> O
-    endfunction
     augroup jnrowe_git_messenger
         autocmd!
-        autocmd FileType gitmessengerpopup call <SID>setup_gitmessengerpopup()
+        autocmd FileType gitmessengerpopup
+        \   nmap <buffer> <ScrollWheelDown> o <Bar>
+        \   nmap <buffer> <ScrollWheelUp> O
     augroup END
 
 .. spelling::

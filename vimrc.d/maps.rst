@@ -82,15 +82,8 @@ Visual mode indent that matches how it *feels* in insert::
 
 :kbd:`<Home>` darts between start of line and start of text::
 
-    function! s:home_skip() abort
-        if col('.') != 1
-            normal! 0
-        else
-            normal! ^
-        endif
-    endfunction
-    inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
-    nnoremap <silent> <home> :call <SID>home_skip()<CR>
+    inoremap <silent> <home> <C-o>:call keymaps#home_skip()<CR>
+    nnoremap <silent> <home> :call keymaps#home_skip()<CR>
 
 Add :kbd:`<F10>` build bindings that are muscle memory reminders of my
 childhood::

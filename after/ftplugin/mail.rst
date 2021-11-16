@@ -28,16 +28,5 @@ in work mail.
 Kill from current line to signature, as a quick way to scrub large chunks of
 quoted text::
 
-    function! s:kill_to_signature() abort
-        let l:sig = search('^-- $', 'nW')
-        if l:sig != 0
-            execute line('.') . ',' . (l:sig - 1) . 'd "_'
-        else
-            let v:warningmsg = 'Signature not found!'
-            echohl WarningMsg
-            echomsg v:warningmsg
-            echohl none
-        endif
-    endfunction
-    inoremap <silent> <C-k> <C-o>:call <SID>kill_to_signature()<CR>
-    nnoremap <silent> <C-k> :call <SID>kill_to_signature()<CR>
+    inoremap <silent> <C-k> <C-o>:call filetypes#kill_to_signature()<CR>
+    nnoremap <silent> <C-k> :call filetypes#kill_to_signature()<CR>

@@ -75,6 +75,24 @@
         vnoremap <silent> <buffer> > :diffput<CR>
     endfunction
 
+.. function:: kill_to_signature() -> None
+
+    Kill from current line to mail signature.
+
+::
+
+    function! filetypes#kill_to_signature() abort
+        let l:sig = search('^-- $', 'nW')
+        if l:sig != 0
+            execute line('.') . ',' . (l:sig - 1) . 'd "_'
+        else
+            let v:warningmsg = 'Signature not found!'
+            echohl WarningMsg
+            echomsg v:warningmsg
+            echohl none
+        endif
+    endfunction
+
 .. function:: wordnet_close_win() -> None
 
     Close wordnet_ window from anywhere.

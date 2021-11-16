@@ -1,6 +1,34 @@
 ``autoload/misc.vim``
 =====================
 
+.. function:: apply_project_locals() -> None
+
+    Find and process project-specific configuration files.
+
+::
+
+    function! misc#apply_project_locals()
+        let b:meta_dir = misc#meta_detect(expand('<afile>'))
+        if type(b:meta_dir) != v:t_string
+            return
+        endif
+        if !exists('b:meta_spell')
+            let l:spf = b:meta_dir . &spelllang . '.' . &encoding . '.add'
+            if filereadable(l:spf)
+            \   && index(split(&spellfile, ','), l:spf) == -1
+                execute 'setlocal spellfile+=' . l:spf
+            endif
+            let b:meta_spell = v:true
+        endif
+        for l:file in ['abbr.vim', 'project.vim']
+            let l:var = 'b:meta_' . fnamemodify(l:file, ':r')
+            if !exists(l:var) && filereadable(b:meta_dir . '/' . l:file)
+                execute 'source ' . b:meta_dir . '/' . l:file
+            endif
+            execute 'let ' . l:var . ' = v:true'
+        endfor
+    endfunction
+
 .. function:: call_build(target: Optional[str]) -> None
 
     Utility function to run a build.
@@ -26,6 +54,39 @@
     samurai_ is a :command:`ninja` reimplementation that turns up on a few
     machines I use.
 
+.. function:: disable_plugin(plugin: str) -> None
+
+    Mark a function as loaded to prevent loading.
+
+    This is purely to remove duplication in setup.
+
+    :param plugin: Name of the plugin to shadow
+
+::
+
+    function! misc#disable_plugin(str) abort
+        execute 'let g:loaded_' . a:str . ' = v:true'
+    endfunction
+
+.. function:: edit_project_file(name: str) -> None
+
+    Edit project-specific configuration file.
+
+    :param name: Configuration file to edit
+
+::
+
+    function! misc#edit_project_file(name)
+        let b:meta_dir = misc#meta_detect(expand('<afile>'))
+        if type(b:meta_dir) != v:t_string
+            return
+        endif
+        if !isdirectory(b:meta_dir)
+            call mkdir(b:meta_dir, 'p')
+        endif
+        execute ':edit ' . b:meta_dir . '/' . a:name
+    endfunction
+
 .. function:: insert_options() -> None
 
     Insert all :command:`vim` options in to the current buffer.
@@ -38,6 +99,49 @@
         vim.current.buffer.append(f'{k}={vim.options[k]!r}')
     EOF
     endfunction
+
+.. function:: meta_detect(file: str) -> Optional[str]
+
+    Find location for project-specific configuration files.
+
+    :param file: Location to search for directory from
+    :returns: Directory for project-specific configuration files, if
+        possible
+
+::
+
+    let s:project_env_dir = g:vim_data_dir . '/project_env/'
+
+    function! misc#meta_detect(file)
+            if exists('b:meta_dir')
+                return b:meta_dir
+            endif
+            let l:p = resolve(fnamemodify(a:file, ':p:h'))
+
+            silent let l:output = systemlist('git -C ' . shellescape(l:p) .
+            \                                ' rev-parse --show-toplevel')
+            if v:shell_error == 0 && len(l:output) == 1
+                return s:project_env_dir . l:output[0]
+            endif
+
+            " Lazy method to handle scheme prefixed filenames
+            let l:break = ''
+            while l:p !=# l:break
+                if isdirectory(l:p . '/.meta')
+                    return s:project_env_dir . l:p . '/.meta'
+                endif
+                let l:break = l:p
+                let l:p = fnamemodify(l:p, ':h')
+            endwhile
+            return v:none
+        endfunction
+
+.. note::
+
+    The reason we’re storing project specific files deep in ``g:vim_data_dir``
+    instead of under the project itself is so that we need not concern ourselves
+    with the security implications of remote :file:`vimrc` snippets from random
+    users and projects.
 
 .. function:: modeline_stub(verbose: bool) -> None
 
@@ -165,7 +269,3 @@
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
 .. _samurai: https://github.com/michaelforney/samurai
-
-.. spelling::
-
-    truthy

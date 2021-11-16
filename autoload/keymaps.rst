@@ -1,6 +1,20 @@
 ``autoload/keymaps.vim``
 ========================
 
+.. function:: home_skip() -> None
+
+    Jump between first character and first non-blank character on line.
+
+::
+
+    function! keymaps#home_skip() abort
+        if col('.') != 1
+            normal! 0
+        else
+            normal! ^
+        endif
+    endfunction
+
 .. function:: mnemonic_map(name: str, buffer: Optional[bool] = False, key: Optional[str], local: Optional[bool] = False, modes: Optional[str] = 'n') -> None
 
     Mnemonic mapping setup function.
@@ -31,6 +45,29 @@
 
     This adds a :kbd:`?` binding to display the map list for ``name``.
 
+.. function:: quickfix_key(type: str, key: str, cmd: str) -> None
+
+    A utility function to add new ``quickfix`` map commands.
+
+    :param type: Which mode to add map for; ``q``\uickfix or ``l``\ocation
+    :param key: Key to map
+    :param cmd: Command to execute for map
+
+::
+
+    function! keymaps#quickfix_key(type, key, cmd) abort
+        let l:group = a:type ==# 'l' ? 'location' : 'quickfix'
+        " Commands ending with backslash don’t have <CR> appended
+        if a:cmd[len(a:cmd)-1] ==# '\'
+            let l:cmd = a:cmd[:len(a:cmd)-2]
+        else
+            let l:cmd = a:cmd . '<CR>'
+        endif
+        execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' .
+        \   a:type . l:cmd
+    endfunction
+
+
 .. function:: switch_buf(count: int) -> None
 
     Relative buffer switching while ignoring scratch buffers.
@@ -59,4 +96,5 @@
 
 .. spelling::
 
-    truthy
+    ocation
+    uickfix

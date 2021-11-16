@@ -31,14 +31,8 @@ isn’t available::
 Based on an example from the documentation, add a binding to populate the
 ``quickfix`` list from results::
 
-    function! s:build_quickfix_list(lines) abort
-        call setqflist(map(copy(a:lines), {_, s -> 'filename': s }))
-        " 7 lines seems to be the magic number for *me*
-        copen 7
-    endfunction
-
     let g:fzf_action = {
-    \   'ctrl-q': function('s:build_quickfix_list'),
+    \   'ctrl-q': function('plugins#fzf#build_quickfix_list'),
     \   'ctrl-t': 'tab split',
     \   'ctrl-x': 'split',
     \   'ctrl-v': 'vsplit'

@@ -121,81 +121,13 @@ works on plugin names in :doc:`dein plugin configuration <../dein>`::
 
 Search for project specific :file:`vimrc` and support files::
 
-        let s:project_env_dir = g:vim_data_dir . '/project_env/'
-
-        function! s:meta_detect(file)
-            if exists('b:meta_dir')
-                return b:meta_dir
-            endif
-            let l:p = resolve(fnamemodify(a:file, ':p:h'))
-
-            silent let l:output = systemlist('git -C ' . shellescape(l:p) .
-            \                                ' rev-parse --show-toplevel')
-            if v:shell_error == 0 && len(l:output) == 1
-                return s:project_env_dir . l:output[0]
-            endif
-
-            " Lazy method to handle scheme prefixed filenames
-            let l:break = ''
-            while l:p !=# l:break
-                if isdirectory(l:p . '/.meta')
-                    return s:project_env_dir . l:p . '/.meta'
-                endif
-                let l:break = l:p
-                let l:p = fnamemodify(l:p, ':h')
-            endwhile
-            return v:none
-        endfunction
-
-        function! s:apply_project_locals()
-            let b:meta_dir = s:meta_detect(expand('<afile>'))
-            if type(b:meta_dir) != v:t_string
-                return
-            endif
-            if !exists('b:meta_spell')
-                let l:spf = b:meta_dir . &spelllang . '.' . &encoding . '.add'
-                if filereadable(l:spf)
-                \   && index(split(&spellfile, ','), l:spf) == -1
-                    execute 'setlocal spellfile+=' . l:spf
-                endif
-                let b:meta_spell = v:true
-            endif
-            for l:file in ['abbr.vim', 'project.vim']
-                let l:var = 'b:meta_' . fnamemodify(l:file, ':r')
-                if !exists(l:var) && filereadable(b:meta_dir . '/' . l:file)
-                    execute 'source ' . b:meta_dir . '/' . l:file
-                endif
-                execute 'let ' . l:var . ' = v:true'
-            endfor
-        endfunction
-
-        autocmd BufWinEnter * call <SID>apply_project_locals()
-
-.. note::
-
-    The reason we’re storing project specific files deep in ``g:vim_data_dir``
-    instead of under the project itself is so that we need not concern ourselves
-    with the security implications of remote :file:`vimrc` snippets from random
-    users and projects.
+        autocmd BufWinEnter * call misc#apply_project_locals()
 
 Add command to more easily edit the project specific files::
 
-        function! s:edit_project_file(name)
-            let b:meta_dir = s:meta_detect(expand('<afile>'))
-            if type(b:meta_dir) != v:t_string
-                return
-            endif
-            if !isdirectory(b:meta_dir)
-                call mkdir(b:meta_dir, 'p')
-            endif
-            execute ':edit ' . b:meta_dir . '/' . a:name
-        endfunction
-        function! s:project_file(arglead, cmdline, cursorpos)
-            return sort(filter(['abbr.vim', 'project.vim'],
-            \                  {_, s -> s =~? '^' . a:arglead}))
-        endfunction
-        command! -nargs=1 -complete=customlist,<SID>project_file
-        \   ProjectFile call <SID>edit_project_file(<q-args>)
+        command! -nargs=1
+        \   -complete=customlist,completion#project_file_completion
+        \   ProjectFile call misc#edit_project_file(<q-args>)
 
 ::
 

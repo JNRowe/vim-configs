@@ -14,21 +14,10 @@ Configure my custom maps::
 
 Display radon_ output if possible::
 
-    function! s:radon_open() abort
-        if &filetype ==# 'python'
-            QuickRadon
-        endif
-    endfunction
-    nnoremap <silent> [radon]o :call <SID>radon_open()<CR>
+    nnoremap <silent> [radon]o :call plugins#vim_quick_radon#open_win()<CR>
 
 Add map to close radon_ window from anywhere::
 
-    function! s:radon_close_win() abort
-        if bufnr('quick_radon') > -1
-            exec bufnr('quick_radon') . 'bdelete!'
-        endif
-    endfunction
-
-    nnoremap <silent> [radon]c :call <SID>radon_close_win()<CR>
+    nnoremap <silent> [radon]c :call plugins#radon#close_win()<CR>
 
 .. _radon: https://radon.readthedocs.io/

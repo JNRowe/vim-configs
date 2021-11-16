@@ -4,20 +4,11 @@
 Only complete on installed languages::
 
     if has('cmdline_compl')
-        function! s:regex_complete(arglead, cmdline, cursorpos) abort
-            let l:lang_files = glob(
-            \   g:dein_repos_dir .
-            \   '/github.com/ervandew/regex/autoload/regex/lang/*.vim',
-            \   v:false, v:true
-            \ )
-            let l:supported_langs = filter(
-            \   map(l:lang_files, {_, s -> fnamemodify(s, ':t:r')}),
-            \   {_, s -> !empty(exepath(s))}
-            \ )
-            return sort(filter(l:supported_langs,
-            \                  {_, s -> s =~? '^' . a:arglead}))
-        endfunction
         command! -nargs=?
-        \   -complete=customlist,<SID>regex_complete
+        \   -complete=customlist,plugins#regex#lang_complete
         \   Regex call regex#regex#OpenTestWindow(<q-args>)
     endif
+
+.. seealso::
+
+    * :func:`lang_complete <lang_complete>`

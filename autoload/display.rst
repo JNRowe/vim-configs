@@ -144,6 +144,23 @@
         return l:groups
     endfunction
 
+.. function:: readable_path(filename: str) -> str
+
+    Format filename for user display.
+
+    The assumption here is that any file that is within a project need only
+    be specified as such, whereas all other files should show their complete
+    path.
+
+    :param filename: Filename to operate on
+    :returns: Relative filename or full path
+
+::
+
+    function! display#readable_path(filename) abort
+        return fnamemodify(a:filename, ':~:.')
+    endfunction
+
 .. function:: split_to_right() -> None
 
     Issue a “shift to right” for a window.

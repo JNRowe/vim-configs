@@ -8,16 +8,12 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 
 ::
 
-    function! s:disable_plugin(str) abort
-        execute 'let g:loaded_' . a:str . ' = v:true'
-    endfunction
-
     for s:plugin in [
     \   '2html_plugin', 'getscriptPlugin', 'logipat', 'netrw',
     \   'netrwPlugin', 'rrhelper', 'spellfile_plugin', 'tarPlugin',
     \   'vimballPlugin', 'zipPlugin',
     \ ]
-        call s:disable_plugin(s:plugin)
+        call misc#disable_plugin(s:plugin)
     endfor
 
 .. note::
@@ -29,7 +25,7 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 Forcibly disable ``matchit``, as we’re using the :ref:`vim-matchup
 <vim-matchup-plugin>` plugin::
 
-    call s:disable_plugin('matchit')
+    call misc#disable_plugin('matchit')
 
 .. _pygments: http://pygments.org/
 .. _archivemount: http://www.cybernoia.de/software/archivemount/
