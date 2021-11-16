@@ -71,7 +71,7 @@ Use my custom maps::
         execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
     endfor
 
-Disable ``ALE`` in :wikipedia:`MHTML` files as they are seldom more than an
+Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 
     let g:ale_pattern_options = {

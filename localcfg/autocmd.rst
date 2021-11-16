@@ -53,7 +53,7 @@ Automatically :command:`chmod +x` shell scripts::
 .. note::
 
     This shells out to :command:`chmod` as a lazy way to avoid craziness with
-    ``getfperm()`` and ``setfperm()``
+    ``getfperm()`` and ``setfperm()``.
 
 Jump to the last known cursor position if possible::
 
@@ -71,7 +71,7 @@ Jump to the last known cursor position if possible::
     be useful, such as when issuing a :command:`git commit --amend`, you can
     always jump manually using the :kbd:`'"` mark.
 
-Make ``stdin`` buffers temporary by default::
+Make buffers created from standard input temporary by default::
 
         autocmd StdinReadPost * set buftype=nofile
 
