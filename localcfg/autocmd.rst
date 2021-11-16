@@ -184,7 +184,9 @@ Add command to more easily edit the project specific files::
             if type(b:meta_dir) != v:t_string
                 return
             endif
-            call mkdir(b:meta_dir, 'p')
+            if !isdirectory(b:meta_dir)
+                call mkdir(b:meta_dir, 'p')
+            endif
             execute ':edit ' . b:meta_dir . '/' . a:name
         endfunction
         function! s:project_file(arglead, cmdline, cursorpos)

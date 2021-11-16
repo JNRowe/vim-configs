@@ -12,12 +12,16 @@ I only use :command:`vim`’s builtin indent maps::
 Use a personal notes directory that can be version-controlled separately::
 
     let g:notes_directories = [g:xdg_data_dir . '/vim-notes']
-    call mkdir(g:notes_directories[0], 'p')
+    if !isdirectory(g:notes_directories[0])
+        call mkdir(g:notes_directories[0], 'p')
+    endif
 
 Store indexes in |XDG basedir| compliant location::
 
     let s:notes_cache_dir = g:vim_cache_dir . '/vim-notes'
-    call mkdir(s:notes_cache_dir, 'p')
+    if !isdirectory(s:notes_cache_dir)
+        call mkdir(s:notes_cache_dir, 'p')
+    endif
     let g:notes_indexfile = s:notes_cache_dir . '/index.pickle'
     let g:notes_tagsindex = s:notes_cache_dir . '/tags.txt'
 

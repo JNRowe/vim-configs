@@ -9,7 +9,9 @@ overwrite a :command:`cp --link` tree::
     set backup
     set backupcopy=auto,breakhardlink
     let &backupdir = g:vim_cache_dir . '/backup//'
-    call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
+    if !isdirectory(g:vim_cache_dir . '/backup')
+        call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
+    endif
 
 Remove duplicates entries for readability::
 
@@ -114,7 +116,9 @@ If a wordlist is available use it as the completion dictionary::
 Keep swap files in |XDG basedir| compliant location::
 
     let &directory = g:vim_cache_dir . '/swap//,' . &directory
-    call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
+    if !isdirectory(g:vim_cache_dir . '/swap')
+        call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
+    endif
 
 :wikipedia:`UTF-8` should be default on all systems now, and :command:`vim` will
 pick that up via :envvar:`LANG`, but we’ll force it just in case::
@@ -433,7 +437,9 @@ compliant location::
     if has('persistent_undo')
         set undofile
         let &undodir = g:vim_data_dir . '/undo//,' . &undodir
-        call mkdir(g:vim_data_dir . '/undo', 'p', 0700)
+        if !isdirectory(g:vim_data_dir . '/undo')
+            call mkdir(g:vim_data_dir . '/undo', 'p', 0700)
+        endif
     endif
 
 .. warning::
@@ -451,7 +457,9 @@ Store session files in |XDG basedir| compliant location::
 
     if has('mksession')
         let &viewdir = g:vim_cache_dir . '/view'
-        call mkdir(&viewdir, 'p', 0700)
+        if !isdirectory(&viewdir)
+            call mkdir(&viewdir, 'p', 0700)
+        endif
     endif
 
 Configure ``'viminfo'`` and store :file:`viminfo` files in |XDG basedir|
