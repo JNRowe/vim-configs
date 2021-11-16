@@ -13,9 +13,11 @@ overwrite a :command:`cp --link` tree::
         call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
     endif
 
-Remove duplicates entries for readability::
+Where necessary, remove duplicates entries for readability::
 
-    let &backupskip = join(uniq(split(&backupskip, ',')), ',')
+    if !has('patch-8.1.1519')
+        let &backupskip = join(uniq(split(&backupskip, ',')), ',')
+    endif
 
 .. note::
 
