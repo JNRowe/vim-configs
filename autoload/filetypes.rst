@@ -97,21 +97,8 @@
         endif
     endfunction
 
-.. function:: wordnet_close_win() -> None
-
-    Close wordnet_ window from anywhere.
-
-::
-
-    function! filetypes#wordnet_close_win() abort
-        if bufnr('__WordNet__') > -1
-            exec bufnr('__WordNet__') . 'bdelete!'
-        endif
-    endfunction
-
 .. _X-Advice header: http://www.nicemice.net/amc/advice-header/
 .. _neomutt: http://www.neomutt.org/
-.. _wordnet: https://wordnet.princeton.edu/
 
 .. spelling::
 

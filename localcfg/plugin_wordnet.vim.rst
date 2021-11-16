@@ -9,7 +9,7 @@ Use my custom maps::
 
     for [s:key, s:cmd] in [
     \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-    \   ['c', 'misc#wordnet_close_win()'],
+    \   ['c', 'plugins#wordnet#close_win()'],
     \ ]
         execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
     endfor
@@ -17,7 +17,7 @@ Use my custom maps::
 .. seealso::
 
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-    * :func:`misc#wordnet_close_win() <wordnet_close_win>`
+    * :func:`plugins#wordnet#close_win() <close_win>`
 
 We don’t care that the dictionary buffer has trailing whitespace::
 

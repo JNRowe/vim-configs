@@ -18,3 +18,4 @@ Contents
     vim_quick_radon
     vim_sneak
     vim_textobj_quote
+    wordnet.vim
