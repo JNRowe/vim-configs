@@ -90,7 +90,7 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
 Add command to :func:`switch text size <set_font>` quickly::
 
-    command! -nargs=? -count -complete=custom,gui#font_complete Fontsel
+    command! -nargs=? -count -complete=customlist,gui#font_complete Fontsel
     \   call gui#set_font(<q-args>)
 
 .. tip::

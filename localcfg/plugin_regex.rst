@@ -10,10 +10,12 @@ Only complete on installed languages::
             \   '/github.com/ervandew/regex/autoload/regex/lang/*.vim',
             \   v:false, v:true
             \ )
-            return filter(map(l:lang_files,
-            \                 {_, s -> fnamemodify(s, ':t:r')}),
-            \             {_, s -> !empty(exepath(s))}
+            let l:supported_langs = filter(
+            \   map(l:lang_files, {_, s -> fnamemodify(s, ':t:r')}),
+            \   {_, s -> !empty(exepath(s))}
             \ )
+            return sort(filter(l:supported_langs,
+            \                  {_, s -> s =~? '^' . a:arglead}))
         endfunction
         command! -nargs=?
         \   -complete=customlist,<SID>regex_complete

@@ -191,7 +191,8 @@ Add command to more easily edit the project specific files::
             execute ':edit ' . b:meta_dir . '/' . a:name
         endfunction
         function! s:project_file(arglead, cmdline, cursorpos)
-            return ['abbr.vim', 'project.vim']
+            return sort(filter(['abbr.vim', 'project.vim'],
+            \                  {_, s -> s =~? '^' . a:arglead}))
         endfunction
         command! -nargs=1 -complete=customlist,<SID>project_file
         \   ProjectFile call <SID>edit_project_file(<q-args>)

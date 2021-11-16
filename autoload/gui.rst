@@ -41,12 +41,14 @@
 
 ::
 
-    function! gui#font_complete(_, _2, _3) abort
-        return join(
+    function! gui#font_complete(arglead, cmdline, cursorpos) abort
+        let l:fonts =
         \   [escape(g:font_family . ' ' . g:font_size, ' '), ]
         \   + map(range(8),
-        \         {n -> escape(g:font_family . ' ' . (n * 8 + 16), ' ')}),
-        \   "\n"
+        \         {n -> escape(g:font_family . ' ' . (n * 8 + 16), ' ')})
+        return sort(
+        \   filter(l:fonts,
+        \          {_, s -> strpart(s, 0, len(a:arglead)) ==# a:arglead})
         \ )
     endfunction
 
