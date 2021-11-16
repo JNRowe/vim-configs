@@ -64,3 +64,8 @@ Pretty print an option’s value to make it easier to read::
 
     command! -complete=option -nargs=1 PrintOption
     \   call misc#print_option(<q-args>)
+
+Convenience command to build a given target with full completion::
+
+    command! -nargs=* -complete=customlist,completion#build_completion Make
+    \   :call misc#call_build(<q-args>)<CR>

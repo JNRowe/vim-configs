@@ -1,6 +1,31 @@
 ``autoload/misc.vim``
 =====================
 
+.. function:: call_build(target: Optional[str]) -> None
+
+    Utility function to run a build.
+
+    This supports ninja_ and make_, and prefers :command:`ninja` when both
+    build files exist.
+
+    :param target: Item to build, or build tool’s default if not given.
+
+::
+
+    function! misc#call_build(...) abort
+        if filereadable('build.ninja')
+            let &makeprg = executable('samu') ? 'samu' : 'ninja'
+        else
+            set makeprg=make
+        endif
+        execute 'make -C ' . getcwd() . ' ' . get(a:, 1, '')
+    endfunction
+
+.. note::
+
+    samurai_ is a :command:`ninja` reimplementation that turns up on a few
+    machines I use.
+
 .. function:: insert_options() -> None
 
     Insert all :command:`vim` options in to the current buffer.
@@ -122,3 +147,7 @@
         endwhile
         return printf('%d.%d.%04d', v:version / 100, v:version % 100, n - 1)
     endfunction
+
+.. _ninja: https://ninja-build.org/
+.. _make: https://www.gnu.org/software/make/make.html
+.. _samurai: https://github.com/michaelforney/samurai

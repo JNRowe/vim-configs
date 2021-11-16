@@ -9,6 +9,7 @@ Contents
 .. toctree::
     :titlesonly:
 
+    completion
     display
     filetypes
     gui

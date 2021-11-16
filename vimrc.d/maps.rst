@@ -92,27 +92,11 @@ Visual mode indent that matches how it *feels* in insert::
     inoremap <silent> <home> <C-o>:call <SID>home_skip()<CR>
     nnoremap <silent> <home> :call <SID>home_skip()<CR>
 
-Utility function to choose between ninja_ and make_ for builds::
-
-    function! s:call_build(...) abort
-        if filereadable('build.ninja')
-            let &makeprg = executable('samu') ? 'samu' : 'ninja'
-        else
-            set makeprg=make
-        endif
-        execute 'make -C ' . getcwd() . ' ' . get(a:, 1, '')
-    endfunction
-
-.. note::
-
-    samurai_ is a :command:`ninja` reimplementation that turns up on a few
-    machines I use.
-
 Add :kbd:`<F10>` build bindings that are muscle memory reminders of my
 childhood::
 
-    nnoremap <F10> :call <SID>call_build()<CR>
-    nnoremap <S-F10> :call <SID>call_build('check')<CR>
+    nnoremap <F10> :call misc#call_build()<CR>
+    nnoremap <S-F10> :call misc#call_build('check')<CR>
 
 Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
@@ -227,7 +211,3 @@ Highlight matches for last search only within visual region::
         \   :<C-u>execute 'match Search /\%V' . getreg('/') . '\%V/'<CR>
         nnoremap <silent> [Display]mc :match none<CR>
     endif
-
-.. _ninja: https://ninja-build.org/
-.. _make: https://www.gnu.org/software/make/make.html
-.. _samurai: https://github.com/michaelforney/samurai
