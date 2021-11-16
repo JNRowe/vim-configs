@@ -13,6 +13,8 @@ overwrite a :command:`cp --link` tree::
         call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
     endif
 
+.. _backupskip-setting:
+
 Where necessary, remove duplicates entries for readability::
 
     if !has('patch-8.1.1519')
@@ -32,6 +34,14 @@ me.
 ::
 
     set backupskip+=*.mht*
+
+.. warning::
+
+    While you’re thinking about ``'backupskip'`` consider adding adding paths
+    your password managers, :command:`sudoedit`-type files and other things
+    where there could be dangerous leaks through backups.  I use passwordstore_
+    which ships with a helpful configuration file that takes care of the details
+    for me, which could also serve as inspiration for other uses.
 
 Enable tooltips::
 
@@ -558,6 +568,7 @@ worthwhile, so allow window borders to touch::
 
     set winminheight=0
 
+.. _passwordstore: https://www.passwordstore.org/
 .. _gnupg: https://www.gnupg.org/
 .. _Debian: https://debian.org/
 .. _wordlist: http://wordlist.sourceforge.net/
