@@ -574,3 +574,9 @@ worthwhile, so allow window borders to touch::
 .. _wordlist: http://wordlist.sourceforge.net/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
 .. _sqlite: https://sqlite.org/
+
+.. spelling::
+
+    keycodes
+    linewise
+    tmp

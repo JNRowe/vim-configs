@@ -211,3 +211,7 @@ Highlight matches for last search only within visual region::
         \   :<C-u>execute 'match Search /\%V' . getreg('/') . '\%V/'<CR>
         nnoremap <silent> [Display]mc :match none<CR>
     endif
+
+.. spelling::
+
+    linewise

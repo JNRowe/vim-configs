@@ -150,7 +150,7 @@
     Many distributions package :command:`vim` with cherry picked patches, and
     sometimes it is nice to know the current base version.
 
-    :returns: :command:`vim` version including the maximum consective patch
+    :returns: :command:`vim` version including the maximum consecutive patch
 
 ::
 
@@ -165,3 +165,7 @@
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
 .. _samurai: https://github.com/michaelforney/samurai
+
+.. spelling::
+
+    truthy

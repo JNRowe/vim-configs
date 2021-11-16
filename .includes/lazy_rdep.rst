@@ -1,3 +1,3 @@
 .. note::
 
-    Lazy loaded for rdeps hooks.
+    Lazy loaded for reverse dependency hooks.

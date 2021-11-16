@@ -113,8 +113,8 @@ Repositories
 :repository: :repo:`AndrewRadev/switch.vim`
 :config: :doc:`localcfg/plugin_switch.vim`
 
-Edit your config files like they had a fancy dialog box to fiddle with their
-preferences.
+Edit your configuration files like they had a fancy dialog box to fiddle with
+their preferences.
 
 ::
 
@@ -458,7 +458,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 .. note::
 
     The extra hoops here are to allow the ``unicode.vim`` setup to function
-    irrespective of the availablity of :command:`fzf`.
+    irrespective of the availability of :command:`fzf`.
 
 ``vim_faq``
 '''''''''''
@@ -2165,3 +2165,22 @@ by deletion.
 .. _this commit:
     https://github.com/tpope/vim-sensible/commit/2c57c5f4c5446865db532064c763a6a67db2d0bb
 .. _zig: https://ziglang.org/
+
+.. spelling::
+
+    Automagic
+    Linter
+    Neovim
+    Nim
+    Ronacher
+    Supertab
+    Vimscript
+    color
+    cyclomatic
+    dialog
+    etc
+    modelines
+    monokai
+    nuff
+    omnicomplete
+    summerfruit

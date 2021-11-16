@@ -90,3 +90,8 @@
 .. _X-Advice header: http://www.nicemice.net/amc/advice-header/
 .. _neomutt: http://www.neomutt.org/
 .. _wordnet: https://wordnet.princeton.edu/
+
+.. spelling::
+
+    Timeframe
+    keymaps

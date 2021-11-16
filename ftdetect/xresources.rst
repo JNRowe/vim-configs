@@ -14,7 +14,11 @@ them::
     This doesn’t use ``FALLBACK`` as we *always* want to override
     :command:`vim`’s default detection in this case.  The `use of
     a `preprocessor to modify resources` and relatively small files can often
-    result in :command:`vim` misdetecting the filetype in *interesting* ways.
+    result in :command:`vim` mis-detecting the filetype in *interesting* ways.
 
 .. _preprocessor to modify resources:
    https://jnrowe.github.io/articles/tips/Sharing_Xresources_between_systems.html
+
+.. spelling::
+
+    mis

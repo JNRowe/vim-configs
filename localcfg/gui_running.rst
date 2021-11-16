@@ -27,7 +27,7 @@ I don’t use the toolbar, and rarely want the menu::
 .. tip::
 
     The repeated use of ``guioptions`` above is required because using multiple
-    characters with ``-=`` will only work if characters are consective, which
+    characters with ``-=`` will only work if characters are consecutive, which
     can not be guaranteed.
 
 Attempt to keep window size when toggling GUI items(menu, scrollbars, &c), as
@@ -147,7 +147,13 @@ between GUI and non-GUI :command:`vim`::
     This issue affects me so little it went unnoticed for four days, as I’m
     always using :command:`vim`’s ``clientserver`` support and :command:`gvim`.
     However, an errant :command:`git commit` from the wrong terminal can cause
-    a nearly three second penalty for recaching without this kludge.
+    a nearly three second penalty for re-caching without this kludge.
 
 .. _Inconsolata: http://www.levien.com/type/myfonts/inconsolata.html
 .. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
+
+.. spelling::
+
+    Consolas
+    crement
+    dialogs

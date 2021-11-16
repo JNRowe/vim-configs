@@ -99,3 +99,8 @@ closely matches my setup in :command:`gvim`::
 .. _interact poorly:
     https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 .. _kittens: https://sw.kovidgoyal.net/kitty/#kittens
+
+.. spelling::
+
+    termcap
+    undercurls

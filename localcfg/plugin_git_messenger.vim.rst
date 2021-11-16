@@ -40,3 +40,7 @@ Use scrollwheel, or emulated key, to move through history in window::
         autocmd!
         autocmd FileType gitmessengerpopup call <SID>setup_gitmessengerpopup()
     augroup END
+
+.. spelling::
+
+    scrollwheel

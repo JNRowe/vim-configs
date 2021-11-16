@@ -28,8 +28,8 @@ useful, but they’ll always be guarded behind a version check.  You can find th
 list of things I’d like to use if I dropped this requirement in the
 :doc:`pending changes <../upgrades>` document.
 
-Why don’t you support reloading of config files?
-------------------------------------------------
+Why don’t you support reloading of configuration files?
+-------------------------------------------------------
 
 A search through the history will show that this repository did, for a long
 time, support reloading the configuration files.  However, the whole process is
@@ -116,8 +116,12 @@ There are many, many ways to :vimdoc:`move through a buffer
 <motion.txt#text-objects>` in vim.  Once you’ve learned them, keys such as
 :kbd:`PageUp` and the mouse in general become very weak means for navigation.
 
-If we’re not using the mouse for its normal purpose, we may aswell use it for
-something :ref:`far more cool <scroll-wheel-override>`
+If we’re not using the mouse for its normal purpose, we can use it for something
+:ref:`far more cool <scroll-wheel-override>`
 
 .. _Debian: https://debian.org/
 .. _packaged in Debian Stable: https://packages.debian.org/vim
+
+.. spelling::
+
+    µfilm

@@ -127,8 +127,8 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
 .. tip::
 
     I use `per-terminal themeing for neomutt`_ by adding ``source
-    $my_cfgdir/colour_$TERM.rc`` to my main config file.  This makes it easier
-    to set appropriate colours based on dark backgrounds and such.
+    $my_cfgdir/colour_$TERM.rc`` to my main configuration file.  This makes it
+    easier to set appropriate colours based on dark backgrounds and such.
 
 For openbox_::
 
@@ -138,8 +138,8 @@ For openbox_::
     \   'r&c': g:xdg_config_dir . '/openbox/rc.xml',
     \ })
 
-Python related tools; python_’s interactive config, flake8_, pip_, and the
-amazing :pypi:`ptpython`::
+Python related tools; python_’s interactive configuration, flake8_, pip_, and
+the amazing :pypi:`ptpython`::
 
     call s:define_menu('&python', {
     \   '&config': [
@@ -199,7 +199,7 @@ For wget_::
 
     call s:define_menu('&wget', g:xdg_config_dir . '/wget/config')
 
-For X.org_’s main user config files::
+For X.org_’s main user configuration files::
 
     let s:xorg_files = {
     \   'X&modmap': '~/.Xmodmap',
@@ -246,3 +246,8 @@ For |zsh|::
 .. _taskwarrior: https://taskwarrior.org/
 .. _wget: https://www.gnu.org/software/wget/
 .. _X.org: https://www.x.org/
+
+.. spelling::
+
+    onfig
+    heme

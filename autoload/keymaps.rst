@@ -56,3 +56,7 @@
         let l:buf = get(l:bufs, l:current + a:count, l:default)
         execute 'buffer ' . l:buf
     endfunction
+
+.. spelling::
+
+    truthy

@@ -3,8 +3,8 @@
 
 Enable automatic colourisation for filetypes that — for me — commonly contain
 colour definitions.  ``moon`` is here because I use :repo:`moonscript
-<leafo/moonscript>` for *all* config files that use lua_, and :command:`vim` is
-here because I often poke about in my colour scheme.
+<leafo/moonscript>` for *all* configuration files that use lua_, and
+:command:`vim` is here because I often poke about in my colour scheme.
 
 ::
 

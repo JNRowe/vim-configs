@@ -6,7 +6,7 @@ variables.
 
 .. envvar:: LANG
 
-    The default setting for all locale configuration, often overriden by
+    The default setting for all locale configuration, often overridden by
     category specific settings with ``LC_*``.
 
 .. envvar:: PKG_LICENSE_DIR
@@ -26,7 +26,7 @@ variables.
 
 .. envvar:: TERMINAL
 
-    If set it overrides guessing for fzf_’s launcher config.
+    If set, it overrides guessing for fzf_’s launcher setting.
 
 .. envvar:: TMPDIR
 

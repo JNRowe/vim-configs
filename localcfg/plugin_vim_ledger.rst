@@ -57,3 +57,7 @@ Configure magic currency completion in ledger files::
 .. todo::
 
     This should be in addition to :kbd:`<Tab>`, not a replacement.
+
+.. spelling::
+
+    ing

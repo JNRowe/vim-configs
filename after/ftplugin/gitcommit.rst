@@ -43,3 +43,7 @@ their types, and I’ll *try* to do so when committing to those projects::
     endfor
 
 .. _Sponsored-by: https://blog.liw.fi/posts/2021/05/26/sponsored-by/
+
+.. spelling::
+
+    uery

@@ -160,3 +160,7 @@ Allow spaces *after* tabs, but not in between::
     let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
 .. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
+
+.. spelling::
+
+    Brabandt

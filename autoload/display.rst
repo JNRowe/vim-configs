@@ -117,7 +117,7 @@
 .. note::
 
     Parsing ``foldtext()`` *may* be brittle, but manual creation is loads of
-    work; whitespace, ``&cms`` |RegEx| escaping(C fex), ``&fdr``, no
+    work; whitespace, ``&cms`` |RegEx| escaping(``C`` for example), ``&fdr``, no
     ``scanf()``, &c.
 
 .. function:: gethighlightgroup(mark: Optional[str]) -> List[Dict[str, str]]
@@ -170,3 +170,7 @@
             endif
         endif
     endfunction
+
+.. spelling::
+
+    foldtext

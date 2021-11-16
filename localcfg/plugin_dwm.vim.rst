@@ -9,7 +9,7 @@ Use my custom maps::
 
     call keymaps#mnemonic_map('dwm')
 
-Configure maps to match, to some degree, my window manager’s config::
+Configure maps to match, to some degree, my window manager’s configuration::
 
     for [s:key, s:cmd] in [
     \   ['n',       'New'],

@@ -6,3 +6,7 @@ Requires `Font Awesome`_ in places.
     browsers, if you don’t have a similar setup then the following won't work.
 
 .. _font awesome: https://fontawesome.com/
+
+.. spelling::
+
+    webfonts

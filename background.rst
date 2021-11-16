@@ -3,7 +3,7 @@ Background
 
 .. note::
 
-    This document is taken from my notes for a |vim| talk I semi-regulary give.
+    This document is taken from my notes for a |vim| talk I semi-regularly give.
     It lacks a little context, but is hopefully helpful in understanding where
     this repository comes from.
 
@@ -125,3 +125,10 @@ Communication)` to stock :command:`vim`.
 .. _MicroEMACS: ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/
 .. _GNU Emacs: https://www.gnu.org/software/emacs/
 .. _org-mode: http://www.orgmode.org/
+
+.. spelling::
+
+    Emacsen
+    esque
+    featureful
+    math

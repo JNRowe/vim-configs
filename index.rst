@@ -118,3 +118,9 @@ file an |issue| or drop me a |mail|.
 
 If you’ve found a bug please try to include a minimal testcase that reproduces
 the problem, or even better a patch that fixes it!
+
+.. spelling::
+
+    Beauchemin
+    configs
+    testcase

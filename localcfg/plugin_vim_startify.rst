@@ -19,9 +19,9 @@ immediately visible in short windows::
 
     let g:startify_custom_header = 'startify#center(startify#fortune#boxed())'
 
-These common, to me, config files are reasonable bookmarks for when I've started
-:command:`vim` without arguments, but perhaps others are more useful when
-started with arguments?
+These common, to me, configuration files are reasonable bookmarks for when I've
+started :command:`vim` without arguments, but perhaps others are more useful
+when started with arguments?
 
 ::
 
@@ -89,3 +89,8 @@ Configure sessions and start them automatically::
 If :kbd:`<F1>` is help, shifting up a gear is actually starting::
 
     nnoremap <S-F1> :Startify<CR>
+
+.. spelling::
+
+    startify
+    startup
