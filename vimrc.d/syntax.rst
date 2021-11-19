@@ -88,11 +88,9 @@ Support folding in :abbr:`XML (eXtensible Markup Language)`::
 zsh
 ---
 
-Support folding for |zsh| too, including the excellent alternative syntax::
+Support folding for |zsh| too, including the excellent `alternative syntax`_::
 
     let g:zsh_fold_enable = v:true
-
-.. todo:: Link to zsh’s alternative syntax
 
 .. _Lua: http://www.lua.org/
 .. _Ruby: https://www.ruby-lang.org/
@@ -100,3 +98,5 @@ Support folding for |zsh| too, including the excellent alternative syntax::
 .. _bash: http://tiswww.case.edu/php/chet/bash/bashtop.html
 .. _POSIX:
     http://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html
+.. _alternative syntax:
+    http://zsh.sourceforge.net/Doc/Release/Shell-Grammar.html#Alternate-Forms-For-Complex-Commands
