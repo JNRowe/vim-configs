@@ -11,10 +11,10 @@
 from inspect import stack
 from pathlib import Path
 from shutil import which
-from typing import List
+from typing import List, Optional
 
-import click
 import ninja_syntax
+import typer
 
 
 def pretty(string: str, colour: bool = True) -> str:
@@ -28,7 +28,11 @@ def pretty(string: str, colour: bool = True) -> str:
     space = ' ' * (9 - len(head))
     if colour:
         return ''.join(
-            [click.style(head, 'green'), space, click.style(tail, bold=True)]
+            [
+                typer.style(head, fg='green'),
+                space,
+                typer.style(tail, bold=True),
+            ]
         )
     else:
         return ''.join([head, space, tail])
@@ -54,54 +58,35 @@ def wopt(name: str) -> str:
     return text
 
 
-@click.command()
-@click.option('--local/--no-local', help='Generate standalone build file.')
-@click.option(
-    '--colour/--no-colour', default=True, help='Generate coloured output.'
-)
-@click.option(
-    '--ctags',
-    default='ctags-universal',
-    metavar='COMMAND',
-    help='Path to ctags.',
-)
-@click.option(
-    '--rst2html',
-    default='rst2html',
-    metavar='COMMAND',
-    help='Path to rst2html.',
-)
-@click.option(
-    '--libc-langs',
-    default='C,C++',
-    metavar='LANGS',
-    help='Languages to include in libc tags file.',
-)
-@click.option(
-    '--libc-exclude',
-    multiple=True,
-    default=[
-        'qt5',
-    ],
-    metavar='PATH',
-    help='Directories to exclude from libc tags file.',
-)
-@click.option('--sphinx/--no-sphinx', help='Enable Sphinx build')
-@click.argument(
-    'file',
-    type=click.Path(dir_okay=False, writable=True),
-    callback=lambda c, p, v: Path(v),
-    default=Path('build.ninja'),
-)
 def configure(
-    local: bool,
-    colour: bool,
-    ctags: str,
-    rst2html: str,
-    libc_langs: str,
-    libc_exclude: List[str],
-    sphinx: bool,
-    file: Path,
+    file: Path = typer.Argument(
+        'build.ninja', help='Output file.', dir_okay=False, writable=True
+    ),
+    local: Optional[bool] = typer.Option(
+        False, help='Generate standalone build file.'
+    ),
+    colour: Optional[bool] = typer.Option(
+        True, help='Generate coloured output.'
+    ),
+    ctags: Optional[str] = typer.Option(
+        'ctags-universal', metavar='command', help='Path to ctags.'
+    ),
+    rst2html: Optional[str] = typer.Option(
+        'rst2html', metavar='command', help='Path to rst2html.'
+    ),
+    libc_langs: Optional[str] = typer.Option(
+        'C,C++#',
+        metavar='langs',
+        help='Languages to include in libc tags file.',
+    ),
+    libc_exclude: Optional[List[str]] = typer.Option(
+        [
+            'qt5',
+        ],
+        metavar='path',
+        help='Directories to exclude from libc tags file.',
+    ),
+    sphinx: Optional[bool] = typer.Option(False, help='Enable Sphinx build'),
 ) -> None:
     """Write a ninja_ build configuration.
 
@@ -301,4 +286,4 @@ def configure(
 
 
 if __name__ == '__main__':
-    configure()
+    typer.run(configure)
