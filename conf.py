@@ -11,24 +11,17 @@ if not on_rtd:
     import sphinx_rtd_theme  # type: ignore
 
 # General configuration {{{
-extensions: List[str] = (
-    [
-        f'sphinx.ext.{ext}'
-        for ext in [
-            'autodoc',
-            'doctest',
-            'extlinks',
-            'githubpages',
-            'intersphinx',
-            'todo',
-        ]
+extensions: List[str] = [
+    f'sphinx.ext.{ext}'
+    for ext in [
+        'autodoc',
+        'doctest',
+        'extlinks',
+        'githubpages',
+        'intersphinx',
+        'todo',
     ]
-    + [f'sphinxcontrib.{ext}' for ext in []]
-    + [
-        'sphinx_autodoc_typehints',
-        'sphinx_click.ext',
-    ]
-)
+]
 
 if not on_rtd:
     # Showing document build durations is only valuable when writing, so we’ll
