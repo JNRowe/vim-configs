@@ -87,10 +87,6 @@ Turn off search highlighting when entering a buffer::
 
         autocmd BufEnter * nohlsearch
 
-Turn off search highlighting when idle::
-
-        autocmd CursorHold * nohlsearch | redraw
-
 Always do a full syntax refresh, as this is still fast enough on a netbook::
 
         autocmd BufEnter * syntax sync fromstart
