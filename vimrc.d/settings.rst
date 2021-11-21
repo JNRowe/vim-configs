@@ -418,6 +418,11 @@ Adjust completion to make ``.lua`` lower priority so that :repo:`moonscript
 
     set suffixes+=.lua
 
+When switching buffers for ``quickfix`` jump to an existing window where
+possible::
+
+    set switchbuf=useopen
+
 Limit line length to 80 characters, but be aware that some filetypes will
 override this to match community standards::
 
