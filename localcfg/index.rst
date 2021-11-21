@@ -68,6 +68,7 @@ Contents
     plugin_vim_jinja
     plugin_vim_jnrowe
     plugin_vim_ledger
+    plugin_vim_man
     plugin_vim_mundo
     plugin_vim_notes
     plugin_vim_omnipytent
