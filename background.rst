@@ -26,17 +26,17 @@ Emacsen
 ``emacs``, or more truthfully AmigaOS’s MicroEMACS_, was my first real editor.
 I loved it.  *Absolutely. Loved. It.*
 
-You have to understand that prior to finding it I’d basically only seen what
-I would describe now as Notepad-esque things.  MicroEMACS_ was a breath of fresh
-air, even if it was alarming how little it conformed to the UI guidelines for
-the platform.
+You have to understand that before finding it I’d only seen what I would
+describe now as Notepad-esque things.  MicroEMACS_ was a breath of fresh air,
+even if it was alarming how little it conformed to the :abbr:`UI (User
+Interface)` guidelines for the platform.
 
-Later came `GNU Emacs`_, and in spite of how resource hungry it was, it was the
-only editor I wanted to use for an *incredibly* long time.  Then about the same
-time computers became fast enough to use `GNU Emacs`_ I switched away, as it
-simply didn’t fit in to the environment I was using.  It didn’t interact
-correctly with my desktop, the fonts were all screwy for math or foreign
-languages, and it just felt somehow really dated.
+Later came `GNU Emacs`_, and despite how resource hungry it was, it was the only
+editor I wanted to use for an *incredibly* long time.  Then about the same time
+computers became fast enough to use `GNU Emacs`_ I switched away, as it simply
+didn’t fit in to the environment I was using.  It didn’t interact correctly with
+my desktop, the fonts were all screwy for math or foreign languages, and it just
+felt somehow really dated.
 
 Most of that has changed.  `GNU Emacs`_ can look and feel modern with a little
 effort.  I still use it from time to time when working at a co-worker’s desk,
@@ -46,16 +46,16 @@ want to switch back.
 
 .. tip::
 
-    Fellow :command:`vim` users should really check out :repo:`evil-mode
-    <emacs-evil/evil>`, it is an incredibly usable vi-style layer for
+    Fellow :command:`vim` users should check out :repo:`evil-mode
+    <emacs-evil/evil>`, an incredibly usable vi-style layer for
     :command:`emacs`.  Many common :command:`vim` plugins have been ported to
     work with it too!
 
 The dark years
 ''''''''''''''
 
-For a couple of years I attempted to use a variety of “best of breed” editors
-for different tasks.  It was awful.
+For a couple of years I attempted to use various “best of breed” editors for
+different tasks.  It was awful.
 
 I can’t understand how people do it.  I mean, *iff* you only edit Java, then
 sure a Java editor might be a good idea.  However, if you need five different
@@ -81,7 +81,7 @@ a great example of just how much grief the restrictiveness causes, look at the
 An example of how ridiculous closed source editors are can be found by looking
 at the patches that are applied in the binaries installed on my work machine.
 It is buggy enough that the current package maintainer is willing to support
-a stack of no less than 15 very dirty patches, each of which have been
+a stack of no fewer than 15 very dirty patches, each of which have been
 painstakingly fixed without access to the source.  Interestingly they require
 |vim|’s :command:`xxd` to apply [#]_, almost as if to prove a point.
 
@@ -89,12 +89,12 @@ I’ve used it enough that I don’t regret having my employer license a copy fo
 me, and I even jumped through hoops to have them pony up for some mildly
 interesting plugins too.
 
-So why do I play with it?  Simple, occasionally people show me some cool thing
+So, why do I play with it?  Simple, occasionally people show me some cool thing
 it can do and I want to play too.  Also, because for the past few years there
 has been a constant promise of an Open Source clone floating around.
 
 I’m not sure if an Open Source clone would be enough for me to switch, but
-I think it would make it plausible.  It might allow me, or someone else, to
+I think it would make it plausible.  It might enable me, or someone else, to
 make a usable ``vi`` mode though(``vintage`` appears to be designed for people
 who think ``vi`` means “normal or insert”).
 

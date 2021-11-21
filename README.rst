@@ -12,7 +12,7 @@ It will *not* work with neovim_, and that is unlikely to change in the near
 future.
 
 If you find any problems with the files in this repository either file an
-issue_, or drop me an mail_.  However, please do not report problems when using
+issue_, or drop me a mail_.  However, please do not report problems when using
 neovim_, pull requests are fine though.
 
 Poke around in the ``.rst`` files to see how things work, and be forewarned that
