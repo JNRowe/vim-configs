@@ -230,6 +230,9 @@ Having ``=`` in filename matches are more trouble then they’re worth::
 
 Use :command:`vim`’s builtin manpage support::
 
+    if empty(dein#get('vim-man'))
+        runtime! ftplugin/man.vim
+    endif
     set keywordprg=:Man
 
 .. note::
