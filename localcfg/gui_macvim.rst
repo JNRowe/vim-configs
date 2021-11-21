@@ -9,7 +9,7 @@ MacOS specific fonts setup::
 Select colour scheme using system configuration::
 
     if system('defaults read -g AppleInterfaceStyle') =~# '^Dark'
-        colorscheme jnrowe
+        colorscheme molokai
     else
         colorscheme summerfruit256
     endif

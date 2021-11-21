@@ -140,22 +140,6 @@ standards <editorconfig-plugin>` without allowing them free access to your
 
     call dein#add('JNRowe/securemodelines')
 
-``vim-jnrowe``
-''''''''''''''
-
-    “Tango inspired colour scheme”
-
-:repository: :repo:`JNRowe/vim-jnrowe`
-:config: :doc:`localcfg/plugin_vim_jnrowe`
-
-.. image:: http://jnrowe.github.io/vim-jnrowe/_images/default.png
-   :target: http://jnrowe.github.io/vim-jnrowe/_images/default.png
-   :width: 25%
-
-::
-
-    call dein#add('JNRowe/vim-jnrowe')
-
 ``vim-illuminate``
 ''''''''''''''''''
 

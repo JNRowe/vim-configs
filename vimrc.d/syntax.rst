@@ -4,7 +4,7 @@
 Load a colour scheme, but only on first source::
 
     if !exists('g:colors_name')
-        colorscheme jnrowe
+        colorscheme molokai
     endif
 
 Only enable Lua_/|Python|/Ruby_ embedded syntax regardless of built-in support::
