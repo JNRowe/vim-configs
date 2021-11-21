@@ -36,6 +36,7 @@ Bug reports
 Ideas
 '''''
 
+* Manjeet Singh
 * Nathan McGregor
 
 If I’ve forgotten to include your name I wholeheartedly apologise.  Just drop me

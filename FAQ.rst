@@ -44,6 +44,17 @@ Plus, combined with :vimdoc:`mksession <starting.txt#mks>`/:ref:`vim-obsession
 <vim-obsession-plugin>` plugin the editor pops back up as if we were using live
 reloading.
 
+Isn’t it really difficult to edit ``viml`` in rest?
+---------------------------------------------------
+
+It could be, but this is one of the perfect use cases for the :ref:`:NrrwRgn
+<nrrwrgn-plugin>` plugin.  You can use it open sections of a file in
+a different window, and that window can have its own options configured
+including the filetype.
+
+I can’t state enough how useful this plugin can be.  It makes writing and
+working with files with mixed content, such as templates, a smooth experience.
+
 Post 2020, when will in-person tutorials begin again?
 -----------------------------------------------------
 
