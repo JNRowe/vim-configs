@@ -12,7 +12,7 @@ This creates |reST| headings using *my* favourite adornments::
         \   ['', 'o<Esc>.'],
         \   ['s', 'k'],
         \ ]
-            execute 'nnoremap <buffer> <silent> [Heading]' . s:cmd . s:key .
+            execute 'nnoremap <silent> <buffer> [Heading]' . s:cmd . s:key .
             \   ' yypVr' . s:sym . s:post
         endfor
     endfor

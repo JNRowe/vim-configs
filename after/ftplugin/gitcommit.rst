@@ -10,10 +10,10 @@ Configure maps to insert common metadata in to commit messages::
     call keymaps#mnemonic_map('Trailer', {'buffer': v:true, 'local': v:true})
 
     for s:type in ['Acked', 'Co-authored', 'Reviewed', 'Signed-off', 'Tested']
-        execute 'nnoremap <buffer> <silent> [Trailer]' . tolower(s:type[0]) .
+        execute 'nnoremap <silent> <buffer> [Trailer]' . tolower(s:type[0]) .
         \   ' :call filetypes#add_git_trailer("' . s:type . '", ' .
         \                                     '"' . g:user_email . '")<CR>'
-        execute 'nnoremap <buffer> <silent> [Trailer]q' . tolower(s:type[0]) .
+        execute 'nnoremap <silent> <buffer> [Trailer]q' . tolower(s:type[0]) .
         \   ' :call filetypes#add_git_trailer("' . s:type . '")<CR>'
     endfor
 
@@ -33,7 +33,7 @@ Configure maps to insert common metadata in to commit messages::
 
 Add a mapping for Sponsored-by_ header::
 
-    nnoremap <buffer> <silent> [Trailer]qp
+    nnoremap <silent> <buffer> [Trailer]qp
     \   :call filetypes#add_git_trailer('Sponsored')<CR>
 
 .. seealso::

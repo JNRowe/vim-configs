@@ -14,7 +14,7 @@ every one to take part, but they have become popular in work mail.
     \                         {'buffer': v:true, 'key': 'A', 'local': v:true})
     for s:prio in ['perhaps', 'should', 'must']
         for s:due in ['now', 'soon', 'whenever']
-            execute 'nnoremap <buffer> <silent> ' .
+            execute 'nnoremap <silent> <buffer> ' .
             \   '[Advice]' . s:prio[0] . s:due[0] .
             \   ' :call filetypes#add_advice_header("' . s:prio . '", "' .
             \   s:due . '")<CR>'
