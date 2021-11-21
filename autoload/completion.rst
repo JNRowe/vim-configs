@@ -17,9 +17,7 @@
 
     function! completion#build_complete(arglead, cmdline, cursorpos)
         if filereadable('build.ninja')
-            let l:targets = systemlist(
-            \   'sed -n "s,^build \([^:]\+\): .*,\1,p" build.ninja'
-            \ )
+            let l:targets = systemlist('ninja -t targets | cut -d: -f1')
         else
             let l:targets = systemlist(
             \   'make -pqrR | ' .
