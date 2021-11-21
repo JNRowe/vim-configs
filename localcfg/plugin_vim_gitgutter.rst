@@ -18,7 +18,7 @@ Use my custom maps::
     \   ['p',       'PreviewHunk'],
     \   ['q',       'QuickFix'],
     \ ]
-        execute 'nnoremap <silent> [gitgutter]<' . s:key . '> '
+        execute 'nnoremap <silent> [gitgutter]' . s:key . ' '
         \   ':GitGutter' . s:cmd . '<CR>'
     endfor
 
