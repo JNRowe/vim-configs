@@ -30,3 +30,26 @@
         endif
         execute 'set guifont=' . fnameescape(l:font)
     endfunction
+
+.. function:: toggle_guioption(option: str)
+
+    Toggle ``'guioption'`` value.
+
+    .. note::
+
+        This is special-cased for ``'mousefocus'`` support as both menu and
+        toolbar usage make sloppy focus really annoying.
+
+::
+
+    function! gui#toggle_guioption(option) abort
+        if stridx(&guioptions, a:option) == -1
+            set nomousefocus
+            call misc#toggle_flag('guioptions', a:option)
+        else
+            call misc#toggle_flag('guioptions', a:option)
+            if match(&guioptions, '\C[Tm]') == -1
+                set mousefocus
+            endif
+        endif
+    endfunction

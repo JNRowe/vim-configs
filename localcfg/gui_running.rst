@@ -37,6 +37,10 @@ I find display layout more important than the number of rows and columns.
 
     set guioptions+=k
 
+Use sloppy focus :ref:`when menu and toolbar are disabled <gui-toggles>`::
+
+    set mousefocus
+
 Configure right mouse button to closer match the rest of my system::
 
     set mousemodel=popup_setpos
@@ -126,15 +130,15 @@ Occasionally the toolbar can be useful for pairing with a co-worker, and from
 time to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
 
     if has('menu')
-        nnoremap <silent> <S-F4> :call misc#toggle_flag('guioptions', 'm')<CR>
+        nnoremap <silent> <S-F4> :call gui#toggle_guioption('m')<CR>
     endif
     if has('toolbar')
-        nnoremap <silent> <C-F4> :call misc#toggle_flag('guioptions', 'T')<CR>
+        nnoremap <silent> <C-F4> :call gui#toggle_guioption('T')<CR>
     endif
 
 .. seealso::
 
-    * :func:`misc#toggle_flag() <toggle_flag>`
+    * :func:`gui#toggle_guioption() <toggle_guioption>`
 
 Use a terminal window for command output::
 
