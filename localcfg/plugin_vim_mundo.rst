@@ -3,7 +3,7 @@
 
 Use my custom maps::
 
-    nnoremap <LocalLeader># :MundoToggle<CR>
+    nnoremap <silent> <LocalLeader># :MundoToggle<CR>
 
 Configure look::
 

@@ -49,11 +49,11 @@ Begin new line easily from within insert mode::
 
 Make :kbd:`<C-g>` verbose by default::
 
-    nnoremap <C-g> 2<C-g>
+    nnoremap <silent> <C-g> 2<C-g>
 
 Map :kbd:`Q` to reformat paragraphs just as everyone else does::
 
-    nnoremap Q gqap
+    nnoremap <silent> Q gqap
 
 .. tip::
 
@@ -62,7 +62,7 @@ Map :kbd:`Q` to reformat paragraphs just as everyone else does::
 
 Easy access to man pages when using a custom ``'keywordprg'``::
 
-    nnoremap <C-?> :<C-U>execute 'Man ' . v:count . ' <C-R><C-W>'<CR>
+    nnoremap <silent> <C-?> :<C-U>execute 'Man ' . v:count . ' <C-R><C-W>'<CR>
 
 Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
@@ -96,8 +96,8 @@ Visual mode indent that matches how it *feels* in insert::
 Add :kbd:`<F10>` build bindings that are muscle memory reminders of my
 childhood::
 
-    nnoremap <F10> :call misc#call_build()<CR>
-    nnoremap <S-F10> :call misc#call_build('check')<CR>
+    nnoremap <silent> <F10> :call misc#call_build()<CR>
+    nnoremap <silent> <S-F10> :call misc#call_build('check')<CR>
 
 .. seealso::
 

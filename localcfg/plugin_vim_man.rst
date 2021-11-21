@@ -4,6 +4,6 @@
 Use :kbd:`<Enter>` and :kbd:`<Backspace>` to hop through man pages, as I’m too
 used to that setup in browsers::
 
-    nnoremap <buffer> <CR>
+    nnoremap <silent> <buffer> <CR>
     \   :call man#get_page_from_cword('horizontal', v:count)<CR>
-    nnoremap <buffer> <BS> :call man#pop_page()<CR>
+    nnoremap <silent> <buffer> <BS> :call man#pop_page()<CR>
