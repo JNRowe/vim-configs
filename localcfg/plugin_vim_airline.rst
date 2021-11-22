@@ -14,6 +14,7 @@ Configure look::
 
     let g:airline_theme = 'powerlineish'
     let g:airline_skip_empty_sections = v:true
+    let g:airline_inactive_collapse = v:false
 
 .. include:: ../.includes/fontawesome.rst
 
