@@ -315,11 +315,9 @@ a full editing session.
 
 ::
 
-    call dein#add('chrisbra/NrrwRgn', {
-    \   'hook_post_source': plugins#dein#airline_enable('nrrwrgn'),
-    \   'if': v:version >= 704,
-    \   'on_cmd': ['NUD', 'NR', 'NW']
-    \ })
+    call dein#add('chrisbra/NrrwRgn')
+
+.. include:: .includes/vim_airline_dep.rst
 
 ``Recover``
 '''''''''''
@@ -395,27 +393,9 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
 ::
 
-    let s:unicode_opts = {
-    \   'hook_post_source': plugins#dein#airline_enable('unicode'),
-    \   'if': v:version >= 704,
-    \   'on_cmd':
-    \       ['DigraphNew', 'Digraphs']
-    \       + plugins#dein#prefix('Unicode', ['Name', 'Search', 'Table']),
-    \   'on_map': {
-    \       'i': ['<C-x><C-z>', '<C-x><C-g>', '<C-x><C-b>'],
-    \       'n': '<Plug>(UnicodeGA)',
-    \   }
-    \ }
-    if plugins#dein#has_exec('fzf')
-        let s:unicode_opts['depends'] = 'fzf'
-        let s:unicode_opts['on_map']['i'] += ['<C-g><C-f>', ]
-    endif
-    call dein#add('chrisbra/unicode.vim', s:unicode_opts)
+    call dein#add('chrisbra/unicode.vim')
 
-.. note::
-
-    The extra hoops here are to allow the ``unicode.vim`` setup to function
-    irrespective of the availability of :command:`fzf`.
+.. include:: .includes/vim_airline_dep.rst
 
 ``vim_faq``
 '''''''''''
@@ -812,11 +792,9 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 ::
 
-    call dein#add('jreybert/vimagit', {
-    \   'hook_post_source': plugins#dein#airline_enable('vimagit'),
-    \   'if': plugins#dein#has_exec('git'),
-    \   'on_cmd': 'Magit',
-    \ })
+    call dein#add('jreybert/vimagit')
+
+.. include:: .includes/vim_airline_dep.rst
 
 ``fzf``
 '''''''
@@ -829,7 +807,6 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/fzf', {
-    \   'hook_post_source': plugins#dein#airline_enable('fzf'),
     \   'if': plugins#dein#has_exec('fzf'),
     \   'on_cmd': 'FZF',
     \   'on_func': 'fzf#run',
@@ -1629,10 +1606,9 @@ Replace most of your use of a shell when working on a project with just another
 
 ::
 
-    call dein#add('tpope/vim-obsession', {
-    \   'hook_post_source': plugins#dein#airline_enable('obsession'),
-    \   'on_cmd': 'Obsession',
-    \ })
+    call dein#add('tpope/vim-obsession')
+
+.. include:: .includes/vim_airline_dep.rst
 
 ``vim-projectionist``
 '''''''''''''''''''''
@@ -1786,7 +1762,6 @@ documentation a relatively painless task.
 ::
 
     call dein#add('troydm/zoomwintab.vim', {
-    \   'hook_post_source': plugins#dein#airline_enable('zoomwintab'),
     \   'on_cmd': 'ZoomWinTabToggle',
     \   'on_map': {'n': '<C-w>o'},
     \ })

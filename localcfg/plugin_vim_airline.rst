@@ -68,7 +68,17 @@ Only show unusual encodings::
 Only use the extensions I actually want::
 
     let g:airline#extensions#disable_rtp_load = v:true
-    let g:airline_extensions = ['csv', 'tabline', 'whitespace', 'wordcount']
+    let g:airline_extensions = [
+    \   'csv',
+    \   'nrrwrgn',
+    \   'obsession',
+    \   'tabline',
+    \   'unicode',
+    \   'vimagit',
+    \   'whitespace',
+    \   'wordcount',
+    \   'zoomwintab'
+    \ ]
 
 .. attention::
 
