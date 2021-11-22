@@ -210,7 +210,7 @@
 
     function! misc#print_option(value) abort
         let l:value = eval(a:value[0] ==# '&' ? a:value : '&' . a:value)
-        echo join(split(l:value, ','), "\n")
+        echo join(sort(split(l:value, ',')), "\n")
     endfunction
 
 .. function:: title_word(word: str) -> str
