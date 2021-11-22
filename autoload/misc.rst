@@ -152,7 +152,7 @@
 ::
 
     function! misc#modeline_stub(verbose) abort
-        let l:x = 'ft=' . &filetype . (&expandtab ? '' : ' noet')
+        let l:x = ' vim: ft=' . &filetype . (&expandtab ? '' : ' noet')
         if a:verbose
             let l:x .= printf(
             \   ' ts=%d sw=%d tw=%d fdm=%s%s',
@@ -160,7 +160,10 @@
             \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
             \ )
         endif
-        let l:x = printf(&commentstring, ' vim: ' . l:x . ':')
+        if !empty(&commentstring)
+            let l:x = printf(&commentstring, l:x)
+        endif
+        let l:x .= ':'
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
 
