@@ -74,7 +74,6 @@ Contents
     plugin_vim_peekaboo
     plugin_vim_projectionist
     plugin_vim_quick_radon
-    plugin_vim_rhubarb
     plugin_vim_signature
     plugin_vim_sneak
     plugin_vim_snippets

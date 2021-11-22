@@ -1642,7 +1642,6 @@ your favourite plugin anyway.
     “If fugitive.vim is the Git, rhubarb.vim is the Hub”
 
 :repository: :repo:`tpope/vim-rhubarb`
-:config: :doc:`localcfg/plugin_vim_rhubarb`
 
 ::
 
