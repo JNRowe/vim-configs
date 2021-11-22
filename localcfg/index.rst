@@ -71,7 +71,6 @@ Contents
     plugin_vim_man
     plugin_vim_mundo
     plugin_vim_notes
-    plugin_vim_omnipytent
     plugin_vim_peekaboo
     plugin_vim_projectionist
     plugin_vim_quick_radon

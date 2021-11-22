@@ -9,6 +9,5 @@ Todo items for project
     gitcommit
     james
     notgui
-    omnipytent
     rst
     vimrc

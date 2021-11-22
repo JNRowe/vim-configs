@@ -697,23 +697,6 @@ jealous.
 
 .. include:: .includes/lazy_rdep.rst
 
-``vim-omnipytent``
-''''''''''''''''''
-
-    “All powerful Pythonic task runner”
-
-:repository: :repo:`idanarye/vim-omnipytent`
-:config: :doc:`localcfg/plugin_vim_omnipytent`
-
-::
-
-    call dein#add('idanarye/vim-omnipytent', {
-    \   'if': has('pythonx'),
-    \   'on_cmd':
-    \       plugins#dein#prefix('OP',
-    \                           plugins#dein#suffix('edit', ['', '2', '3'])),
-    \ })
-
 ``vim-vebugger``
 ''''''''''''''''
 
