@@ -9,7 +9,7 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 ::
 
     for s:plugin in [
-    \   '2html_plugin', 'getscriptPlugin', 'logiPat', 'netrw',
+    \   '2html_plugin', 'getscriptPlugin', 'logiPat', 'matchparen', 'netrw',
     \   'netrwPlugin', 'rrhelper', 'spellfile_plugin', 'tarPlugin',
     \   'vimballPlugin', 'zipPlugin',
     \ ]
