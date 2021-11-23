@@ -17,7 +17,9 @@
         if l:body_sep != 0
             call append(l:body_sep - 1,
             \           'X-advice: ' . a:prio . ' read ' . a:due)
-            let l:view.lnum += 1
+            if l:view.lnum + 1 >= l:body_sep
+                let l:view.lnum += 1
+            endif
         endif
         call winrestview(l:view)
     endfunction
