@@ -102,8 +102,7 @@ could be achieved with |zsh| in :file:`.git/hooks/pre-commit`:
     extras=()
     for f (localcfg/plugin_*.vim) {
         plug_name=${f:t:r:s/plugin_//:gs/_/?/}
-        if [ -z "${dein_repos}/*/*/${plug_name}(/N)" ] \
-            && [[ -z "~/.vim/internal/${plug_name}(/N)" ]]; then
+        if [[ -z "${dein_repos}/*/*/${plug_name}(/N)" ]]; then
             extras+=$i
         fi
     }

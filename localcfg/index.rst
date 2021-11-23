@@ -47,7 +47,6 @@ Contents
     plugin_sideways.vim
     plugin_splitjoin.vim
     plugin_switch.vim
-    plugin_tearoff
     plugin_ultisnips
     plugin_undotree
     plugin_unicode.vim

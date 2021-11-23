@@ -91,3 +91,11 @@ Convenience command to build a given target with full completion::
 .. seealso::
 
     * :func:`misc#call_build() <call_build>`
+
+This places perforation-style lines around the given range::
+
+    command! -range Snip <line1>,<line2>call misc#scissors()
+
+.. seealso::
+
+    * :func:`misc#scissors() <scissors>`

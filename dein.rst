@@ -2052,18 +2052,6 @@ I write my mail in |reST|.  No, really.
     \   'on_ft': 'mail',
     \ })
 
-Nasty bundled packages
-----------------------
-
-These packages are being removed, either by finding a usable remote location or
-by deletion.
-
-::
-
-    call dein#local('~/.vim/internal/', {
-    \   'on_cmd': 'Snip',
-    \ })
-
 .. rubric:: Footnotes
 
 .. [#] I tend to ignore plugins that aren’t available in this manner, because

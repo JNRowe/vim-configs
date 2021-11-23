@@ -216,6 +216,24 @@
         echo join(sort(split(l:value, ',')), "\n")
     endfunction
 
+.. function:: scissors() -> None
+
+    Place perforation-style lines around the given range.
+
+::
+
+    function! misc#scissors() abort range
+        let l:max_len = max(map(getline(a:firstline, a:lastline),
+        \                       {_, s -> strdisplaywidth(s)}))
+        let l:bound = &textwidth == 0 ? l:max_len : min([l:max_len, &textwidth])
+        let l:perf = (l:bound / 2) - 1
+        let l:marker = repeat('-', l:perf) . '%s' .
+        \   repeat('-', l:perf + (l:perf % 2))
+
+        call append(a:firstline - 1, printf(l:marker, '8<'))
+        call append(a:lastline + 1, printf(l:marker, '>8'))
+    endfunction
+
 .. function:: title_word(word: str) -> str
 
     Convenience function to apply title case to a word.
