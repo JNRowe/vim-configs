@@ -149,7 +149,9 @@ session.
 
 ::
 
-    call dein#add('RRethy/vim-illuminate')
+    call dein#add('RRethy/vim-illuminate', {
+    \   'on_event': 'CursorHold',
+    \ })
 
 ``delimitMate``
 '''''''''''''''
