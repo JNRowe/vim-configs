@@ -105,6 +105,7 @@ Bug reports
 Ideas
 '''''
 
+* Manjeet Singh
 * Nathan McGregor
 
 If I’ve forgotten to include your name I wholeheartedly apologise.  Just drop me
@@ -122,5 +123,6 @@ the problem, or even better a patch that fixes it!
 .. spelling::
 
     Beauchemin
+    Manjeet
     configs
     testcase
