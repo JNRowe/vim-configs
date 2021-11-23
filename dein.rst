@@ -891,7 +891,15 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 ::
 
-    call dein#add('junegunn/vim-peekaboo')
+    call dein#add('junegunn/vim-peekaboo', {
+    \   'hook_source': 'call plugins#vim_peekaboo#set_compact()',
+    \   'hook_post_source': 'doautocmd <nomodeline> peekaboo_init BufEnter',
+    \   'on_map': {
+    \       'i': '<C-r>',
+    \       'n': ['@', '"'],
+    \       'x': '"',
+    \   },
+    \ })
 
 ``patchreview-vim``
 '''''''''''''''''''
