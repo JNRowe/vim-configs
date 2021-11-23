@@ -335,6 +335,7 @@ a full editing session.
 
     call dein#add('chrisbra/Recover.vim', {
     \   'if': v:version >= 703,
+    \   'on_cmd': 'RecoverPluginEnable',
     \ })
 
 ``Replay``
