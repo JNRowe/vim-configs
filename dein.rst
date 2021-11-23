@@ -1352,7 +1352,16 @@ user, how cool is that?
 
     call dein#add('rhysd/committia.vim', {
     \   'if': plugins#dein#has_exec('git'),
+    \   'on_ft': 'gitcommit',
     \ })
+
+We lazy load on filetype definition for my normal workflow with
+``clientserver``, but want to forcibly load on :command:`vim` being called
+from :command:`git commit`::
+
+    if get(argv(), 0, '') =~# '/.git/COMMIT_EDITMSG$'
+        call dein#source('committia.vim')
+    endif
 
 ``git-messenger.vim``
 '''''''''''''''''''''
