@@ -1,4 +1,5 @@
 #! /bin/sh
 
-vim -c 'try | call dein#recache_runtimepath() | finally | qall! | endtry' \
+vim -X --noplugin \
+    -c 'try | call dein#recache_runtimepath() | finally | qall! | endtry' \
     -N -u ~/.vim/vimrc -i NONE -V1 -e -s
