@@ -729,6 +729,7 @@ jealous.
 
     call dein#add('jamessan/vim-gnupg', {
     \   'if': plugins#dein#has_exec('gpg') || plugins#dein#has_exec('gpg2'),
+    \   'on_path': '.*\.gpg',
     \ })
 
 ``vim-textobj-css``
