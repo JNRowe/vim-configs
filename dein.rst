@@ -1055,6 +1055,8 @@ editing your accounts/expenses an almost nice-ish experience.
     \   'on_ft': 'ledger',
     \ })
 
+.. _rainbow-plugin:
+
 ``rainbow``
 '''''''''''
 
