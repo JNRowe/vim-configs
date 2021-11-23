@@ -8,7 +8,7 @@ Enable ``:Cfilter`` for using enormously noisy compilers::
 When using server mode ``editexisting`` makes using currently open files far
 simpler::
 
-    packadd! editexisting
+    packadd editexisting
 
 Useful justification options::
 
