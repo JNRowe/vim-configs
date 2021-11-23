@@ -76,20 +76,24 @@ exclude_patterns: List[str] = [
 project = 'vim-configs'
 copyright = '2009-2021  James Rowe'  # NOQA: A001
 
-with suppress(CalledProcessError):
-    proc = run(
-        [
-            'git',
-            '-C',
-            os.path.dirname(__file__),
-            'log',
-            '--pretty=format:%ad [%h]',
-            '--date=short',
-            '-n1',
-        ],
-        stdout=PIPE,
-    )
-    html_last_updated_fmt = proc.stdout.decode()
+if on_rtd:
+    with suppress(CalledProcessError):
+        proc = run(
+            [
+                'git',
+                '-C',
+                os.path.dirname(__file__),
+                'log',
+                '--pretty=format:%ad [%h]',
+                '--date=short',
+                '-n1',
+            ],
+            stdout=PIPE,
+        )
+        html_last_updated_fmt = proc.stdout.decode()
+else:
+    # Use a static updated time to limit rebuilds for faster commit hooks
+    html_last_updated_fmt = '[local build]'
 
 release = html_last_updated_fmt
 version = ''
