@@ -1152,7 +1152,9 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 
 ::
 
-    call dein#add('mhinz/vim-startify')
+    call dein#add('mhinz/vim-startify', {
+    \   'on_cmd': 'Startify',
+    \ })
 
 ``vim-indent-object``
 '''''''''''''''''''''
