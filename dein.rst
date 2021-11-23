@@ -246,7 +246,7 @@ languages.
 
     call dein#add('andymass/vim-matchup', {
     \   'if': v:version >= 704,
-    \   'on_event': 'InsertEnter',
+    \   'on_map': '%',
     \ })
 
 ``vim-bad-whitespace``
