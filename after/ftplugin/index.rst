@@ -15,6 +15,7 @@ Contents
     gitrebase
     haskell
     help
+    html
     mail
     make
     markdown
