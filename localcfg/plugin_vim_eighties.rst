@@ -1,12 +1,10 @@
 ``localcfg/plugin_vim_eighties.vim``
 ====================================
 
-Both :repo:`gundo <sjl/gundo.vim>` and :repo:`committia <rhysd/committia.vim>`
-should be treated as static window layouts::
+:repo:`committia <rhysd/committia.vim>` should be treated as static window
+layout::
 
     let g:eighties_bufname_additional_patterns = [
-    \   '__Gundo__',
-    \   '__Gundo_Preview__',
     \   '__committia_diff__',
     \   '__committia_status__',
     \ ]
