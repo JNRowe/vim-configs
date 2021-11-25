@@ -26,15 +26,13 @@ We don't want to edit patch backup files by accident [*again*]::
 
         autocmd BufRead *.orig set readonly
 
-Buffers that aren’t really for editing don’t need to have spelling errors
+Buffers that are readonly don’t need to have spelling errors or line lengths
 highlighted::
 
-        autocmd FileType man,startify setlocal nospell
-
-Highlights for read only buffers aren’t interesting::
-
-        autocmd FileType help,man
-        \   if &modifiable | setlocal colorcolumn="" | endif
+        autocmd FileType man setlocal nospell colorcolumn&
+        autocmd BufReadPost * if !&modifiable |
+        \       setlocal nospell colorcolumn& |
+        \   endif
 
 Issue an immediate “split to right” for documentation buffers::
 
@@ -144,3 +142,7 @@ Add command to more easily edit the project specific files::
 
 .. [#] ``:Exconfig`` is a mapping defined in :file:`.projections.json` and
        supported via :repo:`vim-projectionist <tpope/vim-projectionist>`.
+
+.. spelling::
+
+    readonly
