@@ -8,8 +8,8 @@ generic enough to be useful to upstream.
 .. note::
 
     The files in this directory have vint_’s ``ProhibitAutocmdWithNoGroup``
-    check disabled as :command:`vim` handles that in this instance.  See the
-    help for :vimdoc:`ftdetect <filetype.txt#ftdetect>`` for more information.
+    check disabled as |vim| handles that in this instance.  See the help for
+    :vimdoc:`ftdetect <filetype.txt#ftdetect>`` for more information.
 
 Contents
 --------

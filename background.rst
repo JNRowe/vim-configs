@@ -3,7 +3,7 @@ Background
 
 .. note::
 
-    This document is taken from my notes for a |vim| talk I semi-regularly give.
+    This document is taken from my notes for a vim_ talk I semi-regularly give.
     It lacks a little context, but is hopefully helpful in understanding where
     this repository comes from.
 
@@ -46,10 +46,9 @@ want to switch back.
 
 .. tip::
 
-    Fellow :command:`vim` users should check out :repo:`evil-mode
-    <emacs-evil/evil>`, an incredibly usable vi-style layer for
-    :command:`emacs`.  Many common :command:`vim` plugins have been ported to
-    work with it too!
+    Fellow |vim| users should check out :repo:`evil-mode <emacs-evil/evil>`, an
+    incredibly usable vi-style layer for :command:`emacs`.  Many common |vim|
+    plugins have been ported to work with it too!
 
 The dark years
 ''''''''''''''
@@ -101,9 +100,9 @@ who think ``vi`` means “normal or insert”).
 NotquiteVIM
 '''''''''''
 
-The |NeoViM| fork is interesting in a sort of not-:command:`vim` kind of way.
-The attempt to modernise :command:`vim` is wonderful, but sadly they’ve done it
-at the expense of half a dozen or so features I rely on.
+The |NeoViM| fork is interesting in a sort of not-\ |vim| kind of way.  The
+attempt to modernise |vim| is wonderful, but sadly they’ve done it at the
+expense of half a dozen or so features I rely on.
 
 I’m starting to believe it may be the future of |vim| though, and that bothers
 me a little.  Many of the additions over stock |vim| are not my cup of tea, and
@@ -113,7 +112,7 @@ about the actual project, they’re free to do *whatever* they want.
 As I stated above, I am fickle and I’ll change my mind in a heartbeat if it
 eventually brings some changes that are useful to me.  Right now I’ll just thank
 the developers for the nudge that brought modern :abbr:`IPC (Interprocess
-Communication)` to stock :command:`vim`.
+Communication)` to stock |vim|.
 
 .. rubric:: Footnotes
 
@@ -122,6 +121,7 @@ Communication)` to stock :command:`vim`.
 .. [#] Apparently, it is simply because :command:`xxd` is *always* available
        and it wasn’t a top choice option.
 
+.. _vim: https://www.vim.org/
 .. _MicroEMACS: ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/
 .. _GNU Emacs: https://www.gnu.org/software/emacs/
 .. _org-mode: http://www.orgmode.org/

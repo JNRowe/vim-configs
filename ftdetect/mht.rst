@@ -10,8 +10,8 @@ Treat :wikipedia:`MHTML` documents as |HTML|::
 
 .. note::
 
-    This overrides detection for ``*.mhtml`` files as :command:`vim` will select
-    the ``mason`` filetype(which I’ve never seen in the wild).
+    This overrides detection for ``*.mhtml`` files as |vim| will select the
+    ``mason`` filetype(which I’ve never seen in the wild).
 
 .. note::
 

@@ -1,8 +1,8 @@
 ``autoload/plugins`` - On-demand loaded files for plugins
 =========================================================
 
-The files under this directory are for :command:`vim`’s ``autoload`` use
-specific to a plugin.
+The files under this directory are for |vim|’s ``autoload`` use specific to
+a plugin.
 
 Contents
 --------

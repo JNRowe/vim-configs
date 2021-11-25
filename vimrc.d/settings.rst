@@ -23,9 +23,8 @@ Where necessary, remove duplicates entries for readability::
 
 .. note::
 
-    The duplicates occur because :command:`vim` defaults to including
-    ``$TEMP``, ``$TMPDIR`` and ``$TMP`` which are often symlinks to the same
-    locations.
+    The duplicates occur because |vim| defaults to including ``$TEMP``,
+    ``$TMPDIR`` and ``$TMP`` which are often symlinks to the same locations.
 
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
 edits and the resulting often *huge* backups are practically always useless to
@@ -104,8 +103,8 @@ or warn about weakened encryption::
 
     While the built-in encryption support can be useful at times, a better
     solution is probably to use an external tool that can be accessed outside
-    :command:`vim`.  For instance, gnupg_ which can be supported transparently
-    via :repo:`vim-gnupg <jamessan/vim-gnupg>`.
+    |vim|.  For instance, gnupg_ which can be supported transparently via
+    :repo:`vim-gnupg <jamessan/vim-gnupg>`.
 
 Highlight the current line, but only `when it will be useful
 <dynamic-cursorline>`_::
@@ -132,8 +131,8 @@ Keep swap files in |XDG basedir| compliant location::
         call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
     endif
 
-:wikipedia:`UTF-8` should be default on all systems now, and :command:`vim` will
-pick that up via :envvar:`LANG`, but we’ll force it just in case::
+:wikipedia:`UTF-8` should be default on all systems now, and |vim| will pick
+that up via :envvar:`LANG`, but we’ll force it just in case::
 
     " vint: -ProhibitEncodingOptionAfterScriptEncoding
     set encoding=utf-8
@@ -210,8 +209,8 @@ Allow unsaved modified buffers in the background::
 
 .. important::
 
-    Don’t worry if that sounds scary, :command:`vim` will warn if you try to
-    exit without saving them!
+    Don’t worry if that sounds scary, |vim| will warn if you try to exit without
+    saving them!
 
 .. _set-ignorecase:
 
@@ -228,7 +227,7 @@ Having ``=`` in filename matches are more trouble then they’re worth::
 
     set isfname-=\=
 
-Use :command:`vim`’s builtin manpage support::
+Use |vim|’s builtin manpage support::
 
     if empty(dein#get('vim-man'))
         runtime! ftplugin/man.vim
@@ -332,7 +331,7 @@ The *vast* majority of files I edit expect indentation to be four spaces::
 
     set shiftwidth=4
 
-Disable :command:`vim`’s intro message::
+Disable |vim|’s intro message::
 
     set shortmess+=I
 
@@ -447,9 +446,9 @@ Use smoother redraws::
 
 .. note::
 
-    This is enabled by :command:`vim` for most terminal types that would
-    support it, but the list :command:`vim` uses is static and new terminals
-    I’m testing can’t be added to it.
+    This is enabled by |vim| for most terminal types that would support it, but
+    the list |vim| uses is static and new terminals I’m testing can’t be added
+    to it.
 
 Enable undo files that cross sessions, and store those files in |XDG basedir|
 compliant location::
@@ -469,7 +468,7 @@ compliant location::
     ephemeral personal data persistent.  And, don’t forget that you can
     still :ref:`disable it locally <disable-undo-file>` if the need arises.
 
-Double :command:`vim`’s default swap file write time interval::
+Double |vim|’s default swap file write time interval::
 
     set updatetime=8000
 
@@ -520,8 +519,8 @@ visual, insert and replace modes::
 
     set whichwrap+=<,>,[,]
 
-Ignore files which we are unlikely to want to edit; PDF, :command:`vim`’s swap
-files, object and static library files, editor backups and sqlite_ databases.
+Ignore files which we are unlikely to want to edit; PDF, |vim|’s swap files,
+object and static library files, editor backups and sqlite_ databases.
 
 ::
 

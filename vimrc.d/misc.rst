@@ -21,7 +21,7 @@ User email address, as used by various plugins::
     silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
     \   ' <' . systemlist('git -C ~ config user.email')[0] . '>'
 
-Display base :command:`vim` version::
+Display base |vim| version::
 
     command! Version echo 'vim-' . misc#version()
 
@@ -38,8 +38,8 @@ debugging, by printing the entirety of options::
 
     This is different to ``:mkexrc`` in that it displays *all* options, not just
     the ones you have changed.  This is far nicer behaviour when you’ve upgraded
-    :command:`vim` and want to see what has changed.  It is also different to
-    using ``:set`` with ``:redir`` as the output is easier to read in
+    |vim| and want to see what has changed.  It is also different to using
+    ``:set`` with ``:redir`` as the output is easier to read in
     :command:`diff`’s output.
 
 Add on-hover word definitions, which can be useful for prose editing::

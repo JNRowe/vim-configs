@@ -7,9 +7,9 @@ First use of ``:scriptencoding`` must be after an initial encoding is set::
 
 .. include:: .includes/scriptencoding.rst
 
-Recent :command:`vim` versions disable ``'compatible'`` when a :file:`vimrc` is
-found, but some distributions are disabling that change for a reason that is far
-beyond me.
+Recent |vim| versions disable ``'compatible'`` when a :file:`vimrc` is found,
+but some distributions are disabling that change for a reason that is far beyond
+me.
 
 ::
 
@@ -19,8 +19,8 @@ beyond me.
     endif
     " vint: +ProhibitSetNoCompatible
 
-Warn users with pre-v8 :command:`vim` that problems will occur, but note that
-pull requests which aren’t too invasive are most welcome.
+Warn users with pre-v8 |vim| that problems will occur, but note that pull
+requests which aren’t too invasive are most welcome.
 
 ::
 
@@ -33,7 +33,7 @@ pull requests which aren’t too invasive are most welcome.
 
 |neovim| is *never* tested, as it removes functionality I use.  Feel free to
 open pull requests for ``neovim`` support, *iff* they aren’t too invasive *and*
-they don’t break :command:`vim`.
+they don’t break |vim|.
 
 ::
 

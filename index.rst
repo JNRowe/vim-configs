@@ -1,7 +1,7 @@
 vim-configs
 ===========
 
-This is my personal |vim| configuration that is shared among hosts.  Maybe
+This is my personal vim_ configuration that is shared among hosts.  Maybe
 they’re useful to you too, or — better yet — you’ll spot *and* fix a bug!
 
 .. image:: /.static/hero.png
@@ -119,6 +119,8 @@ file an |issue| or drop me a |mail|.
 
 If you’ve found a bug please try to include a minimal testcase that reproduces
 the problem, or even better a patch that fixes it!
+
+.. _vim: https://www.vim.org/
 
 .. spelling::
 

@@ -155,16 +155,16 @@ Use a terminal window for command output::
     annoying interaction.
 
 Hack to stop constant :repo:`dein <Shougo/dein.vim>` re-caching when switching
-between GUI and non-GUI :command:`vim`::
+between GUI and non-GUI |vim|::
 
     let g:loaded_bracketed_paste = v:true
 
 .. note::
 
     This issue affects me so little it went unnoticed for four days, as I’m
-    always using :command:`vim`’s ``clientserver`` support and :command:`gvim`.
-    However, an errant :command:`git commit` from the wrong terminal can cause
-    a nearly three second penalty for re-caching without this kludge.
+    always using |vim|’s ``clientserver`` support and :command:`gvim`.  However,
+    an errant :command:`git commit` from the wrong terminal can cause a nearly
+    three second penalty for re-caching without this kludge.
 
 .. _Inconsolata: http://www.levien.com/type/myfonts/inconsolata.html
 .. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts

@@ -96,7 +96,7 @@ their preferences.
 ``vim-bracketed-paste``
 '''''''''''''''''''''''
 
-    “Enables transparent pasting into :command:`vim`\”
+    “Enables transparent pasting into |vim|\”
 
 :repository: :repo:`ConradIrwin/vim-bracketed-paste`
 
@@ -114,8 +114,7 @@ their preferences.
 :repository: :repo:`JNRowe/dwm.vim`
 :config: :doc:`localcfg/plugin_dwm.vim`
 
-Excellent window management, it really does bring dwm_ simplicity to
-:command:`vim`!
+Excellent window management, it really does bring dwm_ simplicity to |vim|!
 
 ::
 
@@ -133,8 +132,8 @@ Excellent window management, it really does bring dwm_ simplicity to
 :config: :doc:`localcfg/plugin_securemodelines`
 
 This lightens the load of dealing with people who can’t follow :ref:`coding
-standards <editorconfig-plugin>` without allowing them free access to your
-:command:`vim` session.
+standards <editorconfig-plugin>` without allowing them free access to your |vim|
+session.
 
 ::
 
@@ -296,9 +295,9 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 .. note::
 
     I don’t automatically enable this on specific filetypes because it
-    *severely* slows down :command:`vim`, sometimes even enough to make you
-    regret enabling it.  However, it is *incredibly* useful and definitely worth
-    the slow down when you’re editing themes.
+    *severely* slows down |vim|, sometimes even enough to make you regret
+    enabling it.  However, it is *incredibly* useful and definitely worth the
+    slow down when you’re editing themes.
 
 .. _nrrwrgn-plugin:
 
@@ -1046,8 +1045,8 @@ editing your accounts/expenses an almost nice-ish experience.
 :repository: :repo:`luochen1990/rainbow`
 :config: :doc:`localcfg/plugin_rainbow`
 
-Make your :command:`vim` sessions feel like they have been painted by a three
-year old trying to impress their grandpa.  Which is a Good Thing™.
+Make your |vim| sessions feel like they have been painted by a three year old
+trying to impress their grandpa.  Which is a Good Thing™.
 
 ::
 
@@ -1070,7 +1069,7 @@ year old trying to impress their grandpa.  Which is a Good Thing™.
 ``calendar-vim``
 ''''''''''''''''
 
-    “A calendar window you can use within :command:`vim`\”
+    “A calendar window you can use within |vim|\”
 
 :repository: :repo:`mattn/calendar-vim`
 :config: :doc:`localcfg/plugin_calendar_vim`
@@ -1381,8 +1380,8 @@ user, how cool is that?
 :repository: :repo:`simnalamburt/vim-mundo`
 :config: :doc:`localcfg/plugin_vim_mundo`
 
-Finally grasp the :command:`vim` ``undo-tree``, without this the feature can be
-really daunting to wrap your head around.
+Finally grasp the |vim| ``undo-tree``, without this the feature can be really
+daunting to wrap your head around.
 
 ::
 
@@ -1421,7 +1420,7 @@ really daunting to wrap your head around.
 ``vim-vimlint``
 '''''''''''''''
 
-    “Linter for :command:`vim` script”
+    “Linter for |vim| script”
 
 :repository: :repo:`syngan/vim-vimlint`
 :config: :doc:`localcfg/plugin_vim_vimlint`
@@ -1577,7 +1576,7 @@ power of :kbd:`gcc`.
 :config: :doc:`localcfg/plugin_vim_fugitive`
 
 Replace most of your use of a shell when working on a project with just another
-:command:`vim` buffer.
+|vim| buffer.
 
 ::
 
@@ -1673,8 +1672,8 @@ your favourite plugin anyway.
 
 :repository: :repo:`tpope/vim-sensible`
 
-Sane defaults for :command:`vim`, tracking this repo might make your
-:command:`vim` experience a little more comfortable.
+Sane defaults for |vim|, tracking this repo might make your |vim| experience
+a little more comfortable.
 
 ::
 
@@ -1728,7 +1727,7 @@ writing sessions by at least fifteen orders of magnitude… or your money back.
 
 :repository: :repo:`tpope/vim-surround`
 
-Make using :command:`ls -1` to produce the headings for your own :command:`vim`
+Make using :command:`ls -1` to produce the headings for your own |vim|
 documentation a relatively painless task.
 
 ::
@@ -1798,7 +1797,7 @@ documentation a relatively painless task.
 ``vim-airline``
 '''''''''''''''
 
-    “Lean & mean status/tabline for :command:`vim` that’s light as air”
+    “Lean & mean status/tabline for |vim| that’s light as air”
 
 :repository: :repo:`vim-airline/vim-airline`
 :config: :doc:`localcfg/plugin_vim_airline`

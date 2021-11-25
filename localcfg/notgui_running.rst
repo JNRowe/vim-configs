@@ -6,7 +6,7 @@ Set up the menus so ``:emenu`` works properly::
     runtime! ALL menu.vim
 
 Use system’s terminal capabilities database, as I’m in the unusual situation
-where :command:`vim`’s are inferior on many of the systems I regularly use::
+where |vim|’s are inferior on many of the systems I regularly use::
 
     set nottybuiltin
 
@@ -63,18 +63,18 @@ Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn’t::
         inoremap <Nul> <C-x><C-o>
     endif
 
-kitty_ and :command:`vim` `interact poorly`_ with background repainting, the
-following works around it::
+kitty_ and |vim| `interact poorly`_ with background repainting, the following
+works around it::
 
     if $TERM ==# 'xterm-kitty'
         let &t_ut=''
     endif
 
 kitty_ has some really cool features, called kittens_, that can do all kinds of
-magic; :command:`icat`, for example, can display images inline.  However,
-:command:`vim` works in the alternate screen where the images will not be
-displayed.  The following snippet disables the alternate screen, which is a poor
-solution to workaround this::
+magic; :command:`icat`, for example, can display images inline.  However, |vim|
+works in the alternate screen where the images will not be displayed.  The
+following snippet disables the alternate screen, which is a poor solution to
+workaround this::
 
     if $TERM ==# 'xterm-kitty'
         set t_ti= t_te=

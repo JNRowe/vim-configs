@@ -33,9 +33,9 @@ My current indentation rules result favour this::
         \ )
     endfunction
 
-whereas previously I would’ve indented the ``\`` characters too.  Neither
-option is a good one, but :command:`vim`’s prefixed line continuations means
-there isn’t a better option available.
+whereas previously I would’ve indented the ``\`` characters too.  Neither option
+is a good one, but |vim|’s prefixed line continuations means there isn’t
+a better option available.
 
 This current iteration breaks using the indentation as a text object(which is
 annoying), but it does mean there is a little less whitespace needed for each

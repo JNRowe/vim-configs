@@ -12,7 +12,7 @@ Don’t run on startup so that we can resume previous editing session with ease:
 .. tip::
 
     A simple shell alias with :command:`vim +Startify` is a simple way to make
-    :command:`vim` open at the startify window.
+    |vim| open at the startify window.
 
 Use a smaller decoration in the header, so that the important data is
 immediately visible in short windows::
@@ -20,8 +20,8 @@ immediately visible in short windows::
     let g:startify_custom_header = 'startify#center(startify#fortune#boxed())'
 
 These common, to me, configuration files are reasonable bookmarks for when I've
-started :command:`vim` without arguments, but perhaps others are more useful
-when started with arguments?
+started |vim| without arguments, but perhaps others are more useful when started
+with arguments?
 
 ::
 

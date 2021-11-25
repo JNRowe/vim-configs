@@ -17,8 +17,8 @@ variables.
 
 .. envvar:: SHELL
 
-    Shell used by fzf_ launcher, when :command:`vim` has not been compiled with
-    terminal support.
+    Shell used by fzf_ launcher, when |vim| has not been compiled with terminal
+    support.
 
 .. envvar:: TERM
 

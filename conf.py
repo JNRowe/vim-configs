@@ -55,7 +55,7 @@ rst_epilog = """
 .. |reST| replace:: `reST <http://docutils.sourceforge.net/rst.html>`__
 .. |remind| replace:: `remind
    <https://www.roaringpenguin.com/products/remind>`__
-.. |vim| replace:: `vim <https://www.vim.org/>`__
+.. |vim| replace:: :command:`vim`
 .. |zsh| replace:: `zsh <https://www.zsh.org/>`__
 """
 

@@ -18,7 +18,7 @@ Don’t write undo data for temporary files::
     way to synchronise these settings, but it does mean one needs to be aware of
     the :ref:`sourcing order <sourcing-order>` to prevent mistakes.
 
-Use :command:`vim`’s help for these documents::
+Use |vim|’s help for these documents::
 
         autocmd BufRead ~/.vim/*.rst setlocal keywordprg=:help
 

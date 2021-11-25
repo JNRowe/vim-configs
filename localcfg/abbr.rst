@@ -47,12 +47,12 @@ snippets if I wasn’t so used to this now::
     We shell out to the system’s :command:`date` command here for a couple of
     reasons:
 
-    * For :abbr:`UTC (Coordinated Universal Time)` support because
-      :command:`vim` doesn’t expose :manpage:`gmtime(3)`
+    * For :abbr:`UTC (Coordinated Universal Time)` support because |vim| doesn’t
+      expose :manpage:`gmtime(3)`
     * For ``%:z`` support in timezone display to match common
       :wikipedia:`ISO-8601 <ISO_8601>` styling
 
-    If these were fixed we could switch to using :command:`vim`’s ``strftime()``
+    If these were fixed we could switch to using |vim|’s ``strftime()``
     function, with the caveat that format strings are non-portable and that we’d
     need to be conditional on ``exists('*strftime')``.
 

@@ -1,8 +1,8 @@
 ``localcfg/plugin_unicode.vim.vim``
 ===================================
 
-``:UnicodeName`` output is far more useful than :command:`vim`’s :kbd:`ga`, and
-in my opinion it is also easier to read.
+``:UnicodeName`` output is far more useful than |vim|’s :kbd:`ga`, and in my
+opinion it is also easier to read.
 
 ================ =========================================================
 Command          Output

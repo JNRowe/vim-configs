@@ -14,7 +14,7 @@ Find |XDG basedir| compliant locations for data files::
         execute 'let ' . s:var . ' = s:value'
     endfor
 
-:command:`vim` specific paths honouring |XDG basedir|::
+|vim| specific paths honouring |XDG basedir|::
 
     for s:name in ['cache', 'config', 'data']
         let s:path = 'vim_' . s:name . '_dir'

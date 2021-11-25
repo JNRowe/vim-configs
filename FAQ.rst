@@ -14,14 +14,14 @@ Okay, thanks for pointing that out.
 
 .. _supported-vim-version:
 
-How do you decide what version of :command:`vim` you support?
--------------------------------------------------------------
+How do you decide what version of |vim| you support?
+----------------------------------------------------
 
 I simply defer to Debian_.  Whatever is `packaged in Debian Stable`_ is the base
-version for me.  The Debian maintainers do an *amazing* job of packaging
-:command:`vim` and keeping on top of the necessary changes, and they have my
-most sincere thanks for that!  At time of writing James McCoy(jamessan) has put
-in over **fifteen** years keeping things working so that we don’t have to.
+version for me.  The Debian maintainers do an *amazing* job of packaging |vim|
+and keeping on top of the necessary changes, and they have my most sincere
+thanks for that!  At time of writing James McCoy(jamessan) has put in over
+**fifteen** years keeping things working so that we don’t have to.
 
 That said I don’t mind using features from more recent releases where it feels
 useful, but they’ll always be guarded behind a version check.  You can find the
@@ -35,9 +35,9 @@ A search through the history will show that this repository did, for a long
 time, support reloading the configuration files.  However, the whole process is
 incredibly brittle and really not all that useful.
 
-:command:`vim` restarts so quickly that it isn’t worth the grief to support
-reloading.  This is especially true given how annoying it is to handle all the
-tiny corner cases that make the process a complete nightmare to debug.
+|vim| restarts so quickly that it isn’t worth the grief to support reloading.
+This is especially true given how annoying it is to handle all the tiny corner
+cases that make the process a complete nightmare to debug.
 
 I’d pay the cost if the cycle time was even close to a second, but it isn’t.
 Plus, combined with :vimdoc:`mksession <starting.txt#mks>`/:ref:`vim-obsession
@@ -69,8 +69,8 @@ way.
 .. tip::
 
     **Co-workers**:  You can find recordings of old sessions on µfilm under
-    ``JNRowe/vim``, and you should feel free to ask :command:`vim` questions by
-    the other methods in my contact details too!
+    ``JNRowe/vim``, and you should feel free to ask |vim| questions by the other
+    methods in my contact details too!
 
 Why are the commit messages littered with emoji?
 ------------------------------------------------

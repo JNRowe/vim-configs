@@ -2,7 +2,7 @@
 ====================
 
 Make the :repo:`dein.vim <Shougo/dein.vim>` :command:`git` submodule available
-to :command:`vim`::
+to |vim|::
 
     set runtimepath+=~/.vim/external/dein.vim/
 

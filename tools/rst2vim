@@ -54,7 +54,6 @@ for directive in ('envvar', 'function', 'seealso', 'spelling', 'todo'):
     directives.register_directive(directive, StubDirective)
 for role in (
     'class',
-    'command',
     'doc',
     'envvar',
     'file',
@@ -68,8 +67,9 @@ for role in (
     'wikipedia',
 ):
     roles.register_generic_role(role, nodes.comment)
-# Separate handling of abbr to workaround conf.py's rst_epilog usage
-roles.register_generic_role('abbr', nodes.literal)
+# Separate handling of roles needed to workaround conf.py's rst_epilog usage
+for role in ['abbr', 'command']:
+    roles.register_generic_role(role, nodes.raw)
 
 p = ArgumentParser()
 p.add_argument('-r', help='record dependencies', metavar='file')

@@ -89,7 +89,7 @@
 
 .. function:: insert_options() -> None
 
-    Insert all :command:`vim` options in to the current buffer.
+    Insert all |vim| options in to the current buffer.
 
 ::
 
@@ -270,12 +270,12 @@
 
 .. function:: version() -> str
 
-    Find :command:`vim`’s base version.
+    Find |vim|’s base version.
 
-    Many distributions package :command:`vim` with cherry picked patches, and
-    sometimes it is nice to know the current base version.
+    Many distributions package |vim| with cherry picked patches, and sometimes
+    it is nice to know the current base version.
 
-    :returns: :command:`vim` version including the maximum consecutive patch
+    :returns: |vim| version including the maximum consecutive patch
 
 ::
 
