@@ -65,7 +65,6 @@ Contents
     plugin_vim_illuminate
     plugin_vim_indent_guides
     plugin_vim_jinja
-    plugin_vim_jnrowe
     plugin_vim_ledger
     plugin_vim_man
     plugin_vim_mundo
