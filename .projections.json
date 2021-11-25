@@ -11,7 +11,7 @@
     "after/ftplugin/*.rst": {
         "alternate": "after/ftplugin/{}.vim",
         "template": [
-            "``{file|dirname|basename}/{}``",
+            "``after/ftplugin/{}.vim``",
             "===",
             "",
             ".. include:: ../.includes/scriptencoding.rst",
@@ -21,10 +21,53 @@
         ],
         "type": "afconfig"
     },
+    "after/ftplugin/*.vim": { "alternate": "after/ftplugin/{}.rst" },
+    "autoload/*.rst": {
+        "alternate": "autoload/{}.vim",
+        "template": [
+            "``autoload/{}.vim``",
+            "===",
+            "",
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            "::",
+            ""
+        ],
+        "type": "autoload"
+    },
+    "autoload/*.vim": { "alternate": "autoload/{}.rst" },
+    "autoload/plugins/*.rst": {
+        "alternate": "autoload/plugins/{}.vim",
+        "template": [
+            "``autoload/plugins/{}.vim``",
+            "===",
+            "",
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            "::",
+            ""
+        ],
+        "type": "pautoload"
+    },
+    "autoload/plugins/*.vim": { "alternate": "autoload/plugins/{}.rst" },
     "build.py": {
         "alternate": "build.ninja",
         "type": "build"
     },
+    "compiler/*.rst": {
+        "alternate": "compiler/{}.vim",
+        "template": [
+            "``compiler/{}.vim``",
+            "===",
+            "",
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            "::",
+            ""
+        ],
+        "type": "compiler"
+    },
+    "compiler/*.vim": { "alternate": "compiler/{}.rst" },
     "dein.rst": {
         "alternate": "dein.vim",
         "type": "dein"
@@ -33,7 +76,7 @@
     "ftdetect/*.rst": {
         "alternate": "ftdetect/{}.vim",
         "template": [
-            "``{file|dirname|basename}/{}``",
+            "``ftdetect/{}.vim``",
             "===",
             "",
             "::",
@@ -45,10 +88,24 @@
         "type": "fconfig"
     },
     "ftdetect/*.vim": { "alternate": "ftdetect/{}.rst" },
+    "ftplugin/*.rst": {
+        "alternate": "ftplugin/{}.vim",
+        "template": [
+            "``ftplugin/{}.vim``",
+            "===",
+            "",
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            "::",
+            ""
+        ],
+        "type": "ftplugin"
+    },
+    "ftplugin/*.vim": { "alternate": "ftplugin/{}.rst" },
     "localcfg/*.rst": {
         "alternate": "localcfg/{}.vim",
         "template": [
-            "``{file|dirname|basename}/{}``",
+            "``localcfg/{}.vim``",
             "===",
             "",
             ".. include:: ../.includes/scriptencoding.rst",
@@ -62,7 +119,7 @@
     "localcfg/plugin_*.rst": {
         "alternate": "localcfg/{}.vim",
         "template": [
-            "``{file|dirname|basename}/{}``",
+            "``localcfg/plugin_{}.vim``",
             "===",
             "",
             ".. include:: ../.includes/scriptencoding.rst",
@@ -76,7 +133,7 @@
     "vimrc.d/*.rst": {
         "alternate": "vimrc.d/{}.vim",
         "template": [
-            "``{file|dirname|basename}/{}``",
+            "``vimrc.d/{}.vim``",
             "===",
             "",
             ".. include:: ../.includes/scriptencoding.rst",
