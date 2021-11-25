@@ -27,17 +27,3 @@ isn’t available::
             let g:fzf_launcher = 'xterm -e ' . $SHELL . ' -ic %s'
         endif
     endif
-
-Based on an example from the documentation, add a binding to populate the
-``quickfix`` list from results::
-
-    let g:fzf_action = {
-    \   'ctrl-q': function('plugins#fzf#build_quickfix_list'),
-    \   'ctrl-t': 'tab split',
-    \   'ctrl-x': 'split',
-    \   'ctrl-v': 'vsplit'
-    \ }
-
-.. seealso::
-
-    * :func:`plugins#fzf#build_quickfix_list() <build_quickfix_list>`

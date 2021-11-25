@@ -11,7 +11,6 @@ Contents
     :titlesonly:
 
     dein
-    fzf
     regex
     ultisnips
     vim_editqf
