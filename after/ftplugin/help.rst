@@ -10,4 +10,4 @@ too used to that setup in browsers::
 As we’re not editing help files all that often we shouldn’t need access to
 macros, and can therefore use :kbd:`q` to quick quit::
 
-    nnoremap <silent> <buffer> q :quit<CR>
+    nnoremap <silent> <buffer> q :helpclose<CR>
