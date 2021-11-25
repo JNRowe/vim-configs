@@ -8,7 +8,7 @@ Use my custom maps::
 Configure look::
 
     let g:mundo_header = v:false
-    let g:gundo_preview_bottom = v:true
+    let g:mundo_preview_bottom = v:true
     let g:mundo_right = v:true
 
 If |Python| 3 is available then use it::
