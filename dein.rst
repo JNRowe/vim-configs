@@ -192,6 +192,7 @@ languages.
 
 :repository: :repo:`SirVer/ultisnips`
 :config: :doc:`localcfg/plugin_ultisnips`
+:functions: :doc:`autoload/plugins/ultisnips`
 
 ::
 
@@ -240,6 +241,7 @@ languages.
     “Visualize, navigate, and operate on matching sets of text”
 
 :repository: :repo:`andymass/vim-matchup`
+:config: :doc:`localcfg/plugin_vim_matchup`
 
 ::
 
@@ -585,6 +587,7 @@ decorating it with glyphs.
 
 :repository: :repo:`ervandew/regex`
 :config: :doc:`localcfg/plugin_regex`
+:functions: :doc:`autoload/plugins/regex`
 
 Removes the need to jump to your language’s :abbr:`REPL (Read-Eval-Print Loop)`
 when writing ugly, ugly |RegEx|.
@@ -769,6 +772,7 @@ jealous.
 
 :repository: :repo:`jceb/vim-editqf`
 :config: :doc:`localcfg/plugin_vim_editqf`
+:functions: :doc:`autoload/plugins/vim_editqf`
 
 Add your own “todo” entries to the quickfix list, and hold them across sessions.
 
@@ -879,6 +883,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 :repository: :repo:`junegunn/vim-peekaboo`
 :config: :doc:`localcfg/plugin_vim_peekaboo`
+:functions: :doc:`autoload/plugins/vim_peekaboo`
 
 ::
 
@@ -920,6 +925,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 :repository: :repo:`justinmk/vim-sneak`
 :config: :doc:`localcfg/plugin_vim_sneak`
+:functions: :doc:`autoload/plugins/vim_sneak`
 
 ::
 
@@ -1296,6 +1302,7 @@ user, how cool is that?
 
 :repository: :repo:`reedes/vim-textobj-quote`
 :config: :doc:`localcfg/plugin_vim_textobj_quote`
+:functions: :doc:`autoload/plugins/vim_textobj_quote`
 
 ::
 
@@ -1441,6 +1448,7 @@ daunting to wrap your head around.
 
 :repository: :repo:`tell-k/vim-quick-radon`
 :config: :doc:`localcfg/plugin_vim_quick_radon`
+:functions: :doc:`autoload/plugins/vim_quick_radon`
 
 ::
 
@@ -1469,7 +1477,7 @@ daunting to wrap your head around.
     “Multiple selections/cursors”
 
 :repository: :repo:`mg979/vim-visual-multi`
-:config: doc:`localcfg/plugin_vim_vimlint`
+:config: doc:`localcfg/plugin_vim_visual_multi`
 
 ::
 
@@ -1485,6 +1493,7 @@ daunting to wrap your head around.
 
 :repository: :repo:`timcharper/wordnet.vim`
 :config: :doc:`localcfg/plugin_wordnet.vim`
+:functions: :doc:`autoload/plugins/wordnet.vim`
 
 ::
 
@@ -1847,6 +1856,7 @@ because you can dump heaps and heaps of custom code you've written in your
     “Enhanced :command:`man` support”
 
 :repository: :repo:`vim-utils/vim-man`
+:config: :doc:`localcfg/plugin_vim_man`
 
 ::
 
