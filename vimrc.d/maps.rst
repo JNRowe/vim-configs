@@ -261,6 +261,30 @@ Quickly correct close spelling mistakes without changing cursor position::
     guess, and :kbd:`\\zqlW` pops up a menu with choices for that same
     misspelled word.
 
+Quickly add close words to dictionaries without changing cursor position::
+
+    for s:dir in ['[', ']']
+        for s:type in ['bad', 'full']
+            for s:local in [v:false, v:true]
+                execute 'nnoremap <silent> [Spell]' .
+                \   (s:dir ==# ']' ? 'n' : 'l') .
+                \   (s:local ? 'A' : 'a') .
+                \   (s:type ==# 'bad' ? 'W' : 'w') . ' ' .
+                \   ':call misc#preserve_layout("normal! ' . s:dir .
+                \   (s:type ==# 'bad' ? 'S' : 's') .
+                \   'z' . (s:local ? 'G' :'g') . '<CR>'
+            endfor
+        endfor
+    endfor
+
+.. tip::
+
+    The mnemonic here is **l**\ast, **n**\ext, **a**\dd to dictionary, **A**\dd
+    to internal list, **w**\ord for likely misspelled words, and :kbd:`W` for
+    positively misspelled words.  Therefore, :kbd:`\\znAw` adds the next
+    misspelled or unusual word to the internal list, and :kbd:`\\zqaw` adds that
+    word to first file in ``'spellfile'``.
+
 .. seealso::
 
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`
@@ -268,6 +292,7 @@ Quickly correct close spelling mistakes without changing cursor position::
 .. spelling::
 
     ast
+    dd
     linewise
     ord
     uery
