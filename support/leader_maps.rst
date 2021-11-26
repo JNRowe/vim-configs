@@ -30,6 +30,8 @@ Key        Local  Buffer  Maps
 :kbd:`t`   ✅     ✅      :ref:`gitcommit filetype <gitcommit-custom-maps>`
 :kbd:`v`   ✅     ❌      :ref:`vim-vebugger <vim-vebugger-custom-maps>`
 :kbd:`w`   ❌     ❌      :ref:`wordnet.vim <wordnet-vim-custom-maps>`
+:kbd:`z`   ❌     ❌      :ref:`spelling correction
+                          <spelling-correction-custom-maps>`
 =========  =====  ======  ====================================================
 
 .. tip::

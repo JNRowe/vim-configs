@@ -234,6 +234,40 @@ Highlight matches for last search only within visual region::
         nnoremap <silent> [Display]mc :match none<CR>
     endif
 
+.. _spelling-correction-custom-maps:
+
+Quickly correct close spelling mistakes without changing cursor position::
+
+    call keymaps#mnemonic_map('Spell', {'key': 'z'})
+    for s:dir in ['[', ']']
+        for s:type in ['bad', 'full']
+            for s:auto in [v:false, v:true]
+                execute 'nnoremap <silent> [Spell]' .
+                \   (s:auto ? '' : 'q') .
+                \   (s:dir ==# ']' ? 'n' : 'l') .
+                \   (s:type ==# 'bad' ? 'W' : 'w') . ' ' .
+                \   ':call misc#preserve_layout("normal! ' . s:dir .
+                \   (s:type ==# 'bad' ? 'S' : 's') .
+                \   (s:auto ? '1' :'' ) . 'z=")<CR>'
+            endfor
+        endfor
+    endfor
+
+.. tip::
+
+    The mnemonic here is **q**\uery fix, **l**\ast, **n**\ext, **w**\ord for
+    likely Misspelled words, and :kbd:`W` for positively misspelled words.
+    Therefore, :kbd:`\\zlW` fixes the last misspelled word using |vim|’s best
+    guess, and :kbd:`\\zqlW` pops up a menu with choices for that same
+    misspelled word.
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 .. spelling::
 
+    ast
     linewise
+    ord
+    uery
