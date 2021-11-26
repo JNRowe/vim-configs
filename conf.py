@@ -2,6 +2,7 @@
 """conf - Sphinx configuration information."""
 
 import os
+import sys
 from contextlib import suppress
 from subprocess import CalledProcessError, PIPE, run
 from typing import Dict, List, Optional, Tuple, Union
@@ -37,6 +38,9 @@ if not on_rtd:
     else:
         spelling  # Dirty hack to silence F401 and type error
         extensions.append('sphinxcontrib.spelling')
+
+    sys.path.insert(0, 'tools')
+    extensions.append('vim_extractor')
 
 rst_epilog = """
 .. |ASCII| replace::
