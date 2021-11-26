@@ -7,7 +7,7 @@
 
 ::
 
-    function! misc#apply_project_locals()
+    function! misc#apply_project_locals() abort
         let b:meta_dir = misc#meta_detect(expand('<afile>'))
         if type(b:meta_dir) != v:t_string
             return
@@ -76,7 +76,7 @@
 
 ::
 
-    function! misc#edit_project_file(name)
+    function! misc#edit_project_file(name) abort
         let b:meta_dir = misc#meta_detect(expand('<afile>'))
         if type(b:meta_dir) != v:t_string
             return
@@ -112,7 +112,7 @@
 
     let s:project_env_dir = g:vim_data_dir . '/project_env/'
 
-    function! misc#meta_detect(file)
+    function! misc#meta_detect(file) abort
             if exists('b:meta_dir')
                 return b:meta_dir
             endif

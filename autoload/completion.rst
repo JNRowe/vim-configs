@@ -15,7 +15,7 @@
 
 ::
 
-    function! completion#build_complete(arglead, cmdline, cursorpos)
+    function! completion#build_complete(arglead, cmdline, cursorpos) abort
         if filereadable('build.ninja')
             let l:targets = systemlist('ninja -t targets | cut -d: -f1')
         else
@@ -60,7 +60,7 @@
 
 ::
 
-    function! completion#project_file_complete(arglead, cmdline, cursorpos)
+    function! completion#project_file_complete(arglead, cmdline, cursorpos) abort
         return sort(filter(['abbr.vim', 'project.vim'],
         \                  {_, s -> s =~? '^' . a:arglead}))
     endfunction

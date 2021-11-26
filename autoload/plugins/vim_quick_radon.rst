@@ -7,7 +7,7 @@
 
 ::
 
-    function! plguins#radon#open_win abort
+    function! plguins#radon#open_win() abort
         if &filetype ==# 'python'
             QuickRadon
         endif
