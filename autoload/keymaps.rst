@@ -1,6 +1,8 @@
 ``autoload/keymaps.vim``
 ========================
 
+.. include:: ../.includes/scriptencoding.rst
+
 .. function:: home_skip() -> None
 
     Jump between first character and first non-blank character on line.
