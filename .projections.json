@@ -22,6 +22,20 @@
         "type": "afconfig"
     },
     "after/ftplugin/*.vim": { "alternate": "after/ftplugin/{}.rst" },
+    "after/syntax/*.rst": {
+        "alternate": "after/syntax/{}.vim",
+        "template": [
+            "``after/syntax/{}.vim``",
+            "===",
+            "",
+            ".. include:: ../.includes/scriptencoding.rst",
+            "",
+            "::",
+            ""
+        ],
+        "type": "afsyntax"
+    },
+    "after/syntax/*.vim": { "alternate": "after/syntax/{}.rst" },
     "autoload/*.rst": {
         "alternate": "autoload/{}.vim",
         "template": [
