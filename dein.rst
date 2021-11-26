@@ -200,6 +200,7 @@ languages.
     \   'depends': 'vim-snippets',
     \   'if': has('insert_expand') && has('pythonx') && v:version >= 704,
     \   'on_event': 'InsertEnter',
+    \   'on_ft': 'snippets',
     \ })
 
 ``vim-gitgutter``
