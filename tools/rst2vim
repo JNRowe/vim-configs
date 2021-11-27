@@ -1,177 +1,49 @@
-#! /usr/bin/python3
-"""Extract vim code blocks from reST file.
+#! /bin/zsh -f
 
-This could be a lot more generic, but it has exactly *this* use and nothing
-more.
+setopt err_exit no_unset
 
-.. warning::
+zmodload -F zsh/zutil +b:zparseopts
 
-    This is utterly awful; it imports inside functions, declares classes inside
-    functions, has two entirely different paths dependent on external state,
-    etc.  However, it is *five* times faster than the slightly cleaner earlier
-    version, so we'll take the taste hit.
+# • ``^::$``
+#       Vim code block using Sphinx’s ``highlight_language`` setting
+# • ``^\.\. code-block:: vim$``
+#       Code block with explicit vim language
+# • ``^[^\. ][^\.].*::$``
+#       Implied code block via ``::`` suffixed line, skipping lines that are
+#       reST directives
+start_block='^(::|\.\. code-block:: vim|[^\. ][^\.].*::)$'
 
-"""
+typeset -A args
+zparseopts -D -K -E -A args d:
 
-from argparse import ArgumentParser
-from pathlib import Path
-from sys import path
+if [[ -z ${1:-} ]] {
+    echo "Error: No input given"
+    exit 2
+} elif [[ -z ${2:-} ]] {
+    echo "Error: No output given"
+    exit 2
+}
 
-if False:
-    from typing import Dict, List, Optional, Tuple
-    from docutils.nodes import document
+input=$1
+output=$2
+typeset -U deps=()
 
+(( ${_RST2HTML_no_wipe:-0} )) || : >| $output
 
-BASE_DIR = Path(__file__).parents[1]
-
-
-def is_vim_code(node) -> bool:
-    """Filter function to extract code blocks.
-
-    .. note::
-
-        This extracts plain literals and blocks marked as vim.  We can assume
-        all plain literals are vim code, as we’ve set ``highlight_language`` in
-        :file:`conf.py`.
-
-    Args:
-        node: Docutils object to filter
-    """
-    if node.tagname == 'literal_block':
-        classes = node.attributes['classes']
-        if classes == [] or 'vim' in classes:
-            return True
-    return False
-
-
-def parse_full_rst(
-    input_path: Path, process_deps: bool
-) -> 'Tuple[document, Dict[str, str]]':
-    from docutils.core import publish_doctree
-    from docutils.parsers.rst import Directive, directives, nodes, roles
-    from docutils.utils import DependencyList
-
-    path.insert(0, BASE_DIR.as_posix())
-    from conf import rst_epilog  # NOQA: E402
-
-    class StubDirective(Directive):
-
-        """No-op class to mock out Sphinx-specific directives."""
-
-        has_content = True
-
-        def run(self) -> 'List':
-            return []
-
-    # Stub used Sphinx directives and roles, as we’re not using them in output
-    for directive in ('envvar', 'function', 'seealso', 'spelling', 'todo'):
-        directives.register_directive(directive, StubDirective)
-    for role in (
-        'class',
-        'doc',
-        'envvar',
-        'file',
-        'func',
-        'kbd',
-        'manpage',
-        'pypi',
-        'ref',
-        'repo',
-        'vimdoc',
-        'wikipedia',
-    ):
-        roles.register_generic_role(role, nodes.comment)
-    # Separate handling of roles needed to workaround conf.py’s rst_epilog
-    # usage
-    for role in ['abbr', 'command']:
-        roles.register_generic_role(role, nodes.raw)
-
-    settings = {
-        '_disable_config': 1,
+in_block=0
+while IFS='' read -r line; do
+    if [[ $line =~ '^.. include:: (.*)' ]] {
+        _RST2HTML_no_wipe=1 $0 ${input:h}/$match $output
+        deps+=(${input:h}/$match)
+    } elif [[ $line =~ $start_block ]] {
+        in_block=1
+    } elif [[ $line =~ '^[^ ]' ]] {
+        in_block=0
+    } elif (( $in_block )) && [[ -n $line ]] {
+        echo -E "${line[5,-1]}" >> $output
     }
-    if process_deps:
-        dl = DependencyList()
-        settings['record_dependencies'] = dl
+done < $input
 
-    with input_path.open() as f:
-        doctree = publish_doctree(
-            f.read() + rst_epilog,
-            input_path.as_posix(),
-            settings_overrides=settings,
-        )
-    if process_deps:
-        deps = dl.list
-    else:
-        deps = {}
+[[ -n ${args[(I)-d]} ]] && [[ $deps ]] && echo $output: $deps >| ${args[-d]}
 
-    return doctree, deps
-
-
-def use_sphinx_cache(
-    input_path: Path, cache_path: Path, env_path: 'Optional[Path]'
-) -> 'Tuple[document, Dict[str, str]]':
-    from json import dump as dump_json, load as load_json
-    from pickle import load as load_pickle
-
-    if env_path:
-        deps_path = BASE_DIR / '.build/doctrees/dependencies.json'
-        deps_valid = (
-            deps_path.exists()
-            and deps_path.stat().st_mtime > env_path.stat().st_mtime
-        )
-        if deps_valid:
-            with deps_path.open('r') as f:
-                dep_data = load_json(f)
-        else:
-            with env_path.open('rb') as f:
-                env = load_pickle(f)
-                dep_data = {k: list(v) for k, v in env.dependencies.items()}
-            with deps_path.open('w') as f:
-                dump_json(dep_data, f)
-        deps = dep_data.get(
-            input_path.relative_to(BASE_DIR).with_suffix('').as_posix(), []
-        )
-    else:
-        deps = {}
-    with cache_path.open('rb') as f:
-        doctree = load_pickle(f)
-
-    return doctree, deps
-
-
-p = ArgumentParser()
-p.add_argument('-r', type=Path, help='record dependencies', metavar='file')
-p.add_argument('input', type=Path, help='reST file to process')
-p.add_argument('output', type=Path, help='vim file to generate')
-args = p.parse_args()
-cache_path = (
-    (BASE_DIR / '.build/doctrees') / args.input.relative_to(BASE_DIR)
-).with_suffix('.doctree')
-if args.r:
-    env_path = BASE_DIR / '.build/doctrees/environment.pickle'
-    env_valid = (
-        env_path.exists()
-        and env_path.stat().st_mtime > args.input.stat().st_mtime
-    )
-else:
-    env_path = None
-    env_valid = True
-cache_valid = (
-    cache_path.exists()
-    and cache_path.stat().st_mtime > args.input.stat().st_mtime
-)
-
-if env_valid and cache_valid:
-    doctree, deps = use_sphinx_cache(args.input, cache_path, env_path)
-else:
-    doctree, deps = parse_full_rst(args.input, args.r is not None)
-
-code_blocks = doctree.traverse(condition=is_vim_code)
-
-if len(code_blocks) >= 1:
-    with args.output.open('w') as f:
-        for block in code_blocks:
-            f.write(block.astext() + '\n')
-    if args.r and deps:
-        with args.r.open('w') as f:
-            f.write(f'{args.output}: {" ".join(deps)}\n')
+:
