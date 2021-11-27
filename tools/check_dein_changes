@@ -11,7 +11,7 @@ for d (${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/github.com/*/*(/)) {
     cd $d
     if git status -s | grep -q '^.M'; then
         if [[ -n ${args[(I)-s]} ]] {
-            echo $d:h:t/$d:t
+            echo ${d:h:t}/${d:t}
         } else {
             print -D $d
         }
