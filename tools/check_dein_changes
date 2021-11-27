@@ -5,7 +5,7 @@
 # The primary use of this script is to hunt out quick hacks that have been made
 # to repositories that may have been forgotten about.
 
-zparseopts -D -K -E -A args s
+zparseopts -D -K -E -A args s v::
 
 for d (${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/github.com/*/*(/)) {
     cd $d
@@ -14,6 +14,9 @@ for d (${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/github.com/*/*(/)) {
             echo ${d:h:t}/${d:t}
         } else {
             print -D $d
+        }
+        if [[ -n ${args[(I)-v]} ]] {
+            git diff ${args[(I)-v]+--${args[-v]}}
         }
     fi
 }
