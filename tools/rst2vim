@@ -12,9 +12,15 @@ zmodload -F zsh/zutil +b:zparseopts
 start_block='^(::|[^\. ][^\.].*::)$'
 
 typeset -A args
-zparseopts -D -K -E -A args d:
+zparseopts -D -K -E -A args d: h
 
-if [[ -z ${1:-} ]] {
+if [[ -n ${args[(I)-h]} ]] {
+    print -P "Usage: %B$0%b [option…] <input> <output>"
+    echo "Options:"
+    echo "    -d <file>  File to write dependencies to"
+    echo "    -h         This message"
+    exit 0
+} elif [[ -z ${1:-} ]] {
     echo "Error: No input given"
     exit 2
 } elif [[ -z ${2:-} ]] {

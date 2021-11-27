@@ -5,7 +5,16 @@
 # The primary use of this script is to hunt out quick hacks that have been made
 # to repositories that may have been forgotten about.
 
-zparseopts -D -K -E -A args s v::
+zparseopts -D -K -E -A args s h v::
+
+if [[ -n ${args[(I)-h]} ]] {
+    print -P "Usage: %B$0%b [option…]"
+    echo "Options:"
+    echo "    -s         Display the repository name only"
+    echo "    -v [name]  Show changes, optionally followed by a git diff option"
+    echo "    -h         This message"
+    exit 0
+}
 
 for d (${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/github.com/*/*(/)) {
     cd $d
