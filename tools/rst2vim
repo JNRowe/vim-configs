@@ -6,12 +6,10 @@ zmodload -F zsh/zutil +b:zparseopts
 
 # • ``^::$``
 #       Vim code block using Sphinx’s ``highlight_language`` setting
-# • ``^\.\. code-block:: vim$``
-#       Code block with explicit vim language
 # • ``^[^\. ][^\.].*::$``
 #       Implied code block via ``::`` suffixed line, skipping lines that are
 #       reST directives
-start_block='^(::|\.\. code-block:: vim|[^\. ][^\.].*::)$'
+start_block='^(::|[^\. ][^\.].*::)$'
 
 typeset -A args
 zparseopts -D -K -E -A args d:
