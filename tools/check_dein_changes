@@ -4,13 +4,13 @@
 #
 # The primary use of this script is to hunt out quick hacks that have been made
 # to repositories that may have been forgotten about.
-#
-# Use -s to display just the repository name.
+
+zparseopts -D -K -E -A args s
 
 for d (${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos/github.com/*/*(/)) {
     cd $d
     if git status -s | grep -q '^.M'; then
-        if [[ $1 == -s ]] {
+        if [[ -n ${args[(I)-s]} ]] {
             echo $d:h:t/$d:t
         } else {
             print -D $d
