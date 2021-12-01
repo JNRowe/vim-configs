@@ -14,6 +14,7 @@ Contents
     regex
     ultisnips
     vim_editqf
+    vim_peekaboo
     vim_quick_radon
     vim_sneak
     vim_textobj_quote

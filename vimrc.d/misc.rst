@@ -18,8 +18,11 @@ Show highlight group of the current location::
 
 User email address, as used by various plugins::
 
-    silent let g:user_email = systemlist('git -C ~ config user.name')[0] .
-    \   ' <' . systemlist('git -C ~ config user.email')[0] . '>'
+    silent let s:user_data = systemlist(
+    \   'git -C ~ config user.name; git -C ~ config user.email')
+    if v:shell_error == 0
+        let g:user_email = printf('%s <%s>', s:user_data[0], s:user_data[1])
+    endif
 
 Display base |vim| version::
 

@@ -1,9 +1,18 @@
 ``vimrc.d/packages.vim``
 ========================
 
+.. note::
+
+    The strange concoctions in this file are to support lazy loading of bundled
+    packages.  If you know of a better way to perform this than I’d love to
+    know, please file an |issue| or drop me a |mail|.
+
 Enable ``:Cfilter`` for using enormously noisy compilers::
 
-    packadd! cfilter
+    for s:t in ['C', 'L']
+        execute 'command! -bang -nargs=+ ' . s:t . 'filter packadd cfilter |' .
+        \   s:t . 'filter<bang> <args>'
+    endfor
 
 When using server mode ``editexisting`` makes using currently open files far
 simpler::

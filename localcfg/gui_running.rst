@@ -75,7 +75,7 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
 ::
 
-    for s:name in ['Inconsolata', 'Consolas', 'monospace']
+    for s:name in ['Consolas', 'Inconsolata', 'monospace']
         if len(systemlist('fc-list ' . shellescape(s:name . ' NF'))) != 0
             let g:font_family = s:name . ' NF'
             break

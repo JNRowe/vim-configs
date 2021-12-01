@@ -149,7 +149,9 @@ session.
 
 ::
 
-    call dein#add('RRethy/vim-illuminate')
+    call dein#add('RRethy/vim-illuminate', {
+    \   'on_event': 'CursorHold',
+    \ })
 
 ``delimitMate``
 '''''''''''''''
@@ -333,6 +335,7 @@ a full editing session.
 
     call dein#add('chrisbra/Recover.vim', {
     \   'if': v:version >= 703,
+    \   'on_cmd': 'RecoverPluginEnable',
     \ })
 
 ``Replay``
@@ -888,7 +891,15 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 ::
 
-    call dein#add('junegunn/vim-peekaboo')
+    call dein#add('junegunn/vim-peekaboo', {
+    \   'hook_source': 'call plugins#vim_peekaboo#set_compact()',
+    \   'hook_post_source': 'doautocmd <nomodeline> peekaboo_init BufEnter',
+    \   'on_map': {
+    \       'i': '<C-r>',
+    \       'n': ['@', '"'],
+    \       'x': '"',
+    \   },
+    \ })
 
 ``patchreview-vim``
 '''''''''''''''''''
@@ -1043,6 +1054,8 @@ editing your accounts/expenses an almost nice-ish experience.
     \   'lazy': v:false,
     \   'on_ft': 'ledger',
     \ })
+
+.. _rainbow-plugin:
 
 ``rainbow``
 '''''''''''
@@ -1341,7 +1354,16 @@ user, how cool is that?
 
     call dein#add('rhysd/committia.vim', {
     \   'if': plugins#dein#has_exec('git'),
+    \   'on_ft': 'gitcommit',
     \ })
+
+We lazy load on filetype definition for my normal workflow with
+``clientserver``, but want to forcibly load on |vim| being called from
+:command:`git commit`::
+
+    if get(argv(), 0, '') =~# '/.git/COMMIT_EDITMSG$'
+        call dein#source('committia.vim')
+    endif
 
 ``git-messenger.vim``
 '''''''''''''''''''''
