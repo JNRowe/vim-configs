@@ -2,6 +2,7 @@ __pycache__/
 
 /.build/
 /.issues/
+/startup_logs/
 /tags/
 
 /doc/tags
