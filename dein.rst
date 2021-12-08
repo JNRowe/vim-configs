@@ -1117,21 +1117,6 @@ trying to impress their grandpa.  Which is a Good Thing™.
     \   'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
 
-``undotree``
-''''''''''''
-
-    “Display your undo history in a graph”
-
-:repository: :repo:`mbbill/undotree`
-:config: :doc:`localcfg/plugin_undotree`
-
-::
-
-    call dein#add('mbbill/undotree', {
-    \   'if': v:version >= 700,
-    \   'on_cmd': 'UndotreeToggle',
-    \ })
-
 ``meson``
 '''''''''
 

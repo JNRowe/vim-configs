@@ -48,7 +48,6 @@ Contents
     plugin_splitjoin.vim
     plugin_switch.vim
     plugin_ultisnips
-    plugin_undotree
     plugin_unicode.vim
     plugin_vim_unimpaired
     plugin_vim_airline
