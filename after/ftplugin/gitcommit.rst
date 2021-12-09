@@ -3,6 +3,21 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+Switch to insert mode immediately when opening a new commit message::
+
+    augroup jnrowe_gitcommit
+        autocmd!
+        autocmd BufEnter */COMMIT_EDITMSG if len(getline('.')) == 0 |
+        \       startinsert |
+        \   endif
+    augroup END
+
+.. note::
+
+    The assumption here is that if the first line is blank this is a new commit
+    message, otherwise we’re amending a previous message.  This may fail if you
+    use a custom commit template.
+
 .. _gitcommit-custom-maps:
 
 Configure maps to insert common metadata in to commit messages::
