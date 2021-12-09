@@ -35,7 +35,6 @@ Enable common — to me — highlighting support::
     \   'sh': ['sh', 'zsh'],
     \   'vim': ['vim', ],
     \ }
-    let g:rst_use_emphasis_colors = v:true
 
 The *vast* majority of the time I spend editing |reST| documents I am actually
 editing files from a Sphinx_ project.  It is nice being able to :kbd:`gf` when
