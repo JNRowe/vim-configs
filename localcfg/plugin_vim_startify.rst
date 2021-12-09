@@ -14,10 +14,22 @@ Don’t run on startup so that we can resume previous editing session with ease:
     A simple shell alias with :command:`vim +Startify` is a simple way to make
     |vim| open at the startify window.
 
-Use a smaller decoration in the header, so that the important data is
-immediately visible in short windows::
+Prefer a smaller decoration in the header, so that the important data is
+immediately visible in windows::
 
-    let g:startify_custom_header = 'startify#center(startify#fortune#boxed())'
+    let g:startify_header_full = 'startify#center(startify#fortune#boxed())'
+
+Only display the header when in large windows::
+
+    augroup jnrowe_vim_startify
+        autocmd VimResized * if dein#get('vim-startify').sourced |
+        \       call plugins#vim_startify#set_header_display() |
+        \   endif
+    augroup END
+
+.. seealso::
+
+    * :func:`plugins#vim_startify#set_header_display() <set_header_display>`
 
 These common, to me, configuration files are reasonable bookmarks for when I've
 started |vim| without arguments, but perhaps others are more useful when started

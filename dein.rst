@@ -1157,6 +1157,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mhinz/vim-startify', {
+    \   'hook_source': 'call plugins#vim_startify#set_header_display()',
     \   'on_cmd': 'Startify',
     \ })
 

@@ -43,6 +43,7 @@ __pycache__/
 /autoload/plugins/vim_peekaboo.vim
 /autoload/plugins/vim_quick_radon.vim
 /autoload/plugins/vim_sneak.vim
+/autoload/plugins/vim_startify.vim
 /autoload/plugins/vim_textobj_quote.vim
 /autoload/plugins/wordnet.vim.vim
 /autoload/completion.vim

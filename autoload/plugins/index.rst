@@ -17,5 +17,6 @@ Contents
     vim_peekaboo
     vim_quick_radon
     vim_sneak
+    vim_startify
     vim_textobj_quote
     wordnet.vim
