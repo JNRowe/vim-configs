@@ -22,6 +22,10 @@ Use |vim|’s help for these documents::
 
         autocmd BufRead ~/.vim/*.rst setlocal keywordprg=:help
 
+Use project tags for these documents::
+
+        autocmd BufRead ~/.vim/* setlocal tags+=~/.vim/tags/TAGS
+
 We don't want to edit patch backup files by accident [*again*]::
 
         autocmd BufRead *.orig set readonly

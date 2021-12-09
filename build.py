@@ -11,6 +11,7 @@
 from inspect import stack
 from pathlib import Path
 from shutil import which
+from subprocess import check_output
 from typing import List, Optional
 
 import ninja_syntax
@@ -162,7 +163,7 @@ def configure(
         ctags_path = which(ctags)
         n.rule(
             'tags_gen',
-            f'{ctags_path} --languages=$lang -R $exclude -f $out $in',
+            f'{ctags_path} --languages=$lang $extra_opts $exclude -f $out $in',
             description=pretty('CTAGS $out', colour),
         )
         n.newline()
@@ -239,6 +240,22 @@ def configure(
                     ],
                 )
 
+        repo_files = check_output(
+            ['git', '-C', location, 'ls-files'], encoding='utf-8'
+        ).splitlines()
+        n.build(
+            f'{location / "tags" /  "TAGS"}',
+            'tags_gen',
+            inputs=[f'{location}/{s}' for s in repo_files],
+            implicit=[
+                ctags_path,
+            ],
+            variables={
+                'exclude': f'--exclude={location}/external/dein.vim',
+                'lang': 'JSON,Python,ReStructuredText,Sh,Yaml',
+            },
+        )
+
         tags = location / 'tags'
         n.build(
             f'{tags / "libc.ctags"}',
@@ -254,6 +271,7 @@ def configure(
                     f'--exclude=$in/{d}' for d in libc_exclude
                 ),
                 'lang': libc_langs,
+                'extra_opts': '--recurse',
             },
         )
 
@@ -274,7 +292,7 @@ def configure(
                     implicit=[
                         ctags_path,
                     ],
-                    variables={'lang': lang},
+                    variables={'lang': lang, 'extra_opts': '--recurse'},
                 )
                 has_lang = True
             if has_lang:
