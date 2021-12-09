@@ -995,7 +995,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     \ })
 
 ``nyancat-vim``
----------------
+'''''''''''''''
 
 :repository: :repo:`koron/nyancat-vim`
 

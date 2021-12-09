@@ -49,7 +49,6 @@ Contents
     plugin_switch.vim
     plugin_ultisnips
     plugin_unicode.vim
-    plugin_vim_unimpaired
     plugin_vim_airline
     plugin_vim_bbye
     plugin_vim_bufmru
@@ -79,6 +78,7 @@ Contents
     plugin_vim_speeddating
     plugin_vim_startify
     plugin_vim_textobj_quote
+    plugin_vim_unimpaired
     plugin_vim_vebugger
     plugin_vim_vimlint
     plugin_vim_visual_multi

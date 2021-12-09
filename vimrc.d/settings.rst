@@ -292,7 +292,8 @@ Support increment and decrement on single characters too::
     I’m unsure if I want this, but I’m playing with it for lists in text.
     Should it only be in :file:`prose.rst`?
 
-Disable line numbering by default, but `not in the GUI <gui-linenumbers>`_::
+Disable line numbering by default, but :ref:`not in the GUI
+<gui-linenumbers>`::
 
     set nonumber
 

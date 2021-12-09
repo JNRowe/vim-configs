@@ -44,8 +44,8 @@ Plus, combined with :vimdoc:`mksession <starting.txt#mks>`/:ref:`vim-obsession
 <vim-obsession-plugin>` plugin the editor pops back up as if we were using live
 reloading.
 
-Isn’t it really difficult to edit ``viml`` in rest?
----------------------------------------------------
+Isn’t it really difficult to edit ``viml`` in ``reST``?
+-------------------------------------------------------
 
 It could be, but this is one of the perfect use cases for the :ref:`:NrrwRgn
 <nrrwrgn-plugin>` plugin.  You can use it open sections of a file in
