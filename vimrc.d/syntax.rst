@@ -41,6 +41,16 @@ Disable |reST|’s default indentation rules::
     The indentation rules *mostly* work, but occasionally don’t seem to do
     the right thing… and that is *far* more annoying than always being wrong.
 
+The folding configuration for |reST| files is quite poor, and the custom
+``'foldtext'`` makes using folds close to useless::
+
+    let g:rst_fold_enabled = v:false
+
+.. note::
+
+    This isn’t enabled upstream, but has been toggled on in a few site files for
+    reasons which are far beyond me.
+
 Rust
 ----
 
