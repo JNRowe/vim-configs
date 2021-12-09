@@ -1,6 +1,6 @@
 #! /bin/zsh -f
 
-setopt err_exit no_unset
+setopt err_exit no_unset warn_create_global
 
 zmodload -F zsh/zutil +b:zparseopts
 
@@ -10,6 +10,29 @@ zmodload -F zsh/zutil +b:zparseopts
 #       Implied code block via ``::`` suffixed line, skipping lines that are
 #       reST directives
 start_block='^(::|[^\. ][^\.].*::)$'
+
+parse() {
+    local input=$1 output=$2
+    local _RST2HTML_recursing=${_RST2HTML_recursing:-0}
+    (( $_RST2HTML_recursing )) || : >| $output
+    integer in_block=0
+    typeset -U includes=()
+    local line match mbegin mend
+    while IFS='' read -r line; do
+        if [[ $line =~ '^.. include:: (.*)' ]] {
+            _RST2HTML_recursing=1 includes+=($(parse ${input:h}/$match $output))
+            includes+=(${input:h}/$match)
+        } elif [[ $line =~ $start_block ]] {
+            in_block=1
+        } elif [[ $line =~ '^[^ ]' ]] {
+            in_block=0
+        } elif (( $in_block )) && [[ -n $line ]] {
+            echo -E "${line[5,-1]}" >> $output
+        }
+    done < $input
+    (( $_RST2HTML_recursing )) || echo $includes
+}
+
 
 typeset -A args
 zparseopts -D -K -E -A args d: h
@@ -28,26 +51,8 @@ if [[ -n ${args[(I)-h]} ]] {
     exit 2
 }
 
-input=$1
-output=$2
-typeset -U deps=()
+deps=$(parse $1 $2)
 
-(( ${_RST2HTML_no_wipe:-0} )) || : >| $output
-
-in_block=0
-while IFS='' read -r line; do
-    if [[ $line =~ '^.. include:: (.*)' ]] {
-        _RST2HTML_no_wipe=1 $0 ${input:h}/$match $output
-        deps+=(${input:h}/$match)
-    } elif [[ $line =~ $start_block ]] {
-        in_block=1
-    } elif [[ $line =~ '^[^ ]' ]] {
-        in_block=0
-    } elif (( $in_block )) && [[ -n $line ]] {
-        echo -E "${line[5,-1]}" >> $output
-    }
-done < $input
-
-[[ -n ${args[(I)-d]} ]] && [[ $deps ]] && echo $output: $deps >| ${args[-d]}
+[[ -n ${args[(I)-d]} ]] && [[ $deps ]] && echo $2: $deps >| ${args[-d]}
 
 :
