@@ -23,7 +23,7 @@ Configure my custom maps for quickfix::
 
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
-Display occurrences of current word::
+Find occurrences of current word::
 
     nnoremap <silent> [quickfix]sw :vimgrep <C-r>=expand('<cword>')<CR> %<CR>
     nnoremap <silent> [quickfix]sW :grep <C-r>=expand('<cword>')<CR><CR>

@@ -8,7 +8,7 @@
 
     Using the following rules:
 
-    * Use the default font, if only a size if given via ``v:count``
+    * Use the default font, if only a size is given via ``v:count``
     * Switch to default font and size, if called with an empty argument
 
     :param font: Font to switch to

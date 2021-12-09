@@ -48,7 +48,7 @@ Isn’t it really difficult to edit ``viml`` in ``reST``?
 -------------------------------------------------------
 
 It could be, but this is one of the perfect use cases for the :ref:`:NrrwRgn
-<nrrwrgn-plugin>` plugin.  You can use it open sections of a file in
+<nrrwrgn-plugin>` plugin.  You can use it to open sections of a file in
 a different window, and that window can have its own options configured
 including the filetype.
 
@@ -124,7 +124,7 @@ Why does using the mouse scroll wheel breaks my file
 
 There are many, many ways to :vimdoc:`move through a buffer
 <motion.txt#text-objects>` in vim.  Once you’ve learned them, keys such as
-:kbd:`PageUp` and the mouse in general become very weak means for navigation.
+:kbd:`PageUp` and the mouse in general become a very weak means for navigation.
 
 If we’re not using the mouse for its normal purpose, we can use it for something
 :ref:`far more cool <scroll-wheel-override>`

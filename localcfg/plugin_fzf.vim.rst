@@ -31,7 +31,7 @@ Configure convenience mappings for common command usage::
 
     I use :kbd:`grave` as my binding for :command:`fzf` commands to reflect my
     use of :kbd:`<Mod4-\`>` to open a drop down terminal in my window manager.
-    The pattern here and throughout these configuration files is an extremely
+    The pattern here and throughout these configuration files is extremely
     useful as a way to remember bindings.
 
 .. rubric:: Footnotes
