@@ -162,6 +162,12 @@ For wget_::
 
     call menu#define_menu('&wget', g:xdg_config_dir . '/wget/config')
 
+.. tip::
+
+    It probably seems odd to want to edit the wget_ configuration file often
+    enough to warrant this, but I like to keep a stack of selectable
+    ``user-agent`` values in there for working around stubborn sites.
+
 For X.org_’s main user configuration files::
 
     let s:xorg_files = {
