@@ -296,6 +296,12 @@ Disable line numbering by default, but `not in the GUI <gui-linenumbers>`_::
 
     set nonumber
 
+.. _path-setting:
+
+Don’t search for ``C`` includes from all filetypes::
+
+    set path-=/usr/include
+
 Set an upper limit to the popup menu, as full screen height *feels* quite
 unusable::
 

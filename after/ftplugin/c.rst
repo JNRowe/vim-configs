@@ -14,3 +14,7 @@ Add a little whitespace to comments::
 
     setlocal commentstring=/*\ %s\ */
     let b:undo_ftplugin .= '|setlocal commentstring<'
+
+Re-add ``C`` includes :ref:`where they’re useful <path-setting>`::
+
+    setlocal path+=/usr/include
