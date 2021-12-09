@@ -32,11 +32,10 @@ if not on_rtd:
     # general case and we don’t have the granularity to describe this in a
     # clean way
     try:
-        from sphinxcontrib import spelling  # type: ignore
+        from sphinxcontrib import spelling  # type: ignore  # NOQA: F401
     except ImportError:
         pass
     else:
-        spelling  # Dirty hack to silence F401 and type error
         extensions.append('sphinxcontrib.spelling')
 
     sys.path.insert(0, 'tools')
