@@ -22,6 +22,7 @@ immediately visible in windows::
 Only display the header when in large windows::
 
     augroup jnrowe_vim_startify
+        autocmd!
         autocmd VimResized * if dein#get('vim-startify').sourced |
         \       call plugins#vim_startify#set_header_display() |
         \   endif

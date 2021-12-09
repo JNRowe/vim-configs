@@ -15,6 +15,7 @@ Configure styling::
         let s:guide_term = {'even': 8, 'odd': 0}
     endif
     augroup jnrowe_vim_indent_guides
+        autocmd!
         for s:k in ['even', 'odd']
             execute 'autocmd Colorscheme,VimEnter * highlight ' .
             \   'IndentGuides' . misc#title_word(s:k) .

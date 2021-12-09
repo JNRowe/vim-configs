@@ -3,13 +3,15 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-Enable for |reST| and other largely prose filetypes::
+::
 
     augroup jnrowe_vim_textobj_quote
         autocmd!
+
+Enable for |reST| and other largely prose filetypes::
+
         autocmd FileType gitcommit,gitrebase,note,rst call textobj#quote#init()
         autocmd FileType text call textobj#quote#init({'educate': 0})
-    augroup END
 
 .. note::
 
@@ -18,10 +20,12 @@ Enable for |reST| and other largely prose filetypes::
 
 Configure quotes for current language::
 
-    augroup jnrowe_vim_textobj_quote
         autocmd BufEnter * call plugins#vim_textobj_quote#select_quotes()
-    augroup END
 
 .. seealso::
 
     * :func:`plugins#vim_textobj_quote#select_quotes() <select_quotes>`
+
+::
+
+    augroup END
