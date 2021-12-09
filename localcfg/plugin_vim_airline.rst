@@ -54,13 +54,13 @@ Configure symbols for :command:`gvim`::
     The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
     a font if available.
 
-.. include:: ../.includes/fancy_symbols.rst
-
 and use simple |ASCII| replacements in a terminal::
 
     else
         let g:airline_symbols_ascii = v:true
     endif
+
+.. include:: ../.includes/fancy_symbols.rst
 
 Only show unusual encodings::
 
