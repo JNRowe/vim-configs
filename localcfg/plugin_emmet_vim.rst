@@ -13,7 +13,8 @@ Override locale::
 
     let g:user_emmet_settings = {
     \   'variables': {
-    \       'locale': 'en-GB',
+    \       'locale': substitute(v:lang, '\(.*\)_\([^\.]*\)\(\..*\)\?',
+    \                            '\1-\2', '')
     \   },
     \ }
 
