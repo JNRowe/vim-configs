@@ -9,6 +9,7 @@
 """
 
 from inspect import stack
+from os import environ
 from pathlib import Path
 from shutil import which
 from subprocess import check_output
@@ -253,6 +254,23 @@ def configure(
             variables={
                 'exclude': f'--exclude={location}/external/dein.vim',
                 'lang': 'JSON,Python,ReStructuredText,Sh,Yaml',
+            },
+        )
+
+        xdg_cache_dir = Path(environ.get('XDG_CACHE_HOME', '~/.cache'))
+        dein_cache_dir = (
+            xdg_cache_dir / 'vim' / 'dein' / 'repos' / 'github.com'
+        )
+        n.build(
+            f'{location / "tags" /  "dein-repos.ctags"}',
+            'tags_gen',
+            inputs=dein_cache_dir.expanduser().as_posix(),
+            implicit=[
+                ctags_path,
+            ],
+            variables={
+                'lang': 'JSON,Python,ReStructuredText,Sh,Yaml',
+                'extra_opts': '--recurse',
             },
         )
 
