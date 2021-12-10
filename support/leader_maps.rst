@@ -20,7 +20,7 @@ Key        Local  Buffer  Maps
 :kbd:`h`   ✅     ❌      :ref:`haskell filetype <haskell-custom-maps>`
 :kbd:`h`   ✅     ✅      :ref:`rst filetype <rst-custom-maps>`
 :kbd:`i`   ✅     ❌      :ref:`+diff feature <diff-custom-maps>`
-:kbd:`l`   ✅     ✅      :ref:`vim-ledger <vim-ledger-custom-maps>`
+:kbd:`L`   ✅     ✅      :ref:`vim-ledger <vim-ledger-custom-maps>`
 :kbd:`l`   ✅     ❌      :ref:`location list <location-list-custom-maps>`
 :kbd:`m`   ❌     ❌      :ref:`git-messenger.vim
                           <git-messenger-vim-custom-maps>`
