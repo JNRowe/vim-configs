@@ -70,6 +70,7 @@ __pycache__/
 /localcfg/menu.vim
 /localcfg/notgui_running.vim
 /localcfg/plugin_Colorizer.vim
+/localcfg/plugin_DotOutlineTree.vim
 /localcfg/plugin_Recover.vim.vim
 /localcfg/plugin_Replay.vim
 /localcfg/plugin_ale.vim
