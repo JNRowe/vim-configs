@@ -40,7 +40,8 @@
             execute l:mode . 'map ' . l:buffer . ' <' . l:local . 'Leader>'
             \   . l:key . ' [' . a:name . ']'
         endfor
-        execute 'noremap <silent> [' . a:name . ']? :map [' . a:name . ']<CR>'
+        execute 'noremap <silent> [' . a:name . ']? '
+        \   ':filter /\[' . a:name . '\]/ map<CR>'
     endfunction
 
 .. tip::
