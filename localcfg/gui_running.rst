@@ -76,12 +76,16 @@ with a cleaner patch, then I’ll immediately look for replacements.
 ::
 
     for s:name in ['Consolas', 'Inconsolata', 'monospace']
-        if len(systemlist('fc-list ' . shellescape(s:name . ' NF'))) != 0
+        silent call system('fc-list --quiet ' . shellescape(s:name . ' NF'))
+        if v:shell_error == 0
             let g:font_family = s:name . ' NF'
             break
-        elseif len(systemlist('fc-list ' . shellescape(s:name))) != 0
-            let g:font_family = s:name
-            break
+        else
+            silent call system('fc-list --quiet ' . shellescape(s:name))
+            if v:shell_error == 0
+                let g:font_family = s:name
+                break
+            endif
         endif
     endfor
     let g:font_size =  13
