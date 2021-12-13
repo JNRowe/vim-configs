@@ -219,23 +219,6 @@ languages.
     \   'if': has('signs') && plugins#dein#has_exec('git'),
     \ })
 
-``black``
-'''''''''
-
-    “The uncompromising Python code formatter”
-
-:repository: :repo:`ambv/black`
-:config: :doc:`localcfg/plugin_black`
-
-::
-
-    call dein#add('ambv/black', {
-    \   'if': v:version >= 704 && has('python3') &&
-    \       plugins#dein#has_exec('black'),
-    \   'on_cmd': 'Black',
-    \   'on_ft': 'python',
-    \ })
-
 .. _vim-matchup-plugin:
 
 ``vim-matchup``
