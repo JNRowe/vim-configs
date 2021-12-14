@@ -99,10 +99,35 @@
         endif
     endfunction
 
+.. function:: make_reST_header(level: int, pad: bool) -> None
+
+    Make current line a reST heading.
+
+    :param level: Heading level to create
+    :param pad: Append blank lines to content
+
+::
+
+    let s:reST_header_adornments = ['=', '-', "'"]
+    function! filetypes#make_reST_header(level, pad) abort
+        let l:lines = [repeat(s:reST_header_adornments[a:level - 1],
+        \                    strlen(getline('.'))), ]
+        if a:pad is v:true
+            let l:lines += ['','']
+        endif
+        call append(line('.'), l:lines)
+        if a:pad is v:true
+            let l:curpos = getcurpos()
+            let l:curpos[1] += 3
+            call setpos('.', l:curpos)
+        endif
+    endfunction
+
 .. _X-Advice header: http://www.nicemice.net/amc/advice-header/
 .. _neomutt: http://www.neomutt.org/
 
 .. spelling::
 
+    reST
     Timeframe
     keymaps

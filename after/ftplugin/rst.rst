@@ -7,18 +7,18 @@ This creates |reST| headings using *my* favourite adornments::
 
     call keymaps#mnemonic_map('Heading', {'buffer': v:true, 'local': v:true})
 
-    for [s:key, s:sym] in [['1', '='], ['2', '-'], ['3', "'"]]
-        for [s:cmd, s:post] in [
-        \   ['', 'o<Esc>.'],
-        \   ['s', 'k'],
-        \ ]
-            execute 'nnoremap <silent> <buffer> [Heading]' . s:cmd . s:key .
-            \   ' yypVr' . s:sym . s:post
+    for s:level in [1, 2, 3]
+        for s:pad in [v:true, v:false]
+            execute 'nnoremap <silent> <buffer> [Heading]' .
+            \   (s:pad != v:true ? 's' : '') . s:level . ' ' .
+            \   ':call filetypes#make_reST_header(' . s:level . ', ' .
+            \   s:pad . ')<CR>'
         endfor
     endfor
 
 .. seealso::
 
+    * :func:`filetypes#make_reST_header() <make_reST_header>`
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 .. include:: ../../.includes/prose.rst
