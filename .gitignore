@@ -41,6 +41,7 @@ __pycache__/
 /autoload/plugins/ultisnips.vim
 /autoload/plugins/vim_editqf.vim
 /autoload/plugins/vim_peekaboo.vim
+/autoload/plugins/vim_projectionist.vim
 /autoload/plugins/vim_quick_radon.vim
 /autoload/plugins/vim_sneak.vim
 /autoload/plugins/vim_startify.vim

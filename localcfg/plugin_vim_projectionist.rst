@@ -25,3 +25,11 @@ templates for licence generation at a project’s top level::
 
     If I used licenses where there wasn't a unique convention for the filename
     then I'd need something more powerful, but I don't.
+
+Apply any |vim| commands found in the projectionist templates::
+
+    augroup jnrowe_vim_projectionist
+        autocmd!
+        autocmd User ProjectionistApplyTemplate
+        \   call plugins#vim_projectionist#apply_commands()
+    augroup END

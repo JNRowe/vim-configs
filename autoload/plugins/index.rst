@@ -15,6 +15,7 @@ Contents
     ultisnips
     vim_editqf
     vim_peekaboo
+    vim_projectionist
     vim_quick_radon
     vim_sneak
     vim_startify
