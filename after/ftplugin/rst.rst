@@ -25,17 +25,6 @@ This creates |reST| headings using *my* favourite adornments::
 
 .. include:: ../../.includes/thesaurus.rst
 
-Enable common — to me — highlighting support::
-
-    let g:rst_syntax_code_list = {
-    \   'c': ['c', ],
-    \   'cpp': ['cpp', 'c++'],
-    \   'lisp': ['emacs', 'lisp'],
-    \   'python': ['python', ],
-    \   'sh': ['sh', 'zsh'],
-    \   'vim': ['vim', ],
-    \ }
-
 The *vast* majority of the time I spend editing |reST| documents I am actually
 editing files from a Sphinx_ project.  It is nice being able to :kbd:`gf` when
 in a ``:doc:`` role or ``toctree`` directive::

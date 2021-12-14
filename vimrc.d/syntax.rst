@@ -51,6 +51,17 @@ The folding configuration for |reST| files is quite poor, and the custom
     This isn’t enabled upstream, but has been toggled on in a few site files for
     reasons which are far beyond me.
 
+Enable common — to me — highlighting support::
+
+    let g:rst_syntax_code_list = {
+    \   'c': ['c', ],
+    \   'cpp': ['cpp', 'c++'],
+    \   'lisp': ['emacs', 'lisp'],
+    \   'python': ['python', ],
+    \   'sh': ['sh', 'zsh'],
+    \   'vim': ['vim', ],
+    \ }
+
 Rust
 ----
 
