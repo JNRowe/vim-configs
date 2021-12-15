@@ -1972,21 +1972,6 @@ I write my mail in |reST|.  No, really.
     \   'on_ft': ['mail', 'rst'],
     \ })
 
-.. _SyntaxRange-plugin:
-
-``SyntaxRange``
-'''''''''''''''
-
-    “Set up regions within a buffer using their own filetypes”
-
-:repository: :repo:`vim-scripts/SyntaxRange`
-
-::
-
-    call dein#add('vim-scripts/SyntaxRange', {
-    \   'on_cmd': plugins#dein#prefix('Syntax', ['Ignore', 'Include']),
-    \ })
-
 ``TaQua``
 '''''''''
 
