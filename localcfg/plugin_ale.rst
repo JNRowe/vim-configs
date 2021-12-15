@@ -24,6 +24,12 @@ Open location list when errors exist::
 
     let g:ale_open_list = 1
 
+.. todo::
+
+    Should this choose whether to use quickfix or location list based on
+    filetype/project?  Perhaps, projects in a repository should use quickfix
+    and things outside should use location list?
+
 .. caution::
 
     ``ale`` doesn’t support using ``v:true`` as ``1``.
