@@ -362,7 +362,6 @@ Disturbingly cool editing for |CSV| files, ‘nuff said.
 ::
 
     call dein#add('chrisbra/csv.vim', {
-    \   'hook_post_source': "call csv#Init(1, line('$'))",
     \   'on_ft': 'csv',
     \ })
 
