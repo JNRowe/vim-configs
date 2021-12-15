@@ -227,18 +227,6 @@ Having ``=`` in filename matches are more trouble then they’re worth::
 
     set isfname-=\=
 
-Use |vim|’s builtin manpage support::
-
-    if empty(dein#get('vim-man'))
-        runtime! ftplugin/man.vim
-    endif
-    set keywordprg=:Man
-
-.. note::
-
-    When :ref:`vim-man <vim-man-plugin>` is installed it overrides the ``:Man``
-    command with an enhanced version.
-
 Don’t continually update the screen when executing non-interactive commands::
 
     set lazyredraw
