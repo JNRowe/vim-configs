@@ -8,7 +8,7 @@ from sphinx.util.osutil import ensuredir, os_path
 from .vim_writer import VimTranslator, VimWriter
 
 
-logger = logging.getLogger(__name__)
+LOGGER = logging.getLogger(__name__)
 
 
 class VimBuilder(Builder):
@@ -65,7 +65,7 @@ class VimBuilder(Builder):
             with open(outfilename, 'w', encoding='utf-8') as f:
                 f.write(self.writer.output)
         except (IOError, OSError) as err:
-            logger.warning('error writing file %s: %s', outfilename, err)
+            LOGGER.warning('error writing file %s: %s', outfilename, err)
 
     def finish(self):
         pass
