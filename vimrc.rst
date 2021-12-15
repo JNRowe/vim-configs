@@ -64,7 +64,9 @@ under :envvar:`TMPDIR`.
 
 Pull in semi-private local settings::
 
-    silent runtime! vimrc.pre
+    if filereadable(expand('~/.vim/vimrc.pre'))
+        source ~/.vim/vimrc.pre
+    endif
 
 .. caution::
 
@@ -74,16 +76,16 @@ Pull in semi-private local settings::
 
 Pull in remaining configuration files::
 
-    runtime vimrc.d/paths.vim  " *Must* be early
+    source ~/.vim/vimrc.d/paths.vim  " *Must* be early
 
-    runtime vimrc.d/disabled.vim
-    runtime vimrc.d/dein.vim
-    runtime vimrc.d/settings.vim
-    runtime vimrc.d/syntax.vim
-    runtime vimrc.d/misc.vim
-    runtime vimrc.d/maps.vim
+    source ~/.vim/vimrc.d/disabled.vim
+    source ~/.vim/vimrc.d/dein.vim
+    source ~/.vim/vimrc.d/settings.vim
+    source ~/.vim/vimrc.d/syntax.vim
+    source ~/.vim/vimrc.d/misc.vim
+    source ~/.vim/vimrc.d/maps.vim
     if has('patch-7.4.1821')
-        runtime vimrc.d/packages.vim
+        source ~/.vim/vimrc.d/packages.vim
     else
         " There may be other things in packages.vim, but this is *the* thing
         " I can’t do without.
@@ -91,4 +93,4 @@ Pull in remaining configuration files::
             runtime macros/editexisting.vim
         endif
     endif
-    runtime vimrc.d/localcfg.vim
+    source ~/.vim/vimrc.d/localcfg.vim
