@@ -60,6 +60,7 @@ Use my custom maps::
 
     for [s:key, s:cmd] in [
     \   ['br',     'reset_buffer'],
+    \   ['bt',     'toggle_buffer'],
     \   ['d',      'detail'],
     \   ['f',      'fix'],
     \   ['gd',     'go_to_definition'],
