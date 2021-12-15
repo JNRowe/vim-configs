@@ -202,10 +202,6 @@ stretching:::
         endfor
     endif
 
-Place cursor at the end of yanked region::
-
-    vmap y yg`]
-
 .. _display-custom-maps:
 
 Add mappings to highlight lines::
