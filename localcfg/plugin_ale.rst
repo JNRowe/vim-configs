@@ -61,8 +61,12 @@ Use my custom maps::
     for [s:key, s:cmd] in [
     \   ['d',      'detail'],
     \   ['f',      'fix'],
+    \   ['gd',     'go_to_definition'],
+    \   ['gt',     'go_to_type_definition'],
     \   ['l',      'lint'],
     \   ['t',      'toggle'],
+    \   ['vgd',    'go_to_definition_in_vsplit'],
+    \   ['vgt',    'go_to_type_definition_in_vsplit'],
     \   ['<Home>', 'first'],
     \   ['<End>',  'last'],
     \   ['<Down>', 'next_wrap'],
