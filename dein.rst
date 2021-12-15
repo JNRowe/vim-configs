@@ -4,7 +4,6 @@
 These are all hosted on GitHub_ [#]_.  You should try at least a few of them,
 they may make your life far simpler!
 
-
 .. include:: .includes/scriptencoding.rst
 
 .. attention::

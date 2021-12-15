@@ -1,7 +1,6 @@
 ``autoload/plugins/dein.vim``
 =============================
 
-
 .. function:: prefix(prefix: str, args: List[str]) -> List[str]
 
     Add a prefix to a list of strings.

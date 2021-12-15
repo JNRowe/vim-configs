@@ -49,7 +49,6 @@ Use my custom maps::
 
 Configure magic currency completion in ledger files::
 
-
     if has('insert_expand')
         augroup jnrowe_vim_ledger
             autocmd!

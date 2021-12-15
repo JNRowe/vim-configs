@@ -3,7 +3,6 @@
 
 .. function:: set_font(font: Union[int, str])
 
-
     Change :abbr:`GUI (Graphical User Interface)` fonts.
 
     Using the following rules:

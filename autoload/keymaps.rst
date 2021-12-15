@@ -70,7 +70,6 @@
         \   a:type . l:cmd
     endfunction
 
-
 .. function:: switch_buf(count: int) -> None
 
     Relative buffer switching while ignoring scratch buffers.

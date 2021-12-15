@@ -31,7 +31,8 @@ every one to take part, but they have become popular in work mail.
 Kill from current line to signature, as a quick way to scrub large chunks of
 quoted text::
 
-    inoremap <silent> <buffer> <C-k> <C-o>:call filetypes#kill_to_signature()<CR>
+    inoremap <silent> <buffer> <C-k>
+    \   <C-o>:call filetypes#kill_to_signature()<CR>
     nnoremap <silent> <buffer> <C-k> :call filetypes#kill_to_signature()<CR>
 
 .. seealso::
