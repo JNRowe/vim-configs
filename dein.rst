@@ -270,7 +270,6 @@ almost-kind-of-works solution from your :file:`.vimrc`.
     “Colour colour names and codes”
 
 :repository: :repo:`chrisbra/Colorizer`
-:config: :doc:`localcfg/plugin_Colorizer`
 
 ::
 

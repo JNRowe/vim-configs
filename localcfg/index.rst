@@ -21,7 +21,6 @@ Contents
     gui_running
     menu
     notgui_running
-    plugin_Colorizer
     plugin_DotOutlineTree
     plugin_Recover.vim
     plugin_Replay
