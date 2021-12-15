@@ -57,6 +57,8 @@ Configure layered maps for useful quickfix and location functions::
         \   ['<PageUp>',   'older'],
         \   ['r',          'rewind'],
         \   ['l',          'last'],
+        \   ['<Down>',     'next'],
+        \   ['<Up>',       'previous'],
         \ ]
             call keymaps#quickfix_key(s:t, s:key, s:cmd)
         endfor
