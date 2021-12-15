@@ -84,6 +84,13 @@ Use my custom maps::
         execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
     endfor
 
+.. note::
+
+    You can simply use the normal location list bindings for movement too.
+    However, ale’s next and previous movements are buffer position sensitive
+    instead of being relative to the position in the location list.  Both
+    movement methods are useful at different times.
+
 .. seealso::
 
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`
