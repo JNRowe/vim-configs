@@ -59,11 +59,13 @@ Use my custom maps::
     call keymaps#mnemonic_map('ale', {'local': v:true})
 
     for [s:key, s:cmd] in [
+    \   ['br',     'reset_buffer'],
     \   ['d',      'detail'],
     \   ['f',      'fix'],
     \   ['gd',     'go_to_definition'],
     \   ['gt',     'go_to_type_definition'],
     \   ['l',      'lint'],
+    \   ['r',      'reset'],
     \   ['t',      'toggle'],
     \   ['vgd',    'go_to_definition_in_vsplit'],
     \   ['vgt',    'go_to_type_definition_in_vsplit'],
