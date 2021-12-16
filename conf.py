@@ -127,10 +127,10 @@ autodoc_default_options: Dict[str, Union[str, bool]] = {
 
 # extlinks extension settings {{{
 extlinks: Dict[str, Tuple[str, str]] = {
-    'pypi': ('https://pypi.org/project/%s/', ''),
-    'repo': ('https://github.com/%s/', ''),
-    'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', ''),
-    'vimdoc': ('https://vimhelp.org/%s', ''),
+    'pypi': ('https://pypi.org/project/%s/', '%s'),
+    'repo': ('https://github.com/%s/', '%s'),
+    'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', '%s'),
+    'vimdoc': ('https://vimhelp.org/%s', '%s'),
 }
 # }}}
 
