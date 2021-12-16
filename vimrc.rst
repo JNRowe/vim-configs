@@ -74,14 +74,12 @@ Pull in semi-private local settings::
 
 .. _sourcing-order:
 
-Pull in remaining configuration files::
+Pull in general |vim| configuration files::
 
     source ~/.vim/vimrc.d/paths.vim  " *Must* be early
 
     source ~/.vim/vimrc.d/disabled.vim
-    source ~/.vim/vimrc.d/dein.vim
     source ~/.vim/vimrc.d/settings.vim
-    source ~/.vim/vimrc.d/syntax.vim
     source ~/.vim/vimrc.d/misc.vim
     source ~/.vim/vimrc.d/maps.vim
     if has('patch-7.4.1821')
@@ -93,4 +91,33 @@ Pull in remaining configuration files::
             runtime macros/editexisting.vim
         endif
     endif
-    source ~/.vim/vimrc.d/localcfg.vim
+
+Pull in build dependent configuration files::
+
+    if has('localmap')
+        source ~/.vim/localcfg/abbr.vim
+    endif
+    for s:feature in ['autocmd', 'diff', 'notgui_macvim', 'gui_running',
+    \                 'menu', 'quickfix', 'spell']
+        let s:feature_file = '~/.vim/localcfg/' . (!has(s:feature) ? 'not' : '') .
+        \   s:feature . '.vim'
+        if filereadable(expand(s:feature_file))
+            execute 'source ' . s:feature_file
+        endif
+    endfor
+
+.. _host_specific_file:
+
+Pull in host specific configuration data::
+
+    if filereadable(expand('~/.vim/localcfg/' . hostname() . '.vim'))
+        execute 'source ~/.vim/localcfg/' . hostname() . '.vim'
+    endif
+
+Define and configure plugins::
+
+    source ~/.vim/vimrc.d/dein.vim
+
+Configure syntax specific configuration information::
+
+    source ~/.vim/vimrc.d/syntax.vim

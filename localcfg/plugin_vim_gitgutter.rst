@@ -3,29 +3,6 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
-.. _vim-gitgutter-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('gitgutter')
-    let g:gitgutter_map_keys = v:false
-
-    for [s:key, s:cmd] in [
-    \   ['<Down>',  'NextHunk'],
-    \   ['<Up>',    'PrevHunk'],
-    \   ['<Space>', 'Toggle'],
-    \   ['f',       'Fold'],
-    \   ['p',       'PreviewHunk'],
-    \   ['q',       'QuickFix'],
-    \ ]
-        execute 'nnoremap <silent> [gitgutter]' . s:key . ' '
-        \   ':GitGutter' . s:cmd . '<CR>'
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
 If you have more than one-hundred edits you need to commit, not look at symbols!
 
 ::

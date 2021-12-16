@@ -36,7 +36,6 @@ __pycache__/
 /after/ftplugin/zsh.vim
 /after/syntax/rst.vim
 /autoload/plugins/dein.vim
-/autoload/plugins/fzf.vim
 /autoload/plugins/regex.vim
 /autoload/plugins/ultisnips.vim
 /autoload/plugins/vim_editqf.vim
@@ -139,7 +138,6 @@ __pycache__/
 /localcfg/spell.vim
 /vimrc.d/dein.vim
 /vimrc.d/disabled.vim
-/vimrc.d/localcfg.vim
 /vimrc.d/maps.vim
 /vimrc.d/misc.vim
 /vimrc.d/packages.vim

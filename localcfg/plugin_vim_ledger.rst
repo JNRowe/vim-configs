@@ -20,33 +20,6 @@ Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
     let g:ledger_date_format = '%F'
 
-.. _vim-ledger-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('Ledger', {'buffer': v:true, 'key': 'L', 'local': v:true})
-
-    for [s:key, s:cmd] in [
-    \   ['a', ':LedgerAlign'],
-    \   ['d', 'align_amount_at_cursor()'],
-    \   ['n', 'entry()'],
-    \   ['s', 'transaction_state_toggle(line("."), " *?!")'],
-    \   ['t', 'transaction_date_set(".", "auxiliary")'],
-    \ ]
-        if s:cmd[0] !=# ':'
-            let s:cmd = 'call ledger#' . s:cmd
-        else
-            let s:cmd = s:cmd[1:]
-        endif
-
-        execute 'autocmd Filetype ledger nnoremap <silent> [Ledger]' .
-        \   s:key . ' :' . s:cmd . '<CR>'
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
 Configure magic currency completion in ledger files::
 
     if has('insert_expand')

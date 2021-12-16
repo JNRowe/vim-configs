@@ -52,9 +52,8 @@ with arguments?
 
 .. tip::
 
-    This setting is a prime candidate for configuring using :ref:`localcfg
-    <localcfg-config>`’s support for host specific configuration, such as
-    :file:`localcfg/$HOST.vim`.
+    This setting is a prime candidate for configuring using a :ref:`host
+    specific configuration file <host_specific_file>`.
 
 Define some quick commands to jump to help::
 

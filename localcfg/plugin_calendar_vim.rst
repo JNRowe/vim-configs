@@ -1,28 +1,6 @@
 ``localcfg/plugin_calendar_vim.vim``
 ====================================
 
-.. _calendar-vim-custom-maps:
-
-Use my custom maps::
-
-    let g:calendar_no_mappings = v:true
-
-    call keymaps#mnemonic_map('Calendar')
-
-    for [s:key, s:cmd] in [
-    \   ['v', ''],
-    \   ['h', 'H'],
-    \   ['f', 'T'],
-    \   ['r', 'VR'],
-    \ ]
-        execute 'nnoremap <silent> [Calendar]' . s:key . ' '
-        \   ':Calendar' . s:cmd . '<CR>'
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
 Configure look::
 
     let g:calendar_mark = 'left-fit'

@@ -14,7 +14,6 @@ Contents
 
     dein
     disabled
-    localcfg
     maps
     misc
     packages

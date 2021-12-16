@@ -1,6 +1,23 @@
 ``autoload/plugins/dein.vim``
 =============================
 
+.. function:: load_config(plugin: Optional[str])) -> None
+
+    Load configuration file for plugin.
+
+    When no ``plugin`` is provided we use default to loading the configuration
+    file for current ``dein`` plugin.
+
+    :param plugin: Name of plugin to load configuration file for
+
+::
+
+    function! plugins#dein#load_config(...) abort
+        let l:name = substitute(get(a:, 1, g:dein#plugin.name),
+        \                       '-', '_', 'g')
+        execute 'source ~/.vim/localcfg/plugin_' . l:name . '.vim'
+    endfunction
+
 .. function:: prefix(prefix: str, args: List[str]) -> List[str]
 
     Add a prefix to a list of strings.

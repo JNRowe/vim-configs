@@ -58,43 +58,6 @@ number::
         endfor
     endif
 
-.. _ale-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('ale', {'local': v:true})
-
-    for [s:key, s:cmd] in [
-    \   ['br',     'reset_buffer'],
-    \   ['bt',     'toggle_buffer'],
-    \   ['d',      'detail'],
-    \   ['f',      'fix'],
-    \   ['gd',     'go_to_definition'],
-    \   ['gt',     'go_to_type_definition'],
-    \   ['l',      'lint'],
-    \   ['r',      'reset'],
-    \   ['t',      'toggle'],
-    \   ['vgd',    'go_to_definition_in_vsplit'],
-    \   ['vgt',    'go_to_type_definition_in_vsplit'],
-    \   ['<Home>', 'first'],
-    \   ['<End>',  'last'],
-    \   ['<Down>', 'next_wrap'],
-    \   ['<Up>',   'previous_wrap'],
-    \ ]
-        execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
-    endfor
-
-.. note::
-
-    You can simply use the normal location list bindings for movement too.
-    However, ale’s next and previous movements are buffer position sensitive
-    instead of being relative to the position in the location list.  Both
-    movement methods are useful at different times.
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
 Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 

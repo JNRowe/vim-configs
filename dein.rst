@@ -49,7 +49,6 @@ Repositories
     “Move an item in a delimiter-separated list left or right”
 
 :repository: :repo:`AndrewRadev/sideways.vim`
-:config: :doc:`localcfg/plugin_sideways.vim`
 
 ::
 
@@ -57,6 +56,23 @@ Repositories
     \   'on_cmd': plugins#dein#prefix('Sideways', ['Left', 'Right']),
     \   'on_map': {'n': '[sideways]'},
     \ })
+
+.. _sideways-vim-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('sideways', {'local': v:true})
+
+    for s:key in ['Left', 'Right']
+        execute 'nnoremap <silent> [sideways]<' . s:key . '>' .
+        \   ' :<C-u>Sideways' . s:key . '<CR>'
+        execute 'nnoremap <silent> [sideways]<S-' . s:key . '>' .
+        \   ' :<C-u>SidewaysJump' . s:key . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``splitjoin.vim``
 '''''''''''''''''
@@ -69,6 +85,7 @@ Repositories
 ::
 
     call dein#add('AndrewRadev/splitjoin.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': plugins#dein#prefix('Splitjoin', ['Join', 'Split']),
     \   'on_map': {'n': ['gJ', 'gS']},
     \ })
@@ -79,7 +96,6 @@ Repositories
     “Switch segments of text with predefined replacements”
 
 :repository: :repo:`AndrewRadev/switch.vim`
-:config: :doc:`localcfg/plugin_switch.vim`
 
 Edit your configuration files like they had a fancy dialog box to fiddle with
 their preferences.
@@ -91,6 +107,17 @@ their preferences.
     \   'on_func': 'switch#Switch',
     \   'on_map': {'n': 'gs'},
     \ })
+
+Use :kbd:`<C-M-T>` to flip word under cursor to match my old
+``True``/``False`` map memory::
+
+    for [s:mode, s:cmd_prefix] in [
+    \   ['i', '<C-O>'],
+    \   ['n', ''],
+    \   ['v', '<ESC>'],
+    \ ]
+        execute s:mode . 'noremap <C-M-T> ' . s:cmd_prefix . ':Switch<CR>'
+    endfor
 
 ``vim-bracketed-paste``
 '''''''''''''''''''''''
@@ -111,7 +138,6 @@ their preferences.
     “Tiled Window Management for Vim”
 
 :repository: :repo:`JNRowe/dwm.vim`
-:config: :doc:`localcfg/plugin_dwm.vim`
 
 Excellent window management, it really does bring dwm_ simplicity to |vim|!
 
@@ -121,6 +147,45 @@ Excellent window management, it really does bring dwm_ simplicity to |vim|!
     \   'on_func': plugins#dein#prefix('DWM_',
     \                                  ['Close', 'Focus', 'New', 'Rotate']),
     \ })
+
+.. _dwm-custom-maps:
+
+Use my custom maps::
+
+    let g:dwm_map_keys = v:false
+
+    call keymaps#mnemonic_map('dwm')
+
+Configure maps to match, to some degree, my window manager’s configuration::
+
+    for [s:key, s:cmd] in [
+    \   ['n',       'New'],
+    \   ['c',       ':exe DWM_Close'],
+    \   ['f',       'Focus'],
+    \   ['<Left>',  'Rotate(0)'],
+    \   ['<Right>', 'Rotate(1)'],
+    \   ['<Up>',    'New'],
+    \   ['<Down>',  ':exe DWM_Close'],
+    \ ]
+        if stridx(s:cmd, '(') == -1
+            let s:cmd .= '()'
+        endif
+        if s:cmd[0] !=# ':'
+            let s:cmd = 'call DWM_' . s:cmd
+        else
+            let s:cmd = s:cmd[1:]
+        endif
+
+        execute 'nnoremap <silent> [dwm]' . s:key . ' :<C-u>' . s:cmd . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
+.. tip::
+
+    Imagine :kbd:`<Up>` increases window count, and :kbd:`<Down>`… well, yeah.
 
 ``securemodelines``
 '''''''''''''''''''
@@ -136,7 +201,9 @@ session.
 
 ::
 
-    call dein#add('JNRowe/securemodelines')
+    call dein#add('JNRowe/securemodelines', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
 
 ``vim-illuminate``
 ''''''''''''''''''
@@ -149,6 +216,7 @@ session.
 ::
 
     call dein#add('RRethy/vim-illuminate', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_event': 'CursorHold',
     \ })
 
@@ -167,6 +235,7 @@ languages.
 ::
 
     call dein#add('Raimondi/delimitMate', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_event': 'InsertEnter',
     \ })
 
@@ -199,6 +268,7 @@ languages.
 
     call dein#add('SirVer/ultisnips', {
     \   'depends': 'vim-snippets',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('insert_expand') && has('pythonx') && v:version >= 704,
     \   'on_event': 'InsertEnter',
     \   'on_ft': 'snippets',
@@ -215,8 +285,32 @@ languages.
 ::
 
     call dein#add('airblade/vim-gitgutter', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('signs') && plugins#dein#has_exec('git'),
     \ })
+
+.. _vim-gitgutter-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('gitgutter')
+    let g:gitgutter_map_keys = v:false
+
+    for [s:key, s:cmd] in [
+    \   ['<Down>',  'NextHunk'],
+    \   ['<Up>',    'PrevHunk'],
+    \   ['<Space>', 'Toggle'],
+    \   ['f',       'Fold'],
+    \   ['p',       'PreviewHunk'],
+    \   ['q',       'QuickFix'],
+    \ ]
+        execute 'nnoremap <silent> [gitgutter]' . s:key . ' '
+        \   ':GitGutter' . s:cmd . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 .. _vim-matchup-plugin:
 
@@ -231,6 +325,7 @@ languages.
 ::
 
     call dein#add('andymass/vim-matchup', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': v:version >= 704,
     \   'on_map': '%',
     \ })
@@ -315,6 +410,7 @@ a full editing session.
 ::
 
     call dein#add('chrisbra/Recover.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': v:version >= 703,
     \   'on_cmd': 'RecoverPluginEnable',
     \ })
@@ -330,6 +426,7 @@ a full editing session.
 ::
 
     call dein#add('chrisbra/Replay', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': ['ListRecords', 'ScreenCapture', 'StartRecord'],
     \ })
 
@@ -362,6 +459,7 @@ Disturbingly cool editing for |CSV| files, ‘nuff said.
 ::
 
     call dein#add('chrisbra/csv.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_ft': 'csv',
     \ })
 
@@ -378,7 +476,29 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
 ::
 
-    call dein#add('chrisbra/unicode.vim')
+    call dein#add('chrisbra/unicode.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
+
+``:UnicodeName`` output is far more useful than |vim|’s :kbd:`ga`, and in my
+opinion it is also easier to read.
+
+================ =========================================================
+Command          Output
+================ =========================================================
+``:ascii``       ``<> 61486, Hex f02e, Octal 170056``
+``:UnicodeName`` ``'' U+F02E Dec:61486 Private Use Zone &#xF02E; /\%uf02e
+                 "\uf02e"``
+================ =========================================================
+
+So, we’ll override the :kbd:`ga` mapping::
+
+    nmap ga <Plug>(UnicodeGA)
+
+.. tip::
+
+    If for some reason you want the default :kbd:`ga` output ``:ascii`` still
+    does that.
 
 .. include:: .includes/vim_airline_dep.rst
 
@@ -407,6 +527,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 
     call dein#add('codegram/vim-codereview', {
     \   'depends': 'patchreview-vim',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('ruby') && plugins#dein#has_exec('curl'),
     \   'on_cmd': 'CodeReview',
     \ })
@@ -436,6 +557,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('davidhalter/jedi-vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('pythonx'),
     \   'on_cmd': 'JediClearCache',
     \   'on_ft': 'python',
@@ -452,6 +574,7 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
 ::
 
     call dein#add('dbmrq/vim-ditto', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': plugins#dein#prefix('Ditto', ['File', 'On']),
     \ })
 
@@ -471,8 +594,46 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('dense-analysis/ale', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': v:version >= 800 && has('signs'),
     \ })
+
+.. _ale-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('ale', {'local': v:true})
+
+    for [s:key, s:cmd] in [
+    \   ['br',     'reset_buffer'],
+    \   ['bt',     'toggle_buffer'],
+    \   ['d',      'detail'],
+    \   ['f',      'fix'],
+    \   ['gd',     'go_to_definition'],
+    \   ['gt',     'go_to_type_definition'],
+    \   ['l',      'lint'],
+    \   ['r',      'reset'],
+    \   ['t',      'toggle'],
+    \   ['vgd',    'go_to_definition_in_vsplit'],
+    \   ['vgt',    'go_to_type_definition_in_vsplit'],
+    \   ['<Home>', 'first'],
+    \   ['<End>',  'last'],
+    \   ['<Down>', 'next_wrap'],
+    \   ['<Up>',   'previous_wrap'],
+    \ ]
+        execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
+    endfor
+
+.. note::
+
+    You can simply use the normal location list bindings for movement too.
+    However, ale’s next and previous movements are buffer position sensitive
+    instead of being relative to the position in the location list.  Both
+    movement methods are useful at different times.
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``vim-table-mode``
 ''''''''''''''''''
@@ -522,6 +683,7 @@ WingIDE to a real editor when they edit files of different types.
 ::
 
     call dein#add('editorconfig/editorconfig-vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('pythonx'),
     \   'on_event': 'InsertEnter',
     \   'on_path': '.editorconfig',
@@ -579,6 +741,7 @@ when writing ugly, ugly |RegEx|.
 ::
 
     call dein#add('ervandew/regex', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': 'Regex',
     \ })
 
@@ -657,6 +820,7 @@ jealous.
 ::
 
     call dein#add('honza/vim-snippets', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('insert_expand') && has('pythonx') && v:version >= 704,
     \   'lazy': v:true,
     \ })
@@ -687,9 +851,21 @@ jealous.
     endfor
     call dein#add('idanarye/vim-vebugger', {
     \   'depends': 'vimproc',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': plugins#dein#prefix('VBGstart', s:vebugger_commands),
     \   'on_func': 'vebugger',
     \ })
+
+.. _vim-vebugger-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('vebugger', {'local': v:true})
+    let g:vebugger_leader='[vebugger]'
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``vim-yankitute``
 '''''''''''''''''
@@ -744,6 +920,7 @@ jealous.
 ::
 
     call dein#add('jaxbot/semantic-highlight.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': 'SemanticHighlight',
     \ })
 
@@ -763,6 +940,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('jceb/vim-editqf', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('quickfix'),
     \   'on_cmd':
     \       plugins#dein#prefix('Loc', ['AddNote', 'Load', 'Save'])
@@ -795,6 +973,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/fzf', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': plugins#dein#has_exec('fzf'),
     \   'on_cmd': 'FZF',
     \   'on_func': 'fzf#run',
@@ -823,6 +1002,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     endif
     call dein#add('junegunn/fzf.vim', {
     \   'depends': 'fzf',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': plugins#dein#has_exec('fzf'),
     \   'on_cmd': plugins#dein#prefix('FZF', s:fzf_commands),
     \ })
@@ -831,6 +1011,27 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
     This doesn’t list *all* the possible commands, just the ones I’d use enough
     to want to tab complete on.
+
+.. _fzf-vim-custom-maps:
+
+Configure convenience mappings for common command usage::
+
+    call keymaps#mnemonic_map('fzf', {'key': '`'})
+    for s:cmd in s:fzf_commands
+        execute 'nmap <silent> [fzf]' . tolower(s:cmd[0]) . ' ' .
+        \   ':FZF' . s:cmd . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
+.. tip::
+
+    I use :kbd:`grave` as my binding for :command:`fzf` commands to reflect my
+    use of :kbd:`<Mod4-\`>` to open a drop down terminal in my window manager.
+    The pattern here and throughout these configuration files is extremely
+    useful as a way to remember bindings.
 
 ``goyo.vim``
 ''''''''''''
@@ -843,6 +1044,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/goyo.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': 'Goyo',
     \ })
 
@@ -872,7 +1074,9 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('junegunn/vim-peekaboo', {
-    \   'hook_source': 'call plugins#vim_peekaboo#set_compact()',
+    \   'hook_source':
+    \       'call plugins#dein#load_config() | ' .
+    \       'call plugins#vim_peekaboo#set_compact()',
     \   'hook_post_source': 'doautocmd <nomodeline> peekaboo_init BufEnter',
     \   'on_map': {
     \       'i': '<C-r>',
@@ -907,6 +1111,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('justincampbell/vim-eighties', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': plugins#dein#prefix('Eighties', ['Disable', 'Enable']),
     \ })
 
@@ -923,6 +1128,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
     call dein#add('justinmk/vim-sneak', {
     \   'depends': 'vim-repeat',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': v:version >= 703,
     \   'on_map': {
     \       'n': ['S', 's'],
@@ -942,6 +1148,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('kalekundert/vim-coiled-snake', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('folding'),
     \   'lazy': v:false,
     \   'on_ft': 'python',
@@ -998,6 +1205,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 ::
 
     call dein#add('kshenoy/vim-signature', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('signs'),
     \ })
 
@@ -1031,9 +1239,38 @@ editing your accounts/expenses an almost nice-ish experience.
 ::
 
     call dein#add('ledger/vim-ledger', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'lazy': v:false,
     \   'on_ft': 'ledger',
     \ })
+
+.. _vim-ledger-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('Ledger', {'buffer': v:true, 'key': 'L',
+    \                                    'local': v:true})
+
+    for [s:key, s:cmd] in [
+    \   ['a', ':LedgerAlign'],
+    \   ['d', 'align_amount_at_cursor()'],
+    \   ['n', 'entry()'],
+    \   ['s', 'transaction_state_toggle(line("."), " *?!")'],
+    \   ['t', 'transaction_date_set(".", "auxiliary")'],
+    \ ]
+        if s:cmd[0] !=# ':'
+            let s:cmd = 'call ledger#' . s:cmd
+        else
+            let s:cmd = s:cmd[1:]
+        endif
+
+        execute 'autocmd Filetype ledger nnoremap <silent> [Ledger]' .
+        \   s:key . ' :' . s:cmd . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 .. _rainbow-plugin:
 
@@ -1050,21 +1287,9 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
 ::
 
-    call dein#add('luochen1990/rainbow')
-
-.. _localcfg-config:
-
-``localcfg``
-''''''''''''
-
-    “Help for customising based on features”
-
-:repository: :repo:`magus/localcfg`
-:config: :doc:`vimrc.d/localcfg`
-
-::
-
-    call dein#add('magus/localcfg')
+    call dein#add('luochen1990/rainbow', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
 
 ``calendar-vim``
 ''''''''''''''''
@@ -1077,9 +1302,32 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mattn/calendar-vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': plugins#dein#suffix('Calendar', ['', 'H', 'T', 'VR']),
     \   'on_map': {'n': '[calendar]'},
     \ })
+
+.. _calendar-vim-custom-maps:
+
+Use my custom maps::
+
+    let g:calendar_no_mappings = v:true
+
+    call keymaps#mnemonic_map('Calendar')
+
+    for [s:key, s:cmd] in [
+    \   ['v', ''],
+    \   ['h', 'H'],
+    \   ['f', 'T'],
+    \   ['r', 'VR'],
+    \ ]
+        execute 'nnoremap <silent> [Calendar]' . s:key . ' '
+        \   ':Calendar' . s:cmd . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``emmet-vim``
 '''''''''''''
@@ -1093,6 +1341,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mattn/emmet-vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('insert_expand') && v:version >= 700,
     \   'on_ft': ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
@@ -1137,7 +1386,9 @@ trying to impress their grandpa.  Which is a Good Thing™.
 ::
 
     call dein#add('mhinz/vim-startify', {
-    \   'hook_source': 'call plugins#vim_startify#set_header_display()',
+    \   'hook_source':
+    \       'call plugins#dein#load_config() | ' .
+    \       'call plugins#vim_startify#set_header_display()',
     \   'on_cmd': 'Startify',
     \ })
 
@@ -1163,7 +1414,6 @@ Makes handling Python code far, far easier.
     “Order buffers in :abbr:`MRU (Most Recently Used)` order”
 
 :repository: :repo:`mildred/vim-bufmru`
-:config: :doc:`localcfg/plugin_vim_bufmru`
 
 ::
 
@@ -1171,6 +1421,25 @@ Makes handling Python code far, far easier.
     \   'on_cmd': 'BufMRU',
     \   'on_map': {'n': '[bufmru]'},
     \ })
+
+.. _vim-bufmru-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('bufmru')
+
+    nnoremap <silent> [bufmru]l       :BufMRU<CR>
+    nnoremap <silent> [bufmru]<Left>  :BufMRUPrev<CR>
+    nnoremap <silent> [bufmru]<Right> :BufMRUNext<CR>
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
+.. tip::
+
+    Imagine :kbd:`<Left>` and :kbd:`<Right>` are moving across a timeline of
+    used buffers.
 
 ``vim-jinja``
 '''''''''''''
@@ -1183,6 +1452,7 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('mitsuhiko/vim-jinja', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_ft': 'jinja',
     \ })
 
@@ -1197,6 +1467,7 @@ Makes handling Python code far, far easier.
 ::
 
     call dein#add('moll/vim-bbye', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': ['Bdelete', 'Bwipeout'],
     \   'on_map': {'n': '<LocalLeader>q'},
     \ })
@@ -1211,7 +1482,9 @@ Makes handling Python code far, far easier.
 
 ::
 
-    call dein#add('nathanaelkane/vim-indent-guides')
+    call dein#add('nathanaelkane/vim-indent-guides', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
 
 ``vim-beancount``
 '''''''''''''''''
@@ -1241,6 +1514,7 @@ user, how cool is that?
 ::
 
     call dein#add('neitanod/vim-clevertab', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('insert_expand'),
     \ })
 
@@ -1288,6 +1562,7 @@ user, how cool is that?
 
     call dein#add('reedes/vim-textobj-quote', {
     \   'depends': 'vim-textobj-user',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': 'ToggleEducate',
     \   'on_ft': ['gitcommit', 'gitrebase', 'mail', 'note', 'rst', 'text'],
     \ })
@@ -1319,6 +1594,7 @@ user, how cool is that?
 ::
 
     call dein#add('rhysd/committia.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': plugins#dein#has_exec('git'),
     \   'on_ft': 'gitcommit',
     \ })
@@ -1342,10 +1618,38 @@ We lazy load on filetype definition for my normal workflow with
 ::
 
     call dein#add('rhysd/git-messenger.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': plugins#dein#has_exec('git'),
     \   'on_cmd': 'GitMessenger',
     \   'on_map': {'n': '[messenger]'},
     \ })
+
+.. _git-messenger-vim-custom-maps:
+
+Use my custom maps::
+
+    if has('signs') && plugins#dein#has_exec('git')
+        let g:git_messenger_no_default_mappings = v:true
+
+        call keymaps#mnemonic_map('messenger')
+
+        for [s:key, s:cmd] in [
+        \   ['o',          ''],
+        \   ['c',          '-close'],
+        \   ['i',          '-into-popup'],
+        \   ['<Down>',     '-scroll-down-1'],
+        \   ['<Up>',       '-scroll-up-1'],
+        \   ['<PageDown>', '-scroll-down-page'],
+        \   ['<PageUp>',   '-scroll-up-page'],
+        \ ]
+            execute 'nmap <silent> [messenger]' . s:key .
+            \   ' <Plug>(git-messenger' . s:cmd . ')'
+        endfor
+    endif
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``vim-radon``
 '''''''''''''
@@ -1382,9 +1686,14 @@ daunting to wrap your head around.
 ::
 
     call dein#add('simnalamburt/vim-mundo', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('pythonx') && v:version >= 703,
     \   'on_cmd': 'MundoToggle',
     \ })
+
+Use my custom maps::
+
+    nnoremap <silent> <LocalLeader># :MundoToggle<CR>
 
 ``splice.vim``
 ''''''''''''''
@@ -1410,6 +1719,7 @@ daunting to wrap your head around.
 ::
 
     call dein#add('spiiph/vim-space', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_map': {'n': '<space>'},
     \ })
 
@@ -1425,6 +1735,7 @@ daunting to wrap your head around.
 
     call dein#add('syngan/vim-vimlint', {
     \   'depends': 'vim-vimlparser',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'lazy': v:false,
     \   'on_cmd': 'VimLint',
     \   'on_ft': 'vim',
@@ -1442,10 +1753,26 @@ daunting to wrap your head around.
 ::
 
     call dein#add('tell-k/vim-quick-radon', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': plugins#dein#has_exec('radon'),
     \   'lazy': v:false,
     \   'on_cmd': 'QuickRadon',
     \ })
+
+.. _vim-quick-radon-custom-maps:
+
+Configure my custom maps::
+
+    call keymaps#mnemonic_map('radon', {'key': 'p', 'local': v:true})
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
+.. note::
+
+    :kbd:`<Leader>r` is free globally, but ``jedi-vim`` uses it in my Python
+    files.
 
 ``vim-expand-region``
 '''''''''''''''''''''
@@ -1471,6 +1798,7 @@ daunting to wrap your head around.
 ::
 
     call dein#add('mg979/vim-visual-multi', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': has('pythonx') && v:version >= 800,
     \   'on_map': ['<C-n>', '<C-Down>', '<C-Up>'],
     \ })
@@ -1487,10 +1815,29 @@ daunting to wrap your head around.
 ::
 
     call dein#add('timcharper/wordnet.vim', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'if': plugins#dein#has_exec('wn'),
     \   'on_func': 'WordNetOverviews',
     \   'on_map': '<Leader>wn',
     \ })
+
+.. _wordnet-vim-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('wordnet')
+
+    for [s:key, s:cmd] in [
+    \   ['o', 'WordNetOverviews(expand("<cword>"))'],
+    \   ['c', 'plugins#wordnet#close_win()'],
+    \ ]
+        execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+    * :func:`plugins#wordnet#close_win() <close_win>`
 
 ``molokai``
 '''''''''''
@@ -1502,7 +1849,9 @@ daunting to wrap your head around.
 
 ::
 
-    call dein#add('tomasr/molokai')
+    call dein#add('tomasr/molokai', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
 
 ``vim-exchange``
 ''''''''''''''''
@@ -1515,6 +1864,7 @@ daunting to wrap your head around.
 ::
 
     call dein#add('tommcdo/vim-exchange', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_map': {
     \       'n': 'cx',
     \       'v': 'X',
@@ -1571,7 +1921,6 @@ power of :kbd:`gcc`.
     “A Git wrapper so awesome, it should be illegal”
 
 :repository: :repo:`tpope/vim-fugitive`
-:config: :doc:`localcfg/plugin_vim_fugitive`
 
 Replace most of your use of a shell when working on a project with just another
 |vim| buffer.
@@ -1581,6 +1930,17 @@ Replace most of your use of a shell when working on a project with just another
     call dein#add('tpope/vim-fugitive', {
     \   'if': plugins#dein#has_exec('git'),
     \ })
+
+Add map to change directory to git_ project root using :repo:`vim-projectionist
+<tpope/vim-projectionist>`::
+
+    nmap <silent> <C-p> :Gcd<CR>
+
+.. note::
+
+    I never use :kbd:`<C-p>` or :kbd:`<C-n>` for navigation, as |vim| generally
+    offers far more useful navigation, and anyway you can still move up with
+    :kbd:`k`.
 
 ``vim-jdaddy``
 ''''''''''''''
@@ -1620,7 +1980,9 @@ Replace most of your use of a shell when working on a project with just another
 
 ::
 
-    call dein#add('tpope/vim-projectionist')
+    call dein#add('tpope/vim-projectionist', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
 
 ``vim-repeat``
 ''''''''''''''
@@ -1714,6 +2076,7 @@ writing sessions by at least fifteen orders of magnitude… or your money back.
 ::
 
     call dein#add('tpope/vim-speeddating', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'depends': 'vim-repeat',
     \   'on_map': {'n': ['<C-a>', '<C-x>']},
     \ })
@@ -1749,7 +2112,9 @@ documentation a relatively painless task.
 
 ::
 
-    call dein#add('tpope/vim-unimpaired')
+    call dein#add('tpope/vim-unimpaired', {
+    \   'hook_source': 'call plugins#dein#load_config()',
+    \ })
 
 ``zoomwintab.vim``
 ''''''''''''''''''
@@ -1811,6 +2176,7 @@ because you can dump heaps and heaps of custom code you've written in your
     \       'vim-airline-themes',
     \       'vim-fugitive',
     \   ],
+    \   'hook_source': 'call plugins#dein#load_config()',
     \ })
 
 ``vim-airline-themes``
@@ -1850,6 +2216,7 @@ because you can dump heaps and heaps of custom code you've written in your
 ::
 
     call dein#add('vim-utils/vim-man', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': ['Man', 'Mangrep', 'Vman'],
     \ })
 
@@ -1904,6 +2271,7 @@ because you can dump heaps and heaps of custom code you've written in your
 
     call dein#add('xolox/vim-notes', {
     \   'depends': 'vim-misc',
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_cmd': ['NoteFromSelectedText', 'Note', 'SearchNotes'],
     \   'on_map': {'ov': '<LocalLeader>en'},
     \ })
@@ -1967,6 +2335,7 @@ I write my mail in |reST|.  No, really.
 ::
 
     call dein#add('vim-scripts/DotOutlineTree', {
+    \   'hook_source': 'call plugins#dein#load_config()',
     \   'on_ft': ['mail', 'rst'],
     \ })
 
@@ -2050,6 +2419,7 @@ I write my mail in |reST|.  No, really.
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
+.. _git: https://git-scm.com/
 .. _wordnet: http://wordnet.princeton.edu/
 .. _Readline: http://www.gnu.org/software/readline/
 .. _this commit:

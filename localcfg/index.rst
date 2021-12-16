@@ -29,7 +29,6 @@ Contents
     plugin_committia.vim
     plugin_csv.vim
     plugin_delimitMate
-    plugin_dwm.vim
     plugin_editorconfig_vim
     plugin_emmet_vim
     plugin_fzf
@@ -43,21 +42,17 @@ Contents
     plugin_regex
     plugin_securemodelines
     plugin_semantic_highlight.vim
-    plugin_sideways.vim
     plugin_splitjoin.vim
-    plugin_switch.vim
     plugin_ultisnips
     plugin_unicode.vim
     plugin_vim_airline
     plugin_vim_bbye
-    plugin_vim_bufmru
     plugin_vim_clevertab
     plugin_vim_coiled_snake
     plugin_vim_ditto
     plugin_vim_editqf
     plugin_vim_eighties
     plugin_vim_exchange
-    plugin_vim_fugitive
     plugin_vim_gitgutter
     plugin_vim_illuminate
     plugin_vim_indent_guides
