@@ -293,20 +293,22 @@ languages.
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('gitgutter')
-    let g:gitgutter_map_keys = v:false
+    if has('signs') && plugins#dein#has_exec('git')
+        call keymaps#mnemonic_map('gitgutter')
+        let g:gitgutter_map_keys = v:false
 
-    for [s:key, s:cmd] in [
-    \   ['<Down>',  'NextHunk'],
-    \   ['<Up>',    'PrevHunk'],
-    \   ['<Space>', 'Toggle'],
-    \   ['f',       'Fold'],
-    \   ['p',       'PreviewHunk'],
-    \   ['q',       'QuickFix'],
-    \ ]
-        execute 'nnoremap <silent> [gitgutter]' . s:key . ' '
-        \   ':GitGutter' . s:cmd . '<CR>'
-    endfor
+        for [s:key, s:cmd] in [
+        \   ['<Down>',  'NextHunk'],
+        \   ['<Up>',    'PrevHunk'],
+        \   ['<Space>', 'Toggle'],
+        \   ['f',       'Fold'],
+        \   ['p',       'PreviewHunk'],
+        \   ['q',       'QuickFix'],
+        \ ]
+            execute 'nnoremap <silent> [gitgutter]' . s:key . ' '
+            \   ':GitGutter' . s:cmd . '<CR>'
+        endfor
+    endif
 
 .. seealso::
 
@@ -602,27 +604,29 @@ WingIDE to a real editor when they edit files of different types.
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('ale', {'local': v:true})
+    if v:version >= 800 && has('signs')
+        call keymaps#mnemonic_map('ale', {'local': v:true})
 
-    for [s:key, s:cmd] in [
-    \   ['br',     'reset_buffer'],
-    \   ['bt',     'toggle_buffer'],
-    \   ['d',      'detail'],
-    \   ['f',      'fix'],
-    \   ['gd',     'go_to_definition'],
-    \   ['gt',     'go_to_type_definition'],
-    \   ['l',      'lint'],
-    \   ['r',      'reset'],
-    \   ['t',      'toggle'],
-    \   ['vgd',    'go_to_definition_in_vsplit'],
-    \   ['vgt',    'go_to_type_definition_in_vsplit'],
-    \   ['<Home>', 'first'],
-    \   ['<End>',  'last'],
-    \   ['<Down>', 'next_wrap'],
-    \   ['<Up>',   'previous_wrap'],
-    \ ]
-        execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
-    endfor
+        for [s:key, s:cmd] in [
+        \   ['br',     'reset_buffer'],
+        \   ['bt',     'toggle_buffer'],
+        \   ['d',      'detail'],
+        \   ['f',      'fix'],
+        \   ['gd',     'go_to_definition'],
+        \   ['gt',     'go_to_type_definition'],
+        \   ['l',      'lint'],
+        \   ['r',      'reset'],
+        \   ['t',      'toggle'],
+        \   ['vgd',    'go_to_definition_in_vsplit'],
+        \   ['vgt',    'go_to_type_definition_in_vsplit'],
+        \   ['<Home>', 'first'],
+        \   ['<End>',  'last'],
+        \   ['<Down>', 'next_wrap'],
+        \   ['<Up>',   'previous_wrap'],
+        \ ]
+            execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
+        endfor
+    endif
 
 .. note::
 
@@ -987,25 +991,29 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 :repository: :repo:`junegunn/fzf.vim`
 :config: :doc:`localcfg/plugin_fzf.vim`
 
-::
+Skip this whole block when :command:`fzf` isn’t installed::
 
-    let s:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
-    \   'History', 'Lines', 'Maps', 'Marks', 'Windows']
-    if plugins#dein#has_exec('ag')
-        let s:fzf_commands += ['Ag', ]
-    endif
-    if plugins#dein#has_exec('git')
-        let s:fzf_commands += ['GFiles', ]
-    endif
-    if has('insert_expand')
-        let s:fzf_commands += ['Snippets', ]
-    endif
-    call dein#add('junegunn/fzf.vim', {
-    \   'depends': 'fzf',
-    \   'hook_source': 'call plugins#dein#load_config()',
-    \   'if': plugins#dein#has_exec('fzf'),
-    \   'on_cmd': plugins#dein#prefix('FZF', s:fzf_commands),
-    \ })
+    if plugins#dein#has_exec('fzf')
+
+Setup lazy loading for commonly used commands and test for optional commands::
+
+        let s:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
+        \   'History', 'Lines', 'Maps', 'Marks', 'Windows']
+        if plugins#dein#has_exec('ag')
+            let s:fzf_commands += ['Ag', ]
+        endif
+        if plugins#dein#has_exec('git')
+            let s:fzf_commands += ['GFiles', ]
+        endif
+        if has('insert_expand')
+            let s:fzf_commands += ['Snippets', ]
+        endif
+        call dein#add('junegunn/fzf.vim', {
+        \   'depends': 'fzf',
+        \   'hook_source': 'call plugins#dein#load_config()',
+        \   'if': plugins#dein#has_exec('fzf'),
+        \   'on_cmd': plugins#dein#prefix('FZF', s:fzf_commands),
+        \ })
 
 .. note::
 
@@ -1016,11 +1024,11 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
 
 Configure convenience mappings for common command usage::
 
-    call keymaps#mnemonic_map('fzf', {'key': '`'})
-    for s:cmd in s:fzf_commands
-        execute 'nmap <silent> [fzf]' . tolower(s:cmd[0]) . ' ' .
-        \   ':FZF' . s:cmd . '<CR>'
-    endfor
+        call keymaps#mnemonic_map('fzf', {'key': '`'})
+        for s:cmd in s:fzf_commands
+            execute 'nmap <silent> [fzf]' . tolower(s:cmd[0]) . ' ' .
+            \   ':FZF' . s:cmd . '<CR>'
+        endfor
 
 .. seealso::
 
@@ -1032,6 +1040,10 @@ Configure convenience mappings for common command usage::
     use of :kbd:`<Mod4-\`>` to open a drop down terminal in my window manager.
     The pattern here and throughout these configuration files is extremely
     useful as a way to remember bindings.
+
+::
+
+    endif
 
 ``goyo.vim``
 ''''''''''''
@@ -1603,8 +1615,10 @@ We lazy load on filetype definition for my normal workflow with
 ``clientserver``, but want to forcibly load on |vim| being called from
 :command:`git commit`::
 
-    if get(argv(), 0, '') =~# '/.git/COMMIT_EDITMSG$'
-        call dein#source('committia.vim')
+    if plugins#dein#has_exec('git')
+        if get(argv(), 0, '') =~# '/.git/COMMIT_EDITMSG$'
+            call dein#source('committia.vim')
+        endif
     endif
 
 ``git-messenger.vim``
@@ -1693,7 +1707,9 @@ daunting to wrap your head around.
 
 Use my custom maps::
 
-    nnoremap <silent> <LocalLeader># :MundoToggle<CR>
+    if has('pythonx') && v:version >= 703
+        nnoremap <silent> <LocalLeader># :MundoToggle<CR>
+    endif
 
 ``splice.vim``
 ''''''''''''''
@@ -1763,7 +1779,9 @@ Use my custom maps::
 
 Configure my custom maps::
 
-    call keymaps#mnemonic_map('radon', {'key': 'p', 'local': v:true})
+    if plugins#dein#has_exec('radon')
+        call keymaps#mnemonic_map('radon', {'key': 'p', 'local': v:true})
+    endif
 
 .. seealso::
 
@@ -1825,14 +1843,16 @@ Configure my custom maps::
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('wordnet')
+    if plugins#dein#has_exec('wn')
+        call keymaps#mnemonic_map('wordnet')
 
-    for [s:key, s:cmd] in [
-    \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-    \   ['c', 'plugins#wordnet#close_win()'],
-    \ ]
-        execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
-    endfor
+        for [s:key, s:cmd] in [
+        \   ['o', 'WordNetOverviews(expand("<cword>"))'],
+        \   ['c', 'plugins#wordnet#close_win()'],
+        \ ]
+            execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
+        endfor
+    endif
 
 .. seealso::
 
@@ -1934,7 +1954,9 @@ Replace most of your use of a shell when working on a project with just another
 Add map to change directory to git_ project root using :repo:`vim-projectionist
 <tpope/vim-projectionist>`::
 
-    nmap <silent> <C-p> :Gcd<CR>
+    if plugins#dein#has_exec('git')
+        nmap <silent> <C-p> :Gcd<CR>
+    endif
 
 .. note::
 
@@ -2417,6 +2439,7 @@ I write my mail in |reST|.  No, really.
 .. _EditorConfig: http://editorconfig.org/
 .. _gpg: https://www.gnupg.org/
 .. _Evan Brooks: https://medium.com/@evnbr/coding-in-color-3a6db2743a1e
+.. _fzf: https://github.com/junegunn/fzf
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
 .. _git: https://git-scm.com/
