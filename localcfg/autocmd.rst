@@ -20,11 +20,11 @@ Don’t write undo data for temporary files::
 
 Use |vim|’s help for these documents::
 
-        autocmd BufRead ~/.vim/*.rst setlocal keywordprg=:help
+        autocmd BufNewFile,BufRead ~/.vim/*.rst setlocal keywordprg=:help
 
 Use project tags for these documents::
 
-        autocmd BufRead ~/.vim/* setlocal tags+=~/.vim/tags/TAGS
+        autocmd BufNewFile,BufRead ~/.vim/* setlocal tags+=~/.vim/tags/TAGS
 
 We don't want to edit patch backup files by accident [*again*]::
 
