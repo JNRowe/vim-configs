@@ -56,6 +56,12 @@ on current line::
 .. image:: /.static/relative_numbering.png
    :alt: Example of combined numbering
 
+Attempt to save and restore window size in session files::
+
+    if has('gui_running')
+        set sessionoptions+=resize
+    endif
+
 :kbd:`<S-Insert>` should work the same as in my terminals::
 
     if empty(maparg('<S-Insert>', 'n'))
