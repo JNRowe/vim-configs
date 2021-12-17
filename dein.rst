@@ -626,6 +626,7 @@ Use my custom maps::
         \ ]
             execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
         endfor
+        nmap <silent> [ale]i :call ale#debugging#Info()<CR>
     endif
 
 .. note::
