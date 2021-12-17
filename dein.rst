@@ -34,6 +34,7 @@ Repositories
 
 :repository: :repo:`Shougo/dein.vim`
 :config: :doc:`vimrc.d/dein`
+:functions: :doc:`autoload/plugins/dein`
 
 ::
 
@@ -1395,6 +1396,7 @@ Use my custom maps::
 
 :repository: :repo:`mhinz/vim-startify`
 :config: :doc:`localcfg/plugins/vim_startify`
+:functions: :doc:`autoload/plugins/vim_startify`
 
 ::
 
@@ -2000,6 +2002,7 @@ Add map to change directory to git_ project root using :repo:`vim-projectionist
 
 :repository: :repo:`tpope/vim-projectionist`
 :config: :doc:`localcfg/plugins/vim_projectionist`
+:functions: :doc:`autoload/plugins/vim_projectionist`
 
 ::
 
@@ -2352,6 +2355,7 @@ vim-scripts mirrors
     “An outline tree of a buffer”
 
 :repository: :repo:`vim-scripts/DotOutlineTree`
+:config: :doc:`localcfg/plugins/DotOutlineTree`
 
 I write my mail in |reST|.  No, really.
 
