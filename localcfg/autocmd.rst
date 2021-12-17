@@ -107,7 +107,7 @@ Only highlight cursor line in active window::
 
 Search for project specific :file:`vimrc` and support files::
 
-        autocmd BufWinEnter * call misc#apply_project_locals()
+        autocmd BufRead * call misc#apply_project_locals()
 
 .. seealso::
 
