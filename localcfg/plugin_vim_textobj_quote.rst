@@ -20,7 +20,7 @@ Enable for |reST| and other largely prose filetypes::
 
 Configure quotes for current language::
 
-        autocmd BufEnter * call plugins#vim_textobj_quote#select_quotes()
+        autocmd BufNewFile,BufRead * call plugins#vim_textobj_quote#select_quotes()
 
 .. seealso::
 
