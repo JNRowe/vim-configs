@@ -312,6 +312,11 @@ Keep cursor line centred::
 
     set scrolloff=100
 
+Save local options in session files, which is important for buffers that should
+be displayed using ``'nolist'`` for example::
+
+    set sessionoptions+=localoptions
+
 Include terminal windows in sessions where possible::
 
     if has('mksession')
