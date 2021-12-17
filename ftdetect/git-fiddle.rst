@@ -4,7 +4,8 @@
 Treat git-fiddle_ buffers as :command:`git rebase` files::
 
     " vint: -ProhibitAutocmdWithNoGroup
-    autocmd BufRead,BufNewFile */git-rebase-todo.fiddle setfiletype gitrebase
+    autocmd BufRead,BufNewFile */git-rebase-todo.fiddle
+    \   setfiletype gitrebase.gitfiddle
     " vint: +ProhibitAutocmdWithNoGroup
 
 .. note::

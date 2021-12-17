@@ -12,6 +12,7 @@ Contents
 
     c
     gitcommit
+    gitfiddle
     gitrebase
     haskell
     help

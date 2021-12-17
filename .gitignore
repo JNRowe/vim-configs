@@ -22,6 +22,7 @@ __pycache__/
 /after/ftplugin/c.vim
 /after/ftplugin/cpp.vim
 /after/ftplugin/gitcommit.vim
+/after/ftplugin/gitfiddle.vim
 /after/ftplugin/gitrebase.vim
 /after/ftplugin/haskell.vim
 /after/ftplugin/help.vim
