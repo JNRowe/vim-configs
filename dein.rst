@@ -80,7 +80,7 @@ Use my custom maps::
     “Switch between single-line and multiline forms of code”
 
 :repository: :repo:`AndrewRadev/splitjoin.vim`
-:config: :doc:`localcfg/plugin_splitjoin.vim`
+:config: :doc:`localcfg/plugins/splitjoin.vim`
 
 ::
 
@@ -193,7 +193,7 @@ Configure maps to match, to some degree, my window manager’s configuration::
     “A secure alternative to modelines”
 
 :repository: :repo:`JNRowe/securemodelines`
-:config: :doc:`localcfg/plugin_securemodelines`
+:config: :doc:`localcfg/plugins/securemodelines`
 
 This lightens the load of dealing with people who can’t follow :ref:`coding
 standards <editorconfig-plugin>` without allowing them free access to your |vim|
@@ -211,7 +211,7 @@ session.
     “Selectively illuminate other uses of the current word”
 
 :repository: :repo:`RRethy/vim-illuminate`
-:config: :doc:`localcfg/plugin_vim_illuminate`
+:config: :doc:`localcfg/plugins/vim_illuminate`
 
 ::
 
@@ -226,7 +226,7 @@ session.
     “Automatic closing of quotes, parenthesis, brackets, etc”
 
 :repository: :repo:`Raimondi/delimitMate`
-:config: :doc:`localcfg/plugin_delimitMate`
+:config: :doc:`localcfg/plugins/delimitMate`
 
 The number 1 “love it or hate it” plugin, to use it well you’ll want to read its
 documentation and disable the defaults that get in the way of your chosen
@@ -261,7 +261,7 @@ languages.
     “The ultimate plugin for snippets”
 
 :repository: :repo:`SirVer/ultisnips`
-:config: :doc:`localcfg/plugin_ultisnips`
+:config: :doc:`localcfg/plugins/ultisnips`
 :functions: :doc:`autoload/plugins/ultisnips`
 
 ::
@@ -280,7 +280,7 @@ languages.
     “Show :command:`git diff` status in the gutter”
 
 :repository: :repo:`airblade/vim-gitgutter`
-:config: :doc:`localcfg/plugin_vim_gitgutter`
+:config: :doc:`localcfg/plugins/vim_gitgutter`
 
 ::
 
@@ -322,7 +322,7 @@ Use my custom maps::
     “Visualize, navigate, and operate on matching sets of text”
 
 :repository: :repo:`andymass/vim-matchup`
-:config: :doc:`localcfg/plugin_vim_matchup`
+:config: :doc:`localcfg/plugins/vim_matchup`
 
 ::
 
@@ -407,7 +407,7 @@ a full editing session.
     “Show differences for recovered files”
 
 :repository: :repo:`chrisbra/Recover.vim`
-:config: :doc:`localcfg/plugin_Recover.vim`
+:config: :doc:`localcfg/plugins/Recover.vim`
 
 ::
 
@@ -423,7 +423,7 @@ a full editing session.
     “Record and replay your editing sessions”
 
 :repository: :repo:`chrisbra/Replay`
-:config: :doc:`localcfg/plugin_Replay`
+:config: :doc:`localcfg/plugins/Replay`
 
 ::
 
@@ -454,7 +454,7 @@ a full editing session.
     “A filetype plugin for |CSV| files”
 
 :repository: :repo:`chrisbra/csv.vim`
-:config: :doc:`localcfg/plugin_csv.vim`
+:config: :doc:`localcfg/plugins/csv.vim`
 
 Disturbingly cool editing for |CSV| files, ‘nuff said.
 
@@ -471,7 +471,7 @@ Disturbingly cool editing for |CSV| files, ‘nuff said.
     “A plugin for handling Unicode and digraphs characters”
 
 :repository: :repo:`chrisbra/unicode.vim`
-:config: :doc:`localcfg/plugin_unicode.vim`
+:config: :doc:`localcfg/plugins/unicode.vim`
 
 Be like me and annoy your co-workers/friends by littering your mails with
 Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
@@ -554,7 +554,7 @@ So, we’ll override the :kbd:`ga` mapping::
     “A VIM binding to the :pypi:`jedi` autocompletion library”
 
 :repository: :repo:`davidhalter/jedi-vim`
-:config: :doc:`localcfg/plugin_jedi_vim`
+:config: :doc:`localcfg/plugins/jedi_vim`
 
 ::
 
@@ -571,7 +571,7 @@ So, we’ll override the :kbd:`ga` mapping::
     “Highlight overused words”
 
 :repository: :repo:`dbmrq/vim-ditto`
-:config: :doc:`localcfg/plugin_vim_ditto`
+:config: :doc:`localcfg/plugins/vim_ditto`
 
 ::
 
@@ -588,7 +588,7 @@ So, we’ll override the :kbd:`ga` mapping::
     “Asynchronous Lint Engine”
 
 :repository: :repo:`dense-analysis/ale`
-:config: :doc:`localcfg/plugin_ale`
+:config: :doc:`localcfg/plugins/ale`
 
 Start your mind boggling every time someone moans about having to switch from
 WingIDE to a real editor when they edit files of different types.
@@ -683,7 +683,7 @@ Use my custom maps::
     “The EditorConfig_ plugin”
 
 :repository: :repo:`editorconfig/editorconfig-vim`
-:config: :doc:`localcfg/plugin_editorconfig_vim`
+:config: :doc:`localcfg/plugins/editorconfig_vim`
 
 ::
 
@@ -737,7 +737,7 @@ decorating it with glyphs.
     “Allows you to test regular expressions”
 
 :repository: :repo:`ervandew/regex`
-:config: :doc:`localcfg/plugin_regex`
+:config: :doc:`localcfg/plugins/regex`
 :functions: :doc:`autoload/plugins/regex`
 
 Removes the need to jump to your language’s :abbr:`REPL (Read-Eval-Print Loop)`
@@ -820,7 +820,7 @@ jealous.
     “Snippet files for various programming languages”
 
 :repository: :repo:`honza/vim-snippets`
-:config: :doc:`localcfg/plugin_vim_snippets`
+:config: :doc:`localcfg/plugins/vim_snippets`
 
 ::
 
@@ -838,7 +838,7 @@ jealous.
     “Yet another debugger frontend plugin”
 
 :repository: :repo:`idanarye/vim-vebugger`
-:config: :doc:`localcfg/plugin_vim_vebugger`
+:config: :doc:`localcfg/plugins/vim_vebugger`
 
 ::
 
@@ -920,7 +920,7 @@ Use my custom maps::
     `Evan Brooks`_ blog post.
 
 :repository: :repo:`jaxbot/semantic-highlight.vim`
-:config: :doc:`localcfg/plugin_semantic_highlight.vim`
+:config: :doc:`localcfg/plugins/semantic_highlight.vim`
 
 ::
 
@@ -937,7 +937,7 @@ Use my custom maps::
     “Edit and store quickfix/location list entries”
 
 :repository: :repo:`jceb/vim-editqf`
-:config: :doc:`localcfg/plugin_vim_editqf`
+:config: :doc:`localcfg/plugins/vim_editqf`
 :functions: :doc:`autoload/plugins/vim_editqf`
 
 Add your own “todo” entries to the quickfix list, and hold them across sessions.
@@ -973,7 +973,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     “Basic :command:`fzf` integration”
 
 :repository: :repo:`junegunn/fzf`
-:config: :doc:`localcfg/plugin_fzf`
+:config: :doc:`localcfg/plugins/fzf`
 
 ::
 
@@ -990,7 +990,7 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     “Advanced :command:`fzf` integration”
 
 :repository: :repo:`junegunn/fzf.vim`
-:config: :doc:`localcfg/plugin_fzf.vim`
+:config: :doc:`localcfg/plugins/fzf.vim`
 
 Skip this whole block when :command:`fzf` isn’t installed::
 
@@ -1052,7 +1052,7 @@ Configure convenience mappings for common command usage::
     “Distraction-free writing in Vim.”
 
 :repository: :repo:`junegunn/goyo.vim`
-:config: :doc:`localcfg/plugin_goyo.vim`
+:config: :doc:`localcfg/plugins/goyo.vim`
 
 ::
 
@@ -1081,7 +1081,7 @@ Configure convenience mappings for common command usage::
     “Preview support for registers”
 
 :repository: :repo:`junegunn/vim-peekaboo`
-:config: :doc:`localcfg/plugin_vim_peekaboo`
+:config: :doc:`localcfg/plugins/vim_peekaboo`
 :functions: :doc:`autoload/plugins/vim_peekaboo`
 
 ::
@@ -1104,7 +1104,7 @@ Configure convenience mappings for common command usage::
     “Single, multi-patch or diff code reviews”
 
 :repository: :repo:`junkblocker/patchreview-vim`
-:config: :doc:`localcfg/plugin_patchreview_vim`
+:config: :doc:`localcfg/plugins/patchreview_vim`
 
 ::
 
@@ -1119,7 +1119,7 @@ Configure convenience mappings for common command usage::
     “Automatically resizes your windows”
 
 :repository: :repo:`justincampbell/vim-eighties`
-:config: :doc:`localcfg/plugin_vim_eighties`
+:config: :doc:`localcfg/plugins/vim_eighties`
 
 ::
 
@@ -1134,7 +1134,7 @@ Configure convenience mappings for common command usage::
     “Motion improved”
 
 :repository: :repo:`justinmk/vim-sneak`
-:config: :doc:`localcfg/plugin_vim_sneak`
+:config: :doc:`localcfg/plugins/vim_sneak`
 :functions: :doc:`autoload/plugins/vim_sneak`
 
 ::
@@ -1156,7 +1156,7 @@ Configure convenience mappings for common command usage::
     “Enhanced Python folding”
 
 :repository: :repo:`kalekundert/vim-coiled-snake`
-:config: :doc:`localcfg/plugin_vim_coiled_snake`
+:config: :doc:`localcfg/plugins/vim_coiled_snake`
 
 ::
 
@@ -1213,7 +1213,7 @@ Configure convenience mappings for common command usage::
     “A plugin to place, toggle and display marks”
 
 :repository: :repo:`kshenoy/vim-signature`
-:config: :doc:`localcfg/plugin_vim_signature`
+:config: :doc:`localcfg/plugins/vim_signature`
 
 ::
 
@@ -1244,7 +1244,7 @@ Configure convenience mappings for common command usage::
     “Language support for |ledger|\”
 
 :repository: :repo:`ledger/vim-ledger`
-:config: :doc:`localcfg/plugin_vim_ledger`
+:config: :doc:`localcfg/plugins/vim_ledger`
 
 Combine this with :ref:`csv.vim <csv.vim-plugin>`, and it makes importing and
 editing your accounts/expenses an almost nice-ish experience.
@@ -1293,7 +1293,7 @@ Use my custom maps::
     “Help read complex code by showing parentheses in different colours”
 
 :repository: :repo:`luochen1990/rainbow`
-:config: :doc:`localcfg/plugin_rainbow`
+:config: :doc:`localcfg/plugins/rainbow`
 
 Make your |vim| sessions feel like they have been painted by a three year old
 trying to impress their grandpa.  Which is a Good Thing™.
@@ -1310,7 +1310,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     “A calendar window you can use within |vim|\”
 
 :repository: :repo:`mattn/calendar-vim`
-:config: :doc:`localcfg/plugin_calendar_vim`
+:config: :doc:`localcfg/plugins/calendar_vim`
 
 ::
 
@@ -1349,7 +1349,7 @@ Use my custom maps::
     coding”
 
 :repository: :repo:`mattn/emmet-vim`
-:config: :doc:`localcfg/plugin_emmet_vim`
+:config: :doc:`localcfg/plugins/emmet_vim`
 
 ::
 
@@ -1394,7 +1394,7 @@ Use my custom maps::
     “The fancy start screen”
 
 :repository: :repo:`mhinz/vim-startify`
-:config: :doc:`localcfg/plugin_vim_startify`
+:config: :doc:`localcfg/plugins/vim_startify`
 
 ::
 
@@ -1460,7 +1460,7 @@ Use my custom maps::
     “Language support for :pypi:`jinja`\”
 
 :repository: :repo:`mitsuhiko/vim-jinja`
-:config: :doc:`localcfg/plugin_vim_jinja`
+:config: :doc:`localcfg/plugins/vim_jinja`
 
 ::
 
@@ -1475,7 +1475,7 @@ Use my custom maps::
     “Delete buffers without breaking your layout”
 
 :repository: :repo:`moll/vim-bbye`
-:config: :doc:`localcfg/plugin_vim_bbye`
+:config: :doc:`localcfg/plugins/vim_bbye`
 
 ::
 
@@ -1491,7 +1491,7 @@ Use my custom maps::
     “A plugin for visually displaying indent levels”
 
 :repository: :repo:`nathanaelkane/vim-indent-guides`
-:config: :doc:`localcfg/plugin_vim_indent_guides`
+:config: :doc:`localcfg/plugins/vim_indent_guides`
 
 ::
 
@@ -1519,7 +1519,7 @@ Use my custom maps::
     “Tiny replacement for Supertab”
 
 :repository: :repo:`neitanod/vim-clevertab`
-:config: :doc:`localcfg/plugin_vim_clevertab`
+:config: :doc:`localcfg/plugins/vim_clevertab`
 
 Makes you feel more like a smart :abbr:`IDE (Integrated Developer Environment)`
 user, how cool is that?
@@ -1568,7 +1568,7 @@ user, how cool is that?
     “Better support for typographic (‘curly’) quote characters”
 
 :repository: :repo:`reedes/vim-textobj-quote`
-:config: :doc:`localcfg/plugin_vim_textobj_quote`
+:config: :doc:`localcfg/plugins/vim_textobj_quote`
 :functions: :doc:`autoload/plugins/vim_textobj_quote`
 
 ::
@@ -1602,7 +1602,7 @@ user, how cool is that?
     “More pleasant editing on commit message”
 
 :repository: :repo:`rhysd/committia.vim`
-:config: :doc:`localcfg/plugin_committia.vim`
+:config: :doc:`localcfg/plugins/committia.vim`
 
 ::
 
@@ -1628,7 +1628,7 @@ We lazy load on filetype definition for my normal workflow with
     “Reveal the hidden message by :command:`git` under the cursor quickly”
 
 :repository: :repo:`rhysd/git-messenger.vim`
-:config: :doc:`localcfg/plugin_git_messenger.vim`
+:config: :doc:`localcfg/plugins/git_messenger.vim`
 
 ::
 
@@ -1693,7 +1693,7 @@ Use my custom maps::
     “Visualizes the Vim undo tree”
 
 :repository: :repo:`simnalamburt/vim-mundo`
-:config: :doc:`localcfg/plugin_vim_mundo`
+:config: :doc:`localcfg/plugins/vim_mundo`
 
 Finally grasp the |vim| ``undo-tree``, without this the feature can be really
 daunting to wrap your head around.
@@ -1731,7 +1731,7 @@ Use my custom maps::
     “Smart space key”
 
 :repository: :repo:`spiiph/vim-space`
-:config: :doc:`localcfg/plugin_vim_space`
+:config: :doc:`localcfg/plugins/vim_space`
 
 ::
 
@@ -1746,7 +1746,7 @@ Use my custom maps::
     “Linter for |vim| script”
 
 :repository: :repo:`syngan/vim-vimlint`
-:config: :doc:`localcfg/plugin_vim_vimlint`
+:config: :doc:`localcfg/plugins/vim_vimlint`
 
 ::
 
@@ -1764,7 +1764,7 @@ Use my custom maps::
     “Applies radon_ to your current file”
 
 :repository: :repo:`tell-k/vim-quick-radon`
-:config: :doc:`localcfg/plugin_vim_quick_radon`
+:config: :doc:`localcfg/plugins/vim_quick_radon`
 :functions: :doc:`autoload/plugins/vim_quick_radon`
 
 ::
@@ -1812,7 +1812,7 @@ Configure my custom maps::
     “Multiple selections/cursors”
 
 :repository: :repo:`mg979/vim-visual-multi`
-:config: doc:`localcfg/plugin_vim_visual_multi`
+:config: doc:`localcfg/plugins/vim_visual_multi`
 
 ::
 
@@ -1828,7 +1828,7 @@ Configure my custom maps::
     “Look up word definitions with wordnet_”
 
 :repository: :repo:`timcharper/wordnet.vim`
-:config: :doc:`localcfg/plugin_wordnet.vim`
+:config: :doc:`localcfg/plugins/wordnet.vim`
 :functions: :doc:`autoload/plugins/wordnet.vim`
 
 ::
@@ -1866,7 +1866,7 @@ Use my custom maps::
     “Vim port of the monokai theme for TextMate”
 
 :repository: :repo:`tomasr/molokai`
-:config: :doc:`localcfg/plugin_molokai`
+:config: :doc:`localcfg/plugins/molokai`
 
 ::
 
@@ -1880,7 +1880,7 @@ Use my custom maps::
     “Easy text exchange operator”
 
 :repository: :repo:`tommcdo/vim-exchange`
-:config: :doc:`localcfg/plugin_vim_exchange`
+:config: :doc:`localcfg/plugins/vim_exchange`
 
 ::
 
@@ -1999,7 +1999,7 @@ Add map to change directory to git_ project root using :repo:`vim-projectionist
     “Project configuration”
 
 :repository: :repo:`tpope/vim-projectionist`
-:config: :doc:`localcfg/plugin_vim_projectionist`
+:config: :doc:`localcfg/plugins/vim_projectionist`
 
 ::
 
@@ -2091,7 +2091,7 @@ Automagic indentation configuration, that just works.
     “Increment dates, times, and more”
 
 :repository: :repo:`tpope/vim-speeddating`
-:config: :doc:`localcfg/plugin_vim_speeddating`
+:config: :doc:`localcfg/plugins/vim_speeddating`
 
 Speed up those :kbd:`y` and :kbd:`p` based :ref:`ledger <ledger-plugin>` entry
 writing sessions by at least fifteen orders of magnitude… or your money back.
@@ -2131,7 +2131,7 @@ documentation a relatively painless task.
     “Pairs of handy mappings”
 
 :repository: :repo:`tpope/vim-unimpaired`
-:config: :doc:`localcfg/plugin_vim_unimpaired`
+:config: :doc:`localcfg/plugins/vim_unimpaired`
 
 ::
 
@@ -2186,7 +2186,7 @@ documentation a relatively painless task.
     “Lean & mean status/tabline for |vim| that’s light as air”
 
 :repository: :repo:`vim-airline/vim-airline`
-:config: :doc:`localcfg/plugin_vim_airline`
+:config: :doc:`localcfg/plugins/vim_airline`
 
 The main reason to use this is not “simply because it is pretty”, but mostly
 because you can dump heaps and heaps of custom code you've written in your
@@ -2234,7 +2234,7 @@ because you can dump heaps and heaps of custom code you've written in your
     “Enhanced :command:`man` support”
 
 :repository: :repo:`vim-utils/vim-man`
-:config: :doc:`localcfg/plugin_vim_man`
+:config: :doc:`localcfg/plugins/vim_man`
 
 ::
 
@@ -2288,7 +2288,7 @@ because you can dump heaps and heaps of custom code you've written in your
     “Easy note taking in Vim”
 
 :repository: :repo:`xolox/vim-notes`
-:config: :doc:`localcfg/plugin_vim_notes`
+:config: :doc:`localcfg/plugins/vim_notes`
 
 ::
 

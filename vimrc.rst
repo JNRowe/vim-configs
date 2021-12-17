@@ -92,6 +92,8 @@ Pull in general |vim| configuration files::
         endif
     endif
 
+.. _build_dependent_file:
+
 Pull in build dependent configuration files::
 
     if has('localmap')

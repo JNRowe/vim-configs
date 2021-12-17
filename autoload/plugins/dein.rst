@@ -15,7 +15,7 @@
     function! plugins#dein#load_config(...) abort
         let l:name = substitute(get(a:, 1, g:dein#plugin.name),
         \                       '-', '_', 'g')
-        execute 'source ~/.vim/localcfg/plugin_' . l:name . '.vim'
+        execute 'source ~/.vim/localcfg/plugins/' . l:name . '.vim'
     endfunction
 
 .. function:: prefix(prefix: str, args: List[str]) -> List[str]

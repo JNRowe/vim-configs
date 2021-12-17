@@ -122,12 +122,12 @@
         "type": "lconfig"
     },
     "localcfg/*.vim": { "alternate": "localcfg/{}.rst" },
-    "localcfg/plugin_*.rst": {
-        "alternate": "localcfg/{}.vim",
+    "localcfg/plugins/*.rst": {
+        "alternate": "localcfg/plugins/{}.vim",
         "template": [
-            "``localcfg/plugin_{}.vim``]|[\\hs1",
+            "``localcfg/plugins/{}.vim``]|[\\hs1",
             "",
-            ".. include:: ../.includes/scriptencoding.rst",
+            ".. include:: ../../.includes/scriptencoding.rst",
             "",
             "::",
             "",

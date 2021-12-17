@@ -100,8 +100,8 @@ could be achieved with |zsh| in :file:`.git/hooks/pre-commit`:
 
     dein_repos=${XDG_CACHE_HOME:-~/.cache}/vim/dein/repos
     extras=()
-    for f (localcfg/plugin_*.vim) {
-        plug_name=${f:t:r:s/plugin_//:gs/_/?/}
+    for f (localcfg/plugins/*.rst) {
+        plug_name=${f:t:r:gs/_/?/}
         if [[ -z "${dein_repos}/*/*/${plug_name}(/N)" ]]; then
             extras+=$i
         fi

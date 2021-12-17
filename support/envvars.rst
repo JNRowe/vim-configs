@@ -13,7 +13,7 @@ variables.
 
     Location for text copies of common licenses, used in :repo:`projectionist
     <tpope/vim-projectionist>` :doc:`template setup
-    <../localcfg/plugin_vim_projectionist>`.
+    <../localcfg/plugins/vim_projectionist>`.
 
 .. envvar:: SHELL
 
