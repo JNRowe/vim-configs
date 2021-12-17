@@ -50,16 +50,6 @@ Attempt filetype detection after writing::
 
         autocmd BufWritePost * if empty(&filetype) | filetype detect | endif
 
-Automatically :command:`chmod +x` shell scripts::
-
-        autocmd BufWritePost *.sh
-        \   silent call system('chmod +x -- ' . expand('%:p:S'))
-
-.. note::
-
-    This shells out to :command:`chmod` as a lazy way to avoid craziness with
-    ``getfperm()`` and ``setfperm()``.
-
 Jump to the last known cursor position if possible::
 
         autocmd BufReadPost *
