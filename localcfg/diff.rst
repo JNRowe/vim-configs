@@ -31,7 +31,7 @@ Add my bindings for :command:`diff` mode::
 
     augroup jnrowe_diff
         autocmd!
-        autocmd BufEnter * if &diff | call filetypes#diff_maps() | endif
+        autocmd BufRead * if &diff | call filetypes#diff_maps() | endif
     augroup END
 
 .. seealso::
