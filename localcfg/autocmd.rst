@@ -85,7 +85,8 @@ Always do a full syntax refresh, as this is still fast enough on a netbook::
 
 Open ``quickfix`` window, if there are any entries::
 
-        autocmd QuickFixCmdPost * belowright cwindow 5
+        autocmd QuickFixCmdPost [^l]* belowright cwindow 5
+        autocmd QuickFixCmdPost l* belowright lwindow 5
 
 .. note::
 
