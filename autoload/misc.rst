@@ -28,7 +28,7 @@
                     execute 'source ' . l:file_path
                 endif
             endif
-            execute printf('let %s = v:true', l:var)
+            let {l:var} = v:true
         endfor
     endfunction
 
@@ -68,7 +68,7 @@
 ::
 
     function! misc#disable_plugin(str) abort
-        execute printf('let g:loaded_%s = v:true', a:str)
+        let g:loaded_{a:str} = v:true
     endfunction
 
 .. function:: edit_project_file(name: str) -> None
