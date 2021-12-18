@@ -66,8 +66,11 @@
         else
             let l:cmd = a:cmd . '<CR>'
         endif
-        execute printf('nnoremap <silent> [%s]%s :%s%s', l:group, a:key,
-        \              a:type, l:cmd)
+        " Commands beginning with : don’t have a:type prefix inserted
+        if a:cmd[0] !=# ':'
+            let l:cmd = printf(':%s%s', a:type, l:cmd)
+        endif
+        execute printf('nnoremap <silent> [%s]%s %s', l:group, a:key, l:cmd)
     endfunction
 
 .. function:: switch_buf(count: int) -> None

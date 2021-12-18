@@ -23,32 +23,37 @@ Configure my custom maps for quickfix::
 
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
-Find occurrences of current word::
+Find occurrences of current word, last search or lines that are too long::
 
-    nnoremap <silent> [quickfix]sw :vimgrep <C-r>=expand('<cword>')<CR> %<CR>
-    nnoremap <silent> [quickfix]sW :grep <C-r>=expand('<cword>')<CR><CR>
-    nnoremap <silent> [location]sw :lvimgrep <C-r>=expand('<cword>')<CR> %<CR>
-    nnoremap <silent> [location]sW :lgrep <C-r>=expand('<cword>')<CR><CR>
+    for [s:key, s:pat] in [
+    \   ['w', '<C-r>=expand("<cword>")<CR>'],
+    \   ['s', '<C-r>=getreg("/")<CR>'],
+    \   ['l', '^.\{<C-r>=&tw<CR>}.\+$'],
+    \ ]
+        for s:type in ['q', 'l']
+            for s:where in ['', '%']
+                let s:prefix = s:type ==# 'l' ? 'l' : ''
+                let s:cmd = s:where ==# '' ? 'grep' : 'vimgrep'
+                call keymaps#quickfix_key(
+                \   s:type,
+                \   's' . (s:where ==# '' ? toupper(s:key) : s:key),
+                \   printf(':%s%s /%s/g %s', s:prefix, s:cmd, s:pat, s:where))
+            endfor
+        endfor
+    endfor
+
+.. tip::
+
+    Lowercase keys are file local, and uppercase are global.  For example,
+    :kbd:`\lsW` updates the **l**\ocation list with **s**\earch results for the
+    current **w**\ord.  The lowercase variant, :kbd:`\lsw`, performs the same
+    action for the current buffer only.
 
 .. note::
 
-    This functionality is provided in part with :kbd:`[I` or more closely via
-    :repo:`vim-qlist <romainl/vim-qlist>`, but I like the specific buffer only
-    usage and the reflection of my other ``quickfix`` maps.
-
-… and last search::
-
-    nnoremap <silent> [quickfix]ss :vimgrep /<C-r>=getreg('/')<CR>/g %<CR>
-    nnoremap <silent> [quickfix]sS :grep /<C-r>=getreg('/')<CR>/g<CR>
-    nnoremap <silent> [location]ss :lvimgrep /<C-r>getreg('/')<CR>/g %<CR>
-    nnoremap <silent> [location]sS :lgrep /<C-r>=getreg('/')<CR>/g<CR>
-
-… and lines that are too long::
-
-    nnoremap <silent> [quickfix]sl :vimgrep /^.\{<C-r>=&tw<CR>}.\+$/g %<CR>
-    nnoremap <silent> [quickfix]sL :grep /^.\{<C-r>=&tw<CR>}.\+$/g<CR>
-    nnoremap <silent> [location]sl :lvimgrep /^.\{<C-r>=&tw<CR>}.\+$/g %<CR>
-    nnoremap <silent> [location]sL :lgrep /^.\{<C-r>=&tw<CR>}.\+$/g<CR>
+    The current word functionality is already provided in part with :kbd:`[I` or
+    more closely via :repo:`vim-qlist <romainl/vim-qlist>`, but I like the
+    buffer-only usage and the reflection of my other ``quickfix`` maps.
 
 Configure layered maps for useful quickfix and location functions::
 
@@ -99,3 +104,9 @@ Shortcut command to rename current list:::
 
     The prefixes were chosen to match :ref:`vim-editqf <vim-editqf-plugin>`’s
     naming.
+
+.. spelling::
+
+    earch
+    ocation
+    ord
