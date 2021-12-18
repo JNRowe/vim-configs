@@ -112,8 +112,9 @@ Pull in build dependent configuration files::
 
 Pull in host specific configuration data::
 
-    if filereadable(expand('~/.vim/localcfg/' . hostname() . '.vim'))
-        execute 'source ~/.vim/localcfg/' . hostname() . '.vim'
+    let s:host_file = expand('~/.vim/localcfg/' . hostname() . '.vim')
+    if filereadable(s:host_file)
+        execute 'source ' . s:host_file
     endif
 
 Define and configure plugins::
