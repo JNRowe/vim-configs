@@ -226,7 +226,7 @@ Add mappings to highlight lines::
 Highlight matches for last search only within visual region::
 
     if has('extra_search')
-        vnoremap <silent> [Display]ms
+        nnoremap <silent> [Display]ms
         \   :<C-u>execute printf('match Search /\%%V%s\%%V/', getreg('/'))<CR>
         nnoremap <silent> [Display]mc :match none<CR>
     endif
