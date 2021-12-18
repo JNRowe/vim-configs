@@ -628,7 +628,7 @@ Use my custom maps::
         \ ]
             execute printf('nmap <silent> [ale]%s <Plug>(ale_%s)', s:key, s:cmd)
         endfor
-        nmap <silent> [ale]i :call ale#debugging#Info()<CR>
+        nnoremap <silent> [ale]i :call ale#debugging#Info()<CR>
     endif
 
 .. note::
@@ -1029,7 +1029,7 @@ Configure convenience mappings for common command usage::
 
         call keymaps#mnemonic_map('fzf', {'key': '`'})
         for s:cmd in s:fzf_commands
-            execute printf('nmap <silent> [fzf]%s :FZF%s<CR>',
+            execute printf('nnoremap <silent> [fzf]%s :FZF%s<CR>',
             \              tolower(s:cmd[0]), s:cmd)
         endfor
 
@@ -1962,7 +1962,7 @@ Add map to change directory to git_ project root using :repo:`vim-projectionist
 <tpope/vim-projectionist>`::
 
     if plugins#dein#has_exec('git')
-        nmap <silent> <C-p> :Gcd<CR>
+        nnoremap <silent> <C-p> :Gcd<CR>
     endif
 
 .. note::

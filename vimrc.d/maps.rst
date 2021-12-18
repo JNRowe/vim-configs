@@ -172,7 +172,7 @@ when you’re showing code::
 
 Insert current buffer’s directory at command line::
 
-    cmap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
+    cnoremap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
 
 .. _scroll-wheel-override:
 
