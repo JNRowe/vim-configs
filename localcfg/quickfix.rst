@@ -43,6 +43,13 @@ Find occurrences of current word::
     nnoremap <silent> [location]ss :lvimgrep /<C-r>getreg('/')<CR>/g %<CR>
     nnoremap <silent> [location]sS :lgrep /<C-r>=getreg('/')<CR>/g<CR>
 
+… and lines that are too long::
+
+    nnoremap <silent> [quickfix]sl :vimgrep /^.\{<C-r>=&tw<CR>}.\+$/g %<CR>
+    nnoremap <silent> [quickfix]sL :grep /^.\{<C-r>=&tw<CR>}.\+$/g<CR>
+    nnoremap <silent> [location]sl :lvimgrep /^.\{<C-r>=&tw<CR>}.\+$/g %<CR>
+    nnoremap <silent> [location]sL :lgrep /^.\{<C-r>=&tw<CR>}.\+$/g<CR>
+
 Configure layered maps for useful quickfix and location functions::
 
     for s:t in ['l', 'c']
