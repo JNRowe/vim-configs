@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_projectionist.vim``
 ==========================================
 
+.. include:: ../../.includes/scriptencoding.rst
+
 .. function:: apply_commands() -> None
 
     Apply inline commands from projectionist templates.
