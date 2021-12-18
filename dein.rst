@@ -1834,7 +1834,7 @@ Configure my custom maps::
 
 :repository: :repo:`timcharper/wordnet.vim`
 :config: :doc:`localcfg/plugins/wordnet.vim`
-:functions: :doc:`autoload/plugins/wordnet.vim`
+:functions: :doc:`autoload/plugins/wordnet_vim`
 
 ::
 
@@ -1854,7 +1854,7 @@ Use my custom maps::
 
         for [s:key, s:cmd] in [
         \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-        \   ['c', 'plugins#wordnet#close_win()'],
+        \   ['c', 'plugins#wordnet_vim#close_win()'],
         \ ]
             execute printf('nnoremap <silent> [wordnet]%s :call %s<CR>', s:key,
             \              s:cmd)

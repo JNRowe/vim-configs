@@ -20,4 +20,4 @@ Contents
     vim_sneak
     vim_startify
     vim_textobj_quote
-    wordnet.vim
+    wordnet_vim

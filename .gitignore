@@ -46,7 +46,7 @@ __pycache__/
 /autoload/plugins/vim_sneak.vim
 /autoload/plugins/vim_startify.vim
 /autoload/plugins/vim_textobj_quote.vim
-/autoload/plugins/wordnet.vim.vim
+/autoload/plugins/wordnet_vim.vim
 /autoload/completion.vim
 /autoload/display.vim
 /autoload/filetypes.vim

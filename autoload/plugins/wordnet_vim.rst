@@ -1,4 +1,4 @@
-``autoload/plugins/wordnet.vim.vim``
+``autoload/plugins/wordnet_vim.vim``
 ====================================
 
 .. function:: wordnet_close_win() -> None
@@ -7,7 +7,7 @@
 
 ::
 
-    function! plugins#wordnet#close_win() abort
+    function! plugins#wordnet_vim#close_win() abort
         if bufnr('__WordNet__') > -1
             exec bufnr('__WordNet__') . 'bdelete!'
         endif
