@@ -15,7 +15,8 @@ templates for licence generation at a project’s top level::
         \   ['LICENSE', 'MIT']
         \ ]
             let g:projectionist_heuristics[s:project_root_heuristic][s:f] = {
-            \   'template': readfile(expand('$PKG_LICENSE_DIR/') . s:t),
+            \   'template': readfile(printf('%s/%s',
+            \                               expand('$PKG_LICENSE_DIR'), s:t)),
             \   'type': tolower(split(s:t, '-')[0]),
             \ }
         endfor

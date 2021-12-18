@@ -10,6 +10,6 @@ Configure preferred order of completion::
 
     execute 'inoremap <silent> <Tab> ' .
     \   join(map(s:types,
-    \            {_, v -> '<C-r>=CleverTab#Complete("' . v . '")<CR>'}),
+    \            {_, v -> printf('<C-r>=CleverTab#Complete("%s")<CR>', v)}),
     \        '')
     inoremap <silent> <S-Tab> <C-r>=CleverTab#Complete('prev')<CR>

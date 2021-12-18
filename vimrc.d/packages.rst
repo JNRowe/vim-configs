@@ -10,8 +10,9 @@
 Enable ``:Cfilter`` for using enormously noisy compilers::
 
     for s:t in ['C', 'L']
-        execute 'command! -bang -nargs=+ ' . s:t . 'filter packadd cfilter |' .
-        \   s:t . 'filter<bang> <args>'
+        execute printf('command! -bang -nargs=+ %sfilter packadd cfilter | ' .
+        \              '%sfilter<bang> <args>',
+        \              s:t, s:t)
     endfor
 
 When using server mode ``editexisting`` makes using currently open files far

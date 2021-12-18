@@ -36,10 +36,12 @@ Date and time input, all of which could easily be replaced with equivalent
 snippets if I wasn’t so used to this now::
 
     for [s:key, s:fmt] in [['t', '%T'], ['d', '%F'], ['dt', '%FT%T%:z']]
-        silent execute 'inoreabbrev <expr> _' . s:key .
-        \   ' system("date +' . s:fmt . '")'
-        silent execute 'inoreabbrev <expr> _u' . s:key .
-        \   ' system("date -u +' . s:fmt . '")'
+        silent execute printf(
+        \   'inoreabbrev <expr> _%s systemlist("date +%s")[0]',
+        \   s:key, s:fmt)
+        silent execute printf(
+        \   'inoreabbrev <expr> _u%s systemlist("date -u +%s")[0]',
+        \   s:key, s:fmt)
     endfor
 
 .. note::

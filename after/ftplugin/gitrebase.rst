@@ -8,8 +8,8 @@ Use my custom maps::
     call keymaps#mnemonic_map('rebase', {'buffer': v:true, 'local': v:true})
 
     for s:verb in ['Cycle', 'Edit', 'Fixup', 'Pick', 'Reword', 'Squash']
-        execute 'nnoremap <silent> <buffer> [rebase]' . tolower(s:verb[0]) .
-        \   ' :' . s:verb .'<CR>'
+        execute printf('nnoremap <silent> <buffer> [rebase]%s :%s<CR>',
+        \              tolower(s:verb[0]), s:verb)
     endfor
 
 .. seealso::

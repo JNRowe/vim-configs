@@ -84,7 +84,7 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
     call menu#define_menu('&neomutt', {
     \   '&config': g:xdg_config_dir . '/neomutt/neomuttrc',
     \   'colours': g:xdg_config_dir . '/neomutt/colour_defaults.rc',
-    \   '&theme': g:xdg_config_dir . '/neomutt/colour_' . $TERM . '.rc',
+    \   '&theme': printf('%s/neomutt/colour_%s.rc', g:xdg_config_dir, $TERM),
     \ })
 
 .. tip::
@@ -155,7 +155,7 @@ For *some* editor::
     call menu#define_menu('&vim', {
     \   '&dein': '~/.vim/dein.rst',
     \   'r&c': '~/.vim/vimrc.rst',
-    \   'rc-&local': '~/.vim/localcfg/' . hostname() . '.vim',
+    \   'rc-&local': printf('~/.vim/localcfg/%s.vim', hostname()),
     \ })
 
 For wget_::

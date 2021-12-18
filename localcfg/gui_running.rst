@@ -81,13 +81,14 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
 ::
 
+    let s:fc_cmd = 'fc-list --quiet %s'
     for s:name in ['Consolas', 'Inconsolata', 'monospace']
-        silent call system('fc-list --quiet ' . shellescape(s:name . ' NF'))
+        silent call system(printf(s:fc_cmd, shellescape(s:name . ' NF')))
         if v:shell_error == 0
             let g:font_family = s:name . ' NF'
             break
         else
-            silent call system('fc-list --quiet ' . shellescape(s:name))
+            silent call system(printf(s:fc_cmd, shellescape(s:name)))
             if v:shell_error == 0
                 let g:font_family = s:name
                 break

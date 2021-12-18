@@ -36,12 +36,12 @@
         let l:local = get(l:extra, 'local', v:false) ? 'Local' : ''
         let l:modes = get(l:extra, 'modes', 'n')
         for l:mode in split(l:modes, '\zs')
-            execute l:mode . 'noremap ' . l:buffer . ' [' . a:name . '] <Nop>'
-            execute l:mode . 'map ' . l:buffer . ' <' . l:local . 'Leader>'
-            \   . l:key . ' [' . a:name . ']'
+            execute printf('%snoremap %s [%s] <Nop>', l:mode, l:buffer, a:name)
+            execute printf('%smap %s <%sLeader>%s [%s]', l:mode, l:buffer,
+            \              l:local, l:key, a:name)
         endfor
-        execute 'noremap <silent> [' . a:name . ']? '
-        \   ':filter /\[' . a:name . '\]/ map<CR>'
+        execute printf('noremap <silent> [%s]? :filter /\[%s\]/ map<CR>',
+        \              a:name, a:name)
     endfunction
 
 .. tip::
@@ -66,8 +66,8 @@
         else
             let l:cmd = a:cmd . '<CR>'
         endif
-        execute 'nnoremap <silent> [' . l:group . ']' . a:key . ' :' .
-        \   a:type . l:cmd
+        execute printf('nnoremap <silent> [%s]%s :%s%s', l:group, a:key,
+        \              a:type, l:cmd)
     endfunction
 
 .. function:: switch_buf(count: int) -> None

@@ -65,10 +65,11 @@ Use my custom maps::
     call keymaps#mnemonic_map('sideways', {'local': v:true})
 
     for s:key in ['Left', 'Right']
-        execute 'nnoremap <silent> [sideways]<' . s:key . '>' .
-        \   ' :<C-u>Sideways' . s:key . '<CR>'
-        execute 'nnoremap <silent> [sideways]<S-' . s:key . '>' .
-        \   ' :<C-u>SidewaysJump' . s:key . '<CR>'
+        execute printf('nnoremap <silent> [sideways]<%s> :<C-u>Sideways%s<CR>',
+        \              s:key, s:key)
+        execute printf(
+        \   'nnoremap <silent> [sideways]<S-%s> :<C-u>SidewaysJump%s<CR>',
+        \   s:key, s:key)
     endfor
 
 .. seealso::
@@ -117,7 +118,7 @@ Use :kbd:`<C-M-T>` to flip word under cursor to match my old
     \   ['n', ''],
     \   ['v', '<ESC>'],
     \ ]
-        execute s:mode . 'noremap <C-M-T> ' . s:cmd_prefix . ':Switch<CR>'
+        execute printf('%snoremap <C-M-T> %s:Switch<CR>', s:mode, s:cmd_prefix)
     endfor
 
 ``vim-bracketed-paste``
@@ -177,7 +178,7 @@ Configure maps to match, to some degree, my window manager’s configuration::
             let s:cmd = s:cmd[1:]
         endif
 
-        execute 'nnoremap <silent> [dwm]' . s:key . ' :<C-u>' . s:cmd . '<CR>'
+        execute printf('nnoremap <silent> [dwm]%s :<C-u>%s<CR>', s:key, s:cmd)
     endfor
 
 .. seealso::
@@ -306,8 +307,8 @@ Use my custom maps::
         \   ['p',       'PreviewHunk'],
         \   ['q',       'QuickFix'],
         \ ]
-            execute 'nnoremap <silent> [gitgutter]' . s:key . ' '
-            \   ':GitGutter' . s:cmd . '<CR>'
+            execute printf('nnoremap <silent> [gitgutter]%s :GitGutter%s<CR>',
+            \              s:key, s:cmd)
         endfor
     endif
 
@@ -625,7 +626,7 @@ Use my custom maps::
         \   ['<Down>', 'next_wrap'],
         \   ['<Up>',   'previous_wrap'],
         \ ]
-            execute 'nmap <silent> [ale]' . s:key . ' <Plug>(ale_' . s:cmd . ')'
+            execute printf('nmap <silent> [ale]%s <Plug>(ale_%s)', s:key, s:cmd)
         endfor
         nmap <silent> [ale]i :call ale#debugging#Info()<CR>
     endif
@@ -1028,8 +1029,8 @@ Configure convenience mappings for common command usage::
 
         call keymaps#mnemonic_map('fzf', {'key': '`'})
         for s:cmd in s:fzf_commands
-            execute 'nmap <silent> [fzf]' . tolower(s:cmd[0]) . ' ' .
-            \   ':FZF' . s:cmd . '<CR>'
+            execute printf('nmap <silent> [fzf]%s :FZF%s<CR>',
+            \              tolower(s:cmd[0]), s:cmd)
         endfor
 
 .. seealso::
@@ -1278,8 +1279,9 @@ Use my custom maps::
             let s:cmd = s:cmd[1:]
         endif
 
-        execute 'autocmd Filetype ledger nnoremap <silent> [Ledger]' .
-        \   s:key . ' :' . s:cmd . '<CR>'
+        execute printf(
+        \   'autocmd Filetype ledger nnoremap <silent> [Ledger]%s :%s<CR>',
+        \   s:key, s:cmd)
     endfor
 
 .. seealso::
@@ -1335,8 +1337,8 @@ Use my custom maps::
     \   ['f', 'T'],
     \   ['r', 'VR'],
     \ ]
-        execute 'nnoremap <silent> [Calendar]' . s:key . ' '
-        \   ':Calendar' . s:cmd . '<CR>'
+        execute printf('nnoremap <silent> [Calendar]%s :Calendar%s<CR>',
+        \              s:key, s:cmd)
     endfor
 
 .. seealso::
@@ -1659,8 +1661,9 @@ Use my custom maps::
         \   ['<PageDown>', '-scroll-down-page'],
         \   ['<PageUp>',   '-scroll-up-page'],
         \ ]
-            execute 'nmap <silent> [messenger]' . s:key .
-            \   ' <Plug>(git-messenger' . s:cmd . ')'
+            execute printf(
+            \   'nmap <silent> [messenger]%s <Plug>(git-messenger%s)',
+            \   s:key, s:cmd)
         endfor
     endif
 
@@ -1853,7 +1856,8 @@ Use my custom maps::
         \   ['o', 'WordNetOverviews(expand("<cword>"))'],
         \   ['c', 'plugins#wordnet#close_win()'],
         \ ]
-            execute 'nmap <silent> [wordnet]' . s:key . ' :call ' . s:cmd . '<CR>'
+            execute printf('nnoremap <silent> [wordnet]%s :call %s<CR>', s:key,
+            \              s:cmd)
         endfor
     endif
 

@@ -126,7 +126,7 @@ If a wordlist is available use it as the completion dictionary::
 
 Keep swap files in |XDG basedir| compliant location::
 
-    let &directory = g:vim_cache_dir . '/swap//,' . &directory
+    let &directory = printf('%s/swap//,%s', g:vim_cache_dir, &directory)
     if !isdirectory(g:vim_cache_dir . '/swap')
         call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
     endif
@@ -193,9 +193,9 @@ When :repo:`the_silver_searcher <ggreer/the_silver_searcher>` is installed
         set grepprg=ag\ --vimgrep
         set grepformat=%f:%l:%c:%m
     else
-        let &grepprg = 'grep -nH '
-        \   . '--exclude-from=' . g:xdg_data_dir . '/grep_excludes '
-        \   . '$* /dev/null'
+        let &grepprg = printf(
+        \   'grep -nH --exclude-from=%s/grep_excludes $* /dev/null',
+        \   g:xdg_data_dir)
     endif
 
 .. note::
@@ -395,7 +395,7 @@ with :kbd:`zg`::
     if has('spell')
         set spell
         let s:lang = split(v:lang, '\.')[0]
-        execute 'set spellfile=~/.vim/spell/' . s:lang . '.utf-8.add'
+        execute printf('set spellfile=~/.vim/spell/%s.utf-8.add', s:lang)
         execute 'set spelllang=' . tolower(s:lang)
     endif
 
@@ -455,7 +455,7 @@ compliant location::
 
     if has('persistent_undo')
         set undofile
-        let &undodir = g:vim_data_dir . '/undo//,' . &undodir
+        let &undodir = printf('%s/undo//,%s', g:vim_data_dir, &undodir)
         if !isdirectory(g:vim_data_dir . '/undo')
             call mkdir(g:vim_data_dir . '/undo', 'p', 0700)
         endif

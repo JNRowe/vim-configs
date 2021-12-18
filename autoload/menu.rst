@@ -14,8 +14,8 @@
         for l:f in sort(a:files)
             let l:f = expand(l:f)
             if filereadable(l:f) || isdirectory(l:f)
-                execute 'amenu L&ocations.' . escape(a:heading, ' ') .
-                \   ' :e ' . l:f . '<CR>'
+                execute printf('amenu L&ocations.%s :e %s<CR>',
+                \              escape(a:heading, ' '), l:f)
                 break
             endif
         endfor
@@ -52,8 +52,8 @@
             call s:add_menu_items(a:heading, l:files)
         endif
         for l:group in get(a:, 1, [])
-            execute 'amenu L&ocations.' . escape(a:heading, ' ') .
-            \   '.-Sep- :<CR>'
+            execute printf('amenu L&ocations.%s.-Sep- :<CR>',
+            \              escape(a:heading, ' '))
             call menu#define_menu(a:heading, l:group)
         endfor
     endfunction

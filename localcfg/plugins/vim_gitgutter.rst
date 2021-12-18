@@ -49,8 +49,8 @@ Use fancy icons for signs, if possible::
         \                   'ModifiedRemoved']
         \ })
             for s:sign in s:signs
-                execute 'sign define GitGutterLine' . s:sign .
-                \   ' icon=' . expand('~/.vim/icons/' . s:icon . '.png')
+                execute printf('sign define GitGutterLine%s icon=%s%s.png',
+                \              s:sign, expand('~/.vim/icons/'), s:icon)
             endfor
         endfor
     endif

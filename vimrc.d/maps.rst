@@ -26,8 +26,8 @@ I hate you *so* much right now::
 
     if exists('$VIM_DISABLE_CURSORS')
         for s:k in ['Up', 'Down', 'Left', 'Right']
-            execute 'nnoremap <' . s:k . '> <nop>'
-            execute 'inoremap <' . s:k . '> <nop>'
+            execute printf('nnoremap <%s> <nop>', s:k)
+            execute printf('inoremap <%s> <nop>', s:k)
         endfor
     endif
 
@@ -62,7 +62,8 @@ Map :kbd:`Q` to reformat paragraphs just as everyone else does::
 
 Easy access to man pages when using a custom ``'keywordprg'``::
 
-    nnoremap <silent> <C-?> :<C-U>execute 'Man ' . v:count . ' <C-R><C-W>'<CR>
+    nnoremap <silent> <C-?>
+    \   :<C-U>execute printf('Man %d <C-R><C-W>', v:count)<CR>
 
 Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
@@ -133,7 +134,7 @@ Help related maps::
     call keymaps#mnemonic_map('Help', {'key': '?'})
 
     for s:t in ['function-list', 'pattern', 'quickref', 'registers']
-        execute 'nnoremap [Help]' . s:t[0] . ' :help ' . s:t . '<CR>'
+        execute printf('nnoremap [Help]%.1s :help %s<CR>', s:t, s:t)
     endfor
 
     nnoremap <silent> [Help]c :helpclose<CR>
@@ -187,8 +188,8 @@ a feature, but thanks for the idea!
         \   ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
         \   ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']
         \ ]
-            execute s:m . 'noremap <' . s:mod . 'ScrollWheel' . s:key . '> '
-            \   . s:break_insert . s:cmd
+            execute printf('%snoremap <%sScrollWheel%s> %s%s', s:m, s:mod,
+            \              s:key, s:break_insert, s:cmd)
         endfor
     endfor
 
@@ -197,8 +198,8 @@ stretching:::
 
     if has('insert_expand')
         for s:key in split('lnkti]fdvuos', '\zs')
-            execute 'inoremap <silent> <LocalLeader>,' . s:key .
-            \   ' <C-x><C-' . s:key . '>'
+            execute printf('inoremap <silent> <LocalLeader>,%s <C-x><C-%s>',
+            \              s:key, s:key)
         endfor
     endif
 
@@ -226,7 +227,7 @@ Highlight matches for last search only within visual region::
 
     if has('extra_search')
         vnoremap <silent> [Display]ms
-        \   :<C-u>execute 'match Search /\%V' . getreg('/') . '\%V/'<CR>
+        \   :<C-u>execute printf('match Search /\%%V%s\%%V/', getreg('/'))<CR>
         nnoremap <silent> [Display]mc :match none<CR>
     endif
 
@@ -238,13 +239,15 @@ Quickly correct close spelling mistakes without changing cursor position::
     for s:dir in ['[', ']']
         for s:type in ['bad', 'full']
             for s:auto in [v:false, v:true]
-                execute 'nnoremap <silent> [Spell]' .
-                \   (s:auto ? '' : 'q') .
-                \   (s:dir ==# ']' ? 'n' : 'l') .
-                \   (s:type ==# 'bad' ? 'W' : 'w') . ' ' .
-                \   ':call misc#preserve_layout("normal! ' . s:dir .
-                \   (s:type ==# 'bad' ? 'S' : 's') .
-                \   (s:auto ? '1' :'' ) . 'z=")<CR>'
+                execute printf(
+                \   'nnoremap <silent> [Spell]%s%s%s ' .
+                \   ':call misc#preserve_layout("normal! %s%s%sz=")<CR>',
+                \   s:auto ? '' : 'q',
+                \   s:dir ==# ']' ? 'n' : 'l',
+                \   s:type ==# 'bad' ? 'W' : 'w',
+                \   s:dir,
+                \   s:type ==# 'bad' ? 'S' : 's',
+                \   s:auto ? '1' :'')
             endfor
         endfor
     endfor
@@ -262,13 +265,15 @@ Quickly add close words to dictionaries without changing cursor position::
     for s:dir in ['[', ']']
         for s:type in ['bad', 'full']
             for s:local in [v:false, v:true]
-                execute 'nnoremap <silent> [Spell]' .
-                \   (s:dir ==# ']' ? 'n' : 'l') .
-                \   (s:local ? 'A' : 'a') .
-                \   (s:type ==# 'bad' ? 'W' : 'w') . ' ' .
-                \   ':call misc#preserve_layout("normal! ' . s:dir .
-                \   (s:type ==# 'bad' ? 'S' : 's') .
-                \   'z' . (s:local ? 'G' :'g') . '<CR>'
+                execute printf(
+                \   'nnoremap <silent> [Spell]%s%s%s ' .
+                \   ':call misc#preserve_layout("normal! %s%sz%s")<CR>',
+                \   s:dir ==# ']' ? 'n' : 'l',
+                \   s:local ? 'A' : 'a',
+                \   s:type ==# 'bad' ? 'W' : 'w',
+                \   s:dir,
+                \   s:type ==# 'bad' ? 'S' : 's',
+                \   s:local ? 'G' :'g')
             endfor
         endfor
     endfor

@@ -17,13 +17,13 @@
         endif
         if getline('.')[0] =~# '\s'
             let w:line_highlights += [
-            \   matchadd('LineHighlightPrefix', '\%' . line('.') . 'l^\s\+',
-            \            1000),
+            \   matchadd('LineHighlightPrefix',
+            \            printf('\%%%dl^\s\+', line('.')), 1000),
             \ ]
         endif
         let w:line_highlights += [
-        \   matchadd('LineHighlightText', '\%' . line('.') . 'l^\s*\zs.*$',
-        \            1000),
+        \   matchadd('LineHighlightText',
+        \            printf('\%%%dl^\s*\zs.*$', line('.')), 1000),
         \ ]
     endfunction
 
@@ -108,8 +108,8 @@
     function! display#fold_text() abort
         return substitute(
         \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
-        \   {m -> repeat('─', v:foldlevel) . ' ' .
-        \         <SID>shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
+        \   {m -> printf('%s %s▼ %d lines', repeat('─', v:foldlevel),
+        \                <SID>shorten(m[3], m[2]), m[2])},
         \   ''
         \ )
     endfunction

@@ -18,12 +18,12 @@ isn’t available::
 
     if !has('terminal')
         if $TERMINAL ==# 'st' || $TERMINAL ==# 'urxvtc'
-            let g:fzf_launcher = $TERMINAL . ' -e ' . $SHELL . ' -c %s'
+            let g:fzf_launcher = printf('%s -e %s -c %%s', $TERMINAL, $SHELL)
         elseif executable('st')
-            let g:fzf_launcher = 'st -e ' . $SHELL . ' -c %s'
+            let g:fzf_launcher = printf('st -e %s -c %%s', $SHELL)
         elseif executable('urxvtc')
-            let g:fzf_launcher = 'urxvtc -e ' . $SHELL . ' -c %s'
+            let g:fzf_launcher = printf('urxvtc -e %s -c %%s', $SHELL)
         else
-            let g:fzf_launcher = 'xterm -e ' . $SHELL . ' -ic %s'
+            let g:fzf_launcher = printf('xterm -e %s -ic %%s', $SHELL)
         endif
     endif

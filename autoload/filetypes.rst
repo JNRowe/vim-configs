@@ -16,7 +16,7 @@
         let l:body_sep = search('^$', 'c')
         if l:body_sep != 0
             call append(l:body_sep - 1,
-            \           'X-advice: ' . a:prio . ' read ' . a:due)
+            \           printf('X-advice: %s read %s', a:prio,a:due))
             if l:view.lnum + 1 >= l:body_sep
                 let l:view.lnum += 1
             endif
@@ -49,8 +49,9 @@
         if l:value ==# ''
             return
         endif
-        call misc#preserve_layout(':%!git interpret-trailers ' .
-        \   '--trailer ' . a:key . '-by=' . shellescape(l:value))
+        call misc#preserve_layout(
+        \   printf(':%%!git interpret-trailers --trailer %s-by=%s',
+        \          a:key, shellescape(l:value)))
     endfunction
 
 .. function:: diff_maps() -> None
@@ -69,8 +70,8 @@
         \   ['g', 'diffget'],
         \   ['u', 'diffupdate'],
         \ ]
-            execute 'nnoremap <silent> <buffer> [diff]' . s:key . ' :' .
-            \   s:cmd . '<CR>'
+            execute printf('nnoremap <silent> <buffer> [diff]%s :%s<CR>',
+            \              s:key, s:cmd)
         endfor
 
         vnoremap <silent> <buffer> < :diffget<CR>
@@ -90,7 +91,7 @@
     function! filetypes#kill_to_signature() abort
         let l:sig = search('^-- $', 'nW')
         if l:sig != 0
-            execute line('.') . ',' . (l:sig - 1) . 'd "_'
+            execute printf('%d,%dd "_', line('.'), (l:sig - 1))
         else
             let v:warningmsg = 'Signature not found!'
             echohl WarningMsg

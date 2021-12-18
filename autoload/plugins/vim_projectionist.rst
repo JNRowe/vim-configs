@@ -43,7 +43,7 @@
                     execute 'setlocal ' . l:s
                 else
                     echohl WarningMsg
-                    echo 'Not setting “' . l:optname . '” from projection'
+                    echo printf('Not setting “%s” from projection', l:optname)
                     echohl None
                 endif
             endfor

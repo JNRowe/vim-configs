@@ -25,10 +25,12 @@ it here.
             let s:hl = misc#title_word(s:v) . 'MSG'
         endif
         unlet s:v
-        execute 'sign define ' .
-        \   'Signature_' . s:k . '_SignatureMarkerText_SignatureMarkerLine' .
-        \   ' icon=' . expand('~/.vim/icons/' . s:icon . '.png') .
-        \   ' text=' . toupper(s:icon[0] . s:icon[0]) . ' texthl=' . s:hl
+        execute printf(
+        \   'sign define ' .
+        \   'Signature_%s_SignatureMarkerText_SignatureMarkerLine ' .
+        \   'icon=%s%s.png text=%s texthl=%s',
+        \   s:k, expand('~/.vim/icons/'), s:icon,
+        \   toupper(s:icon[0] . s:icon[0]), s:hl)
     endfor
 
 .. seealso::

@@ -53,8 +53,8 @@ number::
 
     if has('gui_running')
         for s:k in ['Error', 'Info', 'Warning']
-            execute 'sign define ALE' . s:k . 'Sign icon=' .
-            \   expand('~/.vim/icons/' . tolower(s:k) . '.png')
+            execute printf('sign define ALE%sSign icon=%s%s.png', s:k,
+            \              expand('~/.vim/icons/'), tolower(s:k))
         endfor
     endif
 

@@ -27,8 +27,8 @@ My current indentation rules result favour this::
     function! display#fold_text() abort
         return substitute(
         \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
-        \   {m -> repeat('─', v:foldlevel) . ' ' .
-        \         <SID>shorten(m[3], m[2]) . '▼ ' . m[2] . ' lines'},
+        \   {m -> printf('%s %s▼ %d lines', repeat('─', v:foldlevel),
+        \                <SID>shorten(m[3], m[2]), m[2])},
         \   ''
         \ )
     endfunction

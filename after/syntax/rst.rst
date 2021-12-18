@@ -26,12 +26,13 @@ Show pretty bullets for unordered lists::
 Show pretty markers for ordered lists::
 
     for s:n in range(1, 10)
-        execute 'syntax match rstList "^' . s:n . '\.\ze " conceal cchar=' .
-        \   nr2char(9351 + s:n)
+        execute printf('syntax match rstList "^%d\.\ze " conceal cchar=%s',
+        \              s:n, nr2char(9351 + s:n))
     endfor
     for s:n in range(1, 12)
-        execute 'syntax match rstList "^\s\+' . s:n . '\.\ze "hs=e-1 conceal cchar=' .
-        \   nr2char(8559 + s:n)
+        execute printf('syntax match rstList "^\s\+%d\.\ze "hs=e-1 ' .
+        \              'conceal cchar=%s',
+        \              s:n, nr2char(8559 + s:n))
     endfor
 
 .. spelling::

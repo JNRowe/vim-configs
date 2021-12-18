@@ -13,7 +13,7 @@
             return
         endif
         if !exists('b:meta_spell')
-            let l:spf = b:meta_dir . &spelllang . '.' . &encoding . '.add'
+            let l:spf = printf('%s%s.%s.add', b:meta_dir, &spelllang, &encoding)
             if filereadable(l:spf)
             \   && index(split(&spellfile, ','), l:spf) == -1
                 execute 'setlocal spellfile+=' . l:spf
@@ -22,10 +22,13 @@
         endif
         for l:file in ['abbr.vim', 'project.vim']
             let l:var = 'b:meta_' . fnamemodify(l:file, ':r')
-            if !exists(l:var) && filereadable(b:meta_dir . '/' . l:file)
-                execute 'source ' . b:meta_dir . '/' . l:file
+            if !exists(l:var)
+                let l:file_path = b:meta_dir . '/' . l:file
+                if filereadable(l:file_path)
+                    execute 'source ' . l:file_path
+                endif
             endif
-            execute 'let ' . l:var . ' = v:true'
+            execute printf('let %s = v:true', l:var)
         endfor
     endfunction
 
@@ -46,7 +49,7 @@
         else
             set makeprg=make
         endif
-        execute 'make -C ' . getcwd() . ' ' . get(a:, 1, '')
+        execute printf('make -C %s %s', getcwd(), get(a:, 1, ''))
     endfunction
 
 .. note::
@@ -65,7 +68,7 @@
 ::
 
     function! misc#disable_plugin(str) abort
-        execute 'let g:loaded_' . a:str . ' = v:true'
+        execute printf('let g:loaded_%s = v:true', a:str)
     endfunction
 
 .. function:: edit_project_file(name: str) -> None
@@ -84,7 +87,7 @@
         if !isdirectory(b:meta_dir)
             call mkdir(b:meta_dir, 'p')
         endif
-        execute ':edit ' . b:meta_dir . '/' . a:name
+        execute printf(':edit %s/%s', b:meta_dir, a:name)
     endfunction
 
 .. function:: insert_options() -> None
@@ -118,8 +121,9 @@
             endif
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
-            silent let l:output = systemlist('git -C ' . shellescape(l:p) .
-            \                                ' rev-parse --show-toplevel')
+            let l:cmd = printf('git -C %s rev-parse --show-toplevel',
+            \                  shellescape(l:p))
+            silent let l:output = systemlist(l:cmd)
             if v:shell_error == 0 && len(l:output) == 1
                 return s:project_env_dir . l:output[0]
             endif
@@ -128,7 +132,7 @@
             let l:break = ''
             while l:p !=# l:break
                 if isdirectory(l:p . '/.meta')
-                    return s:project_env_dir . l:p . '/.meta'
+                    return printf('%s%s/.meta', s:project_env_dir, l:p)
                 endif
                 let l:break = l:p
                 let l:p = fnamemodify(l:p, ':h')
@@ -152,7 +156,7 @@
 ::
 
     function! misc#modeline_stub(verbose) abort
-        let l:x = ' vim: ft=' . &filetype . (&expandtab ? '' : ' noet')
+        let l:x = printf(' vim: ft=%s%s', &filetype, &expandtab ? '' : ' noet')
         if a:verbose
             let l:x .= printf(
             \   ' ts=%d sw=%d tw=%d fdm=%s%s',
@@ -227,8 +231,8 @@
         \                       {_, s -> strdisplaywidth(s)}))
         let l:bound = &textwidth == 0 ? l:max_len : min([l:max_len, &textwidth])
         let l:perf = (l:bound / 2) - 1
-        let l:marker = repeat('-', l:perf) . '%s' .
-        \   repeat('-', l:perf + (l:perf % 2))
+        let l:marker = printf('%s%%s%s', repeat('-', l:perf),
+        \                     repeat('-', l:perf + (l:perf % 2)))
 
         call append(a:firstline - 1, printf(l:marker, '8<'))
         call append(a:lastline + 1, printf(l:marker, '>8'))
@@ -265,7 +269,7 @@
             " Comma lists options like 'cot'
             let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
         endif
-        execute 'set ' . a:option . l:flip . '=' . a:flag
+        execute printf('set %s%s=%s', a:option, l:flip, a:flag)
     endfunction
 
 .. function:: version() -> str

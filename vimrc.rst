@@ -101,8 +101,8 @@ Pull in build dependent configuration files::
     endif
     for s:feature in ['autocmd', 'diff', 'notgui_macvim', 'gui_running',
     \                 'menu', 'quickfix', 'spell']
-        let s:feature_file = '~/.vim/localcfg/' . (!has(s:feature) ? 'not' : '') .
-        \   s:feature . '.vim'
+        let s:feature_file = printf('~/.vim/localcfg/%s%s.vim',
+        \                           !has(s:feature) ? 'not' : '', s:feature)
         if filereadable(expand(s:feature_file))
             execute 'source ' . s:feature_file
         endif

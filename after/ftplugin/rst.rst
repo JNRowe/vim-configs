@@ -9,10 +9,9 @@ This creates |reST| headings using *my* favourite adornments::
 
     for s:level in [1, 2, 3]
         for s:pad in [v:true, v:false]
-            execute 'nnoremap <silent> <buffer> [Heading]' .
-            \   (s:pad != v:true ? 's' : '') . s:level . ' ' .
-            \   ':call filetypes#make_reST_header(' . s:level . ', ' .
-            \   s:pad . ')<CR>'
+            execute printf('nnoremap <silent> <buffer> [Heading]%s%d ' .
+            \              ':call filetypes#make_reST_header(%d, %s)<CR>',
+            \              s:pad != v:true ? 's' : '', s:level, s:level, s:pad)
         endfor
     endfor
 
