@@ -146,8 +146,7 @@ Excellent window management, it really does bring dwm_ simplicity to |vim|!
 ::
 
     call dein#add('JNRowe/dwm.vim', {
-    \   'on_func': plugins#dein#prefix('DWM_',
-    \                                  ['Close', 'Focus', 'New', 'Rotate']),
+    \   'on_map': {'n': '<Plug>DWM'},
     \ })
 
 .. _dwm-custom-maps:
@@ -162,23 +161,16 @@ Configure maps to match, to some degree, my window manager’s configuration::
 
     for [s:key, s:cmd] in [
     \   ['n',       'New'],
-    \   ['c',       ':exe DWM_Close'],
+    \   ['c',       'Close'],
     \   ['f',       'Focus'],
-    \   ['<Left>',  'Rotate(0)'],
-    \   ['<Right>', 'Rotate(1)'],
+    \   ['<Left>',  'RotateCounterclockwise'],
+    \   ['<Right>', 'RotateClockwise'],
     \   ['<Up>',    'New'],
-    \   ['<Down>',  ':exe DWM_Close'],
+    \   ['<Down>',  'Close'],
+    \   ['+',       'GrowMaster'],
+    \   ['-',       'ShrinkMaster'],
     \ ]
-        if stridx(s:cmd, '(') == -1
-            let s:cmd .= '()'
-        endif
-        if s:cmd[0] !=# ':'
-            let s:cmd = 'call DWM_' . s:cmd
-        else
-            let s:cmd = s:cmd[1:]
-        endif
-
-        execute printf('nnoremap <silent> [dwm]%s :<C-u>%s<CR>', s:key, s:cmd)
+        execute printf('nmap <silent> [dwm]%s <Plug>DWM%s', s:key, s:cmd)
     endfor
 
 .. seealso::
