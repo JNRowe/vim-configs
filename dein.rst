@@ -2152,6 +2152,11 @@ documentation a relatively painless task.
     \   'on_map': {'n': '<C-w>o'},
     \ })
 
+.. tip::
+
+    Should you need the standard behaviour for :kbd:`<C-w>o`, then it still
+    available as ``:only``.
+
 ``braceless.vim``
 '''''''''''''''''
 

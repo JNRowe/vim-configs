@@ -36,6 +36,7 @@ Bug reports
 Ideas
 '''''
 
+* David Fearnley
 * Manjeet Singh
 * Nathan McGregor
 

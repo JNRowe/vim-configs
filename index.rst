@@ -106,6 +106,7 @@ Bug reports
 Ideas
 '''''
 
+* David Fearnley
 * Manjeet Singh
 * Nathan McGregor
 
@@ -126,6 +127,7 @@ the problem, or even better a patch that fixes it!
 .. spelling::
 
     Beauchemin
+    Fearnley
     Manjeet
     configs
     testcase
