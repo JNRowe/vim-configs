@@ -4,31 +4,313 @@
 
 ### BLAME_IGNORE_TAG: Generated from main {{{
 
+# [QA] Fixed sorting in vundle list.
+6761c94500bb6cf8ef51c1b3ca221cfc80569929
+
+# [QA] reST wrapping fixes.
+d581a2886c65ef85b984320d6c9e4f8059eae6d8
+
+# [Tr] Whitespace fix.
+633f8628f8633d326c0b8a4c43e75005a2e110aa
+
+# [Tr] Whitespace clean up
+3b5d3e86f87783565274a88573b0004a5e2d0db0
+
+# [QA] Remove unnecessary parens from conditionals
+8788af0946469ed47ccb6828198d98ecddb0d089
+
+# [QA] Fix branch indenting in neobundle config
+b959631dcf132422f1d3bc96dce8728272b55f7c
+
+# [Tr] More whitespace between bundle definitions
+c335e63997225c07da9891a9516035bc0570f3ad
+
+# [Tr] Anchor git ignores
+eb5e7235739719fb2836d4d093b9a536afa04bd7
+
+# [Tr] Whitespace cleanup
+b0a99f54f02bfed6974af01ce4876422ca9d5520
+
+# [Tr] Unify end/endif usage
+283dcfe663518df5998bc9e08a33f845c6098b11
+
+# [Tr] Fix sorting in filetype.vim
+0839661c1bc1d7bce25e14f70f1660479a52bb2a
+
+# [Tr] Unify command for abbreviations
+34dd41611a253c7a9b918c8a185b0f732f7bd07b
+
+# [Tr] Sort options for neocomplete
+6796b9815a00c075f469ca56a3fadc3f88cad06a
+
+# [Tr] Whitespace fixes
+83e11261fdc67590a762595b625963d5f67ec148
+
+# [Tr] Formatting clean up
+62bcd2bf8861813dcd7325cfc8dedab7958f510f
+
+# [Tr] Fix ordering of bundle definitions
+8d65da580b006f60502bff410779305fc8781f1e
+
+# [Tr] Fix bundle option ordering
+12742e93259eaba4ecfb8613ccbfdc7940568538
+
+# [Tr] Fix ordering of filetype/syntax setup
+67351d45f48c010454cde49826bbf31aa9ae8a08
+
+# [Tr] Don't use abbreviated option names
+b79f1e7f8afcbd4c3311f40d8abcdb32bcc1cae4
+
+# [Tr] Remove unnecessary fold markers
+6424950a1ad6b6f768d6c18ad1bba21c15acc924
+
+# [QA] Take advantage of v:{false,true}
+9647304a04a07fecc8cbd0f898fe49093fe51497
+
+# [QA] Favour v:t_<type> type(<type>)
+fcdcb19dd3266bf8fbf7e7d26436294f9eea7808
+
+# [Tr] Minor wrapping fix
+80b16b0a7a5fefecb592d631b9a6102fbdd05650
+
+# [Tr] Minor whitespace fixes
+bd6eef0d7b829c844920918dfd76e4c9c23a16b2
+
+# [Tr] Use proper quotes in comments
+429fede9a4c71fdda2443a1fa2eacfcd0f5b10f9
+
+# [Tr] Fix sorting of syntastic
+207273a358e6e63bcc186340616d84cb2a93d7eb
+
+# [QA] Take advantage of v:{false,true}
+444f6d700741e29b8e08a96692de5b0d36cadb7c
+
+# [Tr] Fix sorting of options
+064f06c62f42221f523a7c328adf8c9b15b62b19
+
+# [Tr] Case fix
+67177bd38cd96732e07d7befc11490b8fe9f847c
+
+# [QA] Sort settings in syntax.vim
+248c50eb63d8b9491a4590a711a1947055516b05
+
+# [Tr] Minor endif style fix
+7421f7fbb120091555ae7cc24dff52ec9d4c5c27
+
+# [QA] Use :setfiletype
+62bc4b342c30ebd701f60be623ae2ef5374a9578
+
+# [Tr] Minor comment typo fixes
+1089df8b1c88d1d643d054062df1c3b560c0804f
+
+# [Tr] Shortened :ia annoys me
+87498262d0820d4f1b4342a8251484d4051675ef
+
+# [Tr] Fix capitalisation of maps
+2919886d925b3b866dc24b7ddacd93f191b807ae
+
+# [vim-airline] [Tr] Use v:true
+4f67048492dafdc52711bb2ef42e679f6b507fb0
+
+# [Tr] Fix dict sorting
+b1319de073638bbc1183da03ed45d5729cbc660e
+
+# [Tr] Punctuation fix
+a14867e06d0a18961a00da869030a662b3d62045
+
+# [Tr] Minor whitespace fixes
+e7262931c1cc0d7ca20f6382464f17a66d1cec76
+
+# [rainbow] [Tr] Use v:true
+e6e862f7a9b82ccbed02cc094b8763065fd14e1c
+
+# [Tr] Typo fix
+98f68b45c6e53258c509f59304a500fb21ad2df3
+
+# [Tr] Minor grammar fixes
+d9c70b5255be04552a9145f97a022fd042540657
+
 # [Tr] Minor whitespace fix
-025cbec9469b13f080d42277ed577458ea68e8fb
+7a24e83528f782ab71f99e625893e12a1d0ce6b6
 
-# [QA] Minor whitespace fixes
-fdee7c7fa3fe09a8c38a8be19bb9ee335c258965
+# [QA] Use default code blocks
+149e5ee82cd8db0a53291b2f2f870e6f7397769e
 
-# [QA] Reformat with black
-0d27f355bb1f6f0fa4a517577749346aef05a449
+# [Tr] Minor reST formatting fixes
+505a5099b26ca509b2fb797477506d46831b3b3d
 
-# [QA] Reformat with black
-383f119fe3dbe0bd386488b4e323e71d981deab6
+# [Tr] Make GitHub links uniform
+d49f20fb51c7d6f53c3f0b6ecff7a260605fc32f
+
+# [QA] [Tr] Minor PEP-257 improvements
+09f8499716dda5cb5a8a17fef865fec9af434848
+
+# [QA] Small typo fixes
+9c5dc50ecc54787ef6c5023b29865c4e951846c9
+
+# [Tr] Minor grammar fixes
+e4898009968c0ff55956c6b13f8d497ce4d7a713
 
 # [Tr] Unify quote style
-8f476ef800428325c695b73f9cea9dcc27b37c51
+6e36d08413905ac17d5aa720d37b27affa5b3fdd
+
+# [Tr] Minor whitespace fix
+8bc759b139d10098dc6a6f7bc6d495787db95294
+
+# [QA] Reformat with yapf
+88d3dda302ca55f6d98a21928575eb68a96a7114
+
+# [Tr] Minor style fix
+feca21b2c26d1d2aabe1552ff5e88f4318ac1f15
+
+# [Tr] Minor reST markup fixes
+30cc527c88f4d21dcb0ed209195f149d7ab5ca83
+
+# [Tr] Minor grammar fixes
+f3455525a531f1f563345b0427a05be3d9cf15d7
+
+# [Tr] Bump copyright years
+e7a0cc5aaa7ed9682e22fad9c325ab586c16d750
+
+# [Tr] Many minor grammar fixes
+e5db7fd8b4f3311634cb205e258ad466d0914220
+
+# [QA] Add additional reST markup
+a04145eb59d1266dd8a2ceefd77522de380ed121
+
+# [QA] Use auto-numbered footnotes
+53d5946e2ce9283feabf109e5abe574e31c14930
+
+# [Tr] Minor whitespace fixes
+64764b45a28be68c2e5e31772cc12b9b5930b18c
+
+# [Tr] Minor reST syntax fixes
+23f4654f38b45f57f6125aeb980b63a0293650a7
+
+# [QA] Reformat with yapf
+8aebe9988f74f624e3411315a4f0d1183036375a
+
+# [Tr] Minor markup fix
+2e3684c353dadd075200ee5ae50a6913733c5534
+
+# [Tr] Minor reST fix
+ea5213ee0ebaeadec1f9fec734e60db567d2fcf9
+
+# [Tr] Minor reST fix
+abe93416fe0b8577533ab658126891bf01886859
+
+# [Tr] Small grammar fix
+21072c61334aa9f5606d0d98e46c825bfad106ab
+
+# [Tr] Minor typo fix
+485b824423a6048266676ebdb69e00d55808710b
+
+# [Tr] Minor grammar fix
+926325a938e5fca221eeacc364f7f905dd1c5f39
 
 # [Tr] Whitespace fix
-cbee01c945c73688e55017039870290eaf5c094a
+2e0adc6676703244805beb005f9e2c5ff9fdcd19
 
-# [QA] Reformat with yapf
-fb80cae72664b7242e876aa042d960d8c98c68cb
+# [Tr] Unify quote style
+e233c60b9c83a629312db1568a74e35fc2478df3
 
-# [Tr] Drop f-string usage
-60cbc08df628344d47b7a0de6351b251107497e6
+# [Tr] Sort ignore list
+22efaab889b87e1dbd81055ce08ede494ff621a9
 
-# [QA] Reformat with yapf
-acd54c4d1017620bd486845ed97be8ef459ef8b9
+# [Tr] Bump copyright years
+49582810ed2575486df01b50931f3d4793e932bf
+
+# [Tr] Typo fixes
+ba77a56579a54f3e5e6a143bb99fcb020f52bf0e
+
+# [Tr] Re-sort project info settings
+f8b17ae4e776140689c04712d7c62255829bd4d4
+
+# [Tr] Minor markup fix
+cb8b7e3eb24b05f9bef5a679805ac55a67431aea
+
+# [Tr] Minor grammar fix
+d4d83759a4b5768c643df018fc2ea0cef10c0ab3
+
+# [Tr] Minor grammar fix
+7b1693a9f47ca2f648518046b51834437ccb0181
+
+# [QA] Reformat with black
+b50f62726ee15c0e7fa92370bcc3b5dc23c3c69e
+
+# [QA] Reformat with black
+8f8eecccb2ffe22c71a5f984f863ed5c21810049
+
+# [Tr] Bump copyright years
+7cc6917baf284a192e001d1ab05b888a3d681363
+
+# [Tr] Minor grammar fixes
+d0003fd75984882f762918864a6d3f9160e6a5b5
+
+# [QA] Minor whitespace fixes
+38d4fe03c8714d54644fea98647f8a31c9339808
+
+# [Tr] Fix sorting of terminfo variables
+8d6e6162f071ae9cb23b18d2deb9373fed48143c
+
+# [Tr] Minor reST syntax fixes
+ae5c495dd911531a826f81d9b51eaa2c19b31bab
+
+# [Tr] Minor whitespace fix
+67cc03b8d143acb475420c561745626d405fbb8c
+
+# [QA] Minor PEP-8 fixes
+dff650cf93ca5658b9c0d9cf6ef60a9a1c7da9a5
+
+# [Tr] Minor grammar fixes
+3384d27ddfdfbc93ea7bb082117bafaf5695c406
+
+# [QA] Minor linting issue fixes
+0cb56536a234c25774fa534a5001916e82a07038
+
+# [Tr] Minor reST syntax fixes
+a2bee5b5872de9536d4624193af6f3e19e5afc88
+
+# [QA] Wrap lines to 80 characters where possible
+c6b7c592a21ea80fef90c02e9f9fea3087561024
+
+# [QA] Sync contributors list
+74142546a979846ab83948d7004472f1028aab42
+
+# [Tr] Minor reST syntax fixes
+7b141106de6efebb688a6996c6a3beee740e95cd
+
+# [QA] Fix document titles
+706ed80eec137f2981dad25eff775efdbcd3e429
+
+# [QA] Fix and sync spelling wordlist
+eec69b3a9274e533bd4b7ba84f8a46fadbf74188
+
+# [Tr] Minor reST fixes
+756dd2918cd78bf3289564afce3c654bb124f413
+
+# [Tr] Minor grammar fixes
+200e2191c8ee2b71bfa23b258b2545f2e06a6cb8
+
+# [QA] Standardise ordering of :map options
+96d5aab06e921e757a8b18ffebef32831ffc5843
+
+# [Tr] Minor grammar fixes
+38b9d319781f6f0e0b2374b03c6dd956029d3f71
+
+# [Tr] Minor reST fixes
+83a97931cce75f6709a42b170f894149d48f3a07
+
+# [Tr] Minor grammar fixes
+07a811cd7e05ddba2b6872da36ff0c6ff3c4ec6c
+
+# [Tr] Minor whitespace fix
+544cc89e2bc361d75f57f815a023f5c4baedaad2
+
+# [QA] Improve PEP-8 compliance
+51055e23f887733b62cbe69c8f4a581071225085
+
+# [Tr] 🐛 Fix sorting in qf bindings
+89cab1d1f2ba1d51ee87c77056078b0408f4b271
 
 ### BLAME_IGNORE_TAG: Generated from main }}}
