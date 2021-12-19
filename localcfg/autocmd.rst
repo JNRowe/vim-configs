@@ -75,10 +75,6 @@ Make buffers created from standard input temporary by default::
     This is potentially dangerous as it could cause data loss, but I only use
     ``stdin`` buffers when *viewing* files.
 
-Turn off search highlighting when entering a buffer::
-
-        autocmd BufEnter * nohlsearch
-
 Always do a full syntax refresh, as this is still fast enough on a netbook::
 
         autocmd BufEnter * syntax sync fromstart
