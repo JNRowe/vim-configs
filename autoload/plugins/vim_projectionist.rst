@@ -7,20 +7,34 @@
 
     Apply inline commands from projectionist templates.
 
-    This allows you to include an executable command within a template by ending
+    This allows you to include a normal mode command within a template by ending
     a line with the string ``]|[`` and followed by a normal mode command.  For
     example, ``]|[yyp`` would duplicate the current line.
 
 ::
 
     function plugins#vim_projectionist#apply_commands() abort
+        execute printf('sign define PTemplateHighlight icon=%s text=TW',
+        \              expand('~/.vim/icons/warning.png'))
         let l:curpos = getcurpos()
+        call inputsave()
         while search('\]|\[')
+            let l:s = sign_place(0, '', 'PTemplateHighlight', '%', {'lnum': '.', 'priority': 1000})
+            let l:m = matchadd('WarningMsg', printf('\%%%dl^.*$', line('.')),
+            \                  1000)
+            redraw
             let [l:line, l:command] = split(getline('.'), ']|[')
             call setline('.', l:line)
-            execute 'normal ' . l:command
+            let l:q = input(printf('Execute ‘%s’? ', l:command))
+            if l:q ==# 'y'
+                execute 'normal ' . l:command
+            endif
+            call sign_unplace('', {'id': l:s})
+            call matchdelete(l:m)
         endwhile
+        call inputrestore()
         call setpos('.', l:curpos)
+        sign undefine PTemplateHighlight
     endfunction
 
 .. function:: apply_options() -> None
