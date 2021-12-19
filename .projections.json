@@ -52,7 +52,7 @@
         "template": [
             "``autoload/plugins/{}.vim``]|[\\hs1",
             "",
-            ".. include:: ../.includes/scriptencoding.rst",
+            ".. include:: ../../.includes/scriptencoding.rst",
             "",
             "::",
             ""
