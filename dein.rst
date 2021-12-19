@@ -1826,6 +1826,42 @@ Configure my custom maps::
     \   'on_map': ['<C-n>', '<C-Down>', '<C-Up>'],
     \ })
 
+``nerdtree``
+''''''''''''
+
+    “A tree explorer plugin to rule the Vim world. Bwahahaha!!”
+
+:repository: :repo:`preservim/nerdtree`
+:config: :doc:`localcfg/plugins/nerdtree`
+
+::
+
+    call dein#add('preservim/nerdtree', {
+    \   'on_cmd': 'NERDTree',
+    \ })
+
+.. _nerdtree-custom-maps:
+
+Use my custom maps::
+
+    call keymaps#mnemonic_map('nerdtree')
+
+    for [s:key, s:cmd] in [
+    \   ['O', 'VCS'],
+    \   ['T', 'ToggleVCS'],
+    \   ['c', 'Close'],
+    \   ['f', 'Focus'],
+    \   ['o', ''],
+    \   ['t', 'Toggle'],
+    \ ]
+        execute printf('nnoremap <silent> [nerdtree]%s :NERDTree%s<CR>', s:key,
+        \              s:cmd)
+    endfor
+
+.. seealso::
+
+    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
+
 ``wordnet.vim``
 '''''''''''''''
 
@@ -2471,6 +2507,7 @@ I write my mail in |reST|.  No, really.
     Ronacher
     Supertab
     Vimscript
+    Bwahahaha
     color
     cyclomatic
     dialog

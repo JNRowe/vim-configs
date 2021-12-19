@@ -79,6 +79,7 @@ __pycache__/
 /localcfg/plugins/goyo.vim.vim
 /localcfg/plugins/jedi_vim.vim
 /localcfg/plugins/molokai.vim
+/localcfg/plugins/nerdtree.vim
 /localcfg/plugins/patchreview_vim.vim
 /localcfg/plugins/rainbow.vim
 /localcfg/plugins/regex.vim

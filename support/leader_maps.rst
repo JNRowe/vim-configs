@@ -24,6 +24,7 @@ Key        Local  Buffer  Maps
 :kbd:`l`   ✅     ❌      :ref:`location list <location-list-custom-maps>`
 :kbd:`m`   ❌     ❌      :ref:`git-messenger.vim
                           <git-messenger-vim-custom-maps>`
+:kbd:`n`   ❌     ❌      :ref:`nerdtree <nerdtree-custom-maps>`
 :kbd:`p`   ✅     ❌      :ref:`vim-quick-radon <vim-quick-radon-custom-maps>`
 :kbd:`r`   ✅     ✅      :ref:`gitrebase <gitrebase-custom-maps>`
 :kbd:`s`   ✅     ❌      :ref:`sideways.vim <sideways-vim-custom-maps>`

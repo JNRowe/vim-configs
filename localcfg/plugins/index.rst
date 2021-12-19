@@ -29,6 +29,7 @@ Contents
     goyo.vim
     jedi_vim
     molokai
+    nerdtree
     patchreview_vim
     rainbow
     Recover.vim
