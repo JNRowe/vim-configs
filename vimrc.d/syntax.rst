@@ -62,6 +62,12 @@ Enable common — to me — highlighting support::
     \   'vim': ['vim', ],
     \ }
 
+.. todo::
+
+    This should probably be configured more locally as it includes the full
+    syntax definitions for each language, and it considerably increase syntax
+    parsing speed.  The actual impact needs measuring properly first!
+
 Rust
 ----
 
