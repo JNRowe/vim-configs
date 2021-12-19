@@ -945,8 +945,15 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     \       plugins#dein#prefix('Loc', ['AddNote', 'Load', 'Save'])
     \       + plugins#dein#prefix('QF', ['AddNote', 'Load', 'Save']),
     \   'on_ft': 'qf',
-    \   'on_map': {'n': '<LocalLeader>n'},
+    \   'on_map': {'n': '<Plug>QFAdd'},
     \ })
+
+Add custom maps in to my quickfix map hierarchy::
+
+    nmap [quickfix]a <Plug>QFAddNote
+    nmap [quickfix]A <Plug>QFAddPatternNote
+    nnoremap <silent> [location]a :LocAddNote
+    nnoremap <silent> [location]A :LocAddNotePattern
 
 ``vimagit``
 '''''''''''
