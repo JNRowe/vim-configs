@@ -254,6 +254,19 @@
         call append(a:lastline + 1, printf(l:marker, '>8'))
     endfunction
 
+.. function:: str2chars(str: str) -> List[str]
+
+    Convert a string to a list of characters.
+
+    :param str: String to convert
+    :returns: Individual characters from input
+
+::
+
+    function! misc#str2chars(str) abort
+        return split(a:str, '\zs')
+    endfunction
+
 .. function:: title_word(word: str) -> str
 
     Convenience function to apply title case to a word.

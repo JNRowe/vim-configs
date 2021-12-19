@@ -197,7 +197,7 @@ Make insert mode maps for accessing all completion modes without needless hand
 stretching:::
 
     if has('insert_expand')
-        for s:key in split('lnkti]fdvuos', '\zs')
+        for s:key in misc#str2chars('lnkti]fdvuos')
             execute printf('inoremap <silent> <LocalLeader>,%s <C-x><C-%s>',
             \              s:key, s:key)
         endfor

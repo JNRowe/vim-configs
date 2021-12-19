@@ -35,7 +35,7 @@
         let l:key = get(l:extra, 'key', tolower(a:name[0]))
         let l:local = get(l:extra, 'local', v:false) ? 'Local' : ''
         let l:modes = get(l:extra, 'modes', 'n')
-        for l:mode in split(l:modes, '\zs')
+        for l:mode in misc#str2chars(l:modes)
             execute printf('%snoremap %s [%s] <Nop>', l:mode, l:buffer, a:name)
             execute printf('%smap %s <%sLeader>%s [%s]', l:mode, l:buffer,
             \              l:local, l:key, a:name)
