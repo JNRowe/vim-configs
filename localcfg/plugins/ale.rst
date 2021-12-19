@@ -64,3 +64,11 @@ archival format::
     let g:ale_pattern_options = {
     \   '\.mht\(ml\)\?$': {'ale_enabled': v:false}
     \ }
+
+Language specific settings
+--------------------------
+
+Configure :pypi:`black` to match projects I work on::
+
+    let g:ale_python_black_options =
+    \   '--line-length 79 --target-version py37 --skip-string-normalization'
