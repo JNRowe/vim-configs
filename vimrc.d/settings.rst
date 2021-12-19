@@ -395,8 +395,8 @@ with :kbd:`zg`::
     if has('spell')
         set spell
         let s:lang = split(v:lang, '\.')[0]
-        execute printf('set spellfile=~/.vim/spell/%s.utf-8.add', s:lang)
-        execute 'set spelllang=' . tolower(s:lang)
+        let &spellfile = printf('~/.vim/spell/%s.utf-8.add', s:lang)
+        let &spelllang = tolower(s:lang)
     endif
 
 Prefer making horizontal splits toward the bottom of the screen::
