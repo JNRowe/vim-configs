@@ -66,6 +66,7 @@ Configure layered maps for useful quickfix and location functions::
         \   ['c',          'close'],
         "\ 5 lines seems to be the magic number for *me*
         \   ['o',          'open 5<CR><C-w>p\'],
+        \   ['O',          'open 5'],
         \   ['b',          'bottom'],
         \   ['n',          'next'],
         \   ['p',          'previous'],
