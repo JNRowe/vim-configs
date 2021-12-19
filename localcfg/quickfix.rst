@@ -42,6 +42,10 @@ Find occurrences of current word, last search or lines that are too long::
         endfor
     endfor
 
+.. seealso::
+
+    * :func:`keymaps#quickfix_key() <quickfix_key>`
+
 .. tip::
 
     Lowercase keys are file local, and uppercase are global.  For example,
