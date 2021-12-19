@@ -5,10 +5,11 @@ Just in case a ``'cms'`` value gets added to the upstream plugin, we’ll force
 this as it would break too many scripts that are relying on post-processing the
 |remind| data::
 
-    setlocal commentstring=#%s
-    execute 'let b:undo_ftplugin ' .
-    \   (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
-    \   'setlocal commentstring<"'
+    call filetypes#apply_ftplugin('commentstring=#%s')
+
+.. seealso::
+
+    * :func:`filetypes#apply_ftplugin() <apply_ftplugin>`
 
 .. note::
 

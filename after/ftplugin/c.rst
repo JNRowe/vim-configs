@@ -4,16 +4,20 @@
 Use ``:make`` to compile C/C++, even without a Makefile::
 
     if !filereadable('Makefile')
-        setlocal makeprg=gcc\ -o\ %<\ %
-        execute 'let b:undo_ftplugin ' .
-        \   (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
-        \   'setlocal makeprg<"'
+        call filetypes#apply_ftplugin('makeprg=gcc -o %< %')
     endif
+
+.. seealso::
+
+    * :func:`filetypes#apply_ftplugin() <apply_ftplugin>`
 
 Add a little whitespace to comments::
 
-    setlocal commentstring=/*\ %s\ */
-    let b:undo_ftplugin .= '|setlocal commentstring<'
+    call filetypes#apply_ftplugin('commentstring=/* %s */')
+
+.. seealso::
+
+    * :func:`filetypes#apply_ftplugin() <apply_ftplugin>`
 
 Re-add ``C`` includes :ref:`where they’re useful <path-setting>`::
 

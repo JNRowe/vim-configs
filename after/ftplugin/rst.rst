@@ -28,7 +28,10 @@ The *vast* majority of the time I spend editing |reST| documents I am actually
 editing files from a Sphinx_ project.  It is nice being able to :kbd:`gf` when
 in a ``:doc:`` role or ``toctree`` directive::
 
-    setlocal suffixesadd+=.rst
-    let b:undo_ftplugin .= '|setlocal suffixesadd<'
+    call filetypes#apply_ftplugin('suffixesadd+=.rst')
+
+.. seealso::
+
+    * :func:`filetypes#apply_ftplugin() <apply_ftplugin>`
 
 .. _Sphinx: http://sphinx-doc.org/

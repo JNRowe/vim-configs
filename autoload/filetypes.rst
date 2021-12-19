@@ -54,6 +54,31 @@
         \          a:key, shellescape(l:value)))
     endfunction
 
+.. function:: apply_ftplugin(options: Union[List[str], str]) -> None
+
+    Set ``ftplugin`` options and configure resets.
+
+    :param options: Option names to change and reset
+
+::
+
+    function! filetypes#apply_ftplugin(options) abort
+        if type(a:options) == type('')
+            let l:reset = split(a:options, '[\^\-+]\?=')[0] . '<'
+            let l:set = escape(a:options, ' "')
+        else
+            let l:reset = map(copy(a:options),
+            \                 {_, v -> split(v, '[\^\-+]\?=')[0] . '<'})
+            let l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
+        endif
+        execute 'setlocal ' . l:set
+        if exists('b:undo_ftplugin')
+            execute printf('let b:undo_ftplugin .= "| setlocal %s"', l:reset)
+        else
+            execute printf('let b:undo_ftplugin = "setlocal %s"', l:reset)
+        endif
+    endfunction
+
 .. function:: diff_maps() -> None
 
     Configure ``+diff`` specific keymaps.
