@@ -104,8 +104,8 @@ Shortcut command to rename current list:::
 
     command! -bar -nargs=1 QFRename
     \   call setqflist([], 'a', {'title': <q-args>}) | redrawstatus!
-    command! -bar -nargs=1 LocRename
-    \   call setloclist(0, [], 'a', {'title': <q-args>}) | redrawstatus!
+    command! -bar -count -nargs=1 LocRename
+    \   call setloclist(v:count, [], 'a', {'title': <q-args>}) | redrawstatus!
 
 .. note::
 
