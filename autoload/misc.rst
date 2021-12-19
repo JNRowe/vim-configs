@@ -90,6 +90,22 @@
         execute printf(':edit %s/%s', b:meta_dir, a:name)
     endfunction
 
+
+.. function:: get_qf_title(type: str) -> str
+
+    Return title of active quickfix list.
+
+    :param type: Type of quickfix list to operate on
+    :returns: Window title
+
+::
+
+    function! misc#get_qf_title(type) abort
+        let l:type = a:type[0] ==# 'q' ? 'qf' : 'loc'
+        execute printf('call get%slist(%s{"title": v:true}).title',
+        \              l:type, (l:type ==# 'loc' ? '0, ' : ''))
+    endfunction
+
 .. function:: insert_options() -> None
 
     Insert all |vim| options in to the current buffer.

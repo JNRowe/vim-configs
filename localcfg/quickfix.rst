@@ -76,18 +76,25 @@ Configure layered maps for useful quickfix and location functions::
             call keymaps#quickfix_key(s:t, s:key, s:cmd)
         endfor
     endfor
-    execute 'nnoremap <silent> [quickfix]x
-    \   :call setqflist([], "r",
-    \                   {"items": [],
-    \                    "title": getqflist({"title": v:true}).title})<CR>'
-    execute 'nnoremap <silent> [location]x
-    \   :call setloclist(0, [], "r",
-    \                    {"items": [],
-    \                     "title": getloclist(0, {"title": v:true}).title})<CR>'
-    execute 'nnoremap <silent> [quickfix]X
-    \   :call setqflist([], "f", {"title": ""})<CR>'
-    execute 'nnoremap <silent> [location]X
-    \   :call setloclist(0, [], "f", {"title": ""})<CR>'
+
+.. seealso::
+
+    * :func:`keymaps#quickfix_key() <quickfix_key>`
+
+Configure shortcuts to clear quickfix lists optionally retaining their title for
+further use::
+
+    for s:t in ['qf', 'loc']
+        call keymaps#quickfix_key(
+        \   s:t[0], 'x',
+        \   printf(':call set%slist(%s[], "r", ' .
+        \          '{"items": [], "title": misc#get_qf_title("%s")})',
+        \          s:t, (s:t ==# 'loc' ? '0, ' : ''), s:t))
+        call keymaps#quickfix_key(
+        \   s:t[0], 'X',
+        \   printf(':call set%slist(%s[], "f", {"title": ""})',
+        \          s:t, (s:t ==# 'loc' ? '0, ' : '')))
+    endfor
 
 .. seealso::
 
