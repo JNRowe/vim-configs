@@ -1,6 +1,8 @@
 ``localcfg/plugins/DotOutlineTree.vim``
 =======================================
 
+.. include:: ../../.includes/scriptencoding.rst
+
 ::
 
     augroup jnrowe_DotOutlineTree
