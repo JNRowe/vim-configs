@@ -102,6 +102,9 @@ def configure(
     with file.open('w') as buildfile:
         n = ninja_syntax.Writer(buildfile)
 
+        n.comment('Untested with older versions')
+        n.variable('ninja_required_version', 1.10)
+
         if local:
             n.comment('*Warning* Using local build rules')
             n.newline()
