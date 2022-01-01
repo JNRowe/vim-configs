@@ -77,7 +77,7 @@ exclude_patterns: List[str] = [
 
 # Project information {{{
 project = 'vim-configs'
-copyright = '2009-2021  James Rowe'  # NOQA: A001
+copyright = '2009-2022  James Rowe'  # NOQA: A001
 
 if on_rtd:
     with suppress(CalledProcessError):
