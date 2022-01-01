@@ -12,6 +12,7 @@ from inspect import stack
 from os import environ
 from pathlib import Path
 from shutil import which
+from shlex import quote
 from subprocess import check_output
 from typing import List, Optional
 
@@ -56,7 +57,7 @@ def wopt(name: str) -> str:
             val = [
                 val,
             ]
-        text = ' '.join(f'--{arg}={s}' for s in val)
+        text = ' '.join(f'--{arg}={quote(s)}' for s in val)
     return text
 
 
