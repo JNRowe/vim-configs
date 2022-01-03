@@ -1585,7 +1585,7 @@ We lazy load on filetype definition for my normal workflow with
 :command:`git commit`::
 
     if plugins#dein#has_exec('git')
-        if get(argv(), 0, '') =~# '/.git/COMMIT_EDITMSG$'
+        if get(v:argv, 0, '') =~# '/.git/COMMIT_EDITMSG$'
             call dein#source('committia.vim')
         endif
     endif
