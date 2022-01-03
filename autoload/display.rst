@@ -20,12 +20,12 @@
         if getline('.')[0] =~# '\s'
             let w:line_highlights += [
             \   matchadd('LineHighlightPrefix',
-            \            printf('\%%%dl^\s\+', line('.')), 1000),
+            \            printf('\%%%dl^\s\+', line('.')), 1'000),
             \ ]
         endif
         let w:line_highlights += [
         \   matchadd('LineHighlightText',
-        \            printf('\%%%dl^\s*\zs.*$', line('.')), 1000),
+        \            printf('\%%%dl^\s*\zs.*$', line('.')), 1'000),
         \ ]
     endfunction
 

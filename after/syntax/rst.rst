@@ -29,12 +29,12 @@ Show pretty markers for ordered lists::
 
     for s:n in range(1, 10)
         execute printf('syntax match rstList "^%d\.\ze " conceal cchar=%s',
-        \              s:n, nr2char(9351 + s:n))
+        \              s:n, nr2char(9'351 + s:n))
     endfor
     for s:n in range(1, 12)
         execute printf('syntax match rstList "^\s\+%d\.\ze "hs=e-1 ' ..
         \              'conceal cchar=%s',
-        \              s:n, nr2char(8559 + s:n))
+        \              s:n, nr2char(8'559 + s:n))
     endfor
 
 .. spelling::
