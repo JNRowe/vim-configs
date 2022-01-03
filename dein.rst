@@ -39,7 +39,7 @@ Repositories
 ::
 
     call dein#add(expand('~/.vim/external/dein.vim'), {
-    \   'if': v:version >= 800,
+    \   'if': v:version >= 802,
     \ })
 
 .. _sideways.vim-config:

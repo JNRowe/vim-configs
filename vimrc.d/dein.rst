@@ -32,7 +32,7 @@ If possible, support `system notifications`_:
 
 Handle initial plugin setup::
 
-    if dein#load_state(g:dein_state_dir)
+    if dein#min#load_state(g:dein_state_dir)
         call dein#begin(
         \   g:dein_state_dir,
         \   ['~/.vim/vimrc', '~/.vim/dein.vim', expand('<sfile>')]
