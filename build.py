@@ -149,8 +149,8 @@ def configure(
             description=pretty('SPHINX $out', colour),
         )
 
-        # Note the .dep suffix to workaround vimrc.d being vimrc.rst’s default
-        # dependency file.
+        # Note the ``.dep`` suffix to workaround ``vimrc.d`` being
+        # ``vimrc.rst``’s default dependency file.
         n.rule(
             'rst_extract',
             f'{location / "tools/rst2vim"} -d $out.dep $in $out',
@@ -229,7 +229,7 @@ def configure(
                 'todo.rst',
                 'upgrades.rst',
             ):
-                if p.name == 'vimrc.rst':  # No suffix on main vimrc file
+                if p.name == 'vimrc.rst':  # No suffix on main ``vimrc`` file
                     output = f'{location / p.with_suffix("")}'
                 else:
                     output = f'{location / p.with_suffix(".vim")}'
@@ -240,7 +240,7 @@ def configure(
                         f'{location / p }',
                     ],
                     implicit=[
-                        f'{location / "conf.py"}',  # Required for rst_epilog
+                        f'{location / "conf.py"}',  # Uses ``rst_epilog``
                         f'{location / "tools/rst2vim"}',
                     ],
                 )
