@@ -23,10 +23,6 @@ work on when I upgrade.
 
 .. todo::
 
-    Add bindings for ``:cafter`` and ``:cbefore``, see 8.1.1275.
-
-.. todo::
-
     Use default functions arguments where it makes sense(such as in
     ``keymaps#mnemonic_map()``), see 8.1.1310.
 

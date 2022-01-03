@@ -627,10 +627,8 @@ Use my custom maps::
 
 .. note::
 
-    You can simply use the normal location list bindings for movement too.
-    However, ale’s next and previous movements are buffer position sensitive
-    instead of being relative to the position in the location list.  Both
-    movement methods are useful at different times.
+    You can, of course, simply use the normal :doc:`location list bindings
+    <quickfix>` for movement too.
 
 .. seealso::
 
