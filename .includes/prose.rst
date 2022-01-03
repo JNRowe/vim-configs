@@ -1,16 +1,20 @@
 Set useful defaults for formatting prose::
 
-    setlocal formatoptions+=2
-    execute 'let b:undo_ftplugin ' .
-        \ (exists('b:undo_ftplugin') ? '.= "|' : '= "') .
-        \ 'setlocal formatoptions<"'
+    call filetypes#apply_ftplugin('formatoptions+=2')
+
+.. seealso::
+
+    * :func:`filetypes#apply_ftplugin() <apply_ftplugin>`
 
 Add dictionary from miscfiles_ if available::
 
     if filereadable('/usr/share/dict/words')
-        setlocal complete+=k/usr/share/dict/words
-        let b:undo_ftplugin .= '|setlocal complete<'
+        call filetypes#apply_ftplugin('complete+=k/usr/share/dict/words')
     endif
+
+.. seealso::
+
+    * :func:`filetypes#apply_ftplugin() <apply_ftplugin>`
 
 .. tip::
 
