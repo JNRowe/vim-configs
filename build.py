@@ -112,7 +112,7 @@ def configure(
         n.rule(
             'configure',
             ' '.join(
-                [f'{location / "build.py"} ', '$out']
+                [f'{location / "build.py"}', '$out']
                 + [
                     wopt(s)
                     for s in [
