@@ -34,7 +34,7 @@
 ::
 
     function! plugins#dein#prefix(prefix, args) abort
-        return map(copy(a:args), {_, s -> a:prefix .. s})
+        return mapnew(a:args, {_, s -> a:prefix .. s})
     endfunction
 
 .. function:: suffix(suffix: str, args: List[str]) -> List[str]
@@ -51,7 +51,7 @@
 ::
 
     function! plugins#dein#suffix(suffix, args) abort
-        return map(copy(a:args), {_, s -> s .. a:suffix})
+        return mapnew(a:args, {_, s -> s .. a:suffix})
     endfunction
 
 .. function:: has_exec(command: str) -> bool

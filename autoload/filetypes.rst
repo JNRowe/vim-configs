@@ -69,8 +69,10 @@
             let l:reset = split(a:options, '[\^\-+]\?=')[0] .. '<'
             let l:set = escape(a:options, ' "')
         else
-            let l:reset = map(copy(a:options),
-            \                 {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'})
+            let l:reset = mapnew(
+            \   a:options,
+            \   {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'}
+            \ )
             let l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
         endif
         execute 'setlocal ' .. l:set
