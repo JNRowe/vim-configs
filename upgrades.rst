@@ -46,8 +46,4 @@ work on when I upgrade.
 
     Use ``:const`` for values that shouldn’t be changed, see 8.1.1539.
 
-.. todo::
-
-    Switch to the *far* nicer ``#{key: value}`` syntax, see 8.1.1683.
-
 .. last seen: 8.1.1685

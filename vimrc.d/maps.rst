@@ -131,7 +131,7 @@ Maps to jump Window management::
 
 Help related maps::
 
-    call keymaps#mnemonic_map('Help', {'key': '?'})
+    call keymaps#mnemonic_map('Help', #{key: '?'})
 
     for s:t in ['function-list', 'pattern', 'quickref', 'registers']
         execute printf('nnoremap [Help]%.1s :help %s<CR>', s:t, s:t)
@@ -207,7 +207,7 @@ stretching:::
 
 Add mappings to highlight lines::
 
-    call keymaps#mnemonic_map('Display', {'key': 'D', 'modes': 'nv'})
+    call keymaps#mnemonic_map('Display', #{key: 'D', modes: 'nv'})
     nnoremap <silent> [Display]lh :call display#add_line_highlight()<CR>
     nnoremap <silent> [Display]lc :call display#clear_line_highlights()<CR>
 
@@ -235,7 +235,7 @@ Highlight matches for last search only within visual region::
 
 Quickly correct close spelling mistakes without changing cursor position::
 
-    call keymaps#mnemonic_map('Spell', {'key': 'z'})
+    call keymaps#mnemonic_map('Spell', #{key: 'z'})
     for s:dir in ['[', ']']
         for s:type in ['bad', 'full']
             for s:auto in [v:false, v:true]

@@ -7,7 +7,7 @@
 
 Configure my custom maps for quickfix::
 
-    call keymaps#mnemonic_map('quickfix', {'key': 'f', 'local': v:true})
+    call keymaps#mnemonic_map('quickfix', #{key: 'f', local: v:true})
 
 .. seealso::
 
@@ -17,7 +17,7 @@ Configure my custom maps for quickfix::
 
 … and location lists::
 
-    call keymaps#mnemonic_map('location', {'local': v:true})
+    call keymaps#mnemonic_map('location', #{local: v:true})
 
 .. seealso::
 
@@ -93,11 +93,11 @@ further use::
         call keymaps#quickfix_key(
         \   s:t[0], 'x',
         \   printf(':call set%slist(%s[], "r", ' .
-        \          '{"items": [], "title": misc#get_qf_title("%s")})',
+        \          '#{items: [], title: misc#get_qf_title("%s")})',
         \          s:t, (s:t ==# 'loc' ? '0, ' : ''), s:t))
         call keymaps#quickfix_key(
         \   s:t[0], 'X',
-        \   printf(':call set%slist(%s[], "f", {"title": ""})',
+        \   printf(':call set%slist(%s[], "f", #{title: ""})',
         \          s:t, (s:t ==# 'loc' ? '0, ' : '')))
     endfor
 
@@ -108,9 +108,9 @@ further use::
 Shortcut command to rename current list:::
 
     command! -bar -nargs=1 QFRename
-    \   call setqflist([], 'a', {'title': <q-args>}) | redrawstatus!
+    \   call setqflist([], 'a', #{title: <q-args>}) | redrawstatus!
     command! -bar -count -nargs=1 LocRename
-    \   call setloclist(v:count, [], 'a', {'title': <q-args>}) | redrawstatus!
+    \   call setloclist(v:count, [], 'a', #{title: <q-args>}) | redrawstatus!
 
 .. note::
 

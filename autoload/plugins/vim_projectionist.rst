@@ -19,7 +19,7 @@
         let l:curpos = getcurpos()
         call inputsave()
         while search('\]|\[')
-            let l:s = sign_place(0, '', 'PTemplateHighlight', '%', {'lnum': '.', 'priority': 1000})
+            let l:s = sign_place(0, '', 'PTemplateHighlight', '%', #{lnum: '.', priority: 1000})
             let l:m = matchadd('WarningMsg', printf('\%%%dl^.*$', line('.')),
             \                  1000)
             redraw
@@ -29,7 +29,7 @@
             if l:q ==# 'y'
                 execute 'normal ' . l:command
             endif
-            call sign_unplace('', {'id': l:s})
+            call sign_unplace('', #{id: l:s})
             call matchdelete(l:m)
         endwhile
         call inputrestore()

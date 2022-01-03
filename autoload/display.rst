@@ -136,9 +136,9 @@
 
         let l:groups = []
         for l:id in synstack(l:lnum, l:col)
-            let l:groups += [{
-            \   'hi': s:synname(l:id),
-            \   'gr': s:synname(synIDtrans(l:id)),
+            let l:groups += [#{
+            \   hi: s:synname(l:id),
+            \   gr: s:synname(synIDtrans(l:id)),
             \ }]
         endfor
         return l:groups

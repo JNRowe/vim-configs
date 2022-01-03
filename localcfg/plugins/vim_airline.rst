@@ -34,19 +34,19 @@ Configure symbols for :command:`gvim`::
             let g:airline_symbols = {}
         endif
 
-        let g:airline_symbols = {
-        \   'branch': '',
-        \   'colnr': '℅',
-        \   'crypt': '',
-        \   'linenr': '',
-        \   'maxlinenr': '⌇',
-        \   'modified': '+',
-        \   'notexists': 'Ɇ',
-        \   'paste': 'ρ',
-        \   'readonly': '',
-        \   'space': ' ',
-        \   'spell': '',
-        \   'whitespace': 'Ξ',
+        let g:airline_symbols = #{
+        \   branch: '',
+        \   colnr: '℅',
+        \   crypt: '',
+        \   linenr: '',
+        \   maxlinenr: '⌇',
+        \   modified: '+',
+        \   notexists: 'Ɇ',
+        \   paste: 'ρ',
+        \   readonly: '',
+        \   space: ' ',
+        \   spell: '',
+        \   whitespace: 'Ξ',
         \ }
 
 .. note::

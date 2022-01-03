@@ -7,4 +7,4 @@ Disable parenthesis matching as we’re using :ref:`rainbow <rainbow-plugin>`::
 
 Don’t match *in to* HTML child elements::
 
-    let g:matchup_matchpref = {'html': {'nolists': v:true}}
+    let g:matchup_matchpref = #{html: #{nolists: v:true}}

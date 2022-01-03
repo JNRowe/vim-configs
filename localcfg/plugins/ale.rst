@@ -62,7 +62,7 @@ Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 
     let g:ale_pattern_options = {
-    \   '\.mht\(ml\)\?$': {'ale_enabled': v:false}
+    \   '\.mht\(ml\)\?$': #{ale_enabled: v:false}
     \ }
 
 Language specific settings

@@ -8,11 +8,11 @@ Configure styling::
         let g:indent_guides_guide_size = 1
         let g:indent_guides_start_level = 2
     endif
-    let s:guide_gui = {'even': '#00ff00', 'odd': '#007700'}
+    let s:guide_gui = #{even: '#00ff00', odd: '#007700'}
     if &t_Co >= 88
-        let s:guide_term = {'even': 240, 'odd': 236}
+        let s:guide_term = #{even: 240, odd: 236}
     else
-        let s:guide_term = {'even': 8, 'odd': 0}
+        let s:guide_term = #{even: 8, odd: 0}
     endif
     augroup jnrowe_vim_indent_guides
         autocmd!

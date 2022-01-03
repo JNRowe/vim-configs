@@ -102,7 +102,7 @@
 
     function! misc#get_qf_title(type) abort
         let l:type = a:type[0] ==# 'q' ? 'qf' : 'loc'
-        execute printf('call get%slist(%s{"title": v:true}).title',
+        execute printf('call get%slist(%s#{title: v:true}).title',
         \              l:type, (l:type ==# 'loc' ? '0, ' : ''))
     endfunction
 

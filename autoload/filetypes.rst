@@ -86,7 +86,7 @@
 ::
 
     function! filetypes#diff_maps() abort
-        call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})
+        call keymaps#mnemonic_map('diff', #{key: 'i', local: v:true})
 
         for [s:key, s:cmd] in [
         \   ['w', 'call misc#toggle_flag("diffopt", "iwhite")'],

@@ -14,10 +14,10 @@ templates for licence generation at a project’s top level::
         \   ['COPYING.LIB', 'LGPL-3'],
         \   ['LICENSE', 'MIT']
         \ ]
-            let g:projectionist_heuristics[s:project_root_heuristic][s:f] = {
-            \   'template': readfile(printf('%s/%s',
-            \                               expand('$PKG_LICENSE_DIR'), s:t)),
-            \   'type': tolower(split(s:t, '-')[0]),
+            let g:projectionist_heuristics[s:project_root_heuristic][s:f] = #{
+            \   template: readfile(printf('%s/%s',
+            \                             expand('$PKG_LICENSE_DIR'), s:t)),
+            \   type: tolower(split(s:t, '-')[0]),
             \ }
         endfor
     endif

@@ -5,7 +5,7 @@
 
 This creates |reST| headings using *my* favourite adornments::
 
-    call keymaps#mnemonic_map('Heading', {'buffer': v:true, 'local': v:true})
+    call keymaps#mnemonic_map('Heading', #{buffer: v:true, local: v:true})
 
     for s:level in [1, 2, 3]
         for s:pad in [v:true, v:false]

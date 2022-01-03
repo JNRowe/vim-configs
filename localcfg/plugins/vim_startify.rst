@@ -81,11 +81,11 @@ Use fancy boxes for fortunes::
 Configure default chunks with fancy symbols::
 
     let g:startify_lists = [
-    \   {'type': 'files', 'header': ['']},
-    \   {'type': 'dir', 'header': ['']},
-    \   {'type': 'sessions', 'header': ['']},
-    \   {'type': 'commands', 'header': ['']},
-    \   {'type': 'bookmarks', 'header': ['']},
+    \   #{type: 'files', header: ['']},
+    \   #{type: 'dir', header: ['']},
+    \   #{type: 'sessions', header: ['']},
+    \   #{type: 'commands', header: ['']},
+    \   #{type: 'bookmarks', header: ['']},
     \ ]
 
 We don’t need full filenames::
