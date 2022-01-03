@@ -824,8 +824,7 @@ jealous.
     \   ['ruby', 'RDebug'],
     \ ]
         if plugins#dein#has_exec(s:cmd)
-            let s:vebugger_commands +=
-                \ [s:arg != v:null ? s:arg : toupper(s:cmd)]
+            let s:vebugger_commands += [s:arg ?? toupper(s:cmd)]
         endif
     endfor
     call dein#add('idanarye/vim-vebugger', #{
