@@ -1342,21 +1342,6 @@ Use my custom maps::
     \   on_ft: ['html', 'htmljinja', 'xml', 'xsl'],
     \ })
 
-``meson``
-'''''''''
-
-    “Meson build system support”
-
-:repository: :repo:`mesonbuild/meson`
-
-::
-
-    if !has('patch-8.1.2175')
-        call dein#add('mesonbuild/meson', #{
-        \   rtp: 'data/syntax-highlighting/vim',
-        \ })
-    endif
-
 ``vim-cuesheet``
 ''''''''''''''''
 
