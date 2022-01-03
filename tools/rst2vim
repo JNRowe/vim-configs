@@ -20,7 +20,7 @@ parse() {
     local line match mbegin mend
     while IFS='' read -r line; do
         if [[ $line =~ '^.. include:: (.*)' ]] {
-            _RST2HTML_recursing=1 includes+=($(parse ${input:h}/$match $output))
+            (_RST2HTML_recursing=1 includes+=($(parse ${input:h}/$match $output)))
             includes+=(${input:h}/$match)
         } elif [[ $line =~ $start_block ]] {
             in_block=1
