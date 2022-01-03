@@ -22,7 +22,7 @@ Override locale::
 
 Treat jinja_ as |HTML|::
 
-    let g:user_emmet_settings['htmljinja'] = #{extends: 'html'}
+    let g:user_emmet_settings.htmljinja = #{extends: 'html'}
 
 Enable automatically where it will be useful::
 
