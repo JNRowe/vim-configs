@@ -10,9 +10,9 @@ overwrite a :command:`cp --link` tree::
 
     set backup
     set backupcopy=auto,breakhardlink
-    let &backupdir = g:vim_cache_dir . '/backup//'
-    if !isdirectory(g:vim_cache_dir . '/backup')
-        call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
+    let &backupdir = g:vim_cache_dir .. '/backup//'
+    if !isdirectory(g:vim_cache_dir .. '/backup')
+        call mkdir(g:vim_cache_dir .. '/backup', 'p', 0700)
     endif
 
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
@@ -108,8 +108,8 @@ If a wordlist is available use it as the completion dictionary::
 Keep swap files in |XDG basedir| compliant location::
 
     let &directory = printf('%s/swap//,%s', g:vim_cache_dir, &directory)
-    if !isdirectory(g:vim_cache_dir . '/swap')
-        call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
+    if !isdirectory(g:vim_cache_dir .. '/swap')
+        call mkdir(g:vim_cache_dir .. '/swap', 'p', 0700)
     endif
 
 :wikipedia:`UTF-8` should be default on all systems now, and |vim| will pick
@@ -433,8 +433,8 @@ compliant location::
     if has('persistent_undo')
         set undofile
         let &undodir = printf('%s/undo//,%s', g:vim_data_dir, &undodir)
-        if !isdirectory(g:vim_data_dir . '/undo')
-            call mkdir(g:vim_data_dir . '/undo', 'p', 0700)
+        if !isdirectory(g:vim_data_dir .. '/undo')
+            call mkdir(g:vim_data_dir .. '/undo', 'p', 0700)
         endif
     endif
 
@@ -452,7 +452,7 @@ Double |vim|’s default swap file write time interval::
 Store session files in |XDG basedir| compliant location::
 
     if has('mksession')
-        let &viewdir = g:vim_cache_dir . '/view'
+        let &viewdir = g:vim_cache_dir .. '/view'
         if !isdirectory(&viewdir)
             call mkdir(&viewdir, 'p', 0700)
         endif
@@ -476,7 +476,7 @@ Option      Use
 
     if has('viminfo')
         set viminfo='5000,<1000,%,h,r/media,r/tmp
-        let &viminfofile = g:vim_cache_dir . '/viminfo'
+        let &viminfofile = g:vim_cache_dir .. '/viminfo'
     endif
 
 .. note::

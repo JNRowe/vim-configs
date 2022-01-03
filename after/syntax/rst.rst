@@ -32,7 +32,7 @@ Show pretty markers for ordered lists::
         \              s:n, nr2char(9351 + s:n))
     endfor
     for s:n in range(1, 12)
-        execute printf('syntax match rstList "^\s\+%d\.\ze "hs=e-1 ' .
+        execute printf('syntax match rstList "^\s\+%d\.\ze "hs=e-1 ' ..
         \              'conceal cchar=%s',
         \              s:n, nr2char(8559 + s:n))
     endfor

@@ -29,7 +29,7 @@
             call setline('.', l:line)
             let l:q = input(printf('Execute ‘%s’? ', l:command))
             if l:q ==# 'y'
-                execute 'normal ' . l:command
+                execute 'normal ' .. l:command
             endif
             call sign_unplace('', #{id: l:s})
             call matchdelete(l:m)
@@ -56,7 +56,7 @@
             for l:s in l:options
                 let l:optname = split(l:s, '[\^\-+]\?=')[0]
                 if index(g:secure_modelines_allowed_items, l:optname) != -1
-                    execute 'setlocal ' . l:s
+                    execute 'setlocal ' .. l:s
                 else
                     echohl WarningMsg
                     echo printf('Not setting “%s” from projection', l:optname)

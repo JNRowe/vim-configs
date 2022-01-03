@@ -110,7 +110,7 @@ Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
     if executable('xdg-open')
         nnoremap <silent> gx
-        \   :call system('xdg-open ' . shellescape(expand('<cfile>:p')))<CR>
+        \   :call system('xdg-open ' .. shellescape(expand('<cfile>:p')))<CR>
     endif
 
 .. _window-management-maps:
@@ -174,7 +174,7 @@ when you’re showing code::
 
 Insert current buffer’s directory at command line::
 
-    cnoremap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
+    cnoremap <M-.> <C-r>=expand('%:p:h') .. '/'<CR>
 
 .. _scroll-wheel-override:
 
@@ -242,7 +242,7 @@ Quickly correct close spelling mistakes without changing cursor position::
         for s:type in ['bad', 'full']
             for s:auto in [v:false, v:true]
                 execute printf(
-                \   'nnoremap <silent> [Spell]%s%s%s ' .
+                \   'nnoremap <silent> [Spell]%s%s%s ' ..
                 \   ':call misc#preserve_layout("normal! %s%s%sz=")<CR>',
                 \   s:auto ? '' : 'q',
                 \   s:dir ==# ']' ? 'n' : 'l',
@@ -268,7 +268,7 @@ Quickly add close words to dictionaries without changing cursor position::
         for s:type in ['bad', 'full']
             for s:local in [v:false, v:true]
                 execute printf(
-                \   'nnoremap <silent> [Spell]%s%s%s ' .
+                \   'nnoremap <silent> [Spell]%s%s%s ' ..
                 \   ':call misc#preserve_layout("normal! %s%sz%s")<CR>',
                 \   s:dir ==# ']' ? 'n' : 'l',
                 \   s:local ? 'A' : 'a',

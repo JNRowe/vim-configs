@@ -12,7 +12,7 @@
 Enable ``:Cfilter`` for using enormously noisy compilers::
 
     for s:t in ['C', 'L']
-        execute printf('command! -bang -nargs=+ %sfilter packadd cfilter | ' .
+        execute printf('command! -bang -nargs=+ %sfilter packadd cfilter | ' ..
         \              '%sfilter<bang> <args>',
         \              s:t, s:t)
     endfor

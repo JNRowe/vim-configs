@@ -40,12 +40,12 @@ with arguments?
 
 ::
 
-    let s:git_config = filereadable(g:xdg_config_dir . '/git/config')
-    \   ? g:xdg_config_dir . '/git/config'
+    let s:git_config = filereadable(g:xdg_config_dir .. '/git/config')
+    \   ? g:xdg_config_dir .. '/git/config'
     \   : '~/.gitconfig'
     let g:startify_bookmarks = [
-    \   g:xdg_config_dir . '/awesome/rc.moon',
-    \   g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
+    \   g:xdg_config_dir .. '/awesome/rc.moon',
+    \   g:xdg_config_dir .. '/awesome/themes/jnrowe/theme.moon',
     \   s:git_config,
     \   '~/.vim/vimrc.rst',
     \   '~/.vim/vimrc-local',
@@ -97,7 +97,7 @@ We don’t need full filenames::
 Configure sessions and start them automatically::
 
     let g:startify_session_autoload = v:true
-    let g:startify_session_dir = g:vim_data_dir . '/sessions'
+    let g:startify_session_dir = g:vim_data_dir .. '/sessions'
     let g:startify_session_sort = v:true
 
 If :kbd:`<F1>` is help, shifting up a gear is actually starting::

@@ -38,7 +38,7 @@ Find occurrences of current word, last search or lines that are too long::
                 let s:cmd = s:where ==# '' ? 'grep' : 'vimgrep'
                 call keymaps#quickfix_key(
                 \   s:type,
-                \   's' . (s:where ==# '' ? toupper(s:key) : s:key),
+                \   's' .. (s:where ==# '' ? toupper(s:key) : s:key),
                 \   printf(':%s%s /%s/g %s', s:prefix, s:cmd, s:pat, s:where))
             endfor
         endfor
@@ -94,7 +94,7 @@ further use::
     for s:t in ['qf', 'loc']
         call keymaps#quickfix_key(
         \   s:t[0], 'x',
-        \   printf(':call set%slist(%s[], "r", ' .
+        \   printf(':call set%slist(%s[], "r", ' ..
         \          '#{items: [], title: misc#get_qf_title("%s")})',
         \          s:t, (s:t ==# 'loc' ? '0, ' : ''), s:t))
         call keymaps#quickfix_key(

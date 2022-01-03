@@ -23,7 +23,7 @@
 
     function! plugins#radon#close_win() abort
         if bufnr('quick_radon') > -1
-            exec bufnr('quick_radon') . 'bdelete!'
+            exec bufnr('quick_radon') .. 'bdelete!'
         endif
     endfunction
 

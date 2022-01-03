@@ -19,12 +19,6 @@ work on when I upgrade.
 
 .. todo::
 
-    Switch to the ``..`` string concatenation, see 8.1.1114.  This
-    *simple* change is huge for readability, and I’m tempted to upgrade simply
-    for it.
-
-.. todo::
-
     Support for ``:scriptversion``, see 8.1.1116.
 
     Test with ``has('vimscript-3')``.

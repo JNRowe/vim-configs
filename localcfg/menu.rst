@@ -26,21 +26,21 @@ for even easier access.
 For awesomewm_::
 
     call menu#define_menu('&awesome', {
-    \   'r&c': g:xdg_config_dir . '/awesome/rc.moon',
-    \   '&theme':  g:xdg_config_dir . '/awesome/themes/jnrowe/theme.moon',
+    \   'r&c': g:xdg_config_dir .. '/awesome/rc.moon',
+    \   '&theme':  g:xdg_config_dir .. '/awesome/themes/jnrowe/theme.moon',
     \ })
 
 For dwm_::
 
     call menu#define_menu('&dwm', {
-    \   '&config.h': g:xdg_config_dir . '/dwm/config.h',
-    \   '&theme':  g:xdg_config_dir . '/dwm/themes/theme.h',
+    \   '&config.h': g:xdg_config_dir .. '/dwm/config.h',
+    \   '&theme':  g:xdg_config_dir .. '/dwm/themes/theme.h',
     \ })
 
 For fontconfig_::
 
     call menu#define_menu('&fontconfig', [
-    \   g:xdg_config_dir . '/fontconfig/fonts.conf',
+    \   g:xdg_config_dir .. '/fontconfig/fonts.conf',
     \   '~/.fonts.conf',
     \ ])
 
@@ -48,19 +48,19 @@ For |git|::
 
     call menu#define_menu('&git', {
     \   '&config': [
-    \       g:xdg_config_dir . '/git/config',
+    \       g:xdg_config_dir .. '/git/config',
     \       '~/.gitconfig',
     \   ],
-    \   '&attributes': g:xdg_config_dir . '/git/attributes',
-    \   '&mailmap': g:xdg_config_dir . '/git/mailmap',
+    \   '&attributes': g:xdg_config_dir .. '/git/attributes',
+    \   '&mailmap': g:xdg_config_dir .. '/git/mailmap',
     \ })
 
 For `GTK+`_ including dconf_::
 
     call menu#define_menu('&GTK+', {
     \   'GTK+ &2': '~/.gtkrc-2.0',
-    \   'GTK+ &3': g:xdg_config_dir . '/gtk-3.0/settings.ini',
-    \   '&dconf': g:xdg_config_dir . '/dconf/user.ini',
+    \   'GTK+ &3': g:xdg_config_dir .. '/gtk-3.0/settings.ini',
+    \   '&dconf': g:xdg_config_dir .. '/dconf/user.ini',
     \ })
 
 .. note::
@@ -71,7 +71,7 @@ For `GTK+`_ including dconf_::
 
 For |ledger|::
 
-    call menu#define_menu('&ledger', g:xdg_data_dir . '/ledger/ledger.org.gpg')
+    call menu#define_menu('&ledger', g:xdg_data_dir .. '/ledger/ledger.org.gpg')
 
 For mail tools; mailirproc_, mpop_, and msmtp_::
 
@@ -84,8 +84,8 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
 … oh, and neomutt_::
 
     call menu#define_menu('&neomutt', {
-    \   '&config': g:xdg_config_dir . '/neomutt/neomuttrc',
-    \   'colours': g:xdg_config_dir . '/neomutt/colour_defaults.rc',
+    \   '&config': g:xdg_config_dir .. '/neomutt/neomuttrc',
+    \   'colours': g:xdg_config_dir .. '/neomutt/colour_defaults.rc',
     \   '&theme': printf('%s/neomutt/colour_%s.rc', g:xdg_config_dir, $TERM),
     \ })
 
@@ -98,9 +98,9 @@ For mail tools; mailirproc_, mpop_, and msmtp_::
 For openbox_::
 
     call menu#define_menu('&openbox', {
-    \   '&autostart': g:xdg_config_dir . '/openbox/autostart.sh',
-    \   '&menu': g:xdg_config_dir . '/openbox/menu.xml',
-    \   'r&c': g:xdg_config_dir . '/openbox/rc.xml',
+    \   '&autostart': g:xdg_config_dir .. '/openbox/autostart.sh',
+    \   '&menu': g:xdg_config_dir .. '/openbox/menu.xml',
+    \   'r&c': g:xdg_config_dir .. '/openbox/rc.xml',
     \ })
 
 Python related tools; python_’s interactive configuration, flake8_, pip_, and
@@ -109,10 +109,10 @@ the amazing :pypi:`ptpython`::
     call menu#define_menu('&python', {
     \   '&config': [
     \       expand('$PYTHONSTARTUP'),
-    \       g:xdg_config_dir . '/python/rc',
+    \       g:xdg_config_dir .. '/python/rc',
     \   ],
-    \   '&flake8': g:xdg_config_dir . '/flake8',
-    \   '&pip': g:xdg_config_dir . '/pip/pip.conf',
+    \   '&flake8': g:xdg_config_dir .. '/flake8',
+    \   '&pip': g:xdg_config_dir .. '/pip/pip.conf',
     \   'ptpytho&n': '~/.ptpython/config.py',
     \ })
 
@@ -128,7 +128,7 @@ For readline_ and its numerous dependents::
 
 For :pypi:`rdial`, and my habitual editing of `run wrappers`_::
 
-    call menu#define_menu('&rdial', g:xdg_config_dir . '/rdial/config')
+    call menu#define_menu('&rdial', g:xdg_config_dir .. '/rdial/config')
 
 For |remind| and the excellent wyrd_ frontend to it::
 
@@ -147,9 +147,9 @@ For |remind| and the excellent wyrd_ frontend to it::
 For taskwarrior_::
 
     call menu#define_menu('&taskwarrior', {
-    \   '&alias': g:xdg_config_dir . '/taskwarrior/alias.rc',
-    \   '&config': g:xdg_config_dir . '/taskwarrior/defaults.rc',
-    \   '&theme': g:xdg_config_dir . '/taskwarrior/terminal.rc',
+    \   '&alias': g:xdg_config_dir .. '/taskwarrior/alias.rc',
+    \   '&config': g:xdg_config_dir .. '/taskwarrior/defaults.rc',
+    \   '&theme': g:xdg_config_dir .. '/taskwarrior/terminal.rc',
     \ })
 
 For *some* editor::
@@ -162,7 +162,7 @@ For *some* editor::
 
 For wget_::
 
-    call menu#define_menu('&wget', g:xdg_config_dir . '/wget/config')
+    call menu#define_menu('&wget', g:xdg_config_dir .. '/wget/config')
 
 .. tip::
 

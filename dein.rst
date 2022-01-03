@@ -1071,7 +1071,7 @@ Configure convenience mappings for common command usage::
 
     call dein#add('junegunn/vim-peekaboo', #{
     \   hook_source:
-    \       'call plugins#dein#load_config() | ' .
+    \       'call plugins#dein#load_config() | ' ..
     \       'call plugins#vim_peekaboo#set_compact()',
     \   hook_post_source: 'doautocmd <nomodeline> peekaboo_init BufEnter',
     \   on_map: #{
@@ -1256,7 +1256,7 @@ Use my custom maps::
     \   ['t', 'transaction_date_set(".", "auxiliary")'],
     \ ]
         if s:cmd[0] !=# ':'
-            let s:cmd = 'call ledger#' . s:cmd
+            let s:cmd = 'call ledger#' .. s:cmd
         else
             let s:cmd = s:cmd[1:]
         endif
@@ -1371,7 +1371,7 @@ Use my custom maps::
 
     call dein#add('mhinz/vim-startify', #{
     \   hook_source:
-    \       'call plugins#dein#load_config() | ' .
+    \       'call plugins#dein#load_config() | ' ..
     \       'call plugins#vim_startify#set_header_display()',
     \   on_cmd: ['Startify', ],
     \ })

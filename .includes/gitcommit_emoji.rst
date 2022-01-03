@@ -3,5 +3,5 @@ their types, and I’ll *try* to do so when committing to those projects::
 
     for [s:key, s:char] in [['new', '🌟'], ['del', '❌'], ['fix', '🐛'],
     \                       ['ref', '⟳'], ['tool', '🔨']]
-        silent execute 'iabbrev <buffer> _' . s:key . ' ' . s:char
+        silent execute 'iabbrev <buffer> _' .. s:key .. ' ' .. s:char
     endfor

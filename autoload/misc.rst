@@ -18,16 +18,16 @@
             let l:spf = printf('%s%s.%s.add', b:meta_dir, &spelllang, &encoding)
             if filereadable(l:spf)
             \   && index(split(&spellfile, ','), l:spf) == -1
-                execute 'setlocal spellfile+=' . l:spf
+                execute 'setlocal spellfile+=' .. l:spf
             endif
             let b:meta_spell = v:true
         endif
         for l:file in ['abbr.vim', 'project.vim']
-            let l:var = 'b:meta_' . fnamemodify(l:file, ':r')
+            let l:var = 'b:meta_' .. fnamemodify(l:file, ':r')
             if !exists(l:var)
-                let l:file_path = b:meta_dir . '/' . l:file
+                let l:file_path = b:meta_dir .. '/' .. l:file
                 if filereadable(l:file_path)
-                    execute 'source ' . l:file_path
+                    execute 'source ' .. l:file_path
                 endif
             endif
             let {l:var} = v:true
@@ -131,7 +131,7 @@
 
 ::
 
-    let s:project_env_dir = g:vim_data_dir . '/project_env/'
+    let s:project_env_dir = g:vim_data_dir .. '/project_env/'
 
     function! misc#meta_detect(file) abort
             if exists('b:meta_dir')
@@ -143,13 +143,13 @@
             \                  shellescape(l:p))
             silent let l:output = systemlist(l:cmd)
             if v:shell_error == 0 && len(l:output) == 1
-                return s:project_env_dir . l:output[0]
+                return s:project_env_dir .. l:output[0]
             endif
 
             " Lazy method to handle scheme prefixed filenames
             let l:break = ''
             while l:p !=# l:break
-                if isdirectory(l:p . '/.meta')
+                if isdirectory(l:p .. '/.meta')
                     return printf('%s%s/.meta', s:project_env_dir, l:p)
                 endif
                 let l:break = l:p
@@ -176,16 +176,16 @@
     function! misc#modeline_stub(verbose) abort
         let l:x = printf(' vim: ft=%s%s', &filetype, &expandtab ? '' : ' noet')
         if a:verbose
-            let l:x .= printf(
+            let l:x ..= printf(
             \   ' ts=%d sw=%d tw=%d fdm=%s%s',
             \   &tabstop, &shiftwidth, &textwidth, &foldmethod,
-            \   (&foldmethod ==# 'marker' ? ' fmr=' . &foldmarker : '')
+            \   (&foldmethod ==# 'marker' ? ' fmr=' .. &foldmarker : '')
             \ )
         endif
         if !empty(&commentstring)
             let l:x = printf(&commentstring, l:x)
         endif
-        let l:x .= ':'
+        let l:x ..= ':'
         call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
     endfunction
 
@@ -234,7 +234,7 @@
 ::
 
     function! misc#print_option(value) abort
-        let l:value = eval(a:value[0] ==# '&' ? a:value : '&' . a:value)
+        let l:value = eval(a:value[0] ==# '&' ? a:value : '&' .. a:value)
         echo join(sort(split(l:value, ',')), "\n")
     endfunction
 
@@ -279,7 +279,7 @@
 ::
 
     function! misc#title_word(word) abort
-        return toupper(a:word[0]) . a:word[1:]
+        return toupper(a:word[0]) .. a:word[1:]
     endfunction
 
 .. function:: toggle_flag(option: str, flag: str) -> None
@@ -292,7 +292,7 @@
 ::
 
     function! misc#toggle_flag(option, flag) abort
-        let l:optstr = eval('&' . a:option)
+        let l:optstr = eval('&' .. a:option)
         if stridx(l:optstr, ',') == -1
             " Simple char options like 'fo'
             let l:flip = '+-'[l:optstr =~# a:flag]
@@ -316,7 +316,7 @@
 
     function! misc#version() abort
         let l:n = 1
-        while has('patch' . n)
+        while has('patch' .. n)
             let l:n += 1
         endwhile
         return printf('%d.%d.%04d', v:version / 100, v:version % 100, n - 1)

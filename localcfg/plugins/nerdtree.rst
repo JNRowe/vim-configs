@@ -14,4 +14,4 @@ Natural sort like *nearly* every other tool I use::
 
 Store bookmarks files in |XDG basedir| compliant location::
 
-    let g:NERDTreeBookmarksFile = g:vim_data_dir . '/NERDTreeBookmarks'
+    let g:NERDTreeBookmarksFile = g:vim_data_dir .. '/NERDTreeBookmarks'

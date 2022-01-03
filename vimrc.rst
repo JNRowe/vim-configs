@@ -56,11 +56,11 @@ under :envvar:`TMPDIR`.
     if exists('$VIM_PROFILE')
         let [s:profile_file, s:profile_func] =
         \   (split($VIM_PROFILE, ':') + [v:none])[:1]
-        execute 'profile start ' . s:profile_file
+        execute 'profile start ' .. s:profile_file
         if s:profile_func is v:none
             profile file ~/.vim/*
         else
-            execute 'profile func ' . s:profile_func
+            execute 'profile func ' .. s:profile_func
         endif
     endif
 
@@ -98,7 +98,7 @@ Pull in build dependent configuration files::
         let s:feature_file = printf('~/.vim/localcfg/%s%s.vim',
         \                           !has(s:feature) ? 'not' : '', s:feature)
         if filereadable(expand(s:feature_file))
-            execute 'source ' . s:feature_file
+            execute 'source ' .. s:feature_file
         endif
     endfor
 
@@ -106,9 +106,9 @@ Pull in build dependent configuration files::
 
 Pull in host specific configuration data::
 
-    let s:host_file = expand('~/.vim/localcfg/' . hostname() . '.vim')
+    let s:host_file = expand('~/.vim/localcfg/' .. hostname() .. '.vim')
     if filereadable(s:host_file)
-        execute 'source ' . s:host_file
+        execute 'source ' .. s:host_file
     endif
 
 Define and configure plugins::

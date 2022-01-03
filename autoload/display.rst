@@ -54,7 +54,7 @@
 ::
 
     function! display#command_balloon(cmd) abort
-        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
+        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction
 
@@ -102,7 +102,7 @@
         let l:base = 19
         let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
         if strlen(l:text) > l:text_width
-            let l:text = l:text[:l:text_width] . '…'
+            let l:text = l:text[:l:text_width] .. '…'
         endif
         return l:text
     endfunction

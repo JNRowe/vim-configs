@@ -22,11 +22,11 @@
             let l:targets = systemlist('ninja -t targets | cut -d: -f1')
         else
             let l:targets = systemlist(
-            \   'make -pqrR | ' .
+            \   'make -pqrR | ' ..
             \   'sed -n "/^# Files/,$ { s,^\([^#\.].*\): .*,\1,p }"'
             \ )
         endif
-        return sort(filter(l:targets, {_, s -> s =~? '^' . a:arglead}))
+        return sort(filter(l:targets, {_, s -> s =~? '^' .. a:arglead}))
     endfunction
 
 .. function:: set_font_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
@@ -37,9 +37,9 @@
 
     function! completion#set_font_complete(arglead, cmdline, cursorpos) abort
         let l:fonts =
-        \   [escape(g:font_family . ' ' . g:font_size, ' '), ]
+        \   [escape(g:font_family .. ' ' .. g:font_size, ' '), ]
         \   + map(range(8),
-        \         {n -> escape(g:font_family . ' ' . (n * 8 + 16), ' ')})
+        \         {n -> escape(g:font_family .. ' ' .. (n * 8 + 16), ' ')})
         return sort(
         \   filter(l:fonts,
         \          {_, s -> strpart(s, 0, len(a:arglead)) ==# a:arglead})
@@ -64,7 +64,7 @@
 
     function! completion#project_file_complete(arglead, cmdline, cursorpos) abort
         return sort(filter(['abbr.vim', 'project.vim'],
-        \                  {_, s -> s =~? '^' . a:arglead}))
+        \                  {_, s -> s =~? '^' .. a:arglead}))
     endfunction
 
 .. _ninja: https://ninja-build.org/

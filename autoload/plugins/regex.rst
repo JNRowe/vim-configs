@@ -16,7 +16,7 @@
 
     function! plugins#regex#lang_complete(arglead, cmdline, cursorpos) abort
         let l:lang_files = glob(
-        \   g:dein_repos_dir .
+        \   g:dein_repos_dir ..
         \   '/github.com/ervandew/regex/autoload/regex/lang/*.vim',
         \   v:false, v:true
         \ )
@@ -25,5 +25,5 @@
         \   {_, s -> !empty(exepath(s))}
         \ )
         return sort(filter(l:supported_langs,
-        \                  {_, s -> s =~? '^' . a:arglead}))
+        \                  {_, s -> s =~? '^' .. a:arglead}))
     endfunction

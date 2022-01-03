@@ -13,7 +13,7 @@ Override default prompt colour::
 
 Keep history in |XDG basedir| compliant location::
 
-    let g:fzf_history_dir = g:vim_cache_dir . '/fzf-history'
+    let g:fzf_history_dir = g:vim_cache_dir .. '/fzf-history'
 
 Jump through hoops to find a valid way to run :command:`fzf` if ``:terminal``
 isn’t available::

@@ -12,7 +12,7 @@
 
 Don’t write undo data for temporary files::
 
-        execute 'autocmd BufWritePre ' . &backupskip . ' setlocal noundofile'
+        execute 'autocmd BufWritePre ' .. &backupskip .. ' setlocal noundofile'
 
 .. caution::
 

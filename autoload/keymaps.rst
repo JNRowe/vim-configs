@@ -66,7 +66,7 @@
         if a:cmd[len(a:cmd)-1] ==# '\'
             let l:cmd = a:cmd[:len(a:cmd)-2]
         else
-            let l:cmd = a:cmd . '<CR>'
+            let l:cmd = a:cmd .. '<CR>'
         endif
         " Commands beginning with : don’t have a:type prefix inserted
         if a:cmd[0] !=# ':'
@@ -98,7 +98,7 @@
             let l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
         endif
         let l:buf = get(l:bufs, l:current + a:count, l:default)
-        execute 'buffer ' . l:buf
+        execute 'buffer ' .. l:buf
     endfunction
 
 .. spelling::

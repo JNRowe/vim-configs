@@ -47,7 +47,7 @@
         if type(a:items) is v:t_dict
             for [l:k, l:v] in sort(items(a:items))
                 let l:files = type(l:v) is v:t_string ? split(l:v) : l:v
-                call s:add_menu_items(a:heading . '.' . l:k, l:files)
+                call s:add_menu_items(a:heading .. '.' .. l:k, l:files)
             endfor
         else
             let l:files = type(a:items) is v:t_string ? [a:items] : a:items

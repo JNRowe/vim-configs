@@ -1,3 +1,3 @@
-Enforce original |vim| script implementation::
+Enforce |vim| script implementation to reduce ambiguities::
 
-    scriptversion 1
+    scriptversion 2
