@@ -6,6 +6,8 @@ they may make your life far simpler!
 
 .. include:: .includes/scriptencoding.rst
 
+.. include:: .includes/scriptversion.rst
+
 .. attention::
 
     I record requirements even when they’re clearly met because I like to know

@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 .. _switch-bufs:
 
 Set up map to quickly move among buffers::

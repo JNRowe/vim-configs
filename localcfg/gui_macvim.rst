@@ -1,6 +1,8 @@
 ``localcfg/gui_macvim.vim``
 ===========================
 
+.. include:: ../.includes/scriptversion.rst
+
 MacOS specific fonts setup::
 
     set antialias

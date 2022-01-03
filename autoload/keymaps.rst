@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: home_skip() -> None
 
     Jump between first character and first non-blank character on line.

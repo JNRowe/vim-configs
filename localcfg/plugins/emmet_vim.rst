@@ -1,6 +1,8 @@
 ``localcfg/plugins/emmet_vim.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Enable omnicompletion::
 
     let g:user_emmet_complete_tag = v:true

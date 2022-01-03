@@ -1,6 +1,8 @@
 ``localcfg/plugins/committia.vim.vim``
 ======================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 I never want multi-column display in the terminal::
 
     if !has('gui')

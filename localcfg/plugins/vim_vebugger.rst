@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 Configure symbols::
 
     let g:vebugger_breakpoint_text = '⇒'

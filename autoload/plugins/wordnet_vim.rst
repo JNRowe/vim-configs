@@ -1,6 +1,8 @@
 ``autoload/plugins/wordnet_vim.vim``
 ====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: wordnet_close_win() -> None
 
     Close wordnet_ window from anywhere.

@@ -1,6 +1,8 @@
 ``autoload/completion.vim``
 ===========================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: build_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
 
     Completion targets from active project.

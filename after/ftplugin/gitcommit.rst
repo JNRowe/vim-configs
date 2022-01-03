@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 Switch to insert mode immediately when opening a new commit message::
 
     augroup jnrowe_gitcommit

@@ -1,6 +1,8 @@
 ``after/ftplugin/c.vim``
 ========================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use ``:make`` to compile C/C++, even without a Makefile::
 
     if !filereadable('Makefile')

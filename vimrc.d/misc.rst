@@ -1,6 +1,8 @@
 ``vimrc.d/misc.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Show highlight group of the current location::
 
     command! ShowHighlightGroups

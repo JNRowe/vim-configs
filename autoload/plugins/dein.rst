@@ -1,6 +1,8 @@
 ``autoload/plugins/dein.vim``
 =============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: load_config(plugin: Optional[str])) -> None
 
     Load configuration file for plugin.

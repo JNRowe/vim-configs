@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_jinja.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Disable automatic detection as it occasionally produces false positives::
 
     let g:htmljinja_disable_detection = v:true

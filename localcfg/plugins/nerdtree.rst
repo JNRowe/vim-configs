@@ -1,6 +1,8 @@
 ``localcfg/plugins/nerdtree.vim``
 =================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Case sensitive sort like *every other tool* I use::
 
     let g:NERDTreeCaseSensitiveSort = v:true

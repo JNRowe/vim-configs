@@ -1,6 +1,8 @@
 ``after/ftplugin/html.vim``
 ===========================
 
+.. include:: ../../.includes/scriptversion.rst
+
 I treat :doc:`MHTML files as HTML <../../ftdetect/mht>`, so make it possible to
 use section jumps to jump about::
 

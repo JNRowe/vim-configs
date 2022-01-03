@@ -1,6 +1,8 @@
 ``vimrc.d/dein.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Make the :repo:`dein.vim <Shougo/dein.vim>` :command:`git` submodule available
 to |vim|::
 

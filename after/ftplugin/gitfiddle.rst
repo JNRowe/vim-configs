@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 We can treat git-fiddle_ as a :command:`git rebase` file for the :doc:`most part
 <../../ftdetect/git-fiddle>`, but we’ll also need a few of the things from the
 :doc:`git commit setup <gitcommit>` to make things comfortable.

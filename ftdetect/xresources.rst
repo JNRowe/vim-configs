@@ -1,6 +1,8 @@
 ``ftdetect/xresources.vim``
 ===========================
 
+.. include:: ../.includes/scriptversion.rst
+
 I store :command:`xrdb` configuration data in various files in
 :file:`~/.Xresources.d/`, it would be nice if |vim| could highlight them::
 

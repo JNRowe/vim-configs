@@ -1,6 +1,8 @@
 ``autoload/filetypes.vim``
 ==========================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: add_advice_header(prio: str, due: str) -> None
 
     Insert a `X-Advice header`_ above the first non-black line.

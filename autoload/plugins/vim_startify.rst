@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_startify.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: set_header_display(enable: bool) -> None
 
     Choose header content based on window size.

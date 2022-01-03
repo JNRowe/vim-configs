@@ -1,6 +1,8 @@
 ``localcfg/plugins/fzf.vim``
 ============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use smaller than default :repo:`fzf <junegunn/fzf>` window::
 
     let g:fzf_layout = #{down: '~30%'}

@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_quick_radon.vim``
 ========================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Display radon_ output if possible::
 
     nnoremap <silent> [radon]o :call plugins#vim_quick_radon#open_win()<CR>

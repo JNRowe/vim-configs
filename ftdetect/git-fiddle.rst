@@ -1,6 +1,8 @@
 ``ftdetect/git-fiddle.vim``
 ===========================
 
+.. include:: ../.includes/scriptversion.rst
+
 Treat git-fiddle_ buffers as :command:`git rebase` files::
 
     " vint: -ProhibitAutocmdWithNoGroup

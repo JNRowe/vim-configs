@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_sneak.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: sneak_enter() -> None
 
     Disable cursor highlighting.

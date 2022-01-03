@@ -1,6 +1,8 @@
 ``localcfg/gui_running.vim``
 ============================
 
+.. include:: ../.includes/scriptversion.rst
+
 My chosen window managers handle boundaries far better than :command:`gvim`
 does, so disable the default::
 

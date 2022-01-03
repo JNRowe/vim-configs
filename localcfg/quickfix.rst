@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 .. _quickfix-custom-maps:
 
 Configure my custom maps for quickfix::

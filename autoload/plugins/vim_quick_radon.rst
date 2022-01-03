@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_quick_radon.vim``
 ========================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: open_win() -> None
 
     Display radon_ output if possible.

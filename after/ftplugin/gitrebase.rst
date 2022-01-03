@@ -1,6 +1,8 @@
 ``after/ftplugin/gitrebase.vim``
 ================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. _gitrebase-custom-maps:
 
 Use my custom maps::

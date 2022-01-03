@@ -1,6 +1,8 @@
 ``localcfg/diff.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Ignore whitespace by default::
 
     set diffopt+=iwhite

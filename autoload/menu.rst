@@ -1,6 +1,8 @@
 ``autoload/menu.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: add_menu_items(heading: str, files: List[str]) -> None
 
     Utility function to add only existing files to a menu.

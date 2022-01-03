@@ -1,6 +1,8 @@
 ``vimrc.d/packages.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. note::
 
     The strange concoctions in this file are to support lazy loading of bundled

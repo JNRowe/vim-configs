@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 Bail early if ``conceal`` isn’t supported::
 
     if !has('conceal')

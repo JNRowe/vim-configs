@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_snippets.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Configure personal settings for snippets::
 
     let g:snips_author = g:user_email

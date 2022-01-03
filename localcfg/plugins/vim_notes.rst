@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_notes.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Disable options that clash with :ref:`buffer changes <switch-bufs>`::
 
     let g:notes_alt_indents = v:false

@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 Common-ish mail abbreviations, that may also appear occasionally in other
 contexts too::
 

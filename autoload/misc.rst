@@ -1,6 +1,8 @@
 ``autoload/misc.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: apply_project_locals() -> None
 
     Find and process project-specific configuration files.

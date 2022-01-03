@@ -1,6 +1,8 @@
 ``localcfg/notgui_running.vim``
 ===============================
 
+.. include:: ../.includes/scriptversion.rst
+
 Set up the menus so ``:emenu`` works properly::
 
     runtime! ALL menu.vim

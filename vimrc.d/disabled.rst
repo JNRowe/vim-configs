@@ -1,6 +1,8 @@
 ``vimrc.d/disabled.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 Don’t load unhelpful [to me] default plugins.  Basically, this can be summed up
 as the things which we don’t want(``vimball`` support), things with far
 superior external alternatives(Pygments_ over ``2html``), or plugins with

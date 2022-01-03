@@ -1,6 +1,8 @@
 ``localcfg/plugins/calendar_vim.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Configure look::
 
     let g:calendar_mark = 'left-fit'

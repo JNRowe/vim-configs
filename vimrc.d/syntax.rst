@@ -1,6 +1,8 @@
 ``vimrc.d/syntax.vim``
 ======================
 
+.. include:: ../.includes/scriptversion.rst
+
 Load a colour scheme, but only on first source::
 
     if !exists('g:colors_name')

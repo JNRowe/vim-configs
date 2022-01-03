@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. image:: /.static/vim_airline_powerlineish.png
    :alt: powerlineish theme screenshot
 

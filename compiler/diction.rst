@@ -1,6 +1,8 @@
 ``compiler/diction.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 Configure diction_ support::
 
     setlocal errorformat=%f:%l:\ %m

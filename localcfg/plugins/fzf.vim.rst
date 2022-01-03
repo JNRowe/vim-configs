@@ -1,6 +1,8 @@
 ``localcfg/plugins/fzf.vim.vim``
 ================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Without a prefix the exported commands shadow other plugins, and are far harder
 to remember [#]_.
 

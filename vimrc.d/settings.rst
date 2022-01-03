@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 I want backups, but not in the project tree and I never want to accidentally
 overwrite a :command:`cp --link` tree::
 

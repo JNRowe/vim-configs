@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_peekaboo.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: set_compact() -> None
 
     Configure layout based on window size.

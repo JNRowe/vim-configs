@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 Automatically rebuild ``'spellfile'`` files on write::
 
     augroup jnrowe_spell

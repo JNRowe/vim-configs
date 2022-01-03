@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use a low priority for spawned commands::
 
     let g:ale_command_wrapper = 'nice -n5'

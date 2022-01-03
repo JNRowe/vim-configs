@@ -1,6 +1,8 @@
 ``autoload/plugins/regex.vim``
 ==============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: lang_complete(arglead: str, cmdline: str, cursorpos: int) -> List[str]
 
     Completion targets for usable ``:Regex`` modes.

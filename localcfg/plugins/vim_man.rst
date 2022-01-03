@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_man.vim``
 ================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Default to using the enhanced man page interface::
 
     set keywordprg=:Man

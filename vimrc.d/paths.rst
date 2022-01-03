@@ -1,6 +1,8 @@
 ``vimrc.d/paths.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Find |XDG basedir| compliant locations for data files::
 
     for [s:type, s:path] in [

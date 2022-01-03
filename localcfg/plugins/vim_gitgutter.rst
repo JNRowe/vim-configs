@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 If you have more than one-hundred edits you need to commit, not look at symbols!
 
 ::

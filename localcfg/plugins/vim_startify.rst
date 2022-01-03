@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. _vim-startify-intro:
 
 Don’t run on startup so that we can resume previous editing session with ease::

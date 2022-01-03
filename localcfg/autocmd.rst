@@ -1,6 +1,8 @@
 ``localcfg/autocmd.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 ::
 
     augroup jnrowe

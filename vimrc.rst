@@ -7,6 +7,8 @@ First use of ``:scriptencoding`` must be after an initial encoding is set::
 
 .. include:: .includes/scriptencoding.rst
 
+.. include:: .includes/scriptversion.rst
+
 Recent |vim| versions disable ``'compatible'`` when a :file:`vimrc` is found,
 but some distributions are disabling that change for a reason that is far beyond
 me.

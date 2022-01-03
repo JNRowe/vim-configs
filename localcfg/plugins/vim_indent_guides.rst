@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_indent_guides.vim``
 ==========================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Configure styling::
 
     let g:indent_guides_auto_colors = v:false

@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. _mail-custom-maps:
 
 Add maps to insert `X-Advice headers`_.  Obviously we’re not going to convince

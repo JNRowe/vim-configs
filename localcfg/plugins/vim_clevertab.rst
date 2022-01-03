@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_clevertab.vim``
 ======================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Configure preferred order of completion::
 
     let s:types = ['start', 'tab', 'keyword', 'omni', 'dictionary', 'stop']

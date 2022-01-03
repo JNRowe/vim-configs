@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: apply_commands() -> None
 
     Apply inline commands from projectionist templates.

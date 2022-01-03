@@ -1,6 +1,8 @@
 ``after/ftplugin/rst.vim``
 ==========================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. _rst-custom-maps:
 
 This creates |reST| headings using *my* favourite adornments::

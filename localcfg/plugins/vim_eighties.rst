@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_eighties.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 :repo:`committia <rhysd/committia.vim>` should be treated as static window
 layout::
 
