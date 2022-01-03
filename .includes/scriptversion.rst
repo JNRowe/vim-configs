@@ -1,3 +1,4 @@
-Enforce |vim| script implementation to reduce ambiguities::
+Enforce |vim| script implementation to reduce ambiguities and improve
+robustness::
 
-    scriptversion 2
+    scriptversion 3
