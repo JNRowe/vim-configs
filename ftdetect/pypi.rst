@@ -1,6 +1,8 @@
 ``ftdetect/pypi.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 For simple usage ``dosini`` is useful for the PyPI configuration data::
 
     " vint: -ProhibitAutocmdWithNoGroup

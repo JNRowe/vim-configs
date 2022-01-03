@@ -1,6 +1,8 @@
 ``localcfg/plugins/regex.vim``
 ==============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Only complete on installed languages::
 
     if has('cmdline_compl')

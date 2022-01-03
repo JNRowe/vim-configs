@@ -7,6 +7,8 @@ First use of ``:scriptencoding`` must be after an initial encoding is set::
 
 .. include:: .includes/scriptencoding.rst
 
+.. include:: .includes/scriptversion.rst
+
 Recent |vim| versions disable ``'compatible'`` when a :file:`vimrc` is found,
 but some distributions are disabling that change for a reason that is far beyond
 me.
@@ -19,12 +21,12 @@ me.
     endif
     " vint: +ProhibitSetNoCompatible
 
-Warn users with pre-v8 |vim| that problems will occur, but note that pull
-requests which aren’t too invasive are most welcome.
+Warn users with |vim| versions lower than v8.2 that problems will occur, but
+note that pull requests which aren’t too invasive are most welcome.
 
 ::
 
-    if v:version < 800
+    if v:version < 802
         let v:warningmsg = 'Vim version 8 or higher is required'
         echohl WarningMsg
         echomsg v:warningmsg
@@ -54,11 +56,11 @@ under :envvar:`TMPDIR`.
     if exists('$VIM_PROFILE')
         let [s:profile_file, s:profile_func] =
         \   (split($VIM_PROFILE, ':') + [v:none])[:1]
-        execute 'profile start ' . s:profile_file
+        execute 'profile start ' .. s:profile_file
         if s:profile_func is v:none
             profile file ~/.vim/*
         else
-            execute 'profile func ' . s:profile_func
+            execute 'profile func ' .. s:profile_func
         endif
     endif
 
@@ -82,15 +84,7 @@ Pull in general |vim| configuration files::
     source ~/.vim/vimrc.d/settings.vim
     source ~/.vim/vimrc.d/misc.vim
     source ~/.vim/vimrc.d/maps.vim
-    if has('patch-7.4.1821')
-        source ~/.vim/vimrc.d/packages.vim
-    else
-        " There may be other things in packages.vim, but this is *the* thing
-        " I can’t do without.
-        if !exists('*EditExisting')
-            runtime macros/editexisting.vim
-        endif
-    endif
+    source ~/.vim/vimrc.d/packages.vim
 
 .. _build_dependent_file:
 
@@ -104,7 +98,7 @@ Pull in build dependent configuration files::
         let s:feature_file = printf('~/.vim/localcfg/%s%s.vim',
         \                           !has(s:feature) ? 'not' : '', s:feature)
         if filereadable(expand(s:feature_file))
-            execute 'source ' . s:feature_file
+            execute 'source ' .. s:feature_file
         endif
     endfor
 
@@ -112,9 +106,9 @@ Pull in build dependent configuration files::
 
 Pull in host specific configuration data::
 
-    let s:host_file = expand('~/.vim/localcfg/' . hostname() . '.vim')
+    let s:host_file = expand('~/.vim/localcfg/' .. hostname() .. '.vim')
     if filereadable(s:host_file)
-        execute 'source ' . s:host_file
+        execute 'source ' .. s:host_file
     endif
 
 Define and configure plugins::

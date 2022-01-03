@@ -1,6 +1,8 @@
 ``after/ftplugin/help.vim``
 ===========================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use :kbd:`<Enter>` and :kbd:`<Backspace>` to hop through documentation, as I’m
 too used to that setup in browsers::
 

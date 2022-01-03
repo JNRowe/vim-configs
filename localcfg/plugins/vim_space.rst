@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_space.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Select mode mappings break snippets, so disable them::
 
     let g:space_disable_select_mode = v:true

@@ -1,6 +1,8 @@
 ``autoload/plugins/dein.vim``
 =============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: load_config(plugin: Optional[str])) -> None
 
     Load configuration file for plugin.
@@ -15,7 +17,7 @@
     function! plugins#dein#load_config(...) abort
         let l:name = substitute(get(a:, 1, g:dein#plugin.name),
         \                       '-', '_', 'g')
-        execute 'source ~/.vim/localcfg/plugins/' . l:name . '.vim'
+        execute 'source ~/.vim/localcfg/plugins/' .. l:name .. '.vim'
     endfunction
 
 .. function:: prefix(prefix: str, args: List[str]) -> List[str]
@@ -32,7 +34,7 @@
 ::
 
     function! plugins#dein#prefix(prefix, args) abort
-        return map(copy(a:args), {_, s -> a:prefix . s})
+        return map(copy(a:args), {_, s -> a:prefix .. s})
     endfunction
 
 .. function:: suffix(suffix: str, args: List[str]) -> List[str]
@@ -49,7 +51,7 @@
 ::
 
     function! plugins#dein#suffix(suffix, args) abort
-        return map(copy(a:args), {_, s -> s . a:suffix})
+        return map(copy(a:args), {_, s -> s .. a:suffix})
     endfunction
 
 .. function:: has_exec(command: str) -> bool

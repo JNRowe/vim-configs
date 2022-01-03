@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use a low priority for spawned commands::
 
     let g:ale_command_wrapper = 'nice -n5'
@@ -62,7 +64,7 @@ Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 
     let g:ale_pattern_options = {
-    \   '\.mht\(ml\)\?$': {'ale_enabled': v:false}
+    \   '\.mht\(ml\)\?$': #{ale_enabled: v:false}
     \ }
 
 Language specific settings

@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_ledger.vim``
 ===================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use a lower than default column width to allow for larger expressions without
 lines growing too much::
 

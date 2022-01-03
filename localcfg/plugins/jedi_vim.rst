@@ -1,6 +1,8 @@
 ``localcfg/plugins/jedi_vim.vim``
 =================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 I like my ``'completeopt'`` settings to be language independent::
 
     let g:jedi#auto_vim_configuration = v:false

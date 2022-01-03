@@ -1,6 +1,8 @@
 ``after/ftplugin/markdown.vim``
 ===============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. include:: ../../.includes/prose.rst
 
 .. include:: ../../.includes/thesaurus.rst

@@ -1,6 +1,8 @@
 ``autoload/plugins/ultisnips.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: toggle_ale_state(enable: bool) -> None
 
     Toggle :repo:`ale <dense-analysis/ale>` state.

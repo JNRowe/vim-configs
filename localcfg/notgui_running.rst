@@ -1,6 +1,8 @@
 ``localcfg/notgui_running.vim``
 ===============================
 
+.. include:: ../.includes/scriptversion.rst
+
 Set up the menus so ``:emenu`` works properly::
 
     runtime! ALL menu.vim
@@ -24,7 +26,7 @@ Poke around, as best we can, to discern the background colour::
 
     let s:feature_terms =
     \   '^\(kitty\|linux\|\(rxvt-unicode\|st\|xterm\)\(-256color\)\?\)$'
-    if &term =~# s:feature_terms || split($COLORFGBG . ';padding', ';')[0] == 15
+    if &term =~# s:feature_terms || split($COLORFGBG .. ';padding', ';')[0] == 15
         if &background !=# 'dark'
             set background=dark
         endif
@@ -52,9 +54,9 @@ Poke around, as best we can, to discern the background colour::
 
 … and match cursor types to :command:`gvim`::
 
-        let &t_EI .= "\<Esc>[2 q"
-        let &t_SI .= "\<Esc>[6 q"
-        let &t_SR .= "\<Esc>[4 q"
+        let &t_EI ..= "\<Esc>[2 q"
+        let &t_SI ..= "\<Esc>[6 q"
+        let &t_SR ..= "\<Esc>[4 q"
     endif
 
 Omnicompletion rocks, but :kbd:`<C-x><C-o>` doesn’t::

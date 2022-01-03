@@ -3,28 +3,17 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 I want backups, but not in the project tree and I never want to accidentally
 overwrite a :command:`cp --link` tree::
 
     set backup
     set backupcopy=auto,breakhardlink
-    let &backupdir = g:vim_cache_dir . '/backup//'
-    if !isdirectory(g:vim_cache_dir . '/backup')
-        call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
+    let &backupdir = g:vim_cache_dir .. '/backup//'
+    if !isdirectory(g:vim_cache_dir .. '/backup')
+        call mkdir(g:vim_cache_dir .. '/backup', 'p', 0700)
     endif
-
-.. _backupskip-setting:
-
-Where necessary, remove duplicates entries for readability::
-
-    if !has('patch-8.1.1519')
-        let &backupskip = join(uniq(split(&backupskip, ',')), ',')
-    endif
-
-.. note::
-
-    The duplicates occur because |vim| defaults to including ``$TEMP``,
-    ``$TMPDIR`` and ``$TMP`` which are often symlinks to the same locations.
 
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
 edits and the resulting often *huge* backups are practically always useless to
@@ -88,15 +77,7 @@ Select a :vimdoc:`safer encryption method <options.txt#blowfish2>` if available
 or warn about weakened encryption::
 
     if has('cryptv')
-        if has('patch-7.4.401')
-            set cryptmethod=blowfish2
-        else
-            let v:warningmsg = 'Using old blowfish cryptmethod'
-            echohl WarningMsg
-            echomsg v:warningmsg
-            echohl none
-            set cryptmethod=blowfish
-        endif
+        set cryptmethod=blowfish2
     endif
 
 .. tip::
@@ -127,8 +108,8 @@ If a wordlist is available use it as the completion dictionary::
 Keep swap files in |XDG basedir| compliant location::
 
     let &directory = printf('%s/swap//,%s', g:vim_cache_dir, &directory)
-    if !isdirectory(g:vim_cache_dir . '/swap')
-        call mkdir(g:vim_cache_dir . '/swap', 'p', 0700)
+    if !isdirectory(g:vim_cache_dir .. '/swap')
+        call mkdir(g:vim_cache_dir .. '/swap', 'p', 0700)
     endif
 
 :wikipedia:`UTF-8` should be default on all systems now, and |vim| will pick
@@ -345,13 +326,9 @@ the use of menu completion::
 
     set shortmess+=c
 
-.. _matchpos:
-
 Show match position when searching::
 
-    if has('patch-8.1.1270')
-        set shortmess-=S
-    endif
+    set shortmess-=S
 
 Always display partial commands::
 
@@ -456,8 +433,8 @@ compliant location::
     if has('persistent_undo')
         set undofile
         let &undodir = printf('%s/undo//,%s', g:vim_data_dir, &undodir)
-        if !isdirectory(g:vim_data_dir . '/undo')
-            call mkdir(g:vim_data_dir . '/undo', 'p', 0700)
+        if !isdirectory(g:vim_data_dir .. '/undo')
+            call mkdir(g:vim_data_dir .. '/undo', 'p', 0700)
         endif
     endif
 
@@ -475,7 +452,7 @@ Double |vim|’s default swap file write time interval::
 Store session files in |XDG basedir| compliant location::
 
     if has('mksession')
-        let &viewdir = g:vim_cache_dir . '/view'
+        let &viewdir = g:vim_cache_dir .. '/view'
         if !isdirectory(&viewdir)
             call mkdir(&viewdir, 'p', 0700)
         endif
@@ -499,7 +476,7 @@ Option      Use
 
     if has('viminfo')
         set viminfo='5000,<1000,%,h,r/media,r/tmp
-        let &viminfofile = g:vim_cache_dir . '/viminfo'
+        let &viminfofile = g:vim_cache_dir .. '/viminfo'
     endif
 
 .. note::

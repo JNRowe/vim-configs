@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_peekaboo.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: set_compact() -> None
 
     Configure layout based on window size.
@@ -20,7 +22,7 @@
     function plugins#vim_peekaboo#set_compact() abort
         if exists('$DISPLAY') && executable('xdotool')
             silent let s:win_geometry =
-            \   system('xdotool getwindowgeometry --shell ' .
+            \   system('xdotool getwindowgeometry --shell ' ..
             \          (v:windowid != 0 ? v:windowid : $WINDOWID))
             let s:win_height = str2nr(substitute(s:win_geometry,
             \                                    '.*HEIGHT=\([0-9]\+\).*',

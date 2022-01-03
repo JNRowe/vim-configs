@@ -1,6 +1,8 @@
 ``localcfg/plugins/delimitMate.vim``
 ====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Support multiline strings in nim_ and |Python|::
 
     augroup jnrowe_delimitMate

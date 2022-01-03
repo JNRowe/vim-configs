@@ -1,6 +1,8 @@
 ``localcfg/plugins/csv.vim.vim``
 ================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 When guessing delimiters fails assume comma::
 
     let g:csv_default_delim = ','

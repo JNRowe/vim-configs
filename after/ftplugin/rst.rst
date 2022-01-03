@@ -1,15 +1,17 @@
 ``after/ftplugin/rst.vim``
 ==========================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. _rst-custom-maps:
 
 This creates |reST| headings using *my* favourite adornments::
 
-    call keymaps#mnemonic_map('Heading', {'buffer': v:true, 'local': v:true})
+    call keymaps#mnemonic_map('Heading', #{buffer: v:true, local: v:true})
 
     for s:level in [1, 2, 3]
         for s:pad in [v:true, v:false]
-            execute printf('nnoremap <silent> <buffer> [Heading]%s%d ' .
+            execute printf('nnoremap <silent> <buffer> [Heading]%s%d ' ..
             \              ':call filetypes#make_reST_header(%d, %s)<CR>',
             \              s:pad != v:true ? 's' : '', s:level, s:level, s:pad)
         endfor

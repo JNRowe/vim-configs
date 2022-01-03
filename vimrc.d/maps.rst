@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 .. _switch-bufs:
 
 Set up map to quickly move among buffers::
@@ -108,7 +110,7 @@ Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
     if executable('xdg-open')
         nnoremap <silent> gx
-        \   :call system('xdg-open ' . shellescape(expand('<cfile>:p')))<CR>
+        \   :call system('xdg-open ' .. shellescape(expand('<cfile>:p')))<CR>
     endif
 
 .. _window-management-maps:
@@ -131,7 +133,7 @@ Maps to jump Window management::
 
 Help related maps::
 
-    call keymaps#mnemonic_map('Help', {'key': '?'})
+    call keymaps#mnemonic_map('Help', #{key: '?'})
 
     for s:t in ['function-list', 'pattern', 'quickref', 'registers']
         execute printf('nnoremap [Help]%.1s :help %s<CR>', s:t, s:t)
@@ -172,7 +174,7 @@ when you’re showing code::
 
 Insert current buffer’s directory at command line::
 
-    cnoremap <M-.> <C-r>=expand('%:p:h') . '/'<CR>
+    cnoremap <M-.> <C-r>=expand('%:p:h') .. '/'<CR>
 
 .. _scroll-wheel-override:
 
@@ -207,7 +209,7 @@ stretching:::
 
 Add mappings to highlight lines::
 
-    call keymaps#mnemonic_map('Display', {'key': 'D', 'modes': 'nv'})
+    call keymaps#mnemonic_map('Display', #{key: 'D', modes: 'nv'})
     nnoremap <silent> [Display]lh :call display#add_line_highlight()<CR>
     nnoremap <silent> [Display]lc :call display#clear_line_highlights()<CR>
 
@@ -235,12 +237,12 @@ Highlight matches for last search only within visual region::
 
 Quickly correct close spelling mistakes without changing cursor position::
 
-    call keymaps#mnemonic_map('Spell', {'key': 'z'})
+    call keymaps#mnemonic_map('Spell', #{key: 'z'})
     for s:dir in ['[', ']']
         for s:type in ['bad', 'full']
             for s:auto in [v:false, v:true]
                 execute printf(
-                \   'nnoremap <silent> [Spell]%s%s%s ' .
+                \   'nnoremap <silent> [Spell]%s%s%s ' ..
                 \   ':call misc#preserve_layout("normal! %s%s%sz=")<CR>',
                 \   s:auto ? '' : 'q',
                 \   s:dir ==# ']' ? 'n' : 'l',
@@ -266,7 +268,7 @@ Quickly add close words to dictionaries without changing cursor position::
         for s:type in ['bad', 'full']
             for s:local in [v:false, v:true]
                 execute printf(
-                \   'nnoremap <silent> [Spell]%s%s%s ' .
+                \   'nnoremap <silent> [Spell]%s%s%s ' ..
                 \   ':call misc#preserve_layout("normal! %s%sz%s")<CR>',
                 \   s:dir ==# ']' ? 'n' : 'l',
                 \   s:local ? 'A' : 'a',

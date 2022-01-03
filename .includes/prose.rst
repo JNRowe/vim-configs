@@ -30,7 +30,7 @@ sure if it is too granular.
 ::
 
     for s:key in split(',.!?:;', '\zs')
-        execute 'inoremap <buffer> ' . s:key . ' ' . s:key . '<C-g>u'
+        execute 'inoremap <buffer> ' .. s:key .. ' ' .. s:key .. '<C-g>u'
     endfor
 
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/

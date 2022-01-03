@@ -1,6 +1,8 @@
 ``after/ftplugin/remind.vim``
 =============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Just in case a ``'cms'`` value gets added to the upstream plugin, we’ll force
 this as it would break too many scripts that are relying on post-processing the
 |remind| data::

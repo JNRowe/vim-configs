@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_sneak.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Enable label mode::
 
     let g:sneak#label = 1

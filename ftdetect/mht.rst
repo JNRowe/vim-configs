@@ -1,6 +1,8 @@
 ``ftdetect/mht.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Treat :wikipedia:`MHTML` documents as |HTML|::
 
     " vint: -ProhibitAutocmdWithNoGroup

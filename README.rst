@@ -7,7 +7,7 @@ they’re useful to you too, or — better yet — you’ll spot *and* fix a bug
 .. image:: .static/hero.png
    :alt: Sample screenshot of configuration
 
-It uses features introduced in version 8.0, but should work with later versions.
+It uses features introduced in version 8.2, but should work with later versions.
 It will *not* work with neovim_, and that is unlikely to change in the near
 future.
 

@@ -1,6 +1,8 @@
 ``localcfg/autocmd.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 ::
 
     augroup jnrowe
@@ -10,13 +12,13 @@
 
 Don’t write undo data for temporary files::
 
-        execute 'autocmd BufWritePre ' . &backupskip . ' setlocal noundofile'
+        execute 'autocmd BufWritePre ' .. &backupskip .. ' setlocal noundofile'
 
 .. caution::
 
-    Using the value of :ref:`'backupskip' <backupskip-setting>` is a simple way
-    to synchronise these settings, but it does mean one needs to be aware of the
-    :ref:`sourcing order <sourcing-order>` to prevent mistakes.
+    Using the value of ``'backupskip'`` is a simple way to synchronise these
+    settings, but it does mean one needs to be aware of the :ref:`sourcing order
+    <sourcing-order>` to prevent mistakes.
 
 Use |vim|’s help for these documents::
 

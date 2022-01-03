@@ -1,6 +1,8 @@
 ``ftdetect/redo.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Detect redo_ files::
 
     " vint: -ProhibitAutocmdWithNoGroup

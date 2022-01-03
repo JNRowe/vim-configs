@@ -1,9 +1,11 @@
 ``localcfg/plugins/vim_vimlint.vim``
 ====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 I prefer quickfix integration::
 
-    let g:vimlint#config = {'output': 'quickfix'}
+    let g:vimlint#config = #{output: 'quickfix'}
 
 … and don’t need to see timing info::
 

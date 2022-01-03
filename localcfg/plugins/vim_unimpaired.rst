@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_unimpaired.vim``
 =======================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 A fair few of the applications I use in my work support line or cell exchange
 via :kbd:`<M-{Up,Down}>`, configure |vim| to match::
 

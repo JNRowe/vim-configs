@@ -3,6 +3,8 @@
 
 .. include:: ../.includes/scriptencoding.rst
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: add_line_highlight() -> None
 
     Highlight line.
@@ -18,12 +20,12 @@
         if getline('.')[0] =~# '\s'
             let w:line_highlights += [
             \   matchadd('LineHighlightPrefix',
-            \            printf('\%%%dl^\s\+', line('.')), 1000),
+            \            printf('\%%%dl^\s\+', line('.')), 1'000),
             \ ]
         endif
         let w:line_highlights += [
         \   matchadd('LineHighlightText',
-        \            printf('\%%%dl^\s*\zs.*$', line('.')), 1000),
+        \            printf('\%%%dl^\s*\zs.*$', line('.')), 1'000),
         \ ]
     endfunction
 
@@ -52,7 +54,7 @@
 ::
 
     function! display#command_balloon(cmd) abort
-        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd . ' %s' : a:cmd
+        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction
 
@@ -100,7 +102,7 @@
         let l:base = 19
         let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
         if strlen(l:text) > l:text_width
-            let l:text = l:text[:l:text_width] . '…'
+            let l:text = l:text[:l:text_width] .. '…'
         endif
         return l:text
     endfunction
@@ -136,9 +138,9 @@
 
         let l:groups = []
         for l:id in synstack(l:lnum, l:col)
-            let l:groups += [{
-            \   'hi': s:synname(l:id),
-            \   'gr': s:synname(synIDtrans(l:id)),
+            let l:groups += [#{
+            \   hi: s:synname(l:id),
+            \   gr: s:synname(synIDtrans(l:id)),
             \ }]
         endfor
         return l:groups

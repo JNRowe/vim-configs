@@ -1,6 +1,8 @@
 ``after/ftplugin/sh.vim``
 =========================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Add on-hover command definitions::
 
     if has('gui_running')

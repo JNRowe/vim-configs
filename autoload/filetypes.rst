@@ -1,6 +1,8 @@
 ``autoload/filetypes.vim``
 ==========================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: add_advice_header(prio: str, due: str) -> None
 
     Insert a `X-Advice header`_ above the first non-black line.
@@ -43,7 +45,7 @@
         let l:value = get(a:, 1)
         if l:value == v:none
             call inputsave()
-            let l:value = input(a:key . '-by? ')
+            let l:value = input(a:key .. '-by? ')
             call inputrestore()
         endif
         if l:value ==# ''
@@ -64,16 +66,16 @@
 
     function! filetypes#apply_ftplugin(options) abort
         if type(a:options) == type('')
-            let l:reset = split(a:options, '[\^\-+]\?=')[0] . '<'
+            let l:reset = split(a:options, '[\^\-+]\?=')[0] .. '<'
             let l:set = escape(a:options, ' "')
         else
             let l:reset = map(copy(a:options),
-            \                 {_, v -> split(v, '[\^\-+]\?=')[0] . '<'})
+            \                 {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'})
             let l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
         endif
-        execute 'setlocal ' . l:set
+        execute 'setlocal ' .. l:set
         if exists('b:undo_ftplugin')
-            execute printf('let b:undo_ftplugin .= "| setlocal %s"', l:reset)
+            execute printf('let b:undo_ftplugin ..= "| setlocal %s"', l:reset)
         else
             execute printf('let b:undo_ftplugin = "setlocal %s"', l:reset)
         endif
@@ -86,7 +88,7 @@
 ::
 
     function! filetypes#diff_maps() abort
-        call keymaps#mnemonic_map('diff', {'key': 'i', 'local': v:true})
+        call keymaps#mnemonic_map('diff', #{key: 'i', local: v:true})
 
         for [s:key, s:cmd] in [
         \   ['w', 'call misc#toggle_flag("diffopt", "iwhite")'],

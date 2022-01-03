@@ -1,6 +1,8 @@
 ``localcfg/plugins/editorconfig_vim.vim``
 =========================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use the faster :repo:`C version <editorconfig/editorconfig-core-c>` when
 available::
 

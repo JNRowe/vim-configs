@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_exchange.vim``
 =====================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Re-indent lines following exchange::
 
     let g:exchange_indent = '=='

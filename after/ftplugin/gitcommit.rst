@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 Switch to insert mode immediately when opening a new commit message::
 
     augroup jnrowe_gitcommit
@@ -22,13 +24,13 @@ Switch to insert mode immediately when opening a new commit message::
 
 Configure maps to insert common metadata in to commit messages::
 
-    call keymaps#mnemonic_map('Trailer', {'buffer': v:true, 'local': v:true})
+    call keymaps#mnemonic_map('Trailer', #{buffer: v:true, local: v:true})
 
     for s:type in ['Acked', 'Co-authored', 'Reviewed', 'Signed-off', 'Tested']
-        execute printf('nnoremap <silent> <buffer> [Trailer]%s ' .
+        execute printf('nnoremap <silent> <buffer> [Trailer]%s ' ..
         \              ':call filetypes#add_git_trailer("%s", "%s")<CR>',
         \              tolower(s:type[0]), s:type, g:user_email)
-        execute printf('nnoremap <silent> <buffer> [Trailer]q%s ' .
+        execute printf('nnoremap <silent> <buffer> [Trailer]q%s ' ..
         \              ':call filetypes#add_git_trailer("%s")<CR>',
         \              tolower(s:type[0]), s:type)
     endfor

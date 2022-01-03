@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_signature.vim``
 ======================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 This replaces my custom info/warn/error sign code with [1-3] markers, which is
 basically just a convenience because I'm really used to the icons.  See `this
 commit`_ for the original idea, although it has changed massively before we made
@@ -22,15 +24,15 @@ it here.
             let [s:icon, s:hl] = [s:v[0], s:v[1]]
         else
             let s:icon = s:v
-            let s:hl = misc#title_word(s:v) . 'MSG'
+            let s:hl = misc#title_word(s:v) .. 'MSG'
         endif
         unlet s:v
         execute printf(
-        \   'sign define ' .
-        \   'Signature_%s_SignatureMarkerText_SignatureMarkerLine ' .
+        \   'sign define ' ..
+        \   'Signature_%s_SignatureMarkerText_SignatureMarkerLine ' ..
         \   'icon=%s%s.png text=%s texthl=%s',
         \   s:k, expand('~/.vim/icons/'), s:icon,
-        \   toupper(s:icon[0] . s:icon[0]), s:hl)
+        \   toupper(s:icon[0] .. s:icon[0]), s:hl)
     endfor
 
 .. seealso::

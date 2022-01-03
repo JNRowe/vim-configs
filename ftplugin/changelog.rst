@@ -1,6 +1,8 @@
 ``ftplugin/changelog.vim``
 ==========================
 
+.. include:: ../.includes/scriptversion.rst
+
 For old fashioned projects with hand crafted :file:`ChangeLog` files,
 ``:NewChangelogEntry`` is fantastic laziness.
 

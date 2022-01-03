@@ -1,6 +1,8 @@
 ``localcfg/plugins/ultisnips.vim``
 ==================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 I find :repo:`vim-clevertab <neitanod/vim-clevertab>` performs largely :doc:`how
 I want <vim_clevertab>`, but occasionally I’ll jump straight to snippet
 expansion::

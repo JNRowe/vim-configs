@@ -1,6 +1,8 @@
 ``localcfg/plugins/splitjoin.vim.vim``
 ======================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Configure to match my co-workers idea of coding style::
 
     let g:splitjoin_python_brackets_on_separate_lines = v:true

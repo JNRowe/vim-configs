@@ -1,11 +1,13 @@
 ``after/ftplugin/gitrebase.vim``
 ================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. _gitrebase-custom-maps:
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('rebase', {'buffer': v:true, 'local': v:true})
+    call keymaps#mnemonic_map('rebase', #{buffer: v:true, local: v:true})
 
     for s:verb in ['Cycle', 'Edit', 'Fixup', 'Pick', 'Reword', 'Squash']
         execute printf('nnoremap <silent> <buffer> [rebase]%s :%s<CR>',

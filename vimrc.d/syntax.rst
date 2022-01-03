@@ -1,6 +1,8 @@
 ``vimrc.d/syntax.vim``
 ======================
 
+.. include:: ../.includes/scriptversion.rst
+
 Load a colour scheme, but only on first source::
 
     if !exists('g:colors_name')
@@ -53,13 +55,13 @@ The folding configuration for |reST| files is quite poor, and the custom
 
 Enable common — to me — highlighting support::
 
-    let g:rst_syntax_code_list = {
-    \   'c': ['c', ],
-    \   'cpp': ['cpp', 'c++'],
-    \   'lisp': ['emacs', 'lisp'],
-    \   'python': ['python', ],
-    \   'sh': ['sh', 'zsh'],
-    \   'vim': ['vim', ],
+    let g:rst_syntax_code_list = #{
+    \   c: ['c', ],
+    \   cpp: ['cpp', 'c++'],
+    \   lisp: ['emacs', 'lisp'],
+    \   python: ['python', ],
+    \   sh: ['sh', 'zsh'],
+    \   vim: ['vim', ],
     \ }
 
 .. todo::

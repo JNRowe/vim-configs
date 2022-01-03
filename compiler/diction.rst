@@ -1,6 +1,8 @@
 ``compiler/diction.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 Configure diction_ support::
 
     setlocal errorformat=%f:%l:\ %m
@@ -9,8 +11,8 @@ Configure diction_ support::
 If possible, enable language support::
 
     let s:lang = split(v:lang, '\.')[0]
-    if filereadable('/usr/share/diction/' . s:lang)
-        let &l:makeprg .= ' -L ' . s:lang
+    if filereadable('/usr/share/diction/' .. s:lang)
+        let &l:makeprg ..= ' -L ' .. s:lang
     endif
 
 .. _diction: http://www.gnu.org/software/diction/diction.html

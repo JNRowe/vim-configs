@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. image:: /.static/vim_airline_powerlineish.png
    :alt: powerlineish theme screenshot
 
@@ -34,19 +36,19 @@ Configure symbols for :command:`gvim`::
             let g:airline_symbols = {}
         endif
 
-        let g:airline_symbols = {
-        \   'branch': '',
-        \   'colnr': '℅',
-        \   'crypt': '',
-        \   'linenr': '',
-        \   'maxlinenr': '⌇',
-        \   'modified': '+',
-        \   'notexists': 'Ɇ',
-        \   'paste': 'ρ',
-        \   'readonly': '',
-        \   'space': ' ',
-        \   'spell': '',
-        \   'whitespace': 'Ξ',
+        let g:airline_symbols = #{
+        \   branch: '',
+        \   colnr: '℅',
+        \   crypt: '',
+        \   linenr: '',
+        \   maxlinenr: '⌇',
+        \   modified: '+',
+        \   notexists: 'Ɇ',
+        \   paste: 'ρ',
+        \   readonly: '',
+        \   space: ' ',
+        \   spell: '',
+        \   whitespace: 'Ξ',
         \ }
 
 .. note::
@@ -88,7 +90,7 @@ Only use the extensions I actually want::
 
 Enable :repo:`ale <dense-analysis/ale>` extension::
 
-    if v:version >= 800 && has('signs')
+    if has('signs')
         let g:airline_extensions += ['ale']
         if has('gui_running')
             let g:airline#extensions#ale#error_symbol = ''

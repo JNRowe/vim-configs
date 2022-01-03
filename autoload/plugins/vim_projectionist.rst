@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: apply_commands() -> None
 
     Apply inline commands from projectionist templates.
@@ -19,17 +21,17 @@
         let l:curpos = getcurpos()
         call inputsave()
         while search('\]|\[')
-            let l:s = sign_place(0, '', 'PTemplateHighlight', '%', {'lnum': '.', 'priority': 1000})
+            let l:s = sign_place(0, '', 'PTemplateHighlight', '%', #{lnum: '.', priority: 1'000})
             let l:m = matchadd('WarningMsg', printf('\%%%dl^.*$', line('.')),
-            \                  1000)
+            \                  1'000)
             redraw
             let [l:line, l:command] = split(getline('.'), ']|[')
             call setline('.', l:line)
             let l:q = input(printf('Execute ‘%s’? ', l:command))
             if l:q ==# 'y'
-                execute 'normal ' . l:command
+                execute 'normal ' .. l:command
             endif
-            call sign_unplace('', {'id': l:s})
+            call sign_unplace('', #{id: l:s})
             call matchdelete(l:m)
         endwhile
         call inputrestore()
@@ -54,7 +56,7 @@
             for l:s in l:options
                 let l:optname = split(l:s, '[\^\-+]\?=')[0]
                 if index(g:secure_modelines_allowed_items, l:optname) != -1
-                    execute 'setlocal ' . l:s
+                    execute 'setlocal ' .. l:s
                 else
                     echohl WarningMsg
                     echo printf('Not setting “%s” from projection', l:optname)

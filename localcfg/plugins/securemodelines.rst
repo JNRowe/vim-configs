@@ -1,6 +1,8 @@
 ``localcfg/plugins/securemodelines.vim``
 ========================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 With this plugin we don’t want builtin modeline support::
 
     set nomodeline

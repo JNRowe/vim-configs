@@ -1,6 +1,8 @@
 ``localcfg/plugins/vim_editqf.vim``
 ===================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Store data in |XDG basedir| compliant location::
 
     augroup jnrowe_editqf

@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 If you have more than one-hundred edits you need to commit, not look at symbols!
 
 ::
@@ -42,11 +44,10 @@ output::
 Use fancy icons for signs, if possible::
 
     if has('gui_running')
-        for [s:icon, s:signs] in items({
-        \   'list-add': ['Added'],
-        \   'edit-copy': ['Modified'],
-        \   'list-remove': ['Removed', 'RemovedFirstLine',
-        \                   'ModifiedRemoved']
+        for [s:icon, s:signs] in items(#{
+        \   list-add: ['Added', ],
+        \   edit-copy: ['Modified', ],
+        \   list-remove: ['Removed', 'RemovedFirstLine', 'ModifiedRemoved']
         \ })
             for s:sign in s:signs
                 execute printf('sign define GitGutterLine%s icon=%s%s.png',

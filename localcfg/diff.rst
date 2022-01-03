@@ -1,15 +1,15 @@
 ``localcfg/diff.vim``
 =====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Ignore whitespace by default::
 
     set diffopt+=iwhite
 
 Use histogram :command:`diff` method to match my |git| configuration::
 
-    if has('patch-8.1.0360')
-        set diffopt+=algorithm:histogram,indent-heuristic
-    endif
+    set diffopt+=algorithm:histogram,indent-heuristic
 
 The remaining functionality is only useful when ``:autocmd`` is available.
 

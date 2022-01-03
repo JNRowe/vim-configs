@@ -1,6 +1,8 @@
 ``vimrc.d/dein.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Make the :repo:`dein.vim <Shougo/dein.vim>` :command:`git` submodule available
 to |vim|::
 
@@ -14,8 +16,8 @@ to |vim|::
 
 Keep plugins and data in |XDG basedir| compliant location::
 
-    let g:dein_state_dir = g:vim_cache_dir . '/dein'
-    let g:dein_repos_dir = g:dein_state_dir . '/repos'
+    let g:dein_state_dir = g:vim_cache_dir .. '/dein'
+    let g:dein_repos_dir = g:dein_state_dir .. '/repos'
 
 Disable automatic re-caching::
 

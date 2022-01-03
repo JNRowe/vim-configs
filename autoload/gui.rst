@@ -1,6 +1,8 @@
 ``autoload/gui.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. function:: set_font(font: Union[int, str])
 
     Change :abbr:`GUI (Graphical User Interface)` fonts.
@@ -19,15 +21,15 @@
             return
         endif
         if v:count1 != 1
-            let l:font = g:font_family . ' ' . v:count1
+            let l:font = g:font_family .. ' ' .. v:count1
         else
             if len(a:font) == 0
-                let l:font = g:font_family . ' ' . g:font_size
+                let l:font = g:font_family .. ' ' .. g:font_size
             else
                 let l:font = substitute(a:font, '\\', '', 'g')
             endif
         endif
-        execute 'set guifont=' . fnameescape(l:font)
+        execute 'set guifont=' .. fnameescape(l:font)
     endfunction
 
 .. function:: toggle_guioption(option: str)

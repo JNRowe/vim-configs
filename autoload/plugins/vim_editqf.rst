@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_editqf.vim``
 ===================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: set_data_files() -> None
 
     Configure location for stored ``quickfix`` files.

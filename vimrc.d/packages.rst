@@ -1,6 +1,8 @@
 ``vimrc.d/packages.vim``
 ========================
 
+.. include:: ../.includes/scriptversion.rst
+
 .. note::
 
     The strange concoctions in this file are to support lazy loading of bundled
@@ -10,7 +12,7 @@
 Enable ``:Cfilter`` for using enormously noisy compilers::
 
     for s:t in ['C', 'L']
-        execute printf('command! -bang -nargs=+ %sfilter packadd cfilter | ' .
+        execute printf('command! -bang -nargs=+ %sfilter packadd cfilter | ' ..
         \              '%sfilter<bang> <args>',
         \              s:t, s:t)
     endfor

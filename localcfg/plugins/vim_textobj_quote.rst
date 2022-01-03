@@ -3,6 +3,8 @@
 
 .. include:: ../../.includes/scriptencoding.rst
 
+.. include:: ../../.includes/scriptversion.rst
+
 ::
 
     augroup jnrowe_vim_textobj_quote
@@ -11,7 +13,7 @@
 Enable for |reST| and other largely prose filetypes::
 
         autocmd FileType gitcommit,gitrebase,note,rst call textobj#quote#init()
-        autocmd FileType text call textobj#quote#init({'educate': 0})
+        autocmd FileType text call textobj#quote#init(#{educate: 0})
 
 .. note::
 

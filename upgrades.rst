@@ -19,23 +19,7 @@ work on when I upgrade.
 
 .. todo::
 
-    Switch to the ``..`` string concatenation, see 8.1.1114.  This
-    *simple* change is huge for readability, and I’m tempted to upgrade simply
-    for it.
-
-.. todo::
-
-    Support for ``:scriptversion``, see 8.1.1116.
-
-    Test with ``has('vimscript-3')``.
-
-.. todo::
-
     Switch to ``str2list()`` and ``list2str()``, see 8.1.1122.
-
-.. todo::
-
-    Add bindings for ``:cafter`` and ``:cbefore``, see 8.1.1275.
 
 .. todo::
 
@@ -45,9 +29,5 @@ work on when I upgrade.
 .. todo::
 
     Use ``:const`` for values that shouldn’t be changed, see 8.1.1539.
-
-.. todo::
-
-    Switch to the *far* nicer ``#{key: value}`` syntax, see 8.1.1683.
 
 .. last seen: 8.1.1685

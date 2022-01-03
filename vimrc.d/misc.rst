@@ -1,12 +1,14 @@
 ``vimrc.d/misc.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Show highlight group of the current location::
 
     command! ShowHighlightGroups
     \   echo join(map(display#get_highlight_group(),
     \                 {k, v -> join(values(map(v,
-    \                                          {k, v -> k . ':' . v})),
+    \                                          {k, v -> k .. ':' .. v})),
     \                               ', ')}),
     \             ' | ')
 
@@ -26,7 +28,7 @@ User email address, as used by various plugins::
 
 Display base |vim| version::
 
-    command! Version echo 'vim-' . misc#version()
+    command! Version echo 'vim-' .. misc#version()
 
 Make it easy to :command:`diff` options between sessions, which can be nice for
 debugging, by printing the entirety of options::

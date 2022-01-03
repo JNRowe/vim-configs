@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_quick_radon.vim``
 ========================================
 
+.. include:: ../../.includes/scriptversion.rst
+
 .. function:: open_win() -> None
 
     Display radon_ output if possible.
@@ -21,7 +23,7 @@
 
     function! plugins#radon#close_win() abort
         if bufnr('quick_radon') > -1
-            exec bufnr('quick_radon') . 'bdelete!'
+            exec bufnr('quick_radon') .. 'bdelete!'
         endif
     endfunction
 

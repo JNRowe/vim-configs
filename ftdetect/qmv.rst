@@ -1,6 +1,8 @@
 ``ftdetect/qmv.vim``
 ====================
 
+.. include:: ../.includes/scriptversion.rst
+
 Change to shell’s current directory when editing renameutils_ buffers to make
 completion work better::
 

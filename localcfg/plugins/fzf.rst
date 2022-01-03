@@ -1,17 +1,19 @@
 ``localcfg/plugins/fzf.vim``
 ============================
 
+.. include:: ../../.includes/scriptversion.rst
+
 Use smaller than default :repo:`fzf <junegunn/fzf>` window::
 
-    let g:fzf_layout = { 'down': '~30%' }
+    let g:fzf_layout = #{down: '~30%'}
 
 Override default prompt colour::
 
-    let g:fzf_colors = {'prompt':  ['fg', 'Conditional']}
+    let g:fzf_colors = #{prompt:  ['fg', 'Conditional']}
 
 Keep history in |XDG basedir| compliant location::
 
-    let g:fzf_history_dir = g:vim_cache_dir . '/fzf-history'
+    let g:fzf_history_dir = g:vim_cache_dir .. '/fzf-history'
 
 Jump through hoops to find a valid way to run :command:`fzf` if ``:terminal``
 isn’t available::
