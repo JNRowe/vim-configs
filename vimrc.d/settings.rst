@@ -13,19 +13,6 @@ overwrite a :command:`cp --link` tree::
         call mkdir(g:vim_cache_dir . '/backup', 'p', 0700)
     endif
 
-.. _backupskip-setting:
-
-Where necessary, remove duplicates entries for readability::
-
-    if !has('patch-8.1.1519')
-        let &backupskip = join(uniq(split(&backupskip, ',')), ',')
-    endif
-
-.. note::
-
-    The duplicates occur because |vim| defaults to including ``$TEMP``,
-    ``$TMPDIR`` and ``$TMP`` which are often symlinks to the same locations.
-
 I don’t often open :wikipedia:`MHTML` files, but when I do it is only for quick
 edits and the resulting often *huge* backups are practically always useless to
 me.
@@ -88,15 +75,7 @@ Select a :vimdoc:`safer encryption method <options.txt#blowfish2>` if available
 or warn about weakened encryption::
 
     if has('cryptv')
-        if has('patch-7.4.401')
-            set cryptmethod=blowfish2
-        else
-            let v:warningmsg = 'Using old blowfish cryptmethod'
-            echohl WarningMsg
-            echomsg v:warningmsg
-            echohl none
-            set cryptmethod=blowfish
-        endif
+        set cryptmethod=blowfish2
     endif
 
 .. tip::

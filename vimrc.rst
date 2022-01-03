@@ -19,12 +19,12 @@ me.
     endif
     " vint: +ProhibitSetNoCompatible
 
-Warn users with pre-v8 |vim| that problems will occur, but note that pull
-requests which aren’t too invasive are most welcome.
+Warn users with |vim| versions lower than v8.2 that problems will occur, but
+note that pull requests which aren’t too invasive are most welcome.
 
 ::
 
-    if v:version < 800
+    if v:version < 802
         let v:warningmsg = 'Vim version 8 or higher is required'
         echohl WarningMsg
         echomsg v:warningmsg
@@ -82,15 +82,7 @@ Pull in general |vim| configuration files::
     source ~/.vim/vimrc.d/settings.vim
     source ~/.vim/vimrc.d/misc.vim
     source ~/.vim/vimrc.d/maps.vim
-    if has('patch-7.4.1821')
-        source ~/.vim/vimrc.d/packages.vim
-    else
-        " There may be other things in packages.vim, but this is *the* thing
-        " I can’t do without.
-        if !exists('*EditExisting')
-            runtime macros/editexisting.vim
-        endif
-    endif
+    source ~/.vim/vimrc.d/packages.vim
 
 .. _build_dependent_file:
 

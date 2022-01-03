@@ -88,7 +88,7 @@ Only use the extensions I actually want::
 
 Enable :repo:`ale <dense-analysis/ale>` extension::
 
-    if v:version >= 800 && has('signs')
+    if has('signs')
         let g:airline_extensions += ['ale']
         if has('gui_running')
             let g:airline#extensions#ale#error_symbol = ''
