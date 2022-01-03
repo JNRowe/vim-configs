@@ -762,26 +762,6 @@ jealous.
     \   on_cmd: ['Tabularize', 'AddTabularPipeline'],
     \ })
 
-``vim-searchindex``
-'''''''''''''''''''
-
-    “Display current & total number of search matches”
-
-:repository: :repo:`google/vim-searchindex`
-
-::
-
-    if !has('patch-8.1.1270')
-        call dein#add('google/vim-searchindex', #{
-        \   on_map: #{n: ['/', '?', 'n', 'N']},
-        \ })
-    endif
-
-.. note::
-
-    This is guarded with ``has()`` because recent releases support this
-    functionality `out of the box <matchpos>`_.
-
 ``xterm-color-table.vim``
 '''''''''''''''''''''''''
 

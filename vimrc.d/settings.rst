@@ -345,13 +345,9 @@ the use of menu completion::
 
     set shortmess+=c
 
-.. _matchpos:
-
 Show match position when searching::
 
-    if has('patch-8.1.1270')
-        set shortmess-=S
-    endif
+    set shortmess-=S
 
 Always display partial commands::
 
