@@ -279,7 +279,7 @@
 ::
 
     function! misc#title_word(word) abort
-        return toupper(a:word[0]) .. a:word[1:]
+        return toupper(slice(a:word, 0, 1)) .. slice(a:word, 1)
     endfunction
 
 .. function:: toggle_flag(option: str, flag: str) -> None

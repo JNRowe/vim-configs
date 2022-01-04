@@ -63,8 +63,8 @@
     function! keymaps#quickfix_key(type, key, cmd) abort
         let l:group = a:type ==# 'l' ? 'location' : 'quickfix'
         " Commands ending with backslash don’t have <CR> appended
-        if a:cmd[len(a:cmd)-1] ==# '\'
-            let l:cmd = a:cmd[:len(a:cmd)-2]
+        if slice(a:cmd, -1) ==# '\'
+            let l:cmd = slice(a:cmd, 0, -1)
         else
             let l:cmd = a:cmd .. '<CR>'
         endif
