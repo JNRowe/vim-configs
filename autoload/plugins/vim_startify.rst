@@ -3,7 +3,7 @@
 
 .. include:: ../../.includes/scriptversion.rst
 
-.. function:: set_header_display(enable: bool) -> None
+.. function:: set_header_display() -> None
 
     Choose header content based on window size.
 
