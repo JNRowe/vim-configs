@@ -18,6 +18,10 @@ Disable lint on change as it is *far* too processor intensive for me::
 
     let g:ale_lint_on_text_changed = 'never'
 
+Attempt to show messages near cursor position::
+
+    let g:ale_virtualtext_cursor = 1
+
 … but linting when leaving insert suits the way I work::
 
     let g:ale_lint_on_insert_leave = 1
