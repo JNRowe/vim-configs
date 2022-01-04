@@ -3,15 +3,15 @@
 
 .. include:: ../../.includes/scriptversion.rst
 
-.. function:: toggle_ale_state(enable: bool) -> None
+.. function:: set_ale_state(enable: bool) -> None
 
-    Toggle :repo:`ale <dense-analysis/ale>` state.
+    Set :repo:`ale <dense-analysis/ale>` state.
 
     :param enable: If truthy, re-enable ``ale`` if previously set
 
 ::
 
-    function! plugins#ultisnips#toggle_ale_state(enable) abort
+    function! plugins#ultisnips#set_ale_state(enable) abort
         if a:enable == v:true
             if b:ultiale_state == v:true
                 ALEEnableBuffer
