@@ -15,7 +15,8 @@
             return
         endif
         if !exists('b:meta_spell')
-            let l:spf = printf('%s%s.%s.add', b:meta_dir, &spelllang, &encoding)
+            const l:spf = printf('%s%s.%s.add', b:meta_dir, &spelllang,
+            \                    &encoding)
             if filereadable(l:spf)
             \   && index(split(&spellfile, ','), l:spf) == -1
                 execute 'setlocal spellfile+=' .. l:spf
@@ -103,7 +104,7 @@
 ::
 
     function! misc#get_qf_title(type) abort
-        let l:type = a:type[0] ==# 'q' ? 'qf' : 'loc'
+        const l:type = a:type[0] ==# 'q' ? 'qf' : 'loc'
         execute printf('call get%slist(%s#{title: v:true}).title',
         \              l:type, (l:type ==# 'loc' ? '0, ' : ''))
     endfunction
@@ -131,7 +132,7 @@
 
 ::
 
-    let s:project_env_dir = g:vim_data_dir .. '/project_env/'
+    const s:project_env_dir = g:vim_data_dir .. '/project_env/'
 
     function! misc#meta_detect(file) abort
             if exists('b:meta_dir')
@@ -139,9 +140,9 @@
             endif
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
-            let l:cmd = printf('git -C %s rev-parse --show-toplevel',
-            \                  shellescape(l:p))
-            silent let l:output = systemlist(l:cmd)
+            const l:cmd = printf('git -C %s rev-parse --show-toplevel',
+            \                    shellescape(l:p))
+            silent const l:output = systemlist(l:cmd)
             if v:shell_error == 0 && len(l:output) == 1
                 return s:project_env_dir .. l:output[0]
             endif
@@ -220,7 +221,7 @@
 ::
 
     function! misc#preserve_layout(command) abort
-        let l:view = winsaveview()
+        const l:view = winsaveview()
         execute a:command
         call winrestview(l:view)
     endfunction
@@ -234,7 +235,7 @@
 ::
 
     function! misc#print_option(value) abort
-        let l:value = eval(a:value[0] ==# '&' ? a:value : '&' .. a:value)
+        const l:value = eval(a:value[0] ==# '&' ? a:value : '&' .. a:value)
         echo join(sort(split(l:value, ',')), "\n")
     endfunction
 
@@ -245,12 +246,13 @@
 ::
 
     function! misc#scissors() abort range
-        let l:max_len = max(map(getline(a:firstline, a:lastline),
+        const l:max_len = max(map(getline(a:firstline, a:lastline),
         \                       {_, s -> strdisplaywidth(s)}))
-        let l:bound = &textwidth == 0 ? l:max_len : min([l:max_len, &textwidth])
-        let l:perf = (l:bound / 2) - 1
-        let l:marker = printf('%s%%s%s', repeat('-', l:perf),
-        \                     repeat('-', l:perf + (l:perf % 2)))
+        const l:bound = &textwidth == 0 ? l:max_len : min([l:max_len,
+        \                                                  &textwidth])
+        const l:perf = (l:bound / 2) - 1
+        const l:marker = printf('%s%%s%s', repeat('-', l:perf),
+        \                       repeat('-', l:perf + (l:perf % 2)))
 
         call append(a:firstline - 1, printf(l:marker, '8<'))
         call append(a:lastline + 1, printf(l:marker, '>8'))
@@ -292,13 +294,13 @@
 ::
 
     function! misc#toggle_flag(option, flag) abort
-        let l:optstr = eval('&' .. a:option)
+        const l:optstr = eval('&' .. a:option)
         if stridx(l:optstr, ',') == -1
             " Simple char options like 'fo'
-            let l:flip = '+-'[l:optstr =~# a:flag]
+            const l:flip = '+-'[l:optstr =~# a:flag]
         else
             " Comma lists options like 'cot'
-            let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
+            const l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
         endif
         execute printf('set %s%s=%s', a:option, l:flip, a:flag)
     endfunction

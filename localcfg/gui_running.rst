@@ -83,21 +83,21 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
 ::
 
-    let s:fc_cmd = 'fc-list --quiet %s'
+    const s:fc_cmd = 'fc-list --quiet %s'
     for s:name in ['Consolas', 'Inconsolata', 'monospace']
         silent call system(printf(s:fc_cmd, shellescape(s:name .. ' NF')))
         if v:shell_error == 0
-            let g:font_family = s:name .. ' NF'
+            const g:font_family = s:name .. ' NF'
             break
         else
             silent call system(printf(s:fc_cmd, shellescape(s:name)))
             if v:shell_error == 0
-                let g:font_family = s:name
+                const g:font_family = s:name
                 break
             endif
         endif
     endfor
-    let g:font_size =  13
+    const g:font_size =  13
     let &guifont = g:font_family .. ' ' .. g:font_size
 
 .. note::
@@ -170,7 +170,7 @@ Use a terminal window for command output::
 Hack to stop constant :repo:`dein <Shougo/dein.vim>` re-caching when switching
 between GUI and non-GUI |vim|::
 
-    let g:loaded_bracketed_paste = v:true
+    const g:loaded_bracketed_paste = v:true
 
 .. note::
 

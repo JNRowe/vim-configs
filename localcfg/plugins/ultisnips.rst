@@ -7,7 +7,7 @@ I find :repo:`vim-clevertab <neitanod/vim-clevertab>` performs largely :doc:`how
 I want <vim_clevertab>`, but occasionally I’ll jump straight to snippet
 expansion::
 
-    let g:UltiSnipsExpandTrigger = '<C-j>'
+    const g:UltiSnipsExpandTrigger = '<C-j>'
 
 .. tip::
 
@@ -17,7 +17,7 @@ expansion::
 
 Open snippet editor in a separate window::
 
-    let g:UltiSnipsEditSplit = 'context'
+    const g:UltiSnipsEditSplit = 'context'
 
 Disable :repo:`ale <dense-analysis/ale>` while editing snippet output::
 

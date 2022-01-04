@@ -5,15 +5,15 @@
 
 Configure look::
 
-    let g:calendar_mark = 'left-fit'
-    let g:calendar_monday = v:true
-    let g:calendar_weeknm = 1
-    let g:calendar_datetime = ''
+    const g:calendar_mark = 'left-fit'
+    const g:calendar_monday = v:true
+    const g:calendar_weeknm = 1
+    const g:calendar_datetime = ''
 
 Use |reST| formatting for note files::
 
-    let g:calendar_filetype = 'rst'
-    let g:calendar_diary_extension = '.rst'
+    const g:calendar_filetype = 'rst'
+    const g:calendar_diary_extension = '.rst'
 
 We don’t care that the dictionary doesn’t recognise abbreviated day names or
 that the calendar has trailing whitespace::

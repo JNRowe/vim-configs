@@ -19,9 +19,9 @@
 
     function! completion#build_complete(arglead, cmdline, cursorpos) abort
         if filereadable('build.ninja')
-            let l:targets = systemlist('ninja -t targets | cut -d: -f1')
+            const l:targets = systemlist('ninja -t targets | cut -d: -f1')
         else
-            let l:targets = systemlist(
+            const l:targets = systemlist(
             \   'make -pqrR | ' ..
             \   'sed -n "/^# Files/,$ { s,^\([^#\.].*\): .*,\1,p }"'
             \ )
@@ -36,7 +36,7 @@
 ::
 
     function! completion#set_font_complete(arglead, cmdline, cursorpos) abort
-        let l:fonts =
+        const l:fonts =
         \   [escape(g:font_family .. ' ' .. g:font_size, ' '), ]
         \   + map(range(8),
         \         {n -> escape(g:font_family .. ' ' .. (n * 8 + 16), ' ')})

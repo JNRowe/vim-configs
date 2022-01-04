@@ -5,4 +5,4 @@
 
 Store registers across sessions::
 
-    let g:VM_persistent_registers = v:true
+    const g:VM_persistent_registers = v:true

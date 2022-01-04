@@ -13,7 +13,7 @@ useful than reading the warning and then setting it manually.
 
 Use strict column mode as the default::
 
-    let g:csv_strict_columns = v:true
+    const g:csv_strict_columns = v:true
 
 .. note::
 

@@ -5,7 +5,7 @@
 
 Re-indent lines following exchange::
 
-    let g:exchange_indent = '=='
+    const g:exchange_indent = '=='
 
 Add command to toggle indentation option for the current buffer::
 

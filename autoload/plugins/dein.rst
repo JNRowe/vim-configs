@@ -15,7 +15,7 @@
 ::
 
     function! plugins#dein#load_config(plugin = v:none) abort
-        let l:name = substitute(a:plugin ?? g:dein#plugin.name, '-', '_', 'g')
+        const l:name = substitute(a:plugin ?? g:dein#plugin.name, '-', '_', 'g')
         execute 'source ~/.vim/localcfg/plugins/' .. l:name .. '.vim'
     endfunction
 

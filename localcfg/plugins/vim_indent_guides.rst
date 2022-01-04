@@ -5,16 +5,16 @@
 
 Configure styling::
 
-    let g:indent_guides_auto_colors = v:false
+    const g:indent_guides_auto_colors = v:false
     if has('gui_running')
-        let g:indent_guides_guide_size = 1
-        let g:indent_guides_start_level = 2
+        const g:indent_guides_guide_size = 1
+        const g:indent_guides_start_level = 2
     endif
-    let s:guide_gui = #{even: '#00ff00', odd: '#007700'}
+    const s:guide_gui = #{even: '#00ff00', odd: '#007700'}
     if &t_Co >= 88
-        let s:guide_term = #{even: 240, odd: 236}
+        const s:guide_term = #{even: 240, odd: 236}
     else
-        let s:guide_term = #{even: 8, odd: 0}
+        const s:guide_term = #{even: 8, odd: 0}
     endif
     augroup jnrowe_vim_indent_guides
         autocmd!
@@ -37,11 +37,11 @@ Configure styling::
 
 I’ve never switched guides off, so make it permanent::
 
-    let g:indent_guides_enable_on_vim_startup = v:true
+    const g:indent_guides_enable_on_vim_startup = v:true
 
 Highlights for read only buffers aren’t interesting::
 
-    let g:indent_guides_exclude_filetypes = [
+    const g:indent_guides_exclude_filetypes = [
     \   'calendar',
     \   'gitmessengerpopup',
     \   'help',

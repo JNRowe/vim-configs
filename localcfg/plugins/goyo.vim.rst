@@ -5,4 +5,4 @@
 
 Even “in the zone” I like line numbers for quick movements::
 
-    let g:goyo_linenr = v:true
+    const g:goyo_linenr = v:true

@@ -16,20 +16,20 @@ to |vim|::
 
 Keep plugins and data in |XDG basedir| compliant location::
 
-    let g:dein_state_dir = g:vim_cache_dir .. '/dein'
-    let g:dein_repos_dir = g:dein_state_dir .. '/repos'
+    const g:dein_state_dir = g:vim_cache_dir .. '/dein'
+    const g:dein_repos_dir = g:dein_state_dir .. '/repos'
 
 Disable automatic re-caching::
 
-    let g:dein#auto_recache = v:false
+    const g:dein#auto_recache = v:false
 
 If possible, support `system notifications`_:
 
 ::
 
     if executable('notify-send') && exists('$DISPLAY')
-        let g:dein#enable_notification = v:true
-        let g:dein#notification_icon = '~/.vim/icons/editor.svg'
+        const g:dein#enable_notification = v:true
+        const g:dein#notification_icon = '~/.vim/icons/editor.svg'
     endif
 
 Handle initial plugin setup::

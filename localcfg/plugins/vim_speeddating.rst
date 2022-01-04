@@ -9,7 +9,7 @@ I need only :rfc:`2822`, :command:`git` and a limited collection of
 
 ::
 
-    let g:speeddating_formats = [
+    const g:speeddating_formats = [
     \   ['%i, %d %h %Y %H:%M:%S %z', 0, 0],
     \   ['%a %h %-d %H:%M:%S %Y %z', 0, 0],
     \   ['%Y-%m-%d%[ T]%H:%M:%S %z', 0, 0],

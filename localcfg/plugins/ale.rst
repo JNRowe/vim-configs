@@ -12,7 +12,7 @@ Use a low priority for spawned commands::
 All too often setting suggestions much higher than twenty grinds things to
 a halt::
 
-    let g:ale_completion_max_suggestions = 20
+    const g:ale_completion_max_suggestions = 20
 
 Disable lint on change as it is *far* too processor intensive for me::
 
@@ -67,7 +67,7 @@ number::
 Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
 
-    let g:ale_pattern_options = {
+    const g:ale_pattern_options = {
     \   '\.mht\(ml\)\?$': #{ale_enabled: v:false}
     \ }
 
@@ -76,5 +76,5 @@ Language specific settings
 
 Configure :pypi:`black` to match projects I work on::
 
-    let g:ale_python_black_options =
+    const g:ale_python_black_options =
     \   '--line-length 79 --target-version py37 --skip-string-normalization'

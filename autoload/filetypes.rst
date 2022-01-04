@@ -15,7 +15,7 @@
     function! filetypes#add_advice_header(prio, due) abort
         let l:view = winsaveview()
         call cursor(1, 1)
-        let l:body_sep = search('^$', 'c')
+        const l:body_sep = search('^$', 'c')
         if l:body_sep != 0
             call append(l:body_sep - 1,
             \           printf('X-advice: %s read %s', a:prio,a:due))
@@ -66,14 +66,14 @@
 
     function! filetypes#apply_ftplugin(options) abort
         if type(a:options) == type('')
-            let l:reset = split(a:options, '[\^\-+]\?=')[0] .. '<'
-            let l:set = escape(a:options, ' "')
+            const l:reset = split(a:options, '[\^\-+]\?=')[0] .. '<'
+            const l:set = escape(a:options, ' "')
         else
-            let l:reset = mapnew(
+            const l:reset = mapnew(
             \   a:options,
             \   {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'}
             \ )
-            let l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
+            const l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
         endif
         execute 'setlocal ' .. l:set
         if exists('b:undo_ftplugin')
@@ -118,7 +118,7 @@
 ::
 
     function! filetypes#kill_to_signature() abort
-        let l:sig = search('^-- $', 'nW')
+        const l:sig = search('^-- $', 'nW')
         if l:sig != 0
             execute printf('%d,%dd "_', line('.'), (l:sig - 1))
         else
@@ -138,7 +138,7 @@
 
 ::
 
-    let s:reST_header_adornments = ['=', '-', "'"]
+    const s:reST_header_adornments = ['=', '-', "'"]
     function! filetypes#make_reST_header(level, pad = v:false) abort
         let l:lines = [repeat(s:reST_header_adornments[a:level - 1],
         \                    strlen(getline('.'))), ]

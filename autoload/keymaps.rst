@@ -32,11 +32,11 @@
 ::
 
     function! keymaps#mnemonic_map(name, ...) abort
-        let l:extra = get(a:, 1, {})
-        let l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
-        let l:key = get(l:extra, 'key', tolower(a:name[0]))
-        let l:local = get(l:extra, 'local', v:false) ? 'Local' : ''
-        let l:modes = get(l:extra, 'modes', 'n')
+        const l:extra = get(a:, 1, {})
+        const l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
+        const l:key = get(l:extra, 'key', tolower(a:name[0]))
+        const l:local = get(l:extra, 'local', v:false) ? 'Local' : ''
+        const l:modes = get(l:extra, 'modes', 'n')
         for l:mode in misc#str2chars(l:modes)
             execute printf('%snoremap %s [%s] <Nop>', l:mode, l:buffer, a:name)
             execute printf('%smap %s <%sLeader>%s [%s]', l:mode, l:buffer,
@@ -61,7 +61,7 @@
 ::
 
     function! keymaps#quickfix_key(type, key, cmd) abort
-        let l:group = a:type ==# 'l' ? 'location' : 'quickfix'
+        const l:group = a:type ==# 'l' ? 'location' : 'quickfix'
         " Commands ending with backslash don’t have <CR> appended
         if slice(a:cmd, -1) ==# '\'
             let l:cmd = slice(a:cmd, 0, -1)
@@ -84,20 +84,20 @@
 ::
 
     function! keymaps#switch_buf(count) abort
-        let l:bufs = filter(
+        const l:bufs = filter(
         \   range(1, bufnr('$')),
         \   {_, n -> buflisted(n) && !empty(bufname(n))}
         \ )
         if len(l:bufs) < 2
             return
         endif
-        let l:current = index(l:bufs, bufnr('%'))
+        const l:current = index(l:bufs, bufnr('%'))
         if abs(a:count) > 1
-            let l:default = a:count < 1 ? l:bufs[0] : bufnr('$')
+            const l:default = a:count < 1 ? l:bufs[0] : bufnr('$')
         else
-            let l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
+            const l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
         endif
-        let l:buf = get(l:bufs, l:current + a:count, l:default)
+        const l:buf = get(l:bufs, l:current + a:count, l:default)
         execute 'buffer ' .. l:buf
     endfunction
 

@@ -54,7 +54,7 @@
 ::
 
     function! display#command_balloon(cmd) abort
-        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
+        const l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
         return systemlist(printf(l:cmd, shellescape(v:beval_text)))
     endfunction
 
@@ -81,7 +81,7 @@
 ::
 
     function! display#cursor_ping() abort
-        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
+        const [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
         for _ in range(5)
             set cursorline! cursorcolumn!
             redraw
@@ -99,8 +99,8 @@
     function! s:shorten(text, line_str) abort
         let l:text = a:text
         " Non-getline() text length
-        let l:base = 19
-        let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+        const l:base = 19
+        const l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
         if strlen(l:text) > l:text_width
             let l:text = l:text[:l:text_width] .. '…'
         endif
@@ -132,9 +132,9 @@
 ::
 
     function! display#get_highlight_group(mark = '.') abort
-        let [l:lnum, l:col] = getpos(a:mark)[1:2]
+        const [l:lnum, l:col] = getpos(a:mark)[1:2]
 
-        let s:synname = {synid -> synIDattr(synid, 'name')}
+        const s:synname = {synid -> synIDattr(synid, 'name')}
 
         let l:groups = []
         for l:id in synstack(l:lnum, l:col)
@@ -176,7 +176,7 @@
         if has('vertsplit')
             if !exists('g:display_portrait')
                 if executable('xdotool')
-                    silent let [s:width, s:height] =
+                    silent const [s:width, s:height] =
                     \   map(split(system('xdotool getdisplaygeometry')),
                     \       {_, s -> str2nr(s)})
                     let g:display_portrait = s:width < s:height

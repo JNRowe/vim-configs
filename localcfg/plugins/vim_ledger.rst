@@ -20,7 +20,7 @@ the current column::
 
 Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
-    let g:ledger_date_format = '%F'
+    const g:ledger_date_format = '%F'
 
 Configure magic currency completion in ledger files::
 

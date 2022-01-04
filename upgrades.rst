@@ -21,8 +21,4 @@ work on when I upgrade.
 
     Switch to ``str2list()`` and ``list2str()``, see 8.1.1122.
 
-.. todo::
-
-    Use ``:const`` for values that shouldn’t be changed, see 8.1.1539.
-
 .. last seen: 8.1.1685

@@ -18,7 +18,7 @@
     function plugins#vim_projectionist#apply_commands() abort
         execute printf('sign define PTemplateHighlight icon=%s text=TW',
         \              expand('~/.vim/icons/warning.png'))
-        let l:curpos = getcurpos()
+        const l:curpos = getcurpos()
         call inputsave()
         while search('\]|\[')
             let l:s = sign_place(0, '', 'PTemplateHighlight', '%', #{lnum: '.', priority: 1'000})

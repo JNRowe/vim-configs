@@ -54,7 +54,7 @@ under :envvar:`TMPDIR`.
 ::
 
     if exists('$VIM_PROFILE')
-        let [s:profile_file, s:profile_func] =
+        const [s:profile_file, s:profile_func] =
         \   (split($VIM_PROFILE, ':') + [v:none])[:1]
         execute 'profile start ' .. s:profile_file
         if s:profile_func is v:none
@@ -106,7 +106,7 @@ Pull in build dependent configuration files::
 
 Pull in host specific configuration data::
 
-    let s:host_file = expand('~/.vim/localcfg/' .. hostname() .. '.vim')
+    const s:host_file = expand('~/.vim/localcfg/' .. hostname() .. '.vim')
     if filereadable(s:host_file)
         execute 'source ' .. s:host_file
     endif

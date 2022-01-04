@@ -155,7 +155,7 @@ Excellent window management, it really does bring dwm_ simplicity to |vim|!
 
 Use my custom maps::
 
-    let g:dwm_map_keys = v:false
+    const g:dwm_map_keys = v:false
 
     call keymaps#mnemonic_map('dwm')
 
@@ -839,7 +839,7 @@ jealous.
 Use my custom maps::
 
     call keymaps#mnemonic_map('vebugger', #{local: v:true})
-    let g:vebugger_leader='[vebugger]'
+    const g:vebugger_leader='[vebugger]'
 
 .. seealso::
 
@@ -1306,7 +1306,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
 Use my custom maps::
 
-    let g:calendar_no_mappings = v:true
+    const g:calendar_no_mappings = v:true
 
     call keymaps#mnemonic_map('Calendar')
 
@@ -1612,7 +1612,7 @@ We lazy load on filetype definition for my normal workflow with
 Use my custom maps::
 
     if has('signs') && plugins#dein#has_exec('git')
-        let g:git_messenger_no_default_mappings = v:true
+        const g:git_messenger_no_default_mappings = v:true
 
         call keymaps#mnemonic_map('messenger')
 

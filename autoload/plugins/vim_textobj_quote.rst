@@ -10,7 +10,7 @@
 ::
 
     function! plugins#vim_textobj_quote#select_quotes() abort
-        let l:current_lang = split(&spelllang, '_')[0]
+        const l:current_lang = split(&spelllang, '_')[0]
         if l:current_lang ==# 'de'
             let g:textobj#quote#doubleDefault = '„“'
             let g:textobj#quote#singleDefault = '‚‘'

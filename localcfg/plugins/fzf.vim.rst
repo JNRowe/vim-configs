@@ -8,11 +8,11 @@ to remember [#]_.
 
 ::
 
-    let g:fzf_command_prefix = 'FZF'
+    const g:fzf_command_prefix = 'FZF'
 
 Jump to existing windows when possible::
 
-    let g:fzf_buffers_jump = 1
+    const g:fzf_buffers_jump = 1
 
 .. rubric:: Footnotes
 
