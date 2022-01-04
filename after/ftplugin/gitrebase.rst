@@ -14,6 +14,9 @@ Use my custom maps::
         \              tolower(s:verb[0]), s:verb)
     endfor
 
+.. image:: /.static/git_rebase_cycle.gif
+   :alt: Example result of calling :Switch
+
 .. seealso::
 
     * :func:`keymaps#mnemonic_map() <mnemonic_map>`

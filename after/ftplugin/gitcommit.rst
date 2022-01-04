@@ -47,7 +47,8 @@ Configure maps to insert common metadata in to commit messages::
     :ref:`default user <default-user-identifier>`, whereas the
     :kbd:`[trailer]qa` binding will **q**\uery for the user data.
 
-.. todo:: Add screenshot for query mode
+.. image:: /.static/git_trailer_querying.png
+   :alt: Querying user for git commit trailer value
 
 Add a mapping for Sponsored-by_ header::
 

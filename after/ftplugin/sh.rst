@@ -10,6 +10,9 @@ Add on-hover command definitions::
         \   setlocal balloonexpr=display#command_balloon('whatis')
     endif
 
+.. image:: /.static/sh_command_balloon.png
+   :alt: Example of shell script balloon help
+
 .. seealso::
 
     * :func:`display#command_balloon() <command_balloon>`
