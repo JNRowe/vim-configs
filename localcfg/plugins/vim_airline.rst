@@ -75,6 +75,7 @@ Only use the extensions I actually want::
     \   'csv',
     \   'nrrwrgn',
     \   'obsession',
+    \   'searchcount',
     \   'tabline',
     \   'unicode',
     \   'vimagit',
@@ -87,6 +88,15 @@ Only use the extensions I actually want::
 
     This requires some vigilance over updates for finding fancy new toys, but
     surely you’re not just blinding grabbing repositories from GitHub anyway…
+
+The ``searchcount`` extension only displays its segment when ``'hlsearch'`` is
+enabled, so we’ll fall back on ``'shortmess'``’s search counting functionality
+when it is disabled::
+
+    augroup jnrowe_vim_airline
+        autocmd!
+        autocmd OptionSet hlsearch call plugins#vim_airline#toggle_searchcount()
+    augroup END
 
 Enable :repo:`ale <dense-analysis/ale>` extension::
 

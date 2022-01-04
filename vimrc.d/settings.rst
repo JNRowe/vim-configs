@@ -193,6 +193,11 @@ Allow unsaved modified buffers in the background::
     Don’t worry if that sounds scary, |vim| will warn if you try to exit without
     saving them!
 
+
+Highlight searches::
+
+    set hlsearch
+
 .. _set-ignorecase:
 
 Ignore case in searches, working in conjunction with `smartcase
@@ -325,10 +330,6 @@ Don’t show ``ins-completion-menu`` messages, they’re obvious from context an
 the use of menu completion::
 
     set shortmess+=c
-
-Show match position when searching::
-
-    set shortmess-=S
 
 Always display partial commands::
 
@@ -467,7 +468,6 @@ Option      Use
 ``'5000``   Store marks for 5000 files
 ``<1000``   Save up to 1000 lines for registers
 ``%``       Store buffer list, which is nice for cycling sessions
-``h``       Disable ``'hlsearch'`` when :file:`viminfo` is loaded
 ``r/media`` Ignore :file:`/media`
 ``r/tmp``   Ignore :file:`/tmp`
 =========== =====================================================
@@ -475,7 +475,7 @@ Option      Use
 ::
 
     if has('viminfo')
-        set viminfo='5000,<1000,%,h,r/media,r/tmp
+        set viminfo='5000,<1000,%,r/media,r/tmp
         let &viminfofile = g:vim_cache_dir .. '/viminfo'
     endif
 
