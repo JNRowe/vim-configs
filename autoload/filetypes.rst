@@ -73,7 +73,7 @@
             \   a:options,
             \   {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'}
             \ )
-            const l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
+            const l:set = map(a:options, {_, v -> escape(v, ' ')})->join(' "')
         endif
         execute 'setlocal ' .. l:set
         if exists('b:undo_ftplugin')

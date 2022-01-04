@@ -187,7 +187,7 @@
             let l:x = printf(&commentstring, l:x)
         endif
         let l:x ..= ':'
-        call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
+        call substitute(l:x, '\ \+', ' ', 'g')->trim()->append('$')
     endfunction
 
 .. function:: path_search(path: Optional[str]) -> None
@@ -236,7 +236,7 @@
 
     function! misc#print_option(value) abort
         const l:value = eval(a:value[0] ==# '&' ? a:value : '&' .. a:value)
-        echo join(sort(split(l:value, ',')), "\n")
+        echo sort(split(l:value, ','))->join("\n")
     endfunction
 
 .. function:: scissors() -> None
@@ -246,8 +246,9 @@
 ::
 
     function! misc#scissors() abort range
-        const l:max_len = max(map(getline(a:firstline, a:lastline),
-        \                       {_, s -> strdisplaywidth(s)}))
+        const l:max_len = getline(a:firstline, a:lastline)->map(
+        \   {_, s -> strdisplaywidth(s)}
+        \ )->max()
         const l:bound = &textwidth == 0 ? l:max_len : min([l:max_len,
         \                                                  &textwidth])
         const l:perf = (l:bound / 2) - 1

@@ -55,7 +55,7 @@
 
     function! display#command_balloon(cmd) abort
         const l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
-        return systemlist(printf(l:cmd, shellescape(v:beval_text)))
+        return printf(l:cmd, shellescape(v:beval_text))->systemlist()
     endfunction
 
 .. function:: conceal_toggle() -> None
@@ -108,8 +108,8 @@
     endfunction
 
     function! display#fold_text() abort
-        return substitute(
-        \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
+        return foldtext()->substitute(
+        \   '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
         \   {m -> printf('%s %s▼ %d lines', repeat('─', v:foldlevel),
         \                <SID>shorten(m[3], m[2]), m[2])},
         \   ''
@@ -177,8 +177,9 @@
             if !exists('g:display_portrait')
                 if executable('xdotool')
                     silent const [s:width, s:height] =
-                    \   map(split(system('xdotool getdisplaygeometry')),
-                    \       {_, s -> str2nr(s)})
+                    \   system('xdotool getdisplaygeometry')->split()->map(
+                    \       {_, s -> str2nr(s)}
+                    \   )
                     let g:display_portrait = s:width < s:height
                 else
                     let g:display_portrait = v:none

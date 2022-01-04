@@ -84,8 +84,7 @@
 ::
 
     function! keymaps#switch_buf(count) abort
-        const l:bufs = filter(
-        \   range(1, bufnr('$')),
+        const l:bufs = range(1, bufnr('$'))->filter(
         \   {_, n -> buflisted(n) && !empty(bufname(n))}
         \ )
         if len(l:bufs) < 2

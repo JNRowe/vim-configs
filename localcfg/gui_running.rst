@@ -85,12 +85,12 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
     const s:fc_cmd = 'fc-list --quiet %s'
     for s:name in ['Consolas', 'Inconsolata', 'monospace']
-        silent call system(printf(s:fc_cmd, shellescape(s:name .. ' NF')))
+        silent call printf(s:fc_cmd, shellescape(s:name .. ' NF'))->system()
         if v:shell_error == 0
             const g:font_family = s:name .. ' NF'
             break
         else
-            silent call system(printf(s:fc_cmd, shellescape(s:name)))
+            silent call printf(s:fc_cmd, shellescape(s:name))->system()
             if v:shell_error == 0
                 const g:font_family = s:name
                 break

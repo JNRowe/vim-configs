@@ -6,11 +6,10 @@
 Show highlight group of the current location::
 
     command! ShowHighlightGroups
-    \   echo join(map(display#get_highlight_group(),
-    \                 {k, v -> join(values(map(v,
-    \                                          {k, v -> k .. ':' .. v})),
-    \                               ', ')}),
-    \             ' | ')
+    \   echo map(
+    \       display#get_highlight_group(),
+    \       {k, v -> map(v, {k, v -> k .. ':' .. v})->values()->join(', ')}
+    \   )->join(' | ')
 
 .. seealso::
 
