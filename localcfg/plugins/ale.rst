@@ -77,4 +77,9 @@ Language specific settings
 Configure :pypi:`black` to match projects I work on::
 
     const g:ale_python_black_options =
-    \   '--line-length 79 --target-version py37 --skip-string-normalization'
+    \   '--line-length 79 --target-version py39 --skip-string-normalization'
+
+.. note::
+
+    Much like choosing my |vim| version based on what is packaged in Debian, my
+    base Python version is chosen based on Debian stable’s Python version.
