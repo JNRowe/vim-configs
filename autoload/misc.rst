@@ -165,7 +165,7 @@
     with the security implications of remote :file:`vimrc` snippets from random
     users and projects.
 
-.. function:: modeline_stub(verbose: bool) -> None
+.. function:: modeline_stub(verbose : bool = False) -> None
 
     Insert a modeline on the last line of a buffer
 
@@ -173,7 +173,7 @@
 
 ::
 
-    function! misc#modeline_stub(verbose) abort
+    function! misc#modeline_stub(verbose = v:false) abort
         let l:x = printf(' vim: ft=%s%s', &filetype, &expandtab ? '' : ' noet')
         if a:verbose
             let l:x ..= printf(

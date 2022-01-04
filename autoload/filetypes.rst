@@ -129,7 +129,7 @@
         endif
     endfunction
 
-.. function:: make_reST_header(level: int, pad: bool) -> None
+.. function:: make_reST_header(level: int, pad: bool = False) -> None
 
     Make current line a reST heading.
 
@@ -139,7 +139,7 @@
 ::
 
     let s:reST_header_adornments = ['=', '-', "'"]
-    function! filetypes#make_reST_header(level, pad) abort
+    function! filetypes#make_reST_header(level, pad = v:false) abort
         let l:lines = [repeat(s:reST_header_adornments[a:level - 1],
         \                    strlen(getline('.'))), ]
         if a:pad is v:true

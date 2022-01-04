@@ -122,7 +122,7 @@
     work; whitespace, ``'commentstring'`` |RegEx| escaping(``C`` for
     example), ``'foldlevel'``, no ``scanf()``, &c.
 
-.. function:: get_highlight_group(mark: Optional[str]) -> List[Dict[str, str]]
+.. function:: get_highlight_group(mark: Optional[str] = '.') -> List[Dict[str, str]]
 
     Find syntax highlighting in use at the given location.
 
@@ -131,8 +131,8 @@
 
 ::
 
-    function! display#get_highlight_group(...) abort
-        let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
+    function! display#get_highlight_group(mark = '.') abort
+        let [l:lnum, l:col] = getpos(a:mark)[1:2]
 
         let s:synname = {synid -> synIDattr(synid, 'name')}
 
