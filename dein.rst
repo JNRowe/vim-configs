@@ -628,7 +628,7 @@ Use my custom maps::
 .. note::
 
     You can, of course, simply use the normal :doc:`location list bindings
-    <quickfix>` for movement too.
+    <localcfg/quickfix>` for movement too.
 
 .. seealso::
 
