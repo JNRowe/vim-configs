@@ -14,7 +14,7 @@ from pathlib import Path
 from shutil import which
 from shlex import quote
 from subprocess import check_output
-from typing import List, Optional
+from typing import Optional
 
 import ninja_syntax
 import typer
@@ -82,7 +82,7 @@ def configure(
         metavar='langs',
         help='Languages to include in libc tags file.',
     ),
-    libc_exclude: Optional[List[str]] = typer.Option(
+    libc_exclude: Optional[list[str]] = typer.Option(
         [
             'qt5',
         ],
