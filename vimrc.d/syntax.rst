@@ -13,6 +13,16 @@ Only enable Lua_/|Python|/Ruby_ embedded syntax regardless of built-in support::
 
     const g:vimsyn_embed = 'lPr'
 
+awk
+---
+
+While system :command:`awk` is *never* gawk_ for me, every time I write an
+:command:`awk` script I’m targeting :command:`gawk`.
+
+::
+
+    let g:awk_is_gawk = v:true
+
 Manual pages
 ------------
 
@@ -126,6 +136,7 @@ Support folding for |zsh| too, including the excellent `alternative syntax`_::
 
 .. _Lua: http://www.lua.org/
 .. _Ruby: https://www.ruby-lang.org/
+.. _gawk: http://www.gnu.org/software/gawk/
 .. _rust: https://www.rust-lang.org/
 .. _bash: http://tiswww.case.edu/php/chet/bash/bashtop.html
 .. _POSIX:
