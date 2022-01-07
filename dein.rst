@@ -1372,6 +1372,7 @@ Use my custom maps::
     \       'call plugins#dein#load_config() | ' ..
     \       'call plugins#vim_startify#set_header_display()',
     \   on_cmd: ['Startify', ],
+    \   on_map: ['<S-F1>', ],
     \ })
 
 ``vim-indent-object``
