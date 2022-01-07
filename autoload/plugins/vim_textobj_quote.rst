@@ -1,6 +1,8 @@
 ``autoload/plugins/vim_textobj_quote.vim``
 ==========================================
 
+.. include:: ../../.includes/scriptencoding.rst
+
 .. include:: ../../.includes/scriptversion.rst
 
 .. function:: select_quotes() -> None
