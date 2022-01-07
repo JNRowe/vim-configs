@@ -22,6 +22,11 @@ Attempt to show messages near cursor position::
 
     let g:ale_virtualtext_cursor = 1
 
+Disable lint on ``BufWinEnter`` so that using ``{arg,buf,win}do`` doesn’t
+suddenly fire up tonnes of processes::
+
+    let g:ale_lint_on_enter = 0
+
 … but linting when leaving insert suits the way I work::
 
     let g:ale_lint_on_insert_leave = 1
