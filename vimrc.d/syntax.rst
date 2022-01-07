@@ -41,6 +41,14 @@ Highlight everything possible for |Python|::
 
     const g:python_highlight_all = v:true
 
+quickfix
+--------
+
+Don’t set the status line as :repo:`vim-airline <vim-airline/vim-airline>` takes
+care of this already::
+
+    let g:qf_disable_statusline = v:true
+
 reStructuredText
 ----------------
 
