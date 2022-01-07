@@ -143,10 +143,10 @@ Occasionally the toolbar can be useful for pairing with a co-worker, and from
 time to time I use the menu myself.  So, we’ll add maps to quickly toggle them::
 
     if has('menu')
-        nnoremap <silent> <S-F4> :call gui#toggle_guioption('m')<CR>
+        nnoremap <S-F4> <Cmd>call gui#toggle_guioption('m')<CR>
     endif
     if has('toolbar')
-        nnoremap <silent> <C-F4> :call gui#toggle_guioption('T')<CR>
+        nnoremap <C-F4> <Cmd>call gui#toggle_guioption('T')<CR>
     endif
 
 .. seealso::
@@ -155,7 +155,7 @@ time to time I use the menu myself.  So, we’ll add maps to quickly toggle them
 
 Use a terminal window for command output::
 
-    nnoremap <silent> <C-F1> :call misc#toggle_flag('guioptions', '!')<CR>
+    nnoremap <C-F1> <Cmd>call misc#toggle_flag('guioptions', '!')<CR>
 
 .. seealso::
 

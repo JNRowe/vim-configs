@@ -102,7 +102,7 @@ Configure sessions and start them automatically::
 
 If :kbd:`<F1>` is help, shifting up a gear is actually starting::
 
-    nnoremap <silent> <S-F1> :Startify<CR>
+    nnoremap <silent> <S-F1> <Cmd>Startify<CR>
 
 .. spelling::
 

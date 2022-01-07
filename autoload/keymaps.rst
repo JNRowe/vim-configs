@@ -42,8 +42,8 @@
             execute printf('%smap %s <%sLeader>%s [%s]', l:mode, l:buffer,
             \              l:local, l:key, a:name)
         endfor
-        execute printf('noremap <silent> [%s]? :filter /\[%s\]/ map<CR>',
-        \              a:name, a:name)
+        execute printf('noremap [%s]? <Cmd>filter /\[%s\]/ map<CR>', a:name,
+        \              a:name)
     endfunction
 
 .. tip::

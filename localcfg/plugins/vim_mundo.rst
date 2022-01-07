@@ -5,7 +5,7 @@
 
 Use my custom maps::
 
-    nnoremap <silent> <LocalLeader># :MundoToggle<CR>
+    nnoremap <LocalLeader># <Cmd>MundoToggle<CR>
 
 Configure look::
 

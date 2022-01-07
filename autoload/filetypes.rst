@@ -99,12 +99,12 @@
         \   ['g', 'diffget'],
         \   ['u', 'diffupdate'],
         \ ]
-            execute printf('nnoremap <silent> <buffer> [diff]%s :%s<CR>',
+            execute printf('nnoremap <buffer> [diff]%s <Cmd>%s<CR>',
             \              s:key, s:cmd)
         endfor
 
-        vnoremap <silent> <buffer> < :diffget<CR>
-        vnoremap <silent> <buffer> > :diffput<CR>
+        vnoremap <buffer> < <Cmd>diffget<CR>
+        vnoremap <buffer> > <Cmd>diffput<CR>
     endfunction
 
 .. seealso::

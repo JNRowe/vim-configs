@@ -5,7 +5,7 @@
 
 Display radon_ output if possible::
 
-    nnoremap <silent> [radon]o :call plugins#vim_quick_radon#open_win()<CR>
+    nnoremap [radon]o <Cmd>call plugins#vim_quick_radon#open_win()<CR>
 
 .. seealso::
 
@@ -13,7 +13,7 @@ Display radon_ output if possible::
 
 Add map to close radon_ window from anywhere::
 
-    nnoremap <silent> [radon]c :call plugins#radon#close_win()<CR>
+    nnoremap [radon]c <Cmd>call plugins#radon#close_win()<CR>
 
 .. seealso::
 
