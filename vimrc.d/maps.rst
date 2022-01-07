@@ -257,7 +257,7 @@ Quickly correct close spelling mistakes without changing cursor position::
 .. tip::
 
     The mnemonic here is **q**\uery fix, **l**\ast, **n**\ext, **w**\ord for
-    likely Misspelled words, and :kbd:`W` for positively misspelled words.
+    likely misspelled words, and :kbd:`W` for positively misspelled words.
     Therefore, :kbd:`\\zlW` fixes the last misspelled word using |vim|’s best
     guess, and :kbd:`\\zqlW` pops up a menu with choices for that same
     misspelled word.
