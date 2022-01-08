@@ -60,6 +60,12 @@ see the call signature in supported filetypes for example.
 
     set completeopt+=menuone
 
+Use the far prettier popup windows for completions::
+
+    if has('popupwin')
+        set completeopt+=popup
+    endif
+
 Enable fancy Unicode display, see the builtin ``rust`` filetype and
 :repo:`vim-cute-python <ehamberg/vim-cute-python>` for examples::
 
