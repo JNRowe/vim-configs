@@ -12,6 +12,10 @@ Use console dialogs instead of jarring popups::
 
     set guioptions+=c
 
+Prefer dark theme if possible::
+
+    set guioptions+=d
+
 If toggled on, limit the horizontal scroll bar size::
 
     set guioptions+=h
