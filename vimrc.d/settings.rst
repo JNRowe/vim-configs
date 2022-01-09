@@ -267,15 +267,6 @@ standard” behaviour, even if it isn’t the most intuitive.
     allow you seamless date fiddling without :repo:`vim-speeddating
     <tpope/vim-speeddating>`.
 
-Support increment and decrement on single characters too::
-
-    set nrformats+=alpha
-
-.. note::
-
-    I’m unsure if I want this, but I’m playing with it for lists in text.
-    Should it only be in :file:`prose.rst`?
-
 Disable line numbering by default, but :ref:`not in the GUI
 <gui-linenumbers>`::
 

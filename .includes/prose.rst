@@ -33,6 +33,11 @@ sure if it is too granular.
         execute 'inoremap <buffer> ' .. s:key .. ' ' .. s:key .. '<C-g>u'
     endfor
 
+Support increment and decrement on single characters for easy list prefix
+manipulation::
+
+    call filetypes#apply_ftplugin('nrformats+=alpha')
+
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
 .. _Debian: https://debian.org/
 .. _wordlist: http://wordlist.sourceforge.net/
