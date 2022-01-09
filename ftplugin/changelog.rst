@@ -8,7 +8,7 @@ For old fashioned projects with hand crafted :file:`ChangeLog` files,
 
 ::
 
-    let g:changelog_username = g:user_email
+    const g:changelog_username = g:user_email
 
 .. tip::
 

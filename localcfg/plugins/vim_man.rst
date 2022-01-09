@@ -13,7 +13,7 @@ used to that setup in browsers::
     augroup jnrowe_vim_man
         autocmd!
         autocmd FileType man
-        \   nnoremap <silent> <buffer> <CR>
+        \   nnoremap <buffer> <CR>
         \       :call man#get_page_from_cword('horizontal', v:count)<CR>|
-        \   nnoremap <silent> <buffer> <BS> :call man#pop_page()<CR>
+        \   nnoremap <buffer> <BS> <Cmd>call man#pop_page()<CR>
     augroup END

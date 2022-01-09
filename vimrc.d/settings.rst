@@ -60,6 +60,12 @@ see the call signature in supported filetypes for example.
 
     set completeopt+=menuone
 
+Use the far prettier popup windows for completions::
+
+    if has('popupwin')
+        set completeopt+=popup
+    endif
+
 Enable fancy Unicode display, see the builtin ``rust`` filetype and
 :repo:`vim-cute-python <ehamberg/vim-cute-python>` for examples::
 
@@ -193,6 +199,11 @@ Allow unsaved modified buffers in the background::
     Don’t worry if that sounds scary, |vim| will warn if you try to exit without
     saving them!
 
+
+Highlight searches::
+
+    set hlsearch
+
 .. _set-ignorecase:
 
 Ignore case in searches, working in conjunction with `smartcase
@@ -241,16 +252,20 @@ Show matching parenthesis for three tenths of a second::
 
     set matchtime=3
 
-Always include ``octal`` in ``'nrformats'`` as the :file:`defaults.vim` will
-unset it on some systems::
+The way |vim| recognises numbers for :kbd:`<C-{a,x}>` isn’t always great, so
+forcibly telling it treat numbers as unsigned means we at least get “a
+standard” behaviour, even if it isn’t the most intuitive.
 
-    set nrformats+=octal
+::
 
-.. note::
+    set nrformats+=unsigned
 
-    This is mostly for having a standard behaviour across installations, I could
-    just as easily live with excluding ``octal`` as long it was *always*
-    disabled.
+.. tip::
+
+    If the only date format you use is :wikipedia:`ISO-8601 <ISO_8601>` then
+    disabling ``'nrformats'``’s octal mode and enabling unsigned should
+    allow you seamless date fiddling without :repo:`vim-speeddating
+    <tpope/vim-speeddating>`.
 
 Support increment and decrement on single characters too::
 
@@ -271,6 +286,12 @@ Disable line numbering by default, but :ref:`not in the GUI
 Don’t search for ``C`` includes from all filetypes::
 
     set path-=/usr/include
+
+Use popup windows for previews::
+
+    if has('textprop') || has('quickfix')
+        set previewpopup=height:10
+    endif
 
 Set an upper limit to the popup menu, as full screen height *feels* quite
 unusable::
@@ -326,10 +347,6 @@ the use of menu completion::
 
     set shortmess+=c
 
-Show match position when searching::
-
-    set shortmess-=S
-
 Always display partial commands::
 
     if has('cmdline_info') && has('showcmd')
@@ -355,6 +372,17 @@ changes the statusline to indicate mode::
 
     set noshowmode
 
+Display signs within the number column to give more window room to actual
+content::
+
+    set signcolumn=number
+
+.. note::
+
+    I’m unsure if this setting will stay as it can be make
+    ``'number'``/``'relativenumber'`` use difficult when a lot of signs are
+    in use(for example with :repo:`vim-gitgutter <airblade/vim-gitgutter>`).
+
 .. _set-smartcase:
 
 Make searches case insensitive when an upper case character is typed, as an
@@ -374,6 +402,10 @@ with :kbd:`zg`::
         let s:lang = split(v:lang, '\.')[0]
         let &spellfile = printf('~/.vim/spell/%s.utf-8.add', s:lang)
         let &spelllang = tolower(s:lang)
+
+… and treat camel-cased words specially::
+
+        set spelloptions+=camel
     endif
 
 Prefer making horizontal splits toward the bottom of the screen::
@@ -467,7 +499,6 @@ Option      Use
 ``'5000``   Store marks for 5000 files
 ``<1000``   Save up to 1000 lines for registers
 ``%``       Store buffer list, which is nice for cycling sessions
-``h``       Disable ``'hlsearch'`` when :file:`viminfo` is loaded
 ``r/media`` Ignore :file:`/media`
 ``r/tmp``   Ignore :file:`/tmp`
 =========== =====================================================
@@ -475,7 +506,7 @@ Option      Use
 ::
 
     if has('viminfo')
-        set viminfo='5000,<1000,%,h,r/media,r/tmp
+        set viminfo='5000,<1000,%,r/media,r/tmp
         let &viminfofile = g:vim_cache_dir .. '/viminfo'
     endif
 

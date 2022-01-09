@@ -9,8 +9,8 @@
 
 Set up map to quickly move among buffers::
 
-    noremap <silent> <M-Left> :<C-u>call keymaps#switch_buf(v:count1 * -1)<CR>
-    noremap <silent> <M-Right> :<C-u>call keymaps#switch_buf(v:count1 * 1)<CR>
+    noremap <M-Left> <Cmd>call keymaps#switch_buf(v:count1 * -1)<CR>
+    noremap <M-Right> <Cmd>call keymaps#switch_buf(v:count1 * 1)<CR>
 
 .. seealso::
 
@@ -64,8 +64,7 @@ Map :kbd:`Q` to reformat paragraphs just as everyone else does::
 
 Easy access to man pages when using a custom ``'keywordprg'``::
 
-    nnoremap <silent> <C-?>
-    \   :<C-U>execute printf('Man %d <C-R><C-W>', v:count)<CR>
+    nnoremap <C-?> <Cmd>execute printf('Man %d <C-R><C-W>', v:count)<CR>
 
 Logical :kbd:`Y` mapping, behaves like :kbd:`D`::
 
@@ -89,8 +88,8 @@ Visual mode indent that matches how it *feels* in insert::
 
 :kbd:`<Home>` darts between start of line and start of text::
 
-    inoremap <silent> <home> <C-o>:call keymaps#home_skip()<CR>
-    nnoremap <silent> <home> :call keymaps#home_skip()<CR>
+    inoremap <home> <Cmd>call keymaps#home_skip()<CR>
+    nnoremap <home> <Cmd>call keymaps#home_skip()<CR>
 
 .. seealso::
 
@@ -99,8 +98,8 @@ Visual mode indent that matches how it *feels* in insert::
 Add :kbd:`<F10>` build bindings that are muscle memory reminders of my
 childhood::
 
-    nnoremap <silent> <F10> :call misc#call_build()<CR>
-    nnoremap <silent> <S-F10> :call misc#call_build('check')<CR>
+    nnoremap <F10> <Cmd>call misc#call_build()<CR>
+    nnoremap <S-F10> <Cmd>call misc#call_build('check')<CR>
 
 .. seealso::
 
@@ -109,8 +108,8 @@ childhood::
 Open file under cursor, like ``netrw`` but :doc:`without the rest <disabled>`::
 
     if executable('xdg-open')
-        nnoremap <silent> gx
-        \   :call system('xdg-open ' .. shellescape(expand('<cfile>:p')))<CR>
+        nnoremap gx
+        \   <Cmd>call system('xdg-open ' .. shellescape(expand('<cfile>:p')))<CR>
     endif
 
 .. _window-management-maps:
@@ -136,10 +135,10 @@ Help related maps::
     call keymaps#mnemonic_map('Help', #{key: '?'})
 
     for s:t in ['function-list', 'pattern', 'quickref', 'registers']
-        execute printf('nnoremap [Help]%.1s :help %s<CR>', s:t, s:t)
+        execute printf('nnoremap [Help]%.1s <Cmd>help %s<CR>', s:t, s:t)
     endfor
 
-    nnoremap <silent> [Help]c :helpclose<CR>
+    nnoremap [Help]c <Cmd>helpclose<CR>
 
 .. seealso::
 
@@ -152,7 +151,7 @@ for shortcuts::
 
 Ping the cursor position as a visual cue when returning to a session::
 
-    nnoremap <silent> <C-Space> :call display#cursor_ping()<CR>
+    nnoremap <C-Space> <Cmd>call display#cursor_ping()<CR>
 
 .. seealso::
 
@@ -162,7 +161,7 @@ Add map to toggle conceal support, which is useful when co-workers freak out
 when you’re showing code::
 
     if has('conceal')
-        nnoremap <silent> <M-Space> :call display#conceal_toggle()<CR>
+        nnoremap <M-Space> <Cmd>call display#conceal_toggle()<CR>
     endif
 
 .. image:: /.static/conceal_flip.png
@@ -210,8 +209,8 @@ stretching:::
 Add mappings to highlight lines::
 
     call keymaps#mnemonic_map('Display', #{key: 'D', modes: 'nv'})
-    nnoremap <silent> [Display]lh :call display#add_line_highlight()<CR>
-    nnoremap <silent> [Display]lc :call display#clear_line_highlights()<CR>
+    nnoremap [Display]lh <Cmd>call display#add_line_highlight()<CR>
+    nnoremap [Display]lc <Cmd>call display#clear_line_highlights()<CR>
 
 .. seealso::
 
@@ -228,9 +227,9 @@ Add mappings to highlight lines::
 Highlight matches for last search only within visual region::
 
     if has('extra_search')
-        nnoremap <silent> [Display]ms
-        \   :<C-u>execute printf('match Search /\%%V%s\%%V/', getreg('/'))<CR>
-        nnoremap <silent> [Display]mc :match none<CR>
+        nnoremap [Display]ms
+        \   <Cmd>execute printf('match Search /\%%V%s\%%V/', getreg('/'))<CR>
+        nnoremap [Display]mc <Cmd>match none<CR>
     endif
 
 .. _spelling-correction-custom-maps:
@@ -242,7 +241,7 @@ Quickly correct close spelling mistakes without changing cursor position::
         for s:type in ['bad', 'full']
             for s:auto in [v:false, v:true]
                 execute printf(
-                \   'nnoremap <silent> [Spell]%s%s%s ' ..
+                \   'nnoremap [Spell]%s%s%s ' ..
                 \   ':call misc#preserve_layout("normal! %s%s%sz=")<CR>',
                 \   s:auto ? '' : 'q',
                 \   s:dir ==# ']' ? 'n' : 'l',
@@ -268,7 +267,7 @@ Quickly add close words to dictionaries without changing cursor position::
         for s:type in ['bad', 'full']
             for s:local in [v:false, v:true]
                 execute printf(
-                \   'nnoremap <silent> [Spell]%s%s%s ' ..
+                \   'nnoremap [Spell]%s%s%s ' ..
                 \   ':call misc#preserve_layout("normal! %s%sz%s")<CR>',
                 \   s:dir ==# ']' ? 'n' : 'l',
                 \   s:local ? 'A' : 'a',

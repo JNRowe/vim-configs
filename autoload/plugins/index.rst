@@ -13,6 +13,7 @@ Contents
     dein
     regex
     ultisnips
+    vim_airline
     vim_editqf
     vim_peekaboo
     vim_projectionist

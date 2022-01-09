@@ -5,7 +5,7 @@
 
 Enable label mode::
 
-    let g:sneak#label = 1
+    const g:sneak#label = 1
 
 Disable cursor highlighting while active::
 

@@ -6,11 +6,10 @@
 Show highlight group of the current location::
 
     command! ShowHighlightGroups
-    \   echo join(map(display#get_highlight_group(),
-    \                 {k, v -> join(values(map(v,
-    \                                          {k, v -> k .. ':' .. v})),
-    \                               ', ')}),
-    \             ' | ')
+    \   echo map(
+    \       display#get_highlight_group(),
+    \       {k, v -> map(v, {k, v -> k .. ':' .. v})->values()->join(', ')}
+    \   )->join(' | ')
 
 .. seealso::
 
@@ -20,7 +19,7 @@ Show highlight group of the current location::
 
 User email address, as used by various plugins::
 
-    silent let s:user_data = systemlist(
+    silent const s:user_data = systemlist(
     \   'git -C ~ config user.name; git -C ~ config user.email')
     if v:shell_error == 0
         let g:user_email = printf('%s <%s>', s:user_data[0], s:user_data[1])

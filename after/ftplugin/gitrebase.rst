@@ -10,7 +10,7 @@ Use my custom maps::
     call keymaps#mnemonic_map('rebase', #{buffer: v:true, local: v:true})
 
     for s:verb in ['Cycle', 'Edit', 'Fixup', 'Pick', 'Reword', 'Squash']
-        execute printf('nnoremap <silent> <buffer> [rebase]%s :%s<CR>',
+        execute printf('nnoremap <buffer> [rebase]%s <Cmd>%s<CR>',
         \              tolower(s:verb[0]), s:verb)
     endfor
 
@@ -24,8 +24,8 @@ Use my custom maps::
 Add quick bindings to cycle available options using ``switch.vim`` as it
 supports directions::
 
-    nnoremap <silent> <buffer> { :SwitchReverse<CR>
-    nnoremap <silent> <buffer> } :Switch<CR>
+    nnoremap <buffer> { <Cmd>SwitchReverse<CR>
+    nnoremap <buffer> } <Cmd>Switch<CR>
 
 .. note::
 

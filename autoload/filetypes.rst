@@ -15,7 +15,7 @@
     function! filetypes#add_advice_header(prio, due) abort
         let l:view = winsaveview()
         call cursor(1, 1)
-        let l:body_sep = search('^$', 'c')
+        const l:body_sep = search('^$', 'c')
         if l:body_sep != 0
             call append(l:body_sep - 1,
             \           printf('X-advice: %s read %s', a:prio,a:due))
@@ -66,12 +66,14 @@
 
     function! filetypes#apply_ftplugin(options) abort
         if type(a:options) == type('')
-            let l:reset = split(a:options, '[\^\-+]\?=')[0] .. '<'
-            let l:set = escape(a:options, ' "')
+            const l:reset = split(a:options, '[\^\-+]\?=')[0] .. '<'
+            const l:set = escape(a:options, ' "')
         else
-            let l:reset = map(copy(a:options),
-            \                 {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'})
-            let l:set = join(map(a:options, {_, v -> escape(v, ' ')}), ' "')
+            const l:reset = mapnew(
+            \   a:options,
+            \   {_, v -> split(v, '[\^\-+]\?=')[0] .. '<'}
+            \ )
+            const l:set = map(a:options, {_, v -> escape(v, ' ')})->join(' "')
         endif
         execute 'setlocal ' .. l:set
         if exists('b:undo_ftplugin')
@@ -97,12 +99,12 @@
         \   ['g', 'diffget'],
         \   ['u', 'diffupdate'],
         \ ]
-            execute printf('nnoremap <silent> <buffer> [diff]%s :%s<CR>',
+            execute printf('nnoremap <buffer> [diff]%s <Cmd>%s<CR>',
             \              s:key, s:cmd)
         endfor
 
-        vnoremap <silent> <buffer> < :diffget<CR>
-        vnoremap <silent> <buffer> > :diffput<CR>
+        vnoremap <buffer> < <Cmd>diffget<CR>
+        vnoremap <buffer> > <Cmd>diffput<CR>
     endfunction
 
 .. seealso::
@@ -116,7 +118,7 @@
 ::
 
     function! filetypes#kill_to_signature() abort
-        let l:sig = search('^-- $', 'nW')
+        const l:sig = search('^-- $', 'nW')
         if l:sig != 0
             execute printf('%d,%dd "_', line('.'), (l:sig - 1))
         else
@@ -127,7 +129,7 @@
         endif
     endfunction
 
-.. function:: make_reST_header(level: int, pad: bool) -> None
+.. function:: make_reST_header(level: int, pad: bool = False) -> None
 
     Make current line a reST heading.
 
@@ -136,8 +138,8 @@
 
 ::
 
-    let s:reST_header_adornments = ['=', '-', "'"]
-    function! filetypes#make_reST_header(level, pad) abort
+    const s:reST_header_adornments = ['=', '-', "'"]
+    function! filetypes#make_reST_header(level, pad = v:false) abort
         let l:lines = [repeat(s:reST_header_adornments[a:level - 1],
         \                    strlen(getline('.'))), ]
         if a:pad is v:true

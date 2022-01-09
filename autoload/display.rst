@@ -54,8 +54,8 @@
 ::
 
     function! display#command_balloon(cmd) abort
-        let l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
-        return systemlist(printf(l:cmd, shellescape(v:beval_text)))
+        const l:cmd = stridx(a:cmd, '%s') == -1 ? a:cmd .. ' %s' : a:cmd
+        return printf(l:cmd, shellescape(v:beval_text))->systemlist()
     endfunction
 
 .. function:: conceal_toggle() -> None
@@ -81,7 +81,7 @@
 ::
 
     function! display#cursor_ping() abort
-        let [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
+        const [l:cursorline, l:cursorcolumn] = [&cursorline, &cursorcolumn]
         for _ in range(5)
             set cursorline! cursorcolumn!
             redraw
@@ -99,8 +99,8 @@
     function! s:shorten(text, line_str) abort
         let l:text = a:text
         " Non-getline() text length
-        let l:base = 19
-        let l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
+        const l:base = 19
+        const l:text_width = winwidth(0) - v:foldlevel - len(a:line_str) - l:base
         if strlen(l:text) > l:text_width
             let l:text = l:text[:l:text_width] .. '…'
         endif
@@ -108,8 +108,8 @@
     endfunction
 
     function! display#fold_text() abort
-        return substitute(
-        \   foldtext(), '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
+        return foldtext()->substitute(
+        \   '^+-\(-\+\)\s*\(\d\+\) lines: \(.*\)',
         \   {m -> printf('%s %s▼ %d lines', repeat('─', v:foldlevel),
         \                <SID>shorten(m[3], m[2]), m[2])},
         \   ''
@@ -122,7 +122,7 @@
     work; whitespace, ``'commentstring'`` |RegEx| escaping(``C`` for
     example), ``'foldlevel'``, no ``scanf()``, &c.
 
-.. function:: get_highlight_group(mark: Optional[str]) -> List[Dict[str, str]]
+.. function:: get_highlight_group(mark: Optional[str] = '.') -> List[Dict[str, str]]
 
     Find syntax highlighting in use at the given location.
 
@@ -131,10 +131,10 @@
 
 ::
 
-    function! display#get_highlight_group(...) abort
-        let [l:lnum, l:col] = getpos(get(a:, 1, '.'))[1:2]
+    function! display#get_highlight_group(mark = '.') abort
+        const [l:lnum, l:col] = getpos(a:mark)[1:2]
 
-        let s:synname = {synid -> synIDattr(synid, 'name')}
+        const s:synname = {synid -> synIDattr(synid, 'name')}
 
         let l:groups = []
         for l:id in synstack(l:lnum, l:col)
@@ -176,9 +176,10 @@
         if has('vertsplit')
             if !exists('g:display_portrait')
                 if executable('xdotool')
-                    silent let [s:width, s:height] =
-                    \   map(split(system('xdotool getdisplaygeometry')),
-                    \       {_, s -> str2nr(s)})
+                    silent const [s:width, s:height] =
+                    \   system('xdotool getdisplaygeometry')->split()->map(
+                    \       {_, s -> str2nr(s)}
+                    \   )
                     let g:display_portrait = s:width < s:height
                 else
                     let g:display_portrait = v:none

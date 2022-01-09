@@ -5,11 +5,11 @@
 
 Enable omnicompletion::
 
-    let g:user_emmet_complete_tag = v:true
+    const g:user_emmet_complete_tag = v:true
 
 Don’t create global maps::
 
-    let g:user_emmet_install_global = v:false
+    const g:user_emmet_install_global = v:false
 
 Override locale::
 
@@ -22,7 +22,7 @@ Override locale::
 
 Treat jinja_ as |HTML|::
 
-    let g:user_emmet_settings['htmljinja'] = #{extends: 'html'}
+    let g:user_emmet_settings.htmljinja = #{extends: 'html'}
 
 Enable automatically where it will be useful::
 

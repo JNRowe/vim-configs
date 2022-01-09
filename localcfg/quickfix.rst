@@ -74,13 +74,15 @@ Configure layered maps for useful quickfix and location functions::
         \   ['p',          'previous'],
         \   ['r',          'rewind'],
         \   ['l',          'last'],
-        \   ['<Down>',     'after'],
+        \   ['<Down>',     'below'],
         \   ['<End>',      'bottom'],
+        \   ['<Left>',     'before'],
         \   ['<PageDown>', 'newer'],
         \   ['<PageUp>',   'older'],
+        \   ['<Right>',    'after'],
         \   ['<S-Down>',   'next'],
         \   ['<S-Up>',     'previous'],
-        \   ['<Up>',       'before'],
+        \   ['<Up>',       'above'],
         \ ]
             call keymaps#quickfix_key(s:t, s:key, s:cmd)
         endfor

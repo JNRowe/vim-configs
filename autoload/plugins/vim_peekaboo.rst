@@ -23,7 +23,7 @@
         if exists('$DISPLAY') && executable('xdotool')
             silent let s:win_geometry =
             \   system('xdotool getwindowgeometry --shell ' ..
-            \          (v:windowid != 0 ? v:windowid : $WINDOWID))
+            \          (v:windowid ?? $WINDOWID))
             let s:win_height = str2nr(substitute(s:win_geometry,
             \                                    '.*HEIGHT=\([0-9]\+\).*',
             \                                    '\1', ''))

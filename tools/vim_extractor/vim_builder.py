@@ -42,7 +42,7 @@ class VimBuilder(Builder):
                 srcmtime = path.getmtime(self.env.doc2path(docname))
                 if srcmtime > targetmtime:
                     yield docname
-            except EnvironmentError:
+            except OSError:
                 pass
 
     def get_target_uri(self, docname, typ=None):
@@ -64,7 +64,7 @@ class VimBuilder(Builder):
         try:
             with open(outfilename, 'w', encoding='utf-8') as f:
                 f.write(self.writer.output)
-        except (IOError, OSError) as err:
+        except OSError as err:
             LOGGER.warning('error writing file %s: %s', outfilename, err)
 
     def finish(self):

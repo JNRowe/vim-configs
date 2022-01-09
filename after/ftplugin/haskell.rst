@@ -14,9 +14,9 @@ than doing a complete pretty print::
     \   modes: 'v',
     \ })
 
-    vnoremap <buffer> [Haskell]= :Tabularize /=<CR>
-    vnoremap <buffer> [Haskell]: :Tabularize /::<CR>
-    vnoremap <buffer> [Haskell]- :Tabularize /-><CR>
+    vnoremap <buffer> [Haskell]= <Cmd>Tabularize /=<CR>
+    vnoremap <buffer> [Haskell]: <Cmd>Tabularize /::<CR>
+    vnoremap <buffer> [Haskell]- <Cmd>Tabularize /-><CR>
 
 .. seealso::
 

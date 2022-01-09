@@ -31,7 +31,7 @@ Configure symbols::
 
 I prefer my colour scheme’s sign column setup::
 
-    let g:gitgutter_override_sign_column_highlight = v:false
+    const g:gitgutter_override_sign_column_highlight = v:false
 
 Use a sign colour scheme that approximately matches my terminal :command:`diff`
 output::

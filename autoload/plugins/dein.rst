@@ -14,9 +14,8 @@
 
 ::
 
-    function! plugins#dein#load_config(...) abort
-        let l:name = substitute(get(a:, 1, g:dein#plugin.name),
-        \                       '-', '_', 'g')
+    function! plugins#dein#load_config(plugin = v:none) abort
+        const l:name = substitute(a:plugin ?? g:dein#plugin.name, '-', '_', 'g')
         execute 'source ~/.vim/localcfg/plugins/' .. l:name .. '.vim'
     endfunction
 
@@ -34,7 +33,7 @@
 ::
 
     function! plugins#dein#prefix(prefix, args) abort
-        return map(copy(a:args), {_, s -> a:prefix .. s})
+        return mapnew(a:args, {_, s -> a:prefix .. s})
     endfunction
 
 .. function:: suffix(suffix: str, args: List[str]) -> List[str]
@@ -51,7 +50,7 @@
 ::
 
     function! plugins#dein#suffix(suffix, args) abort
-        return map(copy(a:args), {_, s -> s .. a:suffix})
+        return mapnew(a:args, {_, s -> s .. a:suffix})
     endfunction
 
 .. function:: has_exec(command: str) -> bool

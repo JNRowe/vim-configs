@@ -15,7 +15,8 @@
             return
         endif
         if !exists('b:meta_spell')
-            let l:spf = printf('%s%s.%s.add', b:meta_dir, &spelllang, &encoding)
+            const l:spf = printf('%s%s.%s.add', b:meta_dir, &spelllang,
+            \                    &encoding)
             if filereadable(l:spf)
             \   && index(split(&spellfile, ','), l:spf) == -1
                 execute 'setlocal spellfile+=' .. l:spf
@@ -103,7 +104,7 @@
 ::
 
     function! misc#get_qf_title(type) abort
-        let l:type = a:type[0] ==# 'q' ? 'qf' : 'loc'
+        const l:type = a:type[0] ==# 'q' ? 'qf' : 'loc'
         execute printf('call get%slist(%s#{title: v:true}).title',
         \              l:type, (l:type ==# 'loc' ? '0, ' : ''))
     endfunction
@@ -131,7 +132,7 @@
 
 ::
 
-    let s:project_env_dir = g:vim_data_dir .. '/project_env/'
+    const s:project_env_dir = g:vim_data_dir .. '/project_env/'
 
     function! misc#meta_detect(file) abort
             if exists('b:meta_dir')
@@ -139,9 +140,9 @@
             endif
             let l:p = resolve(fnamemodify(a:file, ':p:h'))
 
-            let l:cmd = printf('git -C %s rev-parse --show-toplevel',
-            \                  shellescape(l:p))
-            silent let l:output = systemlist(l:cmd)
+            const l:cmd = printf('git -C %s rev-parse --show-toplevel',
+            \                    shellescape(l:p))
+            silent const l:output = systemlist(l:cmd)
             if v:shell_error == 0 && len(l:output) == 1
                 return s:project_env_dir .. l:output[0]
             endif
@@ -165,7 +166,7 @@
     with the security implications of remote :file:`vimrc` snippets from random
     users and projects.
 
-.. function:: modeline_stub(verbose: bool) -> None
+.. function:: modeline_stub(verbose : bool = False) -> None
 
     Insert a modeline on the last line of a buffer
 
@@ -173,7 +174,7 @@
 
 ::
 
-    function! misc#modeline_stub(verbose) abort
+    function! misc#modeline_stub(verbose = v:false) abort
         let l:x = printf(' vim: ft=%s%s', &filetype, &expandtab ? '' : ' noet')
         if a:verbose
             let l:x ..= printf(
@@ -186,7 +187,7 @@
             let l:x = printf(&commentstring, l:x)
         endif
         let l:x ..= ':'
-        call append(line('$'), trim(substitute(l:x, '\ \+', ' ', 'g')))
+        call substitute(l:x, '\ \+', ' ', 'g')->trim()->append('$')
     endfunction
 
 .. function:: path_search(path: Optional[str]) -> None
@@ -220,7 +221,7 @@
 ::
 
     function! misc#preserve_layout(command) abort
-        let l:view = winsaveview()
+        const l:view = winsaveview()
         execute a:command
         call winrestview(l:view)
     endfunction
@@ -234,8 +235,8 @@
 ::
 
     function! misc#print_option(value) abort
-        let l:value = eval(a:value[0] ==# '&' ? a:value : '&' .. a:value)
-        echo join(sort(split(l:value, ',')), "\n")
+        const l:value = eval(a:value[0] ==# '&' ? a:value : '&' .. a:value)
+        echo sort(split(l:value, ','))->join("\n")
     endfunction
 
 .. function:: scissors() -> None
@@ -245,12 +246,14 @@
 ::
 
     function! misc#scissors() abort range
-        let l:max_len = max(map(getline(a:firstline, a:lastline),
-        \                       {_, s -> strdisplaywidth(s)}))
-        let l:bound = &textwidth == 0 ? l:max_len : min([l:max_len, &textwidth])
-        let l:perf = (l:bound / 2) - 1
-        let l:marker = printf('%s%%s%s', repeat('-', l:perf),
-        \                     repeat('-', l:perf + (l:perf % 2)))
+        const l:max_len = getline(a:firstline, a:lastline)->map(
+        \   {_, s -> strdisplaywidth(s)}
+        \ )->max()
+        const l:bound = &textwidth == 0 ? l:max_len : min([l:max_len,
+        \                                                  &textwidth])
+        const l:perf = (l:bound / 2) - 1
+        const l:marker = printf('%s%%s%s', repeat('-', l:perf),
+        \                       repeat('-', l:perf + (l:perf % 2)))
 
         call append(a:firstline - 1, printf(l:marker, '8<'))
         call append(a:lastline + 1, printf(l:marker, '>8'))
@@ -279,7 +282,7 @@
 ::
 
     function! misc#title_word(word) abort
-        return toupper(a:word[0]) .. a:word[1:]
+        return toupper(slice(a:word, 0, 1)) .. slice(a:word, 1)
     endfunction
 
 .. function:: toggle_flag(option: str, flag: str) -> None
@@ -292,13 +295,13 @@
 ::
 
     function! misc#toggle_flag(option, flag) abort
-        let l:optstr = eval('&' .. a:option)
+        const l:optstr = eval('&' .. a:option)
         if stridx(l:optstr, ',') == -1
             " Simple char options like 'fo'
-            let l:flip = '+-'[l:optstr =~# a:flag]
+            const l:flip = '+-'[l:optstr =~# a:flag]
         else
             " Comma lists options like 'cot'
-            let l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
+            const l:flip = '+-'[index(split(l:optstr, ','), a:flag) != -1]
         endif
         execute printf('set %s%s=%s', a:option, l:flip, a:flag)
     endfunction

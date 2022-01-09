@@ -67,11 +67,10 @@ Use my custom maps::
     call keymaps#mnemonic_map('sideways', #{local: v:true})
 
     for s:key in ['Left', 'Right']
-        execute printf('nnoremap <silent> [sideways]<%s> :<C-u>Sideways%s<CR>',
-        \              s:key, s:key)
+        execute printf('nnoremap [sideways]<%s> <Cmd>Sideways%s<CR>', s:key,
+        \              s:key)
         execute printf(
-        \   'nnoremap <silent> [sideways]<S-%s> :<C-u>SidewaysJump%s<CR>',
-        \   s:key, s:key)
+        \   'nnoremap [sideways]<S-%s> <Cmd>SidewaysJump%s<CR>', s:key, s:key)
     endfor
 
 .. seealso::
@@ -155,7 +154,7 @@ Excellent window management, it really does bring dwm_ simplicity to |vim|!
 
 Use my custom maps::
 
-    let g:dwm_map_keys = v:false
+    const g:dwm_map_keys = v:false
 
     call keymaps#mnemonic_map('dwm')
 
@@ -172,7 +171,7 @@ Configure maps to match, to some degree, my window manager’s configuration::
     \   ['+',       'GrowMaster'],
     \   ['-',       'ShrinkMaster'],
     \ ]
-        execute printf('nmap <silent> [dwm]%s <Plug>DWM%s', s:key, s:cmd)
+        execute printf('nmap [dwm]%s <Plug>DWM%s', s:key, s:cmd)
     endfor
 
 .. seealso::
@@ -301,8 +300,10 @@ Use my custom maps::
         \   ['p',       'PreviewHunk'],
         \   ['q',       'QuickFix'],
         \ ]
-            execute printf('nnoremap <silent> [gitgutter]%s :GitGutter%s<CR>',
-            \              s:key, s:cmd)
+            execute printf(
+            \   'nnoremap [gitgutter]%s <Cmd>GitGutter%s<CR>',
+            \   s:key, s:cmd
+            \ )
         endfor
     endif
 
@@ -622,13 +623,13 @@ Use my custom maps::
         \ ]
             execute printf('nmap <silent> [ale]%s <Plug>(ale_%s)', s:key, s:cmd)
         endfor
-        nnoremap <silent> [ale]i :call ale#debugging#Info()<CR>
+        nnoremap [ale]i <Cmd>call ale#debugging#Info()<CR>
     endif
 
 .. note::
 
     You can, of course, simply use the normal :doc:`location list bindings
-    <quickfix>` for movement too.
+    <localcfg/quickfix>` for movement too.
 
 .. seealso::
 
@@ -824,8 +825,7 @@ jealous.
     \   ['ruby', 'RDebug'],
     \ ]
         if plugins#dein#has_exec(s:cmd)
-            let s:vebugger_commands +=
-                \ [s:arg != v:null ? s:arg : toupper(s:cmd)]
+            let s:vebugger_commands += [s:arg ?? toupper(s:cmd)]
         endif
     endfor
     call dein#add('idanarye/vim-vebugger', #{
@@ -840,7 +840,7 @@ jealous.
 Use my custom maps::
 
     call keymaps#mnemonic_map('vebugger', #{local: v:true})
-    let g:vebugger_leader='[vebugger]'
+    const g:vebugger_leader='[vebugger]'
 
 .. seealso::
 
@@ -932,8 +932,8 @@ Add custom maps in to my quickfix map hierarchy::
 
     nmap [quickfix]a <Plug>QFAddNote
     nmap [quickfix]A <Plug>QFAddPatternNote
-    nnoremap <silent> [location]a :LocAddNote
-    nnoremap <silent> [location]A :LocAddNotePattern
+    nnoremap [location]a <Cmd>LocAddNote<CR>
+    nnoremap [location]A <Cmd>LocAddNotePattern<CR>
 
 ``vimagit``
 '''''''''''
@@ -1008,7 +1008,7 @@ Configure convenience mappings for common command usage::
 
         call keymaps#mnemonic_map('fzf', #{key: '`'})
         for s:cmd in s:fzf_commands
-            execute printf('nnoremap <silent> [fzf]%s :FZF%s<CR>',
+            execute printf('nnoremap [fzf]%s <Cmd>FZF%s<CR>',
             \              tolower(s:cmd[0]), s:cmd)
         endfor
 
@@ -1260,7 +1260,7 @@ Use my custom maps::
         endif
 
         execute printf(
-        \   'autocmd Filetype ledger nnoremap <silent> [Ledger]%s :%s<CR>',
+        \   'autocmd Filetype ledger nnoremap [Ledger]%s <Cmd>%s<CR>',
         \   s:key, s:cmd)
     endfor
 
@@ -1307,7 +1307,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
 
 Use my custom maps::
 
-    let g:calendar_no_mappings = v:true
+    const g:calendar_no_mappings = v:true
 
     call keymaps#mnemonic_map('Calendar')
 
@@ -1317,7 +1317,7 @@ Use my custom maps::
     \   ['f', 'T'],
     \   ['r', 'VR'],
     \ ]
-        execute printf('nnoremap <silent> [Calendar]%s :Calendar%s<CR>',
+        execute printf('nnoremap [Calendar]%s <Cmd>Calendar%s<CR>',
         \              s:key, s:cmd)
     endfor
 
@@ -1411,9 +1411,9 @@ Use my custom maps::
 
     call keymaps#mnemonic_map('bufmru')
 
-    nnoremap <silent> [bufmru]l       :BufMRU<CR>
-    nnoremap <silent> [bufmru]<Left>  :BufMRUPrev<CR>
-    nnoremap <silent> [bufmru]<Right> :BufMRUNext<CR>
+    nnoremap [bufmru]l       <Cmd>BufMRU<CR>
+    nnoremap [bufmru]<Left>  <Cmd>BufMRUPrev<CR>
+    nnoremap [bufmru]<Right> <Cmd>BufMRUNext<CR>
 
 .. seealso::
 
@@ -1587,7 +1587,7 @@ We lazy load on filetype definition for my normal workflow with
 :command:`git commit`::
 
     if plugins#dein#has_exec('git')
-        if get(argv(), 0, '') =~# '/.git/COMMIT_EDITMSG$'
+        if get(v:argv, 0, '') =~# '/.git/COMMIT_EDITMSG$'
             call dein#source('committia.vim')
         endif
     endif
@@ -1614,7 +1614,7 @@ We lazy load on filetype definition for my normal workflow with
 Use my custom maps::
 
     if has('signs') && plugins#dein#has_exec('git')
-        let g:git_messenger_no_default_mappings = v:true
+        const g:git_messenger_no_default_mappings = v:true
 
         call keymaps#mnemonic_map('messenger')
 
@@ -1680,7 +1680,7 @@ daunting to wrap your head around.
 Use my custom maps::
 
     if has('pythonx') && v:version >= 703
-        nnoremap <silent> <LocalLeader># :MundoToggle<CR>
+        nnoremap <LocalLeader># <Cmd>MundoToggle<CR>
     endif
 
 ``splice.vim``
@@ -1821,8 +1821,8 @@ Use my custom maps::
     \   ['o', ''],
     \   ['t', 'Toggle'],
     \ ]
-        execute printf('nnoremap <silent> [nerdtree]%s :NERDTree%s<CR>', s:key,
-        \              s:cmd)
+        execute printf('nnoremap [nerdtree]%s <Cmd>NERDTree%s<CR>',
+        \              s:key, s:cmd)
     endfor
 
 .. seealso::
@@ -1858,8 +1858,8 @@ Use my custom maps::
         \   ['o', 'WordNetOverviews(expand("<cword>"))'],
         \   ['c', 'plugins#wordnet_vim#close_win()'],
         \ ]
-            execute printf('nnoremap <silent> [wordnet]%s :call %s<CR>', s:key,
-            \              s:cmd)
+            execute printf('nnoremap [wordnet]%s <Cmd>call %s<CR>',
+            \              s:key, s:cmd)
         endfor
     endif
 
@@ -1964,7 +1964,7 @@ Add map to change directory to git_ project root using :repo:`vim-projectionist
 <tpope/vim-projectionist>`::
 
     if plugins#dein#has_exec('git')
-        nnoremap <silent> <C-p> :Gcd<CR>
+        nnoremap <C-p> <Cmd>Gcd<CR>
     endif
 
 .. note::

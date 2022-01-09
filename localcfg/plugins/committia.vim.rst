@@ -6,7 +6,7 @@
 I never want multi-column display in the terminal::
 
     if !has('gui')
-        let g:committia_use_singlecolumn = 'always'
+        const g:committia_use_singlecolumn = 'always'
     endif
 
 Always open ``committia`` buffers when opening a commit message, which is useful

@@ -5,11 +5,11 @@
 
 Select mode mappings break snippets, so disable them::
 
-    let g:space_disable_select_mode = v:true
+    const g:space_disable_select_mode = v:true
 
 Disable unused jump motions support::
 
-    let g:space_no_jump = 1
+    const g:space_no_jump = 1
 
 .. note::
 

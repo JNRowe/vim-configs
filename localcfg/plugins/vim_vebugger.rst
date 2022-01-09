@@ -7,9 +7,9 @@
 
 Configure symbols::
 
-    let g:vebugger_breakpoint_text = '⇒'
-    let g:vebugger_currentline_text = '●'
+    const g:vebugger_breakpoint_text = '⇒'
+    const g:vebugger_currentline_text = '●'
 
 Use :command:`python3` as default Python interpreter::
 
-    let g:vebugger_path_python_lldb = 'python3'
+    const g:vebugger_path_python_lldb = 'python3'
