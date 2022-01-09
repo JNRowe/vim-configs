@@ -252,17 +252,6 @@ Show matching parenthesis for three tenths of a second::
 
     set matchtime=3
 
-Always include ``octal`` in ``'nrformats'`` as the :file:`defaults.vim` will
-unset it on some systems::
-
-    set nrformats+=octal
-
-.. note::
-
-    This is mostly for having a standard behaviour across installations, I could
-    just as easily live with excluding ``octal`` as long it was *always*
-    disabled.
-
 The way |vim| recognises numbers for :kbd:`<C-{a,x}>` isn’t always great, so
 forcibly telling it treat numbers as unsigned means we at least get “a
 standard” behaviour, even if it isn’t the most intuitive.
