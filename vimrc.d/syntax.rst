@@ -23,6 +23,14 @@ While system :command:`awk` is *never* gawk_ for me, every time I write an
 
     let g:awk_is_gawk = v:true
 
+
+.desktop
+--------
+
+Highlight invalid entries::
+
+    let g:desktop_enable_nonstd = v:true
+
 Manual pages
 ------------
 
