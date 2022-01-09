@@ -283,6 +283,12 @@ Don’t search for ``C`` includes from all filetypes::
 
     set path-=/usr/include
 
+Use popup windows for previews::
+
+    if has('textprop') || has('quickfix')
+        set previewpopup=height:10
+    endif
+
 Set an upper limit to the popup menu, as full screen height *feels* quite
 unusable::
 
@@ -361,6 +367,17 @@ No need to display current mode as :repo:`vim-airline <vim-airline/vim-airline>`
 changes the statusline to indicate mode::
 
     set noshowmode
+
+Display signs within the number column to give more window room to actual
+content::
+
+    set signcolumn=number
+
+.. note::
+
+    I’m unsure if this setting will stay as it can be make
+    ``'number'``/``'relativenumber'`` use difficult when a lot of signs are
+    in use(for example with :repo:`vim-gitgutter <airblade/vim-gitgutter>`).
 
 .. _set-smartcase:
 
