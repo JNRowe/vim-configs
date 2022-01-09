@@ -263,6 +263,21 @@ unset it on some systems::
     just as easily live with excluding ``octal`` as long it was *always*
     disabled.
 
+The way |vim| recognises numbers for :kbd:`<C-{a,x}>` isn’t always great, so
+forcibly telling it treat numbers as unsigned means we at least get “a
+standard” behaviour, even if it isn’t the most intuitive.
+
+::
+
+    set nrformats+=unsigned
+
+.. tip::
+
+    If the only date format you use is :wikipedia:`ISO-8601 <ISO_8601>` then
+    disabling ``'nrformats'``’s octal mode and enabling unsigned should
+    allow you seamless date fiddling without :repo:`vim-speeddating
+    <tpope/vim-speeddating>`.
+
 Support increment and decrement on single characters too::
 
     set nrformats+=alpha
