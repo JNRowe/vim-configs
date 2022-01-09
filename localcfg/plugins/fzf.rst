@@ -3,9 +3,17 @@
 
 .. include:: ../../.includes/scriptversion.rst
 
-Use smaller than default :repo:`fzf <junegunn/fzf>` window::
 
-    const g:fzf_layout = #{down: '~30%'}
+Use a popup window when supported::
+
+    if has('popupwin')
+        const g:fzf_layout = #{window: #{height: 0.6, width: 0.6}}
+
+… or a smaller than default regular window::
+
+    else
+        const g:fzf_layout = #{down: '~30%'}
+    endif
 
 Override default prompt colour::
 
