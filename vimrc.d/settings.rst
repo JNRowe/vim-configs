@@ -413,6 +413,10 @@ with :kbd:`zg`::
         let s:lang = split(v:lang, '\.')[0]
         let &spellfile = printf('~/.vim/spell/%s.utf-8.add', s:lang)
         let &spelllang = tolower(s:lang)
+
+… and treat camel-cased words specially::
+
+        set spelloptions+=camel
     endif
 
 Prefer making horizontal splits toward the bottom of the screen::
