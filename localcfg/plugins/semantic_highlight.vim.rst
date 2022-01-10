@@ -5,5 +5,5 @@
 
 Keep cache in |XDG basedir| compliant location::
 
-    const g:semanticPersistCacheLocation =
+    let g:semanticPersistCacheLocation =
     \   g:vim_cache_dir .. '/semantic-highlight'
