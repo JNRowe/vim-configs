@@ -5,11 +5,11 @@
 
 Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
 
-    const g:git_messenger_date_format = '%FT%T'
+    let g:git_messenger_date_format = '%FT%T'
 
 Don’t automatically close window::
 
-    const g:git_messenger_close_on_cursor_moved = v:false
+    let g:git_messenger_close_on_cursor_moved = v:false
 
 Use scrollwheel, or emulated key, to move through history in window::
 

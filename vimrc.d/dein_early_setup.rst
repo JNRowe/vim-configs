@@ -166,7 +166,7 @@ Configure convenience mappings for common command usage::
 Use my custom maps::
 
     if has('signs') && plugins#dein#has_exec('git')
-        const g:git_messenger_no_default_mappings = v:true
+        let g:git_messenger_no_default_mappings = v:true
 
         call keymaps#mnemonic_map('messenger')
 
