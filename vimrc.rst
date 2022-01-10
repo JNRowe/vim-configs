@@ -113,6 +113,7 @@ Pull in host specific configuration data::
 
 Define and configure plugins::
 
+    source ~/.vim/vimrc.d/dein_early_setup.vim
     source ~/.vim/vimrc.d/dein.vim
 
 Configure syntax specific configuration information::

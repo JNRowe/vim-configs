@@ -52,6 +52,7 @@ Repositories
     “Move an item in a delimiter-separated list left or right”
 
 :repository: :repo:`AndrewRadev/sideways.vim`
+:early setup: :ref:`maps <sideways-vim-custom-maps>`
 
 ::
 
@@ -59,23 +60,6 @@ Repositories
     \   on_cmd: plugins#dein#prefix('Sideways', ['Left', 'Right']),
     \   on_map: #{n: ['[sideways]', ]},
     \ })
-
-.. _sideways-vim-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('sideways', #{local: v:true})
-
-    for s:key in ['Left', 'Right']
-        execute printf('nnoremap [sideways]<%s> <Cmd>Sideways%s<CR>', s:key,
-        \              s:key)
-        execute printf(
-        \   'nnoremap [sideways]<S-%s> <Cmd>SidewaysJump%s<CR>', s:key, s:key)
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``splitjoin.vim``
 '''''''''''''''''
@@ -99,6 +83,7 @@ Use my custom maps::
     “Switch segments of text with predefined replacements”
 
 :repository: :repo:`AndrewRadev/switch.vim`
+:early setup: :ref:`maps <switch-vim-custom-maps>`
 
 Edit your configuration files like they had a fancy dialog box to fiddle with
 their preferences.
@@ -110,17 +95,6 @@ their preferences.
     \   on_func: ['switch#Switch', ],
     \   on_map: #{n: ['gs', ]},
     \ })
-
-Use :kbd:`<C-M-T>` to flip word under cursor to match my old
-``True``/``False`` map memory::
-
-    for [s:mode, s:cmd_prefix] in [
-    \   ['i', '<C-O>'],
-    \   ['n', ''],
-    \   ['v', '<ESC>'],
-    \ ]
-        execute printf('%snoremap <C-M-T> %s:Switch<CR>', s:mode, s:cmd_prefix)
-    endfor
 
 ``vim-bracketed-paste``
 '''''''''''''''''''''''
@@ -141,6 +115,7 @@ Use :kbd:`<C-M-T>` to flip word under cursor to match my old
     “Tiled Window Management for Vim”
 
 :repository: :repo:`JNRowe/dwm.vim`
+:early setup: :ref:`maps <dwm-vim-custom-maps>`
 
 Excellent window management, it really does bring dwm_ simplicity to |vim|!
 
@@ -149,38 +124,6 @@ Excellent window management, it really does bring dwm_ simplicity to |vim|!
     call dein#add('JNRowe/dwm.vim', #{
     \   on_map: #{n: ['<Plug>DWM', ]},
     \ })
-
-.. _dwm-custom-maps:
-
-Use my custom maps::
-
-    const g:dwm_map_keys = v:false
-
-    call keymaps#mnemonic_map('dwm')
-
-Configure maps to match, to some degree, my window manager’s configuration::
-
-    for [s:key, s:cmd] in [
-    \   ['n',       'New'],
-    \   ['c',       'Close'],
-    \   ['f',       'Focus'],
-    \   ['<Left>',  'RotateCounterclockwise'],
-    \   ['<Right>', 'RotateClockwise'],
-    \   ['<Up>',    'New'],
-    \   ['<Down>',  'Close'],
-    \   ['+',       'GrowMaster'],
-    \   ['-',       'ShrinkMaster'],
-    \ ]
-        execute printf('nmap [dwm]%s <Plug>DWM%s', s:key, s:cmd)
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
-.. tip::
-
-    Imagine :kbd:`<Up>` increases window count, and :kbd:`<Down>`… well, yeah.
 
 ``securemodelines``
 '''''''''''''''''''
@@ -275,6 +218,7 @@ languages.
     “Show :command:`git diff` status in the gutter”
 
 :repository: :repo:`airblade/vim-gitgutter`
+:early setup: :ref:`maps <vim-gitgutter-custom-maps>`
 :config: :doc:`localcfg/plugins/vim_gitgutter`
 
 ::
@@ -283,33 +227,6 @@ languages.
     \   hook_source: 'call plugins#dein#load_config()',
     \   if: has('signs') && plugins#dein#has_exec('git'),
     \ })
-
-.. _vim-gitgutter-custom-maps:
-
-Use my custom maps::
-
-    if has('signs') && plugins#dein#has_exec('git')
-        call keymaps#mnemonic_map('gitgutter')
-        let g:gitgutter_map_keys = v:false
-
-        for [s:key, s:cmd] in [
-        \   ['<Down>',  'NextHunk'],
-        \   ['<Up>',    'PrevHunk'],
-        \   ['<Space>', 'Toggle'],
-        \   ['f',       'Fold'],
-        \   ['p',       'PreviewHunk'],
-        \   ['q',       'QuickFix'],
-        \ ]
-            execute printf(
-            \   'nnoremap [gitgutter]%s <Cmd>GitGutter%s<CR>',
-            \   s:key, s:cmd
-            \ )
-        endfor
-    endif
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 .. _vim-matchup-plugin:
 
@@ -468,6 +385,7 @@ Disturbingly cool editing for |CSV| files, ‘nuff said.
     “A plugin for handling Unicode and digraphs characters”
 
 :repository: :repo:`chrisbra/unicode.vim`
+:early setup: :ref:`maps <unicode-vim-custom-maps>`
 :config: :doc:`localcfg/plugins/unicode.vim`
 
 Be like me and annoy your co-workers/friends by littering your mails with
@@ -478,26 +396,6 @@ Unicode.  It’s Really Exciting :kbd:`U+2122<C-x><C-z>`.
     call dein#add('chrisbra/unicode.vim', #{
     \   hook_source: 'call plugins#dein#load_config()',
     \ })
-
-``:UnicodeName`` output is far more useful than |vim|’s :kbd:`ga`, and in my
-opinion it is also easier to read.
-
-================ =========================================================
-Command          Output
-================ =========================================================
-``:ascii``       ``<> 61486, Hex f02e, Octal 170056``
-``:UnicodeName`` ``'' U+F02E Dec:61486 Private Use Zone &#xF02E; /\%uf02e
-                 "\uf02e"``
-================ =========================================================
-
-So, we’ll override the :kbd:`ga` mapping::
-
-    nmap ga <Plug>(UnicodeGA)
-
-.. tip::
-
-    If for some reason you want the default :kbd:`ga` output ``:ascii`` still
-    does that.
 
 .. include:: .includes/vim_airline_dep.rst
 
@@ -585,6 +483,7 @@ So, we’ll override the :kbd:`ga` mapping::
     “Asynchronous Lint Engine”
 
 :repository: :repo:`dense-analysis/ale`
+:early setup: :ref:`maps <ale-custom-maps>`
 :config: :doc:`localcfg/plugins/ale`
 
 Start your mind boggling every time someone moans about having to switch from
@@ -596,44 +495,6 @@ WingIDE to a real editor when they edit files of different types.
     \   hook_source: 'call plugins#dein#load_config()',
     \   if: v:version >= 800 && has('signs'),
     \ })
-
-.. _ale-custom-maps:
-
-Use my custom maps::
-
-    if v:version >= 800 && has('signs')
-        call keymaps#mnemonic_map('ale', #{local: v:true})
-
-        for [s:key, s:cmd] in [
-        \   ['br',     'reset_buffer'],
-        \   ['bt',     'toggle_buffer'],
-        \   ['d',      'detail'],
-        \   ['f',      'fix'],
-        \   ['gd',     'go_to_definition'],
-        \   ['gt',     'go_to_type_definition'],
-        \   ['l',      'lint'],
-        \   ['r',      'reset'],
-        \   ['t',      'toggle'],
-        \   ['vgd',    'go_to_definition_in_vsplit'],
-        \   ['vgt',    'go_to_type_definition_in_vsplit'],
-        \   ['<Home>', 'first'],
-        \   ['<End>',  'last'],
-        \   ['<Down>', 'next_wrap'],
-        \   ['<Up>',   'previous_wrap'],
-        \ ]
-            execute printf('nmap <silent> [ale]%s <Plug>(ale_%s)', s:key, s:cmd)
-        endfor
-        nnoremap [ale]i <Cmd>call ale#debugging#Info()<CR>
-    endif
-
-.. note::
-
-    You can, of course, simply use the normal :doc:`location list bindings
-    <localcfg/quickfix>` for movement too.
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``vim-table-mode``
 ''''''''''''''''''
@@ -813,6 +674,7 @@ jealous.
     “Yet another debugger frontend plugin”
 
 :repository: :repo:`idanarye/vim-vebugger`
+:early setup: :ref:`maps <vim-vebugger-custom-maps>`
 :config: :doc:`localcfg/plugins/vim_vebugger`
 
 ::
@@ -834,17 +696,6 @@ jealous.
     \   on_cmd: plugins#dein#prefix('VBGstart', s:vebugger_commands),
     \   on_func: ['vebugger', ],
     \ })
-
-.. _vim-vebugger-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('vebugger', #{local: v:true})
-    const g:vebugger_leader='[vebugger]'
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``vim-yankitute``
 '''''''''''''''''
@@ -911,6 +762,7 @@ Use my custom maps::
     “Edit and store quickfix/location list entries”
 
 :repository: :repo:`jceb/vim-editqf`
+:early setup: :ref:`maps <vim-editqf-custom-maps>`
 :config: :doc:`localcfg/plugins/vim_editqf`
 :functions: :doc:`autoload/plugins/vim_editqf`
 
@@ -927,13 +779,6 @@ Add your own “todo” entries to the quickfix list, and hold them across sessi
     \   on_ft: ['qf', ],
     \   on_map: #{n: ['<Plug>QFAdd', ]},
     \ })
-
-Add custom maps in to my quickfix map hierarchy::
-
-    nmap [quickfix]a <Plug>QFAddNote
-    nmap [quickfix]A <Plug>QFAddPatternNote
-    nnoremap [location]a <Cmd>LocAddNote<CR>
-    nnoremap [location]A <Cmd>LocAddNotePattern<CR>
 
 ``vimagit``
 '''''''''''
@@ -971,61 +816,24 @@ Add custom maps in to my quickfix map hierarchy::
     “Advanced :command:`fzf` integration”
 
 :repository: :repo:`junegunn/fzf.vim`
+:early setup: :ref:`maps <fzf-vim-custom-maps>`
 :config: :doc:`localcfg/plugins/fzf.vim`
-
-Skip this whole block when :command:`fzf` isn’t installed::
-
-    if plugins#dein#has_exec('fzf')
 
 Setup lazy loading for commonly used commands and test for optional commands::
 
-        let s:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
-        \   'History', 'Lines', 'Maps', 'Marks', 'Windows']
-        if plugins#dein#has_exec('ag')
-            let s:fzf_commands += ['Ag', ]
-        endif
-        if plugins#dein#has_exec('git')
-            let s:fzf_commands += ['GFiles', ]
-        endif
-        if has('insert_expand')
-            let s:fzf_commands += ['Snippets', ]
-        endif
+    if plugins#dein#has_exec('fzf')
         call dein#add('junegunn/fzf.vim', #{
         \   depends: ['fzf', ],
         \   hook_source: 'call plugins#dein#load_config()',
         \   if: plugins#dein#has_exec('fzf'),
-        \   on_cmd: plugins#dein#prefix('FZF', s:fzf_commands),
+        \   on_cmd: plugins#dein#prefix('FZF', g:fzf_commands),
         \ })
+    endif
 
 .. note::
 
     This doesn’t list *all* the possible commands, just the ones I’d use enough
     to want to tab complete on.
-
-.. _fzf-vim-custom-maps:
-
-Configure convenience mappings for common command usage::
-
-        call keymaps#mnemonic_map('fzf', #{key: '`'})
-        for s:cmd in s:fzf_commands
-            execute printf('nnoremap [fzf]%s <Cmd>FZF%s<CR>',
-            \              tolower(s:cmd[0]), s:cmd)
-        endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
-.. tip::
-
-    I use :kbd:`grave` as my binding for :command:`fzf` commands to reflect my
-    use of :kbd:`<Mod4-\`>` to open a drop down terminal in my window manager.
-    The pattern here and throughout these configuration files is extremely
-    useful as a way to remember bindings.
-
-::
-
-    endif
 
 ``goyo.vim``
 ''''''''''''
@@ -1226,6 +1034,7 @@ Configure convenience mappings for common command usage::
     “Language support for |ledger|\”
 
 :repository: :repo:`ledger/vim-ledger`
+:early setup: :ref:`maps <vim-ledger-custom-maps>`
 :config: :doc:`localcfg/plugins/vim_ledger`
 
 Combine this with :ref:`csv.vim <csv.vim-plugin>`, and it makes importing and
@@ -1238,35 +1047,6 @@ editing your accounts/expenses an almost nice-ish experience.
     \   lazy: v:false,
     \   on_ft: ['ledger', ],
     \ })
-
-.. _vim-ledger-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('Ledger', #{buffer: v:true, key: 'L',
-    \                                     local: v:true})
-
-    for [s:key, s:cmd] in [
-    \   ['a', ':LedgerAlign'],
-    \   ['d', 'align_amount_at_cursor()'],
-    \   ['n', 'entry()'],
-    \   ['s', 'transaction_state_toggle(line("."), " *?!")'],
-    \   ['t', 'transaction_date_set(".", "auxiliary")'],
-    \ ]
-        if s:cmd[0] !=# ':'
-            let s:cmd = 'call ledger#' .. s:cmd
-        else
-            let s:cmd = s:cmd[1:]
-        endif
-
-        execute printf(
-        \   'autocmd Filetype ledger nnoremap [Ledger]%s <Cmd>%s<CR>',
-        \   s:key, s:cmd)
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 .. _rainbow-plugin:
 
@@ -1293,6 +1073,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     “A calendar window you can use within |vim|\”
 
 :repository: :repo:`mattn/calendar-vim`
+:early setup: :ref:`maps <calendar-vim-custom-maps>`
 :config: :doc:`localcfg/plugins/calendar_vim`
 
 ::
@@ -1302,28 +1083,6 @@ trying to impress their grandpa.  Which is a Good Thing™.
     \   on_cmd: plugins#dein#suffix('Calendar', ['', 'H', 'T', 'VR']),
     \   on_map: #{n: ['[calendar]', ]},
     \ })
-
-.. _calendar-vim-custom-maps:
-
-Use my custom maps::
-
-    const g:calendar_no_mappings = v:true
-
-    call keymaps#mnemonic_map('Calendar')
-
-    for [s:key, s:cmd] in [
-    \   ['v', ''],
-    \   ['h', 'H'],
-    \   ['f', 'T'],
-    \   ['r', 'VR'],
-    \ ]
-        execute printf('nnoremap [Calendar]%s <Cmd>Calendar%s<CR>',
-        \              s:key, s:cmd)
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``emmet-vim``
 '''''''''''''
@@ -1397,6 +1156,7 @@ Makes handling Python code far, far easier.
     “Order buffers in :abbr:`MRU (Most Recently Used)` order”
 
 :repository: :repo:`mildred/vim-bufmru`
+:early setup: :ref:`maps <vim-bufmru-custom-maps>`
 
 ::
 
@@ -1404,25 +1164,6 @@ Makes handling Python code far, far easier.
     \   on_cmd: ['BufMRU', ],
     \   on_map: #{n: ['[bufmru]', ]},
     \ })
-
-.. _vim-bufmru-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('bufmru')
-
-    nnoremap [bufmru]l       <Cmd>BufMRU<CR>
-    nnoremap [bufmru]<Left>  <Cmd>BufMRUPrev<CR>
-    nnoremap [bufmru]<Right> <Cmd>BufMRUNext<CR>
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
-.. tip::
-
-    Imagine :kbd:`<Left>` and :kbd:`<Right>` are moving across a timeline of
-    used buffers.
 
 ``vim-jinja``
 '''''''''''''
@@ -1572,6 +1313,7 @@ user, how cool is that?
     “More pleasant editing on commit message”
 
 :repository: :repo:`rhysd/committia.vim`
+:early setup: :ref:`filetype <committia-vim-filetype>`
 :config: :doc:`localcfg/plugins/committia.vim`
 
 ::
@@ -1582,22 +1324,13 @@ user, how cool is that?
     \   on_ft: ['gitcommit', ],
     \ })
 
-We lazy load on filetype definition for my normal workflow with
-``clientserver``, but want to forcibly load on |vim| being called from
-:command:`git commit`::
-
-    if plugins#dein#has_exec('git')
-        if get(v:argv, 0, '') =~# '/.git/COMMIT_EDITMSG$'
-            call dein#source('committia.vim')
-        endif
-    endif
-
 ``git-messenger.vim``
 '''''''''''''''''''''
 
     “Reveal the hidden message by :command:`git` under the cursor quickly”
 
 :repository: :repo:`rhysd/git-messenger.vim`
+:early setup: :ref:`maps <git-messenger-vim-custom-maps>`
 :config: :doc:`localcfg/plugins/git_messenger.vim`
 
 ::
@@ -1608,34 +1341,6 @@ We lazy load on filetype definition for my normal workflow with
     \   on_cmd: ['GitMessenger', ],
     \   on_map: #{n: ['[messenger]', ]},
     \ })
-
-.. _git-messenger-vim-custom-maps:
-
-Use my custom maps::
-
-    if has('signs') && plugins#dein#has_exec('git')
-        const g:git_messenger_no_default_mappings = v:true
-
-        call keymaps#mnemonic_map('messenger')
-
-        for [s:key, s:cmd] in [
-        \   ['o',          ''],
-        \   ['c',          '-close'],
-        \   ['i',          '-into-popup'],
-        \   ['<Down>',     '-scroll-down-1'],
-        \   ['<Up>',       '-scroll-up-1'],
-        \   ['<PageDown>', '-scroll-down-page'],
-        \   ['<PageUp>',   '-scroll-up-page'],
-        \ ]
-            execute printf(
-            \   'nmap <silent> [messenger]%s <Plug>(git-messenger%s)',
-            \   s:key, s:cmd)
-        endfor
-    endif
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
 
 ``vim-radon``
 '''''''''''''
@@ -1664,6 +1369,7 @@ Use my custom maps::
     “Visualizes the Vim undo tree”
 
 :repository: :repo:`simnalamburt/vim-mundo`
+:early setup: :ref:`maps <vim-mundo-custom-maps>`
 :config: :doc:`localcfg/plugins/vim_mundo`
 
 Finally grasp the |vim| ``undo-tree``, without this the feature can be really
@@ -1676,12 +1382,6 @@ daunting to wrap your head around.
     \   if: has('pythonx') && v:version >= 703,
     \   on_cmd: ['MundoToggle', ],
     \ })
-
-Use my custom maps::
-
-    if has('pythonx') && v:version >= 703
-        nnoremap <LocalLeader># <Cmd>MundoToggle<CR>
-    endif
 
 ``splice.vim``
 ''''''''''''''
@@ -1735,6 +1435,7 @@ Use my custom maps::
     “Applies radon_ to your current file”
 
 :repository: :repo:`tell-k/vim-quick-radon`
+:early setup: :ref:`maps <vim-quick-radon-custom-maps>`
 :config: :doc:`localcfg/plugins/vim_quick_radon`
 :functions: :doc:`autoload/plugins/vim_quick_radon`
 
@@ -1746,23 +1447,6 @@ Use my custom maps::
     \   lazy: v:false,
     \   on_cmd: ['QuickRadon', ],
     \ })
-
-.. _vim-quick-radon-custom-maps:
-
-Configure my custom maps::
-
-    if plugins#dein#has_exec('radon')
-        call keymaps#mnemonic_map('radon', #{key: 'p', local: v:true})
-    endif
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
-.. note::
-
-    :kbd:`<Leader>r` is free globally, but ``jedi-vim`` uses it in my Python
-    files.
 
 ``vim-expand-region``
 '''''''''''''''''''''
@@ -1799,6 +1483,7 @@ Configure my custom maps::
     “A tree explorer plugin to rule the Vim world. Bwahahaha!!”
 
 :repository: :repo:`preservim/nerdtree`
+:early setup: :ref:`maps <nerdtree-custom-maps>`
 :config: :doc:`localcfg/plugins/nerdtree`
 
 ::
@@ -1807,34 +1492,13 @@ Configure my custom maps::
     \   on_cmd: ['NERDTree', ],
     \ })
 
-.. _nerdtree-custom-maps:
-
-Use my custom maps::
-
-    call keymaps#mnemonic_map('nerdtree')
-
-    for [s:key, s:cmd] in [
-    \   ['O', 'VCS'],
-    \   ['T', 'ToggleVCS'],
-    \   ['c', 'Close'],
-    \   ['f', 'Focus'],
-    \   ['o', ''],
-    \   ['t', 'Toggle'],
-    \ ]
-        execute printf('nnoremap [nerdtree]%s <Cmd>NERDTree%s<CR>',
-        \              s:key, s:cmd)
-    endfor
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-
 ``wordnet.vim``
 '''''''''''''''
 
     “Look up word definitions with wordnet_”
 
 :repository: :repo:`timcharper/wordnet.vim`
+:early setup: :ref:`maps <wordnet-vim-custom-maps>`
 :config: :doc:`localcfg/plugins/wordnet.vim`
 :functions: :doc:`autoload/plugins/wordnet_vim`
 
@@ -1846,27 +1510,6 @@ Use my custom maps::
     \   on_func: ['WordNetOverviews', ],
     \   on_map: #{nx: ['<Leader>wn']},
     \ })
-
-.. _wordnet-vim-custom-maps:
-
-Use my custom maps::
-
-    if plugins#dein#has_exec('wn')
-        call keymaps#mnemonic_map('wordnet')
-
-        for [s:key, s:cmd] in [
-        \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-        \   ['c', 'plugins#wordnet_vim#close_win()'],
-        \ ]
-            execute printf('nnoremap [wordnet]%s <Cmd>call %s<CR>',
-            \              s:key, s:cmd)
-        endfor
-    endif
-
-.. seealso::
-
-    * :func:`keymaps#mnemonic_map() <mnemonic_map>`
-    * :func:`plugins#wordnet#close_win() <close_win>`
 
 ``molokai``
 '''''''''''
@@ -1950,6 +1593,7 @@ power of :kbd:`gcc`.
     “A Git wrapper so awesome, it should be illegal”
 
 :repository: :repo:`tpope/vim-fugitive`
+:early setup: :ref:`maps <vim-fugitive-custom-maps>`
 
 Replace most of your use of a shell when working on a project with just another
 |vim| buffer.
@@ -1959,19 +1603,6 @@ Replace most of your use of a shell when working on a project with just another
     call dein#add('tpope/vim-fugitive', #{
     \   if: plugins#dein#has_exec('git'),
     \ })
-
-Add map to change directory to git_ project root using :repo:`vim-projectionist
-<tpope/vim-projectionist>`::
-
-    if plugins#dein#has_exec('git')
-        nnoremap <C-p> <Cmd>Gcd<CR>
-    endif
-
-.. note::
-
-    I never use :kbd:`<C-p>` or :kbd:`<C-n>` for navigation, as |vim| generally
-    offers far more useful navigation, and anyway you can still move up with
-    :kbd:`k`.
 
 ``vim-jdaddy``
 ''''''''''''''
@@ -2458,7 +2089,6 @@ I write my mail in |reST|.  No, really.
 .. _fzf: https://github.com/junegunn/fzf
 .. _cue sheet: https://en.wikipedia.org/wiki/Cue_sheet_(computing)
 .. _radon: https://radon.readthedocs.io/
-.. _git: https://git-scm.com/
 .. _wordnet: http://wordnet.princeton.edu/
 .. _Readline: http://www.gnu.org/software/readline/
 .. _this commit:

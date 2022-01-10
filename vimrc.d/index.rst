@@ -12,6 +12,7 @@ Contents
 .. toctree::
     :titlesonly:
 
+    dein_early_setup
     dein
     disabled
     maps

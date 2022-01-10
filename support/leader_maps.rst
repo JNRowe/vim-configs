@@ -14,7 +14,7 @@ Key        Local  Buffer  Maps
 :kbd:`a`   ✅     ❌      :ref:`ale <ale-custom-maps>`
 :kbd:`b`   ❌     ❌      :ref:`vim-bufmru <vim-bufmru-custom-maps>`
 :kbd:`c`   ❌     ❌      :ref:`calendar <calendar-vim-custom-maps>`
-:kbd:`d`   ❌     ❌      :ref:`dwm <dwm-custom-maps>`
+:kbd:`d`   ❌     ❌      :ref:`dwm.vim <dwm-vim-custom-maps>`
 :kbd:`f`   ✅     ❌      :ref:`+quickfix feature <quickfix-custom-maps>`
 :kbd:`g`   ❌     ❌      :ref:`vim-gitgutter <vim-gitgutter-custom-maps>`
 :kbd:`h`   ✅     ❌      :ref:`haskell filetype <haskell-custom-maps>`

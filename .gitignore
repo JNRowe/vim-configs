@@ -131,6 +131,7 @@ __pycache__/
 /localcfg/quickfix.vim
 /localcfg/spell.vim
 /vimrc.d/dein.vim
+/vimrc.d/dein_early_setup.vim
 /vimrc.d/disabled.vim
 /vimrc.d/maps.vim
 /vimrc.d/misc.vim
