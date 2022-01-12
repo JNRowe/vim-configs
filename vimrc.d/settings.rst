@@ -79,20 +79,6 @@ Ask instead of just failing when there are edited buffers and you call
 
     set confirm
 
-Select a :vimdoc:`safer encryption method <options.txt#blowfish2>` if available
-or warn about weakened encryption::
-
-    if has('cryptv')
-        set cryptmethod=blowfish2
-    endif
-
-.. tip::
-
-    While the built-in encryption support can be useful at times, a better
-    solution is probably to use an external tool that can be accessed outside
-    |vim|.  For instance, gnupg_ which can be supported transparently via
-    :repo:`vim-gnupg <jamessan/vim-gnupg>`.
-
 Highlight the current line, but only `when it will be useful
 <dynamic-cursorline>`_::
 

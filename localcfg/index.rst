@@ -19,7 +19,6 @@ Contents
     diff
     gui_macvim
     gui_running
-    menu
     notgui_running
     quickfix
     spell
