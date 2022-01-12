@@ -1,7 +1,7 @@
 ``vimrc.d/disabled.vim``
 ========================
 
-.. include:: ../.includes/scriptversion.rst
+.. include:: ../.includes/vim9script.rst
 
 Don’t load unhelpful [to me] default plugins.  Basically, this can be summed up
 as the things which we don’t want(``vimball`` support), things with far
@@ -10,12 +10,12 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 
 ::
 
-    for s:plugin in [
-    \   '2html_plugin', 'getscriptPlugin', 'gzip', 'logiPat', 'matchparen',
-    \   'netrw', 'netrwPlugin', 'rrhelper', 'spellfile_plugin', 'tarPlugin',
-    \   'vimballPlugin', 'zipPlugin',
-    \ ]
-        call misc#disable_plugin(s:plugin)
+    for plugin in [
+        '2html_plugin', 'getscriptPlugin', 'gzip', 'logiPat', 'matchparen',
+        'netrw', 'netrwPlugin', 'rrhelper', 'spellfile_plugin', 'tarPlugin',
+        'vimballPlugin', 'zipPlugin',
+    ]
+        call misc#disable_plugin(plugin)
     endfor
 
 .. seealso::
@@ -31,7 +31,7 @@ superior alternatives(:repo:`dein <Shougo/dein.vim>` over ``getscript``).
 Forcibly disable ``matchit``, as we’re using the :ref:`vim-matchup
 <vim-matchup-plugin>` plugin::
 
-    call misc#disable_plugin('matchit')
+    misc#disable_plugin('matchit')
 
 .. seealso::
 

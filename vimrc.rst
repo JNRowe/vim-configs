@@ -1,13 +1,13 @@
 ``vimrc`` - Basic setup
 =======================
 
+.. include:: .includes/vim9script.rst
+
 First use of ``:scriptencoding`` must be after an initial encoding is set::
 
     set encoding=utf-8
 
 .. include:: .includes/scriptencoding.rst
-
-.. include:: .includes/scriptversion.rst
 
 Recent |vim| versions disable ``'compatible'`` when a :file:`vimrc` is found,
 but some distributions are disabling that change for a reason that is far beyond
@@ -15,11 +15,11 @@ me.
 
 ::
 
-    " vint: -ProhibitSetNoCompatible
+    # vint: -ProhibitSetNoCompatible
     if &compatible
         set nocompatible
     endif
-    " vint: +ProhibitSetNoCompatible
+    # vint: +ProhibitSetNoCompatible
 
 Warn users with |vim| versions lower than v8.2 that problems will occur, but
 note that pull requests which aren’t too invasive are most welcome.
@@ -27,7 +27,7 @@ note that pull requests which aren’t too invasive are most welcome.
 ::
 
     if v:version < 802
-        let v:warningmsg = 'Vim version 8 or higher is required'
+        v:warningmsg = 'Vim version 8 or higher is required'
         echohl WarningMsg
         echomsg v:warningmsg
         echohl none
@@ -40,7 +40,7 @@ they don’t break |vim|.
 ::
 
     if has('nvim')
-        let v:errmsg = 'This config will *NOT* work with nvim'
+        v:errmsg = 'This config will *NOT* work with nvim'
         echoerr v:errmsg
         cquit
     endif
@@ -55,9 +55,9 @@ under :envvar:`TMPDIR`.
 
     if exists('$VIM_PROFILE')
         const [s:profile_file, s:profile_func] =
-        \   (split($VIM_PROFILE, ':') + [v:none])[:1]
+            (split($VIM_PROFILE, ':') + [v:none])[ : 1]
         execute 'profile start ' .. s:profile_file
-        if s:profile_func is v:none
+        if profile_func == v:none
             profile file ~/.vim/*
         else
             execute 'profile func ' .. s:profile_func
@@ -78,7 +78,7 @@ Pull in semi-private local settings::
 
 Pull in general |vim| configuration files::
 
-    source ~/.vim/vimrc.d/paths.vim  " *Must* be early
+    source ~/.vim/vimrc.d/paths.vim  # *Must* be early
 
     source ~/.vim/vimrc.d/disabled.vim
     source ~/.vim/vimrc.d/settings.vim
@@ -93,12 +93,13 @@ Pull in build dependent configuration files::
     if has('localmap')
         source ~/.vim/localcfg/abbr.vim
     endif
-    for s:feature in ['autocmd', 'diff', 'notgui_macvim', 'gui_running',
-    \                 'menu', 'quickfix', 'spell']
-        let s:feature_file = printf('~/.vim/localcfg/%s%s.vim',
-        \                           !has(s:feature) ? 'not' : '', s:feature)
-        if filereadable(expand(s:feature_file))
-            execute 'source ' .. s:feature_file
+    var feature_file: string
+    for feature in ['autocmd', 'diff', 'notgui_macvim', 'gui_running',
+                    'quickfix', 'spell']
+        feature_file = printf('~/.vim/localcfg/%s%s.vim',
+                              !has(s:feature) ? 'not' : '', feature)
+        if filereadable(expand(feature_file))
+            execute 'source ' .. feature_file
         endif
     endfor
 
@@ -106,9 +107,9 @@ Pull in build dependent configuration files::
 
 Pull in host specific configuration data::
 
-    const s:host_file = expand('~/.vim/localcfg/' .. hostname() .. '.vim')
-    if filereadable(s:host_file)
-        execute 'source ' .. s:host_file
+    const host_file = expand('~/.vim/localcfg/' .. hostname() .. '.vim')
+    if filereadable(host_file)
+        execute 'source ' .. host_file
     endif
 
 Define and configure plugins::

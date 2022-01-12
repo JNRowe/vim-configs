@@ -1,7 +1,7 @@
 ``vimrc.d/packages.vim``
 ========================
 
-.. include:: ../.includes/scriptversion.rst
+.. include:: ../.includes/vim9script.rst
 
 .. note::
 
@@ -11,10 +11,10 @@
 
 Enable ``:Cfilter`` for using enormously noisy compilers::
 
-    for s:t in ['C', 'L']
+    for t in ['C', 'L']
         execute printf('command! -bang -nargs=+ %sfilter packadd cfilter | ' ..
-        \              '%sfilter<bang> <args>',
-        \              s:t, s:t)
+                       '%sfilter<bang> <args>',
+                       t, t)
     endfor
 
 When using server mode ``editexisting`` makes using currently open files far

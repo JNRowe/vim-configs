@@ -1,9 +1,9 @@
 ``vimrc.d/maps.vim``
 ====================
 
-.. include:: ../.includes/scriptencoding.rst
+.. include:: ../.includes/vim9script.rst
 
-.. include:: ../.includes/scriptversion.rst
+.. include:: ../.includes/scriptencoding.rst
 
 .. _switch-bufs:
 
@@ -27,9 +27,9 @@ Set up map to quickly move among buffers::
 I hate you *so* much right now::
 
     if exists('$VIM_DISABLE_CURSORS')
-        for s:k in ['Up', 'Down', 'Left', 'Right']
-            execute printf('nnoremap <%s> <nop>', s:k)
-            execute printf('inoremap <%s> <nop>', s:k)
+        for k in ['Up', 'Down', 'Left', 'Right']
+            execute printf('nnoremap <%s> <nop>', k)
+            execute printf('inoremap <%s> <nop>', k)
         endfor
     endif
 
@@ -132,10 +132,10 @@ Maps to jump Window management::
 
 Help related maps::
 
-    call keymaps#mnemonic_map('Help', #{key: '?'})
+    call keymaps#mnemonic_map('Help', {key: '?'})
 
-    for s:t in ['function-list', 'pattern', 'quickref', 'registers']
-        execute printf('nnoremap [Help]%.1s <Cmd>help %s<CR>', s:t, s:t)
+    for t in ['function-list', 'pattern', 'quickref', 'registers']
+        execute printf('nnoremap [Help]%.1s <Cmd>help %s<CR>', t, t)
     endfor
 
     nnoremap [Help]c <Cmd>helpclose<CR>
@@ -183,14 +183,15 @@ a feature, but thanks for the idea!
 
 ::
 
-    for s:m in ['i', 'n']
-        let s:break_insert = s:m ==# 'i' ? '<C-o>' : ''
-        for [s:mod, s:key, s:cmd] in [
-        \   ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
-        \   ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']
-        \ ]
-            execute printf('%snoremap <%sScrollWheel%s> %s%s', s:m, s:mod,
-            \              s:key, s:break_insert, s:cmd)
+    var break_insert: string
+    for m in ['i', 'n']
+        break_insert = m ==# 'i' ? '<C-o>' : ''
+        for [mod, key, cmd] in [
+            ['', 'Up', 'u'], ['', 'Down', '<C-r>'],
+            ['S-', 'Up', 'g-'], ['S-', 'Down', 'g+']
+        ]
+            execute printf('%snoremap <%sScrollWheel%s> %s%s', m, mod, key,
+                           break_insert, cmd)
         endfor
     endfor
 
@@ -198,9 +199,9 @@ Make insert mode maps for accessing all completion modes without needless hand
 stretching:::
 
     if has('insert_expand')
-        for s:key in misc#str2chars('lnkti]fdvuos')
+        for key in misc#str2chars('lnkti]fdvuos')
             execute printf('inoremap <silent> <LocalLeader>,%s <C-x><C-%s>',
-            \              s:key, s:key)
+            \              key, key)
         endfor
     endif
 
@@ -208,7 +209,7 @@ stretching:::
 
 Add mappings to highlight lines::
 
-    call keymaps#mnemonic_map('Display', #{key: 'D', modes: 'nv'})
+    keymaps#mnemonic_map('Display', {key: 'D', modes: 'nv'})
     nnoremap [Display]lh <Cmd>call display#add_line_highlight()<CR>
     nnoremap [Display]lc <Cmd>call display#clear_line_highlights()<CR>
 
@@ -236,19 +237,20 @@ Highlight matches for last search only within visual region::
 
 Quickly correct close spelling mistakes without changing cursor position::
 
-    call keymaps#mnemonic_map('Spell', #{key: 'z'})
-    for s:dir in ['[', ']']
-        for s:type in ['bad', 'full']
-            for s:auto in [v:false, v:true]
+    keymaps#mnemonic_map('Spell', {key: 'z'})
+    for dir in ['[', ']']
+        for type in ['bad', 'full']
+            for auto in [v:false, v:true]
                 execute printf(
-                \   'nnoremap [Spell]%s%s%s ' ..
-                \   ':call misc#preserve_layout("normal! %s%s%sz=")<CR>',
-                \   s:auto ? '' : 'q',
-                \   s:dir ==# ']' ? 'n' : 'l',
-                \   s:type ==# 'bad' ? 'W' : 'w',
-                \   s:dir,
-                \   s:type ==# 'bad' ? 'S' : 's',
-                \   s:auto ? '1' :'')
+                    'nnoremap [Spell]%s%s%s ' ..
+                    ':call misc#preserve_layout("normal! %s%s%sz=")<CR>',
+                    auto ? '' : 'q',
+                    dir ==# ']' ? 'n' : 'l',
+                    type ==# 'bad' ? 'W' : 'w',
+                    dir,
+                    type ==# 'bad' ? 'S' : 's',
+                    auto ? '1' : ''
+                )
             endfor
         endfor
     endfor
@@ -263,18 +265,18 @@ Quickly correct close spelling mistakes without changing cursor position::
 
 Quickly add close words to dictionaries without changing cursor position::
 
-    for s:dir in ['[', ']']
-        for s:type in ['bad', 'full']
-            for s:local in [v:false, v:true]
+    for dir in ['[', ']']
+        for type in ['bad', 'full']
+            for local in [v:false, v:true]
                 execute printf(
-                \   'nnoremap [Spell]%s%s%s ' ..
-                \   ':call misc#preserve_layout("normal! %s%sz%s")<CR>',
-                \   s:dir ==# ']' ? 'n' : 'l',
-                \   s:local ? 'A' : 'a',
-                \   s:type ==# 'bad' ? 'W' : 'w',
-                \   s:dir,
-                \   s:type ==# 'bad' ? 'S' : 's',
-                \   s:local ? 'G' :'g')
+                    'nnoremap [Spell]%s%s%s ' ..
+                    ':call misc#preserve_layout("normal! %s%sz%s")<CR>',
+                    dir ==# ']' ? 'n' : 'l',
+                    local ? 'A' : 'a',
+                    type ==# 'bad' ? 'W' : 'w',
+                    dir,
+                    type ==# 'bad' ? 'S' : 's',
+                    local ? 'G' : 'g')
             endfor
         endfor
     endfor

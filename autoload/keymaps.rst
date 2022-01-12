@@ -1,9 +1,9 @@
 ``autoload/keymaps.vim``
 ========================
 
-.. include:: ../.includes/scriptencoding.rst
+.. include:: ../.includes/vim9script.rst
 
-.. include:: ../.includes/scriptversion.rst
+.. include:: ../.includes/scriptencoding.rst
 
 .. function:: home_skip() -> None
 
@@ -11,13 +11,13 @@
 
 ::
 
-    function! keymaps#home_skip() abort
+    def keymaps#home_skip()
         if col('.') != 1
             normal! 0
         else
             normal! ^
         endif
-    endfunction
+    enddef
 
 .. function:: mnemonic_map(name: str, buffer: Optional[bool] = False, key: Optional[str], local: Optional[bool] = False, modes: Optional[str] = 'n') -> None
 
@@ -31,20 +31,19 @@
 
 ::
 
-    function! keymaps#mnemonic_map(name, ...) abort
-        const l:extra = get(a:, 1, {})
-        const l:buffer = get(l:extra, 'buffer', v:false) ? '<buffer>' : ''
-        const l:key = get(l:extra, 'key', tolower(a:name[0]))
-        const l:local = get(l:extra, 'local', v:false) ? 'Local' : ''
-        const l:modes = get(l:extra, 'modes', 'n')
-        for l:mode in misc#str2chars(l:modes)
-            execute printf('%snoremap %s [%s] <Nop>', l:mode, l:buffer, a:name)
-            execute printf('%smap %s <%sLeader>%s [%s]', l:mode, l:buffer,
-            \              l:local, l:key, a:name)
+    def keymaps#mnemonic_map(name: string, extra = {})
+        const buffer = get(extra, 'buffer', v:false) ? '<buffer>' : ''
+        const key = get(extra, 'key', tolower(name[0]))
+        const local = get(extra, 'local', v:false) ? 'Local' : ''
+        const modes = get(extra, 'modes', 'n')
+        for mode in misc#str2chars(modes)
+            execute printf('%snoremap %s [%s] <Nop>', mode, buffer, name)
+            execute printf('%smap %s <%sLeader>%s [%s]', mode, buffer, local,
+                           key, name)
         endfor
-        execute printf('noremap [%s]? <Cmd>filter /\[%s\]/ map<CR>', a:name,
-        \              a:name)
-    endfunction
+        execute printf('noremap [%s]? <Cmd>filter /\[%s\]/ map<CR>', name,
+                       name)
+    enddef
 
 .. tip::
 
@@ -60,20 +59,21 @@
 
 ::
 
-    function! keymaps#quickfix_key(type, key, cmd) abort
-        const l:group = a:type ==# 'l' ? 'location' : 'quickfix'
-        " Commands ending with backslash don’t have <CR> appended
-        if slice(a:cmd, -1) ==# '\'
-            let l:cmd = slice(a:cmd, 0, -1)
+    def keymaps#quickfix_key(type: string, key: string, cmd: string)
+        const group = type ==# 'l' ? 'location' : 'quickfix'
+        var cmd_: string
+        # Commands ending with backslash don’t have <CR> appended
+        if slice(cmd, -1) ==# '\'
+            cmd_ = slice(cmd, 0, -1)
         else
-            let l:cmd = a:cmd .. '<CR>'
+            cmd_ = cmd .. '<CR>'
         endif
-        " Commands beginning with : don’t have a:type prefix inserted
-        if a:cmd[0] !=# ':'
-            let l:cmd = printf(':%s%s', a:type, l:cmd)
+        # Commands beginning with : don’t have a:type prefix inserted
+        if cmd_[0] !=# ':'
+            cmd_ = printf(':%s%s', type, cmd_)
         endif
-        execute printf('nnoremap <silent> [%s]%s %s', l:group, a:key, l:cmd)
-    endfunction
+        execute printf('nnoremap <silent> [%s]%s %s', group, key, cmd_)
+    enddef
 
 .. function:: switch_buf(count: int) -> None
 
@@ -83,22 +83,23 @@
 
 ::
 
-    function! keymaps#switch_buf(count) abort
-        const l:bufs = range(1, bufnr('$'))->filter(
-        \   {_, n -> buflisted(n) && !empty(bufname(n))}
+    def keymaps#switch_buf(count: number)
+        const bufs = range(1, bufnr('$'))->filter(
+        \   (_, n) => buflisted(n) && !empty(bufname(n))
         \ )
-        if len(l:bufs) < 2
+        if len(bufs) < 2
             return
         endif
-        const l:current = index(l:bufs, bufnr('%'))
-        if abs(a:count) > 1
-            const l:default = a:count < 1 ? l:bufs[0] : bufnr('$')
+        const current = index(bufs, bufnr('%'))
+        var default: number
+        if abs(count) > 1
+            default = count < 1 ? bufs[0] : bufnr('$')
         else
-            const l:default = bufnr('%') == 1 ? bufnr('$') : l:bufs[0]
+            default = bufnr('%') == 1 ? bufnr('$') : bufs[0]
         endif
-        const l:buf = get(l:bufs, l:current + a:count, l:default)
-        execute 'buffer ' .. l:buf
-    endfunction
+        const buf = get(bufs, current + count, default)
+        execute 'buffer ' .. buf
+    enddef
 
 .. spelling::
 
