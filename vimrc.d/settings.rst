@@ -149,6 +149,12 @@ Configure folding support::
 
     if has('folding')
         set fillchars+=fold:\   " Intentional trailing space
+        if &termencoding ==# 'utf-8' || has('gui_running')
+            if has('patch-8.2.2524')
+                set fillchars+=foldopen:┌
+                set fillchars+=foldsep:│
+            endif
+        endif
         set foldcolumn=2
         set foldlevelstart=99
         set foldmethod=syntax
