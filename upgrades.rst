@@ -21,4 +21,4 @@ work on when I upgrade.
 
     Switch to ``str2list()`` and ``list2str()``, see 8.1.1122.
 
-.. last seen: 8.1.1685
+.. last seen: 8.2.2434
