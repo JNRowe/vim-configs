@@ -1098,7 +1098,7 @@ trying to impress their grandpa.  Which is a Good Thing™.
     call dein#add('mattn/emmet-vim', #{
     \   hook_source: 'call plugins#dein#load_config()',
     \   if: has('insert_expand') && v:version >= 700,
-    \   on_ft: ['html', 'htmljinja', 'xml', 'xsl'],
+    \   on_ft: ['html', 'htmljinja', 'xhtml', 'xml', 'xsl'],
     \ })
 
 ``vim-cuesheet``
