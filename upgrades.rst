@@ -15,10 +15,6 @@ work on when I upgrade.
 
 .. todo::
 
-    Add ``:tlmenu`` support to :doc:`localcfg/menu`, see 8.1.0487.
-
-.. todo::
-
     Switch to ``str2list()`` and ``list2str()``, see 8.1.1122.
 
 .. last seen: 8.2.2434

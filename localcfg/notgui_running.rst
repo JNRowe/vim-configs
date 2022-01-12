@@ -3,10 +3,6 @@
 
 .. include:: ../.includes/scriptversion.rst
 
-Set up the menus so ``:emenu`` works properly::
-
-    runtime! ALL menu.vim
-
 Use the system’s terminal capabilities database, as I’m in the unusual situation
 where |vim|’s are inferior on many of the systems I regularly use::
 
