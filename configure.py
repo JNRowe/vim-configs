@@ -112,7 +112,7 @@ def configure(
         n.rule(
             'configure',
             ' '.join(
-                [f'{location / "build.py"}', '$out']
+                [f'{location / "configure.py"}', '$out']
                 + [
                     wopt(s)
                     for s in [
@@ -177,7 +177,7 @@ def configure(
             f'{location / file}',
             'configure',
             inputs=[
-                f'{location / "build.py"}',
+                f'{location / "configure.py"}',
             ],
             implicit=[
                 ninja_syntax.__file__,

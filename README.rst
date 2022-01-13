@@ -32,6 +32,7 @@ Bug reports
 '''''''''''
 
 * Delphine Beauchemin
+* Karl Ullmann
 
 Ideas
 '''''

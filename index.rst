@@ -29,7 +29,7 @@ much to you:
 
     $ git clone --recursive https://github.com/JNRowe/vim-configs.git ~/.vim
     $ cd !$
-    $ ./build.py  # Generate ninja build rules, see --help for options
+    $ ./configure.py  # Generate ninja build rules, see --help for options
     $ ninja  # Build, or update, generated files
 
 Scan over the generated ``.vim`` files and figure out what you wish to do with
@@ -102,6 +102,7 @@ Bug reports
 '''''''''''
 
 * Delphine Beauchemin
+* Karl Ullmann
 
 Ideas
 '''''
