@@ -243,6 +243,7 @@ languages.
     call dein#add('andymass/vim-matchup', #{
     \   hook_source: 'call plugins#dein#load_config()',
     \   if: v:version >= 704,
+    \   on_cmd: ['MatchupWhereAmI?', ],
     \   on_map: #{nx: ['%', ]},
     \ })
 
