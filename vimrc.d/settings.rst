@@ -355,17 +355,6 @@ changes the statusline to indicate mode::
 
     set noshowmode
 
-Display signs within the number column to give more window room to actual
-content::
-
-    set signcolumn=number
-
-.. note::
-
-    I’m unsure if this setting will stay as it can be make
-    ``'number'``/``'relativenumber'`` use difficult when a lot of signs are
-    in use(for example with :repo:`vim-gitgutter <airblade/vim-gitgutter>`).
-
 .. _set-smartcase:
 
 Make searches case insensitive when an upper case character is typed, as an
