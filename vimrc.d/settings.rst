@@ -254,10 +254,9 @@ standard” behaviour, even if it isn’t the most intuitive.
 
 .. tip::
 
-    If the only date format you use is :wikipedia:`ISO-8601 <ISO_8601>` then
-    disabling ``'nrformats'``’s octal mode and enabling unsigned should
-    allow you seamless date fiddling without :repo:`vim-speeddating
-    <tpope/vim-speeddating>`.
+    If the only date format you use is |ISO-8601| then disabling
+    ``'nrformats'``’s octal mode and enabling unsigned should allow you seamless
+    date fiddling without :repo:`vim-speeddating <tpope/vim-speeddating>`.
 
 Disable line numbering by default, but :ref:`not in the GUI
 <gui-linenumbers>`::

@@ -3,7 +3,7 @@
 
 .. include:: ../../.includes/scriptversion.rst
 
-Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
+Use |ISO-8601| compatible date format::
 
     let g:git_messenger_date_format = '%FT%T'
 

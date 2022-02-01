@@ -42,6 +42,7 @@ if not on_rtd:
     extensions.append('vim_extractor')
 
 rst_epilog = """
+.. |ISO-8601| replace:: :wikipedia:`ISO-8601 <ISO_8601>`
 .. |ASCII| replace::
    :abbr:`ASCII (American Standard Code for Information Interchange)`
 .. |CSV| replace:: :abbr:`CSV (Comma-separated values)`

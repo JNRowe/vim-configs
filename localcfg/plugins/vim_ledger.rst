@@ -18,7 +18,7 @@ the current column::
 
     command! LedgerAlignHere let g:ledger_align_at = getcurpos()[2]
 
-Use :wikipedia:`ISO-8601 <ISO_8601>` compatible date format::
+Use |ISO-8601| compatible date format::
 
     const g:ledger_date_format = '%F'
 
