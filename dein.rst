@@ -1272,6 +1272,20 @@ user, how cool is that?
     \   on_ft: ['html', ],
     \ })
 
+``Yuescript-vim``
+'''''''''''''''''
+
+    “Adds syntax highlighting and indent support for YueScript”
+
+:repository: :repo:`pigpigyyy/Yuescript-vim`
+
+::
+
+    call dein#add('pigpigyyy/Yuescript-vim', #{
+    \   lazy: v:false,
+    \   on_ft: ['yue', ],
+    \ })
+
 .. _vim-textobj-quote-plugin:
 
 ``vim-textobj-quote``
