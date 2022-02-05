@@ -78,10 +78,10 @@ workaround this::
         set t_ti= t_te=
     endif
 
-kitty_ can display undercurls for fancier spelling error highlighting that
-closely matches my setup in :command:`gvim`::
+kitty_ and VTE_-based terminals can display undercurls for spelling error
+highlighting that more closely matches my setup in :command:`gvim`::
 
-    if $TERM ==# 'xterm-kitty'
+    if $TERM ==# 'xterm-kitty' || exists('$VTE_VERSION')
         let &t_Cs = "\e[4:3m"
         let &t_Ce = "\e[4:0m"
         highlight clear SpellBad
@@ -97,6 +97,7 @@ closely matches my setup in :command:`gvim`::
 .. _interact poorly:
     https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
 .. _kittens: https://sw.kovidgoyal.net/kitty/#kittens
+.. _VTE: https://wiki.gnome.org/Apps/Terminal/VTE
 
 .. spelling::
 
