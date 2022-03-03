@@ -6,10 +6,8 @@
 Configure styling::
 
     const g:indent_guides_auto_colors = v:false
-    if has('gui_running')
-        const g:indent_guides_guide_size = 1
-        const g:indent_guides_start_level = 2
-    endif
+    const g:indent_guides_guide_size = 1
+    const g:indent_guides_start_level = 2
     const s:guide_gui = #{even: '#00ff00', odd: '#007700'}
     if &t_Co >= 88
         const s:guide_term = #{even: 240, odd: 236}
