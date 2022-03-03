@@ -64,9 +64,7 @@ on current line::
 
 Attempt to save and restore window size in session files::
 
-    if has('gui_running')
-        set sessionoptions+=resize
-    endif
+    set sessionoptions+=resize
 
 :kbd:`<S-Insert>` should work the same as in my terminals::
 
