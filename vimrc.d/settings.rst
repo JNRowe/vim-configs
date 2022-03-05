@@ -537,7 +537,6 @@ worthwhile, so allow window borders to touch::
     set winminheight=0
 
 .. _passwordstore: https://www.passwordstore.org/
-.. _gnupg: https://www.gnupg.org/
 .. _Debian: https://debian.org/
 .. _wordlist: http://wordlist.sourceforge.net/
 .. _miscfiles: https://savannah.gnu.org/projects/miscfiles/
