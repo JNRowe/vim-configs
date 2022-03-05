@@ -65,7 +65,7 @@ rst_epilog = """
 
 needs_sphinx = '3.5'
 
-nitpicky = True
+nitpicky = 'SPHINX_DEV_BUILD' in os.environ
 
 exclude_patterns: List[str] = [
     '.build',
