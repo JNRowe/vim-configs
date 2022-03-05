@@ -17,8 +17,8 @@ variables.
 
 .. envvar:: SHELL
 
-    Shell used by fzf_ launcher, when |vim| has not been compiled with terminal
-    support.
+    Shell used by :repo:`fzf <junegunn/fzf>` launcher, when |vim| has not been
+    compiled with terminal support.
 
 .. envvar:: TERM
 
@@ -26,7 +26,8 @@ variables.
 
 .. envvar:: TERMINAL
 
-    If set, it overrides guessing for fzf_’s launcher setting.
+    If set, it overrides guessing for :repo:`fzf <junegunn/fzf>`’s launcher
+    setting.
 
 .. envvar:: TMPDIR
 

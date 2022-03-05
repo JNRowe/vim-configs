@@ -4,9 +4,9 @@
 .. include:: ../../.includes/scriptversion.rst
 
 This replaces my custom info/warn/error sign code with [1-3] markers, which is
-basically just a convenience because I'm really used to the icons.  See `this
-commit`_ for the original idea, although it has changed massively before we made
-it here.
+basically just a convenience because I'm really used to the icons.  See :repo:`this
+commit <JNRowe/vim-configs/commit/c150ea3da3effcdc4043f55aac6129b0df99d77f>` for
+the original idea, although it has changed massively before we made it here.
 
 .. note::
 
@@ -60,6 +60,3 @@ it here.
 
 .. [#] I know *I’ll* forget the origin of the keys by the next time *I* open
        this file.
-
-.. _this commit:
-    https://github.com/JNRowe/vim-configs/commit/c150ea3da3effcdc4043f55aac6129b0df99d77f

@@ -57,8 +57,8 @@
 
 .. note::
 
-    samurai_ is a :command:`ninja` reimplementation that turns up on a few
-    machines I use.
+    :repo:`samurai <michaelforney/samurai>` is a :command:`ninja`
+    reimplementation that turns up on a few machines I use.
 
 .. function:: disable_plugin(plugin: str) -> None
 
@@ -327,4 +327,3 @@
 
 .. _ninja: https://ninja-build.org/
 .. _make: https://www.gnu.org/software/make/make.html
-.. _samurai: https://github.com/michaelforney/samurai

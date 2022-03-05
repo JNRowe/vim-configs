@@ -45,7 +45,7 @@ rst_epilog = """
 .. |XDG basedir| replace:: `XDG base directory specification
    <http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html>`__
 .. |git| replace:: `git <https://www.git-scm.com/>`__
-.. |issue| replace:: `issue <https://github.com/JNRowe/vim-configs/issues/>`__
+.. |issue| replace:: :repo:`issue <JNRowe/vim-configs/issues>`
 .. |ledger| replace:: `ledger <https://www.ledger-cli.org/>`__
 .. |mail| replace:: `mail <jnrowe@gmail.com>`__
 .. |neovim| replace:: `neovim <https://neovim.io/>`__

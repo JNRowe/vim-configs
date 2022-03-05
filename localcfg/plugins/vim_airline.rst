@@ -57,8 +57,8 @@ Configure prettier symbols::
 
 .. note::
 
-    The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
-    a font if available.
+    The ``NF``-suffixed branch is here to prefer a :repo:`nerd-fonts
+    <ryanoasis/nerd-fonts>` variation of a font if available.
 
 .. include:: ../../.includes/fancy_symbols.rst
 
@@ -173,8 +173,6 @@ Use a pretty symbol for :repo:`vim-obsession <tpope/vim-obsession>`::
 Allow spaces *after* tabs, but not in between::
 
     const g:airline#extensions#whitespace#mixed_indent_algo = 2
-
-.. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
 
 .. spelling::
 

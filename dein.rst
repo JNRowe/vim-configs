@@ -268,7 +268,7 @@ almost-kind-of-works solution from your :file:`.vimrc`.
 ``vim-toml``
 ''''''''''''
 
-    “Syntax for TOML_\”
+    “Syntax for :repo:`TOML <toml-lang/toml>`\”
 
 :repository: :repo:`cespare/vim-toml`
 
@@ -1721,7 +1721,8 @@ a little more comfortable.
 
 .. attention::
 
-    This is pinned as it can massively affect functionality, see `this commit`_
+    This is pinned as it can massively affect functionality, see :repo:`this
+    commit <tpope/vim-sensible/commit/2c57c5f4c5446865db532064c763a6a67db2d0bb>`
     for an example.
 
 ``vim-sleuth``
@@ -2095,7 +2096,6 @@ I write my mail in |reST|.  No, really.
 
 .. _github: https://github.com/
 .. _dwm: https://dwm.suckless.org/
-.. _TOML: https://github.com/toml-lang/toml
 .. _emacs: https://www.gnu.org/software/emacs/
 .. _Cap'n Proto: https://capnproto.org/
 .. _EditorConfig: http://editorconfig.org/
@@ -2106,8 +2106,6 @@ I write my mail in |reST|.  No, really.
 .. _radon: https://radon.readthedocs.io/
 .. _wordnet: http://wordnet.princeton.edu/
 .. _Readline: http://www.gnu.org/software/readline/
-.. _this commit:
-    https://github.com/tpope/vim-sensible/commit/2c57c5f4c5446865db532064c763a6a67db2d0bb
 .. _zig: https://ziglang.org/
 
 .. spelling::

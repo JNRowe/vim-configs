@@ -93,8 +93,8 @@ with a cleaner patch, then I’ll immediately look for replacements.
 
 .. note::
 
-    The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
-    a font if available.
+    The ``NF``-suffixed branch is here to prefer a :repo:`nerd-fonts
+    <ryanoasis/nerd-fonts>` variation of a font if available.
 
 Add command to switch text size quickly::
 
@@ -171,7 +171,6 @@ between GUI and non-GUI |vim|::
     three second penalty for re-caching without this kludge.
 
 .. _Inconsolata: http://www.levien.com/type/myfonts/inconsolata.html
-.. _nerd-fonts: https://github.com/ryanoasis/nerd-fonts
 
 .. spelling::
 

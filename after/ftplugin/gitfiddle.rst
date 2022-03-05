@@ -5,9 +5,10 @@
 
 .. include:: ../../.includes/scriptversion.rst
 
-We can treat git-fiddle_ as a :command:`git rebase` file for the :doc:`most part
-<../../ftdetect/git-fiddle>`, but we’ll also need a few of the things from the
-:doc:`git commit setup <gitcommit>` to make things comfortable.
+We can treat :repo:`git-fiddle <felixSchl/git-fiddle>` as a :command:`git
+rebase` file for the :doc:`most part <../../ftdetect/git-fiddle>`, but we’ll
+also need a few of the things from the :doc:`git commit setup <gitcommit>` to
+make things comfortable.
 
 .. todo::
 
@@ -17,5 +18,3 @@ We can treat git-fiddle_ as a :command:`git rebase` file for the :doc:`most part
     :command:`git fiddle` commit template boundaries.
 
 .. include:: ../../.includes/gitcommit_emoji.rst
-
-.. _git-fiddle: https://github.com/felixSchl/git-fiddle
