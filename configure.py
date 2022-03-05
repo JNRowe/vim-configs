@@ -9,6 +9,7 @@
 """
 
 from inspect import stack
+from itertools import chain
 from os import environ
 from pathlib import Path
 from shutil import which
@@ -71,6 +72,9 @@ def configure(
     colour: Optional[bool] = typer.Option(
         True, help='Generate coloured output.'
     ),
+    vim: Optional[str] = typer.Option(
+        'vim', metavar='command', help='Path to vim.'
+    ),
     ctags: Optional[str] = typer.Option(
         'ctags-universal', metavar='command', help='Path to ctags.'
     ),
@@ -123,6 +127,7 @@ def configure(
                         'libc_langs',
                         'libc_exclude',
                         'sphinx',
+                        'vim',
                     ]
                 ]
             ),
@@ -141,6 +146,16 @@ def configure(
             description=pretty('RST2HTML $out', colour),
             depfile='$out.d',
             deps='gcc',
+        )
+
+        n.rule(
+            'spellfile_compile',
+            (
+                f'{vim} -X --clean -N -V1 -e -s '
+                '-c "try | silent mkspell! $in | finally | qall! | endtry" '
+                '|| exit 1'
+            ),
+            description=pretty('SPELL $out', colour),
         )
 
         n.rule(
@@ -194,6 +209,20 @@ def configure(
                 which(rst2html),
             ],
         )
+
+        for p in chain(
+            location.glob('spell/*.add'), location.glob('.meta/*.add')
+        ):
+            n.build(
+                p.with_suffix(p.suffix + '.spl').as_posix(),
+                'spellfile_compile',
+                inputs=[
+                    p.as_posix(),
+                ],
+                implicit=[
+                    which(vim),
+                ],
+            )
 
         rst_files = [
             p
