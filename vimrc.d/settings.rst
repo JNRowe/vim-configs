@@ -122,11 +122,13 @@ Only files that *must* contain tabs(:file:`Makefile`) *should* contain tabs::
 
     set expandtab
 
-If the term can support it, use box drawing character for unbroken vertical
-split bar::
+Use prettier :wikipedia:`Unicode box drawing character
+<Box_Drawing-Unicode_block>` for a cleaner looking interface::
 
-    if &termencoding ==# 'utf-8' || has('gui_running')
-        set fillchars+=vert:│
+    set fillchars+=vert:│
+    if has('patch-8.2.2524')
+        set fillchars+=foldopen:┌
+        set fillchars+=foldsep:│
     endif
 
 .. _custom-foldtext:
@@ -135,12 +137,6 @@ Configure folding support::
 
     if has('folding')
         set fillchars+=fold:\   " Intentional trailing space
-        if &termencoding ==# 'utf-8' || has('gui_running')
-            if has('patch-8.2.2524')
-                set fillchars+=foldopen:┌
-                set fillchars+=foldsep:│
-            endif
-        endif
         set foldcolumn=2
         set foldlevelstart=99
         set foldmethod=syntax
@@ -225,13 +221,9 @@ Show “hidden” whitespace in buffers::
 
     set list
 
-    if &termencoding ==# 'utf-8' || has('gui_running')
-        set listchars=tab:␉·,extends:…,nbsp:␠
-        if has('conceal')
-            set listchars+=conceal:Δ
-        endif
-    else
-        set listchars=tab:>-,extends:>,nbsp:_
+    set listchars=tab:␉·,extends:…,nbsp:␠
+    if has('conceal')
+        set listchars+=conceal:Δ
     endif
 
 Include angle brackets in pair matching::
@@ -258,10 +250,14 @@ standard” behaviour, even if it isn’t the most intuitive.
     ``'nrformats'``’s octal mode and enabling unsigned should allow you seamless
     date fiddling without :repo:`vim-speeddating <tpope/vim-speeddating>`.
 
-Disable line numbering by default, but :ref:`not in the GUI
-<gui-linenumbers>`::
+Always display relative line numbers in the GUI, but show actual line number
+on current line::
 
-    set nonumber
+    set number
+    set relativenumber
+
+.. image:: /.static/relative_numbering.png
+   :alt: Example of combined numbering
 
 .. _path-setting:
 
@@ -524,16 +520,12 @@ Insert longest common match when completing::
 Set string to show `wrapped lines <breakindentopt>`_::
 
     if has('linebreak')
-        if &termencoding ==# 'utf-8' || has('gui_running')
-            let &showbreak='» '
-        else
-            let &showbreak='> '
-        endif
+        let &showbreak='» '
     endif
 
 Use buffer and command name in window title::
 
-    if has('title') && (has('gui_running') || &title)
+    if has('title')
         set titlestring=
         set titlestring+=%{display#readable_path(expand('%'))}
         set titlestring+=\ -\ %{v:progname} " Program name

@@ -51,17 +51,6 @@ Configure right mouse button to closer match the rest of my system::
 
     set mousemodel=popup_setpos
 
-.. _gui-linenumbers:
-
-Always display relative line numbers in the GUI, but show actual line number
-on current line::
-
-    set number
-    set relativenumber
-
-.. image:: /.static/relative_numbering.png
-   :alt: Example of combined numbering
-
 Attempt to save and restore window size in session files::
 
     set sessionoptions+=resize

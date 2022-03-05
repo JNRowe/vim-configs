@@ -12,10 +12,32 @@ Annoying, but necessary, to refresh termcap::
 
     set term=$TERM
 
-If possible enable 24-bit colour::
+.. _term-guifont:
 
-    if has('termguicolors') && &t_Co > 256
-        set termguicolors
+We’ll forcibly set ``'guifont'`` here to make it easier to configure options
+based on the used font::
+
+    silent let &guifont = system('fc-match -f "%{family}" monospace')
+
+.. note::
+
+    This obviously doesn’t work if you configure custom fonts for your terminal,
+    but I configure a global monospace font and use that everywhere.  If the
+    font isn’t correct in one application, it is usable for other applications.
+    The uniformity is the *only* thing that matter to me.
+
+.. todo::
+
+    Some terminals support querying the current font using escape sequences, we
+    should look in to which terms can reliably do this.  For example,
+    :command:`xterm` requires additional configuration to support the escape.
+
+Where possible, enable 24-bit colour::
+
+    if has('termguicolors')
+        if &t_Co > 256 || &term =~# '^\(kitty\|rxvt-unicode.*\|st\)$'
+            set termguicolors
+        endif
     endif
 
 Poke around, as best we can, to discern the background colour::

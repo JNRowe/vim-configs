@@ -20,47 +20,45 @@ Configure look::
 
 .. include:: ../../.includes/fontawesome.rst
 
-Configure symbols for :command:`gvim`::
+Configure prettier symbols::
 
-    if has('gui_running')
-        if index(split(&guifont), 'NF') != -1
-            const g:airline_powerline_fonts = v:true
-            const g:airline_left_sep = ''
-            const g:airline_right_sep = ''
-        else
-            const g:airline_left_sep = '╗'
-            const g:airline_right_sep = '╔'
-        endif
+    if index(split(&guifont), 'NF') != -1
+        const g:airline_powerline_fonts = v:true
+        const g:airline_left_sep = ''
+        const g:airline_right_sep = ''
+    else
+        const g:airline_left_sep = '╗'
+        const g:airline_right_sep = '╔'
+    endif
 
-        if !exists('g:airline_symbols')
-            let g:airline_symbols = {}
-        endif
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
 
-        let g:airline_symbols = #{
-        \   branch: '',
-        \   colnr: '℅',
-        \   crypt: '',
-        \   linenr: '',
-        \   maxlinenr: '⌇',
-        \   modified: '+',
-        \   notexists: 'Ɇ',
-        \   paste: 'ρ',
-        \   readonly: '',
-        \   space: ' ',
-        \   spell: '',
-        \   whitespace: 'Ξ',
-        \ }
+    let g:airline_symbols = #{
+    \   branch: '',
+    \   colnr: '℅',
+    \   crypt: '',
+    \   linenr: '',
+    \   maxlinenr: '⌇',
+    \   modified: '+',
+    \   notexists: 'Ɇ',
+    \   paste: 'ρ',
+    \   readonly: '',
+    \   space: ' ',
+    \   spell: '',
+    \   whitespace: 'Ξ',
+    \ }
+
+.. warning::
+
+    ``'guifont'`` is normally only available with :command:`gvim`, but we have
+    a :ref:`hacky workaround <term-guifont>` for regular |vim|.
 
 .. note::
 
     The ``NF``-suffixed branch is here to prefer a nerd-fonts_ variation of
     a font if available.
-
-and use simple |ASCII| replacements in a terminal::
-
-    else
-        const g:airline_symbols_ascii = v:true
-    endif
 
 .. include:: ../../.includes/fancy_symbols.rst
 
@@ -102,10 +100,8 @@ Enable :repo:`ale <dense-analysis/ale>` extension::
 
     if has('signs')
         let g:airline_extensions += ['ale']
-        if has('gui_running')
-            const g:airline#extensions#ale#error_symbol = ''
-            const g:airline#extensions#ale#warning_symbol = ''
-        endif
+        const g:airline#extensions#ale#error_symbol = ''
+        const g:airline#extensions#ale#warning_symbol = ''
         const g:airline#extensions#ale#checking_symbol = '…'
     endif
 
@@ -124,11 +120,9 @@ Enable |git| extension, if possible::
 
         const g:airline#extensions#branch#format = 2
 
-… use nice symbols where possible::
+… use nice symbols::
 
-        if has('gui_running')
-            const g:airline#extensions#hunks#hunk_symbols = ['➕ ', ' ', '➖ ']
-        endif
+        const g:airline#extensions#hunks#hunk_symbols = ['➕ ', ' ', '➖ ']
 
 … don’t display symbol and count when there are no changes::
 
@@ -174,9 +168,7 @@ When |CSV| files have a header, use it::
 
 Use a pretty symbol for :repo:`vim-obsession <tpope/vim-obsession>`::
 
-    if has('gui_running')
-        const g:airline#extensions#obsession#indicator_text = ''
-    endif
+    const g:airline#extensions#obsession#indicator_text = ''
 
 Allow spaces *after* tabs, but not in between::
 

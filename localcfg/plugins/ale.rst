@@ -50,17 +50,13 @@ number::
 
     let g:ale_list_window_size = 5
 
-.. include:: ../../.includes/fontawesome.rst
+Configure prettier signs::
 
-::
-
-    if (&termencoding ==# 'utf-8') || has('gui_running')
-        let g:ale_sign_error = ''
-        let g:ale_sign_warning = ''
-        let g:ale_sign_info = ''
-        let g:ale_sign_style_error = ''
-        let g:ale_sign_style_warning = ''
-    endif
+    let g:ale_sign_error = ''
+    let g:ale_sign_warning = ''
+    let g:ale_sign_info = ''
+    let g:ale_sign_style_error = ''
+    let g:ale_sign_style_warning = ''
 
     if has('gui_running')
         for s:k in ['Error', 'Info', 'Warning']
@@ -68,6 +64,8 @@ number::
             \              expand('~/.vim/icons/'), tolower(s:k))
         endfor
     endif
+
+.. include:: ../../.includes/fontawesome.rst
 
 Disable ``ale`` in :wikipedia:`MHTML` files as they are seldom more than an
 archival format::
