@@ -12,7 +12,7 @@ if not on_rtd:
     import sphinx_rtd_theme  # type: ignore
 
 # General configuration {{{
-extensions: list[str] = [
+extensions: List[str] = [
     f'sphinx.ext.{ext}'
     for ext in [
         'autodoc',
@@ -67,7 +67,7 @@ needs_sphinx = '3.5'
 
 nitpicky = True
 
-exclude_patterns: list[str] = [
+exclude_patterns: List[str] = [
     '.build',
     '.github',
     'maybe',
@@ -110,7 +110,7 @@ trim_footnote_reference_space = True
 # approximately correct builds on the local system too
 if not on_rtd:
     html_theme = 'sphinx_rtd_theme'
-    html_theme_path: list[str] = [
+    html_theme_path: List[str] = [
         sphinx_rtd_theme.get_html_theme_path(),
     ]
 
@@ -121,13 +121,13 @@ html_copy_source = False
 
 # autodoc extension settings {{{
 autoclass_content = 'init'
-autodoc_default_options: dict[str, Union[str, bool]] = {
+autodoc_default_options: Dict[str, Union[str, bool]] = {
     'members': True,
 }
 # }}}
 
 # extlinks extension settings {{{
-extlinks: dict[str, tuple[str, str]] = {
+extlinks: Dict[str, Tuple[str, str]] = {
     'pypi': ('https://pypi.org/project/%s/', '%s'),
     'repo': ('https://github.com/%s/', '%s'),
     'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', '%s'),
@@ -136,7 +136,7 @@ extlinks: dict[str, tuple[str, str]] = {
 # }}}
 
 # intersphinx extension settings {{{
-intersphinx_mapping: dict[str, tuple[str, Optional[str]]] = {
+intersphinx_mapping: Dict[str, Tuple[str, Optional[str]]] = {
     k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
     for k, v in {
         'click': 'https://click.palletsprojects.com/en/7.x/',
