@@ -87,6 +87,17 @@ Only use the extensions I actually want::
     This requires some vigilance over updates for finding fancy new toys, but
     surely you’re not just blinding grabbing repositories from GitHub anyway…
 
+Show emoji flags instead of textual code for spelling language::
+
+    let g:airline_detect_spelllang = 'flag'
+
+.. warning::
+
+    Support for variable width Unicode characters as used in the flag display is
+    *hugely* dependent on both terminal support *and* the system’s font
+    configuration.  This *will* cause problems, but I’m of the the opinion that
+    they’re worth fixing for their usability improvements.
+
 The ``searchcount`` extension only displays its segment when ``'hlsearch'`` is
 enabled, so we’ll fall back on ``'shortmess'``’s search counting functionality
 when it is disabled::
