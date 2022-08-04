@@ -23,15 +23,6 @@ Disable automatic re-caching::
 
     const g:dein#auto_recache = v:false
 
-If possible, support `system notifications`_:
-
-::
-
-    if executable('notify-send') && exists('$DISPLAY')
-        const g:dein#enable_notification = v:true
-        const g:dein#notification_icon = '~/.vim/icons/editor.svg'
-    endif
-
 Handle initial plugin setup::
 
     if dein#min#load_state(g:dein_state_dir)
@@ -70,5 +61,3 @@ Enable all the usual fanciness an editor should present::
 
     filetype plugin indent on
     syntax enable
-
-.. _system notifications: https://git.gnome.org/browse/libnotify
