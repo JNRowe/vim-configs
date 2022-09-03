@@ -40,7 +40,8 @@ This is especially true given how annoying it is to handle all the tiny corner
 cases that make the process a complete nightmare to debug.
 
 I’d pay the cost if the cycle time was even close to a second, but it isn’t.
-Plus, combined with :vimdoc:`mksession <starting.txt#mks>`/:ref:`vim-obsession
+Plus, combined with
+:vimdoc:`mksession <starting.txt.html#mks>`/:ref:`vim-obsession
 <vim-obsession-plugin>` plugin the editor pops back up as if we were using live
 reloading.
 
@@ -123,7 +124,7 @@ Why does using the mouse scroll wheel breaks my file
 ----------------------------------------------------
 
 There are many, many ways to :vimdoc:`move through a buffer
-<motion.txt#text-objects>` in vim.  Once you’ve learned them, keys such as
+<motion.txt.html#text-objects>` in vim.  Once you’ve learned them, keys such as
 :kbd:`PageUp` and the mouse in general become a very weak means for navigation.
 
 If we’re not using the mouse for its normal purpose, we can use it for something

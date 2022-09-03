@@ -36,7 +36,7 @@ variables.
 .. envvar:: VIM_DISABLE_CURSORS
 
     If set then cursors keys are disabled.  This is entirely about
-    :vimdoc:`learning motions <motion.txt>`, and not about promoting an
+    :vimdoc:`learning motions <motion.txt.html>`, and not about promoting an
     “arrow keys are the devil’s plaything” sentiment.
 
 .. envvar:: VIM_PROFILE

@@ -9,8 +9,8 @@ generic enough to be useful to upstream.
 
     The files in this directory have :repo:`vint <Kuniwak/vint>`’s
     ``ProhibitAutocmdWithNoGroup`` check disabled as |vim| handles that in this
-    instance.  See the help for :vimdoc:`ftdetect <filetype.txt#ftdetect>` for
-    more information.
+    instance.  See the help for :vimdoc:`ftdetect <filetype.txt.html#ftdetect>`
+    for more information.
 
 Contents
 --------

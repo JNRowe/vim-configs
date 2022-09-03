@@ -32,6 +32,7 @@ Bug reports
 '''''''''''
 
 * Delphine Beauchemin
+* Carlo Teubner
 * Karl Ullmann
 
 Ideas
