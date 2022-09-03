@@ -7,6 +7,7 @@ Todo items for project
 
     ftplugin
     gitcommit
+    gitfiddle
     james
     notgui
     rst
