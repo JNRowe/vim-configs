@@ -1,6 +1,14 @@
 vim-configs
 ===========
 
+.. note::
+
+    This repository is in hibernation for various reasons, but if we work
+    together you can find a current version under
+    ``~JNRowe/silhouette/vim-configs``.  I hope to re-enable public pushes at
+    some point, but it has close to the lowest priority on my entire todo list
+    right now [2024-02-04].
+
 This is my personal vim_ configuration that is shared among hosts.  Maybe
 they’re useful to you too, or — better yet — you’ll spot *and* fix a bug!
 
