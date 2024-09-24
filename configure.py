@@ -48,7 +48,7 @@ def wopt(name: str) -> str:
     Args:
         name: Option name
     """
-    locals_ = stack()[2].frame.f_locals
+    locals_ = stack()[2].frame.f_locals['use_params']
     arg = name.replace('_', '-')
     val = locals_[name]
     if isinstance(val, bool):
