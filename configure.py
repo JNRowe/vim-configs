@@ -82,7 +82,7 @@ def configure(
         'rst2html', metavar='command', help='Path to rst2html.'
     ),
     libc_langs: Optional[str] = typer.Option(
-        'C,C++#',
+        'C,C++',
         metavar='langs',
         help='Languages to include in libc tags file.',
     ),
