@@ -2,11 +2,11 @@ from docutils import nodes, writers, languages
 
 
 # My preferred reST header adornments
-REST_HEADINGS = [None, '=', '-', "'"]
+REST_HEADINGS = [None, "=", "-", "'"]
 
 
 class VimWriter(writers.Writer):
-    supported = ('vim',)
+    supported = ("vim",)
 
     output = None
 
@@ -35,10 +35,10 @@ class VimTranslator(nodes.NodeVisitor):
         self.section_level = 0
 
     def astext(self):
-        return ''.join(self.head + self.body + self.foot)
+        return "".join(self.head + self.body + self.foot)
 
     def visit_literal_block(self, node):
-        if node.attributes['language'] == 'vim':
+        if node.attributes["language"] == "vim":
             self.body.append(f'" {node.source}:{node.line}\n{node.astext()}\n')
 
     def visit_section(self, node):
@@ -52,7 +52,7 @@ class VimTranslator(nodes.NodeVisitor):
             fmt = '" {0}\n" {1}\n'
         else:
             if not any(
-                node.attributes['language'] == 'vim'
+                node.attributes["language"] == "vim"
                 for n in node.children
                 if isinstance(node, nodes.literal)
             ):

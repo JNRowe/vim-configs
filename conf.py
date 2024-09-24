@@ -7,32 +7,32 @@ from contextlib import suppress
 from subprocess import CalledProcessError, PIPE, run
 from typing import Dict, List, Optional, Tuple, Union
 
-on_rtd = 'READTHEDOCS' in os.environ
+on_rtd = "READTHEDOCS" in os.environ
 if not on_rtd:
     import sphinx_rtd_theme  # type: ignore
 
 # General configuration {{{
 extensions: List[str] = [
-    f'sphinx.ext.{ext}'
+    f"sphinx.ext.{ext}"
     for ext in [
-        'autodoc',
-        'doctest',
-        'extlinks',
-        'githubpages',
-        'intersphinx',
-        'todo',
+        "autodoc",
+        "doctest",
+        "extlinks",
+        "githubpages",
+        "intersphinx",
+        "todo",
     ]
 ] + [
-    'sphinxcontrib.spelling',
+    "sphinxcontrib.spelling",
 ]
 
 if not on_rtd:
     # Showing document build durations is only valuable when writing, so we’ll
     # only enable it locally
-    extensions.append('sphinx.ext.duration')
+    extensions.append("sphinx.ext.duration")
 
-    sys.path.insert(0, 'tools')
-    extensions.append('vim_extractor')
+    sys.path.insert(0, "tools")
+    extensions.append("vim_extractor")
 
 rst_epilog = """
 .. |ISO-8601| replace:: :wikipedia:`ISO-8601 <ISO_8601>`
@@ -56,44 +56,44 @@ rst_epilog = """
 .. |zsh| replace:: `zsh <https://www.zsh.org/>`__
 """
 
-needs_sphinx = '3.5'
+needs_sphinx = "3.5"
 
-nitpicky = 'SPHINX_DEV_BUILD' in os.environ
+nitpicky = "SPHINX_DEV_BUILD" in os.environ
 
 exclude_patterns: List[str] = [
-    '.build',
-    '.github',
-    'maybe',
-    'README.rst',
-    '**/README.rst',
+    ".build",
+    ".github",
+    "maybe",
+    "README.rst",
+    "**/README.rst",
 ]
 # }}}
 
 # Project information {{{
-project = 'vim-configs'
-copyright = '2009-2022  James Rowe'  # NOQA: A001
+project = "vim-configs"
+copyright = "2009-2022  James Rowe"  # NOQA: A001
 
 if on_rtd:
     with suppress(CalledProcessError):
         proc = run(
             [
-                'git',
-                '-C',
+                "git",
+                "-C",
                 os.path.dirname(__file__),
-                'log',
-                '--pretty=format:%ad [%h]',
-                '--date=short',
-                '-n1',
+                "log",
+                "--pretty=format:%ad [%h]",
+                "--date=short",
+                "-n1",
             ],
             stdout=PIPE,
         )
         html_last_updated_fmt = proc.stdout.decode()
 else:
     # Use a static updated time to limit rebuilds for faster commit hooks
-    html_last_updated_fmt = '[local build]'
+    html_last_updated_fmt = "[local build]"
 
 release = html_last_updated_fmt
-version = ''
+version = ""
 
 trim_footnote_reference_space = True
 # }}}
@@ -102,38 +102,38 @@ trim_footnote_reference_space = True
 # readthedocs.org handles this setup for their builds, but it is nice to see
 # approximately correct builds on the local system too
 if not on_rtd:
-    html_theme = 'sphinx_rtd_theme'
+    html_theme = "sphinx_rtd_theme"
     html_theme_path: List[str] = [
         sphinx_rtd_theme.get_html_theme_path(),
     ]
 
-highlight_language = 'vim'
+highlight_language = "vim"
 
 html_copy_source = False
 # }}}
 
 # autodoc extension settings {{{
-autoclass_content = 'init'
+autoclass_content = "init"
 autodoc_default_options: Dict[str, Union[str, bool]] = {
-    'members': True,
+    "members": True,
 }
 # }}}
 
 # extlinks extension settings {{{
 extlinks: Dict[str, Tuple[str, str]] = {
-    'pypi': ('https://pypi.org/project/%s/', '%s'),
-    'repo': ('https://github.com/%s/', '%s'),
-    'wikipedia': ('https://en.m.wikipedia.org/wiki/%s', '%s'),
-    'vimdoc': ('https://vimhelp.org/%s', '%s'),
+    "pypi": ("https://pypi.org/project/%s/", "%s"),
+    "repo": ("https://github.com/%s/", "%s"),
+    "wikipedia": ("https://en.m.wikipedia.org/wiki/%s", "%s"),
+    "vimdoc": ("https://vimhelp.org/%s", "%s"),
 }
 # }}}
 
 # intersphinx extension settings {{{
 intersphinx_mapping: Dict[str, Tuple[str, Optional[str]]] = {
-    k: (v, os.getenv(f'SPHINX_{k.upper()}_OBJECTS'))
+    k: (v, os.getenv(f"SPHINX_{k.upper()}_OBJECTS"))
     for k, v in {
-        'click': 'https://click.palletsprojects.com/en/7.x/',
-        'python': 'https://docs.python.org/3/',
+        "click": "https://click.palletsprojects.com/en/7.x/",
+        "python": "https://docs.python.org/3/",
     }.items()
 }
 # }}}
@@ -144,8 +144,8 @@ napoleon_numpy_docstring = False
 
 # spelling extension settings {{{
 spelling_ignore_acronyms = False
-spelling_lang = 'en_GB'
-spelling_word_list_filename = '.meta/en.utf-8.add'
+spelling_lang = "en_GB"
+spelling_word_list_filename = ".meta/en.utf-8.add"
 spelling_ignore_python_builtins = False
 spelling_ignore_importable_modules = False
 # }}}

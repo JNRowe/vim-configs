@@ -12,11 +12,11 @@ LOGGER = logging.getLogger(__name__)
 
 
 class VimBuilder(Builder):
-    name = 'vim'
-    format = 'vim'
-    epilog = 'The vim files are in %(outdir)s.'
+    name = "vim"
+    format = "vim"
+    epilog = "The vim files are in %(outdir)s."
 
-    out_suffix = '.vim'
+    out_suffix = ".vim"
     allow_parallel = True
     _writer_class = VimWriter
     default_translator_class = VimTranslator
@@ -32,7 +32,7 @@ class VimBuilder(Builder):
                 yield docname
                 continue
             targetname = path.join(self.outdir, docname)
-            if docname != 'vimrc':
+            if docname != "vimrc":
                 targetname += self.out_suffix
             try:
                 targetmtime = path.getmtime(targetname)
@@ -46,7 +46,7 @@ class VimBuilder(Builder):
                 pass
 
     def get_target_uri(self, docname, typ=None):
-        return ''
+        return ""
 
     def prepare_writing(self, docnames):
         self.writer = VimWriter(self)
@@ -54,18 +54,18 @@ class VimBuilder(Builder):
     def write_doc(self, docname, doctree):
         self.current_docname = docname
         self.secnumbers = self.env.toc_secnumbers.get(docname, {})
-        destination = StringOutput(encoding='utf-8')
+        destination = StringOutput(encoding="utf-8")
         self.writer.write(doctree, destination)
         outname = os_path(docname)
-        if docname != 'vimrc':
+        if docname != "vimrc":
             outname += self.out_suffix
         outfilename = path.join(self.outdir, outname)
         ensuredir(path.dirname(outfilename))
         try:
-            with open(outfilename, 'w', encoding='utf-8') as f:
+            with open(outfilename, "w", encoding="utf-8") as f:
                 f.write(self.writer.output)
         except OSError as err:
-            LOGGER.warning('error writing file %s: %s', outfilename, err)
+            LOGGER.warning("error writing file %s: %s", outfilename, err)
 
     def finish(self):
         pass
