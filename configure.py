@@ -152,11 +152,12 @@ def configure(
             description=pretty("SPELL $out", colour),
         )
 
-        n.rule(
-            "sphinx_build",
-            f'sphinx-build -M $builder {location} {location / ".build"}',
-            description=pretty("SPHINX $out", colour),
-        )
+        if sphinx:
+            n.rule(
+                "sphinx_build",
+                f'sphinx-build -M $builder {location} {location / ".build"}',
+                description=pretty("SPHINX $out", colour),
+            )
 
         # Note the ``.dep`` suffix to workaround ``vimrc.d`` being
         # ``vimrc.rst``’s default dependency file.
