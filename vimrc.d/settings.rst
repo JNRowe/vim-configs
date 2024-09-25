@@ -1,16 +1,16 @@
 ``vimrc.d/settings.vim``
 ========================
 
-.. include:: ../.includes/scriptencoding.rst
+.. include:: ../.includes/vim9script.rst
 
-.. include:: ../.includes/scriptversion.rst
+.. include:: ../.includes/scriptencoding.rst
 
 I want backups, but not in the project tree and I never want to accidentally
 overwrite a :command:`cp --link` tree::
 
     set backup
     set backupcopy=auto,breakhardlink
-    let &backupdir = g:vim_cache_dir .. '/backup//'
+    &backupdir = g:vim_cache_dir .. '/backup//'
     if !isdirectory(g:vim_cache_dir .. '/backup')
         call mkdir(g:vim_cache_dir .. '/backup', 'p', 0700)
     endif
@@ -99,7 +99,7 @@ If a wordlist is available use it as the completion dictionary::
 
 Keep swap files in |XDG basedir| compliant location::
 
-    let &directory = printf('%s/swap//,%s', g:vim_cache_dir, &directory)
+    &directory = printf('%s/swap//,%s', g:vim_cache_dir, &directory)
     if !isdirectory(g:vim_cache_dir .. '/swap')
         call mkdir(g:vim_cache_dir .. '/swap', 'p', 0700)
     endif
@@ -107,11 +107,11 @@ Keep swap files in |XDG basedir| compliant location::
 :wikipedia:`UTF-8` should be default on all systems now, and |vim| will pick
 that up via :envvar:`LANG`, but we’ll force it just in case::
 
-    " vint: -ProhibitEncodingOptionAfterScriptEncoding
+    # vint: -ProhibitEncodingOptionAfterScriptEncoding
     set encoding=utf-8
-    " vint: +ProhibitEncodingOptionAfterScriptEncoding
+    # vint: +ProhibitEncodingOptionAfterScriptEncoding
     if &modifiable
-        " This is per buffer, and breaks when using stdin as buffer for example
+        # This is per buffer, and breaks when using stdin as buffer for example
         set fileencoding=utf-8
     endif
     if v:lang =~? 'utf-8'
@@ -136,7 +136,7 @@ Use prettier :wikipedia:`Unicode box drawing character
 Configure folding support::
 
     if has('folding')
-        set fillchars+=fold:\   " Intentional trailing space
+        set fillchars+=fold:\   # Intentional trailing space
         set foldcolumn=2
         set foldlevelstart=99
         set foldmethod=syntax
@@ -168,9 +168,10 @@ When :repo:`the_silver_searcher <ggreer/the_silver_searcher>` is installed
         set grepprg=ag\ --vimgrep
         set grepformat=%f:%l:%c:%m
     else
-        let &grepprg = printf(
-        \   'grep -nH --exclude-from=%s/grep_excludes $* /dev/null',
-        \   g:xdg_data_dir)
+        &grepprg = printf(
+            'grep -nH --exclude-from=%s/grep_excludes $* /dev/null',
+            g:xdg_data_dir
+        )
     endif
 
 .. note::
@@ -366,9 +367,9 @@ with :kbd:`zg`::
 
     if has('spell')
         set spell
-        let s:lang = split(v:lang, '\.')[0]
-        let &spellfile = printf('~/.vim/spell/%s.utf-8.add', s:lang)
-        let &spelllang = tolower(s:lang)
+        const lang = split(v:lang, '\.')[0]
+        &spellfile = printf('~/.vim/spell/%s.utf-8.add', lang)
+        &spelllang = tolower(lang)
 
 … and treat camel-cased words specially::
 
@@ -431,7 +432,7 @@ compliant location::
 
     if has('persistent_undo')
         set undofile
-        let &undodir = printf('%s/undo//,%s', g:vim_data_dir, &undodir)
+        &undodir = printf('%s/undo//,%s', g:vim_data_dir, &undodir)
         if !isdirectory(g:vim_data_dir .. '/undo')
             call mkdir(g:vim_data_dir .. '/undo', 'p', 0700)
         endif
@@ -451,7 +452,7 @@ Double |vim|’s default swap file write time interval::
 Store session files in |XDG basedir| compliant location::
 
     if has('mksession')
-        let &viewdir = g:vim_cache_dir .. '/view'
+        &viewdir = g:vim_cache_dir .. '/view'
         if !isdirectory(&viewdir)
             call mkdir(&viewdir, 'p', 0700)
         endif
@@ -474,7 +475,7 @@ Option      Use
 
     if has('viminfo')
         set viminfo='5000,<1000,%,r/media,r/tmp
-        let &viminfofile = g:vim_cache_dir .. '/viminfo'
+        &viminfofile = g:vim_cache_dir .. '/viminfo'
     endif
 
 .. note::
@@ -528,7 +529,7 @@ Use buffer and command name in window title::
     if has('title')
         set titlestring=
         set titlestring+=%{display#readable_path(expand('%'))}
-        set titlestring+=\ -\ %{v:progname} " Program name
+        set titlestring+=\ -\ %{v:progname}  # Program name
     endif
 
 The default minimum window height of one line is not useful enough to be

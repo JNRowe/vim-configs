@@ -1,7 +1,7 @@
 ``autoload/plugins/dein.vim``
 =============================
 
-.. include:: ../../.includes/scriptversion.rst
+.. include:: ../../.includes/vim9script.rst
 
 .. function:: load_config(plugin: Optional[str])) -> None
 
@@ -14,10 +14,10 @@
 
 ::
 
-    function! plugins#dein#load_config(plugin = v:none) abort
-        const l:name = substitute(a:plugin ?? g:dein#plugin.name, '-', '_', 'g')
-        execute 'source ~/.vim/localcfg/plugins/' .. l:name .. '.vim'
-    endfunction
+    def plugins#dein#load_config(plugin = '')
+        const name = substitute(plugin ?? g:dein#plugin.name, '-', '_', 'g')
+        execute 'source ~/.vim/localcfg/plugins/' .. name .. '.vim'
+    enddef
 
 .. function:: prefix(prefix: str, args: List[str]) -> List[str]
 
@@ -32,9 +32,9 @@
 
 ::
 
-    function! plugins#dein#prefix(prefix, args) abort
-        return mapnew(a:args, {_, s -> a:prefix .. s})
-    endfunction
+    def plugins#dein#prefix(prefix: string, args: list<string>): list<string>
+        return mapnew(args, (_, s) => prefix .. s)
+    enddef
 
 .. function:: suffix(suffix: str, args: List[str]) -> List[str]
 
@@ -49,9 +49,9 @@
 
 ::
 
-    function! plugins#dein#suffix(suffix, args) abort
-        return mapnew(a:args, {_, s -> s .. a:suffix})
-    endfunction
+    def plugins#dein#suffix(suffix: string, args: list<string>): list<string>
+        return mapnew(args, (_, s) => s .. suffix)
+    enddef
 
 .. function:: has_exec(command: str) -> bool
 
@@ -65,10 +65,10 @@
 
 ::
 
-    let s:has_exec_cache = {}
-    function! plugins#dein#has_exec(command) abort
-        if !has_key(s:has_exec_cache, a:command)
-            let s:has_exec_cache[a:command] = executable(a:command)
+    var has_exec_cache = {}
+    def plugins#dein#has_exec(command: string): bool
+        if !has_key(has_exec_cache, command)
+            s:has_exec_cache[command] = executable(command)
         endif
-        return s:has_exec_cache[a:command]
-    endfunction
+        return has_exec_cache[command]
+    enddef

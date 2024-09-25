@@ -5,6 +5,8 @@ This file holds setup that is required for lazy loading to function correctly
 with ``dein.vim``, but which can’t be stored within the :doc:`plugin
 configuration <../dein>` as it would break caching.
 
+.. include:: ../.includes/vim9script.rst
+
 .. _ale-custom-maps:
 
 ``ale`` maps
@@ -13,26 +15,26 @@ configuration <../dein>` as it would break caching.
 Use my custom maps::
 
     if v:version >= 800 && has('signs')
-        call keymaps#mnemonic_map('ale', #{local: v:true})
+        keymaps#mnemonic_map('ale', {local: v:true})
 
-        for [s:key, s:cmd] in [
-        \   ['br',     'reset_buffer'],
-        \   ['bt',     'toggle_buffer'],
-        \   ['d',      'detail'],
-        \   ['f',      'fix'],
-        \   ['gd',     'go_to_definition'],
-        \   ['gt',     'go_to_type_definition'],
-        \   ['l',      'lint'],
-        \   ['r',      'reset'],
-        \   ['t',      'toggle'],
-        \   ['vgd',    'go_to_definition_in_vsplit'],
-        \   ['vgt',    'go_to_type_definition_in_vsplit'],
-        \   ['<Home>', 'first'],
-        \   ['<End>',  'last'],
-        \   ['<Down>', 'next_wrap'],
-        \   ['<Up>',   'previous_wrap'],
-        \ ]
-            execute printf('nmap <silent> [ale]%s <Plug>(ale_%s)', s:key, s:cmd)
+        for [key, cmd] in [
+            ['br',     'reset_buffer'],
+            ['bt',     'toggle_buffer'],
+            ['d',      'detail'],
+            ['f',      'fix'],
+            ['gd',     'go_to_definition'],
+            ['gt',     'go_to_type_definition'],
+            ['l',      'lint'],
+            ['r',      'reset'],
+            ['t',      'toggle'],
+            ['vgd',    'go_to_definition_in_vsplit'],
+            ['vgt',    'go_to_type_definition_in_vsplit'],
+            ['<Home>', 'first'],
+            ['<End>',  'last'],
+            ['<Down>', 'next_wrap'],
+            ['<Up>',   'previous_wrap'],
+        ]
+            execute printf('nmap <silent> [ale]%s <Plug>(ale_%s)', key, cmd)
         endfor
         nnoremap [ale]i <Cmd>call ale#debugging#Info()<CR>
     endif
@@ -55,16 +57,15 @@ Use my custom maps::
 
     const g:calendar_no_mappings = v:true
 
-    call keymaps#mnemonic_map('Calendar')
+    keymaps#mnemonic_map('Calendar')
 
-    for [s:key, s:cmd] in [
-    \   ['v', ''],
-    \   ['h', 'H'],
-    \   ['f', 'T'],
-    \   ['r', 'VR'],
-    \ ]
-        execute printf('nnoremap [Calendar]%s <Cmd>Calendar%s<CR>',
-        \              s:key, s:cmd)
+    for [key, cmd] in [
+        ['v', ''],
+        ['h', 'H'],
+        ['f', 'T'],
+        ['r', 'VR'],
+    ]
+        execute printf('nnoremap [Calendar]%s <Cmd>Calendar%s<CR>', key, cmd)
     endfor
 
 .. seealso::
@@ -95,22 +96,22 @@ Use my custom maps::
 
     const g:dwm_map_keys = v:false
 
-    call keymaps#mnemonic_map('dwm')
+    keymaps#mnemonic_map('dwm')
 
 Configure maps to match, to some degree, my window manager’s configuration::
 
-    for [s:key, s:cmd] in [
-    \   ['n',       'New'],
-    \   ['c',       'Close'],
-    \   ['f',       'Focus'],
-    \   ['<Left>',  'RotateCounterclockwise'],
-    \   ['<Right>', 'RotateClockwise'],
-    \   ['<Up>',    'New'],
-    \   ['<Down>',  'Close'],
-    \   ['+',       'GrowMaster'],
-    \   ['-',       'ShrinkMaster'],
-    \ ]
-        execute printf('nmap [dwm]%s <Plug>DWM%s', s:key, s:cmd)
+    for [key, cmd] in [
+        ['n',       'New'],
+        ['c',       'Close'],
+        ['f',       'Focus'],
+        ['<Left>',  'RotateCounterclockwise'],
+        ['<Right>', 'RotateClockwise'],
+        ['<Up>',    'New'],
+        ['<Down>',  'Close'],
+        ['+',       'GrowMaster'],
+        ['-',       'ShrinkMaster'],
+    ]
+        execute printf('nmap [dwm]%s <Plug>DWM%s', key, cmd)
     endfor
 
 .. seealso::
@@ -129,21 +130,21 @@ Configure maps to match, to some degree, my window manager’s configuration::
 Configure convenience mappings for common command usage::
 
     if plugins#dein#has_exec('fzf')
-        let g:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files',
-        \   'History', 'Lines', 'Maps', 'Marks', 'Windows']
+        g:fzf_commands = ['Buffers', 'Colors', 'Commands', 'Files', 'History',
+                          'Lines', 'Maps', 'Marks', 'Windows']
         if plugins#dein#has_exec('ag')
-            let g:fzf_commands += ['Ag', ]
+            g:fzf_commands += ['Ag', ]
         endif
         if plugins#dein#has_exec('git')
-            let g:fzf_commands += ['GFiles', ]
+            g:fzf_commands += ['GFiles', ]
         endif
         if has('insert_expand')
-            let g:fzf_commands += ['Snippets', ]
+            g:fzf_commands += ['Snippets', ]
         endif
-        call keymaps#mnemonic_map('fzf', #{key: '`'})
-        for s:cmd in g:fzf_commands
+        keymaps#mnemonic_map('fzf', {key: '`'})
+        for cmd in g:fzf_commands
             execute printf('nnoremap [fzf]%s <Cmd>FZF%s<CR>',
-            \              tolower(s:cmd[0]), s:cmd)
+                           tolower(cmd[0]), cmd)
         endfor
     endif
 
@@ -168,20 +169,20 @@ Use my custom maps::
     if has('signs') && plugins#dein#has_exec('git')
         let g:git_messenger_no_default_mappings = v:true
 
-        call keymaps#mnemonic_map('messenger')
+        keymaps#mnemonic_map('messenger')
 
-        for [s:key, s:cmd] in [
-        \   ['o',          ''],
-        \   ['c',          '-close'],
-        \   ['i',          '-into-popup'],
-        \   ['<Down>',     '-scroll-down-1'],
-        \   ['<Up>',       '-scroll-up-1'],
-        \   ['<PageDown>', '-scroll-down-page'],
-        \   ['<PageUp>',   '-scroll-up-page'],
-        \ ]
+        for [key, cmd] in [
+            ['o',          ''],
+            ['c',          '-close'],
+            ['i',          '-into-popup'],
+            ['<Down>',     '-scroll-down-1'],
+            ['<Up>',       '-scroll-up-1'],
+            ['<PageDown>', '-scroll-down-page'],
+            ['<PageUp>',   '-scroll-up-page'],
+        ]
             execute printf(
-            \   'nmap <silent> [messenger]%s <Plug>(git-messenger%s)',
-            \   s:key, s:cmd)
+                'nmap <silent> [messenger]%s <Plug>(git-messenger%s)',
+                key, cmd)
         endfor
     endif
 
@@ -196,18 +197,17 @@ Use my custom maps::
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('nerdtree')
+    keymaps#mnemonic_map('nerdtree')
 
-    for [s:key, s:cmd] in [
-    \   ['O', 'VCS'],
-    \   ['T', 'ToggleVCS'],
-    \   ['c', 'Close'],
-    \   ['f', 'Focus'],
-    \   ['o', ''],
-    \   ['t', 'Toggle'],
-    \ ]
-        execute printf('nnoremap [nerdtree]%s <Cmd>NERDTree%s<CR>',
-        \              s:key, s:cmd)
+    for [key, cmd] in [
+        ['O', 'VCS'],
+        ['T', 'ToggleVCS'],
+        ['c', 'Close'],
+        ['f', 'Focus'],
+        ['o', ''],
+        ['t', 'Toggle'],
+    ]
+        execute printf('nnoremap [nerdtree]%s <Cmd>NERDTree%s<CR>', key, cmd)
     endfor
 
 .. seealso::
@@ -221,13 +221,12 @@ Use my custom maps::
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('sideways', #{local: v:true})
+    keymaps#mnemonic_map('sideways', {local: v:true})
 
-    for s:key in ['Left', 'Right']
-        execute printf('nnoremap [sideways]<%s> <Cmd>Sideways%s<CR>', s:key,
-        \              s:key)
-        execute printf(
-        \   'nnoremap [sideways]<S-%s> <Cmd>SidewaysJump%s<CR>', s:key, s:key)
+    for key in ['Left', 'Right']
+        execute printf('nnoremap [sideways]<%s> <Cmd>Sideways%s<CR>', key, key)
+        execute printf('nnoremap [sideways]<S-%s> <Cmd>SidewaysJump%s<CR>',
+                       key, key)
     endfor
 
 .. seealso::
@@ -242,12 +241,12 @@ Use my custom maps::
 Use :kbd:`<C-M-T>` to flip word under cursor to match my old
 ``True``/``False`` map memory::
 
-    for [s:mode, s:cmd_prefix] in [
-    \   ['i', '<C-O>'],
-    \   ['n', ''],
-    \   ['v', '<ESC>'],
-    \ ]
-        execute printf('%snoremap <C-M-T> %s:Switch<CR>', s:mode, s:cmd_prefix)
+    for [mode, cmd_prefix] in [
+        ['i', '<C-O>'],
+        ['n', ''],
+        ['v', '<ESC>'],
+    ]
+        execute printf('%snoremap <C-M-T> %s:Switch<CR>', mode, cmd_prefix)
     endfor
 
 .. _unicode-vim-custom-maps:
@@ -282,7 +281,7 @@ So, we’ll override the :kbd:`ga` mapping::
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('bufmru')
+    keymaps#mnemonic_map('bufmru')
 
     nnoremap [bufmru]l       <Cmd>BufMRU<CR>
     nnoremap [bufmru]<Left>  <Cmd>BufMRUPrev<CR>
@@ -335,21 +334,21 @@ Add map to change directory to git_ project root using :repo:`vim-projectionist
 Use my custom maps::
 
     if has('signs') && plugins#dein#has_exec('git')
-        call keymaps#mnemonic_map('gitgutter')
-        let g:gitgutter_map_keys = v:false
+        keymaps#mnemonic_map('gitgutter')
+        g:gitgutter_map_keys = v:false
 
-        for [s:key, s:cmd] in [
-        \   ['<Down>',  'NextHunk'],
-        \   ['<Up>',    'PrevHunk'],
-        \   ['<Space>', 'Toggle'],
-        \   ['f',       'Fold'],
-        \   ['p',       'PreviewHunk'],
-        \   ['q',       'QuickFix'],
-        \ ]
+        for [key, cmd] in [
+            ['<Down>',  'NextHunk'],
+            ['<Up>',    'PrevHunk'],
+            ['<Space>', 'Toggle'],
+            ['f',       'Fold'],
+            ['p',       'PreviewHunk'],
+            ['q',       'QuickFix'],
+        ]
             execute printf(
-            \   'nnoremap [gitgutter]%s <Cmd>GitGutter%s<CR>',
-            \   s:key, s:cmd
-            \ )
+                'nnoremap [gitgutter]%s <Cmd>GitGutter%s<CR>',
+                key, cmd
+            )
         endfor
     endif
 
@@ -364,25 +363,24 @@ Use my custom maps::
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('Ledger', #{buffer: v:true, key: 'L',
-    \                                     local: v:true})
+    keymaps#mnemonic_map('Ledger', {buffer: v:true, key: 'L', local: v:true})
 
-    for [s:key, s:cmd] in [
-    \   ['a', ':LedgerAlign'],
-    \   ['d', 'align_amount_at_cursor()'],
-    \   ['n', 'entry()'],
-    \   ['s', 'transaction_state_toggle(line("."), " *?!")'],
-    \   ['t', 'transaction_date_set(".", "auxiliary")'],
-    \ ]
-        if s:cmd[0] !=# ':'
-            let s:cmd = 'call ledger#' .. s:cmd
+    for [key, cmd] in [
+        ['a', ':LedgerAlign'],
+        ['d', 'align_amount_at_cursor()'],
+        ['n', 'entry()'],
+        ['s', 'transaction_state_toggle(line("."), " *?!")'],
+        ['t', 'transaction_date_set(".", "auxiliary")'],
+    ]
+        if cmd[0] !=# ':'
+            cmd = 'call ledger#' .. cmd
         else
-            let s:cmd = s:cmd[1:]
+            cmd = cmd[1 : ]
         endif
 
         execute printf(
-        \   'autocmd Filetype ledger nnoremap [Ledger]%s <Cmd>%s<CR>',
-        \   s:key, s:cmd)
+            'autocmd Filetype ledger nnoremap [Ledger]%s <Cmd>%s<CR>',
+            key, cmd)
     endfor
 
 .. seealso::
@@ -408,7 +406,7 @@ Use my custom maps::
 Configure my custom maps::
 
     if plugins#dein#has_exec('radon')
-        call keymaps#mnemonic_map('radon', #{key: 'p', local: v:true})
+        keymaps#mnemonic_map('radon', {key: 'p', local: v:true})
     endif
 
 .. seealso::
@@ -427,8 +425,8 @@ Configure my custom maps::
 
 Use my custom maps::
 
-    call keymaps#mnemonic_map('vebugger', #{local: v:true})
-    const g:vebugger_leader='[vebugger]'
+    keymaps#mnemonic_map('vebugger', {local: v:true})
+    const g:vebugger_leader = '[vebugger]'
 
 .. seealso::
 
@@ -442,14 +440,13 @@ Use my custom maps::
 Use my custom maps::
 
     if plugins#dein#has_exec('wn')
-        call keymaps#mnemonic_map('wordnet')
+        keymaps#mnemonic_map('wordnet')
 
-        for [s:key, s:cmd] in [
-        \   ['o', 'WordNetOverviews(expand("<cword>"))'],
-        \   ['c', 'plugins#wordnet_vim#close_win()'],
-        \ ]
-            execute printf('nnoremap [wordnet]%s <Cmd>call %s<CR>',
-            \              s:key, s:cmd)
+        for [key, cmd] in [
+            ['o', 'WordNetOverviews(expand("<cword>"))'],
+            ['c', 'plugins#wordnet_vim#close_win()'],
+        ]
+            execute printf('nnoremap [wordnet]%s <Cmd>call %s<CR>', key, cmd)
         endfor
     endif
 
