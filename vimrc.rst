@@ -21,12 +21,12 @@ me.
     endif
     # vint: +ProhibitSetNoCompatible
 
-Warn users with |vim| versions lower than v8.2 that problems will occur, but
+Warn users with |vim| versions lower than v9.0 that problems will occur, but
 note that pull requests which aren’t too invasive are most welcome.
 
 ::
 
-    if v:version < 802
+    if v:version < 900
         v:warningmsg = 'Vim version 8 or higher is required'
         echohl WarningMsg
         echomsg v:warningmsg
