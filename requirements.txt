@@ -2,4 +2,4 @@ ninja_syntax>=1.7.2
 sphinx>=9.2.0
 sphinx_rtd_theme>=3.1.0
 sphinxcontrib-spelling>=8.0.2
-typer>=0.27.3
+typer>=0.28.0
